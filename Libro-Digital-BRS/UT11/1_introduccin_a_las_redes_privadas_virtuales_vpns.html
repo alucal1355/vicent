@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1. Introducción a las Redes privadas virtuales (VPNs) | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-62"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li id="active"><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="active daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul>
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li><a href="2_vpn_de_acceso_remoto.html" class="daddy">2. VPN de acceso remoto</a>
+   <ul class="other-section">
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li><a href="22_wireguard.html" class="daddy">2.2 WireGuard</a>
+      <ul class="other-section">
+         <li><a href="221_instalacin_y_configuracin_de_wireguard.html" class="daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul class="other-section">
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_gestin_de_accesos_sistemas_nac.html" class="daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_servidor_radius_vpn.html" class="daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul class="other-section">
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objetivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11_tneles_protocolo_vpn_ipsec.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1. Introducción a las Redes privadas virtuales (VPNs)</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id92">
+<div class="iDevice emphasis0" >
+<div id="ta92_108_2" class="block iDevice_content">
+<div class="exe-text"><h3><span>1. Introducción</span></h3>
+<p style="text-align: justify;"><span>Las <strong>redes privadas virtuales o VPN</strong> permiten extender una red de manera que dispositivos que no se encuentran físicamente en ella, se puedan conectar a esta a través de otras redes, como por ejemplo, a través de Internet. Se pueden usar para distintos fines:</span></p>
+<ul>
+<li style="text-align: justify;"><span>Permitir que un equipo remoto use los recursos de una red.</span></li>
+<li style="text-align: justify;"><span>Comunicar dos redes separadas por más de un router como si estuvieran conectadas directamente.</span></li>
+<li style="text-align: justify;"><span>Saltarse cierto tipo de bloqueos.</span></li>
+<li style="text-align: justify;"><span>Unir varios ordenadores que están separados unos de otros como si estuvieran trabajando en la misma red.</span></li>
+<li style="text-align: justify;"><span>Hacer las comunicaciones más seguras y anónimas.</span></li>
+<li style="text-align: justify;"><span>Ocultar la procedencia de las comunicaciones.</span></li>
+</ul>
+<h3><span>2. Redes privadas virtuales</span></h3>
+<h4 style="text-align: justify;"><span>2.1 Introducción</span></h4>
+<p style="text-align: justify;"><span>Para <strong>proteger el tráfico de red entre sitios y usuarios</strong>, las organizaciones usan redes privadas virtuales (VPN) para crear conexiones de red privada de extremo a extremo. Una VPN es virtual porque transporta la información dentro de una red privada, pero, en realidad, esa información se transporta usando una red pública. Una VPN es privada porque el tráfico se cifra para preservar la confidencialidad de los datos mientras se transporta por la red pública.</span></p>
+<p style="text-align: justify;"><span>La figura muestra una colección de <strong>varios tipos de VPN</strong> administrados por la <strong>oficina principal de una empresa</strong>. El túnel permite a los sitios remotos y a los usuarios acceder a los recursos de red del sitio principal de forma segura.</span></p>
+<p style="text-align: center;"><img src="VPN-imagen.png" alt="" width="646" height="458" /></p>
+<p style="text-align: center;"></p>
+<p style="text-align: justify;"><span>Los primeros tipos de VPN eran estrictamente túneles IP que no incluían autenticación o cifrado de los datos. Por ejemplo, <a href="https://en.wikipedia.org/wiki/Generic_Routing_Encapsulation#:~:text=Generic%20Routing%20Encapsulation%20(GRE)%20is,over%20an%20Internet%20Protocol%20network." target="_blank" rel="noopener"><strong>Generic Routing Encapsulation (GRE)</strong></a> es un protocolo de túnel desarrollado por Cisco y que no incluye servicios de cifrado. Se utiliza para encapsular el tráfico IPv4 e IPv6 dentro de un túnel IP para crear un enlace virtual punto a punto.</span></p>
+<h4 style="text-align: justify;"><span>2.2 Beneficios del VPN</span></h4>
+<p style="text-align: justify;"><span>Las VPN modernas actualmente admiten funciones de cifrado, como el <a href="https://es.wikipedia.org/wiki/IPsec" target="_blank" rel="noopener"><strong>Internet Protocol Security (IPsec)</strong> </a>y las <a href="https://www.computerweekly.com/es/definicion/VPN-SSL-o-red-privada-virtual-Secure-Sockets-Layer" target="_blank" rel="noopener"><strong>VPN de Secure Socket Layer (SSL)</strong></a> para proteger el tráfico de red entre sitios.</span></p>
+<p style="text-align: justify;"><span>Los principales beneficios de las VPN se muestran en la tabla.</span></p>
+<table border="1" style="width: 100%; height: 105px;">
+<tbody>
+<tr style="height: 25px;">
+<td style="width: 9.72474%; height: 25px; text-align: left;"><strong><span style="font-size: 12pt;">Ventaja</span></strong></td>
+<td style="width: 90.2753%; height: 25px; text-align: left;"><strong><span style="font-size: 12pt;">Descripción</span></strong></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 9.72474%; height: 20px;"><strong><span style="font-size: 12pt;">Ahorro de costos</span></strong></td>
+<td style="width: 90.2753%; height: 20px;"><span style="font-size: 12pt;">Con la llegada de tecnologías rentables y de gran ancho de banda, las organizaciones pueden usar VPN para reducir sus costos de conectividad mientras incrementa simultáneamente el ancho de banda de la conexión remota.</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 9.72474%; height: 20px;"><strong><span style="font-size: 12pt;">Seguridad</span></strong></td>
+<td style="width: 90.2753%; height: 20px;"><span style="font-size: 12pt;">Las VPN proporcionan el mayor nivel de seguridad disponible, mediante el uso de encriptación avanzada y protocolos de autenticación que protegen los datos de acceso no autorizado.</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 9.72474%; height: 20px;"><strong><span style="font-size: 12pt;">Escalabilidad</span></strong></td>
+<td style="width: 90.2753%; height: 20px;"><span style="font-size: 12pt;">Las VPN permiten a las organizaciones usar Internet, lo que facilita la adición de nuevos usuarios sin agregar infraestructura significativa.</span><br /><br /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 9.72474%; height: 20px;"><strong><span style="font-size: 12pt;">Compatibilidad</span></strong></td>
+<td style="width: 90.2753%; height: 20px;"><span style="font-size: 12pt;">Las VPN se pueden implementar en una amplia variedad de opciones de enlace WAN incluidas todas las tecnologías populares de banda ancha. Los trabajadores remotos pueden aprovechar estas conexiones de alta velocidad para obtener acceso seguro a sus redes corporativas.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><span><img src="VPN-Seguridad.png" alt="" width="619" height="375" /></span></p>
+<h4><span>2.3 Clasificación de las VPN</span></h4>
+<h5><span>2.3.1 </span><span>VPN de sitio a sitio</span></h5>
+<p><span>Se crea una VPN de sitio a sitio cuando los dispositivos de terminación de VPN, también llamados puertas de enlace VPN, están preconfigurados con información para establecer un túnel seguro. El tráfico VPN solo se cifra entre estos dispositivos. Los usuarios internos no tienen conocimiento de que se está utilizando una VPN.</span></p>
+<p style="text-align: center;"><span><img src="VPN-sitio-a-sitio.png" alt="" width="634" height="286" /></span></p>
+<h5><span>2.3.2. VPN de acceso remoto</span></h5>
+<p style="text-align: justify;"><span>Una VPN de acceso-remoto se crea dinámicamente para establecer una conexión segura entre un cliente y un dispositivo de terminación de VPN. Por ejemplo, se utiliza una VPN SSL de acceso remoto cuando un usuario verifica su información bancaria en línea.</span></p>
+<p style="text-align: center;"><span><img src="VPN-acceso-remoto.png" alt="" width="625" height="282" /></span></p>
+<h5><span>2.3.3 VPN de empresas y proveedores de servicios</span><span></span></h5>
+<p><span>Hay muchas opciones disponibles para asegurar el tráfico empresarial. Estas soluciones varían según quién administra la VPN. Las VPN se pueden administrar e implementar como:</span></p>
+<ul>
+<li style="text-align: justify;"><span><strong>VPNs Empresariales.</strong> Las VPN administradas por empresas son una solución común para proteger el tráfico empresarial a través de Internet. Las VPN de sitio a sitio y de acceso remoto son creadas y administradas por la empresa utilizando tanto VPN IPsec como SSL.</span></li>
+<li style="text-align: justify;"><span><strong>VPNs de Proveedor de Servicios.</strong> Las VPN administradas por el proveedor de servicios se crean y administran a través de la red del proveedor. El proveedor utiliza Multiprotocol Label Switching (MPLS) en la capa 2 o la capa 3 para crear canales seguros entre los sitios de una empresa. MPLS es una tecnología de enrutamiento que el proveedor utiliza para crear rutas virtuales entre sitios. Esto efectivamente segrega el tráfico del tráfico de otros clientes. Otras soluciones heredadas incluyen Frame Relay y VPN de Asynchronous Transfer Mode (ATM).</span><span></span></li>
+</ul>
+<h4><span>2.4 Protocolos de red seguros</span></h4>
+<p style="text-align: justify;"><span>Los protocolos más habituales en la VPN son:</span></p>
+<ul style="text-align: justify;">
+<li style="text-align: justify;"><span><strong>OPENVPN</strong>: Protocolo de código abierto muy popular, sin embargo, no se basa en estándares (RFC). Utiliza un protocolo de seguridad personalizado y SSL / TLS para el intercambio de claves. Proporciona total confidencialidad, autenticación e integridad. </span></li>
+<li style="text-align: justify;"><span><strong>PPTP:</strong> Un protocolo VPN muy básico basado en PPP. El principal problema es que la especificación PPTP no describe las características de cifrado o autenticación y se basa en el protocolo PPP. Es un protocolo inseguro y no se recomienda su uso.</span></li>
+<li style="text-align: justify;"><span><strong>L2TP</strong>: El L2TP-IPSec, utiliza el intercambio de claves de Internet versión 2 IKEv2. Es un protocolo estandarizado en por RFC. IPSec se ha convertido en el protocolo estándar para comunicaciones seguras de Internet, proporcionando confidencialidad, autenticación e integridad. </span></li>
+<li style="text-align: justify;"><span><strong>Wireguard</strong>: Es un protocolo bastante nuevo. Ofrece una conexión VPN extremadamente rápida con muy poca sobrecarga y muy buena seguridad. Tiene el potencial de ofrecer una VPN más simple, más segura, más eficiente y más fácil de usar sobre las tecnologías actuales.</span></li>
+</ul>
+<h4 style="text-align: justify;"><span>2.5 Protocolos IPSec</span></h4>
+<p style="text-align: justify;"><span><strong>IPsec</strong> es un estándar<a href="https://datatracker.ietf.org/doc/html/rfc2401" target="_blank" rel="noopener"><strong> IETF (RFC 2401-2412)</strong> </a>que define cómo se puede asegurar una VPN a través de redes IP. IPsec protege y autentica los paquetes IP entre el origen y el destino. IPsec puede proteger el tráfico de la Capa 4 a la Capa 7.</span></p>
+<p style="text-align: justify;"><span>Usando el marco de IPsec, IPsec proporciona estas funciones de seguridad esenciales:</span></p>
+<ul>
+<li style="text-align: justify;"><span><strong>Confidencialidad.</strong> IPsec utiliza algoritmos de encriptación para evitar que los delincuentes cibernéticos lean el contenido del paquete.</span></li>
+<li style="text-align: justify;"><span><strong>Integridad</strong>. IPsec utiliza algoritmos de hash para garantizar que los paquetes no se hayan modificado entre el origen y el destino.</span></li>
+<li style="text-align: justify;"><span><strong>Autenticación de Origen</strong>. IPsec utiliza el protocolo Internet Key Exchange (IKE) para autenticar el origen y el destino. Métodos de autenticación que incluyen el uso de llaves previamente compartidas (contraseñas), certificados digitales o certificados RSA.</span></li>
+<li style="text-align: justify;"><strong>Diffie-Hellman. </strong>Intercambio seguro de llaves, generalmente varios grupos del algoritmo DH.</li>
+</ul>
+<p style="text-align: justify;"><span><strong>IPsec</strong> no está sujeto a ninguna regla específica para comunicaciones seguras. Esta flexibilidad del marco permite a IPsec integrar fácilmente nuevas tecnologías de seguridad sin actualizar los estándares existentes de IPsec. Las tecnologías actualmente disponibles están alineadas a su función de seguridad específica. Las ranuras abiertas que se muestran en el marco de IPsec en la figura pueden llenarse con cualquiera de las opciones disponibles para esa función de IPsec para crear una asociación de seguridad (SA) única.</span></p>
+<p style="text-align: center;"><span><img src="ipsec.png" alt="" width="610" height="450" /></span></p>
+<h4><span>2.6 Casos de uso</span></h4>
+<ul>
+<li><span>Interconexión entre sedes.</span></li>
+<li><span>Acceso a la red de la empresa.</span></li>
+<li><span>Acceso recursos dentro de la red.</span></li>
+<li><span>Navegación segura en redes wifi.</span></li>
+</ul>
+<div class="exe-fx exe-tabs">
+<h2>1. Interconexión entre sedes</h2>
+<p style="text-align: center;"><img src="inter-sedes.png" alt="" width="811" height="376" /></p>
+<h2>2. Acceso a la red de la empresa desde una ubicación externa</h2>
+<p style="text-align: center;"><img src="usuario-oficina-VPN.png" alt="" width="976" height="227" /></p>
+<h2>3. Acceso recursos dentro de la misma red</h2>
+<p style="text-align: center;"><img src="Acceso-recursos-VPN.png" alt="" width="752" height="339" /></p>
+<h2>4. Navegación segura a través de redes wifi públicas</h2>
+<p style="text-align: center;"><img src="navegacion-segura-Wifi.png" alt="" width="719" height="348" /></p>
+</div>
+<p style="text-align: center;"></p>
+<h3><span>3. Referencias</span></h3>
+<ul>
+<li align="left"><span style="font-size: 12pt;"><a href="https://www.youtube.com/watch?time_continue=0&amp;v=IzxC6UPilqQ" target="_blank" rel="noopener"><span style="color: #2341fa;"><span style="font-family: Open Sans, sans-serif;">Qué es una VPN y cómo funciona a favor de la privacidad de tu información (vídeo 2:35)</span></span></a></span></li>
+<li align="left"><span style="font-size: 12pt;"><a href="https://www.xataka.com/seguridad/que-es-una-conexion-vpn-para-que-sirve-y-que-ventajas-tiene" target="_blank" rel="noopener"><span style="color: #2341fa;"><span style="font-family: Open Sans, sans-serif;">¿Qué es una conexión VPN, para qué sirve y qué ventajas tiene?</span></span></a></span></li>
+<li align="left"><span style="font-size: 12pt;"><a href="https://www.incibe-cert.es/blog/teletrabajo-vpn-y-otras-recomendaciones" target="_blank" rel="noopener"><span style="color: #2341fa;"><span style="font-family: Open Sans, sans-serif;">Teletrabajo: VPN y otras recomendaciones</span></span></a></span></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objetivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11_tneles_protocolo_vpn_ipsec.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

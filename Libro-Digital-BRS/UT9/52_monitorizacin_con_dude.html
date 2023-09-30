@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2 Monitorización con Dude | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-149"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_fortificacin_de_una_dmz.html" class="current-page-parent daddy">5. Fortificación de una DMZ</a>
+   <ul>
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li id="active"><a href="52_monitorizacin_con_dude.html" class="active no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53_honeypot_en_dmz.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.2 Monitorización con Dude</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id188">
+<div class="iDevice emphasis0" >
+<div id="ta188_188_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p>Dentro de los sistemas de monitorización de redes y servidores, se encuentran los del tipo SNMP donde:</p>
+<ul>
+<li><strong>SNMPv1:</strong> Implementación básica, solo se autentifica con la comunidad.</li>
+<li><strong>SNMPv2:</strong> Implementación media: acepta conexiones del tipo manager to manager. </li>
+<li><strong>SNMPv3:</strong> Implementación avanzada: presenta mejor seguridad y encriptación y autentificación MD5 o SHA y DES respectivamente.</li>
+</ul>
+<p>En este capítulo, hablaremos de la<strong> monitorización mediante snmp</strong> en sistemas en red con un equipo Mikrotik y su herramienta de monitorización Dude.</p>
+<h3>2. Escenario</h3>
+<p>Para este capítulo, el escenario de monitorización es una red de un centro educativo con equipamiento mikrotik y switch cisco.</p>
+<p style="text-align: center;"><img src="red.png" alt="" width="1024" height="670" /></p>
+<h3>3. Dude integrado en Mikrotik</h3>
+<p style="text-align: justify;">Para la monitorización de redes donde se tienen equipo mikrotik, hay que instalar dude server y dude cliente y posteriormente, hay que activar en dude los equipos y servicios a monitorizar.</p>
+<p>En primer lugar, hay que descargar los paquetes de mikrotik y descargar la versión del <a href="https://mikrotik.com/download/archive" target="_blank" rel="noopener">mikrotik (7.8 Abril-2023) (all-packets.zip).</a></p>
+<p style="text-align: center;"><img src="download-packtes.png" alt="" width="1034" height="611" /></p>
+<p style="text-align: justify;">Una vez se tiene el fichero, hay que descomprimirlo y coger el paquete de <strong>dude-7.8.npk</strong> y cargarlo en la raíz del equipo mikrotik.</p>
+<p style="text-align: center;"><img src="cargar-en-raiz.png" alt="" width="663" height="96" /> </p>
+<p style="text-align: justify;">A continuación, reiniciamos el <strong>mikrotik</strong> y éste instalará el paquete nuevo. Se comprueba con dude print.</p>
+<p style="text-align: center;"><img src="dude-print.png" alt="" width="308" height="85" /></p>
+<p style="text-align: justify;">Del centro <a href="https://mikrotik.com/download/archive" target="_blank" rel="noopener">downloads</a> de mikrotik (download archive) bajamos el dude cliente de la versión 7.8 <strong>(dude-install-7.8.exe</strong> --&gt; <strong>hacerlo en wine</strong>) para monitorizar el servidor dude que acabamos de instalar en mikrotik.</p>
+<p style="text-align: center;"><img src="dude-install.png" alt="" width="814" height="223" /></p>
+<p style="text-align: justify;">Instalamos el fichero desde el equipo Linux mediante la opción:<strong> abrir con Wine.</strong></p>
+<p style="text-align: center;"><img src="install-wine.png" alt="" width="349" height="82" /></p>
+<p style="text-align: justify;">Una vez instalado, ya se podrá acceder a Dude.</p>
+<p style="text-align: center;"><img src="acceso-dude.png" alt="" width="582" height="374" /></p>
+<p style="text-align: justify;">Nos conectamos al servidor dude (ip del mikrotik ether1).</p>
+<p style="text-align: center;"><img src="con-dude.png" alt="" width="691" height="426" /></p>
+<p style="text-align: justify;">Si accedemos a dude, tenemos un árbol con todas las posibilidades, se describen en la siguiente figura.</p>
+<p style="text-align: center;"><img src="ventana-dude.png" alt="" width="582" height="527" /></p>
+<p>En el siguiente vídeo, se describe el proceso de instalación del cliente dude y primeros pasos de configuración para la monitorización.</p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/0z_iKt5ciNM"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 1. </strong>Instalación de cliente dude.</em></p>
+<h3 style="text-align: justify;">4. Añadir dispositivos</h3>
+<h4 style="text-align: justify;">4.1 Añadir Switch y Router</h4>
+<p style="text-align: justify;">Una vez se está en el panel principal, para añadir un dispositivo hay que darle la ip ya que es un sistema de monitorización de capa 3. <strong>Ejemplo</strong>, se añade el <strong>switch Cisco de Dirección</strong> que tiene asignada la ip 192.168.100.103 (red de gestión). <strong>NO hay que Seleccionar Secure Mode y Router OS</strong>, ya que es un Cisco y no es un mikrotik. </p>
+<p style="text-align: center;"><img src="add-equipo.png" alt="" width="532" height="304" /></p>
+<p style="text-align: justify;">Se<strong> añade el servicio ping a monitorizar</strong> y como ejemplo, se establecen estos umbrales:</p>
+<p style="text-align: center;"><img src="umbrales.png" alt="" width="408" height="194" /></p>
+<p style="text-align: justify;">A continuación, se añade como fondo el <strong>plano del centro educativo</strong> para ir incorporando los dispositivos en la ubicación física donde se encuentran. Para <strong>añadir el fondo</strong> (no hacer click en Title para que no repita la imagen), hay que <strong>subir las imágenes/planos</strong> en el directorio <strong>dude/images</strong> en mikrotik. Quedaría así:</p>
+<p style="text-align: center;"><img src="plano.png" alt="" width="776" height="287" /></p>
+<p style="text-align: center;"><em><strong>Figura .</strong> Fichero con el plano subido.</em></p>
+<p style="text-align: center;"><a href="planno2.png" target="_blank" rel="noopener"><img src="planno2.png" alt="" width="1077" height="659" /></a></p>
+<p style="text-align: center;"><em><strong>Figura .</strong> Fichero con el plano posicionado.</em></p>
+<p style="text-align: justify;">Se pueden hacer botones que acceden a otros mapas (ejemplo pisos superiores/inferiores u otros bloques). Para ello hay que añadir un submapa accediendo al menú <strong>Add → Submap.</strong></p>
+<p style="text-align: justify;">Para <strong>añadir el propio equipo mikrotik en dude</strong>, hay que pulsar <strong>Add Device</strong> y luego, seleccionar <strong>Secure Mode</strong> y <strong>Router OS</strong>, para identificar que ese equipo es un mikrotik.</p>
+<p style="text-align: center;"><img src="mikrotic-en-dude.png" alt="" width="530" height="206" /></p>
+<p style="text-align: justify;">A continuación, hay que<strong> añadir un enlace para conectar el mikrotik con los diferentes switches</strong>. Para ello, como ejemplo se pulsa <strong>Add Link</strong> para <strong>unir el mikrotik con el switch Cisco de Dirección</strong> (Device Mikrotik principal, Interface ether2 de dirección a switch). </p>
+<p style="text-align: center;"><img src="add-link.png" alt="" width="350" height="266" /></p>
+<h4 style="text-align: justify;">4.2 Añadir enlace para monitorizar internet</h4>
+<p style="text-align: justify;">Para este caso se <strong>configura la monitorización del tráfico que va hacia internet</strong>, y para ello hay que acceder a <strong>Add Network</strong> --&gt; y seleccionamos (ether1) ya que es la interfaz de acceso a internet.</p>
+<p style="text-align: center;"><img src="mon-internet.png" alt="" width="304" height="184" /></p>
+<p style="text-align: justify;">Una vez añadida la red, hay que hacer un<strong> link con el Mikrotik</strong>, para ello, hay que acceder a <strong>AddLink</strong> con el mikrotik (ether1) y la red internet.</p>
+<p style="text-align: center;"><img src="add-link-internet.png" alt="" width="350" height="270" /></p>
+<h4>4.3. Añadir a Gns3 una máquina de virtualbox, vmware o Kvm para monitorizar en Dude</h4>
+<p style="text-align: justify;">Si se quiere añadir una MV VmWare, primero hay que instalar lalibrería <strong>open-vm-tools</strong> en el equipo donde se tienen las MV de Vmware:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong> ip service disable 3</span></pre>
+<p style="text-align: justify;">A continuación, hay que configurar en gns3 el <strong>path to run vmrun</strong>, para ello, hay que acceder a  <strong>Edit Preferences --&gt; VMWare</strong>.</p>
+<p style="text-align: justify;">Otra opción es<strong> añadir una máquina KVM Qemu</strong> que se tenga en el equipo anfitrión dentro de las subred 192.168.122.0. Por ejemplo, en este caso se tiene una MV Ubuntu Server en KVM con ip <strong>192.168.122.97</strong>.</p>
+<p style="text-align: center;"><img src="qemu-add-device.png" alt="" width="551" height="303" /></p>
+<p style="text-align: justify;">Y como se quiere <strong>monitorizar el ping</strong> a ese equipo, se añade el servicio ping.</p>
+<p style="text-align: center;"><img src="add-service-ping.png" alt="" width="548" height="120" /></p>
+<p style="text-align: justify;">A continuación, creamos el enlace del mikrotik (ether1) al ubuntu server.</p>
+<p style="text-align: center;"><img src="link-u-server.png" alt="" width="345" height="267" /></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Asignar ip estáticas a los equipos que se van a monitorizar, o en el dhcp asignar la misma ip por MAC. Para ello, hay que acceder al dhcp server de mikrotik, y pulsar el botón derecho para poner make static ip, y dejará esa ip siempre para esa MAC.</p>
+<p style="text-align: center;"><img src="mac-estatic.png" alt="" width="502" height="238" /></p>
+<p style="text-align: justify;">En la figura superior, para este caso, se establece la dirección que ha obtenido el equipo kali que está conectado en la red de dirección de manera estática.</p>
+</div>
+<p style="text-align: justify;">Según se ha establecido el link, quedará <strong>?</strong> ya que al seleccionar <strong>snmp</strong> y no tener instalado el mismo en el servidor ubuntu, no se puede establecer la interfaz. Si el servidor ubuntu está conectado a un switch cisco, hay que configurar un cliente de snmp en el mismo y después, hay que decirle a dude que para ese switch se utilizará el cliente snmp configurado. Para ello se accede por consola al switch y se siguen los siguientes pasos:</p>
+<p style="text-align: justify;"><strong>1. Crear una Vista SNMP</strong></p>
+<pre class="wp-block-preformatted"><span style="font-size: 16px;"><b>#</b>snmp-server view Vista_RO_SNMP iso included</span></pre>
+<p style="text-align: justify;">Con el comando anterior, se crea una vista con nombre <strong>Vista_RO_SNMP</strong> y se incluye en standard iso.</p>
+<p style="text-align: justify;"><strong>2. Sobre la vista creada, hay que crear un grupo de solo lectura. (la idea es que nadie pueda cambiar cualquier configuración del dispositivo).</strong></p>
+<pre class="wp-block-preformatted"><span style="font-size: 16px;"><b>#</b>snmp-server group Grupo_SNMP v3 priv read Vista_RO_SNMP</span></pre>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;">Versión 3 para crear 2 contraseñas, una para autenticación y otra para cifrado de la información entre dispositivos.</li>
+<li style="text-align: justify;">Read de solo lectura.</li>
+<li style="text-align: justify;">Al final, se pone el nombre de la vista donde se quiere crear el grupo.</li>
+</ul>
+<p style="text-align: justify;"><strong>3. Crear un usuario dentro del grupo</strong></p>
+<pre class="wp-block-preformatted"><span style="font-size: 16px;"><b>#</b>snmp-server user UsuarioBastionado Grupo_SNMP v3 auth sha Caminas-100 priv aes 128 passCifrado</span></pre>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;">Versión 3, para la autenticación, la contraseña se cifra en sha.</li>
+<li style="text-align: justify;">Caminas-100 es la contraseña. Nos conectaremos en aes 128 (para cifrar) y passCifrado es la contraseña para cifrar la comunicación.</li>
+</ul>
+<p style="text-align: center;"><img src="conf-switch.png" alt="" width="530" height="164" /></p>
+<p style="text-align: justify;">Para finalizar hacemos <strong>copy running-config startup-config.</strong></p>
+<p style="text-align: center;"><img src="copy_running-config_startup-config.png" alt="" width="391" height="59" /></p>
+<p style="text-align: justify;">Esta configuración (usuario y contraseñas) por seguridad, no aparece al hacer show running-config.</p>
+<p style="text-align: center;"><img src="no-swoh.png" alt="" width="348" height="50" /></p>
+<p style="text-align: justify;"><strong>4. Crear perfil snmp del switch en Dude</strong></p>
+<p style="text-align: justify;">A continuación, hay que crear un perfil de snmp del switch cisco en dude.</p>
+<p style="text-align: center;"><img src="crear-profine.png" alt="" width="381" height="21" /></p>
+<p style="text-align: justify;">Pulsar en<strong> ...</strong> y luego en<strong> +</strong> y rellenar según los datos configurados en el switch cisco.</p>
+<p style="text-align: center;"><img src="conf-switch-perfil.png" alt="" width="357" height="356" /></p>
+<p style="text-align: justify;">Una vez se pulsa <strong>Apply</strong> y <strong>Ok</strong>, ya se puede seleccionar el perfil en el combo de selección.</p>
+<p style="text-align: center;"><img src="perfil-creado.png" alt="" width="383" height="27" /></p>
+<h4 style="text-align: justify;">5. Comprobar configuración</h4>
+<p>Para comprobar que la configuración es correcta, hay que pulsar con el botón derecho sobre el dispositivo y elegir la opción de menú<strong> Tools → SnmpWalk</strong>.</p>
+<p style="text-align: center;"><img src="probar-conf.png" alt="" width="298" height="234" /></p>
+<p style="text-align: justify;"><strong>SnmpWalk</strong> lo que hace es, ir al dispositivo y le dice, dime cuales son las variables, es decir, <strong>todos sus oids</strong>.</p>
+<p style="text-align: center;"><img src="SnmpWalk.png" alt="" width="797" height="526" /></p>
+<h4 style="text-align: justify;">6. Parámetros a monitorizar</h4>
+<p style="text-align: justify;">A continuación, hay que indicar<strong> qué parámetros se desean monitorizar</strong>. Por ejemplo, si se crea un enlace y se <strong>selecciona snmp</strong>, ya permite que se pueda establecer sobre qué interfaz del switch se quiere monitorizar.</p>
+<p style="text-align: center;"><img src="add-link-3.png" alt="" width="247" height="219" /></p>
+<p style="text-align: justify;">Para este caso, <strong>se añade un link del switch cisco a un equipo kali</strong> que está en la <strong>interfaz Gi1/1 en Dirección</strong>. En las imágenes inferiores, se puede observar el equipo y el enlace a monitorizar.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="kali-dir.png" alt="" width="520" height="270" /></td>
+<td style="width: 50%; text-align: center;"><img src="link-kali.png" alt="" width="349" height="273" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Con este enlace <strong>solo se pueden monitorizar links</strong>, para monitorizar métricas en equipos ya sea el kali de dirección, ubuntu server conectado a la subred 192.168.122.0, etcétera, hay que instalar el cliente snmp en los equipos finales. </p>
+<p style="text-align: justify;">Se pueden indicar oids para que aparezcan en la leyenda del enlace. En este caso, solo aparece el tráfico RX y TX. <img src="enlce-rx-tx.png" alt="" width="269" height="74" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;">Para ello, sobre el enlace pulsamos botón derecho y seleccionamos <strong>Apperance</strong>.</p>
+<p style="text-align: center;"><img src="Apperance.png" alt="" width="203" height="83" /></p>
+<p style="text-align: justify;">En <strong>Label</strong> se indica lo que se quiere que aparezca en la leyenda.</p>
+<p style="text-align: center;"><img src="label.png" alt="" width="565" height="195" /></p>
+<p style="text-align: justify;">Esto mismo se puede hacer sobre un dispositivo, ejemplo, si con el <strong>botón derecho del ratón pulsamos en el Switch Cisco</strong>, aparece lo siguiente:</p>
+<p style="text-align: center;"><img src="switch-click.png" alt="" width="438" height="223" /></p>
+<p style="text-align: justify;">Para introducir los oid que consultan la cpu, hay que buscar en internet:</p>
+<ul>
+<li style="text-align: justify;"><a href="https://oidref.com/">https://oidref.com/</a></li>
+</ul>
+<p><strong>OIDs Comunes Cisco</strong></p>
+<ul>
+<li><a href="https://community.cisco.com/t5/networking-documents/oid-list/ta-p/3117547">https://community.cisco.com/t5/networking-documents/oid-list/ta-p/3117547</a></li>
+</ul>
+<p><strong>Ejemplo CPU 5s:</strong> iso.org.dod.internet.private.enterprises.cisco.local.1.56.0</p>
+<p>Para monitorizar la CPU los últimos 5 minutos y 5 segundos, hay que poner:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">[Device.Name]</span><br /><span style="font-size: 12pt;">[device_performance()][Device.ServicesDown]</span><br /><span style="font-size: 12pt;">CPU:[oid("1.3.6.1.4.1.9.2.1.58.0")]% → CPU de los últimos 5 minutos.</span><br /><span style="font-size: 12pt;">CPU 5s:[oid("1.3.6.1.4.1.9.2.1.56.0")]% → CPU de los últimos 5 segundos.</span></pre>
+<p style="text-align: center;"><img src="pid-sico.png" alt="" width="394" height="106" /></p>
+<p style="text-align: justify;"><strong>Fuente</strong> → <strong><a href="https://oidref.com/1.3.6.1.4.1.9.2.1.58">https://oidref.com/1.3.6.1.4.1.9.2.1.58</a></strong></p>
+<p style="text-align: center;"><strong><img src="fuente-oid.png" alt="" width="847" height="102" /></strong></p>
+<p style="text-align: justify;">Al pulsar <strong>Apply</strong> y <strong>Ok</strong>, ya muestra la monitorización:</p>
+<p style="text-align: center;"><img src="monitoir-oid.png" alt="" width="133" height="104" /></p>
+<p>En el siguiente vídeo, se describe el proceso de <strong>cómo configurar vista, grupo y usuario SNMP en Switch Cisco.</strong></p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/Rh44LkiuLuY" class="external-iframe" data-mce-fragment="1"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 2.</strong> Configurar vista, grupo y usuario SNMP en Switch Cisco.</em></p>
+<h4>4.4 Coger la información snmp de ubuntu sever en KVM</h4>
+<p>Ahora nos conectamos a ubuntu server para coger la información de snmp.</p>
+<p style="text-align: center;"><img src="con-userver.png" alt="" width="311" height="52" /></p>
+<p style="text-align: justify;">Para monitorizar con snmp en ubuntu server, hay que instalar el cliente snmp en el equipo, modificar un parámetro del fichero de configuración y crear un usuario snmp. Los pasos son los siguientes:</p>
+<p style="text-align: justify;"><strong>1. Instalamos las librerías necesarias</strong></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>apt-get install snmp snmpd libsnmp-dev</span></pre>
+<p style="text-align: justify;"><strong>2. Configurar snmpd</strong></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>service snmpd stop</span><br /><span style="font-size: 12pt;"><strong>root@orion:/#</strong>nano /etc/snmp/snmpd.conf</span></pre>
+<p style="text-align: justify;">Hay que modificar la línea agentaddress 127.0.0.1 por →<strong> agentaddress 0.0.0.0</strong> Para que escuche por todo, no solo por la interfaz de lookback.</p>
+<p style="text-align: justify;">También se puede poner esto: <strong>agentAddress udp:161,udp6:[::1]:161</strong> → más conveniente porque se restringe por puerto 161 udp.</p>
+<p style="text-align: center;"><img src="snmp-userver.png" alt="" width="410" height="125" /></p>
+<p style="text-align: justify;"><strong>3. Crear el usuario SNMP v3</strong></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>service snmpd stop </span><br /><span style="font-size: 12pt;"><strong>root@orion:/#</strong>net-snmp-create-v3-user -ro -A Caminas-100 -a SHA -X passCifrado -x AES UsuarioBastionado<br /><strong>root@orion:/#</strong>service snmpd start <br /></span></pre>
+<p style="text-align: center;"><img src="user-snmp.png" alt="" width="734" height="112" /></p>
+<p style="text-align: justify;"><strong>4. Comprobación</strong></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>service snmpd status</span></pre>
+<p style="text-align: center;"><img src="comprobr-snmp.png" alt="" width="739" height="245" /><br /><br /></p>
+<p style="text-align: justify;">Se comprueba que se está a la escucha por el puerto 161.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>netstat -an | grep 161</span></pre>
+<p style="text-align: center;"><img src="grep-161.png" alt="" width="502" height="65" /></p>
+<p style="text-align: justify;">Si se tiene el firewall habilitado, hay que crear una regla:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>ufw allow from 192.168.122.0/24 to any port 161 proto udp<br /><strong>root@orion:/#</strong>ufw reload<br /></span></pre>
+<p style="text-align: justify;"><span style="font-size: 1em;">Para probar snmp con el usuario y credenciales creado, el comando es el </span>siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>#</strong>snmpget -u UsuariBastionat -l authPriv -a Sha -x Aes -A temp_password -X temp_password agent_server_ip_address 1.3.6.1.2.1.1.1.0</span></pre>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>nmpget -u UsuarioBastionado -l authPriv -a Sha -x Aes -A Caminas-100 -X passCifrado 192.168.122.97 1.3.6.1.2.1.1.1.0</span></pre>
+<p style="text-align: justify;">dónde como ejemplo, se le pasa el oid para obtener el uname -a: 1.3.6.1.2.1.1.1.0.</p>
+<p style="text-align: center;"><img src="prubea-oid.png" alt="" width="741" height="98" /></p>
+<p style="text-align: justify;">Como se observa en la figura superior, el comando devuelve la consulta del oid que equivale a uname -a.</p>
+<p style="text-align: justify;">A continuación, se pulsa <strong>doble click sobre el dispositivo UbuntuServer</strong> y se crea un perfil como se realizó anteriormente para el switch cisco.</p>
+<p style="text-align: center;"><img src="perfile-snmp-userver.png" alt="" width="387" height="26" /></p>
+<p>Una vez definido el perfil, ya se podrían introducir métricas para la monitorización igual que se hizo en el switch cisco. Desde la terminal de ubuntu, también se pueden hacer consultas, ejemplo:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>snmpwalk -v 1 -c public orion .1.3.6.1.2.1.1.3.0</span></pre>
+<p style="text-align: center;"><img src="snmpwalk.png" alt="" width="596" height="58" /></p>
+<p style="text-align: justify;">Si se accede a <strong>snmpwalks</strong>, podremos comprobar los oids susceptibles a usar.</p>
+<p style="text-align: center;"><img src="snmpwalks.png" alt="" width="1110" height="622" /></p>
+<p style="text-align: justify;">Por defecto, nos aparecen métricas de cpu, memoria física y virtual y disco.</p>
+<p style="text-align: center;"><img src="monitor-userve.png" alt="" width="223" height="82" /></p>
+<p style="text-align: justify;">Añadimos los siguientes oids para comprobar el uptime y el número de procesos:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">[Device.Name]</span><br /><span style="font-size: 12pt;">[device_performance()][Device.ServicesDown]</span><br /><span style="font-size: 12pt;">No procesos: [oid("1.3.6.1.2.1.25.1.6.0")]</span><br /><span style="font-size: 12pt;">uptime: [oid("1.3.6.1.2.1.1.3.0")]</span></pre>
+<p style="text-align: justify;"><strong>Fuente:</strong></p>
+<ul>
+<li><a href="http://www.linux-admins.net/2012/02/linux-snmp-oids-for-cpumemory-and-disk.html">http://www.linux-admins.net/2012/02/linux-snmp-oids-for-cpumemory-and-disk.html</a></li>
+<li><a href="https://oidref.com/1.3.6.1.2.1.25.1.6">https://oidref.com/1.3.6.1.2.1.25.1.6</a></li>
+</ul>
+<p><strong>El del nº de procesos:</strong> iso.org.dod.internet.mgmt.mib-2.host.hrSystem.hrSystemProcesses.0</p>
+<p style="text-align: justify;"><strong>5. Vídeo descriptivo de todo el proceso</strong></p>
+<p style="text-align: justify;">En el siguiente vídeo, se describe el <strong> mapa de monitorización en Dude</strong> par el escenario de la Red de Aulas.</p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/26npKMtZPYY" data-mce-fragment="1"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 3.</strong> Mapa de monitorización en Dude - Red de Aulas.</em></p>
+<h3>5. Enviar alarma a Telegram</h3>
+<h4 style="text-align: justify;">5.1 Crear bot y grupo en Telegram</h4>
+<p style="text-align: justify;">En primer lugar hay que <strong>crear un grupo Telegram</strong> para enviar al mismo las alarmas que se vayan produciendo. Para crear un grupo en Telegram, se necesitan 2 o más usuarios, por lo que necesitamos <strong>crear un Bot </strong>para poder crear un Grupo en Telegram con el Bot y nosotros. En el proceso de creación del bot, hay que guardar el <strong>token</strong> que se genera ya que será necesario para realizar el descubrimiento del id del chat y enviar mensajes. </p>
+<p style="text-align: justify;">En el siguiente vídeo, se describe el proceso de <strong>creación del grupo, bot y obtención de id del chat</strong>.</p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/1S-NSNXlE_U" data-mce-fragment="1"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 4.</strong> Crear bot en grupo de Telegram.</em></p>
+<p></p>
+<p style="text-align: justify;">Para<strong> obtener el id del chat del grupo mío y del boot</strong>:</p>
+<ul>
+<li style="text-align: justify;"><a href="https://api.telegram.org/bot5541386839:AAGJKIBc3xCOudRGVnQjgR9uE9mFH-RYb6Y/getUpdates" target="_blank" rel="noopener">https://api.telegram.org/bot5541386839:AAGJKIBc3xCOudRGVnQjgR9uE9mFH-RYb6Y/getUpdates</a></li>
+</ul>
+<p><strong>NOTA:</strong> Si se creó el nuevo grupo con el bot y solo se obtiene <strong>{"ok":true,"result":[]}</strong>, eliminar y agregar el bot nuevamente al grupo.</p>
+<p>Para este caso, el Id del chat es:<strong> -679163606</strong></p>
+<p style="text-align: center;"><img src="id-chat.png" alt="" width="488" height="235" /></p>
+<p><br />Para hacer una <strong>prueba de envío</strong>, desde la consola del equipo ubuntu server hacemos:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "-679163606", "text": "Esto es una prueba desde CURL"}'</span></pre>
+<p>Donde hay que indicar el <strong>id</strong> del <strong>chat</strong> y el <strong>token</strong> del <strong>bot</strong>.</p>
+<p><strong>Fuente</strong>:</p>
+<ul>
+<li><a href="https://api.telegram.org/bot5541386839:AAGJKIBc3xCOudRGVnQjgR9uE9mFH-RYb6Y/sendMessage" target="_blank" rel="noopener">https://api.telegram.org/bot5541386839:AAGJKIBc3xCOudRGVnQjgR9uE9mFH-RYb6Y/sendMessage</a></li>
+</ul>
+<p style="text-align: center;"><img src="prueba-bot.png" alt="" width="279" height="306" /></p>
+<h4 style="text-align: justify;">Referencias</h4>
+<ul>
+<li><a href="https://www.adslzone.net/como-se-hace/telegram/crear-bot/">https://www.adslzone.net/como-se-hace/telegram/crear-bot/</a></li>
+<li><a href="https://wiki.mikrotik.com/wiki/Manual:The_Dude_v6/Dude_Telegram_Example">https://wiki.mikrotik.com/wiki/Manual:The_Dude_v6/Dude_Telegram_Example</a></li>
+</ul>
+<h4><span style="text-align: justify; color: #333333; font-size: 1em;">5.2 Crear notificaciones en Dude para enviar a Telegram</span></h4>
+<p>Para crear la notificación en dude hay que acceder a → <strong>Notifications</strong> y añadir una nueva <strong>+</strong>. En type poner → <strong>execute in server</strong>. En Insert variable se pone:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">/tool fetch</span><br /><span style="font-size: 12pt;">url="https://api.telegram.org/bot5541386839:AAGJKIBc3xCOudRGVnQjgR9uE9mF</span><br /><span style="font-size: 12pt;">H-RYb6Y/sendMessage\?chat_id=-679163606&amp;text=Service</span><br /><span style="font-size: 12pt;">[Device.Name] is now [Service.Status] [Probe.Name] on ([Service.ProblemDescription])" keep-result=no</span></pre>
+<p><br />Donde hay que indicar el <strong>id del chat</strong> (<span style="font-size: 12pt;">679163606) </span>y el<strong> token del bot</strong> (<span style="font-size: 12pt;">5541386839:AAGJKIBc3xCOudRGVnQjgR9uE9mF)</span></p>
+<p>A continuación, hay que ir al <strong>servicio ping del switch</strong> por ejemplo y asociar esta notificación. De esa forma, cuando el ping falla enviará el mensaje. </p>
+<p style="text-align: center;"><img src="notif-telegram.png" alt="" width="573" height="260" /></p>
+<p style="text-align: justify;">Una vez se produce el problema, se recibe en el grupo.</p>
+<p style="text-align: center;"><img src="notificacion-bot-telegram.png" alt="" width="304" height="332" /></p>
+<h4 style="text-align: justify;">5.3 Configurar un ‘Probes’ en dude server</h4>
+<p style="text-align: justify;">Como ejemplo, se va a configurar un 'Probes' en dude server para notificar cuando el<strong> Switch Cisco de Dirección</strong> supere un umbral determinado, ejemplo: enviar alarma cuando el <strong>% de cpu supere el 50%</strong>.</p>
+<p style="text-align: center;"><img src="probes.png" alt="" width="153" height="85" /></p>
+<p style="text-align: justify;">Para ello, hay que <strong>pulsar +</strong> para crear una nueva con estos datos, donde se desea que esté en verde cuando la cpu es menor o igual al 50%.</p>
+<p style="text-align: center;"><img src="porc-cpu.png" alt="" width="471" height="393" /></p>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;"><strong>oid</strong>: 1.3.6.1.4.1.9.2.1.56.0</li>
+<li style="text-align: justify;"><strong>oid type</strong>. integer.</li>
+<li style="text-align: justify;"><strong>Type</strong>: SNMP</li>
+<li style="text-align: justify;"><strong>Profile</strong>: Perfil del switch de cisco de dirección.</li>
+</ul>
+<p>A continuación, hay que ir al dispositivo en el mapa y añadir un nuevo servicio donde hay que poner en Probe, CPU menor 50% (el que se acaba de crear).</p>
+<p style="text-align: center;"><img src="probe-cpu.png" alt="" width="725" height="366" /></p>
+<p style="text-align: justify;">En la <strong>pestaña de notificaciones,</strong> se le configura que notifique por Telegram. De esta forma, cuando supere el 50%, enviará un mensaje.</p>
+<p style="text-align: center;"><img src="notify-telegram.png" alt="" width="425" height="215" /></p>
+<h4 style="text-align: justify;">5.4 Pruebas</h4>
+<p style="text-align: justify;">Para probar todo lo configurado, se hace un ataque DoS desde el equipo kali conectado al switch de Dirección. De esta forma, mediante peticiones se inundará el puerto 23 que tiene abierto el puerto cisco (telnet).</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>#</strong>hping3 -S –flood -V -p 23 192.168.100.1003</span></pre>
+<p style="text-align: center;"><img src="hping.png" alt="" width="667" height="85" /></p>
+<p style="text-align: justify;">Al realizar el ataque, en el mapa podemos observar que el switch cambia de color al rojo ya que ha superado el umbral establecido.</p>
+<p style="text-align: center;"><img src="switch-dir.png" alt="" width="99" height="96" /></p>
+<p style="text-align: justify;">Si <strong>accedemos a Telegram</strong>, observamos los mensajes avisando del umbral superado.</p>
+<p style="text-align: center;"><img src="umbral-telegram.png" alt="" width="468" height="280" /></p>
+<p style="text-align: justify;">En el siguiente vídeo, se describe el proceso para el envío de aviso de alarmas a Telegram por unmbral de CPU en Switch de Cisco.</p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/Gtl4VaTa-FE" data-mce-fragment="1"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 5.</strong> Envío de alarma a Telegram por unmbral de CPU en Switch de Cisco.</em></p>
+<p><strong>Fuente</strong>:</p>
+<ul>
+<li><a href="https://wiki.mikrotik.com/wiki/Manual:The_Dude_v6/Dude_Telegram_Example">https://wiki.mikrotik.com/wiki/Manual:The_Dude_v6/Dude_Telegram_Example</a></li>
+</ul>
+<p></p>
+<h3>6. Configuración SNMP Windows Server 2019</h3>
+<p>Windows Server permite las versiones snmp 1 y 2 (inseguras), no permite la 3 (cifrado de tráfico y credenciales).</p>
+<p>Para nuestro escenario, la ip del servidor es la siguiente:</p>
+<p style="text-align: center;"><img src="ip-w2019.png" alt="" width="531" height="262" /></p>
+<p style="text-align: justify;">Pasamos a describir el proceso de instalación de snmp.</p>
+<div class="exe-fx exe-tabs">
+<h2>1. Instalar la característica snmp</h2>
+<p style="text-align: center;"><img src="install-carc-snmp.png" alt="" width="775" height="539" /></p>
+<h2>2. Ir a Servicios y buscar SNMP</h2>
+<p style="text-align: justify;">Configuramos el<strong> perfil v2-public</strong>, y le damos otro <strong>nombre de comunidad → public</strong> (comunidad standar para LReadOnly). En Windows se configura la comunidad public SOLO LECTURA.</p>
+<p style="text-align: center;"><img src="perfil-snmp-w2019.png" alt="" width="358" height="355" /></p>
+<h2>3. Configurar comunidad</h2>
+<p>En Windows se configura la comunidad public SOLO LECTURA.</p>
+<p style="text-align: center;"><img src="comunidad.png" alt="" width="445" height="418" /></p>
+<h2>4. Crear alerta</h2>
+<p>Si supera un % CPU avisa En Probes, para ello hay que acceder a <strong>New Probe</strong> y rellenamos los datos según la figura.</p>
+<p style="text-align: center;"><img src="probesW2019.png" alt="" width="471" height="393" /></p>
+<h2>5. Obtener datos por snmp</h2>
+<p>Para obtener datos por snmp, se configura :</p>
+<table border="0" style="width: 56.4089%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="width: 27.9732%;"><span style="font-size: 12pt;">[Device.Name]</span><br /><span style="font-size: 12pt;">[device_performance()][Device.ServicesDown]</span><br /><span style="font-size: 12pt;">No procesos: [oid("1.3.6.1.2.1.25.1.6.0")]</span></td>
+<td style="width: 28.4359%; text-align: center;"><img src="probes-w2029-conf.png" alt="" width="231" height="91" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong>oids Windows:</strong> <a href="https://www.10-strike.com/network-monitor/help/monitoring/snmp-monitoring.shtml">https://www.10-strike.com/network-monitor/help/monitoring/snmp-monitoring.shtml</a></p>
+<ul>
+<li style="text-align: justify;">1.3.6.1.2.1.1.1.0 to get system description</li>
+<li style="text-align: justify;">1.3.6.1.2.1.25.1.6. to get number of processes</li>
+<li style="text-align: justify;">Uptime: [oid("1.3.6.1.2.1.25.1.1.0")]</li>
+<li style="text-align: justify;">1.3.6.1.2.1.25.1.6.0 - number of running processes</li>
+<li style="text-align: justify;">.1.3.6.1.2.1.25.2.2.0 - total RAM size</li>
+</ul>
+</div>
+<h4>Referencias</h4>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unatend/microsoft-windows-snmp-agent-service">https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unatend/microsoft-windows-snmp-agent-service</a></li>
+<li><a href="https://mivilisnet.wordpress.com/2017/04/08/dude-what-happens-to-my-windows-server/">https://mivilisnet.wordpress.com/2017/04/08/dude-what-happens-to-my-windows-server/</a></li>
+<li><a href="https://www.sysadmit.com/2017/08/prtg-SNMP-windows-server.html">https://www.sysadmit.com/2017/08/prtg-SNMP-windows-server.html</a></li>
+</ul>
+<h3>7. Referencias</h3>
+<ul>
+<li>Manual: <a href="https://wiki.mikrotik.com/wiki/Manual:The_Dude_v6/Admins" target="_blank" rel="noopener">https://wiki.mikrotik.com/wiki/Manual:The_Dude_v6/Admins</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53_honeypot_en_dmz.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

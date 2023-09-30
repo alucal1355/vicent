@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3. SIEMs (Gestores de Eventos e Información de Seguridad) | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-103"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="active daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31_elastic_stack_open_source.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3. SIEMs (Gestores de Eventos e Información de Seguridad)</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id147">
+<div class="iDevice emphasis0">
+<div id="ta147_85" class="block iDevice_content">
+<h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;"><strong>SIEM</strong><span> </span>es una tecnología que tiene como objetivo <strong><em>detectar y neutralizar amenazas</em></strong> tanto a nivel interno como externo de la empresa. Su objetivo principal es el de proporcionar una visión global de la seguridad para saber qué está pasando en todo momento.</p>
+<p style="text-align: justify;">El <strong>SIEM</strong> viene del conjunto de SEM y SIM. La función de<span> </span><strong>SEM</strong><span> </span>es la de centralizar el almacenamiento de información y de ejecutar un análisis en tiempo real de seguridad. Mientras que la función de<span> </span><strong>SIM</strong><span> </span>es almacenar toda la información para luego analizarlo y sacar conclusiones.</p>
+<p style="text-align: justify;">Por tanto, la función de esta tecnología es muy importante y amplia. Identifica las amenazas más importantes para que los equipos sean capaces de <strong><em>analizar y priorizar los ataques</em></strong>. Además, todas estas amenazas provienen de firewalls, antivirus o servidores que se tengan en toda la organización y el SIEM se encarga de recopilarlos. Por tanto, se genera una amplia visibilidad de la organización, ya que si fuese un negocio pequeño sería fácil de organizar, pero si fuese una grande compañía, sin esta tecnología sería muy difícil organizar el impacto de los incidentes.</p>
+<p style="text-align: justify;"><strong>SiEM</strong> es una herramienta que está funcionando en todo momento para preservar la seguridad y esto es esencial para minimizar el daño al sistema lo antes posible.</p>
+<h3 style="text-align: justify;">2. Ejemplos </h3>
+<p style="text-align: justify;">Algunos ejemplos de SIEM más famosos y más utilizados serían los siguintes:</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 15.0641%; text-align: center;"><a href="https://www.elastic.co/es/siem/" target="_blank" rel="noopener"><img src="elastic.png" alt="" width="2865" height="982" /></a></td>
+<td style="width: 14.7683%; text-align: center;"><a href="https://www.splunk.com/en_us/cyber-security/siem.html" target="_blank" rel="noopener"><img src="splunk-logo-dark.svg" alt="" width="122" height="36" /></a></td>
+<td style="width: 20.1676%; text-align: center;"><a href="https://docs.microsoft.com/es-es/azure/sentinel/overview" target="_blank" rel="noopener"><img src="Microsft-Sentinel.png" alt="" width="263" height="74" /></a></td>
+<td style="width: 25%; text-align: center;"><a href="https://www.ibm.com/es-es/qradar/security-qradar-siem" target="_blank" rel="noopener"><img src="IBMQradar.jpg" alt="" width="686" height="148" /></a></td>
+<td style="width: 25%; text-align: center;"><a href="https://www.microfocus.com/es-es/products/siem-security-information-event-management/overview" target="_blank" rel="noopener"><img src="Micro_Focus_logo.svg.png" alt="" width="1280" height="393" /></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Hay más herramientas también muy usadas como Simantec o McAffe SIEM.</p>
+<p style="text-align: justify;">Estas aplicaciones a parte de ayudar con todas sus funciones de seguridad también dan la opción de crear <strong>dashboards (cuadros de mando)</strong> para ver los análisis de una manera más visual. De esta forma, se pueden entender mejor las alertas que lleguen desde el SIEM en unos gráficos ordenados que muchas alertas de golpe sin saber de dónde provienen exactamente.</p>
+<p style="text-align: justify;">Es muy importante disponer de una tecnología como esta en un negocio ya que se tiene una defensa a tiempo real contra los ciberataques. Además, el objetivo es tener localizados los datos y utilizarlos para su análisis y supervisión de seguridad. De esta forma, se pueden tener avisos de ataques que se están produciendo o incluso que se vayan a producir.</p>
+<p style="text-align: justify;"></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31_elastic_stack_open_source.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

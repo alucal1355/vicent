@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio. Cifrado de particiones y directorio con LUKS | UT2. Fortificación de equipos: acceso al sistema </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-50"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT2. Fortificación de equipos: acceso al sistema</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT2. Fortificación de equipos: acceso al sistema</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_seguridad_en_el_arranque_del_sistema_informtico_configuracin_del_arranque_seguro_biosuefi.html" class="daddy">2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI)</a>
+   <ul class="other-section">
+      <li><a href="21_bloqueo_de_bios_con_contrasea.html" class="no-ch">2.1 Bloqueo de BIOS con contraseña</a></li>
+      <li><a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="no-ch">Tarea 1. Análisis y fortificación de la BIOS/UEFI</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proteccin_del_gestor_de_arranque_grub.html" class="daddy">3. Protección del gestor de arranque GRUB</a>
+   <ul class="other-section">
+      <li><a href="31_proteccin_de_grub.html" class="no-ch">3.1 Protección de GRUB</a></li>
+      <li><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="no-ch">Tarea 2. Configuración del sistema y arranque</a></li>
+      <li><a href="tarea_3_proteger_el_gestor_de_arranque_grub.html" class="no-ch">Tarea 3. Proteger el gestor de arranque GRUB</a></li>
+   </ul>
+   </li>
+   <li><a href="4_contraseas_seguras.html" class="daddy">4. Contraseñas seguras</a>
+   <ul class="other-section">
+      <li><a href="41_contraseas_seguras_en_windows.html" class="daddy">4.1 Contraseñas seguras en Windows</a>
+      <ul class="other-section">
+         <li><a href="411_inicios_de_sesin_en_windows.html" class="no-ch">4.1.1 Inicios de sesión en Windows</a></li>
+         <li><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="no-ch">Tarea 4. Política de contraseñas seguras en Windows</a></li>
+      </ul>
+      </li>
+      <li><a href="42_gestin_de_la_poltica_de_contraseas_en_ubuntu.html" class="daddy">4.2. Gestión de la política de contraseñas en Ubuntu</a>
+      <ul class="other-section">
+         <li><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="no-ch">Tarea 5. Política de contraseñas seguras en Ubuntu Server</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="current-page-parent daddy">6. Seguridad de los sistemas de ficheros, cifrado, particionado, entre otros</a>
+   <ul>
+      <li><a href="61_sistemas_de_ficheros_y_gestin_de_particionado.html" class="no-ch">6.1 Sistemas de ficheros y gestión de particionado</a></li>
+      <li class="current-page-parent"><a href="62_cifrado_de_disco.html" class="current-page-parent daddy">6.2 Cifrado de disco</a>
+      <ul>
+         <li><a href="621_bitlocker_windows_y_efs.html" class="daddy">6.2.1. Bitlocker (Windows) y EFS</a>
+         <ul class="other-section">
+            <li><a href="prctica_1_cifrado_con_bitlocker.html" class="no-ch">Práctica 1. Cifrado con Bitlocker</a></li>
+         </ul>
+         </li>
+         <li><a href="622_filevault_macos.html" class="no-ch">6.2.2 FileVault (macOS)</a></li>
+         <li class="current-page-parent"><a href="623_luks_linux.html" class="current-page-parent daddy">6.2.3 LUKS (Linux)</a>
+         <ul>
+            <li id="active"><a href="laboratorio_cifrado_de_particiones_y_directorio_con_luks.html" class="active no-ch">Laboratorio. Cifrado de particiones y directorio con LUKS</a></li>
+            <li><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="no-ch">Práctica 2. Instalación de Ubuntu con particiones cifradas</a></li>
+         </ul>
+         </li>
+         <li><a href="624_veracrypt.html" class="daddy">6.2.4 VeraCrypt</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_cifrado_volumen_veracrypt.html" class="no-ch">Laboratorio 1. Cifrado volumen VeraCrypt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_control_de_calidad_de_mquinas.html" class="daddy">7. Control de calidad de máquinas</a>
+   <ul class="other-section">
+      <li><a href="71_mantenimiento_seguro_de_equipos.html" class="no-ch">7.1 Mantenimiento seguro de equipos</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="623_luks_linux.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio. Cifrado de particiones y directorio con LUKS</h1></div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id90">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header" style="background-image:url(icon_activity.png)"><span class="iDeviceTitle">&nbsp;</span></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta90_111_2" class="block iDevice_content">
+<div class="pbl-task-description"><h3>1. Introducción</h3>
+<p style="text-align: justify;">En el siguiente laboratorio, se describen los procesos cuando se desea cifrar un disco/partición ya sea en la instalación del sistema o posteriormente.</p>
+<h3>2. Recursos</h3>
+<ul>
+<li>Ubuntu server 20.04.</li>
+<li>Utilidad  Linux Unified Key Setup (LUKS).</li>
+</ul>
+<h3>3. Formas de cifrar</h3>
+<p>Se tienen varias opciones de cifrado, son las siguientes:</p>
+<h4 align="justify"><strong>3.1 Opción 1.</strong></h4>
+<p align="justify">Se puede realizar el cifrado de particiones durante la instalación del sistema operativo. En las siguientes pestañas, se describe el proceso de instalación de ubuntu server configurando el cifrado de la partición del sistema.</p>
+<div class="exe-fx exe-tabs">
+<h2>1</h2>
+<p style="text-align: justify;">En esta pantalla de configuración guiada del almacenamiento, hay que activar la encriptación en el volúmen con LUKS y a continuación, hay que ingresar la cadena de paso (contraseña). Con esto se cifra la partición completa del sistema.</p>
+<p style="text-align: center;"><img src="LUKS-01.png" alt="" width="800" height="360" /></p>
+<h2>2</h2>
+<p style="text-align: justify;">A continuación, el asistente informa de la configuración que se tiene del sistema de almacenamiento. Para continuar, hay que pulsar '<strong>Hecho</strong>'.</p>
+<p style="text-align: center;"><img src="LUKS-02.png" alt="" width="769" height="578" /></p>
+<h2>3</h2>
+<p style="text-align: justify;">A continuación, hay que proporcionar el nombre de usuario y contraseña que se utilizará para acceder al sistema (usuario administrador del equipo) así como el nombre del servidor.</p>
+<p style="text-align: center;"><img src="LUKS-03.png" alt="" width="771" height="404" /></p>
+<h2>4</h2>
+<p>En la siguiente pantalla, nos permite instalar el servicio ssh.</p>
+<p style="text-align: center;"><img src="LUKS-04.png" alt="" width="764" height="313" /></p>
+<h2>5</h2>
+<p>En la siguiente pantalla, se pueden seleccionar los servicios/aplicaciones que se deseen. Para continuar, hay que pulsar '<strong>Hecho</strong>'.</p>
+<p style="text-align: center;"><img src="LUKS-05.png" alt="" width="730" height="577" /></p>
+<h2>6</h2>
+<p>Comienza la instalación del servidor.</p>
+<p style="text-align: center;"><img src="LUKS-06.png" alt="" width="699" height="578" /></p>
+<h2>7</h2>
+<p style="text-align: justify;">Una vez se finaliza la instalación y se inicia el sistema, nos solicita la contraseña de cifrado del disco. Una vez se introduce la contraseña, el sistema montará la partición y se podrá iniciar el sistema. </p>
+<p style="text-align: center;"><img src="LUKS-07.png" alt="" width="797" height="277" /></p>
+<h2>8</h2>
+<p style="text-align: justify;">Podemos ver la información del disco con los comandos lsblk -fm o fdisk -l o df -h o lsscsi. En este caso, se utiliza el comando lsblk -fm y como se puede observar, la partición cifrada es dm_crypt-0.</p>
+<p style="text-align: center;"><img src="LUKS-08.png" alt="" width="907" height="295" /></p>
+<h2>9</h2>
+<p>Si se lista el fichero <strong>crypttab</strong> que contiene los dispositivos de bloque cifrados durante el arranque del sistema, se puede observar que se tiene una partición cifrada con luks.</p>
+<p style="text-align: center;"><img src="LUKS-10.png" alt="" width="905" height="274" /></p>
+</div>
+<h4 align="justify"><strong>3.2 Opción 2.</strong></h4>
+<p style="text-align: justify;">Montar una partición/disco cifrado después de tener ya un sistema funcionando. Como ejemplo, se crea un nuevo disco en el servidor ubuntu para que posteriormente desde el sistema, se pueda cifrar.</p>
+<p style="text-align: justify;">A continuación se describe el proceso de cifrado de un disco.</p>
+<p align="justify" style="text-align: justify;"><strong>Paso 1.</strong> Se añade un nuevo disco de 10 GB.</p>
+<p align="justify" style="text-align: center;"><img src="Cifrado-Particion-01.png" alt="" width="851" height="363" /></p>
+<p align="justify" style="text-align: justify;"><strong>Paso 2.</strong> A continuación, se inicia el servidor para cifrar el disco creado.</p>
+<p align="justify" style="text-align: center;"><img src="Cifrado-Particion-02.png" alt="" width="578" height="109" /></p>
+<p align="justify" style="text-align: justify;"><strong>Paso 3. </strong>Para poder utilizar el disco, hay que crear una partición y luego formatearla. En primer lugar, se crea una partición usando todo el espacio disponible del disco 10GB mediante el comando <strong>fdisk</strong>.</p>
+<p align="justify" style="text-align: center;"><img src="Cifrado-Particion-03.png" alt="" width="806" height="433" /></p>
+<p align="justify" style="text-align: justify;"><strong>Paso 4. </strong>Comprobamos la nueva partición creada (sdb1).</p>
+<p align="justify" style="text-align: center;"><strong><img src="Cifrado-Particion-04.png" alt="" width="630" height="418" /></strong></p>
+<p align="justify" style="text-align: justify;"><strong>Paso 5</strong>. A continuación, mediante <strong>criptsetup</strong> convertimos la partición a formato LUKS.</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~#</strong>cryptsetup -v -y luksFormat /dev/sdb1</span></pre>
+<p align="justify" style="text-align: justify;">Al ejecutar el comando, nos informa que se van a sobreescribir los datos que existan en la partición. Si se está de acuerdo, poner YES en mayúsculas. A continuación, nos solicita una contraseña de encriptación (ver imagen inferior).</p>
+<p align="justify" style="text-align: center;"><img src="Cifrado-Particion-05.png" alt="" width="537" height="217" /></p>
+<p align="justify" style="text-align: justify;"></p>
+<p align="justify" style="text-align: justify;"><strong>Paso 6.</strong> Para ver información de la partición que se acaba de encriptar, ejecutamos el siguiente comando:</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~#</strong>cryptsetup luksDump /dev/sdb1</span></pre>
+<p align="justify" style="text-align: center;"><img src="Cifrado-Particion-06.png" alt="" width="463" height="43" /></p>
+<p style="text-align: center;"><img src="Cifrado-Particion-07.png" alt="" width="550" height="547" /></p>
+<p style="text-align: justify;">Como se puede observar en la imagen superior, la partición está encriptada con cifrado AES de 512 bits. El hash que utiliza, es sha256.</p>
+<p style="text-align: justify;"><strong>Paso 7. </strong>Para referirnos a la partición, se puede mapear a un nombre, ejemplo secret. Para ello, ejecutamos el siguiente comando:</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~#</strong>cryptsetup luksOpen /dev/sdb1 secret</span></pre>
+<p style="text-align: center;"><strong><img src="Cifrado-Particion-08.png" alt="" width="553" height="78" /></strong></p>
+<p style="text-align: justify;">Si se lista el directorio donde están las unidades, /dev/mapper/secret, se observa que se tienen una unidad que se llama secret en la cual ya se puede trabajar en ella.</p>
+<p style="text-align: center;"><img src="Cifrado-Particion-09.png" alt="" width="558" height="59" /></p>
+<p style="text-align: justify;">Se puede ver información de esa unidad con el comando:</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~#</strong>dmsetup info secret</span></pre>
+<p style="text-align: center;"><img src="Cifrado-Particion-10.png" alt="" width="477" height="211" /></p>
+<p style="text-align: justify;"><strong>Paso 8.</strong> A continuación, hay que formatear la unidad. En este caso, se formatea al sistema de fichero ext4.</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~#</strong>mkfs.ext4 /dev/mapper/secret</span></pre>
+<p style="text-align: center;"><img src="Cifrado-Particion-11.png" alt="" width="692" height="222" /></p>
+<p style="text-align: justify;"><strong>Paso 9.</strong> Para finalizar, hay que montar la unidad para poder utilizarla.</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~#</strong>mount /dev/mapper/secret /media/secret/</span></pre>
+<p style="text-align: center;"><img src="Cifrado-Particion-12.png" alt="" width="608" height="91" /></p>
+<p style="text-align: justify;">Con el comando <strong>df -h</strong> se puede ver que se tiene montantada la unidad secret y que tiene disponible 9,3GB en /media/secret.</p>
+<p style="text-align: center;"><img src="Cifrado-Particion-13.png" alt="" width="490" height="179" /></p>
+<p style="text-align: justify;">Como ejemplo de funcionamiento, se crea un fichero (fichero_prueba.dat) en la partición LUKS.</p>
+<p style="text-align: center;"><img src="Cifrado-Particion-14.png" alt="" width="523" height="185" /></p>
+<p style="text-align: justify;"><strong>Paso 10. Montaje automático de la partición</strong></p>
+<p style="text-align: justify;">Para que la partición LUKS se monte automáticamente al arrancar el sistema hay editar los ficheros <strong>/etc/crypttab</strong> y <strong>/etc/fstab</strong> para añadir esta partición a los mismos.</p>
+<p style="text-align: justify;">En primer lugar, hay que obtener el UUID de la partición LUKS encriptada, para ello, se usa el siguiente comando:</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~#</strong>cryptsetup luksUUID /dev/sdb1</span></pre>
+<p style="text-align: center;"><img src="Cifrado-Particion-15.png" alt="" width="487" height="49" /></p>
+<p style="text-align: justify;">A continuación, abrimos el fichero <strong>crypttab</strong> que se encuentra en /etc mediante un editor de texto (ejemplo:nano), para añadir la información en la fila después de la cabecera.</p>
+<p style="text-align: center;"><img src="Cifrado-Particion-16.png" alt="" width="733" height="80" /></p>
+<p style="text-align: justify;">A continuación, hay que realizar lo mismo con el fstab que se encuentra en /etc.</p>
+<p style="text-align: center;"><img src="Cifrado-Particion-17.png" alt="" width="779" height="251" /></p>
+<p style="text-align: justify;">Si se desea añadir la partición en caliente, hay que ejecutar el siguiente comando:</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~#</strong>mount -a</span></pre>
+<p style="text-align: center;"><img src="Cifrado-Particion-18.png" alt="" width="797" height="83" /></p>
+<p style="text-align: justify;">Como se puede observar en la imagen superior, el comando no funciona, ya que el sistema no reconoce la partición hasta que lea el fichero crypttab. Por lo tanto, hay que reiniciar el sistema.</p>
+<p style="text-align: justify;">Una vez se reinicia, el sistema se para al detectar la partición encriptada para que podamos ingresar la contraseña de la patición LUKS /media/secret.</p>
+<p style="text-align: center;"><img src="Cifrado-Particion-19.png" alt="" width="799" height="205" /></p>
+<p style="text-align: justify;">Una vez ingresamos la contraseña, si es correcta, se accede al sistema. Como se puede observar en la imagen inferior, se accede a la partición LUKS.</p>
+<p style="text-align: justify;"><img src="Cifrado-Particion-20.png" alt="" width="488" height="133" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;">Para ver las particiones que se tienen montadas, usamos los comandos: lsblk -fm o fdisk -l o df -h o lsscsi.</p>
+<p style="text-align: center;"><img src="Cifrado-Particion-21.png" alt="" width="1347" height="211" /><span style="font-size: 12pt;"></span></p>
+<p style="text-align: justify;">Otra forma de identificar las particiones cifradas es con el siguiente comando:</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~#</strong>sudo cat /etc/crypttab</span></pre>
+<p style="text-align: right;"><span style="font-size: 12pt;"><img src="etc-crypttab.png" alt="" width="534" height="76" style="display: block; margin-left: auto; margin-right: auto;" /></span><span style="font-size: 12pt;"></span><span style="font-size: 12pt;"></span></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="623_luks_linux.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

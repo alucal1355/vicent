@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1.1 Inicios de sesión en Windows | UT2. Fortificación de equipos: acceso al sistema </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT2. Fortificación de equipos: acceso al sistema</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT2. Fortificación de equipos: acceso al sistema</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_seguridad_en_el_arranque_del_sistema_informtico_configuracin_del_arranque_seguro_biosuefi.html" class="daddy">2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI)</a>
+   <ul class="other-section">
+      <li><a href="21_bloqueo_de_bios_con_contrasea.html" class="no-ch">2.1 Bloqueo de BIOS con contraseña</a></li>
+      <li><a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="no-ch">Tarea 1. Análisis y fortificación de la BIOS/UEFI</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proteccin_del_gestor_de_arranque_grub.html" class="daddy">3. Protección del gestor de arranque GRUB</a>
+   <ul class="other-section">
+      <li><a href="31_proteccin_de_grub.html" class="no-ch">3.1 Protección de GRUB</a></li>
+      <li><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="no-ch">Tarea 2. Configuración del sistema y arranque</a></li>
+      <li><a href="tarea_3_proteger_el_gestor_de_arranque_grub.html" class="no-ch">Tarea 3. Proteger el gestor de arranque GRUB</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_contraseas_seguras.html" class="current-page-parent daddy">4. Contraseñas seguras</a>
+   <ul>
+      <li class="current-page-parent"><a href="41_contraseas_seguras_en_windows.html" class="current-page-parent daddy">4.1 Contraseñas seguras en Windows</a>
+      <ul>
+         <li id="active"><a href="411_inicios_de_sesin_en_windows.html" class="active no-ch">4.1.1 Inicios de sesión en Windows</a></li>
+         <li><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="no-ch">Tarea 4. Política de contraseñas seguras en Windows</a></li>
+      </ul>
+      </li>
+      <li><a href="42_gestin_de_la_poltica_de_contraseas_en_ubuntu.html" class="daddy">4.2. Gestión de la política de contraseñas en Ubuntu</a>
+      <ul class="other-section">
+         <li><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="no-ch">Tarea 5. Política de contraseñas seguras en Ubuntu Server</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="daddy">6. Seguridad de los sistemas de ficheros, cifrado, particionado, entre otros</a>
+   <ul class="other-section">
+      <li><a href="61_sistemas_de_ficheros_y_gestin_de_particionado.html" class="no-ch">6.1 Sistemas de ficheros y gestión de particionado</a></li>
+      <li><a href="62_cifrado_de_disco.html" class="daddy">6.2 Cifrado de disco</a>
+      <ul class="other-section">
+         <li><a href="621_bitlocker_windows_y_efs.html" class="daddy">6.2.1. Bitlocker (Windows) y EFS</a>
+         <ul class="other-section">
+            <li><a href="prctica_1_cifrado_con_bitlocker.html" class="no-ch">Práctica 1. Cifrado con Bitlocker</a></li>
+         </ul>
+         </li>
+         <li><a href="622_filevault_macos.html" class="no-ch">6.2.2 FileVault (macOS)</a></li>
+         <li><a href="623_luks_linux.html" class="daddy">6.2.3 LUKS (Linux)</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_cifrado_de_particiones_y_directorio_con_luks.html" class="no-ch">Laboratorio. Cifrado de particiones y directorio con LUKS</a></li>
+            <li><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="no-ch">Práctica 2. Instalación de Ubuntu con particiones cifradas</a></li>
+         </ul>
+         </li>
+         <li><a href="624_veracrypt.html" class="daddy">6.2.4 VeraCrypt</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_cifrado_volumen_veracrypt.html" class="no-ch">Laboratorio 1. Cifrado volumen VeraCrypt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_control_de_calidad_de_mquinas.html" class="daddy">7. Control de calidad de máquinas</a>
+   <ul class="other-section">
+      <li><a href="71_mantenimiento_seguro_de_equipos.html" class="no-ch">7.1 Mantenimiento seguro de equipos</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="41_contraseas_seguras_en_windows.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.1.1 Inicios de sesión en Windows</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id25">
+<div class="iDevice emphasis0">
+<div id="ta25_85" class="block iDevice_content">
+<h3><span></span>1. Opciones de inicio de sesión</h3>
+<p style="text-align: justify;"><span>Para obtener acceso a las opciones de inicio de sesión, hay que ir  </span><b class="ocpLegacyBold">Inicio</b><span class="icon-mdl2 icon-windowslogo"></span><span> &gt; </span><b class="ocpLegacyBold">Configuración<span class="icon-mdl2 icon-settings"></span></b><span> &gt; </span><b class="ocpLegacyBold">Cuentas<span class="icon-mdl2 icon-contact"></span></b><span> &gt; </span><b class="ocpLegacyBold">Opciones de inicio de sesión </b>(ver imagen inferior).</p>
+<p style="text-align: center;"><span><img src="opcoines-InicioSesion.png" alt="" width="872" height="629" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Opciones de inicio de sesión.</em></p>
+<p style="text-align: justify;">Como se puede apreciar en la figura, se puede administrar el inicio de sesión donde, se podría activar el acceso por huella dactilar, imagen, contraseña, clave de seguridad física (tipo yubico), etc.  Dependiendo de la política de accesos de la organización, se activarán las opciones deseadas.</p>
+<p style="text-align: justify;">En el siguiente enlace, tienes toda la información que Microsoft ofrece para la administración del inicio de sesión.</p>
+<ul>
+<li><span style="font-size: 12pt;"><a href="https://support.microsoft.com/es-es/windows/opciones-de-inicio-de-sesi%C3%B3n-de-windows-y-protecci%C3%B3n-de-cuentas-7b34d4cf-794f-f6bd-ddcc-e73cdf1a6fbf#:~:text=inicio%20de%20sesi%C3%B3n-,Administrar%20cu%C3%A1ndo%20se%20te%20pide%20iniciar%20sesi%C3%B3n,pida%20que%20inicies%20sesi%C3%B3n%20nuevamente." target="_blank" rel="noopener">Fuente</a></span></li>
+</ul>
+<h3>2. Registro de inicios de sesión</h3>
+<p style="text-align: justify;">Desde el punto de vista de auditoría, es interesante monitorizar los inicios de sesión para conocer qué usuario y cuándo ha accedido al sistema. Por lo tanto, necesitamos saber cómo ver quién inicia sesión en Windows 10 y cuándo lo hace ya que por defecto, Windows no nos permite conocer si un usuario ha intentado iniciar sesión en el equipo, si lo ha conseguido ni cuándo lo ha hecho.</p>
+<p style="text-align: justify;">Windows cuenta con funciones de monitorización, control y auditorías que registran todo lo que ocurre en el equipo, desde errores en aplicaciones, problemas de seguridad, así como la posibilidad de registrar todos los inicios de sesión que se realizan en el equipo, sin embargo, esta opción viene desactivada por defecto, por lo que es necesario activarla.</p>
+<p style="text-align: justify;">Para indicar a Windows que registre los inicios de sesión error y/o correctos, se tiene que realizar lo siguiente:</p>
+<ul>
+<li>Habilitar el registro de inicio de sesión, para ello, ejecutamos <strong>gpedit.msc </strong>para que nos abra la ventana de directivas de grupo. Una vez allí, hay que acceder a: Configuración del equipo &gt; Configuración de Windows &gt; Configuración de seguridad &gt; Directivas locales &gt; Directiva de auditoría. Una vez allí, hay que localizar <span>la opción '</span><strong>Auditar eventos de inicio de sesión' </strong>y marcar lo que se necesite, para este caso de ejemplo, se marcan los dos: auditar los correctos y erróneos. <span>Una vez marcadas estas opciones, hay que pulsar 'Aceptar' y cerrar la ventana de directivas de grupo. Desde este momento, Windows comenzará a tener en cuenta esta opción, es decir, a registrar los inicios de sesión ya sean correctos o no.</span></li>
+</ul>
+<p style="text-align: center;"><img src="direc-grupo-inicio-sesion.png" alt="" width="1092" height="619" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Marcado de las dos opciones.</em></p>
+<p style="text-align: justify;">Una vez habilitado el registro de inicio de sesión, ya podemos consultar en el '<strong>Visor de eventos</strong>' los registros que vaya guardando el sistema.  Para acceder puedes ejecutar<span style="color: #666666; font-size: 0.95em; text-align: left;"> <span style="color: #000000; font-size: 12pt;">el comando </span></span><span style="color: #000000; font-size: 12pt;"><strong style="text-align: left;">eventvwr.msc</strong><span style="text-align: left;">.</span></span></p>
+<p style="text-align: justify;">Una vez se accede al '<strong>Visor de eventos</strong>', en la ruta <strong>Registros de Windows &gt; Seguridad, </strong>podemos observar todos los eventos de seguridad del sistema. </p>
+<p style="text-align: justify;"><span>Windows guarda muchos registros dentro de esta categoría, pero el que nos interesa, es el de inicio de sesión, el cual, podemos encontrarlo por su ID (identificador de Evento), que es <strong>4624</strong>. Una vez localizado el evento, si hacemos doble click sobre él,  podemos verlo en detalle.</span> </p>
+<p style="text-align: center;"><img src="evento-inicio-sesion.png" alt="" width="1113" height="621" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Evento de inicio de sesión en detalle.</em></p>
+<p style="text-align: justify;">Con esta opción habilitada tendremos el control sobre los inicios de sesión, es decir, vamos a poder consultar quién ha intentado iniciar sesión en el equipo, cuándo lo ha hecho y si ha tenido éxito o no.</p>
+<h3>3. Bloqueo de cuentas en equipo con usuario local</h3>
+<p style="text-align: justify;"><span>En un equipo Windows 10 con usuario local (no es un cliente del dominio), se puede configurar bloqueos automáticos de cuentas ante ciertas circunstancias.</span></p>
+<p style="text-align: center;"><span><img src="directivas-grupo-Windows-InciosSesion.png" alt="" width="832" height="388" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 4.</strong> Editor de directivas de grupo local.</em></span></p>
+<p style="text-align: justify;"><span>Ejemplo, podemos activar el bloqueo del equipo durante un tiempo cuando los intentos de inicio de sesión supere un valor, ejemplo: Si se desea bloquear el equipo durante 2 horas si el número de intentos erróneos es superior a 5 hacemos:</span></p>
+<p style="text-align: center;"><span><img src="bloqueo-cuenta-120min.png" alt="" width="922" height="526" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 5.</strong> Configuración de bloqueo de cuenta.</em></span><span></span></p>
+<h3>4. Bloqueo de cuentas del dominio</h3>
+<p style="text-align: center;"><img src="gpo-bloqueo-cuenta-01.png" alt="" width="1089" height="477" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 6.</strong> Crear nueva directiva de grupo.</em></span></p>
+<p style="text-align: justify;">En la ventana que aparece, hay que insertar un nombre descriptivo de la acción que realizará la GPO, en este caso de ejemplo, <em><strong>Bloqueo-Cuentas</strong></em>.</p>
+<p style="text-align: center;"><img src="gpo-bloqueo-cuenta-02.png" alt="" width="383" height="176" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 7.</strong> Nombrar a la nueva directiva de grupo.</em></span></p>
+<p style="text-align: justify;">Pulsamos 'Aceptar' y la nueva GPO aparecerá en el árbol de la izquierda del panel.</p>
+<p style="text-align: center;"><img src="gpo-bloqueo-cuenta-03.png" alt="" width="1091" height="477" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 8.</strong> Directiva de grupo Bloque-Cuentas creada.</em></span></p>
+<p style="text-align: justify;">A continuación, hay que editar la <strong><em>directiva de grup</em><em>o</em></strong> creada para su configuración, para ello, nos situamos sobre '<strong>Bloqueo-Cuentas</strong>' (ver figura 8) y pulsamos el botón derecho del ratón, para seleccionar la opción '<strong>Editar</strong>'. En la nueva pantalla que aparece, hay que acceder a: <em>Configuración del equipo &gt; Configuración de Windows &gt; Configuración de seguridad &gt; Directivas de cuenta &gt; Directiva de bloqueo de cuenta.</em></p>
+<p style="text-align: justify;">Una vez allí, podemos activar el bloqueo del equipo durante un tiempo cuando los intentos de inicio de sesión supere un valor, ejemplo: Si se desea bloquear el equipo durante 1 hora si el número de intentos erróneos es 3 , hay que rellenar los campos tal como están en la figura 8.  Para guardar la configuración de la directiva de grupo, hay que cerrar el editor de directivas de grupo.</p>
+<p style="text-align: center;"><img src="gpo-bloqueo-cuenta-04.png" alt="" width="1073" height="562" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 8.</strong> Configurar los parámetros de bloqueo de cuenta en la Directiva de grupo Bloque-Cuentas.</em></span></p>
+<div class="cuadro-nota-centro">
+<div class="fusion-text fusion-text-21">
+<p>Si la duración del bloqueo de la cuenta se establece en 0, la cuenta de usuario permanecerá bloqueada.</p>
+</div>
+</div>
+<p style="text-align: justify;">La <strong><em>directiva de dominio predeterminada, </em></strong>por defecto tiene establecida la configuración para la directiva de bloqueo de cuenta para que nunca se bloque una cuenta de usuario. Por lo tanto, la directiva de bloqueo no tendrá los efectos de bloqueo de cuenta que se han establecido hasta que se deshabilite la esta parte de la configuración en la directiva de dominio predeterminada. Para ello, hay que acceder a:  Objetos de directiva de grupo &gt; Default Domain Policy (ver figura inferior).</p>
+<p style="text-align: center;"><img src="Acceso-default-domain-Policy.png" alt="" width="1089" height="551" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 9.</strong> Accedo a la Directiva de dominio por defecto.</em></span></p>
+<p style="text-align: justify;">A continuación, seleccionamos<strong> Default Domain Policy</strong> y hacemos click con el botón derecho del ratón y seleccionamos <strong>Editar</strong>. En la nueva pantalla que aparece, hay que acceder a: <em>Configuración del equipo &gt; Configuración de Windows &gt; Configuración de seguridad &gt; Directivas de cuenta &gt; Directiva de bloqueo de cuenta.</em></p>
+<p style="text-align: justify;">Hay que acceder a: Configuración del equipo &gt; Configuración de Windows &gt; Configuración de seguridad &gt; Directivas de cuenta &gt; Directiva de bloqueo de cuenta.</p>
+<p style="text-align: center;"><span><em><img src="deshabilitar-BloqueoCuenat-Predetermnada.png" alt="" width="1428" height="792" /></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 10.</strong> Edición de la directiva de bloqueo de cuenta en la Directiva de dominio por defecto.</em></span></p>
+<p style="text-align: justify;"><span></span></p>
+<div class="importante">
+<p style="text-align: justify;">Para evitar generar un tráfico de gestión excesivo en la red, las directivas de grupo no se actualizan inmediatamente tras su modificación, sino que está establecido un<span> </span><strong><em>intervalo de 5 minutos</em></strong><span> </span>entre actualizaciones automáticas. No obstante, este intervalo se puede modificar en las propias directivas de grupo (ver página de<span> </span><a href="http://support.microsoft.com/kb/203607/es" onclick="browseURL(this); return false">Microsoft Technet</a>). De todas maneras, no es necesario modificar este intervalo para comprobar la correcta aplicación de las directivas de grupo, basta con escribir en la consola<span> </span><strong><span class="courier">cmd</span></strong>:</p>
+<pre><span style="font-size: 12pt;"><strong>C:\</strong>gpupdate</span></pre>
+o</div>
+<div class="importante">
+<pre><span style="font-size: 12pt;"><strong>C:\</strong>gpupdate /force</span></pre>
+</div>
+<p style="text-align: center;"><span><em><img src="gpupdate.png" alt="" width="715" height="244" /></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 11.</strong> Forzar la actualización de directivas.</em></span></p>
+<p>En este momento, todos los usuarios que se autentiquen en el controlador del dominio se le aplicará la restricción configurada en la directiva <strong>Bloqueo-Cuentas</strong>. </p>
+<p>Como prueba, se accede con un usuario del dominio y después de 3 intentos de contraseña errónea, se bloquea la cuenta (figura</p>
+<p style="text-align: center;"><img src="bloqueo-cuenta.png" alt="" width="564" height="426" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 12.</strong> Cuenta bloqueada.</em></span></p>
+<p style="text-align: justify;"><span>Si se desea desbloquear la cuenta antes del período de desbloqueo automático, hacemos:</span></p>
+<p style="text-align: justify;"><span>Con el usuario Administrador del dominio, hay que acceder al usuario bloqueado en en las propiedades del mismo, acceder a la pestaña Cuenta y seleccionar la casilla 'Desbloquear cuenta'. Para finalizar, hay que pulsar 'Aceptar' para que el desbloqueo de la cuenta sea efectivo.</span></p>
+<p style="text-align: center;"><span><img src="desbloqueo-cuenta.png" alt="" width="1332" height="739" /></span></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="41_contraseas_seguras_en_windows.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

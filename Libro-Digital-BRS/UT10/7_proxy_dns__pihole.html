@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7. Proxy DNS - PiHole | UT10. Fortificación perimetral: proxy </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-125"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT10. Fortificación perimetral: proxy</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT10. Fortificación perimetral: proxy</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_los_proxys.html" class="no-ch">1. Introducción a los proxys</a></li>
+   <li><a href="2_proxy_webcach.html" class="daddy">2. Proxy web/caché</a>
+   <ul class="other-section">
+      <li><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="no-ch">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proxy_con_autenticacin_bsica.html" class="no-ch">3. Proxy con autenticación básica</a></li>
+   <li><a href="4_proxy_con_filtrado.html" class="no-ch">4. Proxy con filtrado</a></li>
+   <li><a href="5_proxy_transparente_para_httphttps.html" class="daddy">5. Proxy transparente para HTTP/HTTPS</a>
+   <ul class="other-section">
+      <li><a href="51_proxy_transparente_para_http.html" class="no-ch">5.1 Proxy transparente para HTTP</a></li>
+      <li><a href="52_proxy_transparente_para_https.html" class="no-ch">5.2 Proxy transparente para HTTPS</a></li>
+   </ul>
+   </li>
+   <li><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="daddy">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_proxy_squid_con_pfsense.html" class="no-ch">Práctica 1. Proxy Squid con PfSense</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="7_proxy_dns__pihole.html" class="active daddy">7. Proxy DNS - PiHole</a>
+   <ul>
+      <li><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="no-ch">Práctica 2.Implantación del proxy DNS Pi-Hole</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="prctica_1_proxy_squid_con_pfsense.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">7. Proxy DNS - PiHole</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id161">
+<div class="iDevice emphasis0">
+<div id="ta161_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;">Un <strong>proxy</strong> es un equipo que actúa como intermediario en las peticiones de recursos entre un cliente y un servidor.</p>
+<p style="text-align: justify;">Un <strong>proxy DNS</strong> supervisa las consultas DNS de una red (normalmente de área local) y las reenvía a un servidor de nombres de dominio de Internet, pudiendo almacenar los registros en caché. Al monitorizar todas las peticiones, también se pueden aplicar reglas de filtrado sobre ellas y desechar las potencialmente peligrosas.</p>
+<p style="text-align: justify;">Un<strong> servidor DNS</strong> puede estar configurado para contestar las peticiones con información falsa. Estos servidores se conocen como <strong>sumideros de DNS</strong> (DNS sinkhole) y se pueden utilizar en dos sentidos:</p>
+<ul>
+<li style="text-align: justify;">Un atacante puede redirigir el tráfico de un sistema a un destino potencialmente malicioso o a un destino que se quiera atacar por DoS.</li>
+<li style="text-align: justify;">En el sentido contrario, se puede utilizar como defensa frente a ataques (contención de <strong>malware</strong>, prevención de acceso a <strong>honeynets</strong> y sitios controladores de <strong>botnets</strong>, <strong>mitigación de ataques DoS</strong>), como filtro de control a <strong>sitios</strong> y dominios que sin ser específicamente maliciosos contravienen las políticas corporativas, o como herramienta de bloqueo publicitario.</li>
+</ul>
+<h3 style="text-align: justify;">2. Configuración de un proxy DNS</h3>
+<p style="text-align: justify;">La <strong>configuración en modo sumidero de un proxy DNS</strong> se puede considerar parte de la estrategia de seguridad de defensa en profundidad de una empresa.</p>
+<p style="text-align: justify;">Para que el <strong>proxy DNS</strong> sea efectivo todas las peticiones DNS realizadas dentro de la red interna (y de la DMZ) deben encaminarse a través de él. Si se permitieran las conexiones TCP y UDP a un servidor DNS externo desde cualquier equipo de la red interna (o de la DMZ), no se tendría protección, por ejemplo, contra troyanos habituales que utilizan el puerto 53 o explotaciones de DNS.</p>
+<h3 style="text-align: justify;">3. Proxy DNS Pi-Hole</h3>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 13.838%; text-align: center;"><img src="Pi-hole_Logo_2.png" alt="" width="125" height="213" /></td>
+<td style="width: 86.162%;">
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">El proyecto nació para bloquear la publicidad de las webs.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Permite búsqueda segura.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Se puede instalar en cualquier distribución del linux, ejemplo: ubuntu server.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Se puede utilizar para uso doméstico de hasta 10 PC’s.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong>Pi-hole</strong> es un <strong>sinkhole DNS</strong> que protege los dispositivos de contenido no deseado, sin instalar ningún software del lado del cliente.</p>
+<h4 style="text-align: justify;">Un ejemplo práctico del funcionamiento de Pi-Hole</h4>
+<ol>
+<li>Acceder a una url desde el navegador, por ejemplo: www.upv.es.</li>
+<li>El dispositivo consulta a pihole la dirección ip de www.upv.es.</li>
+<li style="text-align: justify;">El navegador se conecta a la dirección IP, comienza a cargar el sitio y se realizan nuevas consultas de otros dominios para cargar todos los contenidos de la pagina, imágenes, vídeos, publicidad, etcétera.</li>
+<li style="text-align: justify;">Pi-Hole compara cada una de las solicitudes con una lista que contiene dominios conocidos por tener publicidad, de encontrarse en esa lista pihole responde con su propia dirección IP. Esto lo hace porque tiene una base de datos con todos los dominios «malos» (lista negra) y los va actualizando regularmente. También es posible agregar y quitar dominios de estas listas.</li>
+<li style="text-align: justify;">El navegador no encuentra los anuncios y no son mostrados en la pagina. Por lo general se ven recuadros blancos.</li>
+</ol>
+<h3 style="text-align: justify;">4. Instalación de Pi-hole en Ubuntu Server 20.04</h3>
+<p style="text-align: justify;">A partir de la infraestructura de red que se construyó en la <strong>Práctica 1 de la unidad de trabajo Fortificación perimetral: DMZ</strong>, hay que añadir un equipo en la misma que contendrá el proxy DNS <strong>Pi-Hole</strong>. Para este caso, los equipos de la <strong>red IT</strong> tendrán configurado como servidor DNS la ip del equipo <strong>Pi-Hole</strong> para que la resolución de nombras la realice el mismo. La <strong>red dmz</strong> no utiliza el proxy DNS ya que los servidores no están dedicados para la navegación por la web, simplemente ofrecen servicios a los usuarios de internet.</p>
+<p style="text-align: justify;"><span style="font-size: 1em;">En el <strong>firewall PfSense</strong>, se <strong>creará un servidor dhcp en la red IT</strong> para establecer el direccionamiento dinámico a los equipos clientes a excepción del servidor controlador del dominio que tendrá ip estática.</span><span style="font-size: 1em;"></span></p>
+<p style="text-align: center;"><a href="Esquema-red-Pihole.vpd.png" target="_blank" rel="noopener"><img src="Esquema-red-Pihole.vpd.png" alt="" width="672" height="481" /></a></p>
+<h4 style="text-align: justify;">4.1 Configuración en PfSense</h4>
+<div class="exe-fx exe-tabs">
+<h2>1. DHCP Server - IT</h2>
+<p>Hay que habilitar el servidor dhcp en la red it con los siguientes datos a excepción del servidor controlador del dominio que tiene ip estática. </p>
+<ul>
+<li><strong>Enable DHCP server on DMZ interface:</strong> Enable.</li>
+<li><span class="element-required"><strong>Range</strong>: 192.168.100.100 to 192.168.100.150</span></li>
+<li><span class="element-required"><span><strong>DNS servers:</strong> 192.168.0.251 (ip del pi-hole).</span></span></li>
+<li style="text-align: justify;"><span class="element-required"><span><strong>DNS server 2</strong>: 192.168.0.254 (ip del controlador del dominio). Los equipos clientes del dominio tendrán como DNS alternativo la ip del controlador del dominio para la resolución de nombres del dominio.</span></span></li>
+</ul>
+<p style="text-align: center;"><span class="element-required"><span><img src="dhcp-server-it.png" alt="" width="894" height="534" /></span></span></p>
+<h2>2.  Firewall &gt; NAT &gt; Port Forward para red IT</h2>
+<p style="text-align: justify;">Hay que añadir una regla regla de firewall para redirigir las peticiones DNS de los equipos de la red IT a Pihole. Para crear la regla, hay que acceder a <strong>Firewall &gt; NAT &gt; Port Forwarding</strong> y pulsar el botón <strong>Add</strong>. Los parámetros a configurar son:</p>
+<ul>
+<li style="text-align: justify;"><strong>Interface</strong>: IT</li>
+<li style="text-align: justify;"><strong>Protocol</strong>: TCP/UDP</li>
+<li style="text-align: justify;"><strong>Source:</strong> Any</li>
+<li style="text-align: justify;"><strong>Source port</strong>: Any</li>
+<li style="text-align: justify;"><strong>Destination</strong>
+<ul>
+<li style="text-align: justify;"><strong>Invert Match</strong>: Seleccionar.</li>
+<li style="text-align: justify;"><strong>Type</strong>: IT Address.</li>
+</ul>
+</li>
+<li style="text-align: justify;"><strong>Destination port range:</strong> DNS (port 53) to DNS (port 53)</li>
+<li style="text-align: justify;"><strong>Redirect Target IP:</strong> 
+<ul>
+<li style="text-align: justify;"><strong>Type</strong>: Single host</li>
+<li style="text-align: justify;"><strong><span class="help-block">Address</span></strong>: 192.168.0.251 (ip del equipo Pi-hole)</li>
+</ul>
+</li>
+<li style="text-align: justify;"><strong>Redirect Target port:</strong> DNS (port 53)</li>
+<li style="text-align: justify;"><strong>Description</strong>: Redirigir las peticiones DNS de los equipos de la red IT a pihole.</li>
+</ul>
+<p style="text-align: center;"><img src="nat-portForward.png" alt="" width="1169" height="302" /></p>
+<h2>3. Mover regla en red IT</h2>
+<p>Hay que acceder a <strong>Firewall &gt; Rules &gt; Pestaña IT</strong> y mover la regla delante de la regla que permite navegar a los equipos de la red IT. </p>
+<p style="text-align: center;"><img src="rules-It.png" alt="" width="1155" height="435" /></p>
+</div>
+<h4 style="text-align: justify;">4.2 Instalación y configuración de <strong>Pi-Hole</strong></h4>
+<p style="text-align: justify;">En el siguiente <a href="https://docs.pi-hole.net/main/basic-install/" target="_blank" rel="noopener">enlace</a>, tienes la guía de instalación de <strong>Pi-Hole</strong> para que se pueda realizar la instalación en un equipo ubuntu server. Como se resumen de la instalación se destaca lo siguiente.</p>
+<p style="text-align: justify;"><strong>1. Instalación del paquete en ubuntu server</strong></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:/#</strong>curl -sSL https://install.pi-hole.net | bash</span></pre>
+<p style="text-align: justify;"><strong>2. Poner una ip estática en la instalación, para este caso es la 192.168.0.251</strong></p>
+<p style="text-align: center;"><img src="ip-pihole.png" alt="" width="525" height="123" /></p>
+<p style="text-align: justify;"><strong>3. DNS por defecto</strong></p>
+<p style="text-align: justify;">Durante el proceso de instalación, se pide cargar por defecto los dns de google, opendns, etcétera. Para este caso, se eligen los de google.</p>
+<p style="text-align: center;"><img src="dns-google.png" alt="" width="483" height="209" /></p>
+<p style="text-align: justify;"><strong>4. Modo de privacidad para FTL</strong></p>
+<p style="text-align: justify;">Para este caso, se selecciona la <strong>opción 0, show everithing</strong> para que en la<span> interfaz de administración web presente la temperatura y carga del servidor.</span></p>
+<table border="0" style="width: 58.1703%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="width: 31.9957%; text-align: center;"><img src="privace-mode.png" alt="" width="290" height="121" /></td>
+<td style="width: 26.1747%; text-align: center;"><img src="status-pihole.png" alt="" width="210" height="95" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Una vez finaliza el proceso de instalación, aparece una pantalla con la información del modo de acceso a la interfaz web para su administración.</p>
+<p style="text-align: center;"><img src="install-complete.png" alt="" width="617" height="410" /></p>
+<p>En el siguiente vídeo, se describe el proceso de instalación.</p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/hgJJuBgScaA" allowfullscreen="allowfullscreen"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 1.</strong> Instalación de pi-hole en ubuntu server 20.04 LTS.</em></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">En la última pantalla del proceso de instalación se genera una contraseña para la administración, por lo que hay que tomar nota de la misma para la administración. La contraseña se puede modificar con el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>pihole -a -p</span></pre>
+<p style="text-align: center;"><img src="pihole-a-p.png" alt="" width="367" height="84" /></p>
+</div>
+<h4 style="text-align: justify;">4.5. Post-Instalación de <strong>Pi-Hole</strong> en Ubuntu Server 20.04</h4>
+<p style="text-align: justify;">Una vez se ha instalado <strong>Pi-Hole</strong>, hay que configurar el firewall/router para que los clientes DHCP usen <strong>Pi-Hole</strong> como servidor DNS, de esta manera, se garantiza que todos los dispositivos conectados a la red tengan contenido bloqueado sin ninguna otra intervención.</p>
+<p style="text-align: justify;">Esto se ha realizado anteriormente en <strong>PfSense</strong> con el <strong>servidor DHCP de la red IT.</strong></p>
+<p style="text-align: justify;">En el caso de que el <strong>firewall/router</strong> no admita la configuración del servidor DNS, se puede utilizar el servidor DHCP integrado en <strong>Pi-Hole</strong>; previamente deshabilitando el servidor DHCP en el firewall/router (si tiene esa función disponible).</p>
+<p style="text-align: center;"><img src="pihole-DHCP-Server.png" alt="" width="1189" height="582" /></p>
+<p>Como último recurso, se puede <strong>configurar manualmente cada dispositivo</strong> para que use <strong>Pi-Hole</strong> como servidor DNS.</p>
+<p style="text-align: justify;">Para <strong>comprobar</strong> que se ha asignado el servidor DNS de manera correcta, el comando a utilizar en GNU/Linux es:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>resolvectl status</span><span style="font-size: 12pt;"></span></pre>
+<p style="text-align: center;"><img src="resolvectl-status.png" alt="" width="296" height="212" /></p>
+<h3>5. Configuración</h3>
+<p style="text-align: justify;">Una vez instalado <strong>Pi-Hole</strong>, para acceder a la consola de administración por web hay que abrir en un navegador la URL <strong>http://192.168.0.251/admin</strong>, donde 192.168.0.251 es la ip del equipo donde se ha instalado <strong>Pi-Hole</strong> (red it 192.168.0.0).</p>
+<p style="text-align: center;"><img src="panel-Main-PiHole.png" alt="" width="1084" height="608" /></p>
+<p style="text-align: justify;"><strong>Actualizando Listas</strong></p>
+<p style="text-align: justify;">Desde el apartado <strong>Group Management -&gt; Adlists</strong> se pueden modificar las listas que Pi-hole usa para admitir o bloquear direcciones. </p>
+<p style="text-align: justify;">Aunque por Internet hay multitud de webs dedicadas a recopilar listas, se recomienda usar las listas que aparecen en verde en https://firebog.net/ (otra opción es <a href="https://filterlists.com/)">https://filterlists.com/)</a>. Hay queir accediendo de vez en cuando para revisar si hay nuevas listas disponibles. Las propias listas actualizan automáticamente, así que no es necesario volver a configurarlas, aunque dentro de ellas añadan o quiten cosas.<br />Otras lista de filtros<span style="font-size: 1em;"> adicionales. Se pueden encontrar en:</span><br /><strong></strong></p>
+<ul>
+<li style="text-align: justify;"><a href="https://github.com/StevenBlack/hosts">https://github.com/StevenBlack/hosts</a></li>
+<li style="text-align: justify;"><a href="https://firebog.net">https://firebog.net</a></li>
+<li style="text-align: justify;"><a href="https://ftpihole.com">https://ftpihole.com</a></li>
+</ul>
+<p>Como ejemplo, se accede a <a href="https://github.com/StevenBlack/hosts" style="font-size: 0.95em;">https://github.com/StevenBlack/hosts</a> y se añade la lista '<a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/social/hosts" target="_blank" rel="noopener"><span>Unified hosts </span></a><strong><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/social/hosts" target="_blank" rel="noopener">+ social</a>' </strong></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="listas-github.png" alt="" width="933" height="200" /></td>
+<td style="width: 50%; text-align: center;"><img src="adlists-pihole.png" alt="" width="1249" height="568" /></td>
+</tr>
+</tbody>
+</table>
+<p>Una vez se han agregado las listas, hay que proceder a actualizarlas, y esto se hace desde el menú <strong>Tools &gt; Upadte Gravity.</strong></p>
+<p style="text-align: center;"><strong><img src="update-gravity.png" alt="" width="884" height="652" /></strong></p>
+<p></p>
+<p><strong>Añadir direcciones de los servidores en los registros DNS locales</strong></p>
+<p style="text-align: justify;">Para comenzar a registrar nombres del propio dominio en<strong> Pi-Hole</strong>, el acceso es a través del menú lateral: <strong>Local DNS &gt; DNS Records</strong>. Para este caso, se registra el <strong>dominio ciber.local</strong> del controlador del dominio de la red.</p>
+<p style="text-align: center;"><img src="local-dns-Pihole.png" alt="" width="1087" height="613" /></p>
+<p><strong>Lista blanca y Lista Negra</strong></p>
+<p style="text-align: justify;">Como ejemplo, en la <strong>lista blanca</strong>, si se tienen equipos GNU/Linux Ubuntu como es el caso, se añade el dominio <strong>archive.ubuntu.com</strong> y todos sus subdominios.</p>
+<p style="text-align: center;"><img src="lista-blanca-ubuntu.png" alt="" width="933" height="231" /></p>
+<p>En la <strong>lista negra,</strong> como ejemplo se añaden dos entradas para bloquear el tráfico a las páginas web de diarios deportivos: <strong>as y marca</strong>.</p>
+<p style="text-align: center;"><strong><img src="lista-negra.png" alt="" width="891" height="313" /></strong></p>
+<p><strong>Servidores DNS raíz </strong></p>
+<p style="text-align: justify;">Para utilizar directamente los servidores DNS raíz en lugar de confiar en los servidores DNS de los proveedores, hay que seguir las instrucciones de la guía <a href="https://docs.pi-hole.net/guides/dns/unbound/" target="_blank" rel="noopener">Pi-hole as All-Around DNS Solution</a>.</p>
+<p style="text-align: justify;"><strong>Hacer copias de seguridad</strong></p>
+<p style="text-align: justify;">Una vez se ha finalizado la configuración y<strong> pi-Hole</strong> está funcionando sin anomalías, se recomienda realizar una copia de seguridad, por si en el futuro es necesario realizar algún tipo de restauración. Para hacer esta tarea hay que acceder al panel y seleccionar<strong> Settings &gt; Teleporter</strong>.</p>
+<p style="text-align: center;"><img src="backup.png" alt="" width="970" height="515" /></p>
+<p style="text-align: justify;">Si se observa la figura superior, desde ese panel se puede realizar la copia de las secciones seleccionada o realizar la restauración de una copia.</p>
+<h3 style="text-align: justify;"><strong>6. Comprobaciones y pruebas</strong></h3>
+<h4>6.1 Comprobaciones</h4>
+<p style="text-align: justify;">Para comprobar la configuración DNS en GNU/Linux el comando es:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>resolvectl status</span></pre>
+<p style="text-align: center;"><img src="resolve-ctl-status.png" alt="" width="356" height="211" /></p>
+<p style="text-align: justify;">Para comprobar que la resolución de nombres funciona correctamente, se pueden utilizar los siguientes comandos donde el primero es válido en Windows y GNU/Linux y el segundo sólo para Windows.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>nslookup</strong> www.upv.es --&gt; GNU/Linux y Windows.<br />Resolve-DnsName -Name "www.upv.es" --&gt; Windows<br /></span></pre>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 47.4384%; text-align: center;"><a href="nslookup-upv.png" target="_blank" rel="noopener"><img src="nslookup-upv.png" alt="" width="471" height="237" /></a></td>
+<td style="width: 27.5616%; text-align: center;"><a href="nslookup-upv-Windows.png"><img src="nslookup-upv-Windows.png" alt="" width="259" height="212" /></a></td>
+<td style="width: 25%; text-align: center;"><a href="resolve-dns-Windows.png" target="_blank" rel="noopener"><img src="resolve-dns-Windows.png" alt="" width="496" height="344" /></a></td>
+</tr>
+</tbody>
+</table>
+<h4>6.2 Pruebas</h4>
+<div class="exe-fx exe-tabs">
+<h2>1. Bloqueo</h2>
+<p style="text-align: justify;">Al acceder desde un <strong>equipo Windows de la red IT</strong> a la página web as.como no se permite el acceso debido a que esa página está en la lista negra.</p>
+<p style="text-align: center;"><img src="bloque-pagina-as.png" alt="" width="1354" height="667" /></p>
+<h2>2. Bloqueo</h2>
+<p style="text-align: justify;">Al acceder desde un <strong>equipo Ubuntu de la red IT</strong> a la página web marca.como no se permite el acceso debido a que esa página está en la lista negra.</p>
+<p><img src="pagina-marca-no-ubuntu.png" alt="" width="1359" height="666" /></p>
+<h2>3. No bloqueo</h2>
+<p style="text-align: justify;">Al acceder desde un <strong>equipo Windows de la red IT</strong> a una página web que no esté en la lista negra, se accede sin problemas.</p>
+<p style="text-align: center;"><img src="navegacion-pagina-upv.png" alt="" width="1357" height="670" /></p>
+</div>
+<h3>7. FAQs</h3>
+<h4 style="text-align: justify;"><strong>7.1 En caso de cambiar la ip del servidor Pi-Hole después de instalarlo</strong></h4>
+<p style="text-align: justify;">Si se realiza la <strong>modificación de la ip del servidor ubuntu</strong> una vez se ha instalado pi-hole, hay que volver a <strong>reconfigurar Pi-Hole</strong> para que actualice la nueva ip. <strong>Ejemplo:</strong> Cuando se instaló <strong>Pi-Hole</strong> se tenía la ip 192.168.1.254, pero ahora, la ip del servidor se ha modificado por la 192.168.0.251. Como se puede observar en la figura inferior, la ip no se actualiza y sigue estando la anterior.</p>
+<p style="text-align: center;"><img src="ip-pihole-Anteriror.png" alt="" width="504" height="307" /></p>
+<p style="text-align: justify;">Para configurar de nuevo la ip, hay que ejecutar el comando siguiente seleccionando la opción de reconfigurar y respondiendo sí a la pregunta de si la dirección IP actualmente asignada es la que desea que utilice Pi-Hole. </p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>pihole -r</span></pre>
+<h3 style="text-align: justify;">8. Conclusiones</h3>
+<p style="text-align: justify;">Una vez se tiene el sistema <strong>pi-Hole</strong> en producción, los equipos de la red IT disfrutarán de una conexión a internet libre de publicidad, así como conexiones más rápidas en equipos como teléfonos móviles y tablets al no tener que cargar banners de publicidad en las distintas webs.</p>
+<h3 style="text-align: justify;">9. Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://docs.pi-hole.net/" target="_blank" rel="noopener">[Pi-hole documentation]</a></li>
+<li style="text-align: justify;"><a href="https://github.com/pi-hole/docker-pi-hole" target="_blank" rel="noopener">[Instalación de Pi-hole en Docker]</a></li>
+<li style="text-align: justify;"><a href="https://docs.pi-hole.net/main/prerequisites/" target="_blank" rel="noopener">[Instalación de Pi-hole]</a></li>
+<li style="text-align: justify;"><a href="https://docs.pi-hole.net/guides/dns/unbound/" target="_blank" rel="noopener">[Pi-hole as All-Around DNS Solution]</a></li>
+<li style="text-align: justify;"><a href="https://www.sans.org/reading-room/whitepapers/dns/dns-sinkhole-33523" target="_blank" rel="noopener">[Bruneau, G. (2010). *DNS Sinkhole*. The SANS Institute]</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="prctica_1_proxy_squid_con_pfsense.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

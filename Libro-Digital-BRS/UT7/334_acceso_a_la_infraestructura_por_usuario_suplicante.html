@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3.4 Acceso a la infraestructura por usuario suplicante | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-84"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_servidor_de_autenticacin_radius.html" class="current-page-parent daddy">3. Servidor de autenticación Radius</a>
+   <ul>
+      <li><a href="31_freeradius.html" class="daddy">3.1 FreeRadius</a>
+      <ul class="other-section">
+         <li><a href="311_instalacin_servidor_radius.html" class="daddy">3.1.1. Instalación servidor Radius</a>
+         <ul class="other-section">
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul class="other-section">
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="current-page-parent daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul>
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li id="active"><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="active no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="333_configurar_el_routerap.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="34_servidor_aaa_en_gns3.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3.4 Acceso a la infraestructura por usuario suplicante</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id115">
+<div class="iDevice emphasis0" >
+<div id="ta115_115_2" class="block iDevice_content">
+<div class="exe-text"><h3 id="1aba" style="text-align: justify;"><span>1. Introducción</span></h3>
+<p style="text-align: justify;"><span>Para probar la infraestructura que se ha instalado y configurado en los anteriores capítulos, se incorpora un cliente windows 10 que será el que utiliza el usuario suplicante. El equipo no tiene porqué estar integrado en el domino aunque lo habitual es que el equipo esté integrado.</span></p>
+<h3 id="1aba" style="text-align: justify;"><span>2. Importación del certificado de servidor</span></h3>
+<div class="exe-fx exe-tabs">
+<h2>Cargar certificado</h2>
+<p>En primer lugar hay que copiar el certificado que se exportó en un apartado anterior. A continuación, <span>se hace clic con el botón derecho del ratón y se selecciona "</span><strong>Instalar certificado</strong><span>".</span></p>
+<p style="text-align: center;"><img src="instalar-certificado-01.png" alt="" width="859" height="497" /></p>
+<h2>Instalar certificado</h2>
+<p style="text-align: justify;"><span>Una vez se ha pulsado en instalar, aparecer un </span><strong>Asistente de importación de certificados</strong><span> para agregar el certificado a los certificados raíz de confianza en el equipo. En primer lugar, se elige que la ubicación del almacén sea en el equipo local y se pulsa '<strong>Siguiente</strong>'. A continuación, se selecciona que windows seleccione de manera automática el almacén de certificados aunque se podría elegir otra ubicación, hay que pulsar '<strong>Siguiente</strong>'. Por último, hay que pulsar <strong>Finalizar</strong> y en unos segundos aparecerá un diálogo informando que<strong> la importación se realizó correctamente</strong> si se ha tenido éxito.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><img src="instalar-certificado-02.png" alt="" width="533" height="518" /></td>
+<td style="width: 33.3333%; text-align: center;"><img src="instalar-certificado-03.png" alt="" width="531" height="518" /></td>
+<td style="width: 33.3333%; text-align: center;"><img src="instalar-certificado-04.png" alt="" width="532" height="517" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Comprobar certificado importado</h2>
+<p>Si se accede al almacén Entidades de certificación intermedias, se puede comprobar que el certificado se ha importado correctamente.</p>
+<p style="text-align: center;"><img src="instalar-certificado-06.png" alt="" width="1186" height="456" /></p>
+<h2>Mover certificado </h2>
+<p>Si se desea, se puede mover el certificado importado al almacén de certificados de confianza.</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="instalar-certificado-07.png"><img src="instalar-certificado-07.png" alt="" width="1166" height="638" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="instalar-certificado-08.png"><img src="instalar-certificado-08.png" alt="" width="1171" height="639" /></a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+</div>
+<ul style="text-align: justify;">
+<li style="list-style-type: none;">
+<ul></ul>
+</li>
+</ul>
+<p style="text-align: justify;">La importación del certificado también se puede realizar desde powershell donde hay que indicar en qué almacén se desea incorporar el mismo.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\</strong> Import-Certificate -CertStoreLocation Cert:LocalMachineAuthRoot -FilePath C:\certs\radius-WAP2.cer</span></pre>
+<h3 id="1aba" style="text-align: justify;"><span>3. Conectividad a la red Wifi</span></h3>
+<p style="text-align: justify;"><span></span>En un equipo <strong>Windows 10 Enterprise</strong> se va realizar la conexión a la red inalámbrica mediante el usuario <strong>user01wlan</strong> que pertenece al grupo <strong>radius-WAP2</strong> que se configuró en el <strong>capítulo 3.3.2.</strong> Dado que el usuario es el único miembro del grupo, sólo él podrá realizar una conexión inalámbrica.</p>
+<p style="text-align: justify;">En primer lugar, se busca la red inalámbrica que se ha implantado, en este caso, TP-LINK_Radius y se pulsa sobre ella. Aparecerá las cajas de diálogo para que se introduzcan las credenciales del usuario del dominio (Figura 1), en este caso, el usuario es: <strong><a href="mailto:user01wlan@ciber.local">user01wlan@ciber.local</a>. </strong>Si se pulsa <strong>Aceptar</strong>, comienza el proceso de autenticación en el servidor Radius (Figura 2), </p>
+<table border="1" style="width: 100%; height: 710px;">
+<tbody>
+<tr style="height: 685px;">
+<td style="width: 50%; text-align: center; height: 685px;"><img src="acceso-a-TP-LINK_Radius.png" alt="" width="413" height="669" /></td>
+<td style="width: 50%; text-align: center; height: 685px;"><img src="acceso-a-TP-LINK_Radius-2.png" alt="" width="412" height="679" /></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 50%; text-align: center; height: 25px;"><span style="font-size: 12pt;"><em><strong>Figura 1.</strong> Acceso a la red TP-LINK_Radius.</em></span></td>
+<td style="width: 50%; height: 25px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 2.</strong> Proceso de autenticación.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Si la autenticación ha tenido éxito, ya se tiene el equipo/usuario en la red de la organización (Figura 3).</p>
+<p style="text-align: center;"><img src="acceso-a-TP-LINK_Radius-3.png" alt="" width="408" height="648" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 3.</strong> Conexión a la red inalámbrica establecida.</em></span></p>
+<p style="text-align: justify;">Si se accede a la conexión inalámbrica que se acaba de establecer, se puede observar que, se ha obtenido una ip, dns y gateway del servidor dhcp del controlador del dominio (el rango configurado en el servidor dhcp va de 192.168.0.150-192.168.0.180). También informa del canal y banda de la red así como su velocidad. También se informa del protocolo de autenticación utilizado: <strong>EAP protegido (PEAP)</strong>. Por último, el sufijo principal es el dominio<strong> ciber.local</strong>.</p>
+<p></p>
+<p style="text-align: center;"><img src="conexion-cliente.PNG" alt="" width="497" height="862" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 4.</strong> Datos de la conexión inalámbrica.</em></span></p>
+<p>Si se comprueba la configuración tcp/ip del equipo, se puede observar que se ha obtenido una ip del servidor dhcp del controlador del dominio además del gateway y dns.</p>
+<p style="text-align: center;"><img src="ipconfig-cliente.PNG" alt="" width="686" height="850" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 5.</strong> Configuración tcp/ip del equipo conectado a la red inalámbrica.</em></span></p>
+<p>Por último, dado que estamos en la red de la organización, se puede utilizar el recurso de salida a internet.</p>
+<p style="text-align: center;"><img src="navegar-cliente.PNG" alt="" width="1186" height="625" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 6.</strong> Navegación  en la web del equipo.</em></span></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="333_configurar_el_routerap.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="34_servidor_aaa_en_gns3.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

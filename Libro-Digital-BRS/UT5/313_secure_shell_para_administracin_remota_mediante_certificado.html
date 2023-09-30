@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.3 Secure Shell para administración remota mediante certificado | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-57"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="current-page-parent daddy">3. Securización de los sistemas de administración remota</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_secureshell.html" class="current-page-parent daddy">3.1 SecureShell</a>
+      <ul>
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li id="active"><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="active daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul>
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul class="other-section">
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="312_instalacin_del_servidor_ssh.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.3 Secure Shell para administración remota mediante certificado</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id94">
+<div class="iDevice emphasis0">
+<div id="ta94_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;">El <strong>protocolo SSH</strong> (Secure SHELL) proporciona un método seguro de acceder a un servidor privado mediante el uso de credenciales, usuario y contraseña.</p>
+<p style="text-align: justify;">Hasta ahora, generalmente nos hemos conectado al servidor SSH de Ubuntu Server autenticándonos con usuario/contraseña. Tanto la contraseña como el usuario pueden ser robados por cualquier atacante, y esto pondría en riesgo la confidencialidad de la información. Para solucionar este problema se ofrece el uso de claves SSH, que a diferencia de las contraseñas, son más complicadas o incluso casi imposibles de descifrar. La<strong> autenticación mediante clave pública y privada</strong> dota al servidor SSH de un plus de seguridad a nuestro sistema, ya que entre otras cosas, es más resistente a ataques por fuerza bruta o a robos de contraseñas al despiste.</p>
+<p style="text-align: justify;">Las <strong>claves SSH</strong> consisten en la creación de un par de claves vinculadas y que se crean juntas. Por cada usuario se generan dos largas cadenas de caracteres cada un correspondiente a cada clave. Una es la clave pública y la otra es la clave privada.</p>
+<ul>
+<li style="text-align: justify;"><strong>Clave privada:</strong> se utiliza para firmar certificados y para asegurar y verificar conexiones. Las claves privadas van en claro, por lo que cualquier persona que tenga acceso a este fichero podrá interactuar con él. Por este motivo la clave privada debe de estar protegida y nunca ser compartida con nadie.</li>
+<li style="text-align: justify;"><strong>Clave pública:</strong> se utiliza junto a una clave privada para comprobar que los datos están cifrados y verificados. Gracias a esta se puede comprobar la verificación de los datos sin necesidad de conocer la clave privada. La clave pública de un usuario se instala en cualquier servidor y se desbloquea mediante la conexión con un cliente que hace uso de la clave privada. En el caso que las dos claves tengan exactitud, es decir, que coincidan, el sistema permite el acceso sin necesidad de tener que utilizar contraseña. Pero si queremos aumentar esta seguridad, podemos implementar una contraseña en la clave privada.</li>
+</ul>
+<p>En este capítulo, aprenderemos cómo evitar el ataque conocido como <a href="https://www.incibe.es/protege-tu-empresa/blog/el-ataque-del-man-middle-empresa-riesgos-y-formas-evitarlo" target="_blank" rel="noopener"><strong>Man-in-the-middle</strong></a>.</p>
+<h3>2. Escenario</h3>
+<p style="text-align: justify;">Para este capítulo, se trabaja con los siguiente equipos:</p>
+<ul>
+<li style="text-align: justify;"><strong>Ubuntu Server 20.04.3</strong> que hará las veces de servidor de ssh con ip 192.168.0.22 y sobre el que se realizarán las conexiones con claves.</li>
+<li style="text-align: justify;"><strong>Equipo Linux Mint 19</strong> que hará las veces de cliente con ip 192.168.0.19 y donde habrá que generar las claves.</li>
+<li style="text-align: justify;"><strong>Equipo Windows 10</strong> que hará las veces de cliente con ip 192.168.0.30 y donde habrá que generar las claves.</li>
+</ul>
+<h3>3. Acceso desde equipo cliente GNU-Linux/macOS a servidor ssh</h3>
+<p style="text-align: justify;">En todas las distribuciones de GNU/Linux está disponible el cliente de OpenSSH y se suele incluir por defecto en su instalación básica.  En caso de que no se tenga, hay que instalarlo. Para este caso, se instala en el equipo cliente Linux Mint mediante el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$ </strong>sudo apt update &amp;&amp; sudo apt install openssh-client</span></pre>
+<p style="text-align: justify;">Por otra parte, en los sistemas <strong>macOS</strong> el cliente de OpenSSH está incorporado de forma nativa.</p>
+<p style="text-align: justify;">La conexión al servidor (utilizando las credenciales), se realiza utilizando el nombre del usuario con el que se quiera conectar. El servidor solicitará la contraseña para el usuario remoto. Esto sería el procedimiento que se suele utilizar habitualmente.</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$ </strong>ssh administrador@192.168.0.22</span></pre>
+<p style="text-align: center;"><img src="ssh-userver.png" alt="" width="732" height="582" /></p>
+<p style="text-align: center;"><em><strong>Figura 1</strong>. Conexión ssh.</em></p>
+<p style="text-align: justify;">La generación del <strong>par de claves asimétricas</strong> se realiza utilizando el comando <em><strong>ssh-keygen</strong> </em>al igual que en Windows 10 con el cliente de OpenSSH integrado. También se dispone del agente <strong>ssh-agent</strong> y del comando <strong>ssh-add</strong> para añadir al almacén de claves las mismas. Incluso la mayoría de distribuciones con entorno gráfico ya vienen preconfigurados para que arranque el agente al iniciar sesión. Para comprobar su estado, basta con ejecutar el comando:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$ </strong>eval `ssh-agent`</span></pre>
+<p style="text-align: center;"><img src="eval-ssh-agent.png" alt="" width="597" height="209" /></p>
+<p style="text-align: center;"><em><strong>Figura 2</strong>. Comprobar estado ssh-agent.</em></p>
+<p style="text-align: justify;"></p>
+<p>Para esta caso de ejemplo, se utiliza<strong> ssh-keygen</strong> para generar un par de claves RSA (algoritmo de cifrado) de 4096 bits (la longitud en bits). </p>
+<p>En primer lugar, se necesita generar un par de claves en el equipo Linux cliente. Para ello se utiliza el siguiente comando donde se nombrará cliente_01 al fichero de clave.</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$ </strong>ssh-keygen -t rsa -b 4096</span></pre>
+<p style="text-align: center;"><img src="keygen-cliente_01.png" alt="" width="579" height="380" /></p>
+<p style="text-align: center;"><em><strong>Figura 3</strong>. Generar par de claves en cliente.</em></p>
+<p style="text-align: justify;">Las <strong>claves públicas</strong> se crean usando el mismo nombre base que la clave privada, con una extensión .pub. La ubicación de momento se deja por defecto. Si se quiere guardar las claves en otra ruta, hay que poner la opción<span> </span><strong>-f</strong><span> </span>y la ruta en cuestión:<span> </span><strong> ssh-keygen -f ~/ruta -t rsa -b 4096</strong>.</p>
+<p style="text-align: justify;">El comando una vez se ejecuta, solicita la opción de poner nombre a estas claves. Para este caso, se ha nombrado como "<strong>cliente_01</strong>" y para mejorar la seguridad de estos, se introduce la passphrase que se desea. Esta será requerida para cargar la clave privada y que se usará cuando se conecte el cliente a través de SSH. Esto hace que la <strong>seguridad obviamente sea mayor</strong>, pero también <strong>dificultará la automatización</strong>.</p>
+<p>Al ejecutar el comando, se crea una clave privada escrita en<span> </span><strong>/home/jc/cliente_01</strong><span> </span>y una clave pública escrita en<span> </span><strong>/home/jc/cliente_01.pub</strong>. Las copiamos a <strong>/home/jc/.ssh.</strong></p>
+<p style="text-align: center;"><strong><img src="claves-ls.png" alt="" width="339" height="65" /></strong></p>
+<p style="text-align: justify;"><strong>Copiado de la clave</strong></p>
+<p style="text-align: justify;">Ahora, hay que copiar la clave pública del cliente en el servidor. La clave pública a copiar es la siguiente:</p>
+<p style="text-align: center;"><img src="clave-pub.png" alt="" width="641" height="207" /></p>
+<p style="text-align: center;"><em><strong>Figura 4</strong>. Clave pública del cliente.</em></p>
+<p>Se podrían utilizar diferentes opciones para trasladar la clave ssh al equipo que se desea.</p>
+<ul>
+<li>Introducirla manualmente en /usuario/.ssh/authorized_keys.</li>
+<li>Copiarlo vía scp al equipo remoto.</li>
+<li>Mediante el comando ssh-copy-id.</li>
+</ul>
+<p>Para este caso, se utiliza el comando <strong>ssh-copy-id.</strong></p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$ </strong>ssh-copy-id -i ~/.ssh/cliente_01.pub administrador@192.168.0.22</span></pre>
+<p style="text-align: center;"><img src="ssh-copy-id.png" alt="" width="950" height="215" /></p>
+<p style="text-align: center;"><em><strong>Figura 5</strong>. Copiado de la clave pública del cliente la servidor.</em></p>
+<p style="text-align: justify;"><strong>Importante:</strong> La ejecución del comando solicita la contraseña de un usuario (no es necesario que sea administrador) del equipo remoto para copiarla. Por lo tanto, es necesario disponer de acceso común con un usuario del servidor donde vamos a copiar la clave pública antes de hacer esto.</p>
+<p><strong>Acceso remoto vía ssh con el certificado</strong></p>
+<p>El comando a utilizar es el siguiente, donde este, solicitará<span> una contraseña que será la clave privada del cliente_01.</span></p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$ </strong>ssh -i ~/.ssh/cliente_01 administrador@192.168.0.22</span></pre>
+<p style="text-align: center;"><img src="acceso-cert.png" alt="" width="636" height="481" /></p>
+<p style="text-align: center;"><em><strong>Figura 6</strong>. Acceso al servidor con certificado.</em></p>
+<p></p>
+<h3>4. Acceso desde Windows 10</h3>
+<p style="text-align: justify;">A partir de <strong>Windows 10 versión 1809</strong>, se incluye como componente integrado en el sistema tanto un cliente como un servidor de OpenSSH.</p>
+<p style="text-align: justify;">La instalación mediante entorno gráfico se realiza desde <strong><em>Configuración &gt; Aplicaciones &gt; Características opcionales &gt; Agregar una característica</em></strong>, localizar Cliente OpenSSH y pinchar en Instalar.</p>
+<p style="text-align: justify;"><img src="instalar-openSSH.png" alt="" width="1356" height="668" /></p>
+<p style="text-align: center;"><em><strong>Figura 7.</strong> Instalar cliente OpenSSH.</em></p>
+<p style="text-align: justify;">La instalación también se puede realizar mediante PowerShell, para ello, hay que abrir una terminal de PowerShell con privilegios de Administrador. Antes de realizar la instalación, se comprueba su disponibilidad y si ya se encuentra instalado o no.</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Windows\system32&gt;</strong> Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'</span></pre>
+<p style="text-align: center;"><img src="comprobar-ps-clientSSH.png" alt="" width="892" height="240" /></p>
+<p style="text-align: center;"><em><strong>Figura 8.</strong> Comprobación en PS del paquete OpenSSH.</em></p>
+<p style="text-align: justify;">Como se puede observar en la <strong>Figura 4</strong>, no se tiene instalado ni el cliente ni el servidor SSH. Para instalar el cliente openSSH, el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Windows\system32&gt;</strong> Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0</span></pre>
+<p style="text-align: center;"><img src="install-Ps-ClientOpenssh.png" alt="" width="915" height="328" /></p>
+<p style="text-align: center;"><em><strong>Figura 9.</strong> Instalación del cliente OpenSSH en Powershell.</em></p>
+<p style="text-align: justify;">La conexión al servidor se realiza utilizando el nombre del usuario con el que se quiera conectar. El servidor solicitará la contraseña para el usuario remoto. Esta conexión se puede establecer desde una terminal de Símbolo de sistema (cmd).</p>
+<pre><span style="font-size: 12pt;"><strong>C:\Windows\system32&gt;</strong> ssh administrador@192.168.0.22</span></pre>
+<p style="text-align: center;"><img src="conexion-ssh-servidor-desde-W10.png" alt="" width="977" height="543" /></p>
+<p style="text-align: center;"><em><strong>Figura 10.</strong> Conexión ssh al equipo ubuntu server 20.04.</em></p>
+<p style="text-align: justify;">No obstante, es conveniente utilizar la autenticación mediante clave asimétrica. En este caso se generan un par de claves, una privada y la otra pública. La clave privada es el equivalente a una contraseña; si otra persona consigue tu clave privada se podrá identificar como si fueras tu frente al sistema, con lo que podrá iniciar sesión con tus mismos privilegios en cualquier sistema al que tengas acceso con esa clave privada. La clave pública se deja en el servidor para comprobar la validez de la clave privada; esta clave se comparte con otras personas o sistemas para que comprueben que eres tu quien envía un mensaje o intenta acceder al sistema.</p>
+<p style="text-align: justify;">Para ello, tanto desde una terminal de Símbolo de sistema se utiliza el comando <strong>ssh-keygen</strong> para generar los ficheros de claves.</p>
+<pre><span style="font-size: 12pt;"><strong>C:\Windows\system32&gt;</strong> ssh-keygen</span></pre>
+<p style="text-align: center;"><img src="ssh-keygen-w10.png" alt="" width="846" height="452" /><br /><em><strong>Figura 11.</strong> Generación de par de claves.</em></p>
+<p style="text-align: justify;">La salida del comando genera en primer lugar, la solicitud por la ruta y el nombre de fichero en el que almacenar las claves. En segundo lugar se solicita una frase de contraseña (passphrase) que solicitará cada vez que se establezca una conexión. Esta contraseña no debe ser la misma que la del servidor y actúa a modo de autenticación de doble factor (2FA). Se generarán dos ficheros, uno conteniendo la clave privada y otro conteniendo la clave pública que finaliza en .pub, para este caso,<strong> id_rsa.pub</strong> ya que no se ha modificado la que se proponía por defecto.</p>
+<p style="text-align: center;"><img src="listar-claves-W10.png" alt="" width="600" height="334" /></p>
+<p style="text-align: center;"><em><strong>Figura 12.</strong> Par de claves del usuario.</em></p>
+<p style="text-align: justify;">Para proteger mejor el fichero con la clave privada, es recomendable utilizar <strong>ssh-agent</strong> para almacenarla en el contexto de seguridad de Windows, asociado con el inicio de sesión de Windows. El servicio <strong>ssh-agent</strong> se debe arrancar como Administrador y se utilizará el comando <strong>ssh-add</strong> para almacenar la clave privada.</p>
+<p style="text-align: justify;">Antes de arrancar el servicio ssh-agent en Powershell, hay que asegurarse que esté habilitado, para ello, hay que ejecutar el siguiente comando que permite comprobar el estado:</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Windows\system32&gt;</strong> Get-Service ssh-agent | Select StartType</span></pre>
+<p style="text-align: center;"><img src="start-type-sshAgent.png" alt="" width="641" height="230" /></p>
+<p style="text-align: center;"><em><strong>Figura 13.</strong> Comprobar el estado de arranque.</em></p>
+<p style="text-align: justify;">Como se puede observar en la Figura 7, el servicio está deshabilitado para su arranque por lo que si se ejecuta el comando Start-Service ssh-agent, dará un error. Por lo tanto, hay que habilitar el arranque mediante el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Windows\system32&gt;</strong> Get-Service -Name ssh-agent | Set-Service -StartupType Manual</span></pre>
+<p style="text-align: center;"><img src="set-manual-sshagent.png" alt="" width="769" height="151" /></p>
+<p style="text-align: center;"><em><strong>Figura 14.</strong> Establecer el estado de arranque manual.</em></p>
+<p style="text-align: justify;">Una vez cambiado el estado, ahora se puede arrancar el servicio mediante el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Windows\system32&gt;</strong> Start-Service ssh-agent</span></pre>
+<p style="text-align: center;"><img src="star-service-sshAgent.png" alt="" width="534" height="102" /></p>
+<p style="text-align: center;"><em><strong>Figura 15.</strong> Arranque del servicio ssh-agent.</em></p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Windows\system32&gt;</strong> Start-Service ssh-agent</span></pre>
+<p style="text-align: center;"><img src="servicio-ssh-agent.png" alt="" width="1173" height="783" /></p>
+<p style="text-align: center;"><em><strong>Figura 16.</strong> Comprobación del estado del servicio mediante aplicación gráfica.</em></p>
+<p style="text-align: justify;">Una vez se ha arrancado el servicio, hay que almacenar la clave privada mediante el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Users\jcrequena&gt;</strong> ssh-add .ssh\id_rsa</span></pre>
+<p style="text-align: center;"><img src="ssh-add.png" alt="" width="638" height="193" /></p>
+<p style="text-align: center;"><em><strong>Figura 17.</strong> Almacenar la clave privada.</em></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">En este momento, cada vez que desde este cliente windows 10 se necesite la clave privada para autenticación del usuario, <strong>ssh-agent</strong> recuperará la clave privada local del almacén asociado al inicio de sesión de Windows y se la proporcionará al cliente SSH.</p>
+</div>
+<p style="text-align: justify;"><span style="text-align: justify; font-size: 1em;">La ventaja de utilizar el agente de autenticación de OpenSSH es que la clave privada se almacenará en el contexto de seguridad de Windows. Dicho de otra forma, la clave privada estará asociada con el inicio de sesión de Windows, por lo que solo será necesario introducir la frase de contraseña (si se definió) una única vez.</span><br /><em></em></p>
+<p style="text-align: justify;">Por último, solo falta copiar la clave pública en el servidor.</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Users\jcrequena&gt;</strong> ssh administrador@192.168.0.22 mkdir ~/.ssh</span></pre>
+<p style="text-align: center;"><img src="crear-dir-por-ssh.png" alt="" width="576" height="132" /></p>
+<p style="text-align: center;"><em><strong>Figura 18.</strong> Creación del directorio .shh en el servidor ubuntu server.</em></p>
+<p style="text-align: justify;">A continuación, se copia la clave publica mediante scp:</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Users\jcrequena&gt;</strong> ssh administrador@192.168.0.22 mkdir ~/.ssh</span></pre>
+<p style="text-align: center;"><img src="copiado-clave-publica.png" alt="" width="760" height="143" /></p>
+<p style="text-align: center;"><em><strong>Figura 19.</strong> Copiado de la clave pública en el servidor ubuntu server.</em></p>
+<p style="text-align: justify;">A partir de ahora, cada vez que se conecte con el servidor no se solicitará la contraseña, sino que se autenticará utilizando la clave privada. Si se ha configurado una <strong>passphrase</strong> al generarla, será esta la que se solicite.</p>
+<h4 style="text-align: justify;">4.1 Acceso mediante Putty</h4>
+<p style="text-align: justify;">En versiones anteriores de Windows 10 1809, al no disponer de cliente de SSH integrado, es necesario utilizar herramientas de terceros, como por ejemplo <a href="https://www.putty.org/" target="_blank" rel="noopener"><strong>PuTTY</strong></a> y WinSCP2.</p>
+<p style="text-align: justify;">Para realizar la conexión, tan solo será necesario indicar la dirección IP (o el nombre DNS), el puerto TCP del servidor y el protocolo que se utilizará.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="conf-putyy.png" alt="" width="450" height="440" /></td>
+<td style="width: 50%; text-align: center;"><img src="acceso-userve-putyy.png" alt="" width="673" height="480" /></td>
+</tr>
+</tbody>
+</table>
+<p>Para generar el par de claves pública/privada, se utilizará el programa <a href="https://www.puttygen.com/" target="_blank" rel="noopener">PuTTYgen</a>.</p>
+<ul>
+<li>El formato de clave privada utilizado por PuTTY es propio del programa (formato PPK), por lo que no es compatible con OpenSSH ni con SSH2.</li>
+<li>El formato de clave pública guardado en fichero se almacena en formato SSH2, por lo que es necesario convertirlo a OpenSSH para poder utilizarlo en nuestro servidor.</li>
+</ul>
+<p style="text-align: justify;">La aplicación <strong>PuTTYgen</strong> también permite importar claves OpenSSH (desde la entrada de menú Conversions → Import key) y exportar las claves PPK a los formatos OpenSSH y ssh.com. (desde las entradas del menú Conversions → Export OpenSSH key y Conversions → Export ssh.com key). En las imágenes inferiores se puede observar tanto la importación como la exportación.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="putty-keygen-01.png" alt="" width="599" height="468" /></td>
+<td style="width: 50%; text-align: center;"><img src="putty-keygen-02.png" alt="" width="599" height="469" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">A continuación, se describe el proceso para generar una clave. En primer lugar hay que pulsar el botón '<strong>Generate</strong>' (antes se ha establecido a SSH-2 RSA key como ejemplo). Después de generar, solo es necesario guardar la clave privada pulsando el botón <strong>'Save public key</strong>'. La clave pública se puede guardar, aunque si no se dispone de ella en fichero se puede volver a calcular con tan solo cargar de nuevo la clave privada.</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 32.1429%; text-align: center;"><img src="putty-keygen.png" alt="" width="600" height="467" /></td>
+<td style="width: 34.7708%; text-align: center;"><img src="puttykeygen-03.png" alt="" width="598" height="468" /></td>
+<td style="width: 33.0863%; text-align: center;"><img src="putty-keygen-04.png" alt="" width="598" height="467" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Si no se ha guardado la clave pública en un fichero, esta aparece en el campo Key en un formato compatible con OpenSSH. Este texto se debe añadir al fichero <strong>${HOME}/.ssh/authorized_keys</strong> del servidor en una única línea. Se puede utilizar para ello cualquier editor de texto como por ejemplo nano.</p>
+<p style="text-align: center;"><img src="clave-pub-servidor.png" alt="" width="652" height="459" /></p>
+<p style="text-align: center;"><em><strong>Figura 20</strong>. Contenido del fichero authorized-keys.</em></p>
+<p style="text-align: justify;">En caso de haber guardado el fichero de clave pública, se debe copiar en el servidor (por ejemplo, con el programa <a href="https://winscp.net/eng/download.php" target="_blank" rel="noopener">WinSCP</a>) y convertir el formato SSH2 en OpenSSH antes de añadir su contenido al fichero ${HOME}/.ssh/authorized_keys.</p>
+<p style="text-align: center;"><img src="winscp.png" alt="" width="1162" height="512" /></p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>ssh-keygen -i -f id_rsa_jcrequena.pub &gt;&gt; ~/.ssh/authorized_keys</span></pre>
+<p style="text-align: center;"><img src="add-autkeys.png" alt="" width="733" height="41" /></p>
+<p style="text-align: justify;">Ahora, la configuración de la conexión en <strong>PuTTY</strong> debe indicar que se utilizará la clave privada para autenticar al usuario en la categoría <strong>Connection &gt; SSH &gt; Auth</strong>.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="conn-putyy.png" alt="" width="450" height="441" /></td>
+<td style="width: 50%; text-align: center;"><img src="conn-putyy-02.png" alt="" width="448" height="438" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong>PuTTY</strong> también dispone de un agente llamado <a href="https://the.earth.li/~sgtatham/putty/0.73/htmldoc/Chapter9.html." target="_blank" rel="noopener"><strong>Pageant</strong></a> que permite añadir en él las claves privadas de forma que tanto PuTTY como WinSCP utilicen las claves de este almacén de forma dinámica sin tener que especificarlas en la conexión.</p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="312_instalacin_del_servidor_ssh.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

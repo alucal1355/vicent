@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1 HotSpot con MikroTik | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-71"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li><a href="3_servidor_de_autenticacin_radius.html" class="daddy">3. Servidor de autenticación Radius</a>
+   <ul class="other-section">
+      <li><a href="31_freeradius.html" class="daddy">3.1 FreeRadius</a>
+      <ul class="other-section">
+         <li><a href="311_instalacin_servidor_radius.html" class="daddy">3.1.1. Instalación servidor Radius</a>
+         <ul class="other-section">
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul class="other-section">
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul class="other-section">
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_hotspot.html" class="current-page-parent daddy">4. Hotspot</a>
+   <ul>
+      <li id="active"><a href="41_hotspot_con_mikrotik.html" class="active no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4_hotspot.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_2_hotspot_radius.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.1 HotSpot con MikroTik</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id102">
+<div class="iDevice emphasis0" >
+<div id="ta102_118_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">En este apartado se describe la configuración de un router <strong>Mikrotik</strong> para que funcione como <strong>Hotspot</strong> en una organización, <span>de manera que los usuarios conectados a un determinado puerto no podrán acceder más allá del router hasta que no se hayan autenticado con un usuario. </span></p>
+<p style="text-align: center;"><img src="Hotspot-con-MikroTik.png" alt="" width="358" height="153" /></p>
+<p style="text-align: justify;"><span>Para este caso de ejemplo, se va a trabajar </span><span>con <strong>usuarios que se darán de alta en el servidor Hotspot.</strong></span></p>
+<h3 style="text-align: justify;">2. Escenario</h3>
+<p>En la figura inferior, se describe el esquema de conexionado de la red que implementa el <strong>Hotspot</strong>. En este esquema hay 2 escenarios posibles desde el punto de vista del router Mikrotik:</p>
+<ol>
+<li style="text-align: justify;">Trabajar con un mikrotik virtualizado como aparece en la figura superior.</li>
+<li style="text-align: justify;"><span>Trabajar con un router MikroTik físico. Para este caso, se puede configurar el hotspot sobre una interfaz inalámbrica para que los usuarios accedan por la misma.</span></li>
+</ol>
+<p><span>Para este caso de ejemplo, se trabajará con un Mikrotik virtualizado con 3 adaptadores de red que se pueden observar en la figura inferior:</span></p>
+<p style="text-align: center;"><span><img src="adaptadores-red-MV-Mikrotik.png" alt="" width="339" height="83" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Adaptadores de red de la máquina virtual Mikrotik.</em></p>
+<p style="text-align: justify;"><span>donde:</span></p>
+<ul>
+<li style="text-align: justify;"><span>El<strong> adaptador 1 (eno1)</strong> es el que conecta a la red LAN del router que da salida a internet (WAN).</span></li>
+<li style="text-align: justify;"><span>El<strong> adaptador 2 (intnet-A)</strong> a la red de usuarios que se van a conectar al hotspot.</span></li>
+<li style="text-align: justify;"><span>El<strong> adaptador 3</strong> <strong>(intnet-B) </strong>es la que conecta la red interna que es donde estarían los servidores de la organización.</span></li>
+</ul>
+<div class="cuadro-nota-centro-new">
+<p>Es importante que los adaptadores de red sean <strong>PCnet-FAST III</strong> para evitar posibles problemas en la virtualización con virtual box.</p>
+</div>
+<p style="text-align: justify;">Por lo que respecta al <strong>equipo cliente</strong> que utilizará el usuario para conectarse al <strong>hotspot</strong>, se utilizará un equipo <strong>Windows 10 Enterprise </strong>al cual se le habilitará un adaptador de red en la red interna<strong> <span>intnet-A.</span></strong></p>
+<p style="text-align: center;"><a href="Hotspot-Mikrortik-Esquema.png"><img src="Hotspot-Mikrortik-Esquema.png" alt="" width="719" height="597" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Esquema de red Hotspot con Mikrotik.</em></p>
+<h3>3. Configuración en Mikrotik</h3>
+<p>Para acceder a la configuración de Mikrotik/RouterOS tenemos principalmente 4 formas:</p>
+<ol>
+<li style="text-align: justify;">A través de la herramienta<span> </span><strong>Winbox</strong><span> </span>para entorno gráfico. <span>Si se abre </span><strong>Winbox</strong><span> y se tiene conectado el equipo por cable, se podrá conectar a él (Mikrotik) incluso sin saber su dirección IP. </span><strong>Winbox </strong>permite conectar con un equipo RouterOS a través de su MAC.</li>
+<li style="text-align: justify;">Usar el<span> </span><strong>navegador Web</strong><span> </span>para acceder al portal de administración. <span>Para ello simplemente hay que introducir la IP del equipo en el navegador (http://IP ) y se podrá acceder a todo su menú de configuración al igual que desde Winbox.</span></li>
+<li style="text-align: justify;">Acceder por<span> </span><strong>SSH</strong><span> </span>para usar la línea de comandos.</li>
+<li style="text-align: justify;">Desde la consola del propio Mikrotik.</li>
+</ol>
+<p>Para este caso, se va a utilizar la opción 4, es decir, todas las configuraciones se van a realizar desde la consola del Mikrotik. </p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">La primera vez que se inicia sesión en el equipo Mikrotik virtualizado el usuario es admin y a continuación hay que establecer una contraseña.</p>
+<p style="text-align: justify;">Para el Mikrotik físico, se suele alimentar por POE en el primer puerto, y en ese mismo puerto tiene una IP en la configuración por defecto, la<span> </span><strong>192.168.88.1</strong>. Por tanto:</p>
+<ul>
+<li style="text-align: justify;"><strong>Hay que acceder al router conectando un cable RJ-45 del PC al primer puerto del Mikrotik configurando la </strong><strong>IP en el rango 192.168.88.0/24 para poder llegar hasta él.</strong></li>
+<li style="text-align: justify;"><strong>Otra opción es acceder con una búsqueda por MAC con Winbox. </strong><strong>El usuario por defecto es "admin", sin contraseña.</strong></li>
+</ul>
+</div>
+<p style="text-align: justify;"><span>Las etapas que se van a seguir para la configuración del Hotspot son las siguientes:</span></p>
+<p style="text-align: center;"><a href="Hotspot-Mikrotik-Etapas.png"><span><img src="Hotspot-Mikrotik-Etapas.png" alt="" width="367" height="615" /></span></a></p>
+<h4 style="text-align: justify;"><span>1. Configuración de las interfaces de red</span></h4>
+<p style="text-align: justify;"><span>Como se han establecido 3 adaptadores de red en la máquina virtual, el equipo tiene 3 interfaces (tarjetas de red). En este escenario, </span><strong>ether1</strong><span> es la interfaz que conecta con el router a </span><strong>Internet (WAN), </strong><strong>ether2</strong><span> la que se conecta con la </span><strong>red de usuarios </strong>y<strong> ether3 </strong>la que conecta con la<strong> red interna</strong><span>.</span></p>
+<p style="text-align: center;"><span><img src="interface-print.png" alt="" width="479" height="131" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 3.</strong> Lista de interfaces.</em></span></p>
+<p>Para<span> </span><strong>configurar la IP inicial </strong>de la interfaz<strong> ether1</strong>, hay que ejecutar el siguiente comando desde la terminal:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip address add address=192.168.0.2/24 interface=ether1 disabled=no</span></pre>
+<p style="text-align: center;"><img src="mikro-01.png" alt="" width="721" height="54" /></p>
+<p style="text-align: center;"><img src="mikro-01B.png" alt="" width="355" height="83" /></p>
+<p style="text-align: justify;">El siguiente paso es añadir la<span> </span><strong>puerta de enlace por defecto</strong><span> </span>(Default gateway). Para este escenario, el router que da acceso a Internet tiene la dirección IP 192.168.0.1.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip route add gateway=192.168.0.1 disabled=no</span></pre>
+<p style="text-align: center;"><img src="mikro-02.png" alt="" width="596" height="134" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 4.</strong> Configurar la puerta de enlace por defecto.</em></span></p>
+<p style="text-align: justify;">Por último, hay que añadir los<span> </span><strong>servidores de DNS</strong><span> </span>que se quieren establecer al router Mikrotik. Mas adelante, al añadir el servidor de DHCP, se podrán especificar los mismos servidores de DNS u otros diferentes, que serán los que usen los clientes de la red LAN. Esto se verá en pasos siguientes.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip dns set servers=8.8.8.8,8.8.4.4<br /></span></pre>
+<p style="text-align: center;"><img src="mikro-03.png" alt="" width="490" height="34" /></p>
+<p style="text-align: justify;"><span>Una vez configurada la IP, la ruta estática al default gateway y los DNS, se puede </span>hacer<strong> ping desde el RouterOS</strong><span> al router principal ó a Internet, (a través de la IP o de nombre) para comprobar que todo funciona.</span><span></span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ping 192.168.0.1 count=2<br /><strong>[admin@MikroTik] &gt;</strong> ping google.es count=2<br /></span></pre>
+<p style="text-align: center;"><span><img src="ping-pruebas.png" alt="" width="465" height="212" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 5.</strong> Comprobación del acceso a la WAN.</em></span></p>
+<p style="text-align: justify;">A continuación, hay que configurar la dirección IP de la interfaz de <strong>red de usuarios</strong>, al igual que se hizo anteriormente con la interfaz que conecta con Internet.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip address add interface=ether2 address=192.168.11.1 netmask=255.255.255.0 <br />network=192.168.11.0 disabled=no</span></pre>
+<p style="text-align: center;"><img src="conf-ether2.png" alt="" width="720" height="132" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 6.</strong> Añadir la red de usuarios, interfaz ether2.</em></span></p>
+<p style="text-align: justify;">A continuación, se realiza la misma para la dirección IP de la interfaz de <strong>red interna</strong>.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip address add interface=ether3 address=192.168.10.1 netmask=255.255.255.0 <br />network=192.168.10.0 disabled=no</span></pre>
+<p style="text-align: center;"><span><img src="conf-ether3.png" alt="" width="721" height="145" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 7.</strong> Añadir la red interna, interfaz ether3.</em></span></p>
+<h4 style="text-align: justify;"><span>2. Configuración del servidor dhcp</span></h4>
+<p style="text-align: justify;">El servidor de DHCP se encargará de configurar de forma automática las interfaces de red de los clientes para que puedan navegar de forma correcta. La IP de la interfaz de la red LAN es 192.168.11.1/24. Por tanto, en la red se podrán dar simultáneamente IPs desde 192.168.11.2 hasta 192.168.11.254 (254 equipos).</p>
+<h4 style="text-align: justify;">2.1 Crear pool</h4>
+<p style="text-align: justify;"><span>Primero, vamos a crear la </span><em>pool</em><span> para que nuestro servidor de </span><em>DHCP<span> </span></em><span>en </span><em>MikroTik </em><span>sepa qué direcciones </span><em>IP<span> </span></em><span>va a dar a los equipos. Hacemos clic en «</span><em>IP</em><span>«:</span></p>
+<p style="text-align: justify;"><span>Primero</span>, hay que crear un<span> </span><strong>Pool</strong><span> </span>(grupo) de direcciones IPs <span>para que el servidor de </span><em>DHCP<span> </span></em><span>en </span><em>MikroTik </em><span>sepa qué direcciones </span><em>IP<span> </span></em><span>va a dar a los equipos, es decir, </span><span style="font-size: 1em;">serán las que se enviarán a los clientes a través del servidor DHCP. La dirección IP de la interfaz de la </span><strong style="font-size: 1em;">red de usuarios</strong><span style="font-size: 1em;"> es</span><strong style="font-size: 1em;"> 192.168.11.1</strong><span style="font-size: 1em;"> </span><span style="font-size: 1em;">y no se tendrá ningún otro equipo dentro de esa red con la IP reservada. Por tanto, se pueden dar IPs</span><span style="font-size: 1em;"> </span><strong style="font-size: 1em;">desde la IP</strong><span style="font-size: 1em;"> </span><span style="font-size: 1em;">inicial disponible y no ocupada</span><span style="font-size: 1em;"> </span><strong style="font-size: 1em;">192.168.11.2 </strong>hasta la<strong style="font-size: 1em;"> 192.168.11.254. </strong>El comando es el siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip pool add name=hotspot ranges=192.168.11.2-192.168.11.254</span></pre>
+<p style="text-align: center;"><img src="pool-mikro.png" alt="" width="718" height="34" /></p>
+<p style="text-align: center;"><em><strong>Figura 8. </strong>Crear pool de direcciones.</em></p>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;"><strong><em>name</em></strong>: Nombre identificativo para el pool.</li>
+<li style="text-align: justify;"><strong><em>ranges</em></strong>: Rango de direcciones IP que se van a ofrecer por DHCP. En este caso, desde la dirección IP 192.168.11.2 hasta la 192.168.11.254.</li>
+</ul>
+<h4 style="text-align: justify;">2.2 Crear servidor dhcp sobre el pool</h4>
+<p style="text-align: justify;"><span>A continuación, hay que crear el servidor </span><em>DHCP, </em>para ello, se tiene el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip dhcp-server add interface=ether2 address-pool=hotspot name=dhcp-hotspot</span></pre>
+<p style="text-align: center;"><img src="dhcpserver-console.png" alt="" width="720" height="51" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 9.</strong> Añadir servidor dhcp.</em></span></p>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;"><strong><em>name</em></strong>: Nombre del servidor. Es el nombre identificativo que se quiera poner. No tiene mayor relevancia.</li>
+<li style="text-align: justify;"><strong><em>interface</em></strong>: Es la interfaz donde funcionará el servidor<span> </span><em>DHCP</em>. Sólo funcionará en la interfaz que se seleccione. En este caso,<span> es la red de usuarios <strong>ether2</strong></span>.</li>
+<li style="text-align: justify;"><strong><em>adress-pool</em></strong><strong>.</strong> El pool que usará el servidor DHCP para saber qué direcciones tiene que ofrecer. Este pool la se ha creado anteriormente.</li>
+</ul>
+<h4 style="text-align: justify;">3. Añadir una nueva red en la interfaz de red de los usuarios hotspot</h4>
+<p style="text-align: justify;">A continuación, hay que añadir una nueva red en la interfaz de la red de usuarios, es decir, la 192.168.11.1. El comando es el siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip dhcp-server add interface=ether2 address-pool=hotspot name=dhcp-hotspot</span></pre>
+<p style="text-align: center;"><img src="add-network-dchpserver.png" alt="" width="722" height="52" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 10.</strong> Añadir red en servidor dhcp.</em></span></p>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li><strong><em>address</em>:</strong> «Rango» de red que se usará para este caso 192.168.11.0/24.</li>
+<li><strong><em>gateway</em></strong>: Dirección IP de la puerta de enlace para el rango de red que se ha definido. La dirección IP del equipo que dará salida a internet. En este caso, una dirección IP que tiene el propio<span> </span><em>MikroTik</em>,<span> </span><em>192.168.11.1.</em></li>
+<li><em><strong>netmask</strong>: La máscara que se va a utilizar, en este caso, /24.</em></li>
+<li><strong><em>dns-servers</em>:</strong> Servidores DNS que usarán los equipos cuando obtengan dirección<span> </span><em>IP<span> </span></em>de este servidor<span> </span><em>DHCP</em>.</li>
+</ul>
+<h4><span style="font-size: 1em;">4. </span><span style="font-size: 1em;">Crear un certificado para que el acceso al Hotspot sea por https</span><br /><span></span></h4>
+<p class="intercom-align-left" style="text-align: justify;">Para que <strong>HTTPS</strong> funcione correctamente hay que especificar un certificado válido que <strong>Hotspot</strong> pueda usar. Se puede usar un certificado emitido por una Autoridad de certificación (CA) de confianza o se puede una propia CA raíz y generar certificados autofirmados.</p>
+<p class="intercom-align-left" style="text-align: justify;">Para este caso, se va a crear la propia <strong>CA raíz</strong> a partir del siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> certificate add name=LocalCA common-name=LocalCA key-usage=key-cert-sign,crl-sign</span></pre>
+<p class="intercom-align-left" style="text-align: center;"><img src="add-LocalCA.png" alt="" width="722" height="48" /></p>
+<p class="intercom-align-left" style="text-align: center;"><span><em><strong>Figura 11.</strong> Crear certificado raíz.</em></span></p>
+<p style="text-align: justify;">A continuación, hay que firmar el certificado recién creado con el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> certificate sign LocalCA</span></pre>
+<p style="text-align: center;"><img src="sign-LocalCA.png" alt="" width="460" height="68" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 12.</strong> Firma del certificado raíz.</em></span></p>
+<p style="text-align: justify;">Una vez se tiene la<strong> CA raíz</strong> y se ha firmado, ya se puede crear el certificado para que el acceso de los usuarios al hotspot sea por <strong>https</strong> (conexión segura). El comando es el siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> certificate add name=cert-Hotspot common-name=192.168.11.1 <br />country=SP state=Castellon locality=Castellon organization=IESCaminas trusted=yes</span></pre>
+<p style="text-align: center;"><img src="crear-CertHotspot.png" alt="" width="720" height="51" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 12.</strong> Crear certificado para Hotspot.</em></span></p>
+<p style="text-align: justify;">donde:</p>
+<ul>
+<li style="text-align: justify;"><strong>name</strong>: Hay que ponerle un nombre, para ese caso, certHotspot.</li>
+<li style="text-align: justify;"><strong>country, state, localit</strong>y: Poner los datos administrativos de la localización de la organización, para ese caso, SP-Castellon-Castellon.</li>
+<li style="text-align: justify;"><strong>organization:</strong> Nombre de la organización, para ese caso, IESCaminas.</li>
+<li style="text-align: justify;"><strong>common-name:</strong> Hay que poner la dirección ip a la que se accederá, para este caso, la dirección es la configurada para la red de usuarios 192.168.11.1.</li>
+<li style="text-align: justify;"><strong>trusted:</strong> Las opciones son yes o no. Si se establece como 'yes', el certificado se incluye "en la <em>cadena de certificados de confianz</em>a", para este caso, dado que se quiere incorporar en la cadena de certificados de confianza, se establece a <strong>yes</strong>.</li>
+<li style="text-align: justify;"><strong>key-type, key-size, <b>days-valid</b>:</strong> Estos datos están referidos al tipo de clave y tamaño y días de vigencia, para este caso, no se añaden en el comando ya que se usarán los que hay por defecto, es decir, RSA, 2048 y 365 días.</li>
+</ul>
+<p><strong><a href="https://wiki.mikrotik.com/wiki/Manual:System/Certificates" target="_blank" rel="noopener">Fuente</a></strong></p>
+<p style="text-align: justify;">A continuación, hay que firmar el certificado con la <strong>CA raíz</strong>.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> certificate sign certHotspot ca=LocalCA </span></pre>
+<p style="text-align: center;"><img src="sig-certHotspot.png" alt="" width="539" height="66" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 13.</strong> Firmar el certificado con el raíz.</em></span></p>
+<p style="text-align: justify;">Si se listan los<strong> certificados en modo detallado</strong>, se pueden observar los certificados que se han creado y que la <strong>cuenta de validez</strong> ya está en marcha, entre otras muchas cosas.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> certificate print detail</span></pre>
+<p style="text-align: center;"><img src="detail-certs.png" alt="" width="721" height="401" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 14.</strong> Listar los certificados que se tienen.</em></span></p>
+<p style="text-align: justify;">Si se observa la figura 14, se pueden <em><strong>comprobar los usos que se han configurado por defecto en el certificado</strong></em>, es decir, firma digital, clave para cifrar, etcétera.</p>
+<p style="text-align: justify;">Por último, hay que <strong>validar el certificado</strong> mediante el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> certificate set trusted=yes certHotspot</span></pre>
+<p style="text-align: center;"><img src="validar-certHotspot.png" alt="" width="533" height="33" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 15.</strong> Validar el certificado para Hotspot.</em></span><span style="font-size: 12pt;"></span></p>
+<h4 style="text-align: justify;">5. Configurar el Hotspot</h4>
+<p style="text-align: justify;">En el proceso de configuración del Hotspot, hay que crear un perfil de servidor, un servidor y al menos un usuario para la autenticación. </p>
+<p>Para configurar el Hotspot se utilizará el  <strong>Wizard</strong> desde la terminal ejecutando el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip hotspot setup</span></pre>
+<p>A continuación, hay que completar los siguientes datos:</p>
+<ul>
+<li><strong>Hotspot Interface:</strong> ether2.</li>
+<li><strong>Local Address of network:</strong> 192.168.11.1/24.</li>
+<li><strong>Masquerade:</strong> yes.</li>
+<li><strong>Address Pool of network:</strong> 192.168.11.2-192.168.11.254.</li>
+<li><strong>Select certificate:</strong> certHotspot.</li>
+<li><strong>IP address of SMTP server:</strong> 0.0.0.0</li>
+<li><strong>DNS Servers:</strong> 8.8.8.8,8.8.4.4.</li>
+<li><strong>DNS name:</strong></li>
+<li><strong>Name of local hotspot user:</strong> user01.</li>
+<li><strong>Password: </strong>Camina/100.</li>
+</ul>
+<p style="text-align: center;"><img src="hotspot-setup.png" alt="" width="472" height="434" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 16.</strong> Asistente para configurar el Hotspot.</em></span><span style="font-size: 12pt;"></span></p>
+<p style="text-align: justify;">Por defecto, se crea el<strong> perfil de servidor hsprof1</strong> y el <strong>servidor hotspot1</strong> con parámetros por defecto como por ejemplo, en el perfil del servidor el Login by como hhtp-chap, cookie y https. Por seguridad, se procede a cambiar los nombres y establecer otros valores al parámetro Login by ya que para este escenario, sólo se desea la autenticación por https.</p>
+<p style="text-align: justify;">En primer lugar, se cambia el <strong>nombre</strong> y el parámetro <strong>Login by</strong> en el perfil de servidor:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip hotspot profile set hsprof1 login-by=https name=hsprofIESCaminas</span></pre>
+<p style="text-align: center;"><img src="cambio-profile.png" alt="" width="720" height="52" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 17.</strong> Modificar el perfil del servidor hotspot.</em></span></p>
+<p style="text-align: justify;">Al cambiar el nombre del perfil, este dato se actualiza automáticamente en el servidor Hotspot. A continuación, se procede a cambiar el nombre del servidor Hotspot:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip hotspot set hotspot1 name=hotspotIESCaminas</span></pre>
+<p style="text-align: center;"><img src="cambiar-nombre-ServHotspot.png" alt="" width="603" height="36" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 18.</strong> Modificar el nombre del servidor hotspot.</em></span></p>
+<h4>Comprobar Firewall</h4>
+<p>Si se accede al Firewall, se puede observar que el Wizard ha creado una serie de reglas incluyendo el masquerade para NAT para la red 192.168.11.0.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="reglas-Firewall.png"><img src="reglas-Firewall.png" alt="" width="928" height="308" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="firewall-NAT.png"><img src="firewall-NAT.png" alt="" width="933" height="444" /></a></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 19.</strong> Reglas del Firewall.</span></em></td>
+<td style="width: 50%; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 20.</strong> Reglas NAT.</span></em></td>
+</tr>
+</tbody>
+</table>
+<h3>4. Verificaciones</h3>
+<p style="text-align: justify;">Una vez se ha configurado el hotspot, se realizan una serie de verificaciones para ver que está todo correcto antes de comenzar con las pruebas de autenticación.</p>
+<p style="text-align: justify;">En primer lugar, se comprueban los usos del certificado raíz, período de validez, etcétera, mediante el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> certificate print detail</span></pre>
+<p style="text-align: center;"><img src="certificate-print-detail-final.png" alt="" width="719" height="401" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 21.</strong> Listar los certificados en detalle.</em></span></p>
+<p style="text-align: justify;">A continuación, se listan los perfiles de servidor para comprobar sobre el que se ha creado, el certificado que usará, dirección, etcétera.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip hotspot profile print</span></pre>
+<p style="text-align: center;"><img src="profile-serv-print.png" alt="" width="686" height="230" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 22.</strong> Listar los perfiles de servidores hotspot.</em></span></p>
+<p style="text-align: justify;">A continuación, se lista la información del servidor Hotspot que se ha creado:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip hotspot print detail</span></pre>
+<ul></ul>
+<p style="text-align: center;"><img src="print-serv-hotspot.png" alt="" width="619" height="96" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 23.</strong> Listar los servidores hotspot.</em></span></p>
+<p style="text-align: justify;">Por último, lista el detalle de los usuarios donde se puede observar el tráfico que ha consumido el mismo, el tiempo de conexión, etcétera.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip hotspot user print detail</span></pre>
+<ul></ul>
+<p style="text-align: center;"><img src="print-users.png" alt="" width="648" height="148" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 24.</strong> Listar los usuarios hotspot.</em></span></p>
+<h3>5. Pruebas de autenticación</h3>
+<p style="text-align: justify;">Una vez verificado el funcionamiento del hotspot, ya se puede comenzar con las pruebas de autenticación, para ello, se utiliza un equipo Windows 10 con el adaptador de red conectado a la red interna<strong> intnet-A</strong>. El equipo está configurado con la obtención de la ip, dns y gateway de manera automática.</p>
+<table border="0" style="height: 476px; width: 100%;">
+<tbody>
+<tr style="height: 456px;">
+<td style="width: 50%; text-align: center; height: 456px;"><img src="intnet-A-W10.png" alt="" width="355" height="96" /></td>
+<td style="width: 50%; text-align: center; height: 456px;"><img src="conf-tcp-ip-W10.png" alt="" width="398" height="450" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 25.</strong> Adaptador de red.</span></em></td>
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 26. </strong>Configuración tcp/ip del equipo.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p>Una vez configurada la interfaz de red, se abre un navegador y se pone la url <strong>https://192.168.11.1.</strong></p>
+<div class="exe-fx exe-tabs">
+<h2>Inicio</h2>
+<p>Al ir a la url <strong>https://192.168.11.1</strong>, aparece una advertencia por la no confianza en el certificado que se está utilizando. Hay que pulsar sobre '<strong>Configuración avanzada</strong>' y luego sobre '<strong>Acceder a https://192.168.11.1 (sitio no seguro)</strong>'.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="pantalla01.png"><img src="pantalla01.png" alt="" width="958" height="581" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="certificado-Navegador.png"><img src="certificado-Navegador.png" alt="" width="1005" height="920" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>Pantalla de login</h2>
+<p style="text-align: justify;">Aparece una nueva pantalla con la ventana de inicio de sesión. En la figura inferior derecha, se ha modificado el fichero html login, para adecuarlo a este escenario.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="login-02.png"><img src="login-02.png" alt="" width="863" height="573" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="iniciar-sesion-personalizado-02.png"><img src="iniciar-sesion-personalizado-02.png" alt="" width="834" height="604" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>Estado</h2>
+<p style="text-align: justify;">Una vez se ha realizado la autenticación con éxito, aparece una pantalla de estado donde se puede comprobar la dirección ip que se ha proporcionado al equipo, el tiempo conectado, etcétera. Si se pulsa el botón <strong>'Cerrar sesión</strong>', se cierra la sesión con el hotspot. Se ha modificado el fichero<strong> html status</strong> para adecuarlo a este escenario.</p>
+<p style="text-align: center;"><img src="esatdo-Hotspot-Hola_user.png" alt="" width="838" height="612" /></p>
+</div>
+<p style="text-align: justify;">En el siguiente vídeo se realiza un repaso a la configuración del hotspot mediante winbox y se realizan las pruebas con un cliente Windows 10 Enterprise.</p>
+<p style="text-align: justify;"></p>
+<table border="0" style="height: 341px; width: 100%;">
+<tbody>
+<tr style="height: 321px;">
+<td style="width: 50%; text-align: center; height: 321px;"><iframe width="560" height="314" src="https://www.youtube.com/embed/ujwZ-dLvXjE" allowfullscreen="allowfullscreen"></iframe></td>
+<td style="width: 50%; height: 321px; text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/pnzn_i0L564" allowfullscreen="allowfullscreen"></iframe></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Vídeo 1.</strong> Configurar HotSpot en Mikrotik.</span></em></td>
+<td style="width: 50%; height: 20px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Vídeo 2.</strong> Configurar páginas del HotSpot.</span></em></td>
+</tr>
+</tbody>
+</table>
+<h3>6. Referencias</h3>
+<ul>
+<li><strong><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/mikrotik/hotspot/configurarHotspot" target="_blank" rel="noopener">Github- Comandos utilizados en el capítulo</a></strong></li>
+<li><a href="https://wiki.mikrotik.com/wiki/Manual:TOC">https://wiki.mikrotik.com/wiki/Manual:TOC</a></li>
+<li><a href="https://wiki.mikrotik.com/wiki/Manual:System/Certificates">https://wiki.mikrotik.com/wiki/Manual:System/Certificates</a></li>
+<li><a href="https://wiki.mikrotik.com/wiki/Manual:IP/Hotspot">https://wiki.mikrotik.com/wiki/Manual:IP/Hotspot</a></li>
+<li><a href="https://wiki.mikrotik.com/wiki/Manual:IP/Hotspot/Profile">https://wiki.mikrotik.com/wiki/Manual:IP/Hotspot/Profile</a></li>
+<li><a href="https://wiki.mikrotik.com/wiki/Manual:IP/Hotspot/User">https://wiki.mikrotik.com/wiki/Manual:IP/Hotspot/User</a></li>
+<li><a href="https://wiki.mikrotik.com/wiki/Manual:IP/DHCP_Server">https://wiki.mikrotik.com/wiki/Manual:IP/DHCP_Server</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4_hotspot.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_2_hotspot_radius.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

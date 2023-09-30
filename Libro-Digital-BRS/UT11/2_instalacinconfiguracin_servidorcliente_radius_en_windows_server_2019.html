@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019 | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-83"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul class="other-section">
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li><a href="2_vpn_de_acceso_remoto.html" class="daddy">2. VPN de acceso remoto</a>
+   <ul class="other-section">
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li><a href="22_wireguard.html" class="daddy">2.2 WireGuard</a>
+      <ul class="other-section">
+         <li><a href="221_instalacin_y_configuracin_de_wireguard.html" class="daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul class="other-section">
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_gestin_de_accesos_sistemas_nac.html" class="current-page-parent daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul>
+      <li class="current-page-parent"><a href="laboratorio_1_servidor_radius_vpn.html" class="current-page-parent daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul>
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li id="active"><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="active no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_esquema_de_instalacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_pruebas_de_aaa_va_vpn.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id114">
+<div class="iDevice emphasis0" >
+<div id="ta114_114_2" class="block iDevice_content">
+<div class="exe-text"><h3 id="7ff1" style="text-align: justify;"><span>1. Instalación del servidor Radius</span></h3>
+<p><img src="servidor-Radius.png" alt="" width="304" height="127" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 1.</strong> Esquema de la instalación.</em></span></p>
+<p style="text-align: justify;"><span>Partimos de un equipo con <strong><em>Windows Server 2019 Datacenter</em></strong> al cual le instalamos el rol de <strong><em>Servicios de dominio Active Directory (AD DS)</em></strong>, para configurar un dominio llamado <strong><em>dominio.local</em></strong>. La instalación de este rol, conlleva la instalación de <strong><em>DNS</em></strong>. Adicionalmente, también se instala un <strong>servidor </strong><strong><em>DHCP</em></strong>, para gestionar los equipos de la misma red de dominio.</span></p>
+<p><img src="001.png" alt="" width="1343" height="626" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 2.</strong> Administrador del servidor.</span></em></p>
+<div class="cuadro-nota-centro" style="text-align: justify;">
+<p><span>En caso de necesitar ayuda para la instalación de estos requisitos previos, a continuación tienes una <a href="https://vlade.medium.com/instalaci%C3%B3n-de-servidor-windows-server-2016-c396a67a344c" target="_blank" rel="noopener">guía completa de instalación de un servidor Windows Server 2016</a>, que es totalmente traducible a la versión 2019.</span></p>
+</div>
+<p id="85e1" style="text-align: justify;"><span>A continuación, se comienza con la instalación del servidor Radius en Windows Server 2019 Datacenter.</span></p>
+<p id="93d5" style="text-align: justify;"><span>En primer lugar, se inicia el <strong><em>Administrador del servidor</em></strong> y en <strong><em>Administrar</em></strong> (arriba a la derecha) hay que marcar <strong><em>Agregar roles y características</em></strong>.</span></p>
+<p style="text-align: justify;"></p>
+<p style="text-align: center;"><img src="RAD-000.png" alt="" width="387" height="171" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 3.</strong> Seleccionar 'Agregar roles y características'</span></em></p>
+<p><img src="RAD-001.png" width="786" height="561" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 4.</strong> Pantalla inicial del asistente.</span></em></p>
+<p style="text-align: justify;"><span>Una vez abierto el asistente, hacemos clic en <strong><em>Siguiente, </em></strong>aparece una nueva pantalla donde '<strong><em>Marcamos</em></strong>' nuestro servidor de la lista. Dado que sólo tenemos un servidor en la red, sólo aparece el nuestro.</span></p>
+<p style="text-align: center;"><img src="rad-003.png" alt="" width="783" height="557" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 5.</strong> Selección del servidor de destino.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, pulsamos <strong>Siguiente </strong>y aparece una nueva pantalla donde hay que seleccionar el rol '<strong><em>Servicios de acceso y directivas de redes'</em></strong>. Es frecuente que la instalación de un rol traiga aparejada la necesidad de instalar algunas herramientas y utilidades llamadas características. El asistente nos muestra con detalle qué va a necesitar de forma complementaria. Hacemos clic sobre el botón <strong><em>Agregar características</em></strong>.</span></p>
+<p><img src="rad-004.png" alt="" width="785" height="560" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 6.</strong> Selector de roles.</em></span></p>
+<p style="text-align: justify;"><span>Es frecuente que la instalación de un rol traiga aparejada la necesidad de instalar algunas herramientas y utilidades llamadas características. El asistente nos muestra con detalle qué va a necesitar de forma complementaria. Hacemos clic sobre el botón <strong><em>Agregar características'.</em></strong></span></p>
+<p><img src="rad-005.png" alt="" width="786" height="559" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 7.</strong> Agregar características para el rol.</span></em></p>
+<p><img src="rad-006.png" alt="" width="784" height="559" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 8.</strong> Rol y características seleccionadas.</span></em></p>
+<p style="text-align: justify;"><span>El asistente lleva a una pantalla, sin otra función más que introducir la funcionalidad que se ha incorporado al servidor. Hay que hacer pulsar el botón <strong>Siguiente</strong> para que comience el proceso de instalación propiamente dicho.</span></p>
+<p><span><img src="rad-007.png" alt="" width="781" height="559" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><em><span><strong>Figura 9.</strong> Funcionalidad lista para instalar.</span></em></p>
+<p style="text-align: justify;"><span>A continuación, el asistente muestra una nueva pantalla informativa sobre NPS. Para continuar, hay que pulsar '<em><strong>Siguiente</strong></em>'.</span></p>
+<p><span><img src="rad-008.png" alt="" width="784" height="559" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><em><span><strong>Figura 10.</strong> Pantalla informativa.</span></em></p>
+<p style="text-align: justify;"><span>Comienza el proceso de instalación del rol.</span></p>
+<p><img src="rad-009-B.png" alt="" width="785" height="560" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 11.</strong> Proceso de instalación del rol.</span></em></p>
+<p id="8190" style="text-align: justify;"><span>El proceso anterior realizado mediante la GUI se puede simplificar realizando la instalación desde <strong>PowerShell</strong> con credenciales de administrador. El comando a utilizar es el siguiente:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Install-WindowsFeature NPAS -IncludeManagementTools</span></pre>
+<p id="5969" style="text-align: justify;"><span>Por defecto, <strong>NPS</strong> escucha el tráfico RADIUS en los puertos <strong>1812, 1813, 1645 y 1646</strong> en todos los adaptadores de red instalados. Si el <strong><em>Firewall de Windows con seguridad avanzada</em></strong> está activado al instalar NPS, se crean automáticamente reglas para estos puertos.</span></p>
+<p><span><img src="rad-012.png" alt="" width="1259" height="622" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><em><span><strong>Figura 12.</strong> Reglas creadas automáticamente para NPS.</span></em></p>
+<div class="cuadro-nota-centro" style="text-align: justify;">
+<p><span>En el caso de que el sistema no creara las reglas, habría que crearlas para permitir el tráfico de entrada en esos puertos.</span></p>
+</div>
+<p id="a150" style="text-align: justify;"><span>A nivel de <em><strong><a href="http://neosysforensics.blogspot.com/2009/02/data-carving.html" onclick="browseURL(this); return false" target="_blank" rel="noopener">data carving</a></strong></em>, <strong>NPS</strong> tiene la funcionalidad de almacenamiento de todos los registros generados por las cuentas en:</span></p>
+<ul style="text-align: justify;">
+<li>Una base de datos en un servidor SQL</li>
+<li>En un archivo de texto en la maquina local, por defecto situado en <em>C:\Windows\System32\LogFiles</em></li>
+<li>Simultáneamente en un servidor SQL y un archivo de texto.</li>
+</ul>
+<p id="ef15" style="text-align: justify;"><span>Desde el punto de vista de la <em>seguridad</em>, RADIUS tiene debilidades relacionadas con uso del protocolo UDP. Su arquitectura le hace propenso a:</span></p>
+<ul style="text-align: justify;">
+<li>Ataques de fuerza bruta sobre las credenciales del usuario.</li>
+<li>Denegación de servicio.</li>
+<li>Ataques de repetición de sesión.</li>
+<li>Inyección de paquetes.</li>
+</ul>
+<h3 id="ed7b" style="text-align: justify;"><span>3. Instalación de cliente RADIUS</span></h3>
+<p><img src="confRadius-WServer2019-9.png" alt="" width="421" height="132" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 13.</strong> Esquema de la instalación.</span></em></p>
+<p id="73f0" style="text-align: justify;"><span>El cliente <strong>Radius</strong> va utilizar <strong><em>Windows Server 2019 DataCenter</em></strong>. Es posible encontrar escenarios donde un servidor realiza varias funciones para aprovechar su capacidad, aunque a nivel de seguridad pueda ser recomendable subdividir funcionalidades en diferentes servidores.</span></p>
+<p style="text-align: justify;"><span>Dado que el escenario está sobre el <strong>dominio.local</strong>, lo que hay que realizar es integrar el cliente Radius en el <strong><em>dominio.local</em></strong> como un cliente más, sin funciones de controlador de dominio.</span></p>
+<p style="text-align: center;"><span><img src="rad-0013.png" alt="" width="1357" height="630" /><br /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 13.</strong> Integración del cliente radius en el dominio.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, vamos a instalar el rol '<strong>Enrutamiento y acceso remoto</strong>', para ello, a</span><span>brimos el <strong><em>Administrador del servidor</em></strong> y seleccionamos <strong><em>Agregar roles y características</em></strong>.</span></p>
+<p><img src="RAD-000.png" alt="" width="387" height="171" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 14.</strong> Agregar Roles.</span></em></p>
+<p style="text-align: center;"><em><span><img src="RAD-001.png" alt="" width="786" height="561" /></span></em></p>
+<p style="text-align: center;"><em><span><strong>Figura 15.</strong> Pantalla inicial del asistente.</span></em></p>
+<p style="text-align: justify;"><span>Una vez abierto el asistente, hacemos clic en <strong><em>Siguiente, </em></strong>aparece una nueva pantalla donde '<strong><em>Marcamos</em></strong>' nuestro servidor de la lista. Dado que sólo tenemos un servidor en la red, sólo aparece el nuestro.</span></p>
+<p style="text-align: center;"><span><img src="rad-019.png" alt="" width="782" height="556" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 16.</strong> Selección del servidor de destino.</em></span></p>
+<p id="f2ec" style="text-align: justify;"><span>Seguimos el procedimiento de asistente visto en la etapa anterior. Realizamos una <strong>instalación basada en características o en roles</strong>. Seleccionamos <strong>Acceso remoto</strong> como rol a instalar.</span></p>
+<p><span><img src="rad-020.png" alt="" width="785" height="559" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><em><span><strong>Figura 17.</strong> Selección del rol 'Acceso Remoto'.</span></em></p>
+<p><em><span><img src="rad-021.png" alt="" width="786" height="561" style="display: block; margin-left: auto; margin-right: auto;" /></span></em></p>
+<p style="text-align: center;"><em><span><strong>Figura 18.</strong> Selección de características.</span></em></p>
+<p id="48ae" style="text-align: justify;"><span>La pantalla de presentación de esta función incluye una descripción bastante completa.</span></p>
+<p><img src="rad-022.png" alt="" width="784" height="559" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 19.</strong> Pantalla informativa del rol a instalar.</span></em></p>
+<p id="9090" style="text-align: justify;"><span>Acceso remoto es una función bastante amplia que integra diferentes tipos de servicios agrupados en tres áreas:</span></p>
+<ul style="text-align: justify;">
+<li><span>DirectAccess y VPN (RAS)</span></li>
+<li><span>Enrutamiento</span></li>
+<li><span>Proxy de aplicación web</span></li>
+</ul>
+<p id="cd81" style="text-align: justify;"><span>Hacemos clic en <strong>Siguiente</strong> y marcamos <strong>DireccAccess y VPN (RAS)</strong>. Lo que añade algunas herramientas a la cola de instalación.</span></p>
+<p><img src="rad-023.png" alt="" width="785" height="559" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 20.</strong> Agregar características.</span></em></p>
+<p id="a077" style="text-align: justify;"><span><strong>El primero,</strong> nos permitirá obtener acceso desde redes externas usando o la tecnología<strong><em> DirectAccess</em></strong> o con <strong><em>VPN</em></strong>. </span><span>El <strong>segundo</strong>, dota al servidor de funcionalidad de <strong><em>router</em></strong>. </span><span>Finalmente, el <strong><em>proxy</em></strong> cumple la función de publicar aplicaciones basadas en la web.</span></p>
+<p id="da63" style="text-align: justify;"><span>Seleccionamos <strong><em>Agregar características</em></strong>. En el paso siguiente se incluye como requisito la instalación de <em>IIS</em> y de herramientas propias de este tipo de servidor. Como muchos de los roles, requiere configuración previa una vez instalado.</span></p>
+<p><span><img src="rad-025.png" alt="" width="785" height="558" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 21.</strong> Instalación como requisito de IIS.</em></span></p>
+<p id="d28b" style="text-align: justify;"><span>A continuación, hay que pulsar '<strong><em>Siguiente</em></strong>'.</span></p>
+<p><span><img src="rad-026.png" alt="" width="784" height="561" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 22</strong></em></span><span><em><strong>.</strong> Selección de servicios de rol para IIS.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, hay que pulsar '<strong>Siguiente</strong>' dejando marcado lo que aparecer por defecto.</span></p>
+<p><span><img src="rad-027.png" alt="" width="783" height="559" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 23</strong></em><em><strong>.</strong> Pantalla de confirmación previa al comienzo de la instalación.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, hay que pulsar '<strong>Instalar</strong>' para que comience el proceso de instalación.</span></p>
+<p><img src="rad-028.png" alt="" width="783" height="558" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 24.</strong> Proceso de instalación.</span></em></p>
+<p id="8379" style="text-align: justify;"><span>Otra forma de realizar todo este proceso mediante PowerShell es ejecutar el siguiente comando.</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Install-WindowsFeature DirectAccess-VPN -IncludeManagementTools</span></pre>
+<h3 id="9670" style="text-align: justify;">4. Configuración del servidor RADIUS</h3>
+<h4 style="text-align: justify;">4.1 Configurar servidor RADIUS por GUI</h4>
+<p style="text-align: justify;">Una vez configurado el <em>cliente Radius</em>, hay que volver sobre el <em>servidor Radius</em> para realizar una serie de configuraciones. Para ello, abrimos el '<strong><em>Servidor de directivas de redes</em></strong>' de alguna de las siguientes maneras:</p>
+<p id="b8e4" style="text-align: justify;"><span>Abrimos el <strong>Servidor de directivas de redes</strong> desde uno de los tres sitios posibles:</span></p>
+<ul style="text-align: justify;">
+<li><span>Desde el <em>Administrador del servidor</em>, en <em>Herramientas</em>.</span></li>
+<li><span>Utilizando <em>Herramientas administrativas de Windows</em> desde el menú inicio.</span></li>
+<li><span>O desde PowerShell:</span></li>
+</ul>
+<p style="text-align: justify;">Para este caso de estudio, se ejecuta el comando<strong><em><span> </span>nps.msc</em></strong><span> </span>dese PowerShell.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>nps.msc</span></pre>
+<p><img src="rad-032.png" alt="" width="847" height="615" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 25.</strong> Servidor de directivas de redes</em>.</span></p>
+<p style="text-align: justify;"><span>Esta herramienta, como casi todas las basadas en <a href="https://docs.microsoft.com/es-es/troubleshoot/windows-server/system-management-components/what-is-microsoft-management-console" target="_blank" rel="noopener"><strong><em>Microsoft Management Console (MMC)</em></strong></a> está estructurada con un panel izquierdo con estructura en árbol para navegar por las opciones, un panel central con el detalle de lo marcado en el izquierdo y tenemos la posibilidad de agregar un panel derecho con acciones a realizar.</span></p>
+<p><img src="confRadius-WServer2019-15.png" alt="" width="461" height="317" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 26.</strong> Registrar servidor en Active Directory.</span></em></p>
+<p style="text-align: justify;"><span>Comenzaremos autorizando al <strong><em>servidor NPS</em></strong> para usar <strong><em>Active Directory</em></strong> en la <strong><em>autenticación de usuarios y grupos.</em></strong> Se hace con clic derecho en <strong>NPS</strong> y luego registramos el servidor. Además, esto permite el control de usuarios a través de las propiedades de marcado. </span><span></span></p>
+<p style="text-align: justify;"><span>Creamos un usuario del dominio y seleccionamos en Marcado '<strong>Controlar accedo a través de la directiva de red NPS</strong>'.</span></p>
+<p><img src="rad-033.png" alt="" width="448" height="537" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 27.</strong> Marcado.</span></em></p>
+<p style="text-align: justify;"><span>El usuario creado es:</span></p>
+<ul style="text-align: justify;">
+<li><span><strong>Nombre y apellidos</strong>: Usuario Radius</span></li>
+<li><span><strong>cuenta</strong>: radiustest.</span></li>
+<li><span><strong>password:</strong> password123456.</span></li>
+<li><span><strong>pertenencia a grupos</strong>: radius.</span><span></span></li>
+</ul>
+<p><span><img src="rad-034.png" alt="" width="431" height="454" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 28.</strong> Grupo de seguridad y global creado.</em></span></p>
+<p style="text-align: justify;"><span>En la pantalla de presentación, vemos como se nos solicita configurar el servidor de directivas de redes.</span></p>
+<p><img src="rad-035.png" alt="" width="899" height="549" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 29.</strong> Pantalla de presentación.</em></span></p>
+<p style="text-align: justify;"><span>Podemos elegir dos perfiles de servidor:</span></p>
+<ul style="text-align: justify;">
+<li><span>Para conexiones VPN o de acceso telefónico.</span></li>
+<li><span>Para conexiones cableadas o inalámbricas 802.1X.</span></li>
+</ul>
+<p style="text-align: justify;"><span>Para este escenario, se va a implementar un <em>Servidor RADIUS</em> para conexiones <em>VPN</em>, donde se desea controlar el acceso desde el exterior. El otro perfil está destinado a securizar las redes internas de una organización ya sea usando algún tipo de cableado o conexión inalámbrica.</span></p>
+<p style="text-align: justify;"><span>Hacemos clic sobre `<strong><em>Configurar VPN o Acceso telefónico</em></strong>. A continuación, el asistente muestra una pantalla donde hay que seleccionar </span><span>la segunda opción y rellenamos un nombre para la directiva, como ejemplo, ponemos '<strong><em>VPN Administración</em></strong>'. Pulsamos '<em><strong>Siguiente</strong></em>' para continuar.</span></p>
+<p><img src="rad-036.png" alt="" width="552" height="577" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 30.</strong> Configurar VPN.</span></em></p>
+<p style="text-align: justify;"><span>En el siguiente paso hay que indicar los <strong><em>clientes RADIUS</em></strong> que se desean incluir. Hay que agregar los que se necesiten, para este escenario, agregaremos sólo uno.  Pulsar '<strong>Siguiente</strong>' para continuar con el proceso.</span></p>
+<p><span><img src="rad-037.png" alt="" width="555" height="578" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 31.</strong> Pantalla para agregar los clientes RADIUS necesarios.</em></span></p>
+<p id="4317" style="text-align: justify;"><span>Aparece una nueva pantalla donde debemos rellenar lo siguiente:</span></p>
+<ul style="text-align: justify;">
+<li><span>Un <strong>nombre para el cliente</strong>, no tiene porqué ser el nombre de la máquina.</span></li>
+<li><span>El nombre de la máquina o la <strong>dirección IP</strong>, y la debemos validar. Como nuestro cliente dispone de dos tarjetas de red, usaremos la interna (que es la del mismo rango que este servidor).</span></li>
+<li><span>Generar o introducir un <strong>secreto compartido</strong>. Nos advierte de que algunos clientes RADIUS no soportan claves largas y nos podemos ver obligados a modificarla. Para este caso, el secreto es: eeepuc20<i>.</i></span></li>
+</ul>
+<p><img src="rad-038.png" alt="" width="453" height="571" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 32.</strong> Cliente RADIUS a agregar.</em></span><span></span></p>
+<p style="text-align: justify;"><span>Pulsar el botón '<strong>Aceptar</strong>'.</span></p>
+<p><span><em><img src="rad-039.png" alt="" width="552" height="576" style="display: block; margin-left: auto; margin-right: auto;" /></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 33.</strong> Cliente RADIUS agregado.</em></span></p>
+<p style="text-align: justify;"><span>También podemos agregar nuevos clientes si navegamos por el panel izquierdo hasta Clientes y servidores RADIUS y después Clientes RADIUS.</span></p>
+<p><img src="confRadius-WServer2019-20.png" alt="" width="490" height="187" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 30.</strong> Clientes Radius.</span></em></p>
+<p id="4a6d" style="text-align: justify;"><span>Hacemos clic derecho sobre ese elemento y marcamos <strong><em>Nuevo</em></strong>. Apareciendo la ventana para agregar el cliente. En la segunda pestaña es posible indicar el nombre del proveedor, lo dejamos en <strong><em>RADIUS Standard</em></strong>. Si se tratara de un punto de acceso o dispositivo de alguna marca, sería recomendable seleccionarla para aprovechar sus características especiales.</span></p>
+<p><img src="rad-047.png" alt="" width="452" height="571" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 34.</strong> Propiedades del cliente RADIUS.</em></span></p>
+<p style="text-align: justify;"><span>Siguiendo con el proceso, la siguiente pantalla del asistente permite seleccionar el método de </span><span>autenticación entre:</span></p>
+<ul style="text-align: justify;">
+<li><span>EAP-TLS (certificados).</span></li>
+<li><span>PEAP-MS-CHAP v2 (certificados).</span></li>
+<li><span>MS-CHAP (contraseñas).</span></li>
+<li><span>MS-CHAP v2 (contraseñas).</span></li>
+</ul>
+<p id="7039" style="text-align: justify;"><span><strong>NPS</strong> admite métodos de autenticación basados en contraseña y basados en certificados. Hay que tener en consideración qué métodos admite el cliente para seleccionar uno u otro y no solo el propio interés o la seguridad. Podría ser necesario configurar un tipo para cada una.</span></p>
+<p id="6ecd" style="text-align: justify;"><span>Los métodos de autenticación basados en certificados tienen la ventaja de proporcionar una gran seguridad, pero requieren más trabajo de implementación.</span></p>
+<p id="5bc0" style="text-align: justify;"><span>Para <strong>EAP-TLS</strong> se necesita montar una <strong>PKI</strong> y eso conllevaría a una autenticación con certificados tanto de cliente como de servidor. Con <strong>PEAP-MS-CHAP v2</strong> se usa un certificado para la autenticación del servidor y credenciales para los usuarios. No requiere <strong>PKI</strong> y además podríamos utilizar <strong>Active Directory servicios de Certificate Server (AD CS)</strong> para la inscripción de certificados en NPS. <strong>PEAP-MS-CHAP v2</strong> está especialmente diseñada para portátiles y otros dispositivos. Permite una reconexión rápida sin necesitar volver a autenticar. Por eso se usa más como método de autenticación para las conexiones inalámbricas. Y <strong>EAP-TLS</strong> por su robusta seguridad para <strong>VPN</strong>.</span></p>
+<p id="e32e" style="text-align: justify;"><span>Para este escenario y para no complicar esto en exceso, se opta por<strong> autenticación por contraseñas</strong>.</span></p>
+<p id="f704" style="text-align: justify;"><span>Básicamente, <strong>MS-CHAP v2</strong> es más seguro, proporciona autenticación mutua, claves de cifrado de datos iniciales más fuertes y claves de cifrado diferentes para el envío y la recepción. La clave criptográfica se basa siempre en la contraseña del usuario y en una cadena de desafío aleatoria. Cada vez que se autentifica, se utiliza una nueva cadena. <strong>MS-CHAP v1</strong> se utilizaba principalmente en Windows 2000, desde Windows Vista ya no está soportado. Utiliza una clave de cifrado de 40 bits basada en la contraseña del usuario. Solo se utiliza por compatibilidad con dispositivos antiguos.</span></p>
+<p id="20ea" style="text-align: justify;"><span>Seleccionamos <strong>MS-CHAP v2</strong>.</span></p>
+<p><span><img src="rad-040.png" alt="" width="553" height="575" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 35.</strong> Pantalla para configurar métodos de autenticación. </em></span></p>
+<p id="a048" style="text-align: justify;"><span>En el siguiente paso el asistente solicita indicar los grupos que se verán afectados por esta configuración. Es evidente que se trata de una buena práctica, pues permite sacar o meter de ese grupo a los usuarios que se desean que tengan acceso exterior. Si no se rellena ninguno, afectaría a todos los usuarios del dominio.</span></p>
+<p id="a1d5" style="text-align: justify;"><span>Se agrega el grupo '<strong>radius</strong>' que se creó con anterioridad y que tiene como miembro al usuario '<strong>radiustest'</strong>. A continuación, hay que pulsar siguiente para continuar con el proceso.</span></p>
+<p><img src="rad-041.png" alt="" width="556" height="577" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 36.</strong> Adición del grupo radius.</span></em></p>
+<p id="a1d5" style="text-align: justify;">Para continuar, hay que pulsar '<strong>Siguiente</strong>' y aparece una nueva pantalla donde hay que ajustar <span>el filtrado IP. Se puede limitar el tráfico tanto de entrada como de salida, disponer solo acceso a varias direcciones IP, algunos protocolos, etc. En la configuración de la Figura se permite solo el uso del <strong>protocolo RDP</strong> que utiliza el puerto 3389 tanto en TCP como UDP.</span></p>
+<p><img src="rad-043.png" alt="" width="1087" height="602" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 37.</strong> Filtros de entrada para IPv4</em>.</span></p>
+<p style="text-align: justify;"><span>Para continuar, hay que pulsar '<strong>Siguiente</strong>' y aparece una nueva pantalla donde hay que </span><span><strong><em>configurar el cifrado</em></strong> que se desea permitir para el tráfico entre los clientes y el servidor.</span></p>
+<ul style="text-align: justify;">
+<li><span><strong>MPPE</strong> significa cifrado punto a punto de Microsoft, y se usa a menudo para conexiones PPTP y conexiones de acceso telefónico.</span></li>
+<li><strong>40 bits</strong><span>. Es solo una propuesta por si se necesita compatibilidad.</span></li>
+<li><span><strong>128 bits</strong>.</span></li>
+</ul>
+<p style="text-align: justify;"><span>Actualmente, se podrían desmarcar las dos primeras opciones. Si se desmarcan todas, no se usa cifrado. Dejamos activo </span><strong><em>128 bits.</em></strong></p>
+<p style="text-align: center;"><img src="rad-044.png" alt="" width="554" height="578" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 38.</strong> Selección de cifrado</em>.</span></p>
+<p id="bb99" style="text-align: justify;"><span>Para continuar, hay que pulsar '<strong>Siguiente</strong>' y aparece una nueva pantalla donde el sistema ofrece especificar un <strong><em>nombre de dominio kerberos</em></strong>. Para este escenario, el valor sería<strong><em> dominio.local.</em></strong> La utilidad de rellenarlo está dirigida a simplificar la experiencia del usuario cuando solo se accede desde un dominio, pero si se trabaja con varios, que tienen establecida confianza entre ellos, deja de tener sentido. Para este escenario de ejemplo, <strong>NO</strong> configuramos nada y pulsamos en '<strong>Siguiente</strong>'.</span></p>
+<p><img src="rad-045.png" alt="" width="555" height="578" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 39.</strong> Especificación de un dominio Kerberos.</em></span></p>
+<p id="4560" style="text-align: justify;"><span>El asistente presenta un resumen de las directivas que hay que comprobar que esté todo correcto para posteriormente pulsar el botón '<strong><em>Finalizar</em></strong>'. </span><span></span><span></span></p>
+<p><img src="rad-046.png" alt="" width="555" height="578" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 40.</strong></em> <em>Fin del asistente.</em></span></p>
+<p style="text-align: justify;"><span>Accedemos al '<strong><em>Servidor de directivas de redes</em></strong>' y comprobamos las Directivas creadas donde s</span><span>e han creado dos tipos de directivas:</span></p>
+<ul style="text-align: justify;">
+<li><span>Directivas de solicitud de conexión.</span></li>
+<li><span>Directivas de red.</span></li>
+</ul>
+<p style="text-align: justify;"><span>La directiva de conexión, solo define que las solicitudes de autenticación las validará este servidor.</span></p>
+<p><img src="rad-048.png" alt="" width="895" height="547" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 41. </strong>Directiva de conexión.</span></em></p>
+<p style="text-align: justify;"><span>La directiva de red incluye el resto de opciones configuradas en el asistente. La marca verde indica que es una directiva de conceder acceso y la roja de denegar.</span></p>
+<p><img src="rad-049.png" alt="" width="924" height="568" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 42.</strong> Directiva de red.</span></em></p>
+<p id="1113" style="text-align: justify;"><span>Es importante reseñar que en esta consola de administración podemos crear diferentes tipos de plantilla para facilitar la gestión:</span></p>
+<ul style="text-align: justify;">
+<li><span><strong>Secretos compartidos</strong>. Este tipo de plantilla permite especificar un secreto compartido que se puede reutilizar al configurar clientes y servidores RADIUS.</span></li>
+<li><span><strong>Clientes RADIUS</strong>. Configura las opciones de cliente RADIUS.</span></li>
+<li><span><strong>Servidores RADIUS remotos</strong>. Abarca las opciones de servidores RADIUS remotos.</span></li>
+<li><span><strong>Filtros IP</strong>. Filtros IPv4 e IPv6 como los que hemos visto antes.</span></li>
+</ul>
+<p id="e637" style="text-align: justify;"><span>En casi todas las etapas del asistente se podría haber utilizar alguna plantilla, si la hubiéramos creado previamente.</span></p>
+<h4 style="text-align: justify;"><span>Comprobación de las acciones realizadas</span></h4>
+<p style="text-align: justify;"><span>Para obtener información de todos los <em>clientes Radius</em> que se han implementado, ejecutamos el cmdlet <strong>Get-NpsRadiusClient</strong>:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Get-NpsRadiusClient</span></pre>
+<p style="text-align: center;"><img src="Get-NpsRadiusClient.png" alt="" width="521" height="224" /></p>
+<h4 style="text-align: justify;">4.1 Configurar servidor RADIUS con <span>PowerShell</span></h4>
+<p id="c849" style="text-align: justify;"><span>Todo lo descrito en el anterior punto, se puede realizar mediante Porwershell. </span><span>Una de las <strong><em>máximas de la administración moderna</em></strong> en Windows es que casi todo es posible realizarlo en entorno gráfico y PowerShell.</span></p>
+<p style="text-align: justify;"><span>Se puede Administrar <strong>NPS</strong> desde la herramienta </span><strong>Servidor de directivas de redes</strong><span> y luego exportar todo lo realizado con el siguiente cmdlet:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Export-NpsConfiguration -Path “C:\NpsConfiguracion.xml”</span></pre>
+<p id="2196" style="text-align: justify;"><span>El fichero xml generado, se puede utilizar para restaurar en un servidor nuevo todo el trabajo realizado. La importación se realiza mediante el siguiente cmdlet.</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Import-NpsConfiguration -Path “C:\NpsConfiguracion.xml”</span></pre>
+<p id="80e4" style="text-align: justify;"><span>Los clientes RADIUS ser crean con el siguiente cmdlet (es necesario reiniciar el servicio para comprobar que se ha aplicado):</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>New-NpsRadiusClient -Name “ClienteRADIUS” -Address “192.168.11.253” `<br />-SharedSecret “eeepc20” `<br />-VendorName “Radius Standard” <br /><strong>PS C:\&gt;</strong>Restart-Service IAS</span></pre>
+<p id="9cad" style="text-align: justify;"><span>Si se ha creado alguna plantilla de secreto compartido y se desea verla en pantalla, utilizamos el siguiente cmdlet:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Get-NPSSharedSecretTemplate</span></pre>
+<p id="c2fb" style="text-align: justify;"><strong><span>Más comandos en la <a href="https://docs.microsoft.com/en-us/powershell/module/nps/?view=win10-ps" target="_blank" rel="noopener">página de Microsoft</a>.</span></strong></p>
+<h3 id="9196" style="text-align: justify;">5. Configuración del cliente RADIUS</h3>
+<p id="7958" style="text-align: justify;"><span>Continuamos configurando el cliente RADIUS.</span></p>
+<p><img src="rad-031.png" alt="" width="416" height="330" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 43.</strong> Requerimiento de instalación.</span></em></p>
+<p style="text-align: justify;"><span>En el <strong><em>Administrador del servidor</em></strong> tenemos una alerta para que iniciemos un asistente de introducción. </span>En la primera pantalla el sistema ofrece tres opciones para elegir:</p>
+<ul style="text-align: justify;">
+<li>DirectAccess + VPN</li>
+<li>DirectAccess</li>
+<li>VPN</li>
+</ul>
+<p><img src="rad-050.png" alt="" width="646" height="532" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 44.</strong> Asistente.</em></span></p>
+<p id="8213" style="text-align: justify;"><span>Marcamos la tercera opción y abre la herramienta '<strong>Enrutamiento y acceso remoto'</strong>.</span></p>
+<p><img src="rad-051.png" alt="" width="619" height="440" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 45.</strong> Enrutamiento y acceso remoto.</span></em></p>
+<p id="672d" style="text-align: justify;"><span>Otra forma de abrir la herramienta es mediante el cmdlet siguiente:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>rrasmgmt.msc</span></pre>
+<p id="90ef" style="text-align: justify;"><span>Esta herramienta es una de las más versátiles y utilizadas en un Windows Server. Además, de las que más ayuda podemos encontrar pues está ahí casi sin diferencias desde Windows NT. </span><span>En ella se puede configurar:</span></p>
+<ul style="text-align: justify;">
+<li><span>Acceso telefónico.</span></li>
+<li><span>Acceso VPN.</span></li>
+<li><span>Conexión entre suscursales.</span></li>
+<li><span>NAT.</span></li>
+<li><span>Enrutamiento LAN.</span></li>
+</ul>
+<p id="dcb1" style="text-align: justify;"><span>La herramienta muestra una ventana partida. En la izquierda se pueden observar los elementos y la derecha el detalle. </span><span>En la izquierda, seleccionamos nuestro servidor (CLI-RADIUS) con el botón derecho y hacemos clic sobre la opción <strong><em>Configurar y habilitar Enrutamiento y acceso remoto</em></strong>.</span></p>
+<p><span><img src="rad-052.png" alt="" width="620" height="441" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 46.</strong> Acceder a  Configurar y habilitar Enrutamiento y acceso remoto.</em></span></p>
+<p style="text-align: justify;"><span>Esto lanza un asistente que muestra una pantalla de bienvenida. Pulsamos en Siguiente.</span></p>
+<p><span><img src="rad-053.png" alt="" width="496" height="477" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 47.</strong> Pantalla de inicio del asistente.</em></span></p>
+<p style="text-align: justify;"><span>Pulsar 'Siguiente' para dar comienzo al proceso. Aparece una nueva pantalla con un listado de opciones, donde elegimos la primera: <strong><em>Acceso remoto (acceso telefónico o red privada virtual)</em>.</strong> </span></p>
+<p><img src="rad-054.png" alt="" width="498" height="478" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 48</strong></em> . Pantalla de selección.</span></p>
+<p style="text-align: justify;"><span>Pulsar '<strong>Siguiente</strong>' y en la siguiente pantalla seleccionamos <strong>VPN</strong>.</span></p>
+<p><span><img src="rad-055.png" alt="" width="495" height="477" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><em><strong>instalamosFigura 49</strong></em>. Selección de acceso remoto por VPN.</span></p>
+<p style="text-align: justify;"><span>Pulsar '<strong>Siguiente</strong>' y en la siguiente pantalla aparecen las tarjetas de red de nuestro equipo y <em>seleccionamos la que tenga <strong>acceso a Internet, </strong></em>pero además hay que marcar '<strong><em>Habilitar seguridad en la interfaz seleccionada configurando filtros de paquetes estático</em></strong>s'.</span></p>
+<p style="text-align: center;"><img src="rad-056.png" alt="" width="497" height="477" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 50.</strong> Selección de la tarjeta de red del cliente radius con acceso a internet.</span></em></p>
+<div class="cuadro-nota-centro" style="text-align: justify;">
+<p style="text-align: justify;"><span>Si se observa la figura superior, se ha renombrado las interfaces de red, una llamada “Interna” y otra “Externa”, esto es muy importante para evitar confusiones de qué interfaz es la de salida a la WAN (externa) o a la LAN (interna).</span></p>
+</div>
+<p style="text-align: justify;"><span></span></p>
+<p style="text-align: justify;"><span>Pulsar '<strong>Siguiente</strong>' y en la siguiente pantalla hay que definir cómo se otorgarán las direcciones IP a los equipos cliente. Podemos elegir entre automáticamente o un rango específico que definamos para las conexiones externas. Es mejor utilizar esto último, porque nos permitirá diferenciar mejor el tráfico.</span></p>
+<p style="text-align: center;"><img src="rad-057.png" alt="" width="497" height="478" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 51.</strong> Selección del modo de asignación de direcciones IP.</span></em></p>
+<p style="text-align: justify;"><span>Pulsar '<strong>Siguiente</strong>' y en la siguiente pantalla, se define el rango de direcciones, para este escenario, se opta por dejar el rango de direcciones entre <strong>192.168.11.100</strong> y <strong>192.168.11.119</strong>. Son 20 direcciones en total. Avanzamos.</span></p>
+<p><img src="rad-058.png" alt="" width="497" height="478" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 52.</strong> Selección de rango.</span></em></p>
+<p style="text-align: justify;"><span>Pulsar '<strong>Siguiente</strong>' y en la siguiente pantalla,  hay que decidir si se usa un <strong><em>servidor RADIUS</em></strong> para autentificar las conexiones entrantes o se realizará directamente con <strong><em>Enrutamiento y acceso remoto</em></strong>. <em>Seleccionamos las <strong>segunda opción</strong></em>, para eso hemos instalado un servidor RADIUS.</span><span></span></p>
+<p><img src="rad-059.png" alt="" width="495" height="476" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 53.</strong> Uso de RADIUS.</span></em></p>
+<p style="text-align: justify;"><span>Pulsar '<strong>Siguiente</strong>' y en la siguiente pantalla, se necesita que se indique <em>el <strong>servidor RADIUS</strong></em> (puede ser por nombre o IP) y, si se desea, algún <strong><em>servidor alternativo</em></strong>. Dado que en este escenario no se considera que la red vaya a recibir muchas peticiones ni es una función tan crítica como para necesitar respaldo.</span></p>
+<p style="text-align: justify;"><span>Por último, hay que rellenar el <strong><em>secreto compartido</em></strong> que definimos en el <strong><em>servidor RADIUS</em></strong> para este cliente. Porque es importante recordar que se puede establecer uno diferente para cada cliente.</span></p>
+<p style="text-align: center;"><img src="rad-060.png" alt="" width="496" height="478" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 54.</strong> Rellenar datos del servidor radius.</span></em></p>
+<p style="text-align: justify;"><span>Esta es la etapa en la que necesitamos indicar <em>el <strong>servidor RADIUS</strong></em> (puede ser por nombre o IP) y, si lo deseamos, algún <strong><em>servidor alternativo</em></strong>. No consideramos que nuestra red vaya a recibir tantas peticiones ni es una función tan crítica como para necesitar respaldo. Por último, rellenamos el <em>secreto compartido</em> que definimos en el<strong><em> s</em><em>ervidor RADIUS</em></strong> para este cliente. Porque es importante recordar que se puede establecer uno diferente para cada cliente.</span></p>
+<p style="text-align: justify;"><span>Se finaliza el asistente con un resumen de lo realizado, donde el<strong><em> Resumen completo</em></strong> es:</span></p>
+<ul>
+<li style="text-align: justify;">Los clientes VPN se conectan a la siguiente interfaz pública: Externa</li>
+<li style="text-align: justify;">A los clientes VPN se les asigna la siguiente red para el direccionamiento: Interna.</li>
+<li style="text-align: justify;">Las conexiones del cliente se aceptan y se autentican utilizando: un servidor externo RADIUS.</li>
+<li style="text-align: justify;">Se crearán los grupos del servidor RADIUS remoto Servidores de autenticación del Servicio de enrutamiento y acceso remoto de Microsoft y Servidores de cuentas del Servicio de enrutamiento y acceso remoto de Microsoft en la base de datos de NPS.</li>
+<li style="text-align: justify;">Se creará una directiva de solicitud de conexión llamada Directiva del Servicio de enrutamiento y acceso remoto de Microsoft en la base de datos de NPS. La directiva usa los grupos de servidores de cuentas y autenticación.</li>
+</ul>
+<p style="text-align: center;"><img src="rad-061.png" alt="" width="495" height="478" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 55.</strong> Resumen de lo configurado.</span></em></p>
+<p id="9046" style="text-align: justify;"><span>Al hacer clic sobre finalizar, se iniciará el servicio para su puesta en funcionamiento. Si se recibe un error, es bastante frecuente, puede ser debido a que se necesita habilitar manualmente <strong><em>Enrutamiento y acceso remoto</em></strong> en el Firewall de Windows.</span></p>
+<p style="text-align: center;"><span><img src="rad-061B.png" alt="" width="559" height="484" /><br /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 56.</strong> Advertencia, pulsamos Aceptar</em></span></p>
+<p style="text-align: justify;"><span>En ocasiones puede salir la siguiente advertencia:</span></p>
+<p style="text-align: center;"><span><img src="rad-061-2.png" alt="" width="500" height="480" /><br /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 57.</strong> Advertencia para modificar el Firewall.</em></span></p>
+<p style="text-align: justify;"><span>Si sale la advertencia, hacemos: </span><span>Vamos a <em>Windows Defender Firewall</em> (Ver Figura).</span></p>
+<p><span><em><img src="rad-061-3.png" alt="" width="1045" height="495" style="display: block; margin-left: auto; margin-right: auto;" /></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 58.</strong> Reglas del Firewall.</em></span></p>
+<p style="text-align: justify;"><span>Una vez dentro pulsar en 'Reglas de entrada / Nueva Regla' (aparece a la derecha) y hay que ir seleccionando lo siguiente:</span></p>
+<ul class="bbcol decimal" style="text-align: justify;">
+<li>Puerto.</li>
+<li>TCP y en específico hay que poner<span> </span><strong class="bbc">3389.</strong></li>
+<li>Marcar "permitir la conexión".</li>
+<li>Hay que dejar seleccionado: Domino, Privado y Público.</li>
+<li>Por último, hay que poner un nombre descriptivo y una descripción (opcional), para este caso, el nombre es:<span> </span><strong>Puerto-Enrutamiento-Remoto.</strong></li>
+</ul>
+<p style="text-align: justify;"><strong>Referencia:</strong></p>
+<ul style="text-align: justify;">
+<li><a href="https://docs.microsoft.com/es-es/troubleshoot/windows-server/networking/set-up-routing-remote-access-intranet" target="_blank" rel="noopener">https://docs.microsoft.com/es-es/troubleshoot/windows-server/networking/set-up-routing-remote-access-intranet</a></li>
+</ul>
+<div class="cuadro-nota-centro" style="text-align: justify;">
+<p style="text-align: justify;"><span>En el caso de tener un router con conexión a Internet, no hay que olvidar de abrir (suele ser vía Port Forwading) para hacer un NAT de la IP pública a la dirección IP interna.</span></p>
+</div>
+<p style="text-align: justify;"><span><em></em></span></p>
+<p style="text-align: justify;"><span>Se volverá a abrir la herramienta pero ya habilitada. Hacemos clic derecho sobre nuestro <strong><em>cliente Radius</em></strong> en el panel de la izquierda y posteriormente en <strong><em>Propiedades</em></strong>.</span></p>
+<p><img src="rad-062.png" alt="" width="858" height="529" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 59.</strong> Herramienta habilitada</em>.</span></p>
+<p id="99b1" style="text-align: justify;"><span>Seleccionamos la pestaña <strong><em>Seguridad</em></strong> y luego en el botón <strong><em>Métodos de autenticación</em></strong>. Por defecto, intenta dejar marcado el método más seguro, que es EAP. Nosotros solo vamos a utilizar <em>MS-CHAP v2</em>. Aceptamos. </span><span>El resto de opciones de <strong><em>Seguridad</em></strong> las dejamos como están. Al hacer clic en el botón aceptar es posible que se reinicie el servicio y tarde un poco en implementar la configuración.</span></p>
+<p><img src="rad-062.png" alt="" width="890" height="617" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 60.</strong> </em>Seguridad.</span></p>
+<p id="99b1" style="text-align: justify;"><span>Seleccionamos la pestaña <strong><em>Seguridad</em></strong> y luego en el botón <strong><em>Métodos de autenticación</em></strong>. Por defecto, intenta dejar marcado el método más seguro, que es EAP. Nosotros solo vamos a utilizar <em>MS-CHAP v2</em>. Aceptamos. </span><span>El resto de opciones de <strong><em>Seguridad</em></strong> las dejamos como están. Al hacer clic en el botón aceptar es posible que reinicie el servicio y tarde un poco en implementar la configuración.</span></p>
+<h3 id="dcc6" style="text-align: justify;">6. Configuración de cliente RADIUS con PowerShell</h3>
+<p id="1f5c" style="text-align: justify;"><span>Como se ha indicado anteriormente, se puede el rol desde PowerShell.</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Install-WindowsFeature DirectAccess-VPN -IncludeManagementTools</span></pre>
+<p id="5790" style="text-align: justify;"><span>Comprobamos el cumplimiento de prerrequisitos:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Install-RemoteAccess -PreRequisite</span></pre>
+<p id="1959" style="text-align: justify;"><span>Procedemos a la instalación de VPN:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Install-RemoteAccess -VpnType VPN -RadiusServer 192.168.11.254 `<br />-SharedSecret “eeepec20” `<br />-IPAddressRange 192.168.11.230, 192.168.11.249</span></pre>
+<p id="9dd6" style="text-align: justify;"><span>¿Qué estamos haciendo? En un mismo comando le indicamos que queremos habilitar VPN y le pasamos la configuración RADIUS y el rango de direcciones que vamos a utilizar para conceder a los cientes.</span></p>
+<p id="211a" style="text-align: justify;"><span>A continuación, hay que reiniciar el servicio:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Restart-Service RemoteAccess</span></pre>
+<p id="d435" style="text-align: justify;"><span>Si se quiere obtener la configuración generada hasta ahora, hay que ejecutar el siguiente cmdlet:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Get-RemoteAccess</span></pre>
+<p id="0cc7" style="text-align: justify;"><span>Nos falta establecer el servidor RADIUS para autenticación de cuentas y no solo de directivas de acceso. Necesitamos reiniciar el servicio.</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt; </strong>Set-RemoteAccessAccounting -EnableAccountingType ExternalRadius -RadiusServer 192.168.11.254 -SharedSecret “eeepuc20”
+<strong>PS C:\&gt; </strong>Restart-Service RemoteAccess</span></pre>
+<p id="0ca0" style="text-align: justify;"><span>Para listar por pantalla la configuración, ejecutamos el siguiente cmdlet:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Get-RemoteAccessAccounting</span></pre>
+<p id="d808" style="text-align: justify;"><span>Ahora definiremos las seguridad de VPN que utilizaremos mediante el siguiente cmdlet:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Set-VpnAuthProtocol -UserAuthProtocolAccepted MsChapv2 Restart-Service RemoteAccess</span></pre>
+<p id="4107" style="text-align: justify;"><span>Otros cmdlet útiles son:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"># Ver el estado de las conexiones actuales
+<strong>PS C:\&gt;</strong>Get-RemoteAccessConnectionStatisticsSummary
+# Listado de servidores RADIUS configurados
+<strong>PS C:\&gt;</strong>Get-RemoteAccessRadius
+# Obtener un listado de conexiones de un usuario
+<strong>PS C:\&gt;</strong>Get-RemoteAccessUserActivity -UserName “RADIUS\radiustest”
+# Desinstala el servidor
+<strong>PS C:\&gt;</strong>Uninstall-RemoteAccess</span></pre>
+<div class="cuadro-nota-centro">
+<p align="justify"><span>Para obtener más comandos con los que trabajar puedes acceder a la <a href="https://docs.microsoft.com/es-es/powershell/module/remoteaccess/?view=win10-ps" target="_blank" rel="noopener">ayuda de Microsoft</a>.</span></p>
+</div>
+<p><img src="confRadius-WServer2019-41.png" alt="" width="650" height="269" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 61.</strong> RRAS sin modo heredado.</span></em></p>
+<div class="cuadro-importante-centro">
+<p align="justify"><span>Hay que tener en cuenta que administrar el servidor mediante <strong>PowerShell</strong> conlleva que el uso de la herramienta de interfaz gráfica se <strong>deshabilita</strong>.</span></p>
+</div></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_esquema_de_instalacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_pruebas_de_aaa_va_vpn.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

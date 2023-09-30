@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.1 Proxy transparente para HTTP | UT10. Fortificación perimetral: proxy </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-122"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT10. Fortificación perimetral: proxy</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT10. Fortificación perimetral: proxy</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_los_proxys.html" class="no-ch">1. Introducción a los proxys</a></li>
+   <li><a href="2_proxy_webcach.html" class="daddy">2. Proxy web/caché</a>
+   <ul class="other-section">
+      <li><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="no-ch">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proxy_con_autenticacin_bsica.html" class="no-ch">3. Proxy con autenticación básica</a></li>
+   <li><a href="4_proxy_con_filtrado.html" class="no-ch">4. Proxy con filtrado</a></li>
+   <li class="current-page-parent"><a href="5_proxy_transparente_para_httphttps.html" class="current-page-parent daddy">5. Proxy transparente para HTTP/HTTPS</a>
+   <ul>
+      <li id="active"><a href="51_proxy_transparente_para_http.html" class="active no-ch">5.1 Proxy transparente para HTTP</a></li>
+      <li><a href="52_proxy_transparente_para_https.html" class="no-ch">5.2 Proxy transparente para HTTPS</a></li>
+   </ul>
+   </li>
+   <li><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="daddy">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_proxy_squid_con_pfsense.html" class="no-ch">Práctica 1. Proxy Squid con PfSense</a></li>
+   </ul>
+   </li>
+   <li><a href="7_proxy_dns__pihole.html" class="daddy">7. Proxy DNS - PiHole</a>
+   <ul class="other-section">
+      <li><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="no-ch">Práctica 2.Implantación del proxy DNS Pi-Hole</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="5_proxy_transparente_para_httphttps.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52_proxy_transparente_para_https.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.1 Proxy transparente para HTTP</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id169">
+<div class="iDevice emphasis0" >
+<div id="ta169_168_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">Uno de los <strong>inconvenientes</strong> del uso de los proxies tal como se ha visto hasta ahora, es que se deben configurar todos los clientes. Lo que con un número razonable de ordenadores, automatizar la configuración no debería ser muy complicado, la cosa se complica cuando, a demás de incrementarse el número de equipos, también existe una gran variedad de programas, sistemas operativos y plataformas. El caso extremo sería un escenario donde la presencia de dispositivos móviles que se usaran tanto en la empresa como fuera de ella, fuera generalizada.</p>
+<h3 style="text-align: justify;">2. Escenario</h3>
+<p style="text-align: justify;">Se parte del escenario final del <em><strong>capítulo 2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</strong>, </em>es decir, la <strong>sección de permisos de accesos</strong> del fichero <strong>squid.conf</strong> es el siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">http_access allow localnet</span><br /><span style="font-size: 12pt;">http_access allow localhost</span></pre>
+<p style="text-align: justify;">El esquema es el siguiente:</p>
+<p style="text-align: justify;"></p>
+<p style="text-align: center;"><a href="Esquema-red-Proxy-Squid-2DMZ.png" target="_blank" rel="noopener"><img src="Esquema-red-Proxy-Squid-2DMZ.png" alt="" width="548" height="555" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong><span> </span>Esquema de red - Proxy Squid en ubuntu server con Mikrotik.</em></p>
+<h3 style="text-align: justify;">3. Configuración del firewall de MikroTiK</h3>
+<p style="text-align: justify;">En primer lugar, se configura el <strong>firewall</strong> del <strong>router MikroTik BackEnd</strong> para que marque todos los paquetes que quieran atravesarlo y cuyo puerto destino sea el <strong>puerto 80</strong> (http). Hay que tener en cuenta que no hay que marcar los paquetes que vengan del propio servidor proxy. A continuación se describe el proceso a seguir.</p>
+<h4>1. Firewall - Mangle</h4>
+<p style="text-align: justify;">En primer lugar hay que acceder a <strong>IP --&gt; Firewall --&gt; Mangle</strong> para añadir una regla que marque con la etiqueta "<strong>proxy-http</strong>" todos los paquetes HTTP de la red interna que no vengan del servidor proxy antes que que sean enrutados. Más tarde, esta etiqueta será usada para determinar la entrada de la tabla de enrutamiento a aplicar. Los parámetros a configurar son:</p>
+<ul>
+<li style="text-align: justify;"><span><strong>Chain</strong>: prerouting</span></li>
+<li style="text-align: justify;"><span><strong>Src. Address</strong>: !192.168.2.254 (que no provengan del servidor proxy).</span></li>
+<li style="text-align: justify;"><span><strong>Protocol</strong>: tcp.</span></li>
+<li style="text-align: justify;"><span><strong>Dst. Port</strong>: 80.</span></li>
+<li style="text-align: justify;"><span><strong>In. Interface</strong>: ether2 (interfaz de la red interna).</span></li>
+<li style="text-align: justify;"><span><strong>Action</strong>: mark routing.</span></li>
+<li style="text-align: justify;"><span><strong>New Packet Mark</strong>: to-proxy<strong>.</strong></span></li>
+</ul>
+<p style="text-align: center;"><img src="mangle-http.png" alt="" width="1287" height="233" /></p>
+<h4 style="text-align: justify;">2. Configuración del enrutado de MikroTik</h4>
+<p style="text-align: justify;">Cada paquete marcado con la etiqueta "<strong>proxy-http</strong>" deberá ser enrutado hacia el servidor proxy. Para ello, hay que añadir una nueva entrada en la tabla de encaminamiento de manera que envíe al servidor proxy squid todos los paquetes marcados con la etiqueta "<strong>proxy-http</strong>". Las acciones a realizar son las siguientes:</p>
+<p><strong>1. Acceder a IP &gt; Routes &gt; Routes.</strong></p>
+<p style="text-align: center;"></p>
+<p><strong>2. Añadir una nueva entrada en la tabla de encaminamiento,</strong> donde los parámetros a configurar son:</p>
+<ul>
+<li><strong><span>Dst. Address:</span></strong> 0.0.0.0/0</li>
+<li><span><strong>Gateway</strong>: 192.168.2.254.</span></li>
+<li><span><strong>Routing Mark</strong>: to-proxy.</span><span></span></li>
+<li><span><strong>Comment: </strong>Enrutado paquetes marcados con to-proxy.</span></li>
+</ul>
+<p style="text-align: center;"><img src="routes-http.png" alt="" width="879" height="299" /></p>
+<h3 style="text-align: justify;">4. Configuración de Squid/iptables en Ubuntu Server</h3>
+<p style="text-align: justify;">En este apartado, hay que trabajar en el servidor proxy Squid. En primer lugar, hay que añadir un puerto extra para que gestione el tráfico interceptado de manera transparente (etiqueta proxy-http). El proceso es el siguiente:</p>
+<p style="text-align: justify;"><strong>1. Editar el fichero squid.conf</strong></p>
+<p style="text-align: justify;">Si se busca la ayuda de la directiva<strong> TAG: http_port</strong>, se tiene una descripción de los distintos modos de funcionamiento que tiene. Es importante conocer los distintos modos para aplicar el necesario en el escenario actual.</p>
+<p style="text-align: center;"><img src="modos-http-port.png" alt="" width="853" height="780" /></p>
+<p><strong>2. Añadir directiva http_port (interceptar tráfico etiquetado)</strong></p>
+<p>Hay que localizar la directiva<strong> http_port</strong> para añadir debajo de ella otra del mismo tipo, pero esta vez usando un puerto distinto, ejemplo, el <strong>3126</strong> e indicando que trabajará en el modo <strong>intercept</strong>.</p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Es obligatorio mantener un puerto de escucha para las peticiones no interceptadas, así que si no se quiere ofrecer este servicio, hay que usar el cortafuegos del sistema GNU/Linux para impedir que le lleguen peticiones.</p>
+</div>
+<p style="text-align: center;"><img src="http-port-3126-intercept.png" alt="" width="661" height="212" /></p>
+<p></p>
+<h4 style="text-align: justify;">3. Configuración del cortafuegos de Ubuntu Server</h4>
+<p style="text-align: justify;">En estos momentos, Squid esté escuchando el puerto 8080 a la espera de paquetes interceptados, pero los paquetes que el router Back-End está enviando tienen como puerto destino el 80, así que es necesario añadir una regla en iptables en la tabla nat para que un paquete HTTP que venga por el interfaz físico del servidor antes de que sea enrutado se reenvíe al puerto 3126 del mismo.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>iptables -t nat -A PREROUTING -i enp0s3 -p tcp --dport 80 -j REDIRECT --to-port 3126</span></pre>
+<p style="text-align: center;"><img src="iptbles-80.png" alt="" width="906" height="89" /></p>
+<p style="text-align: justify;">Si se <strong>comprueba iptables</strong>, se observa que se ha añadido la regla correctamente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>iptables -t nat -L</span></pre>
+<p style="text-align: center;"><img src="comprobar-iptables.png" alt="" width="830" height="268" /></p>
+<h3 style="text-align: justify;">5. Configuración de los clientes y pruebas</h3>
+<p style="text-align: justify;">Una vez configurado el proxy transparente, ya no será necesario configurar el proxy en los navegadores de los equipos de la red, sino que simplemente, se dejará la configuración por defecto en el apartado del Proxy del navegador.</p>
+<p style="text-align: center;"><img src="sin-proxy.png" alt="" width="884" height="226" /></p>
+<p style="text-align: justify;">Si se accede a un servidor web mediante http, se observa que se puede acceder sin problemas.</p>
+<p style="text-align: center;"><a href="acceso-http-cliente.png" target="_blank" rel="noopener"><img src="acceso-http-cliente.png" alt="" width="811" height="508" /></a></p>
+<p style="text-align: justify;">Si se accede a <strong>IP &gt; Firewall &gt; Mangle</strong>, se observar que se tiene tráfico (Bytes/Paquetes) por lo que se están etiquetando los paquetes que provienen de los equipos de la red interna a excepción del servidor proxy, en este caso, del equipo Ubuntu Desktop 20.04 que es el utilizado para realizar las pruebas.</p>
+<p style="text-align: center;"><img src="mangle-http.png" alt="" width="1287" height="233" /></p>
+<p style="text-align: justify;">Para comprobar el tráfico que está redirigiendo iptables, se ejecuta el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span><strong><span style="font-size: 12pt;">root@perseo:/#</span></strong><span style="font-size: 12pt;">iptables -L -v -n</span><strong><br /></strong></span></pre>
+<p style="text-align: center;"><img src="tarfico-iptables.png" alt="" width="742" height="183" /></p>
+<h3 style="text-align: justify;">6. Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://docs.diladele.com/tutorials/mikrotik_transparent_squid/index.html">https://docs.diladele.com/tutorials/mikrotik_transparent_squid/index.html</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="5_proxy_transparente_para_httphttps.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="52_proxy_transparente_para_https.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

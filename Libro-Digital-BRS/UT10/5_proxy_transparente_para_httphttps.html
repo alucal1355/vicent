@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5. Proxy transparente para HTTP/HTTPS | UT10. Fortificación perimetral: proxy </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-148"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT10. Fortificación perimetral: proxy</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT10. Fortificación perimetral: proxy</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_los_proxys.html" class="no-ch">1. Introducción a los proxys</a></li>
+   <li><a href="2_proxy_webcach.html" class="daddy">2. Proxy web/caché</a>
+   <ul class="other-section">
+      <li><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="no-ch">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proxy_con_autenticacin_bsica.html" class="no-ch">3. Proxy con autenticación básica</a></li>
+   <li><a href="4_proxy_con_filtrado.html" class="no-ch">4. Proxy con filtrado</a></li>
+   <li id="active"><a href="5_proxy_transparente_para_httphttps.html" class="active daddy">5. Proxy transparente para HTTP/HTTPS</a>
+   <ul>
+      <li><a href="51_proxy_transparente_para_http.html" class="no-ch">5.1 Proxy transparente para HTTP</a></li>
+      <li><a href="52_proxy_transparente_para_https.html" class="no-ch">5.2 Proxy transparente para HTTPS</a></li>
+   </ul>
+   </li>
+   <li><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="daddy">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_proxy_squid_con_pfsense.html" class="no-ch">Práctica 1. Proxy Squid con PfSense</a></li>
+   </ul>
+   </li>
+   <li><a href="7_proxy_dns__pihole.html" class="daddy">7. Proxy DNS - PiHole</a>
+   <ul class="other-section">
+      <li><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="no-ch">Práctica 2.Implantación del proxy DNS Pi-Hole</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4_proxy_con_filtrado.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="51_proxy_transparente_para_http.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5. Proxy transparente para HTTP/HTTPS</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id187">
+<div class="iDevice emphasis0">
+<div id="ta187_85" class="block iDevice_content">
+<h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">Como se ha ido comprobando en anteriores capítulos, la <strong>funcionalidad que proporciona un proxy</strong> es una <strong>herramienta imprescindible de seguridad</strong> que tiene por finalidad administrar los accesos de dispositivos, de la red interna, a otras redes y a Internet.</p>
+<p style="text-align: justify;">El servicio de<span> </span><strong>proxy web</strong><span> </span>puede ser configurado en formatos diferenciados, uno de ellos llamado<span> </span><strong>proxy transparente</strong>. La premisa básica para la implementación del<span> </span><strong>proxy transparente</strong><span> </span>es que el usuario, o dispositivo, no necesite ejecutar ninguna configuración para navegación, siendo estas asignadas a la arquitectura de seguridad.</p>
+<h3 style="text-align: justify;">2. Proxy transparente, puntos positivos</h3>
+<p style="text-align: justify;">El funcionamiento de la estructura de <strong>proxy transparente</strong> se produce a través de la <strong>redirección de tráfico en el puerto 80 para el servicio interno del proxy</strong>, y hay muchos otros puertos que pueden utilizar el protocolo HTTP o el método CONNECT que no van a pasar por esta regla.</p>
+<p style="text-align: justify;">Encaminar el tráfico de todos los puertos al proxy, por otro lado, no es una opción porque no conoce el funcionamiento de otros protocolos, lo que hará que otras aplicaciones no HTTP dejen de funcionar.</p>
+<p style="text-align: justify;">Por otro lado, la gran mayoría de las aplicaciones web actualmente utilizan conexiones HTTPS (puerto 443), por lo que se hace necesario también que el proxy posea la característica de interacción con ese tipo de tráfico, lo que puede no ser una actividad trivial.</p>
+<p>Proxy transparente, puntos positivos<br />La facilidad de implantación, sin lugar a dudas, es el principal punto considerado en el momento de definir la topología, sin embargo, es importante entender la aplicación y el ambiente para garantizar que este modelo es el más adecuado.</p>
+<p>Esto se debe a que el funcionamiento de la estructura de proxy transparente se produce a través de la redirección de tráfico en el puerto 80 para el servicio interno del proxy, y hay muchos otros puertos que pueden utilizar el protocolo HTTP o el método CONNECT que no van a pasar por esta regla.</p>
+<p>Encaminar el tráfico de todos los puertos al proxy, por otro lado, no es una opción porque no conoce el funcionamiento de otros protocolos, lo que hará que otras aplicaciones no HTTP dejen de funcionar.</p>
+<p>Además, buena parte de las aplicaciones web actualmente utilizan conexiones HTTPS (puerto 443), entonces es necesario también que el proxy posea la característica de interacción con ese tipo de tráfico, lo que puede no ser una actividad trivial.</p>
+<p style="text-align: justify;">Otro aspecto interesante en la implementación de <strong>proxy transparente</strong> es el recurso de <strong>caching</strong> que muchos poseen de manera integrada. Esta facilidad permite el ahorro de banda ya que los objetos de Internet se almacenan en memoria o almacenamiento secundario y se descargan localmente (sin el uso de Internet) para los usuarios que soliciten.</p>
+<p style="text-align: justify;">Con la característica de caché se puede configurar el espacio utilizado para el almacenamiento, el tamaño mínimo y el máximo de elementos que van al caché, así como la política que se utilizará para reemplazar objetos, manteniendo en general sólo aquellos a los que se accede con frecuencia.</p>
+<p style="text-align: justify;">En la práctica, en una red sin proxy y caching una petición en Internet que demanda una actualización de 5Mb realizada por 10 equipos, generará un consumo de Internet de 50Mb, pues todos ellos necesitarán ir a internet para copiar las actualizaciones.</p>
+<p>Con la función de caché, el primer equipo que realiza la actualización consultará Internet y el archivo se almacenará en el caché local. Los demás ordenadores o dispositivos que solicitan el mismo elemento lo van a descargar localmente, generando en este caso considerable ahorro de banda (45Mb).</p>
+<p style="text-align: justify;">Las <strong>tecnologías de proxy</strong> suelen trabajar con listas de acceso o recursos similares que permiten que las reglas de acceso puedan crearse de acuerdo con la necesidad de la empresa, cómo limitar determinados sitios, sobre la base de horarios, crear listas blancas y negras globales, entre varias otras facilidades. Esto es importante, aunque sólo se aplica en el puerto 80, ya que ofrece una reducción de accesos en sitios inapropiados para el entorno de trabajo, ya sea a través de un acceso intencional o accidental (generado por un malware, por ejemplo). Hay todavía posibilidades de realizar el bypass del proxy, sin embargo si la política está bien ajustada, los riesgos se minimizan potencialmente.</p>
+<p style="text-align: justify;">Todos los accesos que se realizan a través del proxy transparente son pasibles de registro, y eso es una herramienta de gestión interesante para identificar abusos u otros accesos, permitiendo personalizar las políticas de acceso de acuerdo a la necesidad de la empresa.</p>
+<h3 style="text-align: justify;">3. Proxy transparente, limitaciones</h3>
+<p style="text-align: justify;">Aunque el proxy transparente presenta un conjunto de beneficios interesantes, en entornos empresariales de mayor complejidad, con estructuras de autenticación, mayor diversidad de uso de aplicaciones y dispositivos móviles, este modelo puede generar algunas frustraciones.</p>
+<p style="text-align: justify;">El uso de <strong>HTTPS</strong> dentro de una <strong>estructura de proxy</strong>, en líneas generales, depende que el servicio intercepte la conexión y entregue un certificado propio, que debe ser aceptado por el cliente para dar continuidad a la comunicación. Este proceso, a menos que el equipo tenga el certificado importado, generará una alerta para el usuario de conexión insegura.</p>
+<p style="text-align: justify;">Para entornos con controlador de dominio donde es posible realizar el deploy de certificados masivos, esto no representa un problema, pero en estructuras menores, hacer esta operación de manera manual puede generar demanda considerable de trabajo.</p>
+<p style="text-align: justify;">Otro alerta importante en cuanto al uso de proxy transparente es la capacidad de redirigir los puertos a los servicios, ya que no toda aplicación se basa en el protocolo HTTP. Esto significa que miles de otros puertos pueden pasar por fuera del proxy, facilitando incluso la estructura de bypass.</p>
+<p style="text-align: justify;">En este caso es importante que la solución trabaje en conjunto con políticas de filtrado de tráfico para regular el uso de los otros puertos, de lo contrario, ratificando, la posibilidad de derivación para uso de proxies fuera de la empresa, es muy grande.</p>
+<p style="text-align: justify;">De esta forma, como sólo una parte del tráfico acaba pasando por el proxy, la característica de auditoría de los accesos puede ser perjudicada, o en otros casos, segmentada en registros del propio servicio de proxy, como registros de no conformidades en las políticas de acceso del proxy.</p>
+<p style="text-align: justify;"><strong><a href="https://ostec.blog/es/seguridad-perimetral/proxy-transparente-beneficios-limitaciones/" target="_blank" rel="noopener">Fuente</a></strong></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4_proxy_con_filtrado.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="51_proxy_transparente_para_http.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

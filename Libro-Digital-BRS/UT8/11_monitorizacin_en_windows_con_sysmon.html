@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.1 Monitorización en Windows con Sysmon | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-130"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li class="current-page-parent"><a href="1_herramientas_de_monitorizacin.html" class="current-page-parent daddy">1. Herramientas de monitorización</a>
+   <ul>
+      <li id="active"><a href="11_monitorizacin_en_windows_con_sysmon.html" class="active no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul class="other-section">
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_herramientas_de_monitorizacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="12_monitorizacin_con_centreon.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.1 Monitorización en Windows con Sysmon</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id170">
+<div class="iDevice emphasis0">
+<div id="ta170_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;"><span><a href="https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon" target="_blank" rel="noopener">Sysmon</a> es una utilidad que pertenece al conjunto de herramientas </span><a href="https://docs.microsoft.com/es-es/sysinternals/" target="_blank" rel="noopener">Sysinternals</a><span> (propiedad de Microsot) </span><strong>dirigidas a la administración de sistemas windows.</strong></p>
+<p style="text-align: justify;"><span><strong>Sysmon</strong> se encarga de monitorizar la actividad del sistema operativo, grabando los eventos en un fichero de eventos del sistema para su posterior análisis, este fichero esta en ‘</span><em><strong>C:\Windows\System32\winevt\Logs</strong></em><span>‘ y se llama ‘</span><em><strong>Microsoft-Windows-Sysmon%4Operational.evtx</strong></em><span>‘.</span></p>
+<p style="text-align: center;"><img src="ficherp-sysmon.png" alt="" width="857" height="146" /></p>
+<h3>2. Instalación</h3>
+<p style="text-align: justify;"><span>En primer lugar, hay que descargarlo de su </span><a href="https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon" target="_blank" rel="noopener">página oficial</a><span> para instalarlo. Hay que descargar un fichero zip, y dentro de este, se tienen   los ficheros para 32 y 64 bits.</span></p>
+<p style="text-align: center;"><img src="sysmon.png" alt="" width="530" height="304" /></p>
+<p style="text-align: justify;">Una vez se pulsa en '<strong>Download Sysmon</strong>', hay que descomprimir el archivo. Una vez se descomprime, hay que abrir una consola como administrador y acceder a la ruta donde se ha descomprimido Sysmon y ejecutar el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>C:\Software\Sysmon&gt;</strong>Sysmon64.exe -accepteula -i</span></pre>
+<p style="text-align: center;"><img src="install-sysmon.png" width="717" height="330" /></p>
+<p style="text-align: justify;">Una vez ejecutado el comando, se muestra como salida del mismo un <strong>resumen de lo módulos habilitados y los que no. </strong>Una vez instalado, ya está monitorizando el sistema operativo en función la opciones de configuración que vienen por defecto.</p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Si se tiene un fichero de configuración, se puede ejecutar del siguiente modo suponiendo que el fichero exista en C:\Windows.</p>
+<pre><span style="font-size: 12pt;"><strong>C:\Software\Sysmon&gt;</strong>Sysmon64.exe -accepteula -i C:\windows\config.xml</span></pre>
+</div>
+<p style="text-align: justify;">Por defecto la configuración de Sysmon no monitoriza la red. Para comprobar la configuración, hay que ejecutar el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>C:\Software\Sysmon&gt;</strong>Sysmon64.exe -c</span></pre>
+<p style="text-align: center;"><img src="sysmon-c.png" alt="" width="818" height="434" /></p>
+<h3 style="text-align: justify;">3. Configuración</h3>
+<p style="text-align: justify;"><strong>Un problema que tiene esta utilidad es el tamaño del fichero donde guarda toda la información que va monitorizando</strong><span>, para especificar el tamaño del registro de eventos, hay que utilizar el comando ‘<strong>wevtutil</strong>’. Este comando permite instalar y desinstalar los manifiestos de eventos donde consultar los registros y hacer con ellos lo que se quiera. Para ejecutar ‘<strong>wevtutil</strong>’ y asignarle <strong>20 MB</strong>, el comando es el siguiente:</span></p>
+<pre><span style="font-size: 12pt;"><strong>C:\Software\Sysmon&gt;</strong>wevtutil sl Microsoft-Windows-Sysmon/Operational /ms:20971520</span></pre>
+<p style="text-align: center;"><img src="signar-20Mb.png" alt="" width="564" height="116" /></p>
+<p style="text-align: justify;">Se puede ver el esquema con información sobre configuración, mediante el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>C:\Software\Sysmon&gt;</strong>Sysmon64.exe -? config</span></pre>
+<p style="text-align: center;"><img src="sysmon-config.png" width="761" height="672" /></p>
+<p style="text-align: justify;"><br />Se pueden tener preparados varios archivos de configuración e ir cambiándolos sin la necesidad de reiniciar el servicio. Si se quiere reiniciar la configuración a la que lleva por defecto el comando es:</p>
+<pre><span style="font-size: 12pt;"><strong>C:\Software\Sysmon&gt;</strong>Sysmon64.exe -c --</span></pre>
+<h3 style="text-align: justify;">4. Cómo ver los eventos</h3>
+<p style="text-align: justify;"><span>Si se accede a la ruta</span><strong><span> </span>«C:\Windows\system32\winevt\logs»</strong><span> se puede ver el fichero creado por sysmon, el cual se puede abrir con el </span><strong>«Visor de Eventos de sistema»</strong><span> y empezar a monitorizar la actividad del sistema.</span></p>
+<p style="text-align: center;"><span><img src="abrir-Ficherosysmn-Veventos.png" alt="" width="1285" height="605" /></span></p>
+<p style="text-align: justify;">Una vez se carga el fichero, ya se pueden ver los eventos.</p>
+<p style="text-align: center;"><img src="evento-syslog.png" alt="" width="1110" height="605" /></p>
+<p style="text-align: justify;"><span>Con esta </span><span id="DWT3441" class="ZM-SPELLCHECK-FIXED">instalación</span><span>, S</span><span id="DWT3442" class="ZM-SPELLCHECK-MISSPELLED">ysmon</span><span> trabajará con sus opciones por defecto, </span><strong>pero se puede configurar<span> </span><span id="DWT3443" class="ZM-SPELLCHECK-MISSPELLED">sysmon</span><span> </span>a<span> </span><span id="DWT3444" class="ZM-SPELLCHECK-FIXED">través</span><span> </span>de un fichero de<span> </span><span id="DWT3445" class="ZM-SPELLCHECK-FIXED">configuración</span><span> </span><span id="DWT3446" class="ZM-SPELLCHECK-MISSPELLED">xml</span></strong><span>, para poder afinarlo más y que muestre la </span><span id="DWT3447" class="ZM-SPELLCHECK-FIXED">información</span><span> que se desee analizar.</span></p>
+<h3 style="text-align: justify;">4. Cargando un archivo de configuración</h3>
+<p style="text-align: justify;">Se puede comenzar con un archivo de configuración de ejemplo:</p>
+<ul>
+<li style="text-align: justify;"><a href="https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml" target="_blank" rel="noopener">https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml</a></li>
+</ul>
+<p style="text-align: justify;">Para cargar el fichero de configuración, hay que descargarlo en el directorio donde se tiene el ejecutable de Sysmon, y ejecutar el siguiente comando:</p>
+<p style="text-align: center;"><img src="sysmonconfig-export-XMl.png" width="626" height="312" /></p>
+<pre><span style="font-size: 12pt;"><strong>C:\Software\Sysmon&gt;</strong>Sysmon64.exe -c sysmonconfig-export.xml</span></pre>
+<p style="text-align: center;"><img src="sysmon-new-xml.png" width="717" height="309" /></p>
+<p style="text-align: justify;">Si se quieren conocer las etiquetas que se pueden usar en cada uno de los eventos, se puede ver en el "<strong>schema</strong>", el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>C:\Software\Sysmon&gt;</strong>Sysmon64.exe -s</span></pre>
+<p style="text-align: center;"><img src="sysmon-s.png" width="866" height="724" /></p>
+<h3 style="text-align: justify;">5. Programa de terceros para analizar eventos</h3>
+<p style="text-align: justify;">Se puede usar algún programa para ayudar en la gestión de la información. Para ello, se tiene un programa llamado SysmonTools, que se puede encontrar en:</p>
+<ul>
+<li style="text-align: justify;"><strong>github</strong>: <a href="https://github.com/nshalabi/SysmonTools/tree/master/SysmonView">https://github.com/nshalabi/SysmonTools/tree/master/SysmonView</a></li>
+</ul>
+<p style="text-align: justify;">Hay que descargar el formato que corresponda a nuestra máquina, en este caso 64 bits.</p>
+<p style="text-align: center;"><img src="descaarga-sysmnView.png" alt="" width="905" height="407" /></p>
+<p style="text-align: justify;">Una vez se ha realizado la descarga, hay que descomprimir el fichero y ya se podrá ejecutar el programa <strong>Sysmon View</strong>.</p>
+<p style="text-align: center;"><img src="panel-sysmon-view.png" alt="" width="903" height="504" /></p>
+<p style="text-align: justify;">Antes de importar la información, en<strong> File &gt; Preferences</strong>, se pueden añadir API de VirusTotal y IPStack.com, esta última para la geolocalización de los eventos.</p>
+<p style="text-align: center;"><img src="api-key.png" alt="" width="479" height="208" /></p>
+<p style="text-align: justify;">En el visor de eventos de Windows, visualizando los de Sysmon, en el panel de la derecha se pueden guardar todos los eventos como XML, para que posteriormente se puedan importara en Sysmon View.</p>
+<p style="text-align: center;"><img src="guardar-eventos-xml.png" alt="" width="1359" height="632" /></p>
+<p style="text-align: justify;">Una vez se ha descargado el fichero, ya se puede importar:</p>
+<p style="text-align: center;"><img src="fichero-xml-importado.png" alt="" width="902" height="503" /></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_herramientas_de_monitorizacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="12_monitorizacin_con_centreon.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

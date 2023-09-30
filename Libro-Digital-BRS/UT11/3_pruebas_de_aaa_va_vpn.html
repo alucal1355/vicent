@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3. Pruebas de AAA vía VPN | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-84"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul class="other-section">
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li><a href="2_vpn_de_acceso_remoto.html" class="daddy">2. VPN de acceso remoto</a>
+   <ul class="other-section">
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li><a href="22_wireguard.html" class="daddy">2.2 WireGuard</a>
+      <ul class="other-section">
+         <li><a href="221_instalacin_y_configuracin_de_wireguard.html" class="daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul class="other-section">
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_gestin_de_accesos_sistemas_nac.html" class="current-page-parent daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul>
+      <li class="current-page-parent"><a href="laboratorio_1_servidor_radius_vpn.html" class="current-page-parent daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul>
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li id="active"><a href="3_pruebas_de_aaa_va_vpn.html" class="active no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3. Pruebas de AAA vía VPN</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id115">
+<div class="iDevice emphasis0" >
+<div id="ta115_115_2" class="block iDevice_content">
+<div class="exe-text"><h3 id="1aba" style="text-align: justify;"><span>1. Configuración del cliente del usuario Windows 10 Enterprise</span></h3>
+<p style="text-align: justify;"><span>Para probar la infraestructura que se ha instalado y configurado en los anteriores capítulos, se incorpora un cliente windows 10 que será el que utiliza el usuario.</span></p>
+<p><img src="confRadius-WServer2019-42.png" alt="" width="304" height="115" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Esquema de instalación.</em></p>
+<p id="0980" style="text-align: justify;"><span>Independientemente de la configuración del equipo, y casi del sistema operativo, podremos conectarnos con una <strong><em>conexión VPN</em></strong> a la red empresarial creada en este escenarios. Nos va a permitir realizar las tareas como si estuviéramos en la propia empresa.</span></p>
+<p style="text-align: justify;"><span>Hacemos clic en el menú de <strong><em>Inicio</em></strong>, <strong><em>Configuración</em></strong>, <strong><em>Red e Internet</em></strong> y en la parte izquierda en <strong><em>VPN</em></strong>.</span></p>
+<p><img src="rad-063.png" alt="" width="947" height="612" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 2.</strong> VPN en Windows 10.</em></span></p>
+<p id="58f4" style="text-align: justify;"><span>A continuación, Pulsamos el botón de <strong>+Agregar una conexión VPN. </strong>A continuación, hay que rellenar lo siguiente:</span></p>
+<ul style="text-align: justify;">
+<li id="0dbd"><span><strong>Como proveedor de VPN</strong>, selecionamos <em>Windows (integrado)</em>. Es posible instalar otros proveedores, como Fortinet, que te permiten utilizar sus servicios pero desde la interfaz integrada de Windows.</span></li>
+<li><span><strong>Nombre de conexión</strong>, <em>trabajo</em> u otro que te resulte reconocible.</span></li>
+<li><span><strong>Nombre de servidor o dirección IP</strong>. Suele tratarse de un dominio de internet o una IP externa de router. En nuestro caso el cliente RADIUS actua como tal, por eso rellenamos su IP (<em>172.10.0.4</em>) de la red NAT, que actúa como externa.</span></li>
+<li><span><strong>Tipo de VPN,</strong> hace referencia al sistema de conexión y seguridad, seleccionamos <em>PPTP</em>. Aunque de las que aparecen, L2TP/IPsec con certificado seguramente sea la más segura, no forma parte de nuestro escenario.</span></li>
+<li><span><strong>Windows Server 2019</strong> incluye la posibilidad de configurar varios tipos de cifrado para VPN:</span>
+<ul>
+<li><span>PPTP (Point to Point Tunnelling Protocol). Puerto TCP 1723.</span></li>
+<li><span>SSTP (Secure Socket Tunnelling Protocol). Puerto TCP 443.</span></li>
+<li><span>IKEv2 (Internet Key Exchange v2) Usa UDP con el puerto 500.</span></li>
+<li><span>L2TP (Layer 2 Tunneling Protocol) Puertos UDP 1701 y 4500. Además ID de Protocolo IP 50.</span></li>
+</ul>
+</li>
+<li><span>Según el tipo de cifrado deberíamos asegurarnos de la apertura de sus puertos en el cortafuegos y realizar ajustes para ponerlo en marcha.</span></li>
+<li><span>En <strong><em>nombre de usuario y contraseña</em></strong>, cumplimentaremos el nuestro. Que debe estar entre los permitidos para acceder en NPS de nuestro servidor RADIUS.</span></li>
+</ul>
+<p><img src="rad-064.png" alt="" width="653" height="464" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><img src="rad-065.png" alt="" width="665" height="300" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 3. </strong>Configuración VPN en Windows 10.</em></span></p>
+<p style="text-align: justify;"><span>Pulsamos el botón <strong>Guardar </strong>para finalizar.</span></p>
+<p><img src="rad-066.png" alt="" width="820" height="489" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 4</strong>. VPN Teletrabajo creada.</em></span></p>
+<p style="text-align: justify;"><span>Pulsamos en '<strong>Conectar</strong>' para que comience el proceso de autenticación.</span></p>
+<p><img src="rad-067.png" alt="" width="521" height="335" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 5. </strong>Proceso de conexión del equipo cliente al Cliente Radius.</em></span></p>
+<p style="text-align: justify;"><span>Ya tenemos nuestra conexión creada y solo deberemos pulsar en <em><strong>conectar</strong> </em>para poder sacarle partido.</span></p>
+<p style="text-align: justify;"><span>Como podemos observar en la <em>Figura 6</em>, desde la bandeja del sistema el equipo está conectado a la red <strong><em>Teletrabajo</em></strong>. Cuando se necesite realizar la conexión en futuras ocasiones, este es el lugar más directo donde iniciar la conexión remota.</span></p>
+<p><img src="rad-069.png" alt="" width="350" height="381" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 6.</strong> Bandeja del sistema Windows 10.</em></span></p>
+<p style="text-align: justify;"><span> </span><span>Ahora, desde el equipo cliente donde se ha autenticado el usuario del dominio, podemos comprobar que la conexión se ha realizado correctamente, para ello, utilizamos el comando arp.</span></p>
+<p style="text-align: center;"><span><img src="estado-conexion-Teletrabajo.png" alt="" width="723" height="448" /></span></p>
+<p style="text-align: justify;"><span>De manera más técnica, podemos usar el comando arp para ver las tablas arp de los equipos del sistema AAA:</span><span></span></p>
+<table border="1" style="width: 100%; height: 1288px;">
+<tbody>
+<tr style="text-align: justify;">
+<td style="width: 50%; height: 241px;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Tabla <strong>arp del servidor Radius/NAS</strong>, donde:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">La ip 192.168.11.253 es la del cliente RAdius/NAS.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">La ip 192.168.11.100 es la del servidor dhcp encargado de establecer las ip's a los equipos autenticados mediante el servidor Radius y que están en el rango <span> </span><strong>192.168.11.100</strong><span> - </span><strong>192.168.11.119 </strong>que se configuraron en el cliente Radius.</span></li>
+</ul>
+</td>
+<td style="width: 50%; text-align: center; height: 241px;"><img src="arp-RadiusServer.png" alt="" width="648" height="235" /></td>
+</tr>
+<tr style="text-align: justify;">
+<td style="width: 50%; height: 534px;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Tabla <strong>arp del cliente Radius/NAS</strong> (diferentes interfaces de red), donde:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">La interfaz 192.168.11.253 es la red interna de la organización.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">La interfaz 172.10.0.4 es la red externa.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">La  interfaz 192.168.11.100 es la del servidor dhcp para servir las ip's de los equipos autenticados por radius (red interna de la organización).</span></li>
+</ul>
+</td>
+<td style="width: 50%; text-align: center; height: 534px;"><img src="arp-a-ClientRadius-ServerVPN.png" alt="" width="698" height="528" /></td>
+</tr>
+<tr style="height: 453px;">
+<td style="width: 50%; height: 453px;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Tabla <strong>arp del equipo cliente Windows 10</strong>, donde:</span></p>
+<ul style="text-align: justify;">
+<li style="text-align: justify;"><span style="font-size: 12pt;">La interfaz 172.10.0.5 es la que conecta con el cliente Radius/NAS.</span></li>
+<li><span style="font-size: 12pt;">La interfaz 192.168.11.102 es la red interna de la organización, es decir, la ip que se le ha asignado por el servidor dhcp al realizar la conexión 'Teltrabajo', es decir, al autenticarse en el servidor Radius con la VPN.</span><span style="font-size: 12pt;"></span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-size: 12pt;"></span></p>
+</td>
+<td style="width: 50%; text-align: center; height: 453px;"><img src="arp-ClienteWindows10.png" alt="" width="815" height="466" /></td>
+</tr>
+</tbody>
+</table>
+<p><span style="text-align: justify; font-size: 1em;">Si lo miramos desde el punto de vista del servidor, podemos observar en la herramienta </span><strong style="text-align: justify; font-size: 1em;"><em>Enrutamiento y Acceso remoto</em></strong>, en el nodo del árbol <strong style="text-align: justify; font-size: 1em;"><em>'</em></strong><strong><em>P</em></strong><span style="text-align: justify; font-size: 1em;"><strong><em>uertos</em></strong>'.</span></p>
+<p style="text-align: center;"><img src="rad-101.png" alt="" width="1082" height="420" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 8.</strong> Puerto activo para la conexión del cliente Windows 10.</em></span></p>
+<p style="text-align: justify;"><span>Si accedemos al nodo del árbol '<strong><em>Clientes de acceso remoto</em></strong>' en el árbol, podemos observar que ya se tiene </span><span>listo el sistema de conexión remota, en concreto, se puede ver el usuario <strong><em>radiustest</em></strong> que está autenticado en el sistema.</span></p>
+<p><img src="rad-100.png" alt="" width="957" height="420" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 9.</strong> Cliente autenticado en el servidor Radius.</em></span></p>
+<p style="text-align: justify;"><span>El <strong><em>servidor RADIUS</em></strong> también recopila una variedad de información enviada por el NAS que se puede usar para la <strong><em>contabilidad</em></strong> y para informar sobre la actividad de red (Accounting).  El cliente RADIUS envía información a los servidores RADIUS designados cuando el usuario inicia sesión y cierra sesión. El cliente RADIUS puede enviar información de uso adicional periódicamente mientras la sesión está en curso. Las solicitudes enviadas por el cliente al servidor para registrar la información de inicio y cierre de sesión y uso se denominan generalmente "solicitudes de contabilidad". <a href="https://docs.microsoft.com/es-es/windows/win32/nps/ias-radius-authentication-and-accounting" target="_blank" rel="noopener">Fuente</a>.</span></p>
+<p style="text-align: justify;"><span>Para obtener más información sobre la contabilidad RADIUS, <a href="https://www.ietf.org/rfc/rfc2866.txt" data-linktype="external">acceder a RFC 2866</a>.</span></p>
+<p style="text-align: justify;"><span>Para obtener la información de '<strong>Accounting</strong>', hacemos click con el botón derecho del ratón sobre El cliente de acceso remoto y seleccionamos la opción 'Estado'</span></p>
+<p style="text-align: center;"><span><em><img src="Accounting-ClienteRadius.png" alt="" width="1194" height="446" /></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 10.</strong> Accounting del cliente Radius.</em></span></p>
+<h3 id="32d0" style="text-align: justify;"><span>2. Creación de conexión en Windows 10 utilizando PowerShell</span></h3>
+<p id="526c" style="text-align: justify;"><span>También es posible crear la conexión del cliente usando PowerShell. el comando a ejecutar, es el siguiente:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Add-VpnConnection -Name “Teletrabajo” -ServerAddress “172.10.0.4” -TunnelType PPTP -AuthenticationMethod MSChapv2 -RememberCredential</span></pre>
+<p style="text-align: justify;"><span>donde,</span></p>
+<ul>
+<li style="text-align: justify;"><span>-ServerAddress 172.10.0.4: Es la ip externa del NAS o cliente Radius.</span></li>
+<li style="text-align: justify;"><span>MSChapv2: Es el protocolo de autenticación basado en contraseña. Es un método de autenticación en VPN basadas en PPTP (Protocolo de túnel punto a punto). <a href="https://support.microsoft.com/es-es/topic/implementaci%C3%B3n-de-la-autenticaci%C3%B3n-peap-ms-chap-v2-para-vpn-pptp-de-microsoft-d5ca1ebe-d9ee-4379-fd3f-e7be05fa3ae2" target="_blank" rel="noopener">Fuente</a>.</span></li>
+</ul>
+<p id="9628" style="text-align: justify;"><span>Para más información sobre el <a href="https://docs.microsoft.com/en-us/powershell/module/vpnclient/?view=win10-ps" target="_blank" rel="noopener">cliente VPN en PowerShell</a>.</span></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI) | UT2. Fortificación de equipos: acceso al sistema </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT2. Fortificación de equipos: acceso al sistema</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT2. Fortificación de equipos: acceso al sistema</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li id="active"><a href="2_seguridad_en_el_arranque_del_sistema_informtico_configuracin_del_arranque_seguro_biosuefi.html" class="active daddy">2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI)</a>
+   <ul>
+      <li><a href="21_bloqueo_de_bios_con_contrasea.html" class="no-ch">2.1 Bloqueo de BIOS con contraseña</a></li>
+      <li><a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="no-ch">Tarea 1. Análisis y fortificación de la BIOS/UEFI</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proteccin_del_gestor_de_arranque_grub.html" class="daddy">3. Protección del gestor de arranque GRUB</a>
+   <ul class="other-section">
+      <li><a href="31_proteccin_de_grub.html" class="no-ch">3.1 Protección de GRUB</a></li>
+      <li><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="no-ch">Tarea 2. Configuración del sistema y arranque</a></li>
+      <li><a href="tarea_3_proteger_el_gestor_de_arranque_grub.html" class="no-ch">Tarea 3. Proteger el gestor de arranque GRUB</a></li>
+   </ul>
+   </li>
+   <li><a href="4_contraseas_seguras.html" class="daddy">4. Contraseñas seguras</a>
+   <ul class="other-section">
+      <li><a href="41_contraseas_seguras_en_windows.html" class="daddy">4.1 Contraseñas seguras en Windows</a>
+      <ul class="other-section">
+         <li><a href="411_inicios_de_sesin_en_windows.html" class="no-ch">4.1.1 Inicios de sesión en Windows</a></li>
+         <li><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="no-ch">Tarea 4. Política de contraseñas seguras en Windows</a></li>
+      </ul>
+      </li>
+      <li><a href="42_gestin_de_la_poltica_de_contraseas_en_ubuntu.html" class="daddy">4.2. Gestión de la política de contraseñas en Ubuntu</a>
+      <ul class="other-section">
+         <li><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="no-ch">Tarea 5. Política de contraseñas seguras en Ubuntu Server</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="daddy">6. Seguridad de los sistemas de ficheros, cifrado, particionado, entre otros</a>
+   <ul class="other-section">
+      <li><a href="61_sistemas_de_ficheros_y_gestin_de_particionado.html" class="no-ch">6.1 Sistemas de ficheros y gestión de particionado</a></li>
+      <li><a href="62_cifrado_de_disco.html" class="daddy">6.2 Cifrado de disco</a>
+      <ul class="other-section">
+         <li><a href="621_bitlocker_windows_y_efs.html" class="daddy">6.2.1. Bitlocker (Windows) y EFS</a>
+         <ul class="other-section">
+            <li><a href="prctica_1_cifrado_con_bitlocker.html" class="no-ch">Práctica 1. Cifrado con Bitlocker</a></li>
+         </ul>
+         </li>
+         <li><a href="622_filevault_macos.html" class="no-ch">6.2.2 FileVault (macOS)</a></li>
+         <li><a href="623_luks_linux.html" class="daddy">6.2.3 LUKS (Linux)</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_cifrado_de_particiones_y_directorio_con_luks.html" class="no-ch">Laboratorio. Cifrado de particiones y directorio con LUKS</a></li>
+            <li><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="no-ch">Práctica 2. Instalación de Ubuntu con particiones cifradas</a></li>
+         </ul>
+         </li>
+         <li><a href="624_veracrypt.html" class="daddy">6.2.4 VeraCrypt</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_cifrado_volumen_veracrypt.html" class="no-ch">Laboratorio 1. Cifrado volumen VeraCrypt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_control_de_calidad_de_mquinas.html" class="daddy">7. Control de calidad de máquinas</a>
+   <ul class="other-section">
+      <li><a href="71_mantenimiento_seguro_de_equipos.html" class="no-ch">7.1 Mantenimiento seguro de equipos</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_introduccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="21_bloqueo_de_bios_con_contrasea.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI)</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_85" class="block iDevice_content">
+<div id="intro" class="box generalbox">
+<div class="no-overflow" id="yui_3_17_2_1_1626619243993_50">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;">Antes de configurar un sistema informático debemos de comprender una serie de configuraciones de seguridad del mismo. Entre estas configuraciones, se ha de tener en cuenta la <strong>Seguridad de la BIOS.</strong></p>
+<h3>2. Precauciones previas al Sistema Operativo</h3>
+<p>No podemos securizar el sistema sólo durante la ejecución del sistema operativo.</p>
+<ul>
+<li>¿Cuáles son los riesgos de no proteger la BIOS?.</li>
+<li>¿Cómo protegemos la BIOS y sus opciones?.</li>
+</ul>
+<p><strong>¿Cuáles son las fases de arranque?</strong></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="linuxbootprocess-300x230.png" alt="" width="465" height="357" /></td>
+<td style="width: 50%; text-align: center;"><img src="fases-ArranqueWindows.png" alt="" width="662" height="769" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Fuente: <a href="http://www.sesolibre.com" target="_blank" rel="noopener">www.sesolibre.com</a></span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Fuente: <a href="http://www.microsoft.com" target="_blank" rel="noopener">www.microsoft.com</a></span></td>
+</tr>
+</tbody>
+</table>
+<p>Diferentes <strong>bootloaders</strong></p>
+<p style="text-align: center;"><img src="bootloaders.png" alt="" width="778" height="302" /></p>
+<h3 style="text-align: justify;"><strong>3. La BIOS</strong></h3>
+<p style="text-align: justify;">La <a href="#t69d7fc23-ff10-f671-ab7b-1486cb44786c" id="link69d7fc23-ff10-f671-ab7b-1486cb44786c" class="exe-tooltip definition-tt titled-tt" data-hasqtip="0" oldtitle="BIOS | " title="" aria-describedby="qtip-0"><strong>BIOS</strong></a><span> </span>(Basic Input Output System)<a href="https://es.wikipedia.org/wiki/BIOS" target="_blank" rel="noopener"> [Wikipedia]</a> es un software embebido en un chip de la placa base de un ordenador PC compatible, que localiza y reconoce todos los dispositivos necesarios para que funcione el sistema operativo en el ordenador. Permite por tanto que el sistema operativo pueda arrancar, localizando el dispositivo de arranque (disco duro, CD/DVD, USB, red, etcétera) y cargando las instrucciones necesarias para el proceso de <strong>inicio del ordenador</strong>.</p>
+<p style="text-align: justify;"><strong>Características BIOS:</strong></p>
+<ul>
+<li style="text-align: justify;">Ejecutar código para verificar la integridad de todos los componentes del firmware antes de que se ejecute y lance el sistema operativo.</li>
+<li style="text-align: justify;">Probar los componentes clave hardware garantizando que toda la información cargue correctamente y no genere problemas sobre la información.</li>
+<li style="text-align: justify;">Controla módulos adicionales como la tarjeta de vídeo o red. </li>
+<li style="text-align: justify;">Selecciona el dispositivo de arranque que puede ser el disco duro, una unidad de CD o un dispositivo USB.</li>
+</ul>
+<p><strong>Las funciones principales son:</strong></p>
+<ul>
+<li style="text-align: justify;">Realizar el<span> </span><strong>POST</strong><span> </span>(Power-On Self-Test), es decir, realizar las pruebas necesarias para comprobar que todos los dispositivos se inician correctamente.</li>
+<li style="text-align: justify;">Proporcionar al usuario de los periféricos de entrada y salida (teclado, ratón, pantalla).</li>
+<li style="text-align: justify;">Arrancar el SO una vez completado el<span> </span><strong>POST</strong>.</li>
+</ul>
+<p style="text-align: center;"><img src="Award_BIOS_setup_utility.png" alt="" width="640" height="400" /></p>
+<p style="text-align: center;"><em><strong>Figura 1. </strong>Imagen de una BIOS Award.</em></p>
+<p style="text-align: justify;">La <strong>BIOS</strong> proporciona una capa de abstracción para el hardware para que los programas y sistemas operativos interactúen con el teclado, el monitor y otros dispositivos de entrada/salida. De esta forma, los programas usan <strong>servicios de BIOS</strong> en lugar de acceder directamente al hardware. No obstante, actualmente los sistemas operativos modernos ignoran la capa de abstracción provista por el BIOS y acceden al hardware directamente.</p>
+<p style="text-align: justify;">En el arranque del ordenador, la <strong>BIOS</strong> también carga las rutinas <strong>POST</strong> (Power On Self Test) que testean la placa base, la memoria RAM, la tarjeta gráfica, el procesador, el teclado, etcétera, y comprueba que todo el hardware básico esté funcionando correctamente, es decir, realiza un chequeo del sistema.</p>
+<p style="text-align: justify;">En otras plataformas, como <strong><span>Apple, </span></strong>no se llamaba técnicamente BIOS. En estos ordenadores se llamaba<strong><span><a href="https://es.wikipedia.org/wiki/Open_Firmware" target="_blank" rel="noopener">OpenFirmware</a>, h</span></strong>asta que en la actualidad, tanto los PC como los MAC han evolucionado usando lo que se conoce como <strong><span><a target="_blank" href="https://es.wikipedia.org/wiki/Extensible_Firmware_Interface" rel="noopener">UEFI</a></span><span>, </span></strong>que es el <strong>reemplazo de las BIOS</strong>.</p>
+<p style="text-align: justify;"><a href="#t72f296eb-4778-6c15-c8c9-8994b2030de2" id="link72f296eb-4778-6c15-c8c9-8994b2030de2" class="exe-tooltip definition-tt titled-tt" data-hasqtip="1" oldtitle="UEFI | " title=""><strong>UEFI</strong></a><span> </span>(Unified Extensible Firmware Interface) es el sucesor de BIOS. Dispone de las mismas funciones que BIOS, pero añade ciertas características más. El código de<span> </span><strong>UEFI</strong><span> </span>se ejecuta en 32 o 64 bits.</p>
+<p><strong>UEFI</strong><span> </span>dispone de una interfaz más moderna, incluyendo animaciones y con la capacidad de utilizar el ratón, además de ser más rápido en el arranque que su antecesor. Además, puede conectarse a internet para actualizarse cosa que en BIOS era necesario hacerlo con un dispositivo externo.</p>
+<p style="text-align: center;"><strong><img src="ASUS-EFI-01.jpg" alt="" width="650" height="525" /></strong></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Imagen de una UEFI en un ordenador ASUS.</em></p>
+<p style="text-align: justify;"><span><strong>Características UEFI:</strong></span></p>
+<ul>
+<li style="text-align: justify;">Características similares a BIOS.</li>
+<li style="text-align: justify;">Se ejecuta en 32-/64-bit en modo protegido CPU.</li>
+<li style="text-align: justify;">Posee un proceso que ayuda a prevenir de ataques del tipo bootkit y utilizar el modo Secure Boot</li>
+</ul>
+<p style="text-align: justify;"><span><strong>BIOS</strong> y <strong>UEFI</strong> son dos estándares que definen una interfaz de comunicación entre el sistema operativo y el firmware de un equipo. El firmware de<strong><em> BIOS/UEFI</em></strong> es el primer proceso que se ejecuta al encender un ordenador y configura, prueba e inicia los componentes hardware antes de pasar el control al gestor de arranque del sistema operativo.</span></p>
+<p style="text-align: center;"><span><img src="bios-uefi.jpg" alt="" width="300" height="211" /></span></p>
+<p style="text-align: justify;"><strong>BIOS vs UEFI:</strong></p>
+<ul>
+<li style="text-align: justify;"><span>BIOS (Basic Input Output System) creado en 1975.</span></li>
+<li style="text-align: justify;"><span>UEFI (Unified Extensible Firmware Interface) escrito en C.</span></li>
+<li style="text-align: justify;"><span>BIOS usa Master Boot Record (MBR) mientras UEFI usa GUID partition table (GPT) para almacenar el sistema de particiones del disco duro.</span></li>
+<li style="text-align: justify;"><span>UEFI permite: un número ilimitado de particiones, soporta discos mayores de 2 TB, arranque con secure boot, mayor velocidad de arranque</span></li>
+</ul>
+<h3 style="text-align: justify;">4. ¿Cuáles son los riesgos de no proteger BIOS/UEFI?</h3>
+<p>Los riesgos son los siguientes:</p>
+<ul>
+<li style="text-align: justify;">Los cambios podrían permitir la ejecución de software malicioso durante el proceso de arranque.</li>
+<li style="text-align: justify;">Tomando el control de BIOS, se puede controlar el equipo objetivo y obtener acceso a los datos almacenados en él. </li>
+<li style="text-align: justify;">El malware en el BIOS sigue siendo persistente y no se elimina incluso cuando se formatea o se borra todo el disco duro. </li>
+<li style="text-align: justify;">Los ataques contra el BIOS suelen ser difíciles de detectar porque son invisibles para los antivirus.</li>
+<li style="text-align: justify;"><strong>Rootkit</strong>: es un código utilizado poder obtener privilegios de administrador y poder realizar acciones como cambiar contraseñas, ejecutar programas, instalar aplicaciones. </li>
+<li style="text-align: justify;"><strong>Bootkits</strong>: son rootkits específicamente programados para infectar el MBR. Contiene las instrucciones para cargar y ejecutar el sistema operativo. Cuando un comando es enviado para  leer el MBR desde el SO, el bootkit responde enviando la versión original del MBR.</li>
+</ul>
+<h3 style="text-align: justify;">5. ¿Cómo protegemos el BIOS/UEFI y sus opciones?</h3>
+<p style="text-align: center;"><img src="proteger-BIOS.png" alt="" width="662" height="255" /></p>
+<p style="text-align: justify;">¡Ojo con la pila de la placa base o webs como <a href="https://bios-pw.org" target="_blank" rel="noopener"><strong>https://bios-pw.org</strong></a>!</p>
+<p style="text-align: justify;"><strong>Posibilidades:</strong></p>
+<ul>
+<li style="text-align: justify;">Existen tecnologías propietarias (ejemplo <a href="https://computerhoy.com/noticias/software/hp-surestart-software-arranque-que-autorepara-6400" target="_blank" rel="noopener">Sure Start de HP</a>).</li>
+<li style="text-align: justify;">Existe protección anti rootkit/bootkit mediante antivirus (no todos lo hacen).</li>
+</ul>
+<p><strong>¿Qué pasa con el orden de arranque?</strong></p>
+<ul>
+<li>Si se tiene protegido el acceso a la BIOS/UEFI, no se puede modificar.</li>
+<li>Un ataque malintencionado podría utilizar la alteración del arranque para instalar software malicioso.</li>
+</ul>
+<h3 style="text-align: justify;">6. Protección con contraseña BIOS/UEFI</h3>
+<p style="text-align: justify;">Una buena medida que podemos aplicar en las organizaciones (empresas, centros educativos, hospitales, etcétera), es evitar que cualquier usuario de la organización, con los conocimientos suficientes pueda modificar la configuración del <strong>firmware</strong>, como por ejemplo los dispositivos de arranque y permitir cargar un sistema operativo desde un CD/DVD o pendrive y acceder a datos del disco que de otra manera no podría.</p>
+<p style="text-align: justify;">En este<span> </span><span><a target="_blank" href="https://miracomosehace.com/poner-contrasena-bios-uefi-proteger-pc/" rel="noopener">excelente artículo</a></span><span> </span>se explica como podemos<span> </span><strong>proteger</strong><span> </span>la BIOS o UEFI con<span> </span><strong>password</strong>.</p>
+<p style="text-align: justify;">Hay que indicar también que si se tiene <strong>acceso físico al ordenador</strong> y sobre todo, sí se puede abrir, es posible saltarse este mecanismo, pero al menos se lo estamos poniendo más difícil al posible atacante, que debe poder acceder al ordenador y abrirlo en la mayoría de los casos.</p>
+<p style="text-align: justify;">En este otro<span> </span><span><a target="_blank" href="http://www.wikihow.com/Clear-BIOS-Password" rel="noopener">artículo</a></span>, se explica como <strong>saltarse el sistema de protección de la BIOS/UEFI</strong>. Básicamente si podemos abrir el ordenador, se puede quitar la pila o <strong>resetear la BIOS</strong> con los jumpers de la placa acudiendo a la documentación de la misma. Existen también algunos programas que usándolos como administrador del equipo y con el sistema operativo encendido, pueden modificar o eliminar la contraseña de la BIOS. Uno de estos programas es<span> </span><a target="_blank" href="http://www.cgsecurity.org/wiki/CmosPwd" rel="noopener">CmosPwd</a>.</p>
+<p style="text-align: justify;">También es cierto que en la mayoría de portátiles actuales, la contraseña de la BIOS está grabada en una memoria EEPROM que habría que reprogramar. Aunque es un proceso delicado y peligroso, pero puede hacerse adquiriendo un programador de EEPROMS.</p>
+<p style="text-align: justify;">Y por si fuera poco, encima <strong>hay fabricantes que incluyen una contraseña por defecto</strong>, a modo de<span> </span><strong>puerta trasera</strong>, de forma que sabiéndola es posible acceder a la BIOS aunque esté protegida. O páginas como<span> </span><a target="_blank" href="https://bios-pw.org/" rel="noopener">bios-pw.org</a><span> </span>donde indican la contraseña por defecto según el código de error de la BIOS cuando se escribe la contraseña incorrecta varias veces.</p>
+<p style="text-align: center;"><img src="bios-pw.png" alt="" width="1055" height="666" /></p>
+<p style="text-align: justify;">La <strong>protección con contraseñas</strong> tanto en el sistema BIOS como en el gestor de arranque, ayudan a que usuarios no autorizados no puedan acceder a los sistemas físicamente o arranquen el sistema desde dispositivos externos como USB u obtengan acceso como root.</p>
+<h3 style="text-align: justify;"><span>7. Arranque seguro y SED</span></h3>
+<p style="text-align: justify;">Algunos fabricantes, incluyen en el <strong>firmware</strong> de sus equipos (UEFI) una característica llamada <strong>arranque seguro o Secure Boot</strong>. El arranque seguro es un estándar de seguridad destinado a garantizar que los equipos arranquen usando solamente software que sea de <strong>confianza</strong> para el fabricante del equipo.</p>
+<p style="text-align: justify;">Cuando se arrancan los equipos, el firmware comprueba la firma digital de cada fragmento de software de arranque, entre ellos los controladores (drivers) y el sistema operativo. Si las firmas son confiables, el equipo arranca y el firmware transfiere el control al sistema operativo.</p>
+<p style="text-align: justify;"><strong>Secure boot</strong> es soportado por muchos sistemas operativos como Windows 8 y superiores, y muchas distribuciones GNU/Linux como Fedora (desde versión 18), OpenSUSE (desde la versión 12.3) y Ubuntu (desde la 12.04.2)</p>
+<p style="text-align: justify;">También hay fabricantes de discos duros que incluyen el cifrado del disco por hardware, lo que se conoce como <strong>Self-Encrypting Drive</strong> (SED) o <strong>Full Disk Encryption</strong> (FDE).</p>
+<p></p>
+<p style="text-align: center;"><img src="bios-uefi.jpg" alt="" width="300" height="211" /><br /><br /></p>
+<p style="text-align: justify;"><strong>Interfaz de la BIOS</strong></p>
+<p style="text-align: center;"><strong><img src="interfaz-BIOS.png" alt="" width="338" height="191" /></strong></p>
+<p style="text-align: justify;"><strong>Interfaz UEFI</strong></p>
+<p style="text-align: center;"><img src="interfaz-UEFI.png" alt="" width="338" height="190" /></p>
+<p></p>
+<header class="iDevice_header">
+<h1 class="iDeviceTitle">Para saber más</h1>
+</header>
+<p></p>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta15_128" class="block iDevice_content">
+<p style="text-align: justify;"><strong>En los siguientes enlaces puedes encontrar más información sobre BIOS y UEFI:</strong></p>
+<p style="text-align: justify;">Principales diferencias entre BIOS y UEFI: <a href="https://blog.redigit.es/principales-diferencias-entre-bios-y-uefi/">https://blog.redigit.es/principales-diferencias-entre-bios-y-uefi/</a></p>
+<p style="text-align: justify;">Si quieres saber mas sobre como afecta la UEFI a Windows: <a href="https://www.sysadmit.com/2017/04/windows-uefi-o-legacy-bios.html">https://www.sysadmit.com/2017/04/windows-uefi-o-legacy-bios.html</a></p>
+<p style="text-align: justify;">Comprobando la instalación de Windows: <a href="https://hardzone.es/2018/10/28/comprobar-windows-instalado-bios-uefi-antigua/">https://hardzone.es/2018/10/28/comprobar-windows-instalado-bios-uefi-antigua/</a></p>
+<p style="text-align: justify;">Cambiar de BIOS (Legacy) a UEFI: <a href="https://hardzone.es/tutoriales/mantenimiento/cambiar-legacy-uefi-bios/">https://hardzone.es/tutoriales/mantenimiento/cambiar-legacy-uefi-bios/</a></p>
+<p style="text-align: justify;">Windows: UEFI o Legacy (BIOS): <a href="https://www.sysadmit.com/2017/04/windows-uefi-o-legacy-bios.html">https://www.sysadmit.com/2017/04/windows-uefi-o-legacy-bios.html</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FileAttachIdeviceInc em_iDevice em_iDevice_assignment" id="id87">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header" style="background-image:url(icon_assignment.png)"><h2 class="iDeviceTitle">CCN-CERT_IA-08-15-BIOS</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta87_82" class="block iDevice_content">
+
+</div>
+<ul class='exeFileList'><li><a href='CCN-CERT_IA-08-15-BIOS.pdf' target='_blank'>CCN-CERT_IA-08-15-BIOS.pdf<span> (Ventana nueva)</span></a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_introduccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="21_bloqueo_de_bios_con_contrasea.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

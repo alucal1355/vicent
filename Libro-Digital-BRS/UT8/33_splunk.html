@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3 Splunk | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-120"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li id="active"><a href="33_splunk.html" class="active no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32_microsoft_sentinel.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3 Splunk</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id162">
+<div class="iDevice emphasis0">
+<div id="ta162_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;"><strong>Splunk</strong> es una herramienta que recopila, monitoriza y analiza macro datos generados por equipos. También captura, indexa y correlaciona esta información en tiempo real y la almacena en un repositorio centralizado.</p>
+<p style="text-align: justify;"><strong>Splunk</strong> es fácilmente desplegable y muy escalable, y se usa en medianas y grandes empresas.</p>
+<h3 style="text-align: justify;">2. ¿Qué indexa splunk?</h3>
+<p style="text-align: justify;">Splunk indexa:</p>
+<ul>
+<li style="text-align: justify;">Equipos.</li>
+<li style="text-align: justify;">Dispositivos de red.</li>
+<li style="text-align: justify;">Máquinas virtuales.</li>
+<li style="text-align: justify;">Dispositivos de internet.</li>
+<li style="text-align: justify;">Sensores.</li>
+<li style="text-align: justify;">Bases de datos.</li>
+<li style="text-align: justify;">Logs.</li>
+<li style="text-align: justify;">Configuraciones.</li>
+<li style="text-align: justify;">Mensajes.</li>
+<li style="text-align: justify;">Registros de llamadas.</li>
+<li style="text-align: justify;">Tickets.</li>
+<li style="text-align: justify;">Alertas.</li>
+</ul>
+<p style="text-align: justify;"><a href="https://www.splunk.com/en_us/form/the-essential-guide-to-data.html" target="_blank" rel="noopener">Fuente </a></p>
+<h3 style="text-align: justify;">3. Componentes básicos</h3>
+<p>Los componentes básicos de Splunk son los siguientes:</p>
+<ul>
+<li><strong>Search Head</strong>
+<ul>
+<li>Permite a los usuarios utilizar el SPL (Splunk Query Language).</li>
+<li>Distribuye las búsquedas entre índices.</li>
+<li>Consolida y enriquece los resultados.</li>
+<li>Permite definir dashboards, informes, etc.</li>
+</ul>
+</li>
+<li><strong>Forwarder</strong>
+<ul>
+<li>Recopilan los datos de las máquinas y los envían a los índices para ser procesados.</li>
+<li>Suelen estar instalados en los orígenes de los datos.</li>
+</ul>
+</li>
+<li><strong>Indexer</strong>
+<ul>
+<li>Procesa datos entrantes.</li>
+<li>Almacena eventos en índices.</li>
+<li>Crea directorios ordenados por fecha.</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><img src="componentes-Splunk.png" alt="" width="684" height="480" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Componentes básicos de Splunk.</em></p>
+<h4 style="text-align: justify;">La arquitectura de Splunk dependiendo del tamaño de la empresa es la siguiente</h4>
+<table style="width: 100%;" border="0">
+<tbody>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><a href="arq01.png"><img src="arq01.png" alt="" width="700" height="524" /></a></td>
+<td style="width: 33.3333%; text-align: center;"><a href="arq02.png"><img src="arq02.png" alt="" width="700" height="633" /></a></td>
+<td style="width: 33.3333%; text-align: center;"><a href="arq03.png"><img src="arq03.png" alt="" width="700" height="639" /></a></td>
+</tr>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 2. </strong></em>Arquitectura</span></td>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 3. </strong></em>Pequeña Empresa</span></td>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 4. </strong></em>Mediana o gran empresa</span></td>
+</tr>
+</tbody>
+</table>
+<h3><strong>4. Instalación</strong></h3>
+<h4><strong>4.1 Escenario</strong></h4>
+<ul>
+<li><strong>Windows Server 2019 Datacenter</strong> controlador del dominio ciber.local donde se instalará Splunk.
+<ul>
+<li>Controlador del dominio ciber.local.</li>
+<li>Nombre: perseo.</li>
+<li>FQDN: perseo.ciber.local.</li>
+<li>ip: 192.168.0.23.</li>
+<li>gw: 192.168.0.1.</li>
+<li>DNS primario: 127.0.0.1.</li>
+<li>DNS secundario: 192.168.0.1.</li>
+</ul>
+</li>
+<li><strong>Windows 10 Enterprise</strong>, donde se instalará un forwarder para enviar datos de log al servidor.
+<ul>
+<li>Cliente del dominio ciber.local.</li>
+<li>Nombre: <span style="font-size: 10pt;">cliente01-W10.</span></li>
+<li>ip: 192.168.0.25.</li>
+<li>gw: 192.168.0.1.</li>
+<li>DNS primario: 192.168.0.23.</li>
+<li>DNS secundario: 192.168.0.1.</li>
+</ul>
+</li>
+</ul>
+<h4>4.2 Proceso</h4>
+<p style="text-align: justify;">En primer lugar, hay que descargar en este <a href="https://www.splunk.com/en_us/download/splunk-enterprise.html" target="_blank" rel="noopener">enlace</a> la versión de prueba de 60 días. Para este caso, se ha descargado el archivo <strong>splunk-8.2.5-77015bc7a462-x64-release.msi</strong> para proceder a su instalación en Windows Server 2019 Datacenter.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="install-splunk.png" alt="" width="492" height="382" /></td>
+<td style="width: 50%; text-align: center;"><img src="install-splunk-2.png" alt="" width="491" height="376" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Una vez se ha instalado Splunk en el equipo, hay que acceder a la instancia y para ello, hay que abrir en un navegador la url <strong>localhost:8000 </strong>o<strong> ip:8000 </strong>o<strong> 127.0.0.1:8000</strong>, e introducir el usuario y contraseña que se puso en la instalación (figura superior derecha).</p>
+<p style="text-align: center;"><img src="login-splunk.png" alt="" width="1014" height="618" /></p>
+<p>Una vez se han validado las credenciales, aparece la página de home.</p>
+<p style="text-align: center;"><strong><img src="home-splunk.png" alt="" width="1250" height="613" /></strong></p>
+<h3><strong>5. Primeros pasos</strong></h3>
+<p style="text-align: justify;">Para la ingesta de datos, se puede hacer de varias formas.</p>
+<p style="text-align: justify;">En primer lugar, se realiza una prueba con un <strong>forwarder</strong> en otro equipo. Para ello primero, hay que preparar la instancia de Splunk siguiendo los pasos siguientes:</p>
+<ul>
+<li style="text-align: justify;">Ir al menú superior <strong>Settings - DATA – Forwarding and receiving</strong>.</li>
+<li style="text-align: justify;">Posteriormente, en <strong>Receive data</strong>, hay que pulsar sobre el enlace: <strong>Configure receiving</strong>.</li>
+<li style="text-align: justify;">En la siguiente pantalla, hay que pulsar sobre el botón verde situado en la esquina superior derecha, donde pone: <strong>New Receiving Port</strong> y se introduce el puerto 9997 de escucha. Para finalizar, hay que pulsar '<strong>Save</strong>'.</li>
+</ul>
+<p style="text-align: center;"><img src="receive-data.png" alt="" width="986" height="335" /></p>
+<h4>Creación de Index</h4>
+<p style="text-align: justify;">En este punto, se va a crear un Index para almacenar luego ahí la información que se envíe desde el forwarder. Para ello, hay que acceder al menú, Settings – Indexes. </p>
+<p style="text-align: center;"><img src="indexes.png" alt="" width="1199" height="499" /></p>
+<p style="text-align: justify;">A continuación, hay que pulsar sobre el botón verde situado en la esquina superior derecha, donde pone <strong>New Index</strong> y se le introduce un nombre, para este caso <strong><span class="" data-role="content">wineventlog</span></strong> y se selecciona como tipo '<strong>Events</strong>'. Para continuar, hay que pulsar '<strong>Save</strong>'.</p>
+<p style="text-align: justify;">Si se observa en el panel central con la lista de índices, ya se tiene el índice creado.</p>
+<p style="text-align: center;"><img src="winevent.png" alt="" width="1382" height="65" /></p>
+<h4>Forwarder en equipo Windows 10</h4>
+<p style="text-align: justify;">A continuación, se <strong>configura  un forwarder</strong> en otro equipo diferente (Windows 10 enterprise) de donde se tiene instalada la instancia principal de Splunk. La idea del forwarder es enviar logs, información, a otro equipo. Para ello, se puede realizar la instalación en modo consola o gráfico.</p>
+<p style="text-align: justify;">En primer lugar,  hay que descargar el paquete universal forwarder de la<a href="https://www.splunk.com/en_us/download/universal-forwarder.html?utm_campaign=google_emea_tier2_en_search_brand&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_content=Uni_Forwarder_Demo&amp;utm_term=splunk%20universal%20forwarder&amp;_bk=splunk%20universal%20forwarder&amp;_bt=471686934609&amp;_bm=p&amp;_bn=g&amp;_bg=114606398847&amp;device=c&amp;gclid=Cj0KCQjw_4-SBhCgARIsAAlegrVqVxruBRgBPdzpFk65MuukNuSC-nJV3KD-TvWfmAsKyCu2sMlSvHYaAuAaEALw_wcB" target="_blank" rel="noopener"> página de Splunk</a>.</p>
+<p style="text-align: center;"><img src="descarga-forwarder-http.png" alt="" width="584" height="327" /></p>
+<p style="text-align: justify;"><strong>Modo Consola - instalación MSI</strong></p>
+<p style="text-align: justify;">Se puede realizar la implementación a través de MSI con algunos indicadores de configuración. Los argumentos de instalación del MSI se detallan en la <a href="https://docs.splunk.com/Documentation/Forwarder/latest/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline" target="_blank" rel="noopener">documentación de Splunk</a>.</p>
+<p style="text-align: justify;">Previamente, se ha descargado en el directorio <strong>C:\software</strong>, el fichero <strong>splunkforwarder-8.2.5-77015bc7a462-x64-release.</strong> A continuación, se ejecuta el siguiente comando en la consola cmd como Administrador.</p>
+<pre><span style="font-size: 12pt;"><strong>C:\Windows\System32&gt;</strong>msiexec.exe /i C:\software\splunkforwarder-8.2.5-77015bc7a462-x64-release AGREETOLICENSE=Yes <br />DEPLOYMENT_SERVER="perseo.ciber.local:8089" SPLUNKUSERNAME=jcrequena SPLUNKPASSWORD=C@amina-100 /quiet</span></pre>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;"><strong><span style="font-size: 12pt;">AGREETOLICENSE</span>=yes. </strong>Se acepta la el acuerdo de licencia.</li>
+<li style="text-align: justify;"><strong>DEPLOYMENT_SERVER="&lt;ip o nombre del servidor&gt;:8089". </strong>Para este caso, dado que el cliente Windows 10 está integrado en el dominio y tiene como DNS la ip del servidor, puede resolver el FQDN perseo.ciber.local. El puerto es el 8089.</li>
+<li style="text-align: justify;"><strong>SPLUNKUSERNAME=&lt;nombre de usuario&gt;. </strong>Hay que establecer un nombre de usuario que pueda usar para solucionar problemas si es necesario en el futuro.</li>
+<li style="text-align: justify;"><strong>SPLUNKPASSWORD=&lt;contraseña&gt;. </strong>Hay que establecer una contraseña que pueda usar para solucionar problemas si es necesario en el futuro.</li>
+</ul>
+<p style="text-align: center;"><img src="exec-forwarder.png" alt="" width="926" height="141" /></p>
+<p style="text-align: justify;"><strong>Modo gráfico</strong></p>
+<p style="text-align: justify;">hay que seguir los siguientes pasos.</p>
+<p style="text-align: justify;"><a href="https://docs.splunk.com/Documentation/Forwarder/8.2.5/Forwarder/InstallaWindowsuniversalforwarderfromaninstaller" target="_blank" rel="noopener">Fuente</a></p>
+<div class="exe-fx exe-tabs">
+<h2>1</h2>
+<p style="text-align: justify;">Ejecutar el binario splunk del forwarder (<strong>splunkforwarder-8.2.5-77015bc7a462-x64-release.msi) </strong>y a continuación, pulsar Install para continuar.</p>
+<p style="text-align: center;"><img src="instalar-forwarder.png" alt="" width="491" height="382" /></p>
+<p></p>
+<h2>2</h2>
+<p>A continuación, hay que introducir un usuario y contraseña.</p>
+<p style="text-align: center;"><img src="credenciales-forwarder.png" alt="" width="492" height="383" /></p>
+<h2>3</h2>
+<p style="text-align: justify;">A continuación, hay que ingresar el nombre de host o la dirección IP y el puerto de administración para el servidor de implementación y luego pulsar Next. Nota: Hay que realizar al menos uno de los dos pasos, es decir este y el siguiente. Si bien ambos son opcionales, el reenviador no hace nada si no se realiza ningún paso porque no tiene una configuración.</p>
+<p style="text-align: center;"><img src="ip-serv-splunk.png" alt="" width="491" height="383" /></p>
+<h2>4</h2>
+<p style="text-align: justify;">A continuación, hay que ingresar el nombre de host o la dirección IP y el puerto de recepción del indexador de recepción (receptor) y lugo pulsar Next.</p>
+<p style="text-align: center;"><img src="host-receveing-indexer.png" width="490" height="381" /></p>
+<h2>5</h2>
+<p>En esta pantalla, hay que pulsar <strong>Install</strong> para que comience la instalación.</p>
+<p style="text-align: center;"><img src="instalar-forwarder.png" alt="" width="491" height="382" /></p>
+<h2>6</h2>
+<p>Una vez se finaliza la instalación, hay que pulsar en <strong>Finish</strong>.</p>
+<p style="text-align: center;"><img src="finish-install-forwarder.png" alt="" width="491" height="383" /></p>
+</div>
+<p style="text-align: justify;">Una vez se ha instalado ya sea desde la consola o desde el asistente, se puede acceder a la ruta<strong> C:\Archivos de programa\SplunkUniversalForwarder</strong> donde se ja instalado el forwarder para comprobar que se han generado una serie de carpetas y ficheros con el reenviador.</p>
+<p style="text-align: center;"><img src="dir-forwarder.png" alt="" width="847" height="422" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Directorio de SplunkUniversalForwarder.</em></p>
+<h4>Crear fichero de inputs.conf</h4>
+<p>Hay que crear un nuevo fichero con el siguiente contenido para configurar qué eventos se quieren enviar al servidor Splunk.</p>
+<pre><span style="font-size: 10pt;">[default]</span><br /><span style="font-size: 10pt;">host = cliente01-W10</span><br /><br /><span style="font-size: 10pt;">[WinEventLog:System]</span><br /><span style="font-size: 10pt;">interval=60</span><br /><span style="font-size: 10pt;">index=wineventlog</span><br /><span style="font-size: 10pt;">disabled=0</span><br /><br /><span style="font-size: 10pt;">[WinEventLog:Security]</span><br /><span style="font-size: 10pt;">interval=60</span><br /><span style="font-size: 10pt;">index=wineventlog</span><br /><span style="font-size: 10pt;">disabled=0</span><br /><br /><span style="font-size: 10pt;">[WinEventLog:Application]</span><br /><span style="font-size: 10pt;">interval=60</span><br /><span style="font-size: 10pt;">index=wineventlog</span><br /><span style="font-size: 10pt;">disabled=0</span></pre>
+<p style="text-align: center;"><img src="inputs.png" alt="" width="519" height="430" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Fichero inputs.</em></p>
+<p>donde,</p>
+<ul>
+<li><span class="" data-role="content"><strong>host</strong>: El nombre del equipo que envía datos al servidor, para este caso cliente01-W10.</span></li>
+<li><span class="" data-role="content"><strong>[WinEventLog:System].</strong> Envío de los eventos de sistema.</span>
+<ul>
+<li><span class="" data-role="content">interval=60. Cada cuanto tiempo se envían datos.</span></li>
+<li><span class="" data-role="content">index=wineventlog. Índice al que se envían los datos.</span></li>
+<li><span class="" data-role="content">disabled=0. No está deshabilitado.</span></li>
+</ul>
+</li>
+<li><span class="" data-role="content"><strong>[WinEventLog:Security].</strong> Envío de eventos de Seguridad.</span></li>
+<li><span class="" data-role="content"><strong> [WinEventLog:Application]</strong>. Envío de eventos de Aplicación.</span></li>
+</ul>
+<h4>Validando la instalación</h4>
+<p style="text-align: justify;">Según la configuración del entorno, es posible que se comiencen a ver registros del host que se ingestan a Splunk poco después de la instalación de Universal Forwarder. Si lo hace, generalmente es una buena indicación de que la implementación fue exitosa. Sin embargo, en algunos casos, es necesaria realizar una serie de actuaciones que se describen a continuación.</p>
+<h4>Observar la instalación de la aplicación y los datos entrantes</h4>
+<p style="text-align: justify;">En primer lugar hay que verificar el archivo '<strong>output.conf</strong>' que se encuentra en la ruta '<strong>C:\Archivos de programa\SplunkUniversalForwarder\etc\system\local</strong>' para verificar si se reenvía al receptor o no.</p>
+<p style="text-align: justify;">Si se observa la figura 3, la sección  <strong>[tcpout:default-autolb-group]</strong> tiene definido el nombre FQDN del servidor controlador del dominio donde está splunk --&gt; server = perseo.ciber.local:9997. Por otro lado, la sección<strong> [tcpout-server://perseo.ciber.local:9997] </strong>tiene definido también el FQDN del servidor controlador del dominio. En lugar del nombre del controlador del dominio, podría ser la ip del mismo.</p>
+<p style="text-align: center;"><img src="outputs.png" alt="" width="388" height="200" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Fichero outputs.</em></p>
+<p style="text-align: justify;">Dentro de la carpeta local, se encuentra el fichero <strong>deploymentclient.conf </strong>que contiene también referencias al servidor en el puerto 8089.</p>
+<p style="text-align: center;"><strong><img src="deploymentclient.png" alt="" width="460" height="135" /></strong></p>
+<p style="text-align: center;"><strong><em>Figura 4. </em></strong><em>Fichero </em><em>deploymentclient.</em></p>
+<p style="text-align: justify;">Dentro de la carpeta local, se encuentra el fichero <strong>server.conf</strong> que contiene también referencias al servidor.</p>
+<p style="text-align: center;"><em><img src="server.png" alt="" width="533" height="454" /></em></p>
+<p style="text-align: center;"><em><strong>Figura 5. </strong>Fichero server.</em></p>
+<p style="text-align: justify;">Una vez se han comprobado los ficheros, se configura Universal Forwarder para enviar datos a Splunk Enterprise. Para ello, hay que abrir una consola CMD con privilegios de administrador y ejecutar los siguientes comandos.</p>
+<pre><span style="font-size: 12pt;"><strong>C:\&gt;</strong>cd "Program Files\SplunkUniversalForwarder\bin"</span><br /><span style="font-size: 12pt;"><strong>C:\Program Files\SplunkUniversalForwarder\bin&gt;</strong>splunk add forward-server perseo.ciber.local:9997</span><br /><span style="font-size: 12pt;"><strong>C:\Program Files\SplunkUniversalForwarder\bin&gt;</strong>splunk enable eventlog system</span><br /><span style="font-size: 12pt;"><strong>C:\Program Files\SplunkUniversalForwarder\bin&gt;</strong>splunk restart</span></pre>
+<p style="text-align: center;"><img src="add-forwarder.png" alt="" width="1235" height="588" /></p>
+<p style="text-align: center;"><strong><em>Figura 6. </em></strong><em>Configurar Universal Forwarder para enviar datos a Splunk Enterprise.</em></p>
+<h4>Reinicio del servicio de reenvío de Splunk</h4>
+<p style="text-align: justify;">En ocasiones, el servicio Universal Forwarder se cuelga y debe reiniciarse manualmente. Reiniciar la UF a menudo es suficiente para resolver problemas comunes con el reenviador, especialmente si estaba funcionando antes de que dejara de enviar datos.</p>
+<p style="text-align: justify;">Para ello, se accede al servicio y se hace click con el botón derecho del ratón y se selecciona del menú emergente '<strong>Reiniciar</strong>'.</p>
+<p style="text-align: center;"><img src="reinicar-Servicio.png" alt="" width="1084" height="571" /></p>
+<p style="text-align: center;"><strong><em>Figura 7. </em></strong><em>Reinicio del servicio.</em></p>
+<p style="text-align: center;"><img src="reiniciar-servicio.png" alt="" width="395" height="164" /></p>
+<p style="text-align: center;"><strong><em>Figura 8. </em></strong><em>Reinicio del servicio en proceso.</em></p>
+<p><a href="https://docs.splunk.com/Documentation/Forwarder/8.2.5/Forwarder/InstallaWindowsuniversalforwarderfromaninstaller" target="_blank" rel="noopener">Fuente</a></p>
+<h3>6. Visualizar eventos</h3>
+<div class="exe-fx exe-tabs">
+<h2>1</h2>
+<p>Escriba su contenido...</p>
+<p style="text-align: center;"><img src="create-table-view-01.png" alt="" width="1058" height="521" /></p>
+<h2>2</h2>
+<p>Escriba su contenido...</p>
+<p style="text-align: center;"><img src="create-table-view-02.png" alt="" width="408" height="269" /></p>
+<h2>3</h2>
+<p>Escriba su contenido...</p>
+<p style="text-align: center;"><img src="create-table-view-03.png" alt="" width="404" height="434" /></p>
+<h2>4</h2>
+<p>Escriba su contenido...</p>
+<p style="text-align: center;"><img src="create-table-view-04.png" alt="" width="1243" height="432" /></p>
+<h2>5</h2>
+<p>Escriba su contenido...</p>
+<p style="text-align: center;"><img src="create-table-view-05.png" alt="" width="1241" height="463" /></p>
+<h2>6</h2>
+<p>Escriba su contenido...</p>
+<p style="text-align: center;"><img src="create-table-view-06.png" alt="" width="541" height="359" /></p>
+<h2>7</h2>
+<p>Escriba su contenido...</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="create-table-view-07.png" alt="" width="545" height="276" /></td>
+<td style="width: 50%; text-align: center;"><img src="create-table-view-08.png" alt="" width="537" height="322" /></td>
+</tr>
+</tbody>
+</table>
+<h2>8</h2>
+<p>Escriba su contenido...</p>
+<p style="text-align: center;"><img src="create-table-view-09.png" alt="" width="1223" height="525" /></p>
+<h2>9</h2>
+<p>Escriba su contenido...</p>
+<p style="text-align: center;"><a href="create-table-view-10.png"><img src="create-table-view-10.png" width="1204" height="597" /></a></p>
+<h2>10</h2>
+<p>Escriba su contenido...</p>
+<p style="text-align: center;"><a href="summary.png"><img src="summary.png" alt="" width="1048" height="533" /></a></p>
+</div>
+<h3>7. Referencias</h3>
+<ul>
+<li><a href="https://docs.splunk.com/Documentation/Forwarder/8.2.5/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline">https://docs.splunk.com/Documentation/Forwarder/8.2.5/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline</a></li>
+<li><a href="https://www.hackingarticles.in/siem-windows-client-monitoring-with-splunk/">https://www.hackingarticles.in/siem-windows-client-monitoring-with-splunk/</a></li>
+<li>
+<div class="activityinstance"><a href="https://docs.splunk.com/Documentation/Splunk/8.2.2/SearchTutorial/WelcometotheSearchTutorial" target="_blank" rel="noopener"><span class="instancename">Tutorial Splunk<span class="accesshide "></span></span></a></div>
+<form method="post" action="http://cefire.edu.gva.es/course/togglecompletion.php" class="togglecompletion"></form></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FileAttachIdeviceInc em_iDevice em_iDevice_assignment" id="id177">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header" style="background-image:url(icon_assignment.png)"><h2 class="iDeviceTitle">Datos de muestra para Splunk</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta177_82" class="block iDevice_content">
+
+</div>
+<ul class='exeFileList'><li><a href='tutorialdata.zip' target='_blank'>tutorialdata.zip<span> (Ventana nueva)</span></a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32_microsoft_sentinel.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

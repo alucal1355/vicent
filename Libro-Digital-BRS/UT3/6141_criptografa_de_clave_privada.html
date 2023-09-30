@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.4.1 Criptografía de clave privada | UT3. Sistemas de control de acceso y credenciales </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT3. Sistemas de control de acceso y credenciales</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT3. Sistemas de control de acceso y credenciales</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="recomendaciones_de_estudio__resumen.html" class="no-ch">Recomendaciones de estudio - Resumen</a></li>
+   <li><a href="1_mecanismos_de_autenticacin_tipos_de_factores.html" class="daddy">1. Mecanismos de autenticación. Tipos de factores.</a>
+   <ul class="other-section">
+      <li><a href="11_mltiples_factores_de_autenticacin.html" class="no-ch">1.1 Múltiples factores de autenticación</a></li>
+      <li><a href="tarea_1_autenticacin_de_doble_factor_por_ssh_con_google_authenticator.html" class="no-ch">Tarea 1. Autenticación de doble factor por SSH con Google Authenticator</a></li>
+      <li><a href="laboratorio_1_autenticacin_multifactor_con_yubico.html" class="no-ch">Laboratorio 1. Autenticación multifactor con Yubico</a></li>
+      <li><a href="tarea_2_ubuntu__2fa_para_login_con_yubico_security_key.html" class="no-ch">Tarea 2. Ubuntu - 2FA para login con Yubico Security Key</a></li>
+   </ul>
+   </li>
+   <li><a href="2_tcnicas_de_autenticacin.html" class="no-ch">2. Técnicas de autenticación</a></li>
+   <li><a href="3_gestin_de_credenciales.html" class="daddy">3. Gestión de credenciales</a>
+   <ul class="other-section">
+      <li><a href="31_lastpass.html" class="no-ch">3.1 LastPass</a></li>
+      <li><a href="32_keepass.html" class="no-ch">3.2 Keepass</a></li>
+      <li><a href="33_otros_gestores_de_contraseas.html" class="no-ch">3.3 Otros gestores de contraseñas</a></li>
+      <li><a href="tarea_3_instalacin_configuracin_y_puesta_en_produccin_de_un_gestor_de_credenciales.html" class="no-ch">Tarea 3. Instalación, configuración y puesta en producción de un gestor de credenciales</a></li>
+      <li><a href="34_brechas_de_seguridad_y_contraseas_inseguras.html" class="no-ch">3.4 Brechas de seguridad y contraseñas inseguras</a></li>
+   </ul>
+   </li>
+   <li><a href="4_acceso_por_medio_de_firma_electrnica.html" class="daddy">4. Acceso por medio de firma electrónica</a>
+   <ul class="other-section">
+      <li><a href="41_lectores_de_dnie.html" class="no-ch">4.1 Lectores de DNIe</a></li>
+      <li><a href="42_uso_de_nfc_con_el_dnie.html" class="no-ch">4.2 Uso de NFC con el DNIe</a></li>
+   </ul>
+   </li>
+   <li><a href="5_sistemas_de_single_sign_on_sso.html" class="daddy">5. Sistemas de Single Sign On SSO</a>
+   <ul class="other-section">
+      <li><a href="tarea_4_sistemas_sso.html" class="no-ch">Tarea 4. Sistemas SSO</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_criptografa.html" class="current-page-parent daddy">6. Criptografía</a>
+   <ul>
+      <li class="current-page-parent"><a href="61_aplicacin_de_la_criptografa_en_la_seguridad_de_la_informacin.html" class="current-page-parent daddy">6.1 Aplicación de la Criptografía en la seguridad de la información</a>
+      <ul>
+         <li><a href="611_principios_bsicos_de_la_criptografa.html" class="no-ch">6.1.1 Principios básicos de la criptografía</a></li>
+         <li><a href="612_criptografa_clsica.html" class="no-ch">6.1.2 Criptografía clásica</a></li>
+         <li><a href="613_servicios_de_seguridad_de_criptografa.html" class="no-ch">6.1.3 Servicios de seguridad de criptografía</a></li>
+         <li class="current-page-parent"><a href="614_criptografa_moderna.html" class="current-page-parent daddy">6.1.4 Criptografía Moderna</a>
+         <ul>
+            <li id="active"><a href="6141_criptografa_de_clave_privada.html" class="active daddy">6.1.4.1 Criptografía de clave privada</a>
+            <ul>
+               <li><a href="laboratorio_1_cifrado_simtrico_de_archivos.html" class="no-ch">Laboratorio 1. Cifrado simétrico de archivos</a></li>
+               <li><a href="prctica_1_cifrado_simtrico.html" class="no-ch">Práctica 1. Cifrado simétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6142_criptografa_de_clave_pblica.html" class="daddy">6.1.4.2 Criptografía de clave pública</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_2_cifrado_asimtrico_de_ficheros.html" class="no-ch">Laboratorio 2. Cifrado asimétrico de ficheros</a></li>
+               <li><a href="prctica_2cifrado_asimtrico.html" class="no-ch">Práctica 2.Cifrado Asimétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6143_ventas_y_desventajas_cifrado_simtrico_y_asimetrico.html" class="no-ch">6.1.4.3 Ventas y desventajas cifrado simétrico y asimetrico</a></li>
+            <li><a href="6144_criptografa_hbirida.html" class="no-ch">6.1.4.4 Criptografía híbirida</a></li>
+         </ul>
+         </li>
+         <li><a href="615_esteganografa.html" class="daddy">6.1.5 Esteganografía</a>
+         <ul class="other-section">
+            <li><a href="tarea_5_openstego.html" class="no-ch">Tarea 5. OpenStego</a></li>
+         </ul>
+         </li>
+         <li><a href="616_funciones_hash.html" class="daddy">6.1.6 Funciones hash</a>
+         <ul class="other-section">
+            <li><a href="tarea_6_funciones_hash.html" class="no-ch">Tarea 6. Funciones hash</a></li>
+            <li><a href="tarea_7_quickhash.html" class="no-ch">Tarea 7. QuickHash</a></li>
+            <li><a href="tarea_8_funciones_avanzadas_hash_de_powershell.html" class="no-ch">Tarea 8. Funciones avanzadas hash de powershell</a></li>
+            <li><a href="laboratorio_3_funciones_hash_con_kleopatra.html" class="no-ch">Laboratorio 3. Funciones hash con Kleopatra</a></li>
+         </ul>
+         </li>
+         <li><a href="617_uso_de_tcnicas_criptogrficas_en_las_pyme.html" class="no-ch">6.1.7 Uso de técnicas criptográficas en las PYME</a></li>
+         <li><a href="618_sistemas_encriptacin_hardware_tpmhsm.html" class="no-ch">6.1.8 Sistemas encriptación hardware (TPM/HSM)</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_sistemas_de_control_de_acceso_y_autenticacin.html" class="daddy">7. Sistemas de control de acceso y autenticación</a>
+   <ul class="other-section">
+      <li><a href="71_creacin_de_claves_ssh.html" class="no-ch">7.1 Creación de claves SSH</a></li>
+      <li><a href="72_certificados_digitales_gestin_de_una_pki.html" class="daddy">7.2. Certificados digitales, gestión de una PKI</a>
+      <ul class="other-section">
+         <li><a href="721_certificados_digitales.html" class="daddy">7.2.1 Certificados digitales</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_certificado_personal.html" class="no-ch">Laboratorio 4. Certificado personal</a></li>
+            <li><a href="tarea_9_verificacin_de_certificados_digitales.html" class="no-ch">Tarea 9. Verificación de certificados digitales</a></li>
+         </ul>
+         </li>
+         <li><a href="722_firma_digital.html" class="daddy">7.2.2 Firma digital</a>
+         <ul class="other-section">
+            <li><a href="prctica_3_verificacin_de_la_autenticidad_e_integridad_de_un_mensaje.html" class="no-ch">Práctica 3: Verificación de la autenticidad e integridad de un mensaje</a></li>
+         </ul>
+         </li>
+         <li><a href="723_infraestructuras_de_clave_pblica_pki.html" class="no-ch">7.2.3 Infraestructuras de clave pública (PKI)</a></li>
+         <li><a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="no-ch">Laboratorio 5. Infraestructura de clave pública propia con OpenSSL</a></li>
+         <li><a href="caso_prctico_uso_de_certificados_en_servicios_web.html" class="no-ch">Caso Práctico. Uso de certificados en Servicios WEB</a></li>
+         <li><a href="reto_implementacin_de_una_sistema_de_certificados_pki_en_la_organizacin_con_easyrsa.html" class="no-ch">Reto. Implementación de una sistema de certificados (PKI) en la organización con Easy-RSA</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="8_gestin_de_accesos_sistemas_nac.html" class="daddy">8. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_6_packetfence.html" class="no-ch">Laboratorio 6. PacketFence</a></li>
+      <li><a href="prctica_4_acceso_a_la_web_a_travs_de_un_nac.html" class="no-ch">Práctica 4. Acceso a la web a través de un NAC</a></li>
+   </ul>
+   </li>
+   <li><a href="9_gestin_de_cuentas_privilegiadas.html" class="daddy">9. Gestión de cuentas privilegiadas</a>
+   <ul class="other-section">
+      <li><a href="101_pam.html" class="no-ch">10.1 PAM</a></li>
+      <li><a href="tarea_10_ejecutar_como.html" class="no-ch">Tarea 10. Ejecutar como</a></li>
+   </ul>
+   </li>
+   <li><a href="10_protocolos_radius_y_tacacs_servicio_kerberos.html" class="daddy">10. Protocolos RADIUS y TACACS, servicio KERBEROS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_7_freeradius.html" class="daddy">Laboratorio 7. freeRadius</a>
+      <ul class="other-section">
+         <li><a href="1_instalacin_servidor_radius.html" class="no-ch">1. Instalación servidor Radius</a></li>
+         <li><a href="2_instalacin_cliente_radius.html" class="no-ch">2. Instalación Cliente Radius</a></li>
+      </ul>
+      </li>
+      <li><a href="laboratorio_8_radius_windows_server.html" class="no-ch">Laboratorio 8. Radius Windows Server</a></li>
+   </ul>
+   </li>
+   <li><a href="11_ldap.html" class="daddy">11. LDAP</a>
+   <ul class="other-section">
+      <li><a href="111_instalacin_y_configuracin_de_ldap.html" class="no-ch">11.1 Instalación y configuración de LDAP.</a></li>
+      <li><a href="112_configuracin_de_certificados_ssltsl_en_ldap.html" class="no-ch">11.2 Configuración de certificados SSL/TSL en LDAP.</a></li>
+      <li><a href="113_creacin_de_cuentas_ldap.html" class="no-ch">11.3 Creación de cuentas LDAP</a></li>
+      <li><a href="114_instalacin_de_sssd_en_el_cliente_ubuntu_desktop.html" class="no-ch">11.4 Instalación de SSSD en el cliente Ubuntu Desktop</a></li>
+      <li><a href="proyecto_instalar_servidor_de_autenticacin_openldap_servidor_ubuntu.html" class="no-ch">Proyecto. Instalar servidor de autenticación OpenLdap Servidor Ubuntu</a></li>
+   </ul>
+   </li>
+   <li><a href="12_referencias.html" class="no-ch">12. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="614_criptografa_moderna.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_1_cifrado_simtrico_de_archivos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1.4.1 Criptografía de clave privada</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<div id="intro" class="box generalbox">
+<div class="no-overflow">
+<div id="intro" class="box generalbox">
+<div class="no-overflow" id="yui_3_17_2_1_1604603309835_299">
+<p style="text-align: justify;">La <strong>criptografía de clave privada (simétrica)</strong> o <strong><em>cifrado simétrico</em></strong> se basa en un secreto compartido entre la entidad que cifra el mensaje y la que lo quiere descifrar, es decir, utiliza la misma clave en el proceso de cifrado que en el de descifrado.</p>
+<p style="text-align: justify;">Si se analizan los métodos utilizados para salvaguardar la confidencialidad de los mensajes desde los primeros tiempos de la criptografía  hasta mediados de los años setenta (criptografía clásica), se puede ver que sólo se hacía uso de métodos simétricos, que exigían necesariamente que el emisor y el receptor se pusieran previamente de acuerdo en la clave que iban a utilizar. El <a href="https://es.wikipedia.org/wiki/Cifrado_de_Vigen%C3%A8re" target="_blank" rel="noopener"><strong><em>método de Vigenère</em></strong></a> es un claro ejemplo.</p>
+<p style="text-align: center;"><img src="esquema-cifrado-simetrico.png" alt="" width="717" height="266" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 1. </em></strong><em>Cifrado simétrico.</em></span></p>
+<h3 style="text-align: justify;"><span style="font-size: 14pt;">2. Elementos fundamentales de la clave privada o simétrica</span></h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;">La criptografía de clave privada considera que los mensajes intercambiados por los usuarios son cifrados y descifrados con una misma clave secreta entre ambos.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Al usar una misma clave, es una gran ventaja a la hora de gestionar grupos reducidos y los algoritmos utilizados son más rápidos.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Un problema que tienen es que cuando dos entidades se comunican, cada una no puede autenticar a la otra, es decir, asegurar su identidad.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Dentro de los algoritmos de clave privada se tienen:</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span style="font-size: 12pt;"><strong>Cifradores de flujo</strong>: Pueden ser síncronos o asíncronos. Se caracterizan porque la información a cifrar se divide en caracteres (bytes) o bits. Tanto el emisor como el receptor comparten una clave que se llama '<strong>serie cifrante</strong>'. Ejemplo: </span></span><strong><em>Cifradores de flujo RC4</em></strong> (bit a bit).</p>
+<p style="text-align: justify;"><strong>¿Cómo funciona? .</strong> El mensaje en claro se cifra bit a bit o byte a byte. Dicha operación de cifra consiste en una operación XOR del texto en claro con una secuencia cifrante de bits S i que debe cumplir ciertas condiciones para que tenga una apariencia aleatoria y sea segura.</p>
+<p style="text-align: justify;">Para descifrar, se vuelve a realizar un XOR del criptograma con la misma secuencia S i pues esta función XOR es involutiva (función matemática que es su propia inversa).</p>
+<p style="text-align: center;"><img src="cifrado-Flujo-Diagrama.png" alt="" width="752" height="198" /></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong>Cifradores de bloque</strong>:  La información a cifrar se divide en bloques de una determinada longitud (tamaños típicos: 64, 128, 256 bits). Dentro de los cifradores de bloque el más conocido es DES (Data Encryption Standard). Y dentro de los modos de operación se tienen: ECB, CBC, OFB y CTR.</span></p>
+<p style="text-align: justify;"><img src="ud02-11.png" alt="" width="1114" height="349" /></p>
+</div>
+</div>
+</div>
+</div>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 2. </em></strong><em>Cifrado por bloques.</em></span></p>
+<h4 style="text-align: justify;"><span style="font-size: 12pt;">2.1 Ejemplo cifrado por bloques AES</span></h4>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Es un algoritmo capaz de proteger información sensible el cual trabaja repitiendo la misma operación múltiples veces con un bloque fijo de 128 bits y tamaños de llave 128, 192 o 256 bits.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong>NOTA:</strong> En la actualidad, NO se conocen vulnerabilidades de este cifrado.</span></p>
+<p style="text-align: justify;"><strong><span style="font-size: 12pt;">Ejemplo:</span></strong></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Cifrado en Bloque 128b.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Matriz estado 4x4.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">vueltas 10, 12, 14.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">AddRoundKey Xor mensaje y clave.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">SubBytes Sustitución de bits con tabla.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">ShiftRows Rotación de bits.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Mixcolums Mezcla de columnas.</span></li>
+</ul>
+<table style="height: 88px; width: 34.6404%; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 22px;">
+<td style="width: 9.02578%; height: 22px;"><strong>Clave AES</strong></td>
+<td style="width: 15.4685%; height: 22px;"><strong>Subclaves (Nr +1)</strong></td>
+<td style="width: 12.353%; height: 22px; text-align: center;"><strong>Clave expandida</strong></td>
+</tr>
+<tr style="height: 22px;">
+<td style="width: 9.02578%; height: 22px;">128 bits</td>
+<td style="width: 15.4685%; height: 22px;">11 de 128 bits</td>
+<td style="width: 12.353%; height: 22px;">1.408 bits</td>
+</tr>
+<tr style="height: 22px;">
+<td style="width: 9.02578%; height: 22px;">192 bits</td>
+<td style="width: 15.4685%; height: 22px;">13 de 128 bits</td>
+<td style="width: 12.353%; height: 22px;">1.664 bits</td>
+</tr>
+<tr style="height: 22px;">
+<td style="width: 9.02578%; height: 22px;">256 bits</td>
+<td style="width: 15.4685%; height: 22px;">15 de 128 bits</td>
+<td style="width: 12.353%; height: 22px;">1.920 bits</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="ud02-12.png" alt="" width="511" height="471" /></span></p>
+<h4 style="text-align: justify;"><span style="font-size: 12pt;">2.2 Ejemplo cifrado por bloques DES</span></h4>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Este algoritmo está diseñado para cifrar y descifrar bloques de datos que constan de 64 bits bajo el control de una clave de 56 bits (simétrico). Los otros 8 bits restantes, se utilizan para el control de paridad.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Este cifrado se considera actualmente <strong>inseguro</strong>.</span></p>
+<h4 style="text-align: justify;"><span style="font-size: 12pt;">2.3 Ejemplo cifrado por bloques 3DES</span></h4>
+<p><span style="font-size: 12pt;"><b>Triple DES</b><span> se le llama al </span><a href="https://es.wikipedia.org/wiki/Algoritmo" title="Algoritmo">algoritmo</a><span> que hace triple cifrado del </span><a href="https://es.wikipedia.org/wiki/Data_Encryption_Standard" title="Data Encryption Standard">DES</a><span>. También es conocido como TDES o 3DES, en 1998 </span><a href="https://es.wikipedia.org/wiki/IBM" title="IBM">IBM</a><span> desarrollo 3DES o Triple DES (TDES) que sería sucesor directo de DES.</span></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span>Cuando se descubrió que una clave de 56 bits no era suficiente para evitar un ataque de fuerza bruta, TDES fue elegido como forma de agrandar el largo de la clave sin necesidad de cambiar de algoritmo dé <a href="https://es.wikipedia.org/wiki/Criptograf%C3%ADa" title="Criptografía">cifrado</a> este método de cifrado es inmune al <a href="https://es.wikipedia.org/wiki/Ataque_por_encuentro_a_medio_camino" class="mw-redirect" title="Ataque por encuentro a medio camino">ataque por encuentro a medio camino</a>, doblando la longitud efectiva de la clave (112 bits), pero en cambio es preciso triplicar el número de operaciones de cifrado, haciendo este método de cifrado muchísimo más seguro que el DES. Por tanto, la longitud de la clave usada será de 168 bits (3x56 bits), aunque como se ha dicho su eficacia solo sea de 112 bits. Se continúa cifrando bloques de 64 bits.</span></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span>El Triple DES está desapareciendo lentamente, siendo reemplazado por el algoritmo <a href="https://es.wikipedia.org/wiki/Advanced_Encryption_Standard" title="Advanced Encryption Standard">AES</a>. Sin embargo, la mayoría de las tarjetas de crédito y otros medios de pago electrónicos tienen como estándar el algoritmo Triple DES (anteriormente usaban el DES). Por su diseño, el DES y por lo tanto el TDES son algoritmos lentos. AES puede llegar a ser hasta 6 veces más rápido y hasta la fecha no se ha encontrado ninguna vulnerabilidad.</span></span></p>
+<p><span style="font-size: 12pt;"><span><a href="https://es.wikipedia.org/wiki/Triple_DES" target="_blank" rel="noopener"> [wikipedia]</a></span></span></p>
+<h4 style="text-align: justify;"><span style="font-size: 12pt;">2.4 Ejemplo cifrado de flujo/bloques RCx</span></h4>
+<p><span style="font-size: 12pt;"><strong>RC4</strong> es el sistema de cifrado de flujo con bytes orientados a operaciones, se emplean en algunos protocolos como SSL para proteger el tráfico o WEP para añadir seguridad en las redes inalámbricas, pero <em><strong>es muy inseguro.</strong></em></span></p>
+<p><span style="font-size: 12pt;"><strong>RC5 </strong>es un un algoritmo de cifrado de bloques con tamaño variable (34, 68 o 128 bits) con un tamaño e llave variable, así como un número variable de vueltas (0 - 255).</span></p>
+<p><span style="font-size: 12pt;"><strong>RC6</strong> es una unidad de cifrado por bloques de clave simétrica derivada a partir de RC5.</span></p>
+<p><span style="font-size: 12pt;">RC5 y RC6 no se usan.</span></p>
+<h3 style="text-align: justify;"><span style="font-size: 14pt;">3. ¿Cómo funciona el cifrado simétrico?</span></h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;">El emisor toma el mensaje en claro M que transforma mediante un algoritmo Ek utilizando la clave k secreta para obtener el mensaje cifrado C. Posteriormente, el mensaje cifrado se transmite al receptor, que recibe el criptograma C.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">El receptor para la operación de descifrado, toma como entrada el criptograma C y le aplica el algoritmo Dk igual que el de emisión Ek pero en modo descifrado, utilizando la misma clave k, para obtener el mensaje en claro M. Dk es el proceso inverso a Ek.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="funcion-cifrado-simetrico.png" alt="" width="717" height="152" /></span></p>
+<h3 style="text-align: justify;"><span style="font-size: 14pt;">4. Confidencialidad e integridad en el cifrado simétrico</span></h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;">La confidencialidad y la integridad se lograrán si se protegen las claves en el cifrado y en el descifrado, es decir, ambas se obtienen simultáneamente si se protege k, la clave secreta compartida.</span></p>
+<p style="text-align: center;"><span style="font-size: 14pt;"><img src="conf-int-CS.png" alt="" width="831" height="353" /></span><span style="font-size: 14pt;"></span></p>
+<h3 style="text-align: justify;"><span style="font-size: 14pt;">5. Algoritmos de cifrado simétrico</span></h3>
+<ul>
+<li><span style="font-size: 12pt;">DES</span></li>
+<li><span style="font-size: 12pt;">3DES</span></li>
+<li><span style="font-size: 12pt;">AES</span></li>
+<li><span style="font-size: 12pt;">RC4</span></li>
+</ul>
+<h3 style="text-align: justify;"><span style="font-size: 14pt;">6. Ventajas y desventajas del Cifrado Simétrico</span></h3>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Ventajas</strong>: La distribución de claves es muy sencilla.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Desventajas</strong>: </span>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">La distribución de claves es poco segura.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">El número de claves necesarias para comunicarse entre un grupo de personas es muy elevado, cada uno tendrá la suya propia.</span></li>
+</ul>
+</li>
+</ul>
+<h3>7. Herramientas de cifrado de la información</h3>
+<p style="text-align: justify;"><a href="https://www.veracrypt.fr/code/VeraCrypt/" target="_blank" rel="noopener">VeraCrypt</a>. Es un software de código abierto para cifrar archivos, carpetas, unidades USB extraíbles, discos duros completos, e incluso el disco duro donde se encuentra el propio sistema operativo instalado. Es multiplataforma, actualmente es compatible con sistemas operativos Microsoft Windows, cualquier sistema basado en Linux, y también es compatible con macOS. Este software está basado en el popular<span> </span><a href="https://www.truecrypt71a.com/downloads/" target="_blank" rel="noopener">TrueCrypt 7.1a.</a></p>
+<p style="text-align: justify;"><a href="https://diskcryptor.org/">DiskCryptor</a>. Herramienta gratuita que permite cifrar particiones de disco en los sistemas Windows. También es capaz de cifrar todo el disco con todas las particiones, incluyendo la partición donde está instalado el sistema operativo Windows, de esta manera, todo lo que escribamos en dicho disco estará cifrado para evitar que alguien pueda leerlo si roba o se hace físicamente con nuestro disco duro.</p>
+<p style="text-align: justify;"><span>Los algoritmos de cifrado simétrico que soporta son AES con 256 bits, Twofish y también Serpent, incluyendo las combinaciones de todos ellos para dotar al sistema de una mayor seguridad.</span></p>
+<h3 style="text-align: justify;"><span>8. Cifrado simétrico de archivos<br /></span></h3>
+<p style="text-align: justify;">El <em><strong>cifrado simétrico de archivos</strong> </em>permite proteger el contenido de un archivo confidencial que pueda necesitar enviar a través de un medio inseguro, por ejemplo, un fichero adjunto a un correo electrónico. Un ejemplo de uso sería el envío de facturas o información de acceso a cuentas bancarias entre la secretaria y dirección de un centro educatibo, que de otra manera sería un riesgo irresponsable. De esta forma, el destinatario del archivo puede descifrar el fichero usando la clave simétrica que previamente debe haberse acordado, utilizando el mismo algoritmo con el que se ha cifrado (como por ejemplo 3DES, BlueFish, IDEA, AES, etcétera).</p>
+<p style="text-align: justify;">Existen muchas herramientas para poder realizar esta acción, pero en este curso se va utilizar <a href="https://es.wikipedia.org/wiki/Pretty_Good_Privacy#OpenPGP" target="_blank" rel="noopener"><strong>OpenPGP</strong></a>, un software de cifrado simétrico, asimétrico e híbrido, disponible para muchas plataformas.</p>
+<p style="text-align: justify;">Para los <strong>sistemas Windows</strong> se utilizará el programa <strong>Gpg4win</strong>. Este programa utiliza por debajo las librerías de OpenPGP. En el caso de usar cualquier <strong>distribución de GNU/Linux</strong>, también hay disponibles muchas versiones como el <strong>KGpg</strong> (para escritorio KDE), <strong>GnuPG</strong> (en línea de comandos), etcétera.</p>
+<p style="text-align: justify;"></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Personalmente, suelo utilizar frecuentemente el comando <strong>gpg2</strong> desde la shell de GNU/Linux, ya que permite automatizar mediante scripts el cifrado de muchos archivos sin tener que hacerlo de forma gráfica.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="614_criptografa_moderna.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_1_cifrado_simtrico_de_archivos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

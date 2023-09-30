@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.1.1. Instalación Cliente Radius para pruebas | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-80"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_servidor_de_autenticacin_radius.html" class="current-page-parent daddy">3. Servidor de autenticación Radius</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_freeradius.html" class="current-page-parent daddy">3.1 FreeRadius</a>
+      <ul>
+         <li class="current-page-parent"><a href="311_instalacin_servidor_radius.html" class="current-page-parent daddy">3.1.1. Instalación servidor Radius</a>
+         <ul>
+            <li id="active"><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="active no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul class="other-section">
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul class="other-section">
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="311_instalacin_servidor_radius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.1.1. Instalación Cliente Radius para pruebas</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id111">
+<div class="iDevice emphasis0" >
+<div id="ta111_112_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;"><span>1. Introducción</span></h3>
+<p style="text-align: justify;"><span>En este capítulo,  se van a instalar y configurar dos clientes (Linux/Windows) para probar el servidor Radius.</span></p>
+<h3 style="text-align: justify;"><span>2. Recursos necesarios</span></h3>
+<ul style="text-align: justify;">
+<li><strong>Linux Ubuntu Desktop 20.04 LTS</strong><span> </span>con el que se realizará la autenticación en el servidor Radius. Hay que Instalar la utilidad openssh-client para probar la autenticación Radius por ssh.</li>
+<li><strong>Windows 10 Enterprise</strong>. Instalar la utilidad Putty o <span>Bitvise</span><span> </span>para probar la autenticación Radius por ssh.</li>
+</ul>
+<h3 style="text-align: justify;"><span>3. Instalación y configuración del cliente en Ubuntu Desktop</span></h3>
+<h4 style="text-align: justify;"><span>3.1 Instalación</span></h4>
+<p style="text-align: justify;"><span>En primer lugar hay que realizar la actualización de los repositorios locales para que posteriormente, se instalen las utilidades <strong>libpam-radius-auth y freeradius-utils.</strong></span><span class="fontstyle0"><span></span></span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@mate:~#</strong>apt update<strong><br /></strong><strong>root@mate:~#</strong>apt install libpam-radius-auth freeradius-utils</span><strong></strong></span></pre>
+<p><span><strong><img src="freeRadius-007.png" width="923" height="329" style="display: block; margin-left: auto; margin-right: auto;" /></strong></span></p>
+<p style="text-align: center;"><em><span><strong>Figura 1. </strong>Instalación de las utilidades libpam-radius-auth y freeradius-utils.</span></em></p>
+<h4 style="text-align: justify;"><span>3.2 Configuración</span></h4>
+<p style="text-align: justify;"><span>Una vez finalizada la instalación, hay que modificar el fichero <strong>pam_radius_auth.conf </strong>ubicado en <strong>/etc/. </strong>El fichero contiene lo siguiente:</span></p>
+<p><span><img src="freeRadius-008.png" width="869" height="412" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><strong><em><span>Figura 2.  </span></em></strong><em><span>Modificación del fichero </span></em><em><span>pam_radius_auth.conf.</span></em></p>
+<p style="text-align: justify;"><span>Hay que modificarlo según la figura siguiente, donde hay que añadir la IP del servidor radius (ubuntu server) y la clave del cliente RADIUS antes creada. </span></p>
+<p><span><img src="freeRadius-009.png" width="744" height="397" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><strong><em>Figura 3. </em></strong><em>Fichero </em><em>pam_radius_auth.conf modificado.</em></span></p>
+<ul style="text-align: justify;">
+<li><span><strong>192.168.1.164:</strong> Es la ip del servidor Radius (ubuntu server).</span></li>
+<li><span><strong>eeepsr10:</strong> Contraseña Radius.</span></li>
+</ul>
+<p style="text-align: justify;"><span><span class="fontstyle0">A continuación, hay que crear una cuenta local para el usuario RADIUS que anteriormente se ha mencionado, pero sin contraseña, p</span><span class="fontstyle0">ara ello se utiliza el comando <strong>adduser</strong>:</span></span></p>
+<pre><span style="font-size: 12pt;"><strong><span>root@mate:~#</span></strong><span class="fontstyle2">adduser</span><span class="fontstyle2"> uradius --disabled-password --quiet --gecos ""</span><span class="fontstyle0">.</span></span></pre>
+<p><span class="fontstyle0"><img src="freeRadius-010.png" width="630" height="66" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><strong><em><span class="fontstyle0">Figura 4.<span> </span></span></em></strong><em><span class="fontstyle0">Se añade el usuario local al equipo radius.</span></em></p>
+<p style="text-align: justify;"><span class="fontstyle0">A continuación, aunque no es necesario, se modifica el fichero<span> </span><strong>/etc/hosts</strong><span> </span>con la dirección ip/nombre_equipo para que en el <strong>test radius</strong>, se envía la ip.</span></p>
+<p><span class="fontstyle0"><img src="freeRadius-011.png" width="579" height="256" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><span><strong><em><span class="fontstyle0">Figura 5. </span></em></strong><em><span class="fontstyle0">Modificación del fichero hosts.</span></em></span></p>
+<h4 style="text-align: justify;"><span>3.3 Autenticación en el servidor Radius</span></h4>
+<p style="text-align: justify;"><span>Después de realizar el proceso anterior de instalación y configuración de <strong><em>FreeRADIUS</em></strong> , hay que realizar un test de autenticación en el cliente Ubuntu con un usuario de <em><strong>FreeRADIUS</strong></em>. </span><span>Para ello, se va a comprobar el uso de la autenticación Radius mediante el comando <strong>radtest</strong>:</span></p>
+<pre><span style="font-size: 12pt;"><span><strong>root@mate:~#</strong></span>radtest uradius eeepuc20 192.168.1.164 0 eeepsr10</span></pre>
+<p style="text-align: justify;"><span>donde,</span></p>
+<ul style="text-align: justify;">
+<li><span><strong>uradius y eeepsr10 </strong></span>es el usuario y contraseña del usuario del cliente Ubuntu.</li>
+<li><strong><span>192.168.1.164</span> </strong>es la IP del servidor radius (ubuntu server).</li>
+<li><span><strong>eeepuc20</strong> </span>es la clave de cliente RADIUS.</li>
+</ul>
+<p style="text-align: center;"><img src="freeRadius-012.png" alt="" width="452" height="115" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 6.</strong> Consulta del usuario uradius.</em></span></p>
+<p style="text-align: justify;"><span>Si todo está configurado correctamente, debería aparecer el siguiente mensaje (Figura 7). Esto significa que la autenticación por RADIUS funciona.</span></p>
+<p style="text-align: center;"><img src="freeRadius-013.png" alt="" width="808" height="205" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 7.</strong> Test de la autenticación Radius.</em></span></p>
+<h3 style="text-align: justify;"><span>4. Autenticación por ssh en el cliente Radius</span></h3>
+<p style="text-align: justify;"><span>Para poder realizar las pruebas de autenticación Radius en el equipo Ubuntu Server donde se ha instalado freeRadius mediante equipos Windows y Linux, hay hay que realizar una serie de instalaciones/configuraciones que se describen a continuación.</span></p>
+<h4 style="text-align: justify;"><span>4.1. Instalación de openssh-server en Cliente Radius Ubuntu</span></h4>
+<p style="text-align: justify;"><span>Para realizar la instalación de la utilidad <a href="https://www.openssh.com/" target="_blank" rel="noopener"><strong>openssh-server</strong></a>, hay que ejecutar el siguiente comando:</span></p>
+<pre><span style="font-size: 12pt;"><span><strong>root@mate:~#</strong></span>apt install openssh-server</span></pre>
+<p><img src="freeRadius-014.png" width="735" height="454" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 8.</strong> Instalación de openssh-server en el equipo cliente radius.</em></span></p>
+<p style="text-align: justify;"><span>Una vez instalada la utilidad <strong>openssh-server,</strong> hay que editar el archivo <strong>sshd </strong>situado en <strong>/etc/pam.d/: </strong>Simplemente hay que incluir la siguiente línea al principio del fichero: </span><span></span><span><strong>auth sufficient pam_radius_auth.so</strong></span></p>
+<p style="text-align: justify;"><span>El resultado ha de ser el siguiente: </span></p>
+<p><img src="freeRadius-015.png" width="801" height="348" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 9. </strong>Fichero sshd modificado.</em></span></p>
+<h4 style="text-align: justify;"><span>4.2. Prueba de autenticación desde un equipo Linux</span></h4>
+<p style="text-align: justify;"><span>Desde un equipo con <strong><em>Linux Mint 19</em></strong> en la subred del <strong><em>servidor Radius</em></strong> (ubuntu server 20) y <strong><em>cliente Radius</em> </strong>(Ubuntu 20), se va a realizar una petición de conexión ssh al equipo cliente radius para autenticarnos mediante el cliente radius. De esta manera, se accede al cliente radius Ubuntu autenticados contra el servidor Radius.</span><strong></strong></p>
+<pre><span style="font-size: 12pt;"><span><strong>jc@jc-Latitude-E6430:~$</strong></span>ssh uradius@192.168.1.120</span></pre>
+<p><span><em><img src="freeRadius-016.png" width="885" height="495" style="display: block; margin-left: auto; margin-right: auto;" /></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 10. </strong>Autenticación en cliente radius.</em></span></p>
+<p style="text-align: justify;">donde,</p>
+<ul style="text-align: justify;">
+<li><strong>uradius</strong>: Es el usuario radius del equipo cliente.</li>
+<li><strong>192.168.1.120</strong>: Ip del equipo cliente radius.</li>
+<li><strong>password:</strong><span> </span>La contraseña que está en el fichero users ubicado en /etc/freeradius/3.0 del servidor de radius (ver figura inferior). </li>
+</ul>
+<p><img src="freeRadius-017.png" width="486" height="102" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<h4 style="text-align: justify;"><span>4.2. Prueba de autenticación desde un equipo Windows</span></h4>
+<p style="text-align: justify;"><span>Para la autenticación desde un equipo Windows 10 al equipo cliente Ubuntu 20 (radius) por ssh, hay que instalar una utilidad sshclient como <a href="https://www.putty.org/" target="_blank" rel="noopener">putty</a> o  <a href="https://www.bitvise.com/download-area" target="_blank" rel="noopener">Bitvise</a>.</span></p>
+<p style="text-align: justify;"><span>Para este caso práctico, se ha escogido <em><strong>Bitvise</strong></em> para probar la autenticación por ssh en el equipo Cliente Ubuntu Mate con el usuario de RADIUS. Para ello se abre la utilidad <strong><em>Bitvise</em></strong> y en la zona de host hay que escribir la <strong><em>IP del cliente Ubuntu</em></strong>, en <strong><em>Port el puerto 22</em></strong>, en <strong><em>Username el usuario uradius</em></strong> del Radius y en<strong><em> password la contraseña Radius</em></strong> (para añadir la contraseña es necesario tener la casilla de selección de "<em>Store encrypted passsword in profile"</em>).</span></p>
+<p><img src="freeRadius-018.png" width="631" height="622" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 11. </strong>Configuración de la petición ssh al cliente radius.</em></span></p>
+<p><img src="freeRadius-019.png" width="632" height="622" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 12. </strong>Pantalla de Host Key verification.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, hay que pulsar en '<strong>New terminal console</strong>' para poder acceder al equipo cliente radius.</span></p>
+<p style="text-align: center;"><img src="freeRadius-020.png" alt="" width="691" height="440" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 13.</strong> Consola del cliente Ubuntu ya autenticado con el usuario uradius.</em></span></p>
+<p><img src="freeRadius-021.png" width="1324" height="622" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 14. </strong>Configuración de la petición ssh al cliente radius y terminal son el usuario uradius autenticado.</em></span></p>
+<p><img src="freeRadius-021.png" width="1324" height="622" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 15. </strong>Equipo Ubuntu cliente radius y terminal con el usuario uradius autenticado.</em></span><span></span></p>
+<h4 style="text-align: justify;"><span>4.3. Prueba desconexión servidor Radius</span></h4>
+<p style="text-align: justify;"><span>Si el <strong><em>servidor radius</em></strong> se para y se intenta la autenticación en el cliente Radius, no se tendrá éxito dado que la autenticación no se podrá negociar con el servidor ya que no está disponible.</span></p>
+<table border="0">
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="freeRadius-025.png" alt="" width="697" height="103" /></td>
+<td style="text-align: center;"><img src="freeRadius-026.png" alt="" width="566" height="153" /></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span style="font-size: 12pt;">Parada del servidor radius</span></td>
+<td style="text-align: center;"><span style="font-size: 12pt;">Intento de autenticación al cliente radius.</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="311_instalacin_servidor_radius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

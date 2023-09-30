@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1. Seguridad perimetral | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-62"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li id="active"><a href="1_seguridad_perimetral.html" class="active no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objetivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_elementos_de_arquitectura_segura.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1. Seguridad perimetral</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id92">
+<div class="iDevice emphasis0" >
+<div id="ta92_108_2" class="block iDevice_content">
+<div class="exe-text"><h3><span>1. Introducción</span></h3>
+<p style="text-align: justify;">En esta unidad de trabajo, se estudia la protección de los equipos y servidores de la organización frente a algunas de las amenazas que llegan a los sistemas por medio de las redes de ordenadores.</p>
+<p style="text-align: justify;">De esta forma, se reduce el riesgo de robo de información y que los equipos sean usados contra otros dispositivos de la red de la organización o de terceros.</p>
+<h3 style="text-align: justify;">2. ¿Qué es el modelo de red perimetral?</h3>
+<p style="text-align: justify;">El <strong><em>modelo perimetral</em> </strong>es un modelo de seguridad de red en el que nadie de fuera de la red puede acceder a los datos de dentro, pero sí que pueden todos los que están dentro. Imaginemos que la red de una organización es un castillo, y el <a href="https://www.cloudflare.com/learning/access-management/what-is-the-network-perimeter/" target="_blank" rel="noopener">perímetro de red</a> un foso. Una vez que se baja el puente levadizo y alguien lo cruza, puede moverse con libertad por el interior del castillo. Del mismo modo, una vez que un usuario se conecta a una red en este modelo, puede acceder a todas las aplicaciones y datos de esa red.</p>
+<p style="text-align: justify;">Las organizaciones que usan este modelo dedican muchos recursos a defender el perímetro de su red, al igual que un castillo colocaría el mayor número de guardias cerca del puente levadizo. Implementan <a href="https://www.cloudflare.com/es-es/learning/security/what-is-a-firewall/" target="_blank" rel="noopener">firewalls</a>, sistemas de detección de intrusos (IDS), sistemas de prevención de intrusos (IPS) y otros productos de seguridad que bloquean la mayoría de los ataques externos, pero no son tan eficaces para detener los ataques internos, <a href="https://www.cloudflare.com/es-es/learning/access-management/what-is-an-insider-threat/" target="_blank" rel="noopener">amenazas internas</a> y <a href="https://www.cloudflare.com/learning/security/what-is-a-data-breach/" target="_blank" rel="noopener">fugas de datos</a>.</p>
+<p style="text-align: justify;">El <strong>modelo perimetral</strong> no es necesariamente una estrategia elegida deliberadamente. El término empezó a utilizarse para comparar la arquitectura de red tradicional con la <a href="https://www.cloudflare.com/es-es/learning/security/glossary/what-is-zero-trust/" target="_blank" rel="noopener">arquitectura Zero Trust</a>.</p>
+<p style="text-align: justify;"><a href="https://www.cloudflare.com/es-es/learning/access-management/castle-and-moat-network-security/" target="_blank" rel="noopener">Fuente</a></p>
+<h3 style="text-align: justify;">3. Seguridad perimetral</h3>
+<p style="text-align: justify;">Se define seguridad perimetral como los elementos que permiten proteger a los sistemas sensibles de ser atacados por intrusos.</p>
+<p style="text-align: justify;">El <strong>perímetro de una red corporativa</strong> son los límites entre la red de la organización y las redes a las que ella se interconecta, como por ejemplo Internet.</p>
+<p style="text-align: justify;">El <strong>perímetro de la red</strong> es la primera zona a proteger debido a la posibilidad de ataques desde las redes externas a la organización. No obstante, muchos ataques provienen de usuarios internos y hay que proteger la red también de estos ataques. En el perímetro de la red se suelen definir <strong>niveles de confianza</strong>, permitiendo el acceso de determinados usuarios internos o externos a determinados servicios, y denegando cualquier tipo de acceso a otros. La <strong>seguridad perimetral</strong> también define zonas o áreas donde la seguridad se trata en bloque:</p>
+<ul>
+<li style="text-align: justify;"><strong>Red interna:</strong> red donde se ubican los usuarios internos.</li>
+<li style="text-align: justify;"><strong>Red externa:</strong> generalmente es la red Internet.</li>
+<li style="text-align: justify;"><strong>Extranet:</strong> zona de acceso de proveedores o empleados.</li>
+<li style="text-align: justify;"><strong>DMZ o zona desmiliarizada:</strong> zona donde se ubican los servidores con acceso externo.</li>
+</ul>
+<p style="text-align: justify;">La <strong>seguridad perimetral</strong>, se podría decir que es la primera línea de defensa, con la que se pretende cumplir una serie de tareas y/o cometidos:</p>
+<ul>
+<li><strong>Resistir </strong>a los ataques externos que se puedan sufrir.</li>
+<li style="text-align: justify;"><strong>Identificar</strong>. Estos ataques se<span> </span><strong>identificarán</strong><span> </span>y se pondrán comunicar al administrador/es de la red/es para que investiguen sobre ellos.</li>
+<li style="text-align: justify;"><strong>Aislar y segmentar. </strong>Por otro lado, los dispositivos y servicios que se encuentren en la empresa, se<span> </span><strong>aislarán y segmentarán</strong><span> </span>en distintas zonas y redes como, por ejemplo, implementar el uso de VLAN para el aislamiento, y diferenciar las distintas zonas que se dividen al segmentarlas.</li>
+<li style="text-align: justify;"><strong>Filtrar y bloquear. </strong>Así mismo, todo el tráfico que se produzca se<span> </span><strong>filtra</strong><span> </span>analizando de donde viene y<span> </span><strong>bloqueando</strong><span> </span>aquel que no se desee que reciba la red. El resultado es, que solo se permite aquel tráfico que sea razonable y totalmente necesario y/o que genere confianza, es decir, el que se considera tráfico legitimo.</li>
+</ul>
+<p style="text-align: justify;"><span>Se establecen unas <strong>herramientas</strong> que facilitan las tareas anteriores, para evitar intrusiones desautorizadas.</span></p>
+<div class="exe-fx exe-tabs">
+<h2>Cortafuegos o Firewall</h2>
+<p style="text-align: justify;"><span>Permiten un aislamiento de los dispositivos externos y posibilita un control sobre el tráfico de red, ya que pueden tanto denegar como aceptar del acceso, se aplica sobre unas políticas de accesos.</span></p>
+<p style="text-align: center;"><span><img src="Firewall-seg-perimetral.jpg" alt="" width="346" height="346" /></span></p>
+<p style="text-align: center;"><span><a href="https://www.freepik.es/vector-gratis/internet-cosas-portatil_1196638.htm#page=1&amp;query=firewall&amp;position=3" target="_blank" class="author" rel="noopener">FreePik</a>. <span class="title"><em>Firewall</em></span> <span class="license"><span class="sep">(</span><span class="custom-license">FreePik</span><span class="sep">)</span></span></span></p>
+<h2>Red Privada Virtual (VPN)</h2>
+<p style="text-align: justify;">Una <strong>VPN</strong> se puede definir como una tecnología de red en la que se conectan los dispositivos a una red privada hacia otro servidor por medio de internet. Permite una conexión segura y encriptada. Proporciona un aislamiento en la red externa hacia la interna.</p>
+<p style="text-align: center;"><a href="https://pixabay.com/es/illustrations/vpn-de-seguridad-para-el-hogar-4079772/" target="_blank" class="author" rel="noopener">StefanCoders</a><span>. </span><span class="title"><em>VPN</em></span><span> </span><span class="license"><span class="sep">(</span><span class="custom-license">Pixabay License</span><span class="sep">)</span></span></p>
+<h2>Sistemas de detección y/o prevención de intrusión (IDS/IPS)</h2>
+<p style="text-align: justify;">Este tipo de herramientas (software / hardware) que se estudiaron en la <strong>'Unidad de trabajo Fortificación de la red corporativa: IDS-IPS</strong>', se encargan de monitorizar el tráfico de red para detectar (IDS) y proteger (IPS) la infraestructura tecnológica de las organizaciones. En general son capaces de generar alertas de seguridad cuando detectan un posible ataque, registrar los eventos y bloquear el ataque.</p>
+<p style="text-align: justify;"><strong>INCIBE</strong><span>. </span><a href="https://www.incibe.es/protege-tu-empresa/blog/son-y-sirven-los-siem-ids-e-ips" target="_blank" rel="noopener">¿Qué son y para que sirven los IDS e IPS?</a></p>
+<h2>Honeypots</h2>
+<p style="text-align: justify;">Sistemas trampa o señuelo, son herramientas (software / hardware) que simulan ser equipos vulnerables con el objetivo de atraer ataques sin ningún riesgo, para registrar la actividad y analizarla, bien en tiempo real para generar alertas, o bien posteriormente para aprender que tipos de ataques que se sufren, para mejorar la seguridad de la organización y evitar que vuelvan a producirse ataques similares.</p>
+<p style="text-align: justify;">En sus inicios fueron desarrollados para simular entornos de red básicos (TI), poco a poco se han ido ampliando y hoy en día existen de todo tipo, incluso para redes industriales (TO). Se pueden implementar de manera individual o de forma conjunta, como una red de Honeypots que pueden llegar a simular entornos complejos y completos, estas redes reciben el nombre de Honeynets y son una herramienta fundamental para recabar información sobre los tipos de ataques que reciben las organizaciones.</p>
+<p style="text-align: justify;">En el siguiente<span> </span><a href="https://www.cibernicola.es/esquemas/othp.html" target="_blank" rel="noopener">enlace</a><span> </span>se puede ver ver un diagrama conceptual sobre honeypots, definiciones, usos, tipos y mucha más información.</p>
+<p style="text-align: justify;"><strong>INCIBE</strong>.<span> </span><a href="https://www.incibe-cert.es/blog/honeypot-herramienta-conocer-al-enemigo" target="_blank" rel="noopener">Honeypots, una herramienta para conocer al enemigo</a></p>
+<p style="text-align: justify;"><strong>T-POT: Una colmena de honeypots para atraparlos a todos: </strong><a href="https://www.elladodelmal.com/2017/07/t-pot-una-colmena-de-honeypots-para.html">https://www.elladodelmal.com/2017/07/t-pot-una-colmena-de-honeypots-para.html</a></p>
+<p style="text-align: justify;"><strong>Instalar T-POT en una máquina virtual:</strong> <a href="https://blog.elhacker.net/2021/01/instalar-honeypot-t-pot-en-una-maquina-virtual-tpotce-cowrie-docker-dionea.html">https://blog.elhacker.net/2021/01/instalar-honeypot-t-pot-en-una-maquina-virtual-tpotce-cowrie-docker-dionea.html</a></p>
+<p style="text-align: justify;">Algunos ejemplos de Honeypots industriales:<span> </span><a href="https://www.honeynet.org/2015/09/09/gas-tank-monitoring-system-honeypot/" target="_blank" rel="noopener">Gask Tank</a><span> </span>y<span> </span><a href="https://revista.seguridad.unam.mx/numero29/conpot-honeypot-de-sistemas-de-control-industrial" target="_blank" rel="noopener">ConPot</a></p>
+<h2>Sistemas anti-DDoS</h2>
+<p style="text-align: justify;"><span>Previenen o mitigan los llamados ataques de denegación de servicio, incluyendo los ataques distribuidos. Estos sistemas aprenden a modelar el comportamiento normal del tráfico, estableciendo unos puntos base a los volúmenes de dicho tráfico.</span></p>
+<h2>Pasarelas antivirus y anti spam</h2>
+<p style="text-align: justify;"><span>Se encargan del análisis y monitorización de archivos a través de firmas de virus. Puede tener otras características más avanzadas (endpoint avanzado) como se estudió en la '<strong>Unidad de trabajo Fortificación de equipos: Configuración de los sistemas informáticos</strong>' para filtrar el tráfico, control de contenidos web, etcétera. También se pueden implementar en servicios de correo electrónico como filtro anti-spam.</span></p>
+</div>
+<p>En los siguientes enlaces, tienes una descripción más teórica.</p>
+<ul>
+<li><a href="http://www.criptored.upm.es/intypedia/video.php?id=introduccion-seguridad-perimetral&amp;lang=es" target="_blank" rel="noopener">Intypedia. Lección 5. Seguridad Perimetral.</a><br />Índice de escenas:
+<ul>
+<li><strong><a href="https://www.youtube.com/watch?t=77&amp;v=sxg1nq17xj4&amp;feature=youtu.be" target="_blank" rel="noopener">(01:17) Escena 1. </a></strong>Fundamentos de la seguridad perimetral. Introducción a los cortafuegos.</li>
+<li><a href="https://www.youtube.com/watch?t=313&amp;v=sxg1nq17xj4&amp;feature=youtu.be" target="_blank" rel="noopener"><strong>(05:13) Escena 2</strong>.</a> Sistemas de detección de intrusos. IDS y Honeypots.</li>
+<li><a href="https://www.youtube.com/watch?t=582&amp;v=sxg1nq17xj4&amp;feature=youtu.be" target="_blank" rel="noopener"><strong>(09:42) Escena 3.</strong></a> Tráfico en la Red. Antivirus, antispam y VPN.</li>
+<li><a href="https://www.youtube.com/watch?t=686&amp;v=sxg1nq17xj4&amp;feature=youtu.be" target="_blank" rel="noopener"><strong>(11:26) Escena 4.</strong></a> Gestión unificada de amenazas. Conclusiones</li>
+</ul>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objetivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_elementos_de_arquitectura_segura.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

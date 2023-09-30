@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.1 Instalación de GNS3 | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-64"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_redes_virtuales_vlans.html" class="current-page-parent daddy">6. Redes virtuales (VLANs)</a>
+   <ul>
+      <li class="current-page-parent"><a href="61_introduccin_a_gns3.html" class="current-page-parent daddy">6.1 Introducción a GNS3</a>
+      <ul>
+         <li id="active"><a href="611_instalacin_de_gns3.html" class="active no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="61_introduccin_a_gns3.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1.1 Instalación de GNS3</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id105">
+<div class="iDevice emphasis0" >
+<div id="ta105_114_2" class="block iDevice_content">
+<div class="exe-text"><p align="justify" style="text-align: justify;">Para instalar <strong>GNS3</strong>, hay que acceder a la <a href="https://www.gns3.com/" target="_blank" rel="noopener">página oficial</a> y pulsar en <strong>Free Download</strong>.</p>
+<div class="cuadro-nota-centro-new">
+<p>Si se quiere descargar para <strong>Windows</strong> o <strong>Mac</strong> hay que registrarse. </p>
+</div>
+<table border="0" style="height: 373px; width: 100%;">
+<tbody>
+<tr style="height: 356px;">
+<td style="width: 50%; text-align: center; height: 356px;"><img src="gns3-01.png" alt="" width="1002" height="704" /></td>
+<td style="width: 50%; text-align: center; height: 356px;"><img src="gns3-03.png" alt="" width="1006" height="694" /></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 50%; height: 17px; text-align: center;" colspan="2"><em><span style="font-size: 12pt;"><strong>Figura 4.</strong> Descarga de GNS3.</span></em></td>
+</tr>
+</tbody>
+</table>
+<p align="justify" style="text-align: justify;">Para este caso de ejemplo, se accede a la Guía de instalación para Linux, ya que el equipo donde se instalará es <strong>Ubuntu Desktop 20.04.3 LTS</strong>.</p>
+<p align="justify" style="text-align: center;"><img src="Escenario-gns3.png" alt="" width="704" height="484" /></p>
+<p align="justify" style="text-align: center;"><em><strong>Figura 1.</strong> Equipo Ubuntu Desktop 20.04.3 LTS donde se instalará GNS3.</em></p>
+<p align="justify" style="text-align: justify;">Esta guía, proporciona todos los pasos para su instalación tanto en <strong>Ubuntu</strong> como en <strong>Debian</strong>.</p>
+<p align="justify" style="text-align: center;"><img src="gns3-04.png" alt="" width="752" height="487" /></p>
+<p align="justify" style="text-align: center;"><em><strong>Figura 2.</strong> Guía de instalación de GNS3.</em></p>
+<p align="justify">Los pasos a seguir para su instalación son los siguientes:</p>
+<p align="justify"><strong>Paso 1.</strong> Introducimos los respositorio de gns3 mediante ppa, a continuación se realiza la actualización de los repositorios y para finalizar, se instala el paquete gui y server de gns3.</p>
+<pre><span style="font-size: 12pt;"><strong>root@goofy:/#</strong>add-apt-repository ppa:gns3/ppa<strong><br />root@goofy:/#</strong>apt update <strong><br />root@goofy:/#</strong>apt install gns3-gui gns3-server</span></pre>
+<p style="text-align: center;"><span><img src="gns3-06.png" alt="" width="798" height="237" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 3.</strong> Repositorio gns3 mediante ppa.</em></span></p>
+<p align="justify" style="text-align: justify;">Durante la instalación de <strong>gns3</strong>, el asistente realiza una serie de preguntas para realizar unas configuraciones iniciales.</p>
+<div class="exe-fx exe-tabs">
+<h2><strong>1ª pregunta</strong></h2>
+<p style="text-align: justify;">Nos dice que hay que instalar/configurar <a href="https://github.com/GNS3/ubridge" target="_blank" rel="noopener">Ubridge</a> que es una aplicación simple para crear puentes de usuario entre varias tecnologías. Actualmente se admite el puente entre túneles UDP, Ethernet e interfaces TAP. La captura de paquetes también es compatible.</p>
+<p style="text-align: justify;">A la pregunta de si se desea que los no <strong>superusuarios</strong> puedan ejecutar gns3, respondemos que '<strong>sí</strong>'.</p>
+<p style="text-align: center;"><img src="gns3-07.png" alt="" width="979" height="448" /></p>
+<h2>2ª pregunta</h2>
+<p>A la pregunta de si se desea que los no <strong>superusuarios</strong> puedan capturar paquetes para hacer las pruebas, respondemos que '<strong>sí</strong>'.</p>
+<p style="text-align: center;"><img src="gns3-08.png" alt="" width="717" height="375" /></p>
+</div>
+<p align="justify"><strong>Paso 2.</strong> A continuación, para instalar el paquete de <strong>iou</strong> y dado que es de 32 bits, hay que configurar mediante dpkg para que permita instalar paquetes de 32 bits.</p>
+<pre><span style="font-size: 12pt;"><strong>root@goofy:/#</strong>dpkg --add-architecture i386<strong><br />root@goofy:/#</strong>apt update <strong><br />root@goofy:/#</strong>apt install gns3-iou</span></pre>
+<p align="justify" style="text-align: center;"><img src="gns309.png" alt="" width="985" height="520" /></p>
+<p align="justify" style="text-align: center;"><span><em><strong>Figura 4.</strong> Instalación del paquete gns3-iou.</em></span></p>
+<p align="justify"><strong>Paso 3.</strong> Como se ha indicado anteriormente, <strong>gns3</strong> no simula sino que emula y para ello se nutre de diferentes vertientes, para este caso, se van a tener ciertos repositorios (elementos de red) que van a ir sobre docker y para ello, hay que instalar unas serie de dependencias que necesita.</p>
+<pre><span style="font-size: 12pt;"><strong>root@goofy:/#</strong>apt-get install apt-transport-https ca-certificates curl software-properties-common</span></pre>
+<p align="justify" style="text-align: center;"><img src="gns3-10.png" alt="" width="890" height="296" /></p>
+<p align="justify" style="text-align: center;"><span><em><strong>Figura 5.</strong> Dependencias de docker.</em></span></p>
+<p align="justify">A continuación hay que instalar la key.</p>
+<pre><span style="font-size: 12pt;"><strong>root@goofy:/#</strong>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -</span></pre>
+<p align="justify" style="text-align: center;"><img src="gns3-11.png" alt="" width="782" height="68" /></p>
+<p align="justify" style="text-align: center;"><span><em><strong>Figura 6.</strong> Instalar la key.</em></span></p>
+<p align="justify">Y finalmente, el repositorio.</p>
+<pre><span style="font-size: 12pt;"><strong>root@goofy:/#</strong>add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"</span></pre>
+<p align="justify" style="text-align: center;"><img src="gns3-12.png" alt="" width="1070" height="207" /></p>
+<p align="justify" style="text-align: center;"><span><em><strong>Figura 7.</strong> Instalar el repositorio.</em></span></p>
+<p align="justify"><strong>Paso 4.</strong> A continuación, hay que actualizar nuestro repositorio local y luego, instalar <strong>docker-ce</strong> que es el <strong>Docker Community</strong>. También está el Docker Enterprise pero es de pago.</p>
+<pre><span style="font-size: 12pt;"><strong>root@goofy:/#</strong>apt update<br /><strong>root@goofy:/#</strong>apt install docker-ce<br /></span></pre>
+<p align="justify" style="text-align: center;"><img src="gns3-13.png" alt="" width="1062" height="287" /></p>
+<p align="justify" style="text-align: center;"><span><em><strong>Figura 8.</strong> Docker Community.</em></span></p>
+<p align="justify" style="text-align: justify;"><strong>Paso 5.</strong> En este momento, hay que realizar unas modificaciones sobre el usuario jcrequena (usuario que utilizará gns3) para agregarlo a los grupos <span style="font-size: 12pt;">ubridge, libvirt, kvm, wireshark y docker.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@goofy:/#</strong>usermod -aG ubridge jcrequena<strong><br />root@goofy:/#</strong>usermod -aG libvirt jcrequena<br /><strong>root@goofy:/#</strong>usermod -aG kvm jcrequena<br /><strong>root@goofy:/#</strong>usermod -aG wireshark jcrequena<br /><strong>root@goofy:/#</strong>usermod -aG docker jcrequena</span></pre>
+<p align="justify" style="text-align: center;"><img src="gns3-14.png" alt="" width="442" height="113" /></p>
+<p align="justify" style="text-align: center;"><span><em><strong>Figura 9.</strong> Agregar el usuario a los grupos.</em></span></p>
+<div class="cuadro-importante-centro">
+<p style="text-align: justify;">Antes de <strong>ejecutar gns3</strong>, hay que cerrar la sesión actual o reiniciar el equipo. A continuación, una vez se inicia la sesión de nuevo, hay que ejecutar gns3 en la consola para que arranque el sistema gns3.</p>
+</div>
+<h3 align="justify" style="text-align: justify;">Referencias</h3>
+<ul>
+<li align="justify" style="text-align: justify;"><a href="https://www.studocu.com/es-mx/ document/instituto- politecnico-nacional/redes/ manual-gns3/33482489" target="_blank" rel="noopener">https://www.studocu.com/es-mx/ document/instituto- politecnico-nacional/redes/ manual-gns3/33482489</a></li>
+<li align="justify" style="text-align: justify;"><a href="https://docs.gns3.com/docs/" target="_blank" rel="noopener">https://docs.gns3.com/docs/</a></li>
+<li align="justify" style="text-align: justify;"><a href="https://docs.gns3.com/docs/ using-gns3/beginners/the-gns3- gui" target="_blank" rel="noopener">https://docs.gns3.com/docs/ using-gns3/beginners/the-gns3- gui</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="61_introduccin_a_gns3.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.5 Fortificación de SSH | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-60"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas_y_entorno_de_trabajo.html" class="no-ch">2.4.1 Contraseñas y entorno de trabajo</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="current-page-parent daddy">3. Securización de los sistemas de administración remota</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_secureshell.html" class="current-page-parent daddy">3.1 SecureShell</a>
+      <ul>
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li id="active"><a href="315_fortificacin_de_ssh.html" class="active no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul class="other-section">
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="521_consulta_de_actualizaciones_en_ps.html" class="no-ch">5.2.1 Consulta de actualizaciones en PS</a></li>
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_4_instalacin_de_graylog.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.5 Fortificación de SSH</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id91">
+<div class="iDevice emphasis0">
+<div id="ta91_85" class="block iDevice_content">
+<h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">Los servidores más utilizados son los siguientes:</p>
+<ul style="text-align: justify;">
+<li>Servidores SSH de ámbito general:<span> </span><a href="https://www.openssh.com/" target="_blank" rel="noopener">OpenSSH.</a></li>
+<li>Servidores SSH para sistemas embebidos:<span> </span><a href="https://github.com/mkj/dropbear/" target="_blank" rel="noopener">Dropbear SSH (GitHub).</a></li>
+</ul>
+<h3 style="text-align: justify;">2. Acciones a realizar</h3>
+<p style="text-align: justify;">Es importante y necesario realizar una serie de acciones para fortificar este sistema de acceso remoto. Para ello, en los siguientes apartados, se describen una serie de acciones a realizar.</p>
+<h4 style="text-align: justify;"><strong>2.1 Deshabilitar</strong></h4>
+<p><span style="color: #000000;"><strong>1. El servidor SSH</strong></span><span> </span>en portátiles y otros clientes.</p>
+<p><strong style="color: #333333; font-size: 1em;">2. Otros protocolos no seguros</strong><span style="color: #333333; font-size: 1em;">. Algunos de estos servicios incluyen:</span></p>
+<ul>
+<li style="text-align: justify;">telnet</li>
+<li style="text-align: justify;">rsh</li>
+<li style="text-align: justify;">rlogin</li>
+<li style="text-align: justify;">ftpd</li>
+</ul>
+<p style="text-align: justify;"><span style="color: #000000;"><strong>3. La autenticación basada en host.</strong> Hay que editar el <span>fichero de configuración</span><strong> sshd_config </strong><span>(que se encuentra en /etc/ssh)</span> y el parámetro <strong>HostbasedAuthentication</strong> se define con <strong>no.</strong></span><span style="color: #000000;"></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><img src="fortificacion-ssh-01.png" alt="" width="725" height="189" /></span></p>
+<p style="text-align: justify;"><strong style="color: #333333; font-size: 1em; text-align: left;">4. El inicio de sesión con root. </strong>Se tiene que<span> </span><em><strong>deshabilitar</strong></em><span> </span>el<span> </span><em>inicio de sesión con root</em>. Para ello, hay que acceder al sistema con otro usuario que pueda elevar privilegios y revisar la configuración de<strong><span> </span>/etc/sudoers</strong>.</p>
+<p style="text-align: center;"><img src="fortificacion-ssh-02.png" alt="" width="728" height="446" /></p>
+<p style="text-align: justify;"><span>Hay que editar el fichero de configuración <strong>sshd_config,</strong> y configurar los parámetros siguientes de esta manera:</span></p>
+<pre><span style="font-size: 12pt;">PermitRootLogin no</span><br /><span style="font-size: 12pt;">ChallengeResponseAuthentication no</span><br /><span style="font-size: 12pt;">PasswordAuthentication no</span></pre>
+<p style="text-align: center;"><strong><img src="sshd_config.png" alt="" width="651" height="462" /></strong></p>
+<p style="text-align: justify;"><strong>5. El inicio de sesión mediante contraseña</strong></p>
+<p style="text-align: justify;"><span>Hay que editar el fichero de configuración <strong>sshd_config</strong> los parámetros <strong>AuthenticationMethods </strong>y <strong>PubkeyAuthentication. </strong>Los valores son los siguientes.</span></p>
+<pre><span style="font-size: 12pt;">AuthenticationMethods publickey</span><br /><span style="font-size: 12pt;">PubkeyAuthentication yes</span></pre>
+<p style="text-align: justify;"><strong>6. Contraseñas vacías</strong></p>
+<p style="text-align: justify;"><span>Hay que editar el fichero de configuración <strong>sshd_config</strong>, y el parámetro <strong>PermitEmptyPasswords</strong> se configura de la siguiente manera.</span></p>
+<pre><span style="font-size: 12pt;">PermitEmptyPasswords no</span></pre>
+<h4 style="text-align: justify;"><strong>7. Redireccionamiento de puertos</strong></h4>
+<p style="text-align: justify;"><span>Hay que editar el fichero de configuración <strong>sshd_config</strong>, y configurar los siguientes parámetros:</span></p>
+<pre><span style="font-size: 12pt;">AllowTcpForwarding no</span><br /><span style="font-size: 12pt;">AllowStreamLocalForwarding no</span><br /><span style="font-size: 12pt;">GatewayPorts no</span><br /><span style="font-size: 12pt;">PermitTunnel no</span></pre>
+<div class="cuadro-nota-centro-new" style="text-align: justify;">
+<p style="text-align: justify;">Puede resultar de utilidad en algunos casos, pero en otros tener consecuencias nefastas (ejemplo:<span> </span><a href="https://mundo-hackers.weebly.com/tuacutenel-inverso-ssh.html" target="_blank" rel="noopener">redireccionamiento SSH inverso.</a></p>
+</div>
+<h4 style="text-align: justify;"><strong>2.2 Comprobar</strong></h4>
+<ul style="text-align: justify;">
+<li><span style="font-size: 12pt;">Que estén deshabilitados los ficheros<strong> .rhosts</strong></span></li>
+<li><span style="font-size: 12pt;">Fichero <strong>sshd_config</strong> --&gt; parámetro <strong>IgnoreRhosts</strong> yes</span></li>
+</ul>
+<p style="text-align: center;"><img src="fortificacion-ssh-03.png" alt="" width="636" height="226" /></p>
+<h4 style="text-align: justify;"><strong>2.3 Iniciar sesión</strong></h4>
+<p style="text-align: justify;">Inicia sesión mediante clave pública.</p>
+<pre><span><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$</strong>ssh-keygen -t key_type -b bits -C "comentario"</span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$</strong>ssh-copy-id -i /directorio/fichero_clave_publica user@host</span><br /></span></pre>
+<p style="text-align: justify;"><span>Hay que editar el fichero de configuración <strong>sshd_config</strong>, y añadir al parámetro <strong>PubkeyAuthentication </strong>la opción <strong>yes</strong>.</span></p>
+<p style="text-align: center;"><img src="fortificacion-ssh-04.png" alt="" width="724" height="188" /></p>
+<h4 style="text-align: justify;"><strong>2.4 Utilizar contraseñas seguras</strong></h4>
+<p style="text-align: justify;">Hay que utilizar contraseñas seguras para<span> </span><strong>usuarios del sistema</strong><span> </span>y también para<span> </span><strong>passphrase</strong><span> </span>de las claves privadas</p>
+<ul style="text-align: justify;">
+<li><a href="https://manpages.debian.org/testing/makepasswd/makepasswd.1.en.html" target="_blank" rel="noopener">makepasswd</a></li>
+<li><a href="https://linux.die.net/man/1/mkpasswd" target="_blank" rel="noopener">mkpasswd</a> <a href="https://linux.die.net/man/1/pwgen" target="_blank" rel="noopener"></a></li>
+<li><a href="https://linux.die.net/man/1/pwgen" target="_blank" rel="noopener">pwgen</a><span> </span>genera contaseñas pronunciables.</li>
+</ul>
+<h4 style="text-align: justify;"><strong>2.5 Limitar el acceso</strong></h4>
+<p style="text-align: justify;">Es necesario limitar el acceso por ssh a ciertos usuarios.</p>
+<p style="text-align: justify;"><span>Hay que editar el fichero de configuración <strong>sshd_config</strong>, y el parámetro <strong>AllowUsers</strong> se configura de la siguiente manera.</span></p>
+<pre><span style="font-size: 12pt;">AllowUsers user-01 user-02</span></pre>
+<p style="text-align: justify;">Hay otra alternativa de realizar lo mismo, <span> hay que editar el fichero de configuración</span><span> <strong>sshd_config</strong> y el parámetro <strong>DenyUsers</strong> se configura de la siguiente manera (es lo inverso):</span></p>
+<pre><span style="font-size: 12pt;">DenyUsers root user-03 user-04</span></pre>
+<p style="text-align: justify;">También se puede realizar con grupos en lugar de usuarios:</p>
+<pre><span><span style="font-size: 12pt;">Directivas</span><br /><span style="font-size: 12pt;">AllowGroups y DenyGroups</span><br /></span></pre>
+<h4 style="text-align: justify;"><strong>2.6 Utilizar TCP Wrappers</strong></h4>
+<p style="text-align: justify;">Un <a href="https://juncotic.com/tcp-wrappers-se-utilizan-linux/" target="_blank" rel="noopener"><strong>TCP Wrapper</strong></a> es una biblioteca que provee un control de acceso simple y permite la administración de logs estandarizada para aplicaciones que lo soporten, y reciban conexiones de red.</p>
+<p style="text-align: justify;">Aquellas aplicaciones de red que puedan recibir conexiones, como los servicios de red (sshd por ejemplo), si soportan TCP Wrappers, se podrán realizar algunos controles y logs adicionales con las conexiones entrantes.</p>
+<p style="text-align: justify;">En resumen, es un sistema de listas de control de acceso (ACLs) a redes basado en host.</p>
+<p style="text-align: justify;">Hay que editar el fichero de configuración <strong>/etc/hosts.allow</strong><span> </span>y añadir lo siguiente:</p>
+<pre><span style="font-size: 12pt;"># <span>Se permiten a todos los equipos de la subred 192.168.10.0</span><br />sshd : 192.168.10.0/255.255.255.0</span><br /><span style="font-size: 12pt;">ALL : localhost</span></pre>
+<p style="text-align: justify;"><span>Hay que editar el fichero de configuración </span><strong>/etc/hosts.deny</strong> hay añadir lo siguiente:</p>
+<pre><span style="font-size: 12pt;">ALL: ALL</span></pre>
+<h4 style="text-align: justify;"><strong>2.7 Utilizar un puerto NO estándar - Port-knocking</strong></h4>
+<p style="text-align: justify;"><span>El <strong>port-knocking</strong> está considerado como </span><a href="https://en.wikipedia.org/wiki/Security_through_obscurity" target="_blank" rel="noopener">seguridad por ocultación</a><span>. La mejor opción es: Single Packet Authoritation (SPA) -</span><a href="http://www.cipherdyne.org/fwknop/" target="_blank" rel="noopener"> fwknop (Web)</a></p>
+<p style="text-align: justify;">Es interesante <strong>utilizar un puerto no estándar</strong> y atender en una sola interfaz de red. <span>Hay que editar el fichero de configuración <strong>sshd_config </strong>y añadir lo siguiente:</span></p>
+<pre><span style="font-size: 12pt;">Port 32</span><br /><span style="font-size: 12pt;">ListenAddress 192.168.10.5</span></pre>
+<p style="text-align: justify;">Puedes consultar el listado de puertos bien conocidos<span> </span><a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml" target="_blank" rel="noopener">aquí</a></p>
+<div class="cuadro-nota-centro-new" style="text-align: justify;">
+<p>Utilizar un puerto diferente del 22 puede ser considerado<strong><span style="color: #000000;"> <a href="https://en.wikipedia.org/wiki/Security_through_obscurity" target="_blank" rel="noopener" style="color: #000000;">seguridad por ocultación</a>.</span></strong></p>
+</div>
+<h4 style="text-align: justify;"><strong>2.8 Filtrar el puerto de ssh en el Firewall</strong></h4>
+<p style="text-align: justify;"><strong>Escenario</strong>: La red de trabajo es la 192.168.10.0/24.</p>
+<p style="text-align: justify;">En el firewall de la red, hay que configurar que todas las conexiones que no tengan origen en 192.168.10.0/24 no serán aceptadas. Para conseguirlo, en<span> </span><a href="https://es.wikipedia.org/wiki/Uncomplicated_Firewall" target="_blank" rel="noopener">UFW</a><span> </span>en Debian/Ubuntu, hay que ejecutar el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$</strong>sudo ufw allow from 192.168.10.0/24 to any port 22</span></pre>
+<p style="text-align: justify;">Con Reglas Netfilter (iptables), hay que ejecutar el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$</strong>sudo iptables -A INPUT -s 192.168.10.0/24 -m state --state NEW -p tcp --dport 22 -j ACCEPT</span></pre>
+<h4 style="text-align: justify;"><strong>2.9 Definir inactividad</strong></h4>
+<p style="text-align: justify;">Otra de las cosas que hay que realizar, es, definir un intervalo de inactividad. Para ello, hay que editar el <span>fichero de configuración </span><span><strong>sshd_config</strong> y añadir lo siguiente:</span></p>
+<pre><span style="font-size: 12pt;">ClientAliveInterval 300</span><br /><span style="font-size: 12pt;">ClientAliveCountMax 0</span></pre>
+<h4 style="text-align: justify;"><strong>2.10 Limitar velocidad entrante</strong></h4>
+<p style="text-align: justify;">En realidad, lo que se desea realizar es limitar el número de conexiones por intervalo de tiempo. A continuación, se detallan los scripts a implementar:</p>
+<pre><span style="font-size: 12pt;"><span class="hljs-meta">#!/bin/bash</span>
+inet_if=enps03
+ssh_port=22<br />IPT='/sbin/iptables'
+<span class="hljs-variable">$IPT</span> -I INPUT -p tcp --dport <span class="hljs-variable">${ssh_port}</span> -i <span class="hljs-variable">${inet_if}</span> -m state --state NEW -m recent  --<span class="hljs-built_in">set</span>
+<span class="hljs-variable">$IPT</span> -I INPUT -p tcp --dport <span class="hljs-variable">${ssh_port}</span> -i <span class="hljs-variable">${inet_if}</span> -m state --state NEW -m recent  --update --seconds 60 --hitcount 5 -j DROP</span></pre>
+<pre><span style="font-size: 12pt;"><span class="hljs-meta">#!/bin/bash</span>
+inet_if=enps03
+ssh_port=22<br />IPT='/sbin/iptables'
+<span class="hljs-variable">$IPT</span> -A INPUT  -i <span class="hljs-variable">${inet_if}</span> -p tcp --dport <span class="hljs-variable">${ssh_port}</span> -m state --state NEW -m <span class="hljs-built_in">limit</span> --<span class="hljs-built_in">limit</span> 3/min --limit-burst 3 -j ACCEPT
+<span class="hljs-variable">$IPT</span> -A INPUT  -i <span class="hljs-variable">${inet_if}</span> -p tcp --dport <span class="hljs-variable">${ssh_port}</span> -m state --state ESTABLISHED -j ACCEPT
+<span class="hljs-variable">$IPT</span> -A OUTPUT -o <span class="hljs-variable">${inet_if}</span> -p tcp --sport <span class="hljs-variable">${ssh_port}</span> -m state --state ESTABLISHED -j ACCEPT</span></pre>
+<pre><span style="font-size: 12pt;"><span class="hljs-meta">#!/bin/bash</span>
+inet_if=enps03
+ssh_port=22<br />IPT='/sbin/iptables'
+<span class="hljs-variable">$IPT</span> -A INPUT -i <span class="hljs-variable">${inet_if}</span> -m state --state NEW,ESTABLISHED,RELATED -p tcp --dport 22 -m <span class="hljs-built_in">limit</span> --<span class="hljs-built_in">limit</span> 5/minute --limit-burst 5 -j ACCEPT</span></pre>
+<h4 style="text-align: justify;">2.11 Frustrar los ataques de fuerza bruta</h4>
+<p>Se estudiarán en apartados posteriores:</p>
+<ul>
+<li>DenyHosts (<a href="https://github.com/denyhosts/denyhosts" target="_blank" rel="noopener">GitHub</a>)</li>
+<li>SSHGuard (<a href="https://www.sshguard.net/" target="_blank" rel="noopener">Web</a>) (<a href="https://bitbucket.org/sshguard/sshguard/" target="_blank" rel="noopener">Bitbucket</a>). Apartado 3.1.5.1.</li>
+<li>Fail2Ban (<a href="https://github.com/fail2ban/fail2ban" target="_blank" rel="noopener">GitHub</a>). Apartado 3.3.</li>
+</ul>
+<h4 style="text-align: justify;">2.12 Limitar el máximo de intentos de autenticación</h4>
+<p style="text-align: justify;"><span>Hay que editar el fichero de configuración <strong>sshd_config</strong> y añadir lo siguiente, donde 3 es el número máximo de intentos que se propone como ejemplo:</span></p>
+<pre><span style="font-size: 12pt;">MaxAuthTries 3</span></pre>
+<h4 style="text-align: justify;">2.13 Configurar un banner de SSH personalizado</h4>
+<p style="text-align: justify;"><span>Hay que editar el fichero de configuración <strong>sshd_config</strong> y que añadir lo siguiente:</span></p>
+<pre><span style="font-size: 12pt;"><span>Banner /etc/ssh_banner</span></span><span style="font-size: 12pt;"></span></pre>
+<p>Hay que crear un fichero en /etc con el nombre ssh_banner con el contenido que se desea, ejemplo:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$</strong>sudo<strong> </strong>nano /etc/ssh_banner</span></pre>
+<p style="text-align: center;"><img src="crear-ssh-banner.png" alt="" width="733" height="343" /></p>
+<h4 style="text-align: justify;">2.14 Mantener los usuarios dentro de su $HOME para SFTP</h4>
+<p style="text-align: justify;">Hay que editar el <span>fichero de configuración <strong>sshd_config </strong>y que añadir lo siguiente suponiendo que se tiene el usuario user01.</span></p>
+<pre><span style="font-size: 12pt;">Match Group group01</span><br /><span style="font-size: 12pt;">    ChrootDirectory /home</span><br /><span style="font-size: 12pt;">    AllowTCPForwarding no</span><br /><span style="font-size: 12pt;">    X11Forwarding no</span><br /><span style="font-size: 12pt;">    ForceCommand /usr/lib/openssh/sftp-server</span></pre>
+<p style="text-align: justify;">Se utilizan la directiva Match en un grupo en lugar de un usuario, de esta forma, se aplica a todos los usuarios que pertenezcan a ese grupo.</p>
+<p style="text-align: justify;"><a href="https://www.debian.org/doc/manuals/securing-debian-manual/chroot-ssh-env.es.html" target="_blank" rel="noopener">Chroot environment for SSH. Manual de seguridad de Debian</a></p>
+<h4 style="text-align: justify;">2.15 Mantener SSH actualizado</h4>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$</strong>sudo<strong> </strong>apt update<br /><strong>jc@jc-Latitude-E6430:/$</strong>sudo<strong> </strong>apt upgrade<br /></span></pre>
+<h3 style="text-align: justify;">3. Consejos</h3>
+<h4>3.1 Consejos de Mozilla</h4>
+<p>Accede a esta url: <a href="https://infosec.mozilla.org/guidelines/openssh">https://infosec.mozilla.org/guidelines/openssh</a></p>
+<h4>3.2 Consejos de ssh-audit</h4>
+<p>Para Ubuntu Server 20.04 LTS: <a href="https://www.sshaudit.com/hardening_guides.html#ubuntu_20_04_lts" style="font-size: 0.95em;">https://www.sshaudit.com/hardening_guides.html#ubuntu_20_04_lts</a></p>
+<ul>
+<li>Regenera las claves RSA y ED25519.</li>
+<li>Borra los grupos Diffie-Hellman pequeños.</li>
+<li>Habilita las claves RSA y ED25519.</li>
+<li>Restringe los algoritmos de intercambio de claves, cifrado y MAC (Códigos de autenticación de mensajes) admitidos.</li>
+</ul>
+<h3 style="text-align: justify;">4. Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://maniqui.ru/computadoras-y-software/administracin-y-redes-profesionales/hackeo-tico/232-asegure-los-rhosts-y-archivos-hosts-equiv-para.html" target="_blank" rel="noopener">[Asegurar los .rhosts y archivos hosts.equiv para evitar hacks linux]</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_4_instalacin_de_graylog.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

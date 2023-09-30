@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1 Implementación del MyDLP en un sistema | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-137"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul class="other-section">
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="current-page-parent daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul>
+      <li id="active"><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="active no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_seguridad_del_correo_electrnico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.1 Implementación del MyDLP en un sistema</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id181">
+<div class="iDevice emphasis0" >
+<div id="ta181_181_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Tipos de implementación de MyDLP</h3>
+<p style="text-align: justify;">Hay <strong>dos maneras de implementar una herramienta DLP:</strong></p>
+<ol>
+<li style="text-align: justify;">Una de ellas es el modo <strong>span</strong>, este es un sniffer en modo promiscuo que revisa el tráfico que pasa por la red.</li>
+<li style="text-align: justify;">El otro modo es <strong>inline</strong>, donde todo el tráfico pasa de forma física por la herramienta DLP; a diferencia del modo span que sólo detecta, pero no bloquea la pérdida de información, el modo inline por su implementación este será capaz de detener y bloquear la fuga de información.</li>
+</ol>
+<p style="text-align: center;"><img src="Tipos-Implementacion-DLP.png" width="767" height="426" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Modos de implementación.</em><em></em></p>
+<h3 style="text-align: justify;">2. Objetivo de la propuesta de implementación</h3>
+<p style="text-align: justify;">En este capítulo, se diseña una propuesta para implementar una herramienta Data Loss Prevention (DLP), siendo esta un mecanismo para la detección, supervisión y protección de la información sensible donde quiera que esta se almacene o se utilice. Actualmente la <strong>organización ciber.local</strong> no cuenta con un mecanismo similar, por lo que están expuestos a acciones tan sencillas como que algún empleado copie datos confidenciales en un pen drive o similar. Se expone una propuesta que se plantea para prevenir la fuga de datos en la organización; entre las principales bondades del sistema se pueden describir:</p>
+<ul>
+<li style="text-align: justify;">Prevenir la fuga o pérdida de activos de información; especialmente datos privilegiados.</li>
+<li style="text-align: justify;">Datos sensible en el tramo final de la red; aún si los usuarios no están conectados en una red corporativa.</li>
+<li style="text-align: justify;">Nos decantamos por una herramienta de software libre más robusta que existen actualmente en el mercado.</li>
+</ul>
+<p style="text-align: justify;"><strong>Recordamos que los DLP</strong> son aquellas tecnologías o herramientas que tienen como función prevenir la pérdida de datos basados en la inspección de contenidos con un análisis textual de los datos.</p>
+<p style="text-align: justify;"><strong>Ejemplo:</strong> en reposo, datos en la nube, datos en movimiento en la red y en dispositivos (Gartner, 2017). También, Reed (2017) señala que los productos DLP integrados ofrecen un conjunto de características como son: pasarelas web, pasarelas de correo electrónico, firewalls de redes, IDS, cifrado de correos electrónicos, gestión de contenidos, herramientas de clasificación de datos,  herramientas de descubrimiento de datos y agentes de seguridad de acceso en la nube.</p>
+<h3 style="text-align: justify;">3.  Diseño de las políticas de seguridad</h3>
+<p style="text-align: justify;">Según <strong>Castrillón &amp; Lezcano (2013),</strong> las políticas se deberían establecer en la herramienta Data Loss Prevención (DLP) para realizar una correcta detección del movimiento de la información confidencial en las instituciones.</p>
+<p style="text-align: justify;">En nuestro contexto las política serán:</p>
+<ul>
+<li style="text-align: justify;"><strong>Políticas para web:</strong> este tipo de políticas se encargan de monitorizar el tráfico en la web para determinar la información que viaja por esos protocolos.</li>
+<li style="text-align: justify;"><strong>Políticas para correos electrónicos:</strong> Este tipo de políticas trabajan sobre los protocolos POP3, SMTP e IMAP para ver qué información cruza por dichos protocolos.</li>
+<li style="text-align: justify;"><strong>Políticas de almacenamiento extraíbles:</strong> Este tipo de políticas trabaja sobre los datos que son transferidos a los dispositivos extraíbles como USB y discos duros.</li>
+<li style="text-align: justify;"><strong>Políticas de almacenamiento cifrado:</strong> Este tipo de políticas trabajan sobre los datos cifrados que son transferidos a los dispositivos extraíbles como USB y discos duros.</li>
+<li style="text-align: justify;"><strong>Políticas de almacenamiento en entradas extraíbles:</strong> Este tipo de políticas se utilizan para el control de la información que es copiada a dispositivos extraíbles. </li>
+<li style="text-align: justify;"><strong>Políticas de impresoras:</strong> Este tipo de políticas controlan que la información no sea impresa sin la autorización correspondiente.</li>
+<li style="text-align: justify;"><strong>Políticas para captura de pantallas:</strong> Este tipo de políticas controlan el uso de las capturas de pantalla cuando se esté usando con alguna información sensible en primer plano.</li>
+<li style="text-align: justify;"><strong>Política API:</strong> Esta regla es una característica única de la herramienta MyDLP.</li>
+</ul>
+<p style="text-align: center;"><img src="diseno-pliticas.png" alt="" width="784" height="174" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Diseño de políticas.</em></p>
+<h3 style="text-align: justify;">4.  Reglas generales para la implementación en el DLP</h3>
+<p>Par el contexto de estudio, se hace necesario seguir ciertas reglas establecidas para el mismo. A continuación, se describen:</p>
+<ul>
+<li>Restringir el uso de equipos y medios de almacenamiento no autorizados por la institución.</li>
+<li>Generar y almacenar la información de la institución en los equipos que están debidamente autorizados.</li>
+<li>No guardar información ajena a la institución en los equipos y medios de almacenamiento pertenecientes a la misma.</li>
+<li>El correo electrónico debe ser utilizado para uso exclusivo de trabajo de la organización.</li>
+<li>Determinar la información sensible de la organización por cada departamento o custodio de la misma.</li>
+<li>Bloquear y notificar la transferencia en archivos adjuntos que contenga información sensible por correo electrónico.</li>
+<li>Bloquear y notificar la transferencia en archivos adjuntos comprimidos que contengan información sensible por correo electrónico.</li>
+<li>Bloquear y notificar la transferencia de información sensible que esté en el cuerpo del mensaje del correo electrónico.</li>
+<li>Bloquear y notificar la transferencia de fragmentos de información sensible en el cuerpo del mensaje del correo electrónico.</li>
+<li>Bloquear y notificar la transferencia de fragmentos de información sensible que contenga la cabecera del mensaje en correo electrónico.</li>
+<li>Bloquear y notificar la transferencia de información sensible por medios de almacenamiento extraíbles como DVD, CD, HDD, USB entre otros.</li>
+<li>Bloquear y notificar la transferencia de fragmentos de información sensible por medios de almacenamiento extraíbles como DVD, CD, HDD, USB, entre otros.</li>
+<li>Bloquear y notificar la transferencia de información sensible por medios de protocolos: HTTPS, FTP, NFS, etcétera.</li>
+<li>Bloquear y notificar la transferencia de fragmentos de información sensible por medios de protocolos: HTTPS, FTP, NFS, etcétera.</li>
+<li>Bloquear y notificar la transferencia de información sensible por medio de mensajería instantánea como Teams, Skype, Google Talk, Webex, Zoom, etcétera.</li>
+<li>Configurar para que el generador y su grupo de trabajo puedan leer la información de carácter sensible.</li>
+<li>Bloquear y notificar la transferencia de información sensible por VPN en la red.</li>
+<li>Bloquear y notificar la impresión de información sensible.</li>
+<li>Bloquear y notificar la captura de pantalla de la información sensible. </li>
+<li>Restringir que la información sensible generada en la organización sea cifrada. </li>
+<li>Almacenar y conservar los eventos (logs) para futuros análisis forenses.</li>
+<li>Restringir la instalación y desinstalación de los agentes de control de los equipos informáticos de la institución.</li>
+<li>Definir los perfiles de cada usuario y su área de trabajo para cada empleado, estableciendo permiso y restricciones de actividades.</li>
+</ul>
+<h3 style="text-align: justify;">5.  Componentes de MyDLP</h3>
+<p>Consta de tres componentes:</p>
+<ul>
+<li style="text-align: justify;"><strong>MyDLP Network Server</strong>, este funciona como el centro de administración de la herramienta, su instalación se realiza de preferencia en la distribución Ubuntu/Linux.</li>
+<li style="text-align: justify;"><strong>MyDLP Endopoint</strong>, es el agente de control el que permite detectar y evitar que la información de las organizaciones sea trasladada en cualquier medio existente, se encarga del cumplimiento de las políticas implementadas para erradicar la fuga de información.</li>
+<li style="text-align: justify;"><strong>MyDLP Web UI,</strong> desde este aplicativo web se configura las políticas, agentes de control y todo el proceso para erradicar la fuga de información.</li>
+</ul>
+<h3 style="text-align: justify;">6.  Instalación</h3>
+<h4>6.1 Requisitos</h4>
+<table border="1" style="height: 125px; width: 57.9592%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr style="height: 20px;">
+<td style="width: 24.1496%; height: 20px;"><span style="font-size: 12pt;"><strong>Requisitos</strong></span></td>
+<td style="width: 17.619%; height: 20px;"><span style="font-size: 12pt;"><strong>Servidor</strong></span></td>
+<td style="width: 16.1905%; height: 20px;"><span style="font-size: 12pt;"><strong>Cliente</strong></span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 24.1496%; height: 20px;"><span style="font-size: 12pt;">Procesador</span></td>
+<td style="width: 17.619%; height: 20px;"><span style="font-size: 12pt;">Core i5 3GHz 64 bits</span></td>
+<td style="width: 16.1905%; height: 20px;"><span style="font-size: 12pt;">Core i3 1,6GHz</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 24.1496%; height: 20px;"><span style="font-size: 12pt;">Memoria RAM</span></td>
+<td style="width: 17.619%; height: 20px;"><span style="font-size: 12pt;">8GB</span></td>
+<td style="width: 16.1905%; height: 20px;"><span style="font-size: 12pt;">2GB</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 24.1496%; height: 20px;"><span style="font-size: 12pt;">Sistema operativo </span></td>
+<td style="width: 17.619%; height: 20px;"><span style="font-size: 12pt;">Ubuntu</span></td>
+<td style="width: 16.1905%; height: 20px;"><span style="font-size: 12pt;">Linux, Windows y Mac</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 24.1496%; height: 20px;"><span style="font-size: 12pt;">Almacenamiento</span></td>
+<td style="width: 17.619%; height: 20px;"><span style="font-size: 12pt;">256GB o más</span></td>
+<td style="width: 16.1905%; height: 20px;"><span style="font-size: 12pt;">50GB</span></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 24.1496%; height: 25px;"><span style="font-size: 12pt;">Red</span></td>
+<td style="width: 17.619%; height: 25px;"><span style="font-size: 12pt;"> 100/1000 Mb/s</span></td>
+<td style="width: 16.1905%; height: 25px;"><span style="font-size: 12pt;">10/100/1000 Mb/s</span></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size: 1em; text-align: justify;">Para la instalación de la herramienta MyDLP se puede descargar la ISO desde la </span><a href="https://download.comodo.com/mydlp/iso/latest.html" target="_blank" rel="noopener" style="font-size: 1em; text-align: justify;">página oficial.</a></p>
+<div class="exe-fx exe-tabs">
+<h2>1. Arrancar iso</h2>
+<p>Creamos una nueva máquina virtual con los requisitos del servidor y arrancamos la ISO descargada.</p>
+<p style="text-align: center;"><img src="install-mydlp.png" alt="" width="635" height="477" /></p>
+<h2>2. Selección de idioma</h2>
+<p>Se escoge el idioma español.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="idioma-es.png" width="639" height="547" /></td>
+<td style="width: 50%; text-align: center;"><img src="teclado-es.png" width="638" height="547" /></td>
+</tr>
+</tbody>
+</table>
+<h2>3. Carga de componentes</h2>
+<p>A continuación comienza la carga de componentes.</p>
+<p style="text-align: center;"><img src="carga-componentes.png" alt="" width="641" height="546" /></p>
+<h2>4. Creación de usuarios</h2>
+<p>A continuación, se añade el usuario usado en el aplicativo web y la cuenta.</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="user.png" alt="" width="638" height="549" /></td>
+<td style="width: 50%; text-align: center;"><img src="username-account.png" alt="" width="638" height="549" /></td>
+</tr>
+</tbody>
+</table>
+<h2>5. Creación de contraseña</h2>
+<p style="text-align: justify;">El siguiente paso es añadir la contraseña del usuario. Si el password no cumple con los requisitos de complejidad (contener 8 caracteres y pueden ser mayúsculas, minúsculas y símbolos especiales) nos avisará.</p>
+<p style="text-align: center;"><img src="password.png" alt="" width="639" height="547" /></p>
+<h2>6. Configuración de cifrado</h2>
+<p>En la siguiente pantalla, nos pregunta si se desea cifrar el directorio home. Para este caso de ejemplo, no se cifra.</p>
+<p style="text-align: center;"><img src="cifrado.png" alt="" width="639" height="548" /></p>
+<h2>7. Zona</h2>
+<p>En la siguiente pantalla, nos pregunta si la zona es correcta, para este caso, es Europa/Madrid.</p>
+<p style="text-align: center;"><img src="zona.png" alt="" width="640" height="550" /></p>
+<h2>8. Particionado</h2>
+<p>En la siguiente pantalla, nos pregunta por el particionado. En este apartado se podrá crear un volumen VLM si se desea y particionar como se desee.</p>
+<p style="text-align: center;"><img src="particionado.png" alt="" width="639" height="546" /></p>
+<h2>9. Comienzo de instalación</h2>
+<p>A continuación, comienza el proceso de instalación.</p>
+<p style="text-align: center;"><img src="install-system.png" alt="" width="638" height="545" /></p>
+<h2>10. Configuración de SMTP</h2>
+<p style="text-align: justify;">En la siguiente pantalla, nos pregunta la configuración del servicio smtp. Par este caso de ejemplo, se selecciona '<strong>Internet site</strong>' ya que no se dispone de un servicio propio de correo electrónico instalado sino que se utilizan servicios en la nube.</p>
+<p style="text-align: center;"><img src="smtp-internet.png" alt="" width="639" height="547" /></p>
+<h2>11. </h2>
+<p>Escriba su contenido...</p>
+</div>
+<h3 style="text-align: justify;">7.  Configuración</h3>
+<p style="text-align: justify;">Para realizar la <strong>configuración inicial de MyDlp</strong> hay que abrir una terminal y ejecutar el siguiente comando par modificar el fichero interfaces y configurar el tcp/ip.</p>
+<pre><span style="font-size: 12pt;"><strong>root@mydlp:/# </strong>nano /etc/network/interfaces</span></pre>
+<p style="text-align: justify;">Para este escenario, la red de la organización es la 192.168.1.0/24, por lo que estableceremos una ip estática en esa subred. La configuración es la siguiente:</p>
+<pre><span style="font-size: 12pt;">iface enss3 intec estatic</span><br /><span style="font-size: 12pt;">Address 192.168.0.253</span><br /><span style="font-size: 12pt;">Netmask 255.255.255.0</span><br /><span style="font-size: 12pt;">Network 192.168.1.0</span><br /><span style="font-size: 12pt;">Broadcast 192.168.1.255</span><br /><span style="font-size: 12pt;">Gateway 192.168.1.1</span></pre>
+<p style="text-align: justify;">A continuación se procede a reiniciar el servicio de red con el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>root@mydlp:/# </strong>/etc/init.d/network restart</span></pre>
+<p style="text-align: justify;">El acceso al servidor se realiza desde un equipo cliente de la red usando un navegador web en la siguiente url: <strong>192.168.0.253:3128 </strong>para establecer la configuración.</p>
+<h3 style="text-align: justify;">8. Instalación de Endpoint MyDLP</h3>
+<p style="text-align: justify;">Una vez instalado myDLP, habría que instalar los agentes de MyDLP en los puntos finales de la red o en los tramos fuera de la misma que se desea monitorizar y tener el control de la información que viaja a través de esta.</p>
+<p style="text-align: justify;"></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_seguridad_del_correo_electrnico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

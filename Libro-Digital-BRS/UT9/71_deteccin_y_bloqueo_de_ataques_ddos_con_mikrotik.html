@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7.1 Detección y bloqueo de ataques DDoS con Mikrotik. | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-131"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="7_contramedidas_ddos.html" class="current-page-parent daddy">7. Contramedidas DDoS</a>
+   <ul>
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li id="active"><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="active daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul>
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_1_antiddos_con_fail2ban.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id180">
+<div class="iDevice emphasis0">
+<div id="ta180_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;">Los <strong>ataques DoS</strong>, aunque no suponen una pérdida ni exposición de datos, pueden llegar a representar una gran pérdida económica tanto por la imposibilidad de prestar unos servicios como por la repercusión en la reputación de la empresa.</p>
+<p style="text-align: justify;">Es este capítulo se aborda cómo<strong> reforzar la seguridad perimetral</strong> para tratar de<span> </span><strong>mitigar</strong> los efectos de un<strong> ataque DoS o DDoS </strong>desde Internet a los servidores que se encuentran en la red DMZ.</p>
+<p style="text-align: justify;">En la última parte del capítulo, para comprobar el correcto funcionamiento de las medidas de seguridad que se van a aplicar, será necesario realizar una serie de ataques DoS dirigidos a los servidores.<span> </span></p>
+<h3 style="text-align: justify;"><span>2. Escenario de trabajo</span></h3>
+<p style="text-align: justify;"><span>En la siguiente figura, se tiene el escenario que se utilizará y que es el que se trabajó en el <strong><em>capítulo 6.1</em></strong>. Como se puede observar el esquema se ha simplificado con los equipos necesarios para simular el <strong>ataque DoS.</strong></span></p>
+<p style="text-align: center;"></p>
+<p style="text-align: center;"><a href="Escenario-DoS-Mikrotik.png" target="_blank" rel="noopener"><em><strong><img src="Escenario-DoS-Mikrotik.png" alt="" width="701" height="481" /></strong></em></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Escenario de trabajo.</em></p>
+<p style="text-align: justify;">Por otra parte, hay que utilizar la máquina real (PC Teletrabajo) para comprobar si se ha perdido o no el acceso al servicio y, además, preparar otra máquina virtual como máquina atacante con las siguientes características:</p>
+<ul>
+<li style="text-align: justify;">Kali Linux (o cualquier otra distribución GNU/Linux con escritorio gráfico).</li>
+<li style="text-align: justify;">Adaptador puente configurado por DHCP.</li>
+</ul>
+<h3>3. Ataque DoS</h3>
+<p>Para realizar el ataque DoS, hay que seguir los siguientes pasos estando en un equipo Kali Linux:</p>
+<p><strong>1.</strong> Instalar el paquete <span>slowhttptest sino está disponible.</span></p>
+<p><strong>2.</strong> En el siguiente artículo<span> </span><a href="https://tools.kali.org/stress-testing/slowhttptest" target="_blank" rel="noopener">SlowHTTPTest Package Description</a><span> se describe el funcionamiento de SlowHTTPTest</span>.</p>
+<p><strong>3</strong>. Tomando como guía el comando del ejemplo del artículo, hay que lanzar un<strong> ataque DoS al servidor HTTP</strong>, pero incrementando el número de conexiones a 2000.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>┌──(root💀kali)-[/home/kali]</strong></span><br /><span style="font-size: 12pt;"><strong>└─#</strong> slowhttptest -c 1000 -H -g -o slowhttp -i 10 -r 2000 -t GET -u http://192.168.0.100/index.html -x 24 -p 3</span></pre>
+<p><strong>4.</strong> Una vez se ha lanzado el ataque, mientras dura la ejecución del programa <span>slowhttptest (unos minutos), se pierde el acceso HTTP al servidor.</span></p>
+<p style="text-align: center;"><img src="service-available-NO.png" alt="" width="321" height="179" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Servicio HTTP no disponible.</em></p>
+<p><strong>Ver conexiones</strong></p>
+<p>Para ver las conexiones entre el atacante (192.168.0.19) y la víctima a través de MikroTik, hay que acceder a: <strong>IP --&gt; Firewall --&gt; Connections</strong>.</p>
+<p style="text-align: center;"><img src="connections-Mikrotk.png" alt="" width="1162" height="743" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Visualización de las conexiones en el router.</em></p>
+<p>Otra forma de realizarlo es desde la consola del servidor mediante el comando<span> siguiente:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>ss -t</span></pre>
+<p style="text-align: center;"><span><img src="ss-t-servWeb.png" alt="" width="799" height="599" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 4.</strong> Visualización de las conexiones en el servidor web.</em></span></p>
+<p><span>Para contar el número de conexiones el comando sería el siguiente:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>ss -t | grep ESTAB | wc -l</span></pre>
+<p style="text-align: center;"><img src="ss-t-count.png" alt="" width="441" height="63" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 5.</strong> Cuenta de las conexiones establecidas (las del ataque).</em></span></p>
+<p>Una vez se acaba la ejecución de <strong>SlowHTTPTest</strong>, se crea un archivo html con un informe del ataque. El archivo <strong><span style="font-size: 12pt;"> slowhttp.html</span></strong> muestra información gráfica y textual del test.  Una vez el ataque ha finalizado, se puede observar en la gráfica que el servicio web se ha restablecido (figura 7).</p>
+<table border="0" style="height: 654px; width: 100%;">
+<tbody>
+<tr style="height: 634px;">
+<td style="width: 50%; text-align: center; height: 634px;"><img src="test-http-test.png" alt="" width="404" height="294" /></td>
+<td style="width: 50%; text-align: center; height: 634px;"><img src="informe-httptest.png" alt="" width="904" height="723" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><span><em><strong>Figura 6. </strong></em></span><em>Se informa que se han generado 2 ficheros (csv/html)</em></span></td>
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><span><em><strong>Figura 7. </strong></em></span><em>Fichero slowhttp.html</em></span></td>
+</tr>
+</tbody>
+</table>
+<h3>4. Configuración de MikroTik</h3>
+<p style="text-align: justify;">Una vez se ha comprobado la <strong>vulnerabilidad del sistema frente ataques DoS</strong>, el siguiente paso es fortificar el router para evitar la denegación del servicio web o cualquier otro equipo accesible desde el exterior. </p>
+<p style="text-align: justify;"><span><strong>MikroTik</strong> describe en su wiki el funcionamiento de la </span><a href="https://wiki.mikrotik.com/wiki/Manual:IP/Firewall/Raw" target="_blank" rel="noopener">tabla RAW</a><span> como la que permite omitir o </span><strong>eliminar paquetes de forma selectiva antes de que se produzca el seguimiento de la conexión</strong><span> (connection tracking), de manera que reduce la carga de la CPU significativamente. Es por esto que es una herramienta muy útil para mitigar los ataques de denegación de servicio y es la que se utilizará en este punto.</span></p>
+<p>En el siguiente artículo <a href="https://help.mikrotik.com/docs/pages/viewpage.action?pageId=28606504">SYN/DoS/DDoS Protection</a>, hay unas indicaciones con el funcionamiento, este es el<span> </span><strong>resumen</strong>:</p>
+<ol>
+<li style="text-align: justify;">Cada vez que se detecte una conexión nueva que quiera atravesar el router, se enviará para que sea examinada por una cadena no estándar y, así, determinar si se trata de una ataque DoS o DDoS.</li>
+<li style="text-align: justify;">Cuando se determine que una nueva conexión es un ataque, las direcciones IP origen y destino se añadirán a las listas de atacantes y objetivos respectivamente.</li>
+<li style="text-align: justify;">El filtrado de las conexiones entre atacantes y objetivos se hace a través de la tabla raw, que actúa antes del resto de tablas. De esta manera, al no pasar por otras tablas se reducen los recursos utilizados para impedir los ataques.</li>
+</ol>
+<p style="text-align: justify;">Del artículo citado anteriormente, se va a implementar únicamente la configuración recogida en el apartado <strong><em>Configuration explained</em></strong> con algunas modificaciones ya que existen errores y teniendo en cuenta lo siguiente:</p>
+<ul>
+<li>Aunque las instrucciones estén para el CLI se puede configurar MikroTik desde Webfig o Winbox. En las reglas que añaden las direcciones a las listas de atacantes y objetivos se establece el temporizador a 10 minutos, por lo que pasado este tiempo las direcciones IP agregadas se eliminarán de las listas. Webfig/Winbox no permite este tipo de valores, solo se podrán usar los valores:
+<ul>
+<li><strong>none dynamic:</strong> las direcciones IP de las listas se eliminarán tras un reinicio.</li>
+<li><strong>none static:</strong> las direcciones IP no se eliminan tras un reinicio, incluso se incluirán en una copia de la configuración del router.</li>
+</ul>
+</li>
+<li style="text-align: justify;">Si se realiza el proceso desde la consola, se recomienda la conexión al router vía SSH para poder copiar y pegar las reglas.</li>
+</ul>
+<p style="text-align: justify;">En este caso se van a crear las reglas mediante la consola siguiendo el siguiente esquema. Como se puede observar, la 1ª regla lo que hace es que cada vez que se detecta una conexión nueva (connection.state=new) que quiera atravesar el router (forward), se enviará para que sea examinada por una cadena no estándar (chain block-ddos) para determinar si se trata de una ataque DoS o DDoS.</p>
+<p style="text-align: center;"><img src="esquema-DeteccionDoS.png" alt="" width="491" height="385" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 8.</strong> Esquema conceptual de las reglas.</em></span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 10pt;"><strong>[admin@RouterOS] &gt; </strong>/ip firewall filter</span><br /><span style="font-size: 10pt;"><strong>[admin@RouterOS] /ip firewall filter&gt; </strong>add action=jump chain=forward comment="Protección DDoS" connection-state=new jump-target=detect-ddos place=1</span><br /><span style="font-size: 10pt;"><strong>[admin@RouterOS] /ip firewall filter&gt; </strong>add action=return chain=detect-ddos dst-limit=32,32,src-and-dst-addresses/10s <br /></span><span style="font-size: 10pt;"><strong>[admin@RouterOS] /ip firewall filter&gt; /</strong>ip firewall raw<br /><strong>[admin@RouterOS] /ip firewall raw&gt; </strong>add chain=prerouting action=drop dst-address-list=ddos-attackers<br /><strong>[admin@RouterOS] /ip firewall raw&gt; </strong>/ip firewall filter<br /><strong>[admin@RouterOS] /ip firewall filter&gt; </strong>add action=add-dst-to-address-list address-list=ddos-target address-list-timeout=10m chain=detect-ddos<br /></span><span style="font-size: 10pt;"><strong>[admin@RouterOS] /ip firewall filter&gt;</strong> add action=add-src-to-address-list address-list=ddos-attackers address-list-timeout=10m chain=detect-ddos</span></pre>
+<p style="text-align: center;"><img src="comandos-Mikrotik.png" alt="" width="1328" height="507" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 9.</strong> Comandos para la configuración de la detección DoS en Mikrotik.</em></span></p>
+<table border="0" style="height: 102px; width: 100%;">
+<tbody>
+<tr style="height: 395px;">
+<td style="width: 33.3333%; text-align: center; height: 77px;"><a href="Filter-Rules-DoS.png"><img src="Filter-Rules-DoS.png" alt="" width="1502" height="718" /></a></td>
+<td style="width: 33.3333%; text-align: center; height: 77px;"><a href="raw-DoS.png"><img src="raw-DoS.png" alt="" width="1213" height="231" /></a></td>
+<td style="width: 33.3333%; text-align: center; height: 77px;"><a href="AdrressList-DoS.png"><img src="AdrressList-DoS.png" alt="" width="689" height="228" /></a></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 33.3333%; text-align: center; height: 25px;"><em><strong><span style="font-size: 12pt;">Figura 10. </span></strong><span style="font-size: 12pt;">WebFig FilterRules.</span></em></td>
+<td style="width: 33.3333%; text-align: center; height: 25px;"><strong><span style="font-size: 12pt;"><em>Figura 11. </em></span></strong><span style="font-size: 12pt;"><em>WebFig Raw.</em></span></td>
+<td style="width: 33.3333%; height: 25px; text-align: center;"><strong><span style="font-size: 12pt;"><em>Figura 12. </em></span></strong><span style="font-size: 12pt;"><em>WebFig Address List.</em></span></td>
+</tr>
+</tbody>
+</table>
+<h3>5. Comprobación</h3>
+<p>Una vez se ha configurado el router, se vuelve a lanzar el<span> </span><strong>ataque DoS</strong><span> </span>con <strong>SlowHTTPTest</strong> siguiendo estos pasos:</p>
+<p><strong>1. Se lanza el ataque contra el servidor web.</strong> En este caso, la denegación de servicio dura menos, incluso es posible conectarse al servidor web antes de que haya acabado la ejecución de <strong>SlowHTTPTest</strong>.</p>
+<p style="text-align: justify;"><strong>2.</strong> Si se accede a la sección<strong> IP --&gt; Firewall --&gt; Address List</strong> se puede observar que las direcciones IP de Kali Linux (atacante - 192.168.0.19) y Ubuntu Server - Servidor Web (192.168.1.254) se han añadido a ambas listas.</p>
+<p style="text-align: center;"><img src="AdrressList-DoS.png" alt="" width="689" height="228" /></p>
+<p style="text-align: center;"><em><strong><span style="font-size: 12pt;">Figura 13. </span></strong><span style="font-size: 12pt;">Lista de direcciones.</span></em></p>
+<p>4. Si se <strong>ejecuta de nuevo el ataque</strong>, se puede comprobar que esta vez el ataque no tiene efecto sobre el servidor ya que desde un equipo de la red se accede al mismo (imagen inferior derecha). Por otro parte, en la imagen inferior izquierda se puede observar que desde el equipo atacante <strong>No</strong> se puede acceder al servidor (está bloqueado este equipo durante 10 minutos) y las conexiones establecidas son las propias de los accesos de los equipos de la red.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="lanzarAtaque-Kali-No-AccesoWeb.png" alt="" width="1069" height="505" /></td>
+<td style="width: 50%; text-align: center;"><img src="servicio-Ok-OtroEquipo.png" alt="" width="999" height="376" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 14.</strong> Ataque DoS y comprobación de acceso al Servidor Web.</span></em></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 15. </strong>Acceso al Servidor Web por un equipo de la red.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Si se accede al servidor web y se ejecuta el comando para contar las conexiones establecidas, se puede observar que son las que se indican en la figura superior izquierda y que no suben como antes de configurar las reglas de detección y bloqueo de DoS.</p>
+<p style="text-align: center;"><em><strong><img src="conteo-Conexions-ServWeb.png" alt="" width="418" height="181" /></strong></em></p>
+<p style="text-align: center;"><em><strong>Figura 16.</strong> Cuenta de las conexiones establecidas en el Servidor Web.</em><em></em></p>
+<p style="text-align: justify;">Una vez se finaliza el ataque, si se accede al informe se puede ver que el servicio se ha tenido disponible en todo momentos con pocas conexiones (las producidas por los equipos de la red).</p>
+<p style="text-align: center;"><em><img src="Deteccion-Ataque2.png" alt="" width="611" height="574" /></em></p>
+<p style="text-align: center;"><em><strong>Figura 17.</strong> Informe del comando  <strong>SlowHTTPTest.</strong></em></p>
+<h3>6. Ataque SYN</h3>
+<p style="text-align: justify;">Si se accede de nuevo al artículo <a href="https://help.mikrotik.com/docs/pages/viewpage.action?pageId=28606504">SYN/DoS/DDoS Protection,</a> se puede observar que también se puede configurar el router para evitar ataques SYN Flood y SYN-ACK Flood. </p>
+<h4 id="SYN/DoS/DDoSProtection-SYNFlood">SYN Flood</h4>
+<p style="text-align: justify;"><strong>Syn Flood</strong> es una forma de ataque de denegación de servicio en el que un atacante envía una sucesión de solicitudes al sistema del objetivo en un intento de consumir suficientes recursos del servidor para que el sistema no responda al tráfico legítimo.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 10pt;"><strong>[admin@RouterOS] &gt; </strong>/ip settings set tcp-syncookies=yes</span></pre>
+<h4 id="SYN/DoS/DDoSProtection-SYN-ACKFlood">SYN-ACK Flood</h4>
+<pre class="wp-block-preformatted"><span style="font-size: 10pt;"><strong>[admin@RouterOS] &gt; </strong>/ip firewall filter add action=return chain=detect-ddos dst-limit=32,32,src-and-dst-addresses/10s protocol=tcp tcp-flags=syn,ack</span></pre>
+<h3>7. Referencias</h3>
+<ul>
+<li><a href="https://www.lo0.es/la-tabla-raw-en-mikrotik/" target="_blank" rel="noopener">[La tabla raw en Mikrotik]</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_1_antiddos_con_fail2ban.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.2 Ejecutar GNS3 y crear nuevo Proyecto | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-65"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_redes_virtuales_vlans.html" class="current-page-parent daddy">6. Redes virtuales (VLANs)</a>
+   <ul>
+      <li class="current-page-parent"><a href="61_introduccin_a_gns3.html" class="current-page-parent daddy">6.1 Introducción a GNS3</a>
+      <ul>
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li id="active"><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="active no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="611_instalacin_de_gns3.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="613__interconectar_diferentes_vlan.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id108">
+<div class="iDevice emphasis0">
+<div id="ta108_85" class="block iDevice_content">
+<p align="justify" style="text-align: center;"></p>
+<p align="justify" style="text-align: justify;">Hay que ejecutar <strong>gns3</strong> en la consola para que arranque el sistema gns3  o desde el entorno gráfico:</p>
+<pre><span style="font-size: 12pt;"><strong>jcrequena@goofy:~$</strong>gns3</span></pre>
+<p align="justify" style="text-align: center;"><img src="exec-GNS3.png" alt="" width="777" height="506" /></p>
+<p align="justify" style="text-align: justify;">En el siguiente vídeo, se describe la configuración inicial básica de GNS3 así como se pueden importar <a href="https://gns3.com/marketplace/appliances" target="_blank" rel="noopener">appliances</a> o imágenes en el mismo. También, se describe el procedimiento de configuración inicial de un router Mikrotik con 2 interfaces para permitir la conectividad de 2 equipos con internet.</p>
+<p align="justify" style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/GHbMrCM0smY"></iframe></p>
+<p align="justify" style="text-align: center;"><em><strong>Vídeo 1.</strong> Inicio básico en GNS3.</em></p>
+<p align="justify" style="text-align: justify;"><img src="Ejemplo-practico.png" alt="" width="301" height="56" /></p>
+<p align="justify" style="text-align: justify;">En este ejemplo práctico, se va a crear un <strong>nuevo proyecto</strong> al que le llamaremos VLAN y luego, se va a crear un switch (SW-1) y se usará una nueva plantilla (new template), en este caso de un sistema como el que se está utilizando ahora, es decir, Ubuntu Desktop Guest - Docker para poder desplegar en el sistema 2 equipos.</p>
+<div class="exe-fx exe-tabs">
+<h2>Crear nuevo Nuevo proyecto</h2>
+<p>Al iniciar gns3, nos ofrece crear un nuevo proyecto  al que llamamos <strong>VLAN</strong> y pulsamos <strong>OK</strong>.</p>
+<p style="text-align: center;"><img src="gns3-15.png" alt="" width="1285" height="638" /></p>
+<h2>Añadir switch</h2>
+<p>Se añade un switch al que llamamos SW-1.</p>
+<p style="text-align: center;"><img src="gns3-16.png" alt="" width="1287" height="538" /></p>
+<h2>Crear nueva Plantilla </h2>
+<p style="text-align: justify;">Se crea una nueva plantilla (new template), en este caso de un sistema como el que se está utilizando ahora, es decir, Ubuntu Desktop Guest - Docker.</p>
+<p style="text-align: center;"><img src="gns3-20.png" alt="" width="897" height="632" /></p>
+<h2>Agregar el sistema </h2>
+<p>Una vez aparece el sistema en el panel lateral izquierdo, hay que arrastrarlo al panel central.</p>
+<p style="text-align: center;"><img src="gns3-21.png" alt="" width="1286" height="609" /></p>
+<h2>Agregar los sistemas</h2>
+<p style="text-align: justify;">Una vez aparece el sistema en el panel lateral izquierdo, hay que arrastrarlo al panel central y acceder al menú de configuración, donde se renombra a UDClient-1. A continuación, hay que realizar el proceso otra vez para desplegar 2 equipos y conectarlos al switch.</p>
+<p style="text-align: center;"><img src="gns3-22.png" alt="" width="377" height="253" /></p>
+<h2>Configurar las interfaces</h2>
+<p style="text-align: justify;">A continuación se configuran las interfaces (menú edit config) de los equipos donde se asignan las ip's a partir de la 100, es decir UDClient-1 tendrá la 192.168.0.100 y UDClient-2 tendrá la 192.168.0.101.</p>
+<p style="text-align: center;"><img src="gns3-23.png" alt="" width="579" height="308" /></p>
+<h2>Encender los equipos</h2>
+<p style="text-align: justify;">A continuación hay que encender los equipos (menú start). Se puede observar que han subido los consumos al encender los equipos.</p>
+<p style="text-align: center;"><img src="gns3-24.png" alt="" width="1083" height="99" /></p>
+<p style="text-align: center;"><img src="gns3-25.png" alt="" width="270" height="68" /></p>
+<h2>Probar conectividad</h2>
+<p style="text-align: justify;">A continuación, podemos abrir una consola (menú console) del equipo UDClient-1 y hacemos un ping a la ip del UDClient-2. Se puede observar que el equipo contesta por lo que el switch está realizando bien su trabajo. Esto es así, ya que los dos equipos están en la misma VLAN.</p>
+<p style="text-align: center;"> <img src="gns326.png" alt="" width="300" height="189" /></p>
+<p style="text-align: center;"><img src="gns3-27.png" alt="" width="733" height="300" /></p>
+<h2>Modificar VLAN en el switch</h2>
+<p style="text-align: justify;">Si ahora cambiamos la VLAN del equipo 2 a la 100 por ejemplo y probamos la conectividad, ya no se tendría conexión, esto es debido a que ahora están en una VLAN diferente. De esta manera, esto nos permite de manera lógica, separar 2 redes que están conectadas físicamente con el mismo rango de red (ip).</p>
+<p style="text-align: center;"><img src="gns3-28.png" alt="" width="707" height="234" /></p>
+</div>
+<p align="justify" style="text-align: justify;">En el siguiente vídeo, se describe el funcionamiento básico de <strong>gns3</strong> mediante el ejemplo anterior de conexión de 2 equipos a un switch por VLAN:</p>
+<p align="justify" style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/XQhcLxaPRhw" allowfullscreen="allowfullscreen"></iframe></p>
+<p align="justify" style="text-align: center;"><em><strong>Vídeo 2. </strong>Ejemplo básico en gns3 con VLAN.</em></p>
+<div class="cuadro-importante-centro">
+<p style="text-align: justify;"><span>Hay que tener en cuenta que para <strong><em>configurar los equipos</em></strong>, las direcciones IP de los mismos deben estar en la <strong><em>misma subred</em> </strong>en la cual se encuentre la sub interfaz correspondiente del router. Diferentes VLAN corresponden a diferentes subredes.</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="611_instalacin_de_gns3.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="613__interconectar_diferentes_vlan.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

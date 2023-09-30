@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Tarea 1. WireGuard-Mikrotic-VLANs | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-107"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul class="other-section">
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_vpn_de_acceso_remoto.html" class="current-page-parent daddy">2. VPN de acceso remoto</a>
+   <ul>
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li class="current-page-parent"><a href="22_wireguard.html" class="current-page-parent daddy">2.2 WireGuard</a>
+      <ul>
+         <li><a href="221_instalacin_y_configuracin_de_wireguard.html" class="daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul class="other-section">
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li id="active"><a href="tarea_1_wireguardmikroticvlans.html" class="active no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_gestin_de_accesos_sistemas_nac.html" class="daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_servidor_radius_vpn.html" class="daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul class="other-section">
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="223_escenario_2_vpn_red_externa.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_2_wireguard__pfsensemikrotik.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Tarea 1. WireGuard-Mikrotic-VLANs</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id141">
+<div class="iDevice emphasis0" >
+<div id="ta141_141_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Escenario</h3>
+<p>El escenario consta de los siguientes componentes:</p>
+<ul>
+<li>Oficinas:
+<ul>
+<li><strong>Oficina principal:</strong><span> </span>ciber:</li>
+<li><strong>Sede 1:</strong><span> </span>bastionado.</li>
+</ul>
+</li>
+<li>La infraestructura de red de la oficina principal de la empresa queda separada por la red dmz, it y wan.<br />
+<ul>
+<li>Router mikrotik con la lógica de red para separar las zonas dmz, it y wan.</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><a href="addressList.png" target="_blank" rel="noopener"><img src="addressList.png" alt="" width="689" height="343" /></a></p>
+<ul>
+<li>La red IT es donde se ubican los equipos de cada uno de los departamentos de la empresa.</li>
+<li>La sede es una parte de la empresa que está ubicada en un lugar geográficamente diferente que la oficina principal.</li>
+</ul>
+<p style="text-align: justify;">En el desarrollo de este capítulo, se van a aplicar todas las tecnologías de fortificación a nivel de red interna y perimetral estudiadas durante el curso.</p>
+<h3>3. Fortificación de la red interna. Segmentación de red</h3>
+<p>En este punto hay que realizar la segmentación de la red IT por medio de VLANs.</p>
+<h3>4. Fortificación perimetral </h3>
+<p>En este punto hay que realizar: </p>
+<ul>
+<li>Crear una DMZ para el servidor web y ftp.</li>
+<li>Crear una VPN para conectar la Sede 1 - Bastionado.</li>
+</ul>
+<p>El esquema de red es el siguiente</p>
+<p style="text-align: center;"><img src="Esquema-red-VPN-Microtic-VLANS.png" alt="" width="722" height="639" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong><span> </span>Esquema de red del escenario.</em></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="223_escenario_2_vpn_red_externa.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_2_wireguard__pfsensemikrotik.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

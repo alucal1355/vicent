@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3 Confidencialidad, Integridad y Disponibilidad | UT1. Introducción al bastionado </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-54"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">UT1. Introducción al bastionado</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD1. Introducción al bastionado: Diseño del plan de seguridad</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_diseo_de_planes_de_securizacin.html" class="daddy">2. Diseño de Planes de Securización</a>
+   <ul class="other-section">
+      <li><a href="21_sistemas_de_gestin_de_seguridad_de_la_informacin.html" class="no-ch">2.1 Sistemas de Gestión de Seguridad de la información</a></li>
+      <li><a href="22_diseo_y_elaboracin_de_planes_de_seguridad.html" class="no-ch">2.2 Diseño y elaboración de planes de seguridad</a></li>
+      <li><a href="23_resumen.html" class="no-ch">2.3 Resumen</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_anlisis_de_riesgos.html" class="current-page-parent daddy">3. Análisis de riesgos</a>
+   <ul>
+      <li><a href="31_incibe.html" class="daddy">3.1 INCIBE</a>
+      <ul class="other-section">
+         <li><a href="tarea_1_conoce_tus_riesgos.html" class="no-ch">Tarea 1. Conoce tus riesgos</a></li>
+      </ul>
+      </li>
+      <li><a href="32_metodologas_para_el_anlisis_de_riesgos.html" class="no-ch">3.2 Metodologías para el análisis de riesgos</a></li>
+      <li id="active"><a href="33_confidencialidad_integridad_y_disponibilidad.html" class="active no-ch">3.3 Confidencialidad, Integridad y Disponibilidad</a></li>
+   </ul>
+   </li>
+   <li><a href="4_economa_circular_e_industria_40.html" class="daddy">4. Economía circular e Industria 4.0</a>
+   <ul class="other-section">
+      <li><a href="41_la_ec_aplicada_a_las_tic.html" class="no-ch">4.1 La EC aplicada a las TIC</a></li>
+      <li><a href="tarea_2_economa_circular_e_industria_40.html" class="no-ch">Tarea 2. Economía circular e Industria 4.0.</a></li>
+   </ul>
+   </li>
+   <li><a href="5_defensa_en_profundidad_en_entornos_industriales.html" class="daddy">5. Defensa en profundidad en entornos industriales</a>
+   <ul class="other-section">
+      <li><a href="tarea_3_seguridad_en_profundidad_de_en_entornos_industriales.html" class="no-ch">Tarea 3. Seguridad en profundidad de en entornos industriales</a></li>
+   </ul>
+   </li>
+   <li><a href="6_superficie_de_ataque_en_una_infraestructura_tecnolgica.html" class="no-ch">6. Superficie de ataque en una infraestructura tecnológica</a></li>
+   <li><a href="7_plan_de_medidas_tcnicas_de_seguridad.html" class="daddy">7. Plan de medidas técnicas de seguridad</a>
+   <ul class="other-section">
+      <li><a href="71_clasificacin_de_medidas_de_seguridad.html" class="daddy">7.1. Clasificación de medidas de seguridad</a>
+      <ul class="other-section">
+         <li><a href="711_seguridad_fsica.html" class="no-ch">7.1.1 Seguridad física</a></li>
+         <li><a href="712_seguridad_lgica.html" class="no-ch">7.1.2 Seguridad lógica</a></li>
+         <li><a href="713_seguridad_activa.html" class="no-ch">7.1.3 Seguridad activa</a></li>
+         <li><a href="714_seguridad_pasiva.html" class="no-ch">7.1.4 Seguridad pasiva</a></li>
+      </ul>
+      </li>
+      <li><a href="72_medidas_tcnicas_de_seguridad.html" class="no-ch">7.2 Medidas Técnicas de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="8_polticas_de_securizacin_ms_habituales.html" class="no-ch">8. Políticas de securización más habituales</a></li>
+   <li><a href="9_guas_de_buenas_prcticas_para_la_securizacin_de_sistemas_y_redes.html" class="no-ch">9. Guías de buenas prácticas para la securización de sistemas y redes</a></li>
+   <li><a href="10_estndares_de_securizacin_de_sistemas_y_redes.html" class="no-ch">10. Estándares de securización de sistemas y redes</a></li>
+   <li><a href="11_caracterizacin_de_procedimientos_instrucciones_y_recomendaciones.html" class="no-ch">11. Caracterización de procedimientos, instrucciones y recomendaciones</a></li>
+   <li><a href="12_niveles_escalados_y_protocolos_de_atencin_a_incidencias.html" class="daddy">12. Niveles, escalados y protocolos de atención a incidencias</a>
+   <ul class="other-section">
+      <li><a href="121_respuesta_a_los_incidentes_de_seguridad.html" class="no-ch">12.1 Respuesta a los incidentes de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="13_soluciones_de_centros_de_operacin_de_red_y_centros_de_seguridad_de_red_nocs.html" class="daddy">13. Soluciones de Centros de Operación de Red, y Centros de Seguridad de Red: NOCs</a>
+   <ul class="other-section">
+      <li><a href="tarea_4_el_centro_de_operaciones_de_seguridad_moderno_soc.html" class="no-ch">Tarea 4. El centro de operaciones de seguridad moderno (SOC)</a></li>
+   </ul>
+   </li>
+   <li><a href="caso_prctico_prcticas_correctas_en_los_planes_de_securizacin_y_bastionado.html" class="no-ch">Caso práctico. Prácticas correctas en los planes de securización y bastionado</a></li>
+   <li><a href="14_referencias.html" class="no-ch">14. Referencias</a></li>
+   <li><a href="15_glosario.html" class="no-ch">15. Glosario</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32_metodologas_para_el_anlisis_de_riesgos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_economa_circular_e_industria_40.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3 Confidencialidad, Integridad y Disponibilidad</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id91">
+<div class="iDevice emphasis0" >
+<div id="ta91_115_2" class="block iDevice_content">
+<div class="exe-text"><h3><strong>1. Introducción</strong></h3>
+<p style="text-align: justify;">Una vez se tienen los activos y las amenazas, queda cruzar esta información, es decir, se puede identificar como afectan estas a la confidencialidad, integridad y disponibilidad de la información y entonces, se puede valorar valorar que probabilidad y que impacto tendría un posible ataque (amenaza) que explote una vulnerabilidad.</p>
+<p style="text-align: justify;">De esta forma, se tiene una visión general de los riesgos y se podría empezar a evaluarlos y ver si las medidas actuales son suficientes o no.</p>
+<h3><strong>2. Confidencialidad</strong></h3>
+<p style="text-align: justify;">Propiedad o característica consistente en que la información ni se pone a disposición, ni se revela a individuos, entidades o procesos no autorizados. [<a href="https://tienda.aenor.com/norma-une-en-iso-iec-27001-2017-n0058428?gclid=EAIaIQobChMI2LWk4Ojs8gIV0oBQBh3xewjaEAAYAiAAEgJHaPD_BwE&amp;gclsrc=aw.ds" target="_blank" rel="noopener">UNE-ISO/IEC 27001:2007</a>]</p>
+<table width="750" class="exe-table" style="width: 613px;">
+<tbody>
+<tr>
+<td style="width: 44.0938px;">
+<p><strong>Valor</strong></p>
+</td>
+<td style="width: 501.906px;">
+<p><strong>Criterio (confidencialidad)</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 44.0938px;">
+<p>0</p>
+</td>
+<td style="width: 501.906px;">
+<p>No aplicable.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 44.0938px;">
+<p>1</p>
+</td>
+<td style="width: 501.906px;">
+<p>Activo de uso público.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 44.0938px;">
+<p>2</p>
+</td>
+<td style="width: 501.906px;">
+<p>Activo de acceso permitido sólo a personal interno.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 44.0938px;">
+<p>3</p>
+</td>
+<td style="width: 501.906px;">
+<p>Activo de uso permitido sólo a determinado personal de la empresa.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>3. Intregridad</strong></h3>
+<p style="text-align: justify;">Propiedad o característica consistente en que el activo de información no ha sido alterado de manera no autorizada. <a href="https://www.iso.org/standard/39066.html" target="_blank" rel="noopener">[ISO/IEC 13335-1:2004]</a></p>
+<table width="750" class="exe-table">
+<tbody>
+<tr>
+<td style="width: 39.1406px;">
+<p><strong>Valor</strong></p>
+</td>
+<td style="width: 643.859px;">
+<p><strong>Criterio (Integridad)</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.1406px;">
+<p>0</p>
+</td>
+<td style="width: 643.859px;">
+<p>No aplicable.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.1406px; text-align: center;">
+<p>1</p>
+</td>
+<td style="width: 643.859px; text-align: justify;">
+<p>La pérdida de seguridad en la dimensión no impediría la actividad normal de la organización. El proceso en el que interviene podría finalizarse ante un fallo en la integridad del activo.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.1406px; text-align: center;">
+<p>2</p>
+</td>
+<td style="width: 643.859px;">
+<p style="text-align: justify;">La pérdida de seguridad en la dimensión causaría trastornos leves en la organización. El proceso en el que interviene podría finalizarse, pero con errores en los resultados.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.1406px;">
+<p style="text-align: center;">3</p>
+</td>
+<td style="width: 643.859px;">
+<p style="text-align: justify;">La pérdida de seguridad en la dimensión causaría trastornos graves en la organización. El proceso en el que interviene no podría finalizarse.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><strong>4. Disponibilidad</strong></h3>
+<p style="text-align: justify;">Propiedad o característica de los activos consistente en que las entidades o procesos autorizados tienen acceso a los mismos cuando lo requieren. <a href="https://www.une.org/encuentra-tu-norma/busca-tu-norma/norma/?c=N0041430" target="_blank" rel="noopener">[UNE 71504:2008].</a></p>
+<table width="750" class="exe-table" style="width: 657px;">
+<tbody>
+<tr>
+<td style="width: 46.7969px;">
+<p><strong>Valor</strong></p>
+</td>
+<td style="width: 543.203px;">
+<p><strong>Criterio (disponibilidad)</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 46.7969px; text-align: center;">
+<p>0</p>
+</td>
+<td style="width: 543.203px;">
+<p>No aplicable</p>
+</td>
+</tr>
+<tr>
+<td style="width: 46.7969px; text-align: center;">
+<p>1</p>
+</td>
+<td style="width: 543.203px;">
+<p style="text-align: justify;">Se puede prescindir del activo durante más de una jornada.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 46.7969px; text-align: center;">
+<p>2</p>
+</td>
+<td style="width: 543.203px;">
+<p>Se puede prescindir del activo hasta 1 jornada.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 46.7969px; text-align: center;">
+<p>3</p>
+</td>
+<td style="width: 543.203px;">
+<p style="text-align: justify;">No se puede prescindir del activo durante más de media jornada.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 style="text-align: justify;"><span style="font-size: 14pt;">4.1 Probabilidad de ocurrencia de las amenazas</span></h4>
+<p style="text-align: justify;">Para la realización del análisis de riesgos necesitamos establecer un catálogo de amenazas que sea homogéneo en cada uno de los rangos de activos que hemos designado en el inventario. Estas amenazas se detallan en el<span> </span><strong>Listado de Amenazas</strong>.</p>
+<p style="text-align: justify;">Una vez que hemos identificado las amenazas que podrían afectar a los activos, necesitamos establecer la probabilidad de que esas amenazas se materialicen. Para ello seguimos usando criterios cuantitativos, por lo que nos basaremos en la siguiente tabla para establecer un valor numérico:</p>
+<table width="750" class="exe-table" style="width: 428px;">
+<tbody>
+<tr>
+<td style="width: 39.1406px;">
+<p><strong>Valor</strong></p>
+</td>
+<td style="width: 321.859px;">
+<p><strong>Probabilidad de ocurrencia de la amenaza</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.1406px; text-align: center;">
+<p>1</p>
+</td>
+<td style="width: 321.859px;">
+<p>Ínfima: Una vez en la vida</p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.1406px; text-align: center;">
+<p>2</p>
+</td>
+<td style="width: 321.859px;">
+<p>Poco probable: Cada año</p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.1406px; text-align: center;">
+<p>3</p>
+</td>
+<td style="width: 321.859px;">
+<p>Probable: Cada mes</p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.1406px; text-align: center;">
+<p>4</p>
+</td>
+<td style="width: 321.859px;">
+<p>Bastante probable: Cada semana</p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.1406px; text-align: center;">
+<p>5</p>
+</td>
+<td style="width: 321.859px;">
+<p>Muy probable: Cada día</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 style="text-align: justify;"><span style="font-size: 14pt;">4.2 Cálculo del impacto de las amenazas</span></h4>
+<p style="text-align: justify;">Por último, se necesita estimar el impacto sobre la seguridad de la información que tendría que la amenaza se materializase. Para reflejar dicho impacto en un valor numérico se establecen los siguientes valores:</p>
+<table width="750" class="exe-table" style="width: 808px;">
+<tbody>
+<tr>
+<td style="width: 39.2031px;">
+<p><strong>Valor</strong></p>
+</td>
+<td style="width: 701.797px;">
+<p><strong>Impacto</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.2031px; text-align: center;">
+<p>1</p>
+</td>
+<td style="width: 701.797px;">
+<p style="text-align: justify;"><strong>Nulo</strong>: no habría ninguna consecuencia para la organización</p>
+</td>
+</tr>
+<tr style="text-align: justify;">
+<td style="width: 39.2031px; text-align: center;">
+<p>2</p>
+</td>
+<td style="width: 701.797px;">
+<p><strong>Leve</strong>: habría consecuencias a nivel interno de la organización</p>
+</td>
+</tr>
+<tr style="text-align: justify;">
+<td style="width: 39.2031px; text-align: center;">
+<p>3</p>
+</td>
+<td style="width: 701.797px;">
+<p><strong>Medio</strong>: habría consecuencias que afectarían a partes interesadas externas</p>
+</td>
+</tr>
+<tr style="text-align: justify;">
+<td style="width: 39.2031px; text-align: center;">
+<p>4</p>
+</td>
+<td style="width: 701.797px;">
+<p><strong>Grave</strong>: habría consecuencias que afectarían a partes interesadas externas, habría que afrontar compensaciones o pérdidas económicas severas</p>
+</td>
+</tr>
+<tr>
+<td style="width: 39.2031px; text-align: center;">
+<p>5</p>
+</td>
+<td style="width: 701.797px;">
+<p style="text-align: justify;"><strong>Muy grave:</strong> la empresa vería tan afectada su actividad hasta el punto de cerrar</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 style="text-align: justify;"><span style="font-size: 14pt;">4.3 Cálculo del riesgo</span></h4>
+<p style="text-align: justify;"><strong>Fórmula para el cálculo del riesgo sobre cada activo</strong></p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;"><span style="font-size: 1em;">Con los valores definidos en los puntos anteriores, estableceremos la siguiente fórmula para para calcular el riesgo sobre cada activo:</span></p>
+<p style="text-align: center;"><span style="font-size: 1em;"><strong>VALOR DEL ACTIVO = CONFIDENCIALIDAD + DISPONIBILIDAD + INTEGRIDAD</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 1em;"></span></p>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id151">
+<div class="iDevice emphasis0">
+<div id="ta151_154" class="block iDevice_content">
+<p style="text-align: justify;">Para calcular el valor aplicable a un activo, debemos tener en cuenta el<span> </span><strong>número total de activos</strong><span> </span>que hemos identificado en cada grupo:</p>
+<ul>
+<li style="text-align: justify;">Datos, información, software, hardware, comunicaciones, etc. Por ejemplo para este listado de activos del tipo HARDWARE.</li>
+</ul>
+<table border="1" class="exe-table">
+<tbody>
+<tr>
+<td><strong>Descripción</strong></td>
+<td><strong>Tipo</strong></td>
+<td><strong>Valor confidencialidad</strong></td>
+<td><strong>Valor disponibilidad</strong></td>
+<td><strong>Valor integridad</strong></td>
+<td><strong>Valor del activo</strong></td>
+<td><strong>Valor aplicable</strong></td>
+</tr>
+<tr>
+<td>Servidores</td>
+<td>Hardware</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"><strong>9</strong></td>
+</tr>
+<tr>
+<td>Ordenadores</td>
+<td>Hardware</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><strong>9</strong></td>
+</tr>
+<tr>
+<td>Móviles</td>
+<td>Hardware</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><strong>9</strong></td>
+</tr>
+<tr>
+<td>Dispositivo NAS</td>
+<td>Hardware</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: center;"><strong>9</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Tras evaluar todos los activos del mismo tipo, resulta con el valor más alto el "<strong>Dispositivo NAS</strong>" por lo tanto todos los activos de este tipo heredan el valor más alto.</p>
+<p style="text-align: center;"><strong>VALOR APLICABLE AL ACTIVO = VALOR MÁS ALTO DEL GRUPO DE ACTIVOS EN EL QUE ESTÉ INTEGRADO</strong></p>
+<p style="text-align: center;"><strong style="font-size: 1em;">RIESGO ACTIVO = VALOR APLICABLE AL ACTIVO * PROBABILIDAD * IMPACTO</strong></p>
+<p style="text-align: justify;"><strong style="text-align: justify; font-size: 1em;">Estimación del riesgo aceptable</strong></p>
+<p style="text-align: justify;"><span style="font-size: 1em;">Una vez realizado el proceso de análisis de riesgos solo queda establecer el valor máximo aceptable, este valor es establecido por la organización, esta decisión no es técnica, sino que se ve afectada por otras variables como una decisión interna (dirección), determinada por ley o por compromisos contractuales.</span></p>
+<p style="text-align: justify;"><span style="font-size: 1em;">Estos niveles de aceptación se pueden establecer por activo o por grupo de activos (un departamento, un servicio crítico, etc.). </span><span style="font-size: 1em;">Por lo tanto, se considera riesgo aceptable aquel que conoce y acepta formalmente la dirección.</span></p>
+<p style="text-align: justify;"><span style="font-size: 1em;">Este valor establecerá que riesgos serán tratados o no a través de un Plan de Tratamiento de Riesgos (PTR).</span></p>
+<p style="text-align: justify;"><span style="font-size: 1em;">En nuestro caso vamos a establecer este valor en</span><span style="font-size: 1em;"> </span><strong style="font-size: 1em;"><u>50</u></strong><span style="font-size: 1em;">, y todos los riesgos que superen ese valor serán tratados en el PTR. Si se decide que se van a incluir riesgos con un valor</span><span style="font-size: 1em;"> </span><strong style="font-size: 1em;">menor a 50</strong><span style="font-size: 1em;"> </span><span style="font-size: 1em;">en el PTR será la dirección quien lo establezca.</span></p>
+</div>
+</div>
+</article></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32_metodologas_para_el_anlisis_de_riesgos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_economa_circular_e_industria_40.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

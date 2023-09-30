@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2 WireGuard | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-106"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul class="other-section">
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_vpn_de_acceso_remoto.html" class="current-page-parent daddy">2. VPN de acceso remoto</a>
+   <ul>
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li id="active"><a href="22_wireguard.html" class="active daddy">2.2 WireGuard</a>
+      <ul>
+         <li><a href="221_instalacin_y_configuracin_de_wireguard.html" class="daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul class="other-section">
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_gestin_de_accesos_sistemas_nac.html" class="daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_servidor_radius_vpn.html" class="daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul class="other-section">
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="21_openvpn.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="221_instalacin_y_configuracin_de_wireguard.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2 WireGuard</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id142">
+<div class="iDevice emphasis0">
+<div id="ta142_85" class="block iDevice_content">
+<h3>1. WireGuard VPN</h3>
+<p style="text-align: center;"><img src="wireguard-vpn-logo.jpg" alt="" width="351" height="184" /></p>
+<div never="" class="excerpt">
+<p style="text-align: justify;"><strong>WireGuard VPN</strong><span> </span>es una aplicación gratuita que permite establecer túneles VPN incorporando todos los protocolos de comunicación y criptografía necesarios, para establecer una red privada virtual entre varios clientes y un servidor.</p>
+<p style="text-align: justify;">WireGuard<span> </span><strong>proporciona mejor rendimiento que el protocolo IPsec y que OpenVPN</strong><span> </span>(tanto en velocidad como en latencia de las conexiones), por lo que actualmente se le considera como una de las mejores VPN del momento.</p>
+<p style="text-align: justify;">Entre sus características más importantes:</p>
+<ul>
+<li style="text-align: justify;">Protocolo VPN de software libre</li>
+<li style="text-align: justify;">Más rápida que IPSec y OpenVPN.</li>
+<li style="text-align: justify;">Sencillez.</li>
+<li style="text-align: justify;">Utiliza cifrado de última generación, como el marco del protocolo Noise, Curve25519, ChaCha20, Poly1305, BLAKE2, SipHash24, HKDF.</li>
+</ul>
+</div>
+<div class="content" never="">
+<h3 style="text-align: justify;">2. Características de WireGuard VPN</h3>
+<p style="text-align: justify;"><strong>WireGuard VPN</strong> es <strong>sencilla de configurar </strong>y utiliza la<span> </span><strong>criptografía más moderna por defecto</strong>, sin necesidad de seleccionar entre diferentes algoritmos de cifrado simétrico, asimétrico y de hashing.</p>
+<p style="text-align: justify;">Uno de los <strong>objetivos de WireGuard VPN</strong> es convertirse en un estándar, y que más usuarios domésticos y empresas comiencen a utilizarlo, en lugar de usar IPsec o el popular OpenVPN que son más difíciles de configurar y más lentos. El software está diseñado para ser utilizado por todos los públicos, tanto para usuarios domésticos como en súper ordenadores.</p>
+<p style="text-align: justify;">Con <strong>WireGuard VPN</strong><span> </span><strong>no es necesario administrar las conexiones</strong>, preocuparse por el estado de la propia red privada virtual, administrar procesos ni saber qué hay debajo del software para hacerlo funcionar, tal y como ocurre con IPsec, donde muchas veces es necesario mirar logs e investigar qué está ocurriendo. </p>
+<p style="text-align: justify;">Este software es una VPN L3, es decir,<span> </span><strong>utiliza tunneling únicamente</strong>, no ocurre como OpenVPN donde se tiene la posibilidad de trabajar en modo transporte o modo túnel. Además, es compatible tanto con<span> </span><strong>redes IPv4 como redes IPv6 </strong>y puede encapsular paquetes IPv4 en IPv6 y viceversa. El protocolo de capa transporte utilizado por WireGuard es<span> </span><strong>UDP</strong>, por lo que se tendrá que abrir un puerto determinado (a elegir, se puede cambiar) en el router que hace NAT.</p>
+<p style="text-align: justify;">Beneficios de usar WireWard.</p>
+<ul style="text-align: justify;">
+<li>Se trata de un protocolo muy rápido y actualizado a los tiempos que corren, y utiliza una criptografía vanguardista.</li>
+<li>Para dispositivos móviles, ofrece mejoras de rendimiento en los tiempos de conexión, a la vez que favorece a la duración de la batería.</li>
+<li>Es una muy buena opción a la hora de usar una VPN con videojuegos o realizar streaming.</li>
+<li>Tanto en Android como en iOS, permite cambiar de red sin perder la conexión con la VPN.</li>
+</ul>
+<h3 style="text-align: justify;">3. Compatibilidad con sistemas operativos</h3>
+<p style="text-align: justify;">Inicialmente fue lanzado para el Kernel de Linux, pero es<span> </span><strong>multiplataforma</strong>, ya que es compatible con sistemas operativos<span> </span><strong>Windows, Linux, MacOS, FreeBSD, Android y también iOS</strong>.</p>
+<p style="text-align: justify;">Uno de los puntos fuertes de este software es que la configuración del cliente y servidor es exactamente igual en los diferentes sistemas operativos, utilizando la misma sintaxis, por lo que se puede configurar el servidor y clientes en Linux, y posteriormente «pasar» la configuración al resto de dispositivos con otros sistemas operativos en su interior.</p>
+<p style="text-align: justify;">Actualmente <strong>WireGuard</strong> está integrado en el kernel de sistemas operativos orientados a firewall y router, como <strong>OPNsense</strong>. Gracias a la incorporación de <strong>WireGuard en OPNsense</strong>, se puede tener un servicio de VPN seguro, rápido y muy fiable, ideal para establecer redes privadas virtuales de forma fácil y rápida. Al estar integrado directamente en el kernel, se consiguen altas velocidades de descarga y subida en las conexiones.</p>
+<p style="text-align: justify;">Otro sistema operativo muy utilizado que está orientado a firewall y router es pfSense, pero en este sistema operativo ha habido problemas con la integración en el Kernel. En un primer momento, la versión pfSense 2.5.0 incorporó WireGuard de forma nativa, sin embargo, investigadores de seguridad descubrieron ciertos fallos que no eran demasiado graves, la empresa detrás del desarrollo de pfSense decidió dejar de dar soporte a esta VPN en la siguiente versión 2.5.1, indicando que estará disponible próximamente una nueva versión con todos los errores corregidos y perfectamente optimizada para el sistema operativo.</p>
+<p style="text-align: justify;">Actualmente la versión 2.5.2 de PfSense no incorpora este nuevo servidor VPN, pero sí está disponible en forma de paquete que se pue3de instalar de forma opcional. Una vez instalado este paquete, toda la configuración de WireGuard se podrá realizar a través de la interfaz gráfica de usuario para poder realizar una conexión VPN, ya sea en VPN de acceso remoto o una VPN site-to-site.</p>
+<h3 style="text-align: justify;">4. Criptografía utilizada</h3>
+<p style="text-align: justify;">Con los protocolos IPsec y OpenVPN, es necesario que tanto los clientes como el servidor «acuerden» los protocolos criptográficos a utilizar, tanto en la fase 1 y fase 2 (de IPsec), como en el canal de control y datos (de OpenVPN), de lo contrario, no se establecerá la conexión correctamente.</p>
+<p style="text-align: justify;">WireGuard<span> </span><strong>proporciona un «paquete» criptográfico entero</strong>, garantizando la conectividad sin necesidad de seleccionar nada. Si en un determinado momento uno de los protocolos criptográficos utilizados por esta VPN se considera inseguro, es tan fácil como lanzar una segunda versión de WireGuard con un nuevo protocolo que no tenga un fallo de seguridad, y entre los clientes y el servidor se indicarán que usen la «versión 2», siendo completamente transparente.</p>
+<p style="text-align: justify;">Actualmente WireGuard VPN utiliza<span> </span><strong>ChaCha20</strong><span> </span>para el cifrado simétrico, autenticado con<span> </span><strong>Poly1305</strong>, utilizando una construcción AEAD. También utiliza<span> </span><strong>Curve25519</strong><span> </span>para ECDH,<span> </span><strong>BLAKE2</strong><span> </span>para el hashing,<span> </span><strong>SipHash24</strong><span> </span>para las claves hashtable, y<span> </span><strong>HKDF</strong><span> </span>para la derivación de claves, lo que significa que estamos utilizando los algoritmos criptográficos más modernos, con el objetivo de proporcionar la máxima seguridad y rendimiento.</p>
+<p style="text-align: justify;">Algunos protocolos que utiliza actualmente son lo siguientes:</p>
+<ul style="text-align: justify;">
+<li>Noise Protocol Framework</li>
+<li>Curve25519</li>
+<li>ChaCha20</li>
+<li>Poly1305</li>
+<li>BLAKE2</li>
+<li>SipHash23</li>
+<li>HKDF</li>
+</ul>
+<h3 style="text-align: justify;">5. Compatibilidad con roaming y Kill-Switch</h3>
+<p style="text-align: justify;">El software está diseñado para poder realizar<span> </span><strong>roaming de manera fácil y rápida</strong>, si el dispositivo cambia de redes, y lógicamente cambia de IP pública, como por ejemplo cuando se pasa de la red Wi-Fi y la red 4G/LTE del operador, la conexión VPN seguirá levantada porque se volverán a autenticar rápidamente con el servidor VPN, de tal forma que siempre se estará conectado a la VPN.</p>
+<p style="text-align: justify;">También se puede<span> </span><strong>habilitar el Kill-Switch en el dispositivo</strong>, de esta forma, si la conexión VPN se interrumpe, el propio software también se encargará de interrumpir todo el tráfico de red hasta que se vuelva a reestablecer la conexión VPN, con el objetivo de que no se navegue sin la protección que brinda esta VPN. Esta funcionalidad la incorporan todos los servicios VPN gratuitos y de terceros, WireGuard también lo incorpora, además, con WireGuard no se tendrá que volver a reestablecer nuevamente la conexión VPN desde cero a través de un canal de «control» como sucede con OpenVPN o con IPsec.</p>
+<span></span></div>
+<h3>6. Referencias</h3>
+<ul>
+<li><a href="https://serversideup.net/courses/gain-flexibility-and-increase-privacy-with-wireguard-vpn/" target="_blank" rel="noopener">[Gain flexibility &amp; increase privacy with WireGuard VPN]</a></li>
+<li><a href="https://www.redeszone.net/tutoriales/vpn/wireguard-vpn-configuracion/" target="_blank" rel="noopener">Fuente</a></li>
+<li><a href="https://www.wireguard.com/">https://www.wireguard.com/</a></li>
+<li><a href="https://www.redeszone.net/tutoriales/vpn/wireguard-vpn-configuracion/" target="_blank" rel="noopener">WireGuard VPN: Instalación y configuración de servidor y clientes VPN</a></li>
+<li><a href="https://davidlms.github.io/Practicas/SERRED/wireguard.html" target="_blank" rel="noopener">WireGuard en Ubuntu Server 20.04</a></li>
+<li><a href="https://www.lanpixel.com/blog/guia-wireguard-paso-a-paso-con-mikrotik/" target="_blank" rel="noopener">[Guía] WireGuard paso a paso con Mikrotik - LanPixel</a></li>
+<li><a href="https://es.vpnmentor.com/blog/es-wireguard-el-futuro-de-los-protocolos-vpn-noticia-sobre-seguridad-de/" target="_blank" rel="noopener">¿Es WireGuard el protocolo VPN del futuro? Seguridad en 2021</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="21_openvpn.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="221_instalacin_y_configuracin_de_wireguard.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

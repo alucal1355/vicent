@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2. Direccionamiento IP | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-52"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li id="active"><a href="2_direccionamiento_ip.html" class="active no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li><a href="6_redes_virtuales_vlans.html" class="daddy">6. Redes virtuales (VLANs)</a>
+   <ul class="other-section">
+      <li><a href="61_introduccin_a_gns3.html" class="daddy">6.1 Introducción a GNS3</a>
+      <ul class="other-section">
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_introduccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_segmentacin_de_redes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2. Direccionamiento IP</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id87">
+<div class="iDevice emphasis0">
+<div id="ta87_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p>Una de las características que define al protocolo IP en su versión 4 es el<span> </span><strong>uso de direcciones de 32 bits</strong>. El <strong><em>protocolo IP</em></strong> es una de las bases fundamentales de las conexiones de red e internet. </p>
+<h3>2. ¿Qué es una dirección IP?</h3>
+<p style="text-align: justify;">Un conjunto de expresiones numéricas que de manera lógica identifica un elemento de conexión de red (interfaz / tarjeta de red) de los distintos dispositivos de una red (servidor, portátil, móvil, etc.).</p>
+<p style="text-align: center;"><img src="Esquema-red.png" alt="" width="680" height="525" /></p>
+<p style="text-align: justify;">Es necesario tener en cuenta que cualquier dirección IP<span> </span><strong>no representa realmente a un dispositivo</strong><span> </span>de una red, sino que<span> </span><strong>representa una interfaz de red</strong>, por lo que si un dispositivo pertenece a varias redes debe poseer al menos tantas direcciones IP como redes a las que pertenezca.</p>
+<p style="text-align: justify;">Las direcciones IP en su versión IPv4 constan de 32 bits, pero se pueden expresar en notación decimal, dividiendo los 32 bits en cuatro octetos (lo que equivale a 4 bytes), por lo tanto disponemos de <strong>2^32 direcciones IP posibles</strong>, es decir, más de 4.000 millones de direcciones IP.</p>
+<p style="text-align: justify;">Estos octetos se separan mediante puntos y su valor esta entre 0 y 255 (1 byte = 8 bits = 11111111).</p>
+<ul>
+<li style="text-align: justify;">Por ejemplo, si se tiene la dirección 192.168.0.1; 192 es el decimal equivalente al primer byte de la dirección, 168 es el decimal equivalente al segundo byte, etc.</li>
+</ul>
+<h3 style="text-align: justify;">3. Clases de direcciones IP</h3>
+<p style="text-align: justify;">Inicialmente se comenzó a utilizar la direcciones IP usando el<span> </span><strong>primer octeto</strong><span> </span>(byte = 8 bits) para<span> </span><strong>identificar la red</strong><span> </span>y dejar el resto para identificar interfaces de red (equipos).</p>
+<p style="text-align: justify;">En 1981 se revisó su funcionamiento y se definió el concepto<span> </span><strong>CLASE</strong><span> </span>para disponer de un criterio consensuado en el establecimiento de direcciones IP. </p>
+<p style="text-align: justify;"><strong>CLASE A. </strong><span>En este tipo de redes, el primer byte está reservado para el identificador de la red y el resto de los bytes se utilizan para poder identificar los distintos dispositivos dentro de la red.</span></p>
+<p style="text-align: justify;">Este tipo de redes son las utilizadas por organizaciones en las que se necesitan gran cantidad de hosts. El espacio de direcciones de redes abarca desde la dirección <strong>1.0.0.0</strong> hasta la dirección <strong>127.255.255.255</strong>.<br />Su<span> </span><a href="#tb6db8d7d-1303-28e2-6f91-5023032902b9" id="linkb6db8d7d-1303-28e2-6f91-5023032902b9" class="exe-tooltip definition-tt" data-hasqtip="0">máscara de red</a><span> </span>es <strong>255.0.0.0 o<span> </span><a href="#tfdd258dd-8fcc-5523-12b2-36edeedbd6eb" id="linkfdd258dd-8fcc-5523-12b2-36edeedbd6eb" class="exe-tooltip definition-tt" data-hasqtip="1">/8</a></strong>.<strong><span> </span>La primera y la última dirección IP (Broadcast) tienen funciones reservadas y no se pueden utilizar, por lo tanto se consideran IPs especiales.</strong></p>
+<p style="text-align: justify;"><strong>CLASE B. </strong><span>Con un espacio de direcciones que abarca desde la dirección </span><strong>128.0.0.0</strong><span> hasta la dirección </span><strong>191.255.255.255</strong><span>, posee la máscara de red </span><strong>255.255.0.0</strong><span> </span><strong>o /16</strong><span>. </span><span>Este tipo de redes se pensó para su uso por un gran número de organizaciones que poseen un gran número de hosts, ya que los primeros 2 bytes se utilizan para el identificador de la red y los dos últimos para identificar los hosts dentro de dicha red.</span></p>
+<p style="text-align: justify;"><strong>CLASE C. </strong><span>Pensada para organizaciones con pocas estaciones de trabajo, los tres primeros bytes de la dirección se utilizan para el identificador de red y el último byte para identificar los hosts dentro de la red. </span><span>Su espacio de direcciones abarca desde la dirección </span><strong>192.0.0.0</strong><span> hasta la dirección 223.255.255.255 y su máscara de red es <strong>2</strong></span><strong>55.255.255.0 o /24</strong><span>.</span></p>
+<p style="text-align: justify;"><strong>CLASE D (Multicast). </strong><span>Su espacio de direcciones abarca desde la dirección </span><strong>224.0.0.0</strong><span> hasta la dirección 239.255.255.255. Espacio reservado para direcciones de multidifusión asociando este concepto con la transmisión de contenidos multimedia.</span></p>
+<p style="text-align: justify;"><strong>CLASE E (Experimental). </strong><span>Su espacio de direcciones abarca desde la dirección </span><strong>240.0.0.0</strong><span> hasta la dirección 247.255.255.255. Espacio reservado para experimentación e investigación de futuros proyectos.</span><span></span></p>
+<p style="text-align: center;"><span><img src="redes-clases.png" alt="" width="706" height="294" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Clases de red.</em><em></em></p>
+<p><strong>Otros conceptos sobre direcciones IP</strong></p>
+<ul>
+<li><strong>Classfull.</strong><span> </span><em>Es el número de redes y hosts soportados por cada una de las clases vistas anteriormente, relacionadas con sus máscaras de red /8, /16, /24.</em></li>
+<li><strong>Classless.</strong><span> </span><em>Permite definir el número de hosts sin tener en cuenta la clase de la red y por tanto su máscara, como veremos en subnetting.</em></li>
+</ul>
+<p><em></em></p>
+<header class="iDevice_header">
+<h1 class="iDeviceTitle"><em>Debes conocer</em></h1>
+</header>
+<p></p>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta51_129" class="block iDevice_content">
+<p style="text-align: justify;"><strong>¿Qué la máscara de red?</strong></p>
+<p style="text-align: justify;"><a href="https://es.wikipedia.org/wiki/M%C3%A1scara_de_red">https://es.wikipedia.org/wiki/M%C3%A1scara_de_red</a></p>
+<p style="text-align: justify;"><a href="https://ccnadesdecero.com/curso/mascara-de-red/">https://ccnadesdecero.com/curso/mascara-de-red/</a></p>
+<p style="text-align: justify;"><strong>IP Reservadas:</strong></p>
+<p style="text-align: justify;"><a href="https://es.wikipedia.org/wiki/Anexo:Direcciones_IP_reservadas">https://es.wikipedia.org/wiki/Anexo:Direcciones_IP_reservadas</a></p>
+<p style="text-align: justify;"><a href="http://www.sobrepc.com/internet/direcciones/direcciones2a.html">http://www.sobrepc.com/internet/direcciones/direcciones2a.html</a></p>
+</div>
+</div>
+</div>
+<h3>3. Tipos de direcciones IP</h3>
+<p><span>Las direcciones IP, además de dividirse en clases, también se dividen </span><b>según su privacidad</b><span> en 2 tipos</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 1em;">Las </span><b style="font-size: 1em;">IP públicas: </b>S<span style="font-size: 1em;">on accesibles desde cualquier punto de internet, las cuales son proporcionadas por una empresa "Proveedora de Servicios en Internet" (ISP) dentro de sus rangos. A través de un router y con la configuración específica dada por el operador podremos conectarnos a internet.</span></li>
+<li style="text-align: justify;">Las <b style="color: #333333; font-size: 1em; text-align: left;">IP privadas:</b><span style="color: #333333; font-size: 1em; text-align: left;"> Son aquellas destinadas para el uso privado, es decir, para las redes LAN. Cómo hemos visto en el punto anterior, las IP privadas están clasificadas en </span><strong style="color: #333333; font-size: 1em; text-align: left;">CLASES</strong><span style="color: #333333; font-size: 1em; text-align: left;"> siendo las clases </span><strong style="color: #333333; font-size: 1em; text-align: left;">A, B y C</strong><span style="color: #333333; font-size: 1em; text-align: left;"> las más utilizadas. Si miramos nuestra propia dirección IP, lo normal es que nos aparezca un 192.168.X.X., que es uno de los rangos de direcciones IP privadas más típico y es que las IP privadas tienen sus propios rangos de IP reservados según la clase que se utilice:</span>
+<ul>
+<li style="text-align: justify;"><strong>CLASE A</strong>: El rango va desde 10.0.0.0 hasta 10.255.255.255. Se suele utilizar en lugares que requieres grandes dimensiones de IP, como puede ser el caso de una gran empresa. Dispone de un total de 126 redes (2^7-2).</li>
+<li style="text-align: justify;"><strong style="font-size: 0.95em; text-align: left;">CLASE B</strong><span style="font-size: 0.95em; text-align: left;">: El rango va desde 172.16.0.0 hasta 172.31.255.255. Se suele utilizar en lugares que no sean tan grandes, pero necesiten una buena cantidad de IP. Dispone de un total de 16382 redes (2^14-2).</span></li>
+<li style="text-align: justify;"><strong>CLASE C</strong>: El rango va desde 192.168.0.0 hasta 192.168.255.255. Son las más comunes y utilizadas, y su uso más común es el personal como en una casa. Dispone de un total de 2097150  redes (2^21-2).</li>
+</ul>
+</li>
+</ul>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id16"></article>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_introduccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_segmentacin_de_redes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

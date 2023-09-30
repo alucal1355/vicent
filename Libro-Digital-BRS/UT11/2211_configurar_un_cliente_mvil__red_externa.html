@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.1.1 Configurar un cliente móvil - Red Externa | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-111"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul class="other-section">
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_vpn_de_acceso_remoto.html" class="current-page-parent daddy">2. VPN de acceso remoto</a>
+   <ul>
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li class="current-page-parent"><a href="22_wireguard.html" class="current-page-parent daddy">2.2 WireGuard</a>
+      <ul>
+         <li class="current-page-parent"><a href="221_instalacin_y_configuracin_de_wireguard.html" class="current-page-parent daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul>
+            <li id="active"><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="active no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_gestin_de_accesos_sistemas_nac.html" class="daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_servidor_radius_vpn.html" class="daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul class="other-section">
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="221_instalacin_y_configuracin_de_wireguard.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.1.1 Configurar un cliente móvil - Red Externa</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id148">
+<div class="iDevice emphasis0" >
+<div id="ta148_148_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Crear las claves del cliente</h3>
+<p style="text-align: justify;">Al contrario de lo que sucede en un sistema de escritorio como macOS o Windows, en el <strong>caso de iOS y Android</strong> no se suministran las claves del cliente, por lo que h<strong>ay que generarlas en el servidor</strong>. Para este cometido, se crea un <strong>directorio keysclients</strong> en /etc/wireguard.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>mkdir -p /etc/wirguard/keysclients</span></pre>
+<p style="text-align: center;"><img src="keys-clients.png" alt="" width="431" height="86" /></p>
+<p style="text-align: justify;">A continuación, hay que generar las claves exactamente de la misma forma que ya se hizo para para generar las del servidor. El nombrado de las mismas es libre, pero se recomienda que el mismo, permita identificar al dispositivo cliente. Para este caso se llamará <strong>smartphone6s, </strong>ya que el dispositivo que se conectará es un iphone 6S.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>cd /etc/wirguard/keysclients<br /><span><strong>root@wireguard:/#</strong>wg genkey | tee smartphone6s.key | wg pubkey &gt; smartphone6s.key.pub</span><br /></span></pre>
+<p style="text-align: center;"><img src="keys-smartphone6s.png" alt="" width="802" height="164" /></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">Hay que <strong>anotar la clave privada</strong> porque será necesaria para el archivo de configuración del cliente que se realiza en el siguiente apartado.</span></p>
+</div>
+<h3>2. Crear un archivo de configuración para el cliente</h3>
+<p>Se crea el archivo <strong>smartphone6s.conf </strong>para añadirle el contenido siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">[Interface]</span><br /><span style="font-size: 12pt;">PrivateKey = [Clave_Privada_Cliente]</span><br /><span style="font-size: 12pt;">Address = [IP_VPN_Cliente]/24</span><br /><span style="font-size: 12pt;">DNS = 8.8.8.8, 8.8.4.4</span><br /><span style="font-size: 12pt;">[Peer]</span><br /><span style="font-size: 12pt;">PublicKey = [Clave_Pública_Servidor]</span><br /><span style="font-size: 12pt;">AllowedIPs = 0.0.0.0/0</span><br /><span style="font-size: 12pt;">Endpoint = [IP_Pública_Servidor]:Puerto</span></pre>
+<p>donde,</p>
+<ul>
+<li><span style="font-size: 12pt;"><strong>PrivateKey:</strong> Clave privada del cliente generada anteriormente.</span></li>
+<li><span style="font-size: 12pt;"><strong>Address</strong>: Ip que se le asignará al cliente en la red, para este caso: 192.168.8.111 con máscara /24.</span></li>
+<li><span style="font-size: 12pt;"><strong>DNS</strong>: Servidores de nombres a  asignar al cliente.</span></li>
+<li><span style="font-size: 12pt;"><span><strong>PublicKey</strong>: La clave pública del servidor que se generó en el capítulo 2.2.1 (server.key.pub).</span></span></li>
+<li><span style="font-size: 12pt;"><span><strong>Endpoint</strong>: IP pública del servidor en la WAN y el puerto a la escucha <strong>15000</strong>. Para este caso la ip pública es <strong>100.70.153.164</strong>.</span></span></li>
+</ul>
+<p style="text-align: center;"><img src="smartphone6s-conf.png" alt="" width="598" height="155" /></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Para <span style="font-size: 12pt;"></span>saber la IP pública del servidor, se puede ejecutar el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>curl ipinfo.io/ip</span></pre>
+</div>
+<h3>3. Permitir el acceso al cliente en el servidor</h3>
+<p style="text-align: justify;">Una vez ya se tiene la clave pública y la IP que se le va a asignar al cliente, hay que ejecutar el siguiente comando para permitir la conexión al servidor:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>wg set wg0 peer [Clave_Pública_Cliente] allowed-ips [IP_Cliente_VPN]</span></pre>
+<p>donde,</p>
+<ul>
+<li><span><span style="font-size: 12pt;"><strong>Clave_Pública_Cliente:</strong> Es </span>la clave pública del cliente (archivo smartphone6s.key.pub).</span></li>
+<li><span><strong>IP_Cliente_VPN:</strong> La IP que se desea proporcionar en la conexión VPN al cliente.</span></li>
+</ul>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>wg set wg0 peer 7/D+TMWIbwGiWD3mmtdWg3ybpKswLq6uG+D2s2SgoUY= allowed-ips 192.168.8.111</span></pre>
+<p style="text-align: center;"><img src="set-wg0.png" alt="" width="984" height="56" /></p>
+<h3>4. Generar un código QR con la configuración</h3>
+<p style="text-align: justify;">Sería suficiente con pasar el archivo <strong>smartphone6s.conf</strong> a la app WireGuard del cliente, pero es más sencillo generar un<strong> código QR</strong> con el contenido del archivo para no tener que pasarlo manualmente al móvil. Para ello se necesita instalar el siguiente paquete:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>apt install qrencode</span></pre>
+<p style="text-align: center;"><img src="install-qrencode.png" alt="" width="910" height="547" /></p>
+<p>Con el siguiente comando se genera el código QR del archivo <strong>smartphone6s.conf</strong>:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>qrencode -t ansiutf8 &lt; /etc/wireguard/keysclients/smartphone6s.conf</span></pre>
+<p style="text-align: center;"><img src="qr-smartphone6s.png" alt="" width="684" height="599" /></p>
+<p style="text-align: justify;">Este será el <strong>código QR</strong> que se leerá con la App <strong>WireGuard</strong> en el smartphone del cliente para cargar el fichero de configuración a la misma y así poder realizar la conexión con el servidor.</p>
+<h3>5. Redireccionar puerto en router</h3>
+<p style="text-align: justify;">En el router con salida a internet, se redirecciona las peticiones al puerto UDP 15000 al puerto 15000 UDP del servidor ubuntu (192.168.0.254). </p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="ipwan-router-vodafone.png" target="_blank" rel="noopener"><img src="ipwan-router-vodafone.png" alt="" width="751" height="576" /></a></td>
+<td style="width: 50%; text-align: center;"><img src="redireccion-Puerto-15000-UDP.png" alt="" width="776" height="317" /></td>
+</tr>
+</tbody>
+</table>
+<h3>6. Instalar la app cliente de WireGuard</h3>
+<p style="text-align: justify;">La app de WireGuard está disponible tanto en la<span> </span><a href="https://play.google.com/store/apps/details?id=com.wireguard.android&amp;hl=es&amp;gl=US" target="_blank" rel="noopener">Play Store</a><span> </span>para Android, como en la<span> </span><a href="https://apps.apple.com/es/app/wireguard/id1441195209" target="_blank" rel="noopener">App Store</a><span> </span>para iOS (y iPadOS). Así que solamente hay que buscarla o pulsar en los enlaces y descargarla.</p>
+<h3>7. Configurar el cliente VPN en iOS</h3>
+<div class="exe-fx exe-tabs">
+<h2>1. Abrir WireGuard</h2>
+<p>Primero hay que abrir la app<span> </span><strong>WireGuard.</strong></p>
+<p style="text-align: center;"><strong><img src="WireGuard-IOS.PNG" alt="" width="394" height="701" /></strong></p>
+<h2>2. Agregar túnel</h2>
+<p>A continuación, hay que pulsar en <strong>Agregar un túnel</strong>.</p>
+<p style="text-align: center;"><img src="agregar-tunel.jpg" alt="" width="302" height="329" /></p>
+<h2>3. Escaneado y nombrado del túnel</h2>
+<p style="text-align: justify;"><span>A continuación hay que seleccionar '</span><strong>Crear desde código QR'. </strong>Se escanea el código QR con la cámara y se le pone un nombre identificativo al túnel.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="crear-desde-QR.PNG" alt="" width="299" height="532" /></td>
+<td style="width: 50%; text-align: center;"><a href="nombrado-tunel.png" target="_blank" rel="noopener"><img src="nombrado-tunel.png" alt="" width="277" height="493" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>4. Permiso para añadir configuraciones</h2>
+<p><span>El sistema pedirá </span><strong>permiso</strong><span> para añadir y activar la configuración VPN. Hay que pulsar en '<strong>Permitir</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="permiso-anyadir.png" alt="" width="378" height="247" /></span></p>
+<h2>5.  Activación VPN</h2>
+<p style="text-align: justify;"><span>Por último, se </span><strong>activa la configuración añadida</strong><span> y se observa como aparece la palabra <strong>VPN</strong> en la información superior del sistema, indicando que se está conectado a Internet a través del servidor configurado.</span></p>
+<p style="text-align: center;"><img src="preferencias.PNG" alt="" width="564" height="194" /></p>
+<h2>6. Información de la VPN</h2>
+<p style="text-align: justify;">Si se accede a la información de la VPN, se observa que los datos que se habían configurado en el fichero <strong>smartphone6s.conf</strong> se corresponden.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="vpn-ciber-01.PNG" target="_blank" rel="noopener"><img src="vpn-ciber-01.PNG" alt="" width="347" height="441" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="vpn-ciber-02.PNG" target="_blank" rel="noopener"><img src="vpn-ciber-02.PNG" alt="" width="341" height="375" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A continuación, se comprueba en el servidor si se ha establecido la conexión. Como se puede observar en la figura inferior, el smartphone está conectado con la<strong> ip WAN 36.5.111.11</strong> (ip que le proporciona la red de datos 4G) y con la <strong>ip de la red interna VPN 192.168.8.111</strong>.</p>
+<p style="text-align: center;"><img src="wg-VPN-Externa.png" alt="" width="557" height="269" /></p>
+<p>En este momento, el dispositivo ya podría navegar por internet y aprovecharse de los recursos de la red interna.</p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="221_instalacin_y_configuracin_de_wireguard.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

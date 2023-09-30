@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3. Protección del gestor de arranque GRUB | UT2. Fortificación de equipos: acceso al sistema </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT2. Fortificación de equipos: acceso al sistema</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT2. Fortificación de equipos: acceso al sistema</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_seguridad_en_el_arranque_del_sistema_informtico_configuracin_del_arranque_seguro_biosuefi.html" class="daddy">2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI)</a>
+   <ul class="other-section">
+      <li><a href="21_bloqueo_de_bios_con_contrasea.html" class="no-ch">2.1 Bloqueo de BIOS con contraseña</a></li>
+      <li><a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="no-ch">Tarea 1. Análisis y fortificación de la BIOS/UEFI</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="3_proteccin_del_gestor_de_arranque_grub.html" class="active daddy">3. Protección del gestor de arranque GRUB</a>
+   <ul>
+      <li><a href="31_proteccin_de_grub.html" class="no-ch">3.1 Protección de GRUB</a></li>
+      <li><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="no-ch">Tarea 2. Configuración del sistema y arranque</a></li>
+      <li><a href="tarea_3_proteger_el_gestor_de_arranque_grub.html" class="no-ch">Tarea 3. Proteger el gestor de arranque GRUB</a></li>
+   </ul>
+   </li>
+   <li><a href="4_contraseas_seguras.html" class="daddy">4. Contraseñas seguras</a>
+   <ul class="other-section">
+      <li><a href="41_contraseas_seguras_en_windows.html" class="daddy">4.1 Contraseñas seguras en Windows</a>
+      <ul class="other-section">
+         <li><a href="411_inicios_de_sesin_en_windows.html" class="no-ch">4.1.1 Inicios de sesión en Windows</a></li>
+         <li><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="no-ch">Tarea 4. Política de contraseñas seguras en Windows</a></li>
+      </ul>
+      </li>
+      <li><a href="42_gestin_de_la_poltica_de_contraseas_en_ubuntu.html" class="daddy">4.2. Gestión de la política de contraseñas en Ubuntu</a>
+      <ul class="other-section">
+         <li><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="no-ch">Tarea 5. Política de contraseñas seguras en Ubuntu Server</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="daddy">6. Seguridad de los sistemas de ficheros, cifrado, particionado, entre otros</a>
+   <ul class="other-section">
+      <li><a href="61_sistemas_de_ficheros_y_gestin_de_particionado.html" class="no-ch">6.1 Sistemas de ficheros y gestión de particionado</a></li>
+      <li><a href="62_cifrado_de_disco.html" class="daddy">6.2 Cifrado de disco</a>
+      <ul class="other-section">
+         <li><a href="621_bitlocker_windows_y_efs.html" class="daddy">6.2.1. Bitlocker (Windows) y EFS</a>
+         <ul class="other-section">
+            <li><a href="prctica_1_cifrado_con_bitlocker.html" class="no-ch">Práctica 1. Cifrado con Bitlocker</a></li>
+         </ul>
+         </li>
+         <li><a href="622_filevault_macos.html" class="no-ch">6.2.2 FileVault (macOS)</a></li>
+         <li><a href="623_luks_linux.html" class="daddy">6.2.3 LUKS (Linux)</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_cifrado_de_particiones_y_directorio_con_luks.html" class="no-ch">Laboratorio. Cifrado de particiones y directorio con LUKS</a></li>
+            <li><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="no-ch">Práctica 2. Instalación de Ubuntu con particiones cifradas</a></li>
+         </ul>
+         </li>
+         <li><a href="624_veracrypt.html" class="daddy">6.2.4 VeraCrypt</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_cifrado_volumen_veracrypt.html" class="no-ch">Laboratorio 1. Cifrado volumen VeraCrypt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_control_de_calidad_de_mquinas.html" class="daddy">7. Control de calidad de máquinas</a>
+   <ul class="other-section">
+      <li><a href="71_mantenimiento_seguro_de_equipos.html" class="no-ch">7.1 Mantenimiento seguro de equipos</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31_proteccin_de_grub.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3. Protección del gestor de arranque GRUB</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;"><span>Un sistema operativo basado en Windows puede parecer muy seguro de por sí, ya que dispone de muchas herramientas como antivirus, Windows Defender u otros sistemas de protección. </span></p>
+<p style="text-align: justify;"><span>Sin embargo, todo este tipo de protecciones funcionan únicamente después de que el sistema operativo haya sido iniciado. </span></p>
+<p style="text-align: justify;"><span>Hoy en día existe <strong><em>Malware</em></strong> capaz de colarse en el equipo antes de iniciar el sistema operativo, pasando totalmente desapercibido.</span></p>
+<h3 style="text-align: justify;"><span>2. Rootkits</span></h3>
+<p style="text-align: justify;"><span>Un <b>rootkit</b> es un paquete de software malicioso (tipo de malware) que se ejecuta en el kernel de nuestro sistema con los mismos permisos que nuestro sistema operativo e inician antes que este, por lo que están totalmente ocultos. </span></p>
+<p style="text-align: justify;"><span>Este malware puede proporcionar acceso y control remotos, saltarse inicios de sesión, compartir archivos de forma no autorizada entre otras cosas.</span></p>
+<p style="text-align: justify;"><span>Los tipos de rootkit más famosos son:</span></p>
+<ul>
+<li style="text-align: justify;"><span><strong>Rootkits de firmware.</strong> Su función es sobreescribir el firmware de nuestro sistema por otro malicioso para que el rootkit se inicie antes que el sistema operativo.</span></li>
+<li style="text-align: justify;"><span><strong>Rootkits de kernel.</strong> Parecido al de firmware, pero este rootkit sobreescribe un trozo del kernel de nuestro sistema para poder iniciar antes de cargarse el sistema operativo de forma automática.</span></li>
+<li style="text-align: justify;"><span><strong>Rootkits de controlador.</strong> Engaña al sistema haciéndose pasar por uno de los contradores del sistema que en teoría debería ser de confianza.</span></li>
+<li style="text-align: justify;"><span><strong>Bootkits.</strong> Funciona de forma similar al de firmaware o el de kernel, pero en este caso reemplaza el GRUB del sistema para indicar que el bootkit se inicie antes del Sistema Operativo.</span></li>
+</ul>
+<h3><span>3. Medidas de seguridad</span></h3>
+<p><span>Las principales medidas para un arranque de forma segura son:</span></p>
+<ul>
+<li style="text-align: justify;"><span><strong>Arranque seguro</strong>: los equipos que dispongan de un firmware UEFI y <strong>TPM</strong> se pueden configurar para que solamente inicien los sistemas de seguridad que consideren que son de confianza.</span></li>
+<li style="text-align: justify;"><span><strong>Antimalware de inicio temprano:</strong> prueba que todos los controladores existentes sean de confianza y a los que no lo son les impide el arranque.</span></li>
+<li style="text-align: justify;"><span><strong>Arranque de confianza</strong>: el sistema comprueba la integridad de cada componente del arranque antes de cargarse.</span></li>
+<li style="text-align: justify;"><span><strong>Arranque medido:</strong> el firmware se guarda el proceso de arranque del sistema y el propio sistema lo manda a un servidor para valorar el estado actual del equipo.</span></li>
+</ul>
+<p style="text-align: justify;"><span></span><a href="https://hardzone.es/reportajes/que-es/trusted-platform-module-tpm/" target="_blank" rel="noopener"><strong>TPM (Módulo de plataforma de confianza)</strong> .</a> Es una tecnología de cifrado de información para usuarios encontrada en un chip.</p>
+<h3>4. ¿Qué es el TPM y cuál es su función?</h3>
+<p style="text-align: justify;">TPM son las siglas de Trusted Platform Módule, y es el nombre de una especificación que detalla un<span> </span><strong>criptoprocesador seguro</strong><span> </span>capaz de almacenar claves de cifrado con las que proteger nuestra información.</p>
+<p style="text-align: justify;">TPM<span> </span><strong>es un chip físico</strong><span> </span>que se encuentra en las placas base, pero es un chip pasivo que se encuentra desactivado de fábrica y solo si el usuario quiere, puede elegir activarlo, o lo más habitual es que la placa base cuente con un<span> </span><strong>cabezal TPM</strong><span> </span>en el que podremos ponerle un chip comprado aparte (aunque en algunas placas también viene incluido).</p>
+<p style="text-align: justify;">La principal función de este chip es proporcionar un lugar físico en el que poder almacenar credenciales, certificados y claves de cifrado que sirven tanto para cifrar otros datos como para almacenar nuestras contraseñas propiamente dichas.</p>
+<p style="text-align: justify;">Una de las facultades que hacen a este chip tan seguro es que solo se puede comunicar con el procesador, única y exclusivamente, por lo que ningún otro componente de hardware puede tener acceso a ello sin el permiso del procesador, por decirlo de alguna manera.</p>
+<p style="text-align: justify;">El uso de un chip TPM es, por ejemplo, como<span> </span><strong>DRM</strong><span> </span>(protección de derechos de autor para evitar la piratería),<span> </span><strong>cifrado de archivos y carpetas</strong><span> </span>(por ejemplo con el sistema de archivos de cifrado Windows EFS),<span> </span><strong>correo electrónico seguro</strong><span> </span>(el cliente debe admitir características de firma digital, como por ejemplo Outlook),<span> </span><strong>WWW seguro</strong><span> </span>(navegación con SSL) e incluso para otras funciones como<span> </span><strong>redes privadas virtuales</strong><span> </span>(VPN), contraseñas de uso único y autenticación de clientes. Es más, es obligatorio tenerlo si quieres instalar Windows 11 y forma parte de sus requisitos mínimos y el software y el hardware que utilicemos a futuro con nuestros ordenadores también lo exigirán para funcionar.</p>
+<p style="text-align: center;"><img src="requisitos-W11.png" alt="" width="1255" height="708" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Requisitos de Windows 11 - TPM v2.0.</em></p>
+<p><a href="https://hardzone.es/reportajes/que-es/trusted-platform-module-tpm/" target="_blank" rel="noopener">Fuente</a></p>
+<h4>4.1. Activar TPM</h4>
+<p style="text-align: justify;">Generalmente los equipos vienen de fábrica con el chip TPM deshabilitado por lo que en primer lugar, hay que acceder a la BIOS para activarlo. </p>
+<p style="text-align: justify;">En este caso de ejemplo, se accede a la BIOS de un equipo portátil Dell Latitude E6430 (ver imagen inferior).</p>
+<p style="text-align: center;"><img src="dell-E6430-tpm.png" alt="" width="712" height="375" /></p>
+<p style="text-align: center;"><em><strong>Figura 2. </strong>Equipo dell con TPM.</em></p>
+<p style="text-align: justify;">Una vez se accede a la BIOS, establecemos <strong>TPM Security</strong> para permitir hacer uso del mismo.</p>
+<p><img src="active-TPM.JPG" alt="" width="879" height="480" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><strong>Figura 3. </strong>Activación de TPM en la BIOS.</em></p>
+<p style="text-align: justify;">A continuación, se describe cómo comprobar que el chip está activo tanto para equipos Linux como Windows.</p>
+<p style="text-align: justify;">Para equipos Linux basados en Debian con tpm versión 1.2 hay que instalar los paquetes <span style="font-size: 12pt;">tpm-tools y trousers. Por otro lado, para equipos con la versión 2.0, hay que instalar el paquete tpm2-tools. En este caso de ejemplo, se instalan los paquetes para la versión 1.2.</span></p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:/$</strong>sudo apt install tpm-tools trousers</span></pre>
+<p style="text-align: center;"><img src="install-tpm.png" alt="" width="653" height="280" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Instalación de tpm-tools y trousers.</em></p>
+<p style="text-align: justify;">Una vez instalados los paquetes, ya podremos comprobar el chip <strong>tpm</strong> con el comando tpm_version:</p>
+<p style="text-align: center;"><img src="version-tpm.png" alt="" width="533" height="226" /></p>
+<p style="text-align: center;"><em><strong>Figura 5. </strong>Comprobación de tpm.</em></p>
+<p style="text-align: justify;">Para sistemas Windows se tiene la consola <strong>tpm.msc. </strong>Para este caso de ejemplo, dado que el tpm que se dispone es la versión 1.2, no se muestra información ya que esta consola sólo informa de tpm con versiones mayores o igual a 2.0.</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Windows\system32&gt; </strong>tpm.msc</span></pre>
+<p style="text-align: center;"><img src="tpm-windows.png" alt="" width="834" height="368" /></p>
+<p style="text-align: center;"><em><strong>Figura 6. </strong>Comprobación de tpm.</em></p>
+<p style="text-align: justify;"><strong>Referencias:</strong></p>
+<ul>
+<li style="text-align: justify;"><a href="Cómo Windows el módulo de plataforma de confianza" target="_blank" rel="noopener">[Uso de TPM en Windows]</a></li>
+</ul>
+<h3>5. Protección de Grub</h3>
+<p style="text-align: justify;">Algunas de las operaciones básicas para securizar un sistema Linux estarán relacionadas con la protección del arranque de cualquier sistema instalado en el equipo, de la ejecución del "modo recuperación" y de la edición de las entradas del grub para, entre otras cosas, evitar que arranquen con permisos de superusuario.</p>
+<h4>5.1 HASH de la contraseña</h4>
+<p>Al escribirlo nos pedirá una contraseña, debemos tener en cuenta que la contraseña debe ser robusta para evitar ataques de fuerza bruta. Una vez escrita, nos mostrará una salida como la siguiente:</p>
+<p></p>
+<header class="iDevice_header">
+<h1 class="iDeviceTitle"><span style="font-size: 18pt;">Para saber más</span></h1>
+</header>
+<p></p>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta16_128" class="block iDevice_content">
+<p><strong>En el siguiente enlace puedes encontrar más información sobre la protección del GRUB con contraseña:</strong></p>
+<p><a href="https://geekland.eu/proteger-el-grub-con-contrasena/">https://geekland.eu/proteger-el-grub-con-contrasena/</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="31_proteccin_de_grub.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

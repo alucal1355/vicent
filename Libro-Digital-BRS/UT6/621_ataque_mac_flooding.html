@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.2.1 Ataque MAC flooding | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-60"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_redes_virtuales_vlans.html" class="current-page-parent daddy">6. Redes virtuales (VLANs)</a>
+   <ul>
+      <li><a href="61_introduccin_a_gns3.html" class="daddy">6.1 Introducción a GNS3</a>
+      <ul class="other-section">
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li class="current-page-parent"><a href="62_fortificacin_de_la_red_en_gns3.html" class="current-page-parent daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul>
+         <li id="active"><a href="621_ataque_mac_flooding.html" class="active no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="62_fortificacin_de_la_red_en_gns3.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="622_dhcp_starvation.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.2.1 Ataque MAC flooding</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id101">
+<div class="iDevice emphasis0">
+<div id="ta101_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;">Es un ataque DoS (denegación de servicio) agotamiento RAM SW por inundación de la tabla CAM, es decir, se intenta que el switch que se tenga accesible, llene la tabla de direcciones MAC y comience a funcionar erráticamente o deje de funcionar.</p>
+<p style="text-align: justify;">La <strong>tabla CAM de un Switch, </strong>relaciona las MAC con los puertos. Consultamos tabla MAC del Switch. Es el listado en memoria de las MAC que ha aprendido que son accesibles por cada puerto del Switch.</p>
+<p style="text-align: center;"><img src="tabla-cam.png" alt="" width="353" height="161" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Tabla CAM de un switch Cisco.</em></p>
+<h3><strong>2. Escenario</strong><strong></strong></h3>
+<ul>
+<li>Red de dirección de un centro educativo conectada a la interfaz de un Switch Cisco con vlan 10.</li>
+<li>
+<p align="justify">Equipo Kali conectado por dhcp a la red de dirección y que hará de atacante para inundar la tabla MAC del switch de Dirección.</p>
+</li>
+</ul>
+<p><img src="esquema-reddirecc.png" width="516" height="239" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<h3 style="text-align: justify;">2. Procedimiento</h3>
+<p style="text-align: justify;">Conectamos un equipo Kali al Switch de dirección en el puerto Gi0/3 que tiene configurada la vlan 10.</p>
+<p style="text-align: center;"><img src="int-switch.png" alt="" width="185" height="73" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Configuración del puerto Gi0/3 del switch.</em></p>
+<p style="text-align: justify;">En el equipo Kali, se configura una nueva red para obtener ip del servidor dhcp de la vlan 10. Para este caso, le llamamos red-Direccion y obtiene la ip <strong>192.168.10.2</strong> por dhcp.</p>
+<table border="0" style="width: 100%; height: 220px;">
+<tbody>
+<tr style="height: 195px;">
+<td style="width: 50%; text-align: center; height: 195px;"><img src="conf-red-kali.png" alt="" width="604" height="125" /></td>
+<td style="width: 50%; text-align: center; height: 195px;"><img src="ipkali.png" alt="" width="749" height="283" /></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 50%; text-align: center; height: 25px;"><em><span style="font-size: 12pt;"><strong>Figura 3.</strong> Crear nueva red.</span></em></td>
+<td style="width: 50%; text-align: center; height: 25px;"><em><span style="font-size: 12pt;"><strong>Figura 4.</strong> Listar datos tcp/ip del equipo Kali.</span></em></td>
+</tr>
+</tbody>
+</table>
+<p>El equipo <strong>Kali</strong> será el <strong>equipo atacante para inundar la tabla MAC del switch</strong> de Dirección.</p>
+<p style="text-align: justify;">Por defecto, el switch aprende direcciones MAC por puerto sin limitación, es decir, a un puerto del switch llegan las MAC de todos los dispositivos que cuelguen de allí, por ejemplo, si hay un switch, de todos los equipos que cuelguen de ese switch y pasen por el puerto, este aprende sus MAC.</p>
+<p style="text-align: justify;">A continuación, ejecutamos el ataque MAC flooding mediante <strong>macof.</strong></p>
+<p style="text-align: justify;"><strong>Macof</strong> llena la tabla de CAM en menos de un minuto, ya que envía una gran cantidad de entradas MAC, aproximadamente 155.000 por minuto.</p>
+<p>Para instalarla (viene instalada en Kali Linux), hay que instalar el paquete dsniff: apt install dsniff.</p>
+<p>La sintaxis de <strong>macof</strong> es: </p>
+<pre><span style="font-size: 12pt;">macof -i &lt;Interfaz&gt; -d &lt;Destino&gt;</span></pre>
+<p>donde,</p>
+<ul>
+<li><strong>&lt;Interfaz&gt;</strong>: Especificar la interfaz a enviar.</li>
+<li>&lt;<strong>Destino</strong>&gt;: Especifica la dirección IP de destino.</li>
+</ul>
+<pre><span style="font-size: 12pt;"># macof -i eth0 -d 192.168.100.103</span></pre>
+<p style="text-align: justify;">Lo que hace el ataque es inventarse MAC para enviárselas al switch para que las vaya aprendiendo, es decir, comenzar a llenar la tabla MAC de ese puerto.</p>
+<p style="text-align: center;"><img src="tablaMAC.png" alt="" width="764" height="505" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Generación de MAC's aleatorias.</em></p>
+<p align="justify">Cómo se puede observar en la figura siguiente, una vez se realiza el ataque, a los pocos segundos se consigue la DoS del switch Cisco una vez la memoria CAM se llena. </p>
+<p align="justify" style="text-align: center;"><img src="DOS-Switch.png" alt="" width="483" height="120" /></p>
+<p align="justify" style="text-align: center;"><em><strong>Figura 6. </strong>No se puede acceder al equipo.</em></p>
+<p align="justify" style="text-align: justify;">Si se comprueba la tabla CAM del Switch (figura inferior), se obtiene la misma completamente llena.</p>
+<pre><span style="font-size: 12pt;"><strong>switch#</strong>show mac address-table</span></pre>
+<p align="justify" style="text-align: center;"><img src="show-MAC-address.png" alt="" width="283" height="313" /></p>
+<p align="justify" style="text-align: center;"><em><strong>Figura 7. </strong>Tabla CAM del Switch.</em></p>
+<h3 align="justify"><b>3. Acciones para evitar los ataques MAC flooding – Securización en el Switch Cisco</b></h3>
+<p align="justify">Hay que configurar el switch para que aprenda un número determinado de MAC's por puerto. Esto puede ser un problema si el número es pequeño, es decir, si configuramos para que aprenda una MAC por puerto, no podremos tener más de un equipo conectado a ese puerto.</p>
+<p align="justify">Hay que<strong> estudiar cuál sería el número razonable de direcciones MAC</strong> que <strong>puede aprender</strong> por puerto.</p>
+<p align="justify">Utilizaremos el <strong>port security</strong> para configurar todo esto.</p>
+<p align="justify">suponiendo que se quiere establecer un máximo de 2 MAC por puerto, hay que realizar la siguiente configuración en cada una de las interfaces del switch.</p>
+<pre><span style="font-size: 12pt;">Switch&gt;enable</span><br /><span style="font-size: 12pt;">Switch#conf t</span><br /><span style="font-size: 12pt;">Enter configuration commands, one per line. End with CNTL/Z.</span><br /><span style="font-size: 12pt;">Switch(config)#interface Gi0/3</span><br /><span style="font-size: 12pt;">Switch(config-if)#switchport mode access</span><br /><span style="font-size: 12pt;">Switch(config-if)#switchport port-security</span><br /><span style="font-size: 12pt;">Switch(config-if)#switchport port-security mac-address sticky</span><br /><span style="font-size: 12pt;">Switch(config-if)#switchport port-security violation shutdown</span><br /><span style="font-size: 12pt;">Switch(config-if)#switchport port-security maximum 2</span><br /><span style="font-size: 12pt;">Switch(config-if)#end</span><br /><span style="font-size: 12pt;">Switch#</span></pre>
+<p><strong>Donde:</strong></p>
+<ul>
+<li style="text-align: justify;"><strong>mac-address sticky o forbiden.</strong>
+<ul>
+<li style="text-align: justify;"><strong>sticky</strong>: Se le dice que guarde las MACs que ya tenga y esas serán las MACS que se tengan aprendidas a partir de ahora hasta el máximo que se le haya establecido, que para este caso es 2 (maximum 2).</li>
+<li style="text-align: justify;"><span><strong>forbiden</strong>: Con esta directiva se marcan las MAC como prohibidas.</span></li>
+</ul>
+</li>
+<li><strong>violation shutdown (el más restricitivo):</strong><span> </span>Cuando se llega al máximo, no se permiten más.</li>
+<li><strong>maximum 2</strong>: Se establece a 2 el número de MACs que aprende.</li>
+</ul>
+<p>Para acceder a la <strong>ayuda</strong> de la directiva mac-address, el comando es; <strong>switchport port-security mac-address ?</strong></p>
+<p style="text-align: center;"><img src="starvation-06.png" alt="" width="401" height="61" /></p>
+<p style="text-align: justify;">Para borrar la tabla CAM, el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;">Switch# clear mac address-table dynamic</span></pre>
+<p style="text-align: justify;">En el siguiente <strong>vídeo</strong>,<span> </span><span>se describe el procedimiento para mitigar un ataque MAC flooding </span>en un mismo dominio de broadcast de una red de un centro educativo, en concreto, en la red de dirección de un centro segmentada con VLAN's, <span>y cómo se hace con la popular distribución Kali Linux.</span></p>
+<p style="text-align: center;"><span><iframe width="560" height="314" src="https://www.youtube.com/embed/SyW2QJMAPdc"></iframe><br /></span></p>
+<p style="text-align: center;"><em><strong>Vídeo 1.</strong> Mitigar Ataque MAC flooding.</em></p>
+<h3 style="text-align: justify;">4. Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://www.yeahhub.com/simple-target-mac-flooding-kali-linux-2017-2/" target="_blank" rel="noopener">https://www.yeahhub.com/simple-target-mac-flooding-kali-linux-2017-2/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="62_fortificacin_de_la_red_en_gns3.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="622_dhcp_starvation.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

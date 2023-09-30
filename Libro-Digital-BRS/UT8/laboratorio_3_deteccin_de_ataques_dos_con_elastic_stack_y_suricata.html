@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-132"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li id="active"><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="active no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="318_problemas_y_soluciones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id175">
+<div class="iDevice emphasis0" >
+<div id="ta175_175_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;">En este laboratorio, <span style="font-weight: 400;">se analiza la <strong>detección de ataques DoS</strong> usando un entorno monitorizado por<strong> Elastic Stack</strong> y <strong>Suricata</strong> como NIDS. </span><span style="font-weight: 400;">Como se puede observar en la figura 1, el equipo sobre el que se tiene que realizar el ataque <strong>DoS</strong> tiene un <strong>entorno LAMP</strong> instalado con <strong>WordPress</strong>. </span><span style="font-weight: 400;">Para su monitorización, hay que instalar en el mismo los servicios <strong>Filebeat, Metricbeat y Packetbeat</strong> con sus respectivos módulos instalados para Apache y MySQL. </span><span style="font-weight: 400;">Además de eso, hay que instalar <strong>Suricata</strong> como <strong>NIDS </strong>paramonitorizar el tráfico de la red.</span></p>
+<p style="text-align: center;"><img src="esquema-pr3-ut9.png" alt="" width="662" height="614" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Esquema de red del laboratorio.</em></p>
+<h3>2. Recursos necesarios</h3>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Servidor ubuntu server con el <strong>SIEM Elastic Stack</strong> en producción. </span></li>
+<li>Máquina virtual con kali linux: <strong>Equipo atacante.</strong></li>
+<li>Máquina virtual Ubuntu Server 20.04.4 Cliente 01.<span style="color: #0000ff;"><strong> <a href="https://drive.google.com/file/d/1nvJK_hQMIXrqwuzNvweCHuiY-ilioDgC/view?usp=sharing" target="_blank" rel="noopener" style="color: #0000ff;">Enlace de descarga de la ova.</a></strong></span>
+<ul>
+<li><strong>ip:</strong> 192.168.0.50.</li>
+<li><strong>Usuario:</strong> administrador</li>
+<li><strong>Password</strong>: Ciber-100</li>
+<li><strong>Usuario administrador de Wordpress:</strong>
+<ul>
+<li>user: admin-wp.</li>
+<li>passsword: Ciber-100.</li>
+</ul>
+</li>
+<li><strong>Base de datos mysql WordPress:</strong>
+<ul>
+<li>database: wordpress.</li>
+<li>user: user-wp.</li>
+<li>password: Ciber-100.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><a href="pagina-ciber-local.png"><img src="pagina-ciber-local.png" alt="" width="836" height="583" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Página web de la organización.</em></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Si se modifica la ip del equipo cliente 01, hay que realizar el siguiente cambio en el fichero <strong>wp-config.php</strong> ubicado en /etc/www/wordpress. </p>
+<p style="text-align: justify;">Hay que añadir las siguientes líneas justo después de donde aparece el siguiente texto --&gt; <strong>/* That's all, stop editing! Happy publishing. */</strong></p>
+<ul>
+<li>define( 'WP_HOME', 'http://Nueva_IP' );</li>
+<li>define( 'WP_SITEURL', 'http://Nueva_IP' );</li>
+</ul>
+<p style="text-align: center;"><img src="actualizar-ip-Wordpress.png" alt="" width="625" height="349" /></p>
+</div>
+<h3>3. Instalar Beats en el equipo objetivo</h3>
+<p style="text-align: justify;">En el equipo objetivo, se van a instalar los beats metric, file y packet para poder monitorizar el servidor web e impedir los posibles ataques de DoS al servicio web.</p>
+<h4>3.1 Instalación y configuración de filebeat</h4>
+<p style="text-align: justify;">Hay que <strong>descargar filebeat</strong> y después instalarlo con <strong>dpkg</strong>.<strong> Nota:</strong> Este método es alternativo al que ya se estudió en el capítulo 3.1.5. De este modo, se garantiza instalar la versión 8.1.0 que es la que se tiene en el servidor Elastic Stack.</p>
+<pre><span style="font-size: 12pt;"><strong>root@lamp-wpress:/home/administrador#</strong>curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.1.0-amd64.deb<br /><strong>root@lamp-wpress:/home/administrador#</strong>dpkg -i filebeat-8.1.0-amd64.deb<br /></span></pre>
+<p style="text-align: center;"><img src="install-filebeat.1.png" alt="" width="1029" height="209" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Instalación de filebeat.</em></p>
+<p style="text-align: justify;">A continuación, hay que <strong>configurar filebeat para kibana y elasticsearch</strong>. El fichero de configuración está disponible en el siguiente enlace de github.</p>
+<table border="0" style="width: 69.669%;">
+<tbody>
+<tr>
+<td style="width: 14.4989%; text-align: justify;"><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/SIEM/Laboratorio-DoS/equipoWPress/beats/filebeat/filebeat.yml" target="_blank" rel="noopener"><span style="font-size: 12pt;"><img src="github-JCRequena.png" alt="" width="191" height="77" /></span></a></td>
+<td style="width: 55.1701%; text-align: justify;"><span style="font-size: 12pt;">Pulsa en la imagen para accede al fichero <strong>filebeat.yml</strong>.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Una vez se ha modificado el fichero<strong> filebeat.yml</strong>, el siguiente paso es habilitar los módulos de apache y mysql con el siguiente comando.</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@lamp-wpress:/#</strong>filebeat modules enable apache mysql</span><br /></span></pre>
+<p style="text-align: center;"><img src="eanble-apache-mysql.png" alt="" width="460" height="82" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong><span> </span>Habilitar el módulo apache y mysql.</em></p>
+<p style="text-align: justify;">Una vez habilitados los módulos hay que configurarlos. Los ficheros de configuración están disponibles en el siguiente enlace de github.</p>
+<table border="0" style="width: 63.5874%;">
+<tbody>
+<tr>
+<td style="width: 15.8832%; text-align: center;"><a href="https://github.com/jcrequena/Ciberseguridad/tree/main/BRS/SIEM/Laboratorio-DoS/equipoWPress/beats/filebeat" target="_blank" rel="noopener"><img src="github-JCRequena.png" width="191" height="77" /></a></td>
+<td style="width: 47.7042%; text-align: justify;"><span style="font-size: 12pt;">Pulsa en la imagen para acceder a los ficheros <strong>apache.yml</strong> y <strong>mysql.yml</strong>.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">A continuación, hay que <strong>testear el fichero de configuración y salida de filebeat</strong> para asegurarse que las modificaciones realizadas en <strong>filebeat.yml</strong> y módulos son correctos. Una vez que el test devuelva <strong>Ok</strong>, ya se puede iniciar el servicio y habilitarlo en el arranque del sistema con el siguiente comando:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@lamp-wpress:/#</strong>systemctl enable --now filebeat</span></span></pre>
+<h4>3.2 Instalación y configuración de metricbeat</h4>
+<p style="text-align: justify;">En primer lugar, hay que descargar metricbeat y después instalarlo con dpkg. </p>
+<pre><span style="font-size: 12pt;"><strong>root@lamp-wpress:/home/administrador#</strong>curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.1.0-amd64.deb<br /><strong>root@lamp-wpress:/home/administrador#</strong>dpkg -i metricbeat-8.1.0-amd64.deb</span></pre>
+<p style="text-align: center;"><img src="install-metricbeat.png" alt="" width="1052" height="224" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Instalación de metricbeat.</em></p>
+<p style="text-align: justify;">A continuación, hay que <strong>configurar metricbeat para kibana y elasticsearch</strong>. El fichero de configuración está disponible en el siguiente enlace de github.</p>
+<table border="0" style="width: 64.3741%;">
+<tbody>
+<tr>
+<td style="width: 13.3706%; text-align: justify;"><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/SIEM/Laboratorio-DoS/equipoWPress/beats/metricbeat/metricbeat.yml" target="_blank" rel="noopener"><span style="font-size: 12pt;"><img src="github-JCRequena.png" alt="" width="191" height="77" /></span></a></td>
+<td style="width: 51.0056%; text-align: justify;"><span style="font-size: 12pt;">Pulsa en la imagen para accede al fichero <strong>metricbeat.yml</strong>.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">A continuación, hay que habilitar los módulos de apache y mysql. </p>
+<pre><span><span style="font-size: 12pt;"><strong>root@lamp-wpress:/#</strong>metricbeat modules enable apache mysql</span><br /></span></pre>
+<p style="text-align: center;"><img src="enable-apacher-mysql-metricbeat.png" alt="" width="469" height="86" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong><span> </span>Habilitar el módulo apache y mysql.</em><span><span style="font-size: 12pt;"></span></span></p>
+<p style="text-align: justify;">Los ficheros de configuración están disponibles en el siguiente enlace de github.</p>
+<table border="0" style="width: 68.2833%;">
+<tbody>
+<tr>
+<td style="width: 16.9746%; text-align: center;"><a href="https://github.com/jcrequena/Ciberseguridad/tree/main/BRS/SIEM/Laboratorio-DoS/equipoWPress/beats/metricbeat" target="_blank" rel="noopener"><img src="github-JCRequena.png" width="191" height="77" /></a></td>
+<td style="width: 51.3087%; text-align: justify;"><span style="font-size: 12pt;">Pulsa en la imagen para acceder a los ficheros <strong>apache.yml</strong> y <strong>mysql.yml</strong>.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">A continuación, hay que<strong> testear el fichero de configuración y salida de metribeat</strong> y si se tiene éxito, ya se puede iniciar el servicio y habilitarlo en el arranque del sistema con el siguiente comando:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@lamp-wpress:/#</strong>systemctl enable --now metricbeat<br /></span></span></pre>
+<h4>3.3 Instalación y configuración de packetbeat</h4>
+<p style="text-align: justify;">En primer lugar, hay que descargar packetbeat y después instalarlo con dpkg.</p>
+<pre><span style="font-size: 12pt;"><strong>root@lamp-wpress:/home/administrador#</strong>curl -L -O https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-8.1.0-amd64.deb<br /><strong>root@lamp-wpress:/home/administrador#</strong>dpkg -i packetbeat-8.1.0-amd64.deb</span></pre>
+<p style="text-align: center;"><img src="instalar-packetbeat.png" alt="" width="1083" height="189" /></p>
+<p style="text-align: center;"><em><strong>Figura 7.</strong> Instalación de packetbeat.</em></p>
+<p style="text-align: justify;">A continuación, hay que <strong>configurar packetbeat para kibana y elasticsearch</strong>. El fichero de configuración está disponible en el siguiente enlace de github.</p>
+<table border="0" style="width: 64.3741%;">
+<tbody>
+<tr>
+<td style="width: 13.3706%; text-align: justify;"><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/SIEM/Laboratorio-DoS/equipoWPress/beats/packetbeat/packetbeat.yml" target="_blank" rel="noopener"><span style="font-size: 12pt;"><img src="github-JCRequena.png" alt="" width="191" height="77" /></span></a></td>
+<td style="width: 51.0056%; text-align: justify;"><span style="font-size: 12pt;">Pulsa en la imagen para accede al fichero <strong>packetbeat.yml</strong>.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">A continuación, hay que testear el fichero de configuración y salida de <span style="font-size: 12pt;">packetbeat</span> y si se tiene éxito, ya se puede inicia el servicio y habilitarlo en el arranque del sistema con el siguiente comando:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@lamp-wpress:/#</strong>systemctl enable --now packetbeat</span></span></pre>
+<p><strong>Cargar la plantilla de índice en Elasticsearch</strong></p>
+<p style="text-align: justify;"><span>Para tener plantillas disponibles, hay que realizar la carga de la misma manualmente. En primer lugar hay que generar el fichero plantilla mediante el siguiente comando.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@lamp-wpress:/etc/<span>packetbeat</span>/#</strong>packetbeat export template &gt; packetbeat.template.json</span></pre>
+<p style="text-align: center;"><img src="export-template-packetbeat.png" alt="" width="702" height="44" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 8.</strong> Exportar la plantilla de packetbeat.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, hay que copiar el fichero en el equipo donde se tiene Elastic Stack. Para este caso, se copia en el home del usuario administrador.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@lamp-wpress:/etc/<span>packetbeat</span>/#</strong>scp packetbeat.template.json administrador@192.168.0.254:/home/administrador</span></pre>
+<p style="text-align: center;"><img src="transferir-fichero.png" alt="" width="1141" height="81" /></p>
+<p style="text-align: center;"><em><strong>Figura 9.</strong> Copiar la plantilla al equipo donde esta Elastic Stack.</em></p>
+<p style="text-align: justify;">Una vez se ha transferido el fichero, en el equipo <span>donde se tiene<strong> Elastic Stack</strong>, hay que instalar la plantilla (fichero transferido), es decir, el fichero <strong>packetbeat.template.json. </strong>Para ello, hay que ejecutar el siguiente comando:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastics-master01:/home/administrador/#</strong>curl -XPUT -H 'Content-Type: application/json' --cacert /etc/elasticsearch/certs/http_ca.crt -u \<br />elastic 'https://elastics-master01:9200/_index_template/packetbeat-8.1.0' -d@packetbeat.template.json</span></pre>
+<p style="text-align: center;"><img src="instalar-plantillas.png" alt="" width="1134" height="109" /></p>
+<p style="text-align: center;"><em><strong>Figura 10.</strong> Instalación de la plantilla.</em></p>
+<h3>4. Generar data views</h3>
+<p style="text-align: justify;">Una vez se han iniciado los servicios sin errores, hay que acceder al entorno Elastic stack para genear los data views de metricbeat, filebeat y packetbeat.</p>
+<div class="exe-fx exe-tabs">
+<h2>Metricbeat</h2>
+<p style="text-align: center;"><img src="discover-metricbeat.png" alt="" width="1513" height="775" /></p>
+<h2>Filebeat</h2>
+<p style="text-align: center;"><img src="Discover-filebeat.png" alt="" width="1520" height="773" /></p>
+<h2>Packetbeat</h2>
+<p style="text-align: center;"><img src="discover-packetbeat.png" alt="" width="1491" height="783" /></p>
+</div>
+<p style="text-align: justify;">A continuación y como ejemplo, se abre el <strong>dashboard</strong> predeterminado para <strong>Filebeat Apache - Access and error logs ECS. </strong>Este dashboard está preparado para leer los eventos de apache recogidos con filebeat.</p>
+<p style="text-align: center;"><img src="dashboard-apche-metrricbeat.png" alt="" width="1785" height="937" /></p>
+<p style="text-align: center;"><em><strong>Figura 11.</strong> Dashboard  Filebeat Apache - Access and error logs ECS</em></p>
+<h3>5. Prueba de ataque DoS en el puerto 80</h3>
+<p style="text-align: justify;">Una vez se tiene el <strong>equipo objetivo recolectando logs</strong> y el equipo <strong>Elastic Stack recopilando los mismos</strong>, como simulación, se va a realizar una <strong>simulación de ataque DoS</strong> donde se van a utilizar dos herramientas.</p>
+<p><strong>1ª Herramienta. </strong></p>
+<p style="text-align: justify;"><strong>hping3</strong>. Es una aplicación de terminal para Linux que permite analizar y ensamblar fácilmente paquetes TCP/IP. A diferencia de un Ping convencional que se utiliza para enviar paquetes ICMP, esta aplicación permite el envío de paquetes TCP, UDP y RAW-IP. Junto al análisis de los paquetes, esta aplicación puede ser utilizada también con otros fines de seguridad, por ejemplo, para probar la eficacia de un firewall a través de diferentes protocolos, la detección de paquetes sospechosos o modificados, e incluso la protección frente a ataques DoS de un sistema o de un Firewall.</p>
+<p style="text-align: justify;">Para realizar el ataque, hay que instalar la aplicación en el equipo atacente mediante el comando <span><span style="font-size: 12pt;"><strong>apt install hping3</strong>. Para este caso, dado que se utilizará un equipo Kali Linux, no es necesario instalar la herramienta ya que viene instalado por defecto.</span></span></p>
+<p style="text-align: justify;">El <strong>ataque DoS</strong> se realizará en el puerto 80 de la máquina objetivo mandando paquetes TCP SYN (SYN Flood Attack).</p>
+<p style="text-align: center;"><img src="tres-pasos-y-del-ataque-syn-flood.png" alt="" width="586" height="302" /></p>
+<p style="text-align: center;"><em><strong>Figura 12.</strong> Esquema DDoS.</em></p>
+<p style="text-align: justify;">Si se observa la figura superior, se puede ver que incluso se podría falsificar la dirección IP de la que provienen los ataques, aunque para este caso de ejemplo, no se realizará. Para <strong>falsificar</strong>, hay que utilizar<strong> </strong><span><strong>-a ip_falsa</strong>.</span></p>
+<pre><span><span style="font-size: 12pt;"><strong>┌──(root💀kali)-[/home/kali]</strong><br /><strong>└─#</strong> hping3 -p 80 -S --flood 192.168.0.50<br /></span></span></pre>
+<p style="text-align: center;"><img src="hping-3.png" alt="" width="622" height="111" /></p>
+<p style="text-align: center;"><em><strong>Figura 13.</strong> Simulación Ataque DoS.</em></p>
+<p style="text-align: justify;">Si se accede al menú <strong>Analytics --&gt; Discover</strong> del index <strong>packetbeat, </strong>se puede apreciar que la simulación del ataque DoS enviando paquetes TCP SYN al no establecerse una conexión completa, Elastic no registra ningún log sobre la recepción de estos paquetes de manera maliciosa, es decir, si lo hubiera detectado, mostraría en la propiedad <strong>event.category</strong>: <strong>network</strong>, <strong>intrusion_detection</strong>.</p>
+<p style="text-align: center;"><a href="no-detecta-ping.png"><img src="no-detecta-ping.png" alt="" width="1110" height="264" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 14.</strong> Discover de metricbeat</em></p>
+<p style="text-align: justify;">Para resolver este inconveniente, en un apartado posterior, se instalará el <strong>IDS/IPS Suricata</strong> para poder detectar este tipo de ataques y su envío de los eventos a Elastic por medio de Filebeat.</p>
+<div class="wp-block-image" style="text-align: justify;"><strong>2ª Herramienta.</strong></div>
+<div class="wp-block-image" style="text-align: justify;"><strong><span style="font-size: 1em;">Slowhttptest. </span></strong><span style="font-size: 1em;">E</span><span style="font-size: 1em;">s una herramienta altamente configurable que simula algunos ataques de denegación de servicio en la capa de aplicación prolongando las conexiones HTTP de diferentes maneras (SlowHTTP Attack). </span><span style="font-size: 1em;">Para instalar la aplicación, hay que ejecutar el siguiente comando:</span></div>
+<div class="wp-block-image">
+<pre><span><span style="font-size: 12pt;"><strong>┌──(root💀kali)-[/home/kali]<br />└─# </strong>apt install slowhttptest<strong><br /></strong></span></span></pre>
+</div>
+<p style="text-align: justify;"><strong></strong>Para lanzar una ataque al servidor web, el comando es el siguiente:</p>
+<div class="wp-block-image">
+<pre><span><span style="font-size: 12pt;"><strong>┌──(root💀kali)-[/home/kali]<br />└─# </strong>slowhttptest -c 1000 -H -g -o slowhttp -i 10 -r 200 -t GET -u http://192.168.0.50/wordpress/index.php -x 24 -p 3<strong><br /></strong></span></span></pre>
+</div>
+<p style="text-align: center;"><img src="slowhttptest-01.png" alt="" width="1005" height="75" /></p>
+<p style="text-align: center;"><em><strong>Figura 15.</strong> Simulación Ataque DoS.</em></p>
+<p style="text-align: justify;">A continuación, se adjuntan las capturas de la salida del comando.</p>
+<div class="exe-fx exe-tabs">
+<h2>1</h2>
+<p style="text-align: center;"><img src="slowhttptest-02.png" alt="" width="724" height="411" /></p>
+<h2>2</h2>
+<p style="text-align: center;"><img src="slowhtptes-03.png" alt="" width="837" height="418" /></p>
+<h2>3</h2>
+<p style="text-align: center;"><img src="slowhttptest-04.png" alt="" width="636" height="296" /></p>
+</div>
+<p style="text-align: justify;">Si se accede al <strong>Dashboard de Filebeat de Apache</strong> se pueden ver picos de conexiones HTTP a la url destino <strong>wordpress/index.php </strong>utilizada en el ataque.</p>
+<p style="text-align: center;"><img src="access-error-apache.png" alt="" width="1902" height="949" /></p>
+<p style="text-align: center;"><em><strong>Figura 16.</strong> Dashboard de Filebeat de Apache.</em></p>
+<p style="text-align: justify;">Y el servidor web está <strong>fuera de servicio</strong>.</p>
+<p style="text-align: center;"><img src="denegacion-servicio-serviodr-web.png" alt="" width="881" height="540" /></p>
+<p style="text-align: center;"><em><strong>Figura 17.</strong> Página web fuera de servicio.</em></p>
+<p style="text-align: justify;"><span>Filtrando los eventos, se puede apreciar que el días <strong>07 de abril a las 11:58</strong> hubo <strong>124</strong> peticiones HTTP </span><span>(GET <span style="font-size: 12pt;">http://192.168.0.50/wordpress/index.php)</span>.</span></p>
+<p style="text-align: center;"><span><img src="124-http.png" alt="" width="1920" height="780" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 18.</strong> Discover filebeat.</em></span></p>
+<h4>Gráfica Analitycs --&gt; Discover</h4>
+<p style="text-align: justify;"><span>Si se observa el log de una de estas peticiones, se puede apreciar la url destino del ataque (192.168.0.50), y lo más importante, la IP de la máquina atacante (192.168.0.100).</span></p>
+<p style="text-align: center;"><span><img src="ip-100-ataque.png" alt="" width="1568" height="403" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 19.</strong> Detección ip origen del método GET.</em></span></p>
+<p style="text-align: justify;"><span>Filtrando en los logs de <strong>Packetbeat</strong> se puede identificar también la ip y puerto de la máquina atacante.</span></p>
+<p style="text-align: center;"><span><img src="packetbeat.png" alt="" width="1902" height="736" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 20.</strong> Filtrado de paquetes packetbeat.</em></span></p>
+<p style="text-align: center;"><span><img src="ip-puterto-ataque.png" alt="" width="717" height="449" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 21.</strong> Propiedades de un evento de filebeat.</em></span></p>
+<p style="text-align: justify;"><span>Se puede identificar también que después de haber realizado el ataque hay un pico en las<strong> consultas MySQL</strong> y <strong>número de conexiones.</strong></span></p>
+<p style="text-align: center;"><span><img src="metricbeat-mysql.png" alt="" width="1212" height="527" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 22.</strong> Comprobación de Mysql.</em></span></p>
+<p style="text-align: justify;"><span>Se puede observar también que en el pico del ataque se ejecutaron <strong>492</strong> consultas <strong>SELECT</strong> a la base de datos.</span></p>
+<p style="text-align: center;"><span><img src="pico-Consultas-sql.png" alt="" width="501" height="337" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 23.</strong> Comprobación de las consultas SQL.</em></span></p>
+<h3>6. Instalar Suricata</h3>
+<p style="text-align: justify;">En este apartado hay que<strong> instalar y configurar Suricata</strong> siguiendo lo visto en el <strong>capítulo 2.3.</strong></p>
+<p style="text-align: justify;">Recordar, que una de las <strong>ventajas de Suricata</strong> es que puede funcionar como <strong>sniffer</strong>, (se puede ver en consola y en tiempo real qué ocurre en la red), <strong>registro de paquetes</strong> (permite guardar en un archivo los logs para su posterior análisis, un análisis offline) o como un<strong> IDS normal</strong> (en este caso NIDS). Cuando un paquete coincide con algún patrón establecido en las reglas de configuración, se loguea. Así se sabe cuándo, de dónde y cómo se produjo el ataque. </p>
+<p style="text-align: justify;">El esquema que se va a utilizar para la <strong>adquisición de logs de Suricata</strong> y el<strong> envío de los mismos a ElasticSearch</strong> es el siguiente:</p>
+<p style="text-align: center;"><img src="esquema-suricata.png" alt="" width="421" height="211" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 24.</strong> Esquema de recogida de logs suricata y envío a elasticsearch.</em></span></p>
+<h4>6.1 Añadiendo reglas a Suricata</h4>
+<p style="text-align: justify;">Para poder detectar ataques DoS enviando paquetes TCP SYN en el puerto 80 se va a <strong>construir una regla personalizada.</strong> Para ello, en primer lugar hay que crear un archivo en <strong>/etc/rules</strong> al que se le llama como ejemplo <strong>ciber.rules</strong>. En este fichero, se irán añadiendo las reglas que interesen, es decir, son las reglas personalizadas.</p>
+<div class="wp-block-image">
+<pre><span style="font-size: 12pt;"><span>alert tcp any any -&gt; $HOME_NET 80 (flags: S; msg:"Posible ataque DoS Type : SYNflood"; <br />flow:stateless; sid:1000001; detection_filter:track by_dst, count 20, seconds 10;)</span><br /></span></pre>
+</div>
+<p style="text-align: justify;"><strong>Explicación de la regla. </strong>La regla se divide en la cabecera de la regla y sus opciones.</p>
+<p><strong>Cabecera de la regla:</strong></p>
+<ul>
+<li style="text-align: justify;"><strong>alert</strong> – Acción de la regla. Suricata generará una alerta cuando se cumplan los requisitos.</li>
+<li style="text-align: justify;"><strong>tcp</strong> – Protocolo.</li>
+<li style="text-align: justify;"><strong>any</strong> – IP origen. Suricata filtrará cualquier origen.</li>
+<li style="text-align: justify;"><strong>any</strong> – Puerto origen. Suricata filtrará cualquier puerto.</li>
+<li style="text-align: justify;"><strong>-&gt;</strong> – Dirección. Desde el origen al destino..</li>
+<li style="text-align: justify;"><strong>$HOME_NET</strong> – IP destino. Se está usando el valor de HOME_NET de suricata.yaml.</li>
+<li style="text-align: justify;"><strong>80 </strong>– Puerto de destino. Suricata analizará en el puerto 80.</li>
+</ul>
+<p style="text-align: justify;"><strong>Opciones de la regla</strong>:</p>
+<ul style="text-align: justify;">
+<li><strong>flags:S </strong>– Chequea que los bits específicos de TCP (en este caso SYN) están presentes.</li>
+<li><strong>msg:”Posible ataque DoS - Type : SYNflood” </strong>– Suricata incluirá este mensaje en la alerta.</li>
+<li><strong>flow:stateless –</strong><span> </span>No se tiene en cuenta la inspección de estado.</li>
+<li><strong>sid:1000001</strong> –ID de la regla de Suricata. Los ids &lt; 1,000,000 están reservados.</li>
+<li><strong>detection_filter:track by_dst</strong><span> </span>–  Suricata trackea la IP.</li>
+<li><strong>seconds 10 </strong>– Período de muestreo.</li>
+<li><strong>count 20 –</strong><span> </span>Si durante 10 segundos se han recibido más de 20 peticiones, Suricata generará una alerta.</li>
+</ul>
+<p style="text-align: justify;">A continuación, hay que añadir el fichero <strong>ciber.rules</strong> en la <strong>sección rule-files</strong> del fichero <strong>suricata.yaml.</strong></p>
+<p style="text-align: center;"><strong><img src="default-rules.png" alt="" width="360" height="96" /></strong></p>
+<p style="text-align: center;"><strong><span><em>Figura 25. </em></span></strong><em>Definición de los ficheros de reglas en suricata.</em></p>
+<h3>7. Envío de logs de Suricata a Elastic Search</h3>
+<p style="text-align: justify;">Debido a que existe un <strong>módulo de elastic de Suricata</strong>, se hará uso del mismo para el tratamiento de los logs de Suricata y envío a Elastic, es decir, mediante el<strong> módulo suricata de filebeat</strong> se recogerán los datos del fichero <strong>eve.json</strong> para enviar los mismos a elasticsearch.</p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Otra opción sería instalar <strong>logstash</strong> y que este recopilara los eventos de suricata y los enviara a elasticsearch. La ventaja de usar logstash es que con el filtro se pueden filtrar eventos y poder alterarlos según necesidades.</p>
+</div>
+<p style="text-align: justify;">El procedimiento a realizar es el mismo que se describe en el <strong>3.1.6.5 Suricata en Kibana. </strong></p>
+<p style="text-align: justify;">Al final, se tendrá un data stream <strong>suricata-YYYY.MM.dd </strong>en elastic con los eventos recogidos. Para este caso de ejemplo, dado que se realiza la configuración el 08 de abril de 2022, el data stream será <strong>suricata-2022-04-08.</strong></p>
+<div class="wp-block-image" style="text-align: justify;">
+<p>A continuación, se tiene el enlace a los <strong>filebeat.yml</strong> y suricata.yml del módulo suricata.</p>
+<table border="0" style="width: 64.3741%;">
+<tbody>
+<tr>
+<td style="width: 13.3706%; text-align: justify;"><a href="https://github.com/jcrequena/Ciberseguridad/tree/main/BRS/SIEM/Laboratorio-DoS/equipoWPress/suricata/beats/filebeat" target="_blank" rel="noopener"><span style="font-size: 12pt;"><img src="github-JCRequena.png" alt="" width="191" height="77" /></span></a></td>
+<td style="width: 51.0056%; text-align: justify;"><span style="font-size: 12pt;">Pulsa en la imagen para acceder al repositorio.</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>8. Detección de ataques con Suricata TCP SYN Flood</h3>
+<p>Una vez configurado el equipo objetivo con <strong>filebeat</strong> y <strong>suricata</strong>, hay que <strong>simular el </strong><span><strong>ataque DoS</strong> con flood de paquetes TCP SYN desde el equipo atacante. En el ejemplo que se describe a continuación, decir que, el ataque se realiza el 08 de abril a las 08:02 aproximadamente.</span></p>
+<div class="wp-block-image">
+<pre><span><span style="font-size: 12pt;"><strong>┌──(root💀kali)-[/home/kali]<br />└─# </strong>hping3 -p 80 -S --flood 192.168.0.50 </span></span></pre>
+</div>
+<p style="text-align: center;"><span><img src="hping3.png" alt="" width="600" height="74" /></span></p>
+<p style="text-align: center;"><span><strong><em>Figura 26. </em></strong><em>Simulación del ataque DDoS.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, se accede a Elastic para observar las </span><span>alertas generadas por Suricata. Para ello, hay que crear el '<strong>data view</strong>' a partir del '<strong>data stream</strong>'  <strong>suricata-2022.04.08 </strong>y que se le nombra como <strong>suricata-2022.04.08. </strong></span></p>
+<p style="text-align: center;"><img src="data-view-suricata.png" alt="" width="1205" height="464" /></p>
+<p style="text-align: center;"><span><strong><em>Figura 27. </em></strong><em>Dataview creado.</em></span></p>
+<p style="text-align: justify;"><span>Una vez se tiene el data view, hay que acceder a<strong> 'Analitys --&gt; Discover'</strong> y seleccionar el data view <strong>suricata-2022.04.08. </strong>Como se puede observar en la figura inferior, se han contabilizado <strong>13.937 eventos</strong> que están relacionados con el ataque en su gran mayoría. Si se observa en los datos inferiores al gráfico, se detecta una intrusión por cada uno de los datos del ataque.</span></p>
+<p style="text-align: center;"><span><img src="discover-ping.png" alt="" width="1778" height="960" /></span></p>
+<p style="text-align: center;"><span><strong><em>Figura 28. </em></strong><em>Detección del ataque DDoS.</em></span></p>
+<p style="text-align: justify;"><span>Si se accede a los<strong> datos json</strong>, se obtiene toda la información: ip origen del ataque, el nombre de la regla que se puso en suricata (Posible ataque DoS - Type: SYNfllod), etcétera.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="json-evento-dos.png" alt="" width="851" height="540" /></td>
+<td style="width: 50%; text-align: center;"><img src="json-evento-02.png" alt="" width="577" height="541" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span>Para obtener información gráfica, hay que acceder a los <strong>dashboards</strong> que se tienen por defecto para suricata en concreto: [Filebeat Suricata] Alert Overview y [Filebeat Suricata] Events Overview.</span></p>
+<p style="text-align: justify;"><span>En primer lugar, se accede a <strong>[Filebeat Suricata] Alert Overview.</strong></span></p>
+<div class="exe-fx exe-tabs">
+<h2>1. Gráfico de alertas</h2>
+<p style="text-align: center;"><img src="dashboard-suricata-alart.png" alt="" width="909" height="538" /></p>
+<h2>2. Mapa de alertas</h2>
+<p style="text-align: center;"><img src="dashboard-suricat-alert-02.png" alt="" width="981" height="419" /></p>
+<h2>3. Tabla de alertas</h2>
+<p>El origen 192.168.0.100 es el del equipo atacante.</p>
+<p style="text-align: center;"><img src="dashboard-suricata-alert-03.png" alt="" width="1874" height="417" /></p>
+</div>
+<p style="text-align: justify;"><span>A continuación, se accede a <strong> [Filebeat Suricata] Events Overview:</strong></span></p>
+<div class="exe-fx exe-tabs">
+<h2>Datos gráficos</h2>
+<p>Los eventos relacionados con accesos a GB (Gran Bretaña), son accesos no maliciosos.</p>
+<p style="text-align: center;"><img src="dahsboard-suricata-evens.png" alt="" width="1432" height="925" /></p>
+<h2>Datos tabulares</h2>
+<p style="text-align: center;"><img src="dashboard-suricata-events-02.png" alt="" width="1428" height="745" /></p>
+</div>
+<h3>9. Conclusiones</h3>
+<p style="text-align: justify;">El uso de SIEM's como Elastic Stack nos permite disponer de mucha información para su posterior análisis en caso de un incidente de ciberseguridad. El uso de un IDS como Suricata también nos permite tener monitorizado todo el tráfico de la red y a la vez obtener alertas cuando se produzcan comportamientos sospechosos. </p>
+<p style="text-align: justify;">En este caso de estudio '<strong>ataque de DoS con TCP SYN Flood</strong>', en primer lugar no ha sido identificado por <strong>Elastic Stack</strong> por no realizar conexiones TCP completas, sin embargo, <strong>Suricata</strong> con las alertas adecuadas si ha sido capaz de detectar el ataque.</p>
+<h3 style="text-align: justify;">10. Referencias</h3>
+<ul>
+<li><a href="https://github.com/jcrequena/Ciberseguridad/tree/main/BRS/SIEM/Laboratorio-DoS/equipoWPress" target="_blank" rel="noopener">Github JCRequena</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="318_problemas_y_soluciones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

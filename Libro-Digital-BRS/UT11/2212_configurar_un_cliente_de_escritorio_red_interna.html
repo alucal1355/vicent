@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.1.2 Configurar un cliente de escritorio -Red Interna | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-112"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul class="other-section">
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_vpn_de_acceso_remoto.html" class="current-page-parent daddy">2. VPN de acceso remoto</a>
+   <ul>
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li class="current-page-parent"><a href="22_wireguard.html" class="current-page-parent daddy">2.2 WireGuard</a>
+      <ul>
+         <li class="current-page-parent"><a href="221_instalacin_y_configuracin_de_wireguard.html" class="current-page-parent daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul>
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li id="active"><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="active no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_gestin_de_accesos_sistemas_nac.html" class="daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_servidor_radius_vpn.html" class="daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul class="other-section">
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2211_configurar_un_cliente_mvil__red_externa.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2123_probando_la_conexin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.1.2 Configurar un cliente de escritorio -Red Interna</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id149">
+<div class="iDevice emphasis0" >
+<div id="ta149_149_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Cliente Windows 10 - Red Interna</h3>
+<p style="text-align: justify;">En primer lugar hay que descargar <strong>el instalador de WireGuard</strong><span> </span>de la página<span> </span><a href="https://www.wireguard.com/install/" target="_blank" rel="noopener">https://www.wireguard.com/install</a>. Una vez descargado, se ejecuta para su instalación en el equipo.</p>
+<p style="text-align: center;"><img src="installWGuard-W10.png" alt="" width="1019" height="335" /></p>
+<p>Al finalizar la instalación, se abre la aplicación y hay que pulsar en el botón<span> </span><strong>'Añadir Túnel'</strong>.</p>
+<p class="image-container" style="text-align: center;"><img src="anyadir-tunel.png" alt="" width="491" height="388" /></p>
+<p>Hay que elegir la opción '<strong>Añadir túnel vacío..'  </strong><img src="anyadir-tunel-vacio.png" alt="" width="269" height="81" /></p>
+<p style="text-align: justify;">Generará automáticamente<span> </span><strong>la clave pública y la clave privada del cliente</strong>. Hay que anotar la clave pública porque hará falta en el último paso para permitir el acceso de este cliente en el servidor. Como nombre, hay que ponerle uno descriptivo, ejemplo: <strong>tunelW10Ciber</strong>.</p>
+<p class="image-container" style="text-align: center;"><img src="new-tunel.png" alt="" width="480" height="385" /></p>
+<p class="image-container"></p>
+<p style="text-align: justify;">Dentro del apartado Interface hay que añadir:</p>
+<ul>
+<li><strong>PrivateKey: </strong>Clave privada creada por la aplicación al crear el nuevo túnel.</li>
+<li style="text-align: justify;"><strong>Address</strong>: Directiva con la IP que se le quiere asignar al cliente (192.168.8.112 en el esquema de red de este caso).</li>
+<li style="text-align: justify;"><strong>DNS</strong>: Directiva en la que se indican los servidores DNS que se quieren utilizar cuando se tenga el túnel activado. </li>
+</ul>
+<p><span style="font-size: 1em; text-align: left;">A continuación, hay que escribir un nuevo apartado </span><strong style="font-size: 1em; text-align: left;">Peer</strong><span style="font-size: 1em; text-align: left;"> en el que se indicarán tres directivas:</span></p>
+<ul>
+<li><strong>PublicKey</strong>, la clave pública del servidor.</li>
+<li><strong>AllowedIPs</strong>, IPs permitidas para el servidor, se puede dejar 0.0.0.0/0 para indicar que cualquiera tendrá acceso.</li>
+<li><strong>Endpoint</strong>, donde se indica la IP pública del servidor y el puerto udp donde está wireguard.</li>
+</ul>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">[Interface]</span><br /><span style="font-size: 12pt;">PrivateKey = sJz8W6wdY41WjieALzdyDkLvwFXRRPlaug+XG1SEcFw=</span><br /><span style="font-size: 12pt;">Address = 192.168.8.112</span><br /><span style="font-size: 12pt;">DNS = 8.8.8.8, 8.8.4.4<br />[Peer]<br />PublicKey = coD7BXnIgmQ2fnga23V3naeEmJeETVpuXjIbvZuQ/00=<br />AllowedIPs = 0.0.0.0/0<br />Endpoint = 192.168.0.254:15000</span></pre>
+<p style="text-align: center;"><img src="edita-tunel-W10.png" alt="" width="482" height="388" /></p>
+<p>Para finalizar, hay que pulsar '<strong>Guardar</strong>', y el túnel estará creado sin activar.</p>
+<p style="text-align: center;"><img src="tunesl-W10-Desactivado.png" alt="" width="658" height="513" /></p>
+<p>Si se pulsa el botón <strong>Activar</strong>, se activará mostrando un icono verde.</p>
+<p class="image-container" style="text-align: center;"><img src="tunelWireguard-W10.png" alt="" width="893" height="595" /></p>
+<p class="image-container" style="text-align: justify;">Cuando se activa, aparece un mensaje en la parte inferior informando.</p>
+<p class="image-container" style="text-align: center;"><img src="mensaje-VPN-activated.png" alt="" width="351" height="118" /></p>
+<p style="text-align: justify;">En la barra de herramientas inferior también aparecerá el icono de <strong>WireGuard</strong>, donde se podrá <strong>activar y desactivar</strong><span> </span>el túnel VPN desde ahí.</p>
+<p class="image-container" style="text-align: center;"><img src="tunel-activado-barra-herr.png" alt="" width="260" height="251" /></p>
+<p style="text-align: justify;">Sin embargo, la conexión no funcionará<span> </span><strong>hasta que no se agregue el cliente en el servidor</strong>. Para ello,<span> </span><strong>hay que ejecutar el siguiente comando en el servidor</strong>:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>wg set wg0 peer [Clave_Pública_Cliente] allowed-ips [IP_Cliente]</span></pre>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>[Clave_Pública_Cliente]:</strong> Es la creada en la aplicación al crear el nuevo túnel: +i2O6IFU015tHc5mcpW1y7fJBPx9KdU1JzH/qzIxt0o=</span></li>
+<li style="text-align: justify;"><strong><span style="font-size: 12pt;">[IP_Cliente]: </span></strong><span style="font-size: 12pt;">La ip que se desea asignar al cliente, para este caso, la </span><span style="font-size: 12pt;"> 192.168.8.112.</span></li>
+</ul>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="andir-client-W10-serverWGuard.png" alt="" width="958" height="58" /></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Una vez agregado, ya se puede consultar con el comando wg en el servidor la conexión establecida.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="wg-RedInterna-W10.png" alt="" width="503" height="193" /></td>
+<td style="width: 50%; text-align: center;"><img src="ipconfig-all-W10-Tunel.png" alt="" width="594" height="567" /></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2211_configurar_un_cliente_mvil__red_externa.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2123_probando_la_conexin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

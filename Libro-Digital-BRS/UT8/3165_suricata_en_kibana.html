@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.6.5 Suricata en Kibana | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-131"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li class="current-page-parent"><a href="316_panel_kibana.html" class="current-page-parent daddy">3.1.6 Panel Kibana</a>
+         <ul>
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li id="active"><a href="3165_suricata_en_kibana.html" class="active no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3164_siem.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.6.5 Suricata en Kibana</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id171">
+<div class="iDevice emphasis0" >
+<div id="ta171_171_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">Si se quiere ver la información de Suricata en Kibana, se tienen varias opciones:</p>
+<ol>
+<li style="text-align: justify;">Mediante el envío directo a Elasticsearch.</li>
+<li style="text-align: justify;">Mediante el envío a Logstash.</li>
+</ol>
+<p>En este apartado, se utilizará la primera opción.</p>
+<h3>2. Recursos</h3>
+<ul>
+<li>Equipo Ubuntu Server 20.04.4 con Elastic Stack en producción.</li>
+<li>Equipo Ubuntu Server 20.04.4: Donde se instalará  Suricata instalado.</li>
+</ul>
+<h3>3. Envío a Elasticsearch</h3>
+<p style="text-align: justify;">Una vez se tiene Suricata funcionando, el siguiente paso es tratar sus datos y visualizarlos de una manera más amigable, para ello nos apoyaremos en Kibana como visualizador a partir de los datos de Suricata que se irán almacenando en Elasticsearch.</p>
+<p style="text-align: justify;">En primer lugar, <span>en el equipo que corre <strong>Suricata</strong> hay que instalar Filebeat para recolectar el fichero de log y enviárselo a Elasticsearch directamente, tras ello se habilitará el módulo de suricata y se configurará. Una vez se tenga listo, Elasticsearch comenzará a almacenar estos registros, y con Kibana poder explotarlos.</span></p>
+<p style="text-align: justify;">Si se accede a Kibana, en el menú izquierdo hay que ir al icono de “Integrations” &gt; “Suricata logs” y nos ofrece todo el detalle de qué se necesita. Es esta URL: <strong>http://192.168.0.254:5601/app/kibana#/home/tutorial/suricataLogs.</strong></p>
+<p style="text-align: center;"><img src="tutorial-suricata-logs-elastic.png" alt="" width="1251" height="804" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Información de SuricataLogs en Elastic Stack.</em></p>
+<p style="text-align: justify;">Hay que posicionarse sobre la pestaña “DEB” (para este caso, ya que Suricata corre bajo Uubntu Server) y como se puede ver, viene perfectamente explicado.</p>
+<h4>Instalación de Filebeats</h4>
+<p style="text-align: justify;">Si se observa la figura 1, para instalar filebeat, una de las formas es descargando el paquete. Para este caso, se descarga la <strong>versión 8.1.0</strong> por compatibilidad con el equipo Elastic Stack que se instaló en el capítulo 3.1.</p>
+<p style="text-align: justify;">Los comandos para la descarga e instalación son los siguientes:</p>
+<pre><span style="font-size: 12pt;"><strong>root@suricata:/#</strong>curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.1.0-amd64.deb</span><br /><span style="font-size: 12pt;"><strong>root@suricata:/#</strong>dpkg -i filebeat-8.1.2-amd64.deb</span></pre>
+<div class="enlighter-default enlighter-v-standard enlighter-t-enlighter enlighter-hover enlighter-linenumbers ">
+<div class="enlighter">
+<div class="" style="text-align: center;"><img src="install-filebeat-suricata.png" alt="" width="977" height="210" /></div>
+<div class="" style="text-align: center;"><em><strong>Figura 2.</strong> Descarga e instalación de filebeat.</em></div>
+<h4>Editar fichero configuración</h4>
+<div class="" style="text-align: justify;"><span>A continuación, hay que editar el fichero de configuración de <strong>Filebeat</strong> (/etc/filebeat/filebeat.yml), e indicar el nombre del índice a utilizar en Elasticsearch, así como si quieren importar los dashboards por defecto par Kibana (en nuestro caso ya se tienen importados).</span></div>
+<div class="">
+<pre><span style="font-size: 10pt;">#================ Elasticsearch template setting ====================</span><br /><span style="font-size: 10pt;">...</span><br /><span style="font-size: 10pt;">setup.template.name: "suricata"</span><br /><span style="font-size: 10pt;">setup.template.pattern: "suricata-*"</span><br /><span style="font-size: 10pt;">setup.dashboards.index: "suricata-*"</span><br /><span style="font-size: 10pt;">setup.ilm.enabled: false</span><br /><span style="font-size: 10pt;">...<br /># =================================== Kibana ===================================</span><br /><span style="font-size: 10pt;">setup.kibana:<br /></span><span style="font-size: 10pt;">  host: "FQDN_O_DIRECCION_IP_KIBANA:5601"<br /></span><span style="font-size: 10pt;">  protocol: "http"<br /></span><span style="font-size: 10pt;">  username: "${E_USER}"<br />  password: "${E_PASS}"</span><br /><span style="font-size: 10pt;">...</span><br /><span style="font-size: 10pt;">#---------------------- Elasticsearch output ------------------------</span><br /><span style="font-size: 10pt;">output.elasticsearch:<br />  ssl.verification_mode: none</span><br /><span style="font-size: 10pt;">  # Array of hosts to connect to.</span><br /><span style="font-size: 10pt;">  hosts: ["https://FQDN_O_DIRECCION_IP_ELASTICSEARCH:9200"]</span><span style="font-size: 10pt;"><br /></span>  <span style="font-size: 10pt;">username: "usuario elestic"<br />  password: "password del usuario elastic"</span><br /><span style="font-size: 10pt;">  index: "suricata-%{+YYYY.MM.dd}"<br /></span></pre>
+</div>
+<div class="" style="text-align: justify;">
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="filebeat-01.png" alt="" width="589" height="257" /></td>
+<td style="width: 50%; text-align: center;"><img src="setup.kibana.png" alt="" width="766" height="245" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;" colspan="2"><img src="elasticsearch-output.png" alt="" width="542" height="162" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="" style="text-align: justify;">
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Fichero de configuración de filebeat.</em></p>
+<div class="cuadro-nota-centro-new">
+<p>Se ha creado la <strong>keystore en filebeat</strong> para almacenar en las claves E_USER y E_PASS las credenciales del usuario elastic. Esto ya se realizó de manera similar en los capítulos 3.1.2 y 3.1.4.</p>
+</div>
+</div>
+<div class="" style="text-align: justify;">A continuación, hay que realizar 3 acciones:</div>
+<ol>
+<li style="text-align: justify;">H<span>abilitar el <strong>módulo de Suricata.</strong></span></li>
+<li style="text-align: justify;"><span>Crear unos dashboards predeterminados en Kibana de Suricata.</span></li>
+<li style="text-align: justify;"><span>Iniciar el demonio de Filebeat y habilitar el inicio automático en el arranque del sistema. </span></li>
+</ol>
+<div class="" style="text-align: justify;"><strong>1. Habilitar el módulo de Suricata.</strong></div>
+<div class="">
+<pre><span style="font-size: 12pt;"><strong>root@suricata:/#</strong>filebeat modules enable suricata<strong><br /></strong></span></pre>
+</div>
+<div class="" style="text-align: center;"><img src="habilitar-modulo-kibana.png" alt="" width="376" height="55" /></div>
+<div class="" style="text-align: center;"><em><strong>Figura 4.</strong> Habilitar el módulo suricata en filebeat.</em></div>
+<div class="" style="text-align: justify;">
+<div class="" style="text-align: justify;">Una vez <strong>habilitado el módulo</strong>, hay que acceder a su fichero de configuración para <strong>establecer a true el parámetro eve</strong>.</div>
+<div class="">
+<pre><span style="font-size: 12pt;"><strong>root@suricata:/#</strong>nano /etc/filebeat/modules-d/suricata.yml</span></pre>
+</div>
+</div>
+<div class="" style="text-align: justify;"><em></em></div>
+<div class="" style="text-align: center;"><em><img src="suricata-yml.png" alt="" width="776" height="212" /></em></div>
+<div class="" style="text-align: center;"><em><strong>Figura 5.</strong> Habilitar el log de suricata.</em></div>
+<div class=""><strong>2. Creación de dashboards predeterminados en Kibana de Suricata.</strong></div>
+<div class="">
+<div class="">
+<pre><span style="font-size: 12pt;"><strong>root@suricata:/#</strong>filebeat setup --dashboards</span></pre>
+</div>
+</div>
+<div class="" style="text-align: center;"><img src="carga-dashhboards.png" alt="" width="491" height="77" /></div>
+<div class="" style="text-align: center;"><em><strong>Figura 6.</strong> Creación de dashboards.</em><em></em></div>
+<div class="">
+<div class="" style="text-align: justify;"><strong>3. Iniciar Filebeat y habilitar el inicio automático en el arranque del sistema. </strong></div>
+<div class="">
+<pre><span style="font-size: 12pt;"><strong>root@suricata:/#</strong>systemctl enable --now filebeat</span></pre>
+</div>
+</div>
+<div class="" style="text-align: center;"><img src="init-enable-filebeat.1.png" alt="" width="938" height="89" /></div>
+<div class="" style="text-align: center;"><em><strong>Figura 7.</strong> Iniciar el servicio filebeat.</em></div>
+<div class="" style="text-align: justify;">Si se lista el status del servicio, se puede observar que la<strong> conexión con elasticsearch</strong> se ha establecido con éxito.</div>
+<div class="" style="text-align: center;"><em></em></div>
+<div class="" style="text-align: center;"><em><img src="status-filebeat.png" alt="" width="1488" height="667" /></em></div>
+<div class="" style="text-align: justify;">A continuación, se accede a la plataforma del equipo <strong>elastics-master01</strong> donde se tiene instalado la pila <strong>Eslastic Stack</strong> para ver el <strong>índice de suricata</strong> (ver imagen inferior). Como se puede observar en la figura inferior, el índice se ha creado sobre el data stream con fecha 02/04/2022 que es cuando se creó. Se ha seleccionado 'Include hidden indices', ya que es un índice oculto.</div>
+<div class="" style="text-align: center;"><img src="data-stream.png" alt="" width="1096" height="446" /></div>
+<div class="" style="text-align: center;"><img src="index-management-indices.png" alt="" width="1093" height="402" /></div>
+<div class="" style="text-align: center;">
+<div class="" style="text-align: justify;">A partir del data stream de suricata, se crea un dataview.</div>
+<div class="" style="text-align: center;"><img src="create-data-view-suricata.png" alt="" width="942" height="531" /></div>
+<div class="" style="text-align: justify;">Una ves se ha creado la vista, ya se pueden visualizar los eventos.</div>
+</div>
+</div>
+</div>
+<p style="text-align: center;"><img src="discover-data-suricata.png" alt="" width="1355" height="579" /></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3164_siem.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

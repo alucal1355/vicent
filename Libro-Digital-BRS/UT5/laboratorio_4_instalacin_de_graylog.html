@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 4. Instalación de Graylog | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-99"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="current-page-parent daddy">3. Securización de los sistemas de administración remota</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_secureshell.html" class="current-page-parent daddy">3.1 SecureShell</a>
+      <ul>
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li class="current-page-parent"><a href="314_anlisis_de_archivos_de_auditora.html" class="current-page-parent daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul>
+            <li id="active"><a href="laboratorio_4_instalacin_de_graylog.html" class="active no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul class="other-section">
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="314_anlisis_de_archivos_de_auditora.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="315_fortificacin_de_ssh.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 4. Instalación de Graylog</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id144">
+<div class="iDevice emphasis0" >
+<div id="ta144_143_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p><span>Durante el laboratorio se va a repasar el procedimiento de instalación de </span><strong>graylog </strong><span>en Docker.</span></p>
+<p style="text-align: justify;">De forma resumida <strong>Docker</strong> es una tecnología que nos permite un despliegue rápido de aplicaciones dentro de contenedores de software. Por lo tanto nos permite la virtualización de aplicaciones en múltiples sistemas operativos. Docker usa distintas características de los sistemas operativos para aislar y consumir recursos de los equipos, permitiendo la ejecución de distintos contenedores independientes dentro de una misma instancia.</p>
+<p style="text-align: justify;">Por lo tanto un contenedor se puede usar para ejecutar cualquier cosa, desde un microservicio o un proceso de software a una aplicación de mayor tamaño. Dentro de un contenedor se encuentran todos los ejecutables, el código binario, las bibliotecas y los archivos de configuración necesarios. Sin embargo, en comparación con los métodos de virtualización de máquinas o servidores, los contenedores no contienen imágenes del sistema operativo. Esto los hace más ligeros y portátiles, con una sobrecarga significativamente menor. En implementaciones de aplicaciones de mayor tamaño, se pueden poner en marcha varios contenedores como uno o varios clústeres de contenedores. Estos clústeres se pueden gestionar mediante un orquestador de contenedores, como Kubernetes.</p>
+<header class="iDevice_header">
+<h1 class="iDeviceTitle"><span style="font-size: 18pt;">Para saber más</span></h1>
+</header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta81_128" class="block iDevice_content">
+<p class="p2">Docker puede instalarse en sistemas Linux, Mac o Windows. <strong>Instalación de Docker Desktop en Windows 10</strong></p>
+<p class="p2" style="text-align: center;"><strong><iframe width="560" height="314" src="https://www.youtube.com/embed/BK-C2RofmTE" allowfullscreen="allowfullscreen" class="external-iframe" data-mce-fragment="1"></iframe></strong></p>
+<p><strong>Instalación de Docker en Linux:</strong></p>
+<p style="text-align: center;"><strong><iframe width="560" height="314" src="https://www.youtube.com/embed/NVvZNmfqg6M" allowfullscreen="allowfullscreen" class="external-iframe" data-mce-fragment="1"></iframe></strong></p>
+<p><strong>Enlaces:</strong></p>
+<ul>
+<li><a href="https://docs.google.com/document/d/1VsqcS_KzwvXiSqGN4x-ougoYhiSuV0bC-bwSpydhrt0/edit?usp=share_link" target="_blank" rel="noopener">Anexo. Despliegue de aplicaciones con Docker</a></li>
+<li><a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-es">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-es</a></li>
+</ul>
+</div>
+</div>
+</div>
+<h3>2. Instalación de Graylog</h3>
+<p style="text-align: justify;">Para llevar a cabo el laboratorio se necesita disponer de una máquina virtual con Ubuntu 20.04 con docker instalado, 2 núcleos y 4GB de RAM. Si hemos seguido los videos, el <a href="https://docs.google.com/document/d/1VsqcS_KzwvXiSqGN4x-ougoYhiSuV0bC-bwSpydhrt0/edit?usp=share_link" target="_blank" rel="noopener">anexo</a> o los enlaces deberíamos tener nuestra instalación preparada.</p>
+<p>Antes de instalar <strong>Graylog</strong> tenemos que configurar <strong>Elastic Search</strong>, que es el motor de búsqueda, y <strong>MongoDB</strong> que se encargará del almacenamiento.</p>
+<p>Estas dos últimas herramientas también las vamos a instalar en Docker.</p>
+<p><strong>Mongo DB:</strong></p>
+<pre><span style="font-size: 12pt;"><strong># </strong>docker run --name mongo -d mongo:3</span></pre>
+<p style="text-align: center;"><img src="mongo-db-docker.png" alt="" width="668" height="352" /></p>
+<p><strong>Elastic Search:</strong></p>
+<pre><span style="font-size: 12pt;"><strong># </strong>docker run --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "http.host=0.0.0.0" \<br />-e "ES_JAVA_OPTS=-Xms512m -Xmx512m" docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.5</span></pre>
+<p>donde,</p>
+<ul>
+<li>Con "<strong>-p"</strong> se indican los puertos que abrimos en el contenedor y el correspondiente en nuestro host.</li>
+<li>Con "-e" le indicamos parámetros del contenedor en forma de variable de entorno.</li>
+</ul>
+<p style="text-align: center;"><img src="elastic-graylog.png" alt="" width="1067" height="805" /></p>
+<p><strong>Graylog:</strong></p>
+<p>Abrir otra terminal u ejecutar el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong># </strong>docker run --name graylog --link mongo --link elasticsearch -p 9000:9000 -p 12201:12201 -p 1514:1514/udp \<br />-e GRAYLOG_HTTP_EXTERNAL_URI="http://192.168.0.36:9000/" -d graylog/graylog:4.0.6<br /></span></pre>
+<p>donde,</p>
+<ul>
+<li>Con "<strong>--link</strong>" conseguimos que nuestros contenedores estén conectados entre sí, y de esta forma conseguir que la aplicación funcione correctamente.</li>
+</ul>
+<div class="cuadro-importante-centro">
+<p> Cambiar “TU_IP_LOCAL” por la IP propia a la hora de copiar el comando.</p>
+</div>
+<p style="text-align: justify;">Si se accede a la terminal donde se ha ejecutado el contenedor de elastic (172.17.0.3:9200), se puede observar que se ha enlazada con graylog (bound address).</p>
+<p style="text-align: center;"><img src="service-elastic-graylog.png" alt="" width="1162" height="74" /></p>
+<p style="text-align: justify;">Ahora si escribimos en el navegador del equipo local (192.168.0.36) donde están corriendo los contenedores o desde un pc de la red local del mismo con el puerto 9000 nos aparecerá el login de Graylog. Las <strong>claves</strong> predeterminadas son <strong>admin/admin</strong>.</p>
+<p style="text-align: center;"><img src="login-graylog.png" alt="" width="852" height="557" /></p>
+<p style="text-align: justify;">Una vez dentro ya nos aparecerá el programa de Graylog.</p>
+<p style="text-align: center;"><img src="front-end-graylog.png" alt="" width="1019" height="811" /></p>
+<h3>3. <span>Configurar </span><b>NXLog </b><span>en Windows 10.</span></h3>
+<p>Se comienza con la instalación de <strong>NXLog</strong>, que es un servicio que facilita el paso de logs de Windows a Graylog.</p>
+<p>Para ello vamos a su página web (<a href="https://nxlog.co/products/nxlog-community-edition/download" target="_blank" rel="noopener">https://nxlog.co/products/nxlog-community-edition/download</a>) y lo descargamos haciendo clic en el icono de Windows (hay que registrarse).</p>
+<p style="text-align: center;"><a href="https://drive.google.com/file/d/16YhBNbcyA7fKCLyUmc3dkoKJDPSSt_n2/view?usp=sharing" target="_blank" rel="noopener"><img src="dowload-nxlog.png" alt="" width="1181" height="545" /></a></p>
+<p style="text-align: justify;">Una vez descargado, aceptamos los pasos del instalador.</p>
+<p style="text-align: center;"><img src="intasll-nxlog.png" alt="" width="489" height="375" /></p>
+<p style="text-align: justify;">Ahora hay que acceder a la carpeta donde hayamos guardado <strong>NXLog</strong>. Una vez dentro, entramos en la carpeta <strong>conf, </strong>hay que abrir el fichero <strong>nxlog.conf </strong>como administrador con un editor de texto (clic derecho, Abrir con y seleccionamos Bloc de notas o el editor de texto que queramos).</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="bloc-notas.png" alt="" width="369" height="259" /></td>
+<td style="width: 50%; text-align: center;"><img src="abrir-nxlog-conf.png" alt="" width="786" height="174" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Abrir bloc de notas como administrador</span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Abrir nxlog ubicado en  C:\Archivos de programa\nxlog\conf</span></td>
+</tr>
+</tbody>
+</table>
+<p><span>Y lo reemplazaremos por el siguiente:</span></p>
+<pre><span style="font-size: 12pt;">define ROOT C:\Program Files\nxlog<br /></span><br /><span style="font-size: 12pt;">Moduledir %ROOT%\modules</span><br /><span style="font-size: 12pt;">CacheDir %ROOT%\data</span><br /><span style="font-size: 12pt;">Pidfile %ROOT%\data\nxlog.pid</span><br /><span style="font-size: 12pt;">SpoolDir %ROOT%\data</span><br /><span style="font-size: 12pt;">LogFile %ROOT%\data\nxlog.log<br /></span><br /><span style="font-size: 12pt;">&lt;Extension gelf&gt;</span><br /><span style="font-size: 12pt;">    Module      xm_gelf</span><br /><span style="font-size: 12pt;">&lt;/Extension&gt;<br /></span><br /><span style="font-size: 12pt;">&lt;Input in&gt;</span><br /><span style="font-size: 12pt;">    Module      im_msvistalog</span><br /><span style="font-size: 12pt;">&lt;/Input&gt;<br /></span><br /><span style="font-size: 12pt;">&lt;Output out&gt;</span><br /><span style="font-size: 12pt;">    Module      om_tcp</span><br /><span style="font-size: 12pt;">    Host        <strong>IP_Equipo_Graylog</strong></span><br /><span style="font-size: 12pt;">    Port        12201</span><br /><span style="font-size: 12pt;">    OutputType     GELF_TCP</span><br /><span style="font-size: 12pt;">&lt;/Output&gt;<br /></span><br /><span style="font-size: 12pt;">&lt;Route 1&gt;</span><br /><span style="font-size: 12pt;">    Path        in =&gt; out</span><br /><span style="font-size: 12pt;">&lt;/Route&gt;</span></pre>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span>Dentro de </span><strong><em>&lt;Output out&gt;</em></strong><span> hay que cambiar el </span><em>Host</em><span>, ahí hay que indicar la IP del equipo donde se tiene los servicios mongo, elasticsearch y graylog dockerizados, es decir, la misma que se pone para acceder a </span><strong>Graylog, </strong>para este caso es: 192.168.0.36.</p>
+</div>
+<p style="text-align: justify;"><span>Una vez se ha guardado el fichero, hay que acceder al apartado de <strong>“<em>Servicios</em>”</strong> de Windows. Para ello podemos buscarlo en el menú de inicio y luego buscar el servicio <strong>NXLog</strong> y comprobamos que está en ejecución.</span></p>
+<p style="text-align: center;"><span><img src="servicio-nxlog.png" alt="" width="1159" height="249" /></span></p>
+<p>Ahora, podremos acceder a <strong>Graylog</strong> (con la IP local y el puerto 9000 en el navegador, <a href="http://192.168.0.36:9000)">http://192.168.0.36:9000)</a>.</p>
+<p>A continuación, en los siguientes puntos se describe cómo añadir un intput en Garylog.</p>
+<div class="exe-fx exe-tabs">
+<h2>1</h2>
+<p>Para comenzar la configuración, nos vamos a <strong>System / Inputs.</strong></p>
+<p style="text-align: center;"><strong><img src="inputs-acceso.png" alt="" width="786" height="275" /></strong></p>
+<h2>2</h2>
+<p><span>En el Input ponemos GELF TCP y le pulsamos en <strong>Launch new input</strong>.</span></p>
+<p style="text-align: center;"><span><img src="gelf-tcp.png" alt="" width="643" height="160" /></span></p>
+<h2>3</h2>
+<p><span>Nos aparecerá el siguiente menú, con seleccionar </span><strong><em>Global</em></strong><span> y cambiar el título es suficiente.</span></p>
+<p style="text-align: center;"><span><img src="nuanch-gelf-tcp.png" alt="" width="580" height="583" /></span></p>
+<h2>4</h2>
+<p>Nos aparecerá el siguiente panel con el estado de<span> </span><strong><em>Running</em></strong>.</p>
+<p style="text-align: center;"><img src="running-geldf.png" alt="" width="395" height="362" /></p>
+<h2>5</h2>
+<p>Ahora si nos vamos a la sección de<span> </span><strong><em>Search</em></strong>, nos aparecerán todos los logs, podemos filtrarlos por las palabras que queramos, para este caso de ejemplo, ponemos sesión para filtras los eventos de inicio de sesión en el equipo.</p>
+<p style="text-align: center;"><img src="graylog-sesion.png" alt="" width="1290" height="880" /></p>
+<p></p>
+</div>
+<p></p>
+<p>En el siguiente vídeo se realiza una breve presentación de Graylog.</p>
+<p></p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/fE-hHKa-4vg"></iframe><br /><br /><em><strong>Vídeo 1.</strong> Graylog.</em></p>
+<p style="text-align: justify;"></p>
+<p style="text-align: center;"></p>
+<h3>Referencias:</h3>
+<ul>
+<li><a href="https://archivedocs.graylog.org/en/latest/pages/installation/docker.html">https://archivedocs.graylog.org/en/latest/pages/installation/docker.html</a></li>
+<li><a href="https://www.enmilocalfunciona.io/gestion-de-logs-en-contenedores-docker-con-graylog-y-gelf/">https://www.enmilocalfunciona.io/gestion-de-logs-en-contenedores-docker-con-graylog-y-gelf/</a></li>
+<li><a href="https://hub.docker.com/r/graylog/graylog">https://hub.docker.com/r/graylog/graylog</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="314_anlisis_de_archivos_de_auditora.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="315_fortificacin_de_ssh.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Práctica 1. Cifrado con Bitlocker | UT2. Fortificación de equipos: acceso al sistema </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-47"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT2. Fortificación de equipos: acceso al sistema</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT2. Fortificación de equipos: acceso al sistema</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_seguridad_en_el_arranque_del_sistema_informtico_configuracin_del_arranque_seguro_biosuefi.html" class="daddy">2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI)</a>
+   <ul class="other-section">
+      <li><a href="21_bloqueo_de_bios_con_contrasea.html" class="no-ch">2.1 Bloqueo de BIOS con contraseña</a></li>
+      <li><a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="no-ch">Tarea 1. Análisis y fortificación de la BIOS/UEFI</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proteccin_del_gestor_de_arranque_grub.html" class="daddy">3. Protección del gestor de arranque GRUB</a>
+   <ul class="other-section">
+      <li><a href="31_proteccin_de_grub.html" class="no-ch">3.1 Protección de GRUB</a></li>
+      <li><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="no-ch">Tarea 2. Configuración del sistema y arranque</a></li>
+      <li><a href="tarea_3_proteger_el_gestor_de_arranque_grub.html" class="no-ch">Tarea 3. Proteger el gestor de arranque GRUB</a></li>
+   </ul>
+   </li>
+   <li><a href="4_contraseas_seguras.html" class="daddy">4. Contraseñas seguras</a>
+   <ul class="other-section">
+      <li><a href="41_contraseas_seguras_en_windows.html" class="daddy">4.1 Contraseñas seguras en Windows</a>
+      <ul class="other-section">
+         <li><a href="411_inicios_de_sesin_en_windows.html" class="no-ch">4.1.1 Inicios de sesión en Windows</a></li>
+         <li><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="no-ch">Tarea 4. Política de contraseñas seguras en Windows</a></li>
+      </ul>
+      </li>
+      <li><a href="42_gestin_de_la_poltica_de_contraseas_en_ubuntu.html" class="daddy">4.2. Gestión de la política de contraseñas en Ubuntu</a>
+      <ul class="other-section">
+         <li><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="no-ch">Tarea 5. Política de contraseñas seguras en Ubuntu Server</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="current-page-parent daddy">6. Seguridad de los sistemas de ficheros, cifrado, particionado, entre otros</a>
+   <ul>
+      <li><a href="61_sistemas_de_ficheros_y_gestin_de_particionado.html" class="no-ch">6.1 Sistemas de ficheros y gestión de particionado</a></li>
+      <li class="current-page-parent"><a href="62_cifrado_de_disco.html" class="current-page-parent daddy">6.2 Cifrado de disco</a>
+      <ul>
+         <li class="current-page-parent"><a href="621_bitlocker_windows_y_efs.html" class="current-page-parent daddy">6.2.1. Bitlocker (Windows) y EFS</a>
+         <ul>
+            <li id="active"><a href="prctica_1_cifrado_con_bitlocker.html" class="active no-ch">Práctica 1. Cifrado con Bitlocker</a></li>
+         </ul>
+         </li>
+         <li><a href="622_filevault_macos.html" class="no-ch">6.2.2 FileVault (macOS)</a></li>
+         <li><a href="623_luks_linux.html" class="daddy">6.2.3 LUKS (Linux)</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_cifrado_de_particiones_y_directorio_con_luks.html" class="no-ch">Laboratorio. Cifrado de particiones y directorio con LUKS</a></li>
+            <li><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="no-ch">Práctica 2. Instalación de Ubuntu con particiones cifradas</a></li>
+         </ul>
+         </li>
+         <li><a href="624_veracrypt.html" class="daddy">6.2.4 VeraCrypt</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_cifrado_volumen_veracrypt.html" class="no-ch">Laboratorio 1. Cifrado volumen VeraCrypt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_control_de_calidad_de_mquinas.html" class="daddy">7. Control de calidad de máquinas</a>
+   <ul class="other-section">
+      <li><a href="71_mantenimiento_seguro_de_equipos.html" class="no-ch">7.1 Mantenimiento seguro de equipos</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="621_bitlocker_windows_y_efs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="622_filevault_macos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Práctica 1. Cifrado con Bitlocker</h1></div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id79">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header" style="background-image:url(icon_activity.png)"><span class="iDeviceTitle">&nbsp;</span></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta79_108_2" class="block iDevice_content">
+<div class="pbl-task-description"><h3>1. Introducción</h3>
+<p style="text-align: justify;">Esta práctica hay que realizarla sobre un equipo cliente Windows 10 de vuestro subdominio para cifrar un nuevo disco que deberéis crear. Como ejemplo, podéis crear un disco con estas características:</p>
+<ul>
+<li style="text-align: justify;">Creamos un nuevo disco duro de 5 GB.</li>
+<li style="text-align: justify;">Particionar el disco y asignarle volumen (por ejemplo F).</li>
+</ul>
+<h3>2. Trabajo a realizar</h3>
+<p style="text-align: justify;"><span>Para cifrar el disco duro de vuestro equipo cliente Windows 10, hay que utilizar la característica BitLocker que viene incluida por defecto en Windows 10. </span><span>Para utilizar la característica, hay que ir a '<strong>Panel de control</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="panel-control.png" alt="" width="788" height="631" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Acceso al Panel de Control.</em></p>
+<p style="text-align: justify;"><span>Una vez se ha accedido al Panel de control, hay que seleccionar '<b>Cifrado de unidad Bitlocker'.</b></span></p>
+<p style="text-align: center;"><span><b><img src="selec-bitlocker.png" alt="" width="1122" height="592" /></b></span></p>
+<p style="text-align: center;"><span><b><em><strong>Figura 2.</strong></em></b><em> Acceso al Cifrado de unidad BitLocker.</em></span></p>
+<p style="text-align: justify;"><span>Una vez aparece la pantalla de Bitlocker, aparecerán las unidades que se pueden cifrar. Para este caso, se tiene disponible la unidad C: (lugar donde está instalado el sistema operativo). Hay que pulsar sobre <b>'Activar Bitlocker'</b> (ver imagen inferior)<b>.</b></span></p>
+<p style="text-align: center;"><img src="activar-btlocker.png" alt="" width="751" height="537" /></p>
+<p style="text-align: center;"><span><b><em><strong>Figura 3.</strong></em></b><em> Activación de BitLocker.</em></span></p>
+<p style="text-align: justify;"><span>Cabe la posibilidad de que al <strong>activar Bitlocker</strong>, el sistema operativo Windows 10 no pueda utilizar el Módulo de BitLocker debido al mensaje que aparece en la siguiente imagen.</span></p>
+<p style="text-align: center;"><span><img src="error-activar-Bitlocker.png" alt="" width="620" height="484" /></span></p>
+<p style="text-align: center;"><span><b><em><strong>Figura 4.</strong></em></b><em> Mensaje de error - Activación de BitLocker.</em></span></p>
+<p style="text-align: justify;"><span>Esto es debido a que se tiene un  <strong>sistema Windows 10 sin TPM compatible</strong>. </span><span>Para dar solución al mensaje anterior, hay que realizar lo siguiente:</span></p>
+<p style="text-align: justify;"><span><strong>1.</strong> Acceder la directiva de grupo para proceder a su edición mediante el buscador o pulsando <strong>Windows + R</strong> y escribir <strong>gpedit.msc.</strong></span></p>
+<p style="text-align: center;"><span><img src="acceder-directivaGrupo.png" alt="" width="783" height="679" /></span></p>
+<p style="text-align: center;"><span><b><em><strong>Figura 5.</strong></em></b><em> Acceso a la directiva de grupo.</em></span></p>
+<p><span><strong>2.</strong> Hay que acceder al nodo del árbol siguiente: </span></p>
+<ul>
+<li style="text-align: justify;"><span>Directiva equipo local --&gt; Configuración del equipo --&gt; Plantillas administrativas --&gt; Componentes de Windows --&gt; Cifrado de unidad BitLocker --&gt; Unidades del sistema operativo y Requerir autenticación adicional al iniciar. Hay que <strong>habilitarla</strong> y seleccionar <strong>Permitir Bitlocker. </strong>Pulsar <strong>Aceptar</strong> para consolidar el cambio.</span></li>
+</ul>
+<p style="text-align: center;"><span><img src="editor-DirecivasGrupos.png" alt="" width="1177" height="941" /></span></p>
+<p style="text-align: center;"><span><b><em><strong>Figura 6.</strong></em></b><em> Edición de la directiva de grupo.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, hay que volver a la pantalla (<b><em><strong>Figura 3) </strong></em></b>para proceder a la <strong>activación de BitLocker</strong>. Nos aparece una nueva pantalla (Figura 7) donde hay que seleccionar '<strong>Escribir una contraseña</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="desbloqueo-unidad-inicio.png" alt="" width="619" height="482" /></span></p>
+<p style="text-align: center;"><span><b><em><strong>Figura 7.</strong></em></b><em> Selección de cómo desbloquear la unidad de inicio.</em></span></p>
+<p style="text-align: justify;">Insertamos una contraseña segura por duplicado. La contraseña ha de estar compuesta de:</p>
+<ul>
+<li style="text-align: justify;">Longitud de 8 a 256 caracteres.</li>
+<li style="text-align: justify;">Letras en mayúsculas y minúsculas.</li>
+<li style="text-align: justify;">Números.</li>
+<li style="text-align: justify;">Símbolos/espacios.</li>
+</ul>
+<p style="text-align: justify;">Esto nos vale para establecer una clave que podamos recordar. En este ejemplo, vamos a utilizar la contraseña <strong>Eeupqtc,10</strong>.</p>
+<p style="text-align: center;"><span><em><img src="contrasena-cifado-bitlocker.png" alt="" width="619" height="483" /></em></span></p>
+<p style="text-align: center;"><span><em><b><strong>Figura 8.</strong></b> Ingreso de la contraseña segura.</em></span></p>
+<p style="text-align: justify;"><span>El siguiente paso nos pide guardar la clave de recuperación. Para guardar la clave, utilizaremos un sistema de almacenamiento externo al sistema cifrado:</span></p>
+<p style="text-align: center;"><span><img src="clave-recuperacion.png" alt="" width="618" height="480" /></span></p>
+<p style="text-align: center;"><span><em><b><strong>Figura 9.</strong></b> Guardar la clave de recuperación en un archivo.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, hay que seleccionar un disco externo al sistema para guardar el archivo, en este caso de ejemplo, se guarda en el <strong><em>directorio Privado</em></strong> ubicado en el servidor principal.</span></p>
+<p style="text-align: center;"><img src="guardar-archivo-discoExterno.png" alt="" width="942" height="478" /></p>
+<p style="text-align: center;"><span><em><b><strong>Figura 10.</strong></b> Guardar archivo en disco externo.</em></span><span></span></p>
+<p style="text-align: justify;"><span>En la imagen inferior, se puede observar el fichero guardado en el directorio remoto.</span></p>
+<p style="text-align: center;"><span><em><img src="fichero.guardado-Remoto.png" alt="" width="1096" height="434" /></em></span></p>
+<p style="text-align: center;"><span><em><b><strong>Figura 11.</strong></b> Fichero guardado en disco externo.</em></span></p>
+<p style="text-align: justify;"><span>Una vez guardado el fichero, pulsamos 'Siguiente', y nos aparece una nueva ventana donde nos solicita la selección que se desea cifrar indicando los pros/contras de elegir cifrar la unidad completa o sólo el disco utilizado. Para este caso de ejemplo, se selecciona la 1ª opción ' <strong>Cifrar solo el espacio en disco utilizado</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="cifraar-disco-utilizado.png" alt="" width="618" height="481" /></span></p>
+<p style="text-align: center;"><span><em><b><strong>Figura 12.</strong></b> Selección de cifrado del espacio en disco utilizado.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, pulsamos '<strong>Siguiente</strong>' para continuar. Aparece una nueva ventana donde hay que seleccionar el modo de Cifrado. Para este caso de ejemplo, se selecciona la 1ª opción ' <strong>Modo de cifrado nuevo', </strong>dado que la unidad C:\ no se va a mover.</span></p>
+<p style="text-align: center;"><span><img src="Selec-modo-cifrado.png" alt="" width="620" height="480" /></span></p>
+<p style="text-align: center;"><span><em><b><strong>Figura 13.</strong></b> Selección del modo de cifrado.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, pulsamos '<strong>Siguiente</strong>' para continuar. Aparece una nueva ventana donde nos pregunta si se está preparado para que se realice la acción de cifrado. Para continuar con el proceso, pulsamos 'Continuar'. </span></p>
+<p style="text-align: center;"><span><img src="listo-cifrar.png" alt="" width="618" height="479" /></span></p>
+<p style="text-align: center;"><span><em><b><strong>Figura 14.</strong></b> Comenzar con el proceso de cifrado.</em></span></p>
+<p style="text-align: justify;"><span>Aparece una nueva ventana donde podremos reiniciar el equipo ahora o más tarde. Pulsamos '<strong>Reiniciar ahora</strong>' para probar el cifrado.</span></p>
+<p style="text-align: center;"><span><img src="reinicar-equipo-bitlocker.png" alt="" width="347" height="164" /></span></p>
+<p style="text-align: justify;"><span>Una vez se reinicie el sistema, nos solicitará la contraseña de cifrado del disco. Sin esta clave, los datos no podrán ser accedidos de ningún modo. </span><span></span><span>Ingresamos la contraseña y pulsamos '<strong>Enter</strong>' para continuar. </span></p>
+<p style="text-align: center;"><span><img src="contrasena-bitlocker-inicio.png" alt="" width="601" height="615" /></span></p>
+<p style="text-align: center;"><span><em><b><strong>Figura 15.</strong></b> Ingresar la contraseña de cifrado.</em></span><span></span></p>
+<div class="cuadro-nota-centro-new">
+<p><span>Si se pulsa la tecla '<strong>Esc</strong>', entraríamos en modo de recuperación, donde habría que introducir la clave de recuperación que se guardó en el disco externo. Ejemplo, la clave del fichero guardado anteriormente es: 338195-269159-569041-492668-044242-421322-280423-701613.</span></p>
+<p style="text-align: center;"><img src="clave-recuperacion.1.png" alt="" width="673" height="621" /></p>
+</div>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">El sistema arrancará de forma normal, pero estará cifrando los datos. Podemos comprobarlo en el apartado '<strong>Cifrado de unidad Bitlocker</strong>' del Panel de Control. Cuando termine, nos mostrará que la unidad está ya cifrada, tal y como muestra la siguiente imagen (<span style="color: #3366ff;"><strong>C: Bitlocker activado</strong></span>).</p>
+<p style="text-align: center;"><img src="comprobar-bitlocker.png" alt="" width="1063" height="537" /></p>
+<p style="text-align: center;"><span><em><b><strong>Figura 16.</strong></b> Acceso al cifrado de unidad Bitlocker.</em></span></p>
+<p style="text-align: justify;">Como se puede observar en la imagen, el sistema nos informa que BitLocker está activado. También, nos ofrece las siguientes posibilidades:</p>
+<p><strong>1. Suspender la protección. </strong>Si se selecciona, se dejará de cifrar el disco por lo que los datos ya no estarán protegidos.</p>
+<p><strong>2. Realizar una copia de seguridad de la clave de recuperación.</strong></p>
+<p><strong>3. Cambiar la contraseña.</strong> Se puede cambiar la contraseña inicial donde esta ha de estar compuesta de:</p>
+<ol>
+<li style="text-align: justify;">Longitud de 8 a 256 caracteres.</li>
+<li style="text-align: justify;">Letras en mayúsculas y minúsculas.</li>
+<li style="text-align: justify;">Números.</li>
+<li style="text-align: justify;">Símbolos/espacios.</li>
+</ol>
+<p style="text-align: center;"><img src="cambio-contrasena.png" alt="" width="459" height="345" /></p>
+<p><strong>4. Eliminar la contraseña.</strong> Si se selecciona esta opción, dada que la contraseña es el único modo que se ha establecido para desbloquear la unidad, no nos dejará eliminarla a no ser que se establezca otro modo de desbloqueo.</p>
+<p><strong>5. Desactivar BitLocker.</strong> Si se selecciona esta opción, se descifrará la unidad.</p>
+<h4>Verificación del estado de Bitlocker</h4>
+<p>El proceso de cifrado puede tardar un tiempo, especialmente si el disco ya contiene muchos datos.</p>
+<p>Para verificar el estado de BitLocker abrimos una consola cmd como administrador o Powershell y ejecutamos el siguiente comand<span><strong></strong></span>o:</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>C:\</strong>manage-bde –status</span></pre>
+<p style="text-align: center;"><img src="manage-bde_status.png" alt="" width="739" height="482" /></p>
+<p style="text-align: justify;">Como se puede observar en la imagen superior, nos informa que el proceso de cifrado está en progreso, el método de cifrado es <b>AES-128 en modo XTS</b><span>. </span></p>
+<h4>2.1 Comprobar que no podemos acceder al disco cifrado</h4>
+<p style="text-align: justify;">Una vez que el disco ha sido cifrado, podemos arrancar con un Live CD o Live USB y comprobar si tenemos acceso al disco. Por ejemplo, se podría utilizar una ISO de CAINE, que es una distribución de linux especializada en informática forense, para intentar montar el volumen cifrado.</p>
+<h3>3. Cifrado con EFS</h3>
+<p style="text-align: justify;">En este apartado, tienes que realizar una prueba de cifrado con EFS sobre una carpeta a la que llamarás <strong>test_cifradoEFS </strong>donde crearás un fichero cualquiera dentro de la misma. El cifrado ha de ser a la carpeta y las subcarpetas y archivos que contenga.</p>
+<p style="text-align: justify;">Una vez se cifre la carpeta, aparecerá un icono de un candado sobre ella indicando que su contenido está cifrado.</p>
+<p style="text-align: center;"><img src="test_cifradoEFS.png" alt="" width="126" height="132" /></p>
+<p style="text-align: justify;">Lo mismo ocurre con el fichero que tiene la carpeta ya que hemos seleccionado cifrar la carpeta y las subcarpetas y archivos que contenga.</p>
+<p style="text-align: center;"><img src="prueba-cifrado.png" alt="" width="328" height="98" /></p>
+<p><strong>Cuestión:</strong> ¿En qué escenarios ves útil utilizar EFS para el cifrado de ficheros/directorios de un disco?</p>
+<h3>4. La importancia de las claves seguras</h3>
+<p style="text-align: justify;">En el siguiente enlace tienes recomendaciones de seguridad de las contraseñas:</p>
+<ul>
+<li style="text-align: justify;"><a href="https://www.teenvio.com/es/consejos/como-crear-una-contrsena-segura-5-consejos-basicos/">https://www.teenvio.com/es/consejos/como-crear-una-contrsena-segura-5-consejos-basicos/</a></li>
+</ul>
+<h3>5. Entregar</h3>
+<p>Entrega un documento pdf con los siguientes capítulos:</p>
+<ol>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Verificación de Bitlocker.</strong> Captura de pantalla de la salida del comando<strong> manage-bde –status</strong>.</span>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Verificar con una distribución live si se puede montar y acceder al volumen cifrado.</span></li>
+</ul>
+</li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Verificación EFS y contestación a la cuestión.</strong> Captura/s de pantalla donde se pruebe que se ha cifrado la carpeta test_cifradoEFS. Contesta a la cuestión de este apartado.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Reflexión.</strong> Contestación a la siguiente cuestión: Sin tener en cuenta posibles técnicas de hacking y teniendo en cuenta los métodos mencionados en el siguiente <a href="https://www.windowsnoticias.com/cifrar-archivo-windows-10/" target="_blank" rel="noopener">artículo</a> y lo visto en los contenidos (6.2.1 Bitlocker (Windows) y EFS). <strong>¿Cuál sería el método más seguro para proteger la información de los usuarios de un equipo?.</strong></span></li>
+</ol>
+<h3><span style="font-size: 14pt;"><strong>6. Rúbrica de calificación</strong></span></h3>
+<table border="1" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="width: 193px; background-color: #8cccde;">
+<p><span style="font-size: 12pt;"><b>Apartados</b></span></p>
+</th>
+<th colspan="5" style="width: 655.266px; background-color: #8cccde;">
+<p><span style="font-size: 12pt;"><b>Descripción</b></span></p>
+</th>
+<th style="width: 94px; background-color: #8cccde;">
+<p><span style="font-size: 12pt;"><b>Calificación</b></span></p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 193px; background-color: #8cccde;">
+<p><span style="font-size: 12pt;"><b>1. Cifrado con Bitlockers</b></span></p>
+</td>
+<td colspan="5" style="width: 655.266px;">
+<p><span style="font-weight: 400; font-size: 12pt;">Descripción gráfica y textual del comando <strong>manage-bde –status. </strong></span></p>
+<p><span style="font-weight: 400; font-size: 12pt;">Verificación del cifrado mediante una distribución live.</span></p>
+</td>
+<td style="text-align: center; width: 94px;"><br />
+<p><span style="font-size: 12pt;"><b>5 p</b></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 193px; background-color: #8cccde;">
+<p><span style="font-size: 12pt;"><b>2. Cifrado EFS</b></span></p>
+</td>
+<td colspan="5" style="width: 655.266px;">
+<p><span style="font-weight: 400; font-size: 12pt;">Descripción gráfica y textual donde se pruebe que se ha cifrado la carpeta test_cifradoEFS. </span></p>
+<p><span style="font-weight: 400; font-size: 12pt;">Contesta a la cuestión de este apartado.</span></p>
+</td>
+<td style="text-align: center; width: 94px;">
+<p><span style="font-size: 12pt;"><b>3 p</b></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 193px; background-color: #8cccde;">
+<p><span style="font-size: 12pt;"><b>3. Reflexión</b></span></p>
+</td>
+<td colspan="5" style="width: 655.266px;">
+<p><span style="font-weight: 400;"><span style="font-size: 12pt;">Realiza una reflexión a las cuestiones propuestas de manera correcta.</span></span></p>
+</td>
+<td style="text-align: center; width: 94px;"><span style="font-size: 12pt;"><strong>2 p</strong></span></td>
+</tr>
+</tbody>
+</table>
+<p></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="621_bitlocker_windows_y_efs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="622_filevault_macos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2. Proxy web/caché | UT10. Fortificación perimetral: proxy </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-49"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT10. Fortificación perimetral: proxy</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT10. Fortificación perimetral: proxy</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_los_proxys.html" class="no-ch">1. Introducción a los proxys</a></li>
+   <li id="active"><a href="2_proxy_webcach.html" class="active daddy">2. Proxy web/caché</a>
+   <ul>
+      <li><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="no-ch">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proxy_con_autenticacin_bsica.html" class="no-ch">3. Proxy con autenticación básica</a></li>
+   <li><a href="4_proxy_con_filtrado.html" class="no-ch">4. Proxy con filtrado</a></li>
+   <li><a href="5_proxy_transparente_para_httphttps.html" class="daddy">5. Proxy transparente para HTTP/HTTPS</a>
+   <ul class="other-section">
+      <li><a href="51_proxy_transparente_para_http.html" class="no-ch">5.1 Proxy transparente para HTTP</a></li>
+      <li><a href="52_proxy_transparente_para_https.html" class="no-ch">5.2 Proxy transparente para HTTPS</a></li>
+   </ul>
+   </li>
+   <li><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="daddy">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_proxy_squid_con_pfsense.html" class="no-ch">Práctica 1. Proxy Squid con PfSense</a></li>
+   </ul>
+   </li>
+   <li><a href="7_proxy_dns__pihole.html" class="daddy">7. Proxy DNS - PiHole</a>
+   <ul class="other-section">
+      <li><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="no-ch">Práctica 2.Implantación del proxy DNS Pi-Hole</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_introduccin_a_los_proxys.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2. Proxy web/caché</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id81">
+<div class="iDevice emphasis0" >
+<div id="ta81_115_2" class="block iDevice_content">
+<div class="exe-text"><h3 id="proxy-web-y-proxy-caché" style="text-align: justify;">1. Proxy web o Proxy Caché</h3>
+<p style="text-align: justify;"><strong>Proxy web o Proxy cache de web</strong><span> </span>se trata de un <strong>proxy</strong> para una aplicación específica: el acceso a la web. Aparte de la utilidad general de un <strong>proxy</strong>, <strong>proporciona una caché</strong><span> </span>para las páginas web y los contenidos descargados, que es compartida por todos los equipos de la red, con la consiguiente mejora en los tiempos de acceso para consultas coincidentes. Al mismo tiempo libera la carga de los enlaces hacia Internet.</p>
+<p><strong>Funcionamiento</strong></p>
+<ol>
+<li>El cliente realiza una petición (Ejemplo: mediante un navegador web) de un recurso de Internet (una página web o cualquier otro archivo) especificado por una URL.</li>
+<li>
+<p style="text-align: justify;">Cuando el <strong>proxy</strong> <strong>caché</strong> recibe la petición, busca la URL resultante en su caché local. Si la encuentra,<span> </span><strong>contrasta la fecha</strong><span> </span>y hora de la versión de la página demanda con el servidor remoto. Si la página no ha cambiado desde que se cargo en caché la devuelve inmediatamente,<span> </span><strong>ahorrándose</strong><span> </span>de esta manera mucho<span> </span><strong>tráfico pues sólo intercambia un paquete para comprobar la versión</strong>. Si la versión es antigua o simplemente no se encuentra en la caché, lo captura del servidor remoto, lo devuelve al que lo pidió y guarda o<span> </span><strong>actualiza una copia en su caché</strong><span> </span>para futuras peticiones.</p>
+</li>
+<li>
+<p style="text-align: justify;">Los proxies web también pueden filtrar el contenido de las páginas Web servidas. Algunas aplicaciones que intentan bloquear contenido Web ofensivo están implementadas como<span> </span><strong>proxies Web</strong>.</p>
+</li>
+</ol>
+<p style="text-align: justify;">Un <strong>cliente de un ISP</strong> manda una <strong>petición a Google</strong> la cual llega en un inicio al servidor proxy que tiene este ISP, no va directamente a la dirección IP del dominio de Google. Esta página concreta suele ser muy solicitada por un alto porcentaje de usuarios, por lo tanto el ISP la retiene en su proxy por un cierto tiempo y crea una respuesta en mucho menor tiempo. Cuando el usuario crea una búsqueda en Google el servidor proxy ya no es utilizado; el ISP envía su petición y el cliente recibe su respuesta ahora sí desde Google.</p>
+<p><strong>Ventajas</strong></p>
+<ul>
+<li style="text-align: justify;"><strong>Disminuye del Tráfico</strong>: Al centralizarse todas las peticiones de páginas Web en el servidor proxy y éste resolver algunas de estas peticiones, se disminuye el tráfico que desde nuestra red se solicita a Internet directamente. Por lo tanto, también los servidores de Internet recibirán menos peticiones, lo cual es una ventaja para su rendimiento.</li>
+<li style="text-align: justify;"><strong>Mejora el tiempo de respuesta</strong>: El servidor proxy crea un caché que utiliza con todas las peticiones similares, para el usuario supone una respuesta mucho más rápida de lo habitual.</li>
+<li style="text-align: justify;"><strong>Aumenta los Usuarios</strong>: Al poder responder rápido puede cubrir a un gran número de usuarios, para solicitar, a través de él, los contenidos Web.</li>
+<li style="text-align: justify;"><strong>Selecciona los contenidos</strong>: el servidor proxy puede hacer un filtrado de páginas o contenidos basándose en criterios de restricción establecidos por el administrador dependiendo valores y características de lo que no se permite, creando una restricción cuando sea necesario.</li>
+<li><strong>Bloquea contenidos</strong>: basándose en la misma función del filtrado, tiene el objetivo de proteger la privacidad en Internet, puede ser configurado para bloquear direcciones y Cookies.</li>
+</ul>
+<p><strong>Desventajas</strong></p>
+<ul>
+<li>No actualiza. Falta de actualización de las páginas mostradas que están almacenadas en la caché.</li>
+</ul>
+<p>Un diseñador o diseñadora de páginas web puede indicar en el contenido de su web que los navegadores no hagan una caché de sus páginas, pero este método no funciona habitualmente para un PROXY.</p>
+<ul>
+<li>El proxy puede<span> </span><strong>impedir el acceso</strong><span> </span>a algunos puertos y protocolos. Esto puede suceder si se trata de utilizar servicios<span> </span><strong>poco habituales</strong><span> </span>para los usuarios de la red, por ejemplo FTP.</li>
+<li>Hay que configurar el proxy para que<span> </span><strong>no almacene datos personales</strong><span> </span>y otros archivos que transgredan la norma<span> </span><strong>LODP</strong>.</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_introduccin_a_los_proxys.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

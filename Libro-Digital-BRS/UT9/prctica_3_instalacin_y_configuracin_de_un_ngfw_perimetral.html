@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Práctica 3. Instalación y configuración de un NGFW perimetral | UT8. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-145"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_firewall_perimetral.html" class="current-page-parent daddy">6. Firewall perimetral</a>
+   <ul>
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li class="current-page-parent"><a href="61_firewalls_de_prxima_generacin.html" class="current-page-parent daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul>
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li id="active"><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="active no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="prctica_2_firewall_perimieral_con_pfsense.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Práctica 3. Instalación y configuración de un NGFW perimetral</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id184">
+<div class="iDevice emphasis0" >
+<div id="ta184_184_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Objetivos</h3>
+<p style="text-align: justify;"><span>Aprender a instalar y configurar un cortafuegos perimetral de próxima generación (<a href="https://www.incibe.es/protege-tu-empresa/blog/firewall-tradicional-utm-o-ngfw-diferencias-similitudes-y-cual-elegir-segun" target="_blank" rel="noopener">NGFW</a>) en un escenario de red propuesto.</span></p>
+<h3 style="text-align: justify;"><span>2. Preparación</span></h3>
+<p>Para este capítulo, se necesitan los siguientes recursos:</p>
+<ul>
+<li style="text-align: justify;">Un <strong>PC (anfitrión)</strong> con al menos 4 GB de RAM libre para arrancar 3 máquinas virtuales con VirtualBox: cortafuegos, equipo cliente y servidor en DMZ. 
+<ul>
+<li style="text-align: justify;">Para este caso se utiliza un equipo con Linux Mint 19.</li>
+</ul>
+</li>
+<li style="text-align: justify;"><strong>ISO de OPNsense</strong>, un cortafuegos libre basado en FreeBSD. En la página oficial de<span> </span><a href="https://opnsense.org/download/" target="_blank" rel="noopener">descarga</a>, seleccionar arquitectura amd64, tipo de imagen dvd y un mirror de Europa.</li>
+<li style="text-align: justify;"><strong>Dos máquinas virtuales</strong> que simularán un cliente de la red local de la organización, y un servidor web en la DMZ. Para el cliente y el servidor se puede usar el Sistema Operativo que se prefiera, pero preferiblemente que no necesite excesiva RAM para funcionar y simular todo en un único PC, como por ejemplo una<span> </span><a href="https://spins.fedoraproject.org/es/lxde/" target="_blank" rel="noopener">Live de Fedora con escritorio LXDE</a>.</li>
+</ul>
+<p>En el PC anfitrión, hay que establecer al equipo una ip en la red <strong>vboxnet0</strong>. Para este caso, se le asigna la 192.168.56.1/24.</p>
+<p>ndo es:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong> sudo ip addr add 192.168.56.1/24 dev vboxnet0</span></pre>
+<p style="text-align: center;"><img src="asignar-ip-vboxnet0.png" alt="" width="578" height="56" /></p>
+<p style="text-align: justify;">Si se realiza un ip a, se observa que la interfaz está DOWN.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong> ip a</span></pre>
+<p style="text-align: center;"><img src="ip-a-vboxnet0.png" alt="" width="730" height="71" /></p>
+<p style="text-align: justify;">Para subir la interfaz hacemos:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong> sudo ifconfig vboxnet0</span></pre>
+<p style="text-align: center;"><img src="up-vboxnet0.png" alt="" width="417" height="60" /></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong> ip a</span></pre>
+<p style="text-align: center;"><img src="ip-up-vbox.png" alt="" width="837" height="119" /></p>
+<h3>3. Procedimiento inicial guiado</h3>
+<h4 style="text-align: justify;"><span><strong>1. Escenario de simulación</strong></span></h4>
+<p style="text-align: justify;">En este capítulo se simula el siguiente escenario de red de una organización con un cortafuegos con tres zonas: interna (LAN), externa (WAN) y DMZ. Esta configuración es habitual en pequeñas organizaciones aunque hay configuraciones más robustas donde existen varias capas de cortafuegos entre las diferentes zonas:</p>
+<p style="text-align: center;"><span><strong><img src="Practica_OPNSense.png" alt="" width="529" height="495" /><br /></strong></span></p>
+<p style="text-align: justify;">Tanto el cortafuegos <strong>OPNSense</strong>, como el cliente en la LAN y el servidor en la DMZ, deben simularse con VirtualBox. La red LAN de la organización corresponde con la red sólo-anfitrión de VirtualBox, la red DMZ corresponde con una red interna a la que llamaremos DMZ y la red WAN, corresponde con la LAN del centro u hogar (donde se esté realizando este supuesto práctico).</p>
+<p><strong>Los pasos a seguir son los siguiente</strong></p>
+<h4 style="text-align: justify;"><span><strong>2. Instalación de OPNSense</strong></span></h4>
+<p style="text-align: justify;">Una vez descargada y descomprimida la <strong>imagen</strong> de <strong>OPNSense</strong>, hay que<strong> crear una máquina en VirtualBox</strong> con las siguientes características:</p>
+<ul>
+<li style="text-align: justify;"><strong>Nombre</strong>: OPNSense (puede ser cualquier otro).</li>
+<li style="text-align: justify;"><strong>Tipo</strong>: BSD.</li>
+<li style="text-align: justify;"><strong>Versión</strong>: FreeBSD (64 bit).</li>
+<li style="text-align: justify;"><strong>Memoria</strong>: 1024 MB (suficiente para OPNSense).</li>
+<li style="text-align: justify;"><strong>Disco duro</strong>: por defecto todo (Crear disco, tipo VDI, dinámicamente, 16 GB).</li>
+</ul>
+<p style="text-align: justify;">Una vez creada la máquina, desde la configuración de la VM, hay que editar el apartado de red para crear tres adaptadores:</p>
+<ul>
+<li><strong>Adaptador 1</strong>: puente con la tarjeta con conexión a Internet del anfitrión. Será la WAN.</li>
+<li><strong>Adaptador 2:</strong> sólo-anfitrión (vboxnet0), será la LAN del escenario.</li>
+<li><strong>Adaptador 3</strong>: Red interna con nombre DMZ.</li>
+</ul>
+<p style="text-align: justify;">En las propiedades del CD, hay que cargar el fichero ISO con el instalador de OPNSense. A continuación, se inicia la la máquina y aparece el asistente de instalación en modo texto:</p>
+<p style="text-align: center;"><img src="opensense-01.png" alt="" width="702" height="386" /></p>
+<p style="text-align: justify;">Si no se pulsa nada, inmediatamente arranca la instalación de <strong>OPNSense</strong> y el asistente solicita las credenciales para seguir. Hay que introducir las siguientes:</p>
+<ul>
+<li style="text-align: justify;"><strong>login: </strong>installer</li>
+<li style="text-align: justify;"><strong>password: </strong>opnsense</li>
+</ul>
+<p style="text-align: center;"><img src="opensense-02.png" alt="" width="654" height="399" /></p>
+<p>En la siguiente ventana elegimos el idioma del teclado con el cursos del teclado hasta <strong>elegir</strong> el <strong>Spanish</strong> pulsando <strong>Enter</strong>:</p>
+<p style="text-align: center;"><img src="opensense-03.png" alt="" width="713" height="405" /></p>
+<p>Después seleccionamos <strong>Continue</strong> with <strong>es.kbd keymap</strong> y pulsamos Enter:</p>
+<p style="text-align: center;"><img src="opensense-04.png" alt="" width="677" height="379" /></p>
+<p>Elegimos <strong>Install UFS</strong>:</p>
+<p style="text-align: center;"><img src="opensense-05.png" alt="" width="625" height="347" /></p>
+<p>El asistente advierte que sólo se tiene 1GByte de RAM. Para continuar, hay que seleccionar '<strong>Proceed anyway'.</strong></p>
+<p style="text-align: center;"><img src="opensense-06.png" alt="" width="531" height="156" /></p>
+<p style="text-align: justify;">Seleccionamos el disco virtual de Vbox (para este caso el ada0 de 16GBytes) y pulsamos Enter (OK) y seleccionamos YES cuando nos pregunte si deseamos destruir los datos del disco:</p>
+<p style="text-align: center;"><img src="opensense-07.png" alt="" width="634" height="308" /></p>
+<p style="text-align: center;"><img src="opensense-08.png" alt="" width="492" height="172" /></p>
+<p>Y comienza a realizar la instalación en el disco duro virtual de la máquina:</p>
+<p style="text-align: center;"><img src="opensense-09.png" alt="" width="694" height="309" /></p>
+<p style="text-align: justify;">Cuando finalice la instalación, nos da la opción de <strong>cambiar la contraseña de root</strong> o de salir del instalador. La contraseña de root por defecto es <strong>opnsense</strong>, por lo que podemos cambiarla ahora o más adelante desde la shell con el comando passwd. Para este caso, se cambia el password en este momento del asistente (change root password).</p>
+<p style="text-align: center;"><img src="opensense-10.png" alt="" width="400" height="183" /></p>
+<p style="text-align: justify;">A continuación, seleccionamos 'Exit and reboot' (hay que quitar la ISO del CD/DVD virtual).</p>
+<p style="text-align: center;"><img src="opensense-11.png" alt="" width="497" height="225" /></p>
+<p style="text-align: justify;">El asistente nos informa que una vez se reinicie, se podrá acceder mediante la url https://192.168.1.1</p>
+<p style="text-align: center;"><span><strong><img src="opensense-12.png" alt="" width="546" height="254" /></strong></span></p>
+<h4 style="text-align: justify;"><span><strong>3. Configuración inicial de OPNSense</strong></span></h4>
+<p style="text-align: justify;">Tras reiniciar la máquina e introducir las <strong>credenciales de root</strong> con el password que hemos cambiado anteriormente, nos aparece el menú principal de consola:</p>
+<p style="text-align: center;"><img src="opensense-13.png" alt="" width="719" height="400" /></p>
+<p style="text-align: justify;">El <strong>primer paso</strong> es <strong>reasignar las tres interfaces del firewall</strong> para que <strong>coincidan con el escenario</strong>. La primera interfaz (em0), es la WAN porque está puenteada con la tarjeta del PC anfitrión. La segunda (em1) es la LAN, que está en modo sólo-anfitrión y a la que se conectará el cliente de la red local interna de la organización. La tercera (em2) es la DMZ de la organización, que está conectada a una red interna con nombre DMZ.</p>
+<p style="text-align: justify;">Por tanto, <strong>pulsamos 1</strong> y vamos asignando las interfaces. A la primera y segunda pregunta, indicamos que <strong>no vamos a configurar ni LAGGS ni VLANs</strong>:</p>
+<p style="text-align: center;"><img src="opensense-14.png" alt="" width="592" height="329" /></p>
+<p style="text-align: justify;">Nos pregunta por la<strong> interfaz WAN</strong>. Escribimos <strong>em0</strong> que es la primera:</p>
+<p style="text-align: center;"><img src="opensense-15.png" alt="" width="640" height="183" /></p>
+<p>Después nos pregunta por la <strong>interfaz LAN</strong> y por la <strong>interfaz opcional 1</strong>, a lo que respondemos <strong>em1</strong> y <strong>em2</strong> respectivamente. Desde la GUI posteriormente cambiaremos el nombre de OPT1 a DMZ:</p>
+<p><img src="opensense-16.png" alt="" width="552" height="136" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p>Para la <strong>interfaz opcional 2</strong>, pulsamos enter (dejarla vacía).</p>
+<p style="text-align: center;"><img src="opensense-17.png" alt="" width="565" height="46" /></p>
+<p style="text-align: justify;">Finalmente indicamos que queremos proceder y se guardará la configuración:</p>
+<p><img src="opensense-18.png" alt="" width="429" height="123" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;">A continuación, hay que seleccionar la opción <strong>2 en el menú</strong>, para asignar las direcciones IP.</p>
+<p style="text-align: center;"><img src="opensense-19a.png" alt="" width="184" height="44" /></p>
+<p style="text-align: justify;">En la <strong>WAN ya aparece por DHCP</strong> así es que la dejamos (aunque en entornos de producción, lo normal es que todas las interfaces del cortafuegos sean estáticas).</p>
+<p style="text-align: center;"><img src="opensense-19b.png" alt="" width="267" height="93" /></p>
+<p style="text-align: justify;"><strong>Seleccionamos la LAN (opción 1)</strong> y le <strong>asignamos una IP estática</strong> del rango de la interfaz <strong>vboxnet0</strong> que siempre es 192.168.56.0/24 (a no ser que se cambie). Elegimos la 192.168.56.100/24, asegurándonos también de haber deshabilitado el DHCP de VirtualBox pues posteriormente usaremos el cortafuegos como servidor DHCP:</p>
+<p style="text-align: center;"><img src="opensense19.png" alt="" width="597" height="372" /></p>
+<p style="text-align: justify;">Después contestamos que no vamos a configurar gateway (lo coge de la WAN por dhcp) y que tampoco va a tener IPv6 en la LAN. El servicio DHCP en la LAN se puede configurar desde la GUI posteriormente. Después indicamos que no queremos revertir a HTTP (dejamos HTTPS por seguridad) en la GUI.</p>
+<p style="text-align: center;"><img src="opensense-20.png" alt="" width="635" height="198" /></p>
+<p style="text-align: justify;">A continuación, nos pregunta si se quiere cambiar el acceso por protocolo https a http, si se quiere generar un nuevo certificado autofirmado y por último, si se quiere restablecer el acceso web por defecto. Contestamos <strong>N</strong>, <strong>N</strong> y por último <strong>y</strong>.</p>
+<p style="text-align: center;"><img src="opensense21.png" alt="" width="663" height="54" /></p>
+<p style="text-align: justify;">Cuando acaba de configurar la interfaz, nos indica que la url para el acceso web es <strong>https://192.168.56.100</strong></p>
+<p style="text-align: center;"><img src="opensense22.png" alt="" width="433" height="80" /></p>
+<p style="text-align: justify;">Procedemos igual con la <strong>interfaz OPT1 (DMZ)</strong> asignándole la <strong>203.0.113.1/24</strong>, sin gateway y sin dirección IPv6. Esta interfaz también puede configurarse después desde la GUI, no es necesario hacerlo ahora. Realmente la única importante es la LAN, para poder acceder desde un navegador a la IP 192.168.56.100 y realizar el resto de configuración.</p>
+<p style="text-align: center;"><img src="opensense24.png" alt="" width="550" height="256" /></p>
+<p style="text-align: justify;">Una vez se finaliza la configuración, quedaría así:</p>
+<p style="text-align: center;"><img src="opensense25.png" alt="" width="559" height="103" /></p>
+<p style="text-align: justify;">A continuación <strong>accedemos desde un navegador en el anfitrión</strong>, a la IP de la LAN del cortafuegos (<a href="https://192.168.56.100">https://192.168.56.100</a>), que hará las veces de interfaz de gestión en este caso (aunque en entornos de producción es habitual que estos dispositivos tengan una interfaz dedicada para administración fuera de banda):</p>
+<div class="cuadro-nota-centro-new">
+<p>Si la interfaz <strong>vboxnet0</strong> en el anfitrión no tiene ip asignada y no esta up, hay que configurarla, para este caso se realiza lo siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong> sudo ip addr add 192.168.56.1/24 dev vboxnet0<br /><strong>jc@jc-Latitude-E6430:~$ </strong>sudo ifconfig vboxnet0 up</span></pre>
+</div>
+<p style="text-align: center;"><span><img src="opensense26.png" alt="" width="794" height="603" /></span></p>
+<p style="text-align: justify;"><span>Una vez identificados con las credenciales de root, se nos abrirá el asistente. Podemos cancelarlo o dejar que nos guíe en la configuración inicial. En este caso lo utilizaremos pero es prescindible:</span></p>
+<p style="text-align: center;"><span><img src="opensense27.png" alt="" width="1026" height="790" /></span></p>
+<p style="text-align: center;"><span><img src="opensense28.png" alt="" width="743" height="290" /></span></p>
+<p><span>El <strong>resto de opciones pulsamos Next</strong>, de ese modo, confirmamos la dirección WAN y LAN que hemos configurado desde la consola y finalmente pulsamos <strong>Recargar</strong>.</span></p>
+<p style="text-align: center;"><span><img src="recargar.png" alt="" width="281" height="100" /></span></p>
+<p style="text-align: justify;"><span><br /></span><span>A continuación, ya de nuevo en la GUI, seleccionamos “<strong>Interfaces</strong>” desde el menú de la izquierda para cambiar el nombre de <strong>OPT1 a DMZ</strong>:</span></p>
+<p style="text-align: center;"><img src="opensense29.png" alt="" width="1039" height="346" /></p>
+<p><br /><span>Pulsamos Guardar y Aplicar cambios.<br /><br /></span></p>
+<p style="text-align: center;"><span><img src="guardar.png" alt="" width="179" height="52" /><img src="flcha.png" alt="" width="88" height="88" /> <img src="aplicar.png" alt="" width="724" height="97" />￼</span></p>
+<p class="western"><span><strong>3. Configuración de reglas de NAT saliente<br /></strong></span><span><br /></span><span>A continuación vamos a <strong>configurar el NAT saliente</strong>. Por defecto, el sistema crea varias reglas pero las vamos a crear desde cero manualmente para aprender como realizar el NAT. Las reglas automáticas creadas son las siguientes:</span></p>
+<p class="western" style="text-align: center;"><span><img src="reglas-auto.png" alt="" width="1003" height="242" /></span></p>
+<p class="western" style="text-align: justify;"><span>Para configurar la creación de reglas manuales, hay que seleccionar '<strong>Generación manual de regla NAT saliente (no se generan reglas automáticas)</strong>' y pulsar <strong>Guardar</strong>.</span></p>
+<p class="western" style="text-align: center;"><span><img src="reglas-manuales.png" alt="" width="1247" height="601" /></span></p>
+<p><span><span lang="es-ES">Le damos a <strong>Guardar y </strong></span></span><strong><span lang="es-ES">Aplica</span><span lang="es-ES">r</span></strong><span><span lang="es-ES"><strong> cambios. </strong>En ese momento, </span></span><span><span lang="es-ES">habrá eliminado las reglas automáticas. </span></span></p>
+<p style="text-align: center;"><span><span lang="es-ES"><img src="reglas-manuales-init.png" alt="" width="1013" height="169" /></span></span></p>
+<p style="text-align: justify;"><span><span lang="es-ES">A continuación <strong>creamos dos reglas de NAT</strong>, para <strong>traducir las direcciones de la LAN y la DMZ</strong> respectivamente, cuando se salga a Internet. </span></span><span><span lang="es-ES">Observar que en la DM</span></span><span><span lang="es-ES">Z</span></span><span><span lang="es-ES"> se tiene direccionamiento IP público, que suele ser lo habitual en DMZ. En un entorno real no sería necesa</span></span><span><span lang="es-ES">rio hacer NAT para DMZ</span></span><span><span lang="es-ES"> pero en nuestro caso sí porque es un direccionamiento </span></span><span><span lang="es-ES">de pruebas</span></span><span><span lang="es-ES"> (red de </span></span>TEST-NET-3<span><span lang="es-ES">) y que nuestro ISP no reconoce. </span></span><span><span lang="es-ES">Pulsamos <strong>Añadir</strong> y configuramos los datos siguientes:</span></span></p>
+<p style="text-align: center;"><span><span lang="es-ES"><img src="regla-NAT.png" alt="" width="918" height="810" /></span></span></p>
+<p class="western"><span>Para finalizar, hay que pulsar en <strong>Guardar</strong> y <strong>Aplicar cambios</strong>.<br /></span></p>
+<p class="western" style="text-align: center;"><span><img src="regla1-manual.png" alt="" width="999" height="115" /></span></p>
+<p class="western"><span>Agregamos <strong>una nueva para hacer NAT en la DMZ</strong> y que nuestro <strong>servidor virtual en la DMZ pueda salir a Internet</strong> (recordar que con direccionamiento público real no haría falta):</span></p>
+<p style="text-align: center;"><span><img src="regla2.png" alt="" width="757" height="808" /></span></p>
+<p><span>Para finalizar, hay que <strong>pulsar en Guardar y Aplicar cambios.</strong></span></p>
+<p><span>Finalmente<strong> nuestras dos reglas de NAT saliente creadas</strong> son las siguientes donde se les ha insertado un comentario para describir las mismas:</span></p>
+<p style="text-align: center;"><span><img src="reglas-nat-2.png" alt="" width="971" height="140" /></span></p>
+<p class="western"><span>A continuación vamos a terminar de configurar el servicio DHCP (si no se ha hecho con el asistente) e indicar algunos parámetros que faltan:</span></p>
+<p class="western" style="text-align: center;"><span><img src="dhcp-lan.png" alt="" width="1095" height="811" /></span></p>
+<p class="western">Para finalizar, hay que pulsar en <strong>Guardar.</strong></p>
+<h4 class="western">4. Comprobar acceso a Internet</h4>
+<p class="western" style="text-align: justify;">Es el momento de comprobar que <strong>tanto el cliente en la LAN</strong> como el <strong>servidor en la DMZ</strong>, pueden salir a Internet a través del firewall haciendo NAT con la IP de la WAN. Para ello hay que crear/utilizar dos máquinas con las siguientes características (se recomienda un Fedora Live con escritorio LXDE, aunque puede ser cualquier otro). Para el cliente en la LAN:</p>
+<ul>
+<li class="western" style="text-align: justify;"><strong>Nombre:</strong> Fedora Client</li>
+<li class="western" style="text-align: justify;"><strong>Tipo</strong>: Linux</li>
+<li class="western" style="text-align: justify;"><strong>Versión</strong>: Fedora (64 bit)</li>
+<li class="western" style="text-align: justify;"><strong>Memoria</strong>: 1536 MB</li>
+<li class="western" style="text-align: justify;"><strong>Disco duro:</strong> por defecto todo (Crear disco, tipo VDI, dinámicamente).</li>
+</ul>
+<p style="text-align: justify;">Una vez creada la máquina, desde la configuración de la VM, editamos la red y configuramos el <strong>adaptador 1 en la red sólo-anfitrión</strong>. Al arrancar Fedora cliente, cogerá una IP de la LAN a través del servidor DHCP que hemos habilitado en OPNSense.</p>
+<p style="text-align: justify;">Antes de comprobar nada, hay que asegurarse de que el servidor dhcp de VirtualBox esté deshabilitado. Para comprobarlo, hacemos:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong> vboxmanage list dhcpservers</span></pre>
+<p style="text-align: center;"><img src="listar-dhcpserversVirtualBox.png" alt="" width="412" height="545" /></p>
+<p style="text-align: justify;">Como se puede observar en la imagen superior, se tiene habilitado un servidor dhcp en la subred <strong>192.168.11.0/24</strong>, por lo que si ponemos en marcha el equipo Fedora, recibirá una ip en esa dirección de red (ver imagen inferior)</p>
+<p style="text-align: center;"><img src="fedora-ip.png" alt="" width="799" height="603" /></p>
+<p style="text-align: justify;">Para deshabilitar el servidor dhcp en VirtualBox, el comando es el siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">VBoxManage dhcpserver remove --netname &lt;network_name&gt;</span></pre>
+<p style="text-align: justify;">Para este caso, el <span style="font-size: 12pt;">netname es HostInterfaceNetworking-vboxnet0 (obtenido con el comando vboxmanage list dhcpservers).</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong> vboxmanage dhcpserver remove --netname "HostInterfaceNetworking-vboxnet0"</span></pre>
+<p style="text-align: center;"><img src="remove-dhcp-server-VB.png" alt="" width="767" height="36" /></p>
+<p style="text-align: justify;">Ahora, si se reinicia la red del equipo Fedora, obtiene una ip del servidor DHCP de la red LAN del firewall. </p>
+<p style="text-align: center;"><img src="ip-fedora-LAN.png" alt="" width="799" height="601" /></p>
+<p style="text-align: justify;">Por lo que el equipo Fedora cliente estará navegando perfectamente como puede verse en la siguiente captura.</p>
+<p style="text-align: center;"><img src="navegar-we-fedora.png" alt="" width="798" height="596" /></p>
+<p style="text-align: justify;">Comprobamos lo mismo con el <strong>servidor en la DMZ</strong>, una máquina virtual Ubuntu Server (aunque puede ser cualquier otro en función de la RAM disponible en el anfitrión) con las siguientes características:</p>
+<ul>
+<li style="text-align: justify;"><strong>Nombre</strong>: Ubuntu-Server-20.04</li>
+<li style="text-align: justify;"><strong>Tipo</strong>: Linux.</li>
+<li style="text-align: justify;"><strong>Versión</strong>: 20.04 (64 bit).</li>
+<li style="text-align: justify;"><strong>Memoria</strong>: 1024 MB.</li>
+<li style="text-align: justify;"><strong>Disco duro</strong>: por defecto todo (Crear disco, tipo VDI, dinámicamente)</li>
+</ul>
+<p style="text-align: justify;">Una vez creada la máquina, desde la configuración de la VM, editamos la red y configuramos el adaptador 1 en la red interna DMZ. Al arrancar Ubuntu Server, es necesario configurarle una IP estática que es lo habitual en servidores, con los siguientes parámetros:</p>
+<ul>
+<li style="text-align: justify;"><strong>IP</strong>: 203.0.113.2/24.</li>
+<li style="text-align: justify;"><strong>Gateway</strong>: 203.0.113.1 (el cortafuegos).</li>
+<li style="text-align: justify;"><strong>DNS</strong>: los dns de tu conexión a Internet o cualquier DNS público fiable como Google o Cloudflare (8.8.8.8, 8.8.4.4, 1.1.1.1).</li>
+</ul>
+<p style="text-align: center;"><img src="netplan-ubuntu-server.png" alt="" width="574" height="236" /></p>
+<p style="text-align: justify;">Si probamos a <strong>navegar o hacer una traza</strong> a un destino de Internet (comando mtr o traceroute) veremos que no funciona nada, ni el ping.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>admnistrador@orion:~$</strong> mtr 8.8.8.8</span></pre>
+<p style="text-align: center;"><img src="mtr-8888.png" alt="" width="798" height="106" /></p>
+<p style="text-align: justify;">Esto es debido a que por defecto, un <strong>firewall tiene una política restrictiva</strong> y para las redes no confiables como una <strong>WAN o una DMZ, tiene todo el tráfico cortado</strong>. Se puede comprobar que para la <strong>LAN</strong>, ha creado una serie de reglas automáticas que permiten que funcione el DHCP y que los clientes de la LAN puedan salir a Internet tanto para IPv4 como para IPv6:</p>
+<p style="text-align: center;"><img src="creglas-LAN.png" alt="" width="1336" height="324" /></p>
+<p style="text-align: justify;">Esto permite incluso que el equipo Fedora cliente pueda hacer ping al Ubuntu Server en la DMZ, y permitir que el ping reply vuelva porque es un cortafuegos de estado. Sin embargo, el Ubuntu Server en la DMZ no puede hacer ping al equipo Fedora cliente en la LAN.</p>
+<p style="text-align: justify;">Si se hace un <strong>ping del cliente Fedora al servidor Ubuntu</strong> contesta.</p>
+<p style="text-align: center;"><img src="ping-Fedora-UbuntuServer.png" alt="" width="801" height="598" /></p>
+<p style="text-align: justify;">Lo contrario (ping del ubuntu server a Fedora), no funciona como era de esperar.</p>
+<p style="text-align: center;"><img src="ping-Ubuntu-Fedora.png" alt="" width="484" height="62" /></p>
+<p><span><strong>5. Configuración de reglas en el cortafuegos</strong></span></p>
+<p style="text-align: justify;"><span>En este apartado, se van a crear <strong>reglas para la red DMZ</strong>. Por <strong>seguridad</strong>, no se recomienda que desde la DMZ se pueda originar tráfico hacia equipos de la red interna. Esto es así porque un servidor de la DMZ puede haber sido atacado y comprometido desde Internet ya que ofrece servicios a Internet como http, dns, ftp, e-mail, etcétera que pueden ser vulnerables y ser una vía de entrada para un atacante que pivotando a través del servidor comprometido, podría entrar en la LAN interna de la organización. Por tanto vamos a permitir sólo que<strong> desde la DMZ hacia Internet se permita todo el tráfico</strong> (de momento sólo IPv4 en este capítulo) pero podría limitarse a determinados servicios también. </span></p>
+<p style="text-align: justify;"><strong>El procedimiento es el siguiente:</strong></p>
+<p style="text-align: justify;"><span>Desde <strong>Cortafuegos</strong>, hay que acceder a <strong>Reglas</strong> y luego <strong>DMZ</strong>, para pulsar <strong>Añadir</strong>:</span></p>
+<p style="text-align: center;"><span><img src="anadir-Regla-DMZ.png" alt="" width="1335" height="244" /></span></p>
+<p style="text-align: justify;"><span></span>La configuración de la nueva regla es la siguiente añadiéndole la siguiente descripción: 'Permitir desde la DMZ a cualquier destino que NO SEA la LAN interna'.</p>
+<p style="text-align: center;"><span><img src="regla-DMZ.png" alt="" width="1116" height="865" /></span></p>
+<p style="text-align: justify;"><span>Si se observa, se ha aplicado una<strong> regla de permitir desde la DMZ a cualquier destino que NO SEA la LAN interna</strong> (<em>Destino/invertir</em>).</span><strong><span></span></strong><span><strong><br /></strong></span><span><br /><strong>Pulsamos Guardar y Aplicar cambios, </strong>y ya se tendrá la nueva regla creada.</span></p>
+<p style="text-align: center;"><span><img src="regla-neuva-dmz-creada.png" alt="" width="976" height="97" /></span></p>
+<p style="text-align: justify;"><span>A continuación <strong>se comprueba como el servidor Ubuntu en la DMZ puede navegar y hacer trazas pero sigue sin poder hacer ping a la LAN interna</strong>.</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>admnistrador@orion:~$</strong> mtr 8.8.8.8</span></pre>
+<p style="text-align: center;"><span><img src="mtr-8888-new.png" alt="" width="803" height="221" /></span></p>
+<p style="text-align: justify;"><span>Si se hace ping al equipo Fedora, no contesta como era de esperar.</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>admnistrador@orion:~$</strong> ping 192.168.56.10</span></pre>
+<p style="text-align: center;"><span><img src="ping-fedora-no.png" alt="" width="492" height="55" /></span></p>
+<h3 style="text-align: justify;"><span>4. Trabajo a realizar</span></h3>
+<p style="text-align: justify;"><span>Llegados a este punto y con los ejemplos realizados anteriormente como muestra, se te pide que intentes implementar las siguientes dos directivas de política de seguridad mediante reglas en el cortafuegos.</span></p>
+<ul>
+<li><span><strong>Directiva 1.</strong> Desde la red interna a la DMZ se permite el icmp, ftp, http, https y ssh. No debe permitirse ningún servicio más.</span></li>
+<li style="text-align: justify;"><span><strong>Directiva 2.</strong> Desde Internet al servidor de la DMZ debe permitirse como tráfico entrante el ftp, http, https en sus puertos por defecto y el ssh por el puerto público 20022 (en vez del 22 por defecto).</span></li>
+</ul>
+<p style="text-align: justify;"><span>Para poner en práctica estas reglas, puedes levantar un servidor Apache, el servicio ssh (sudo systemctl start sshd) y FTP (por ejemplo vsftpd) en el Ubuntu Server de la DMZ. Para probar la directiva 1, puedes hacerlo desde el Fedora cliente hacia el Ubuntu Server en la DMZ.</span></p>
+<p style="text-align: center;"><span><img src="install-apache2.png" alt="" width="625" height="118" /></span></p>
+<p style="text-align: center;"><span><img src="start-sshd.png" alt="" width="295" height="44" /></span></p>
+<p style="text-align: center;"><span><img src="install-vsftpd.png" alt="" width="801" height="335" /></span></p>
+<p style="text-align: justify;"><span>Hay que poner en marcha el servicio.</span></p>
+<p style="text-align: center;"><span><img src="start-vsftpd.png" alt="" width="561" height="170" /></span></p>
+<p style="text-align: justify;"><span>Hay que tener en cuenta que las reglas que se han creado en la red LAN para permitir la navegación web, hacen que también se pueda acceder al servidor en la DMZ ya sea mediante un ping, por ssh, etcétera, por lo que deberás proponer una solución para mantener esas reglas o cambiarlas para que se adapte a lo que se demanda en esta directiva. </span><span></span></p>
+<p style="text-align: justify;"><span>El resultado es que desde el equipo cliente Fedora en la LAN puedes</span></p>
+<div class="exe-fx exe-tabs">
+<h2>Acceso al servidor de la DMZ por ssh</h2>
+<p style="text-align: center;"><img src="ssh-Serv-DMZ.png" alt="" width="796" height="601" /></p>
+<h2>Acceso al servidor http en la DMZ</h2>
+<p style="text-align: center;"><img src="apache-Serv-DMZ.png" alt="" width="797" height="601" /></p>
+<h2>Acceso al servidor ftp en la DMZ</h2>
+<p style="text-align: center;"><img src="ftp-servidor-DMZ.png" alt="" width="798" height="595" /></p>
+</div>
+<p style="text-align: justify;"><span>Para <strong>probar la directiva 2</strong>, puedes hacerlo desde el propio anfitrión o cualquier otro equipo conectado a la red de tu casa/centro (donde estés haciendo la práctica, que a efectos es como si fuera Internet en el escenario) y comprueba si puedes conectarte al servidor web del Fedora en la DMZ por esos servicios, indicando la dirección IP en la WAN que tiene el cortafuegos, puesto que el servidor de la DMZ está enmascarado tras el cortafuegos para l2. A efectos de la práctica, el direccionamiento privado de tu casa/centro es Internet, pero por defecto OPNSense deniega que desde la WAN se permita tráfico con origen direcciones privadas de la RFC 1918, así es que debes desactivar esta característica desde Interfícies → WAN → Bloquear redes privadas (desmarcar):os usuarios de Internet.<br /><br /></span><span>Consideraciones a tener en cuenta:<br /></span></p>
+<p class="western" align="justify" style="text-align: justify;">1. Si en el servidor hay algún firewall por defecto activado es conveniente a efectos de la práctica, deshabilitarlo. Ejemplos:</p>
+<ul>
+<li>En Fedora Server: sudo systemctl stop firewalld.</li>
+<li>En Ubuntu Server: sudo ufw disable.</li>
+</ul>
+<p style="text-align: justify;">2. A efectos de la práctica, el direccionamiento privado de la red del aula/casa es Internet, pero por defecto <strong>OPNSense</strong> deniega que desde la WAN se permita tráfico con origen direcciones privadas de la RFC 1918, así es que debes desactivar esta característica desde Interfícies → WAN → Bloquear redes privadas (desmarcar):</p>
+<p style="text-align: center;"><img src="quitar-bloque-redes-Privadas.png" alt="" width="826" height="447" /></p>
+<p style="text-align: justify;"><br /><br /><span><strong>3.</strong> Para implementar la <strong>directiva 1</strong>, se recomienda <strong>modificar la regla de IPv4 que crea OPNSense</strong> para permitir a la red LAN acceder a todo el tráfico. Esta regla puedes partirla en dos (con la opción de clonar una regla): una afecta al destino DMZ y otra a lo que no sea DMZ (Invertir destino). También puedes crear un alias de puertos para meterlos en una sólo regla, desde Cortafuegos → Aliases):</span></p>
+<p style="text-align: center;"><span><img src="alias-lan-dmz.png" alt="" width="1190" height="400" /></span></p>
+<p style="text-align: justify;"><span>Las dos reglas que se crearían, después de crear el alias de puertos, tendrían este aspecto:</span></p>
+<p style="text-align: center;"><span><img src="reglas-LAN-Directiva1.png" alt="" width="774" height="231" /></span></p>
+<p style="text-align: justify;"><span></span></p>
+<p style="text-align: justify;"><span>4. Para<strong> implementar la directiva 2</strong>, es necesario <strong>crear reglas de NAT de redirección de puerto</strong>, indicando que la IP de destino de la petición es la IP WAN del cortafuegos y se debe redirigir a la IP del servidor en la DMZ (203.0.113.2) y al puerto correspondiente que podría ser otro:</span></p>
+<p style="text-align: center;"><img src="redireccion-puerto.png" alt="" width="1049" height="796" /></p>
+<p style="text-align: justify;"><span>Para que las reglas de redirección de puertos funcionen como es de esperar, es necesario hacer un cambio en los ajustes avanzados del firewall, como se indica en la captura:</span></p>
+<p style="text-align: center;"><span><img src="deshabilitar-REsponder.png" alt="" width="824" height="465" /></span></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span>La <strong>razón de este ajuste</strong>, es que en las últimas versiones de OPNSense, cualquier petición que venga de un cliente cuya IP se encuentre en el segmento WAN, el firewall OPNSense envía las respuestas a la MAC del router y no a la del cliente, provocando que la conexión no funcione. Este ajuste lo incluyeron para los entornos multiwan, donde hay varios routers de salida a Internet para balanceo de carga y alta disponibilidad en la salida a Internet. De esta manera se evita el problema del enrutamiento asimétrico, aunque en el escenario que nos ocupa, provoca que la conexión no funcione.En este punto, cuando al cortafuegos le llegue una petición desde Internet a su IP WAN por el servicio indicado (protocolo y puerto), redirigirá la petición al servidor de la DMZ indicado, al puerto indicado, que puede ser el mismo u otro.</span></p>
+</div>
+<p style="text-align: justify;"><span><br />Por tanto <strong>para implementar la política del puerto ssh 20022</strong>, hay que redirigir este puerto público al 22 del servidor de la DMZ. Cambiar el puerto público de un servicio a uno no estándar puede ayudar a proteger el servicio, si bien es una medida de seguridad débil por ofuscación, ya que en el momento que un atacante haga un barrido de puertos completo, lo puede descubrir.<br /><br />Cada vez que <strong>se crea una redirección de puerto</strong>, <strong>OPNSense crea automáticamente una regla de entrada en la interfaz WAN</strong>. Por ejemplo, se han creado dos redirecciones de puertos de HTTP y 20022 hacia el HTTP y el SSH del servidor de la DMZ y se han creado automáticamente estas dos reglas:<br /></span><span></span></p>
+<p class="western" align="justify" style="text-align: center;"><img src="reglas-WAN.png" alt="" width="868" height="339" /></p>
+<p class="western" align="justify"><span>Una vez llegado a este punto, comprueba que las dos directivas de seguridad definidas anteriormente funcionan correctamente y para ello, realiza una  batería de pruebas.</span></p>
+<p class="western" align="justify"><span><strong></strong></span></p>
+<p class="western" align="justify"><span><strong>6. Configuración del servicio proxy FTP</strong></span></p>
+<p class="western" align="justify"><span>Si queremos que algunos clientes de la LAN (windows 10, antiguas versiones de Fedora, etcétera) puedan acceder a servicios FTP externos, es necesario instalar y configurar el servicio <strong>proxy FTP en OPNSense</strong>. Esto es así porque al realizar el NAT en los paquetes IP, las conexiones dinámicas que crea el FTP en otros puertos (modo normal y modo pasivo) pasa información de la dirección IP del cliente para que el servidor se conecte a él e iniciar la transferencia de un fichero. Es necesario que un servicio traduzca correctamente las direcciones IP privadas de los clientes en la pública para que pueda funcionar bien el servicio. En el caso de usar el modo pasivo, donde el cliente se conecta al servidor, no sería necesario pero hay algunos clientes FTP que no implementan el modo pasivo (como el cliente FTP de consola de Windows). Los navegadores web generalmente conectan siempre con el modo pasivo de FTP.</span></p>
+<p class="western" align="justify">Para comprobar que, efectivamente, no funcionan bien las transferencias FTP desde un cliente de la LAN, se prueba a conectar desde un cliente Windows 10 a un servicio de FTP anónimo como el del UV. Se introduce como <strong>usuario anonymous</strong> y cualquier valor como contraseña. Después se intenta hacer un dir para mostrar los contenidos y como se puede observar el servidor corta la conexión al no poder conectarse al cliente para transferir el listado de directorios (que se hace por otro puerto dinámico negociado entre cliente y servidor):</p>
+<p class="western" align="justify" style="text-align: center;"><span><img src="windows-10-no-modopasivo.png" alt="" width="1216" height="665" /></span></p>
+<p class="western" align="justify" style="text-align: justify;"><span>Si se cambia a modo pasivo con el comando <strong>passive</strong>, sí que funciona pues en este caso el cliente se conecta a un puerto de la ip pública del servidor con una conexión saliente y no entrante como en el caso anterior.<br /></span></p>
+<p class="western" align="justify" style="text-align: justify;"><span>Para el caso del <strong>cliente Fedora  Release 36</strong>, se realiza la misma conexión al servicio de FTP de la UV y como se puede observar en la figura inferior, se pueden listar directorios ya que esta versión cambia a modo pasivo por defecto.<br /></span></p>
+<p class="western" align="justify" style="text-align: center;"><span><img src="version-fedora.png" alt="" width="463" height="73" /></span></p>
+<p class="western" align="justify" style="text-align: center;"><em><strong>Figura 1.</strong> Versión de Fedora.</em></p>
+<p class="western" align="justify" style="text-align: center;"><span><img src="ftp-uv.png" alt="" width="801" height="706" /></span></p>
+<p class="western" align="justify" style="text-align: center;"><em><strong>Figura 2.</strong> Acceso a ftp.uv.es en modo pasivo.</em></p>
+<p class="western" align="justify"><span>Para <strong>solucionar</strong> esta problemática asociada al modo normal del protocolo FTP, es necesario instalar el <strong>servicio proxy FTP</strong> y <strong>redirigir el puerto 21 saliente hacia este proxy</strong>. Para ello el primer paso es instalar el plugin de proxy ftp accediendo a: <strong>Sistema --&gt; Firmware --&gt; Complementos</strong> y seleccionamos la pestaña <strong>Complementos</strong> para insertar en la caja de texto (buscador)<strong> ftp-proxy</strong>. </span><span> </span></p>
+<p class="western" align="justify" style="text-align: center;"><span><img src="instalar-ftp-proxy.png" alt="" width="1388" height="397" /></span></p>
+<p>Una vez lo encuentra, hay que pulsar el<span> icono de instalar <strong>(+</strong>) y realizará su instalación. </span></p>
+<p style="text-align: center;"><span><img src="instalando-ftp-proxy.png" alt="" width="754" height="474" /></span></p>
+<p style="text-align: justify;"><span>Una vez se instala, hay que actualizar el navegador para que aparezca la entrada de FTP Proxy en Servicios. </span></p>
+<p><span><img src="-proxyftp.png" alt="" width="972" height="383" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span>A continuación, se accede a Servicios --&gt; Proxy FTP para su configuración, para ello, hay que pulsar el signo + y configurar el proxy FTP como se indica:</span></p>
+<p style="text-align: center;"><span><img src="conf-proxy.png" alt="" width="789" height="604" /></span></p>
+<p><span>Pulsamos Guardar para consolidar los cambios.</span></p>
+<p style="text-align: center;"><span><img src="proy-configurado.png" alt="" width="714" height="277" /></span></p>
+<p><span>El siguiente paso es redirigir el puerto 21 hacia este servicio, desde reglas de NAT, creando una nueva:</span></p>
+<p style="text-align: center;"><span><img src="NAT-proxyftp.png" alt="" width="621" height="800" /></span></p>
+<ul>
+<li style="text-align: justify;"><span><strong>Interfaz</strong>: LAN</span></li>
+<li style="text-align: justify;"><span><strong>Destino</strong>: cualquiera.</span></li>
+<li style="text-align: justify;"><span><strong>Rango de puertos destino</strong>: de: FTP para: FTP.</span></li>
+<li style="text-align: justify;"><span><strong>IP objetivo de redirección (Host único o red)</strong>: 127.0.0.1.</span></li>
+<li style="text-align: justify;"><span><strong>Puerto de Redirección Objetivo</strong>: (otro) 8021.</span></li>
+</ul>
+<p style="text-align: justify;"><span>Pulsamos <strong>Guardar</strong>.</span></p>
+<p style="text-align: center;"><span><img src="redir-puertos.png" alt="" width="1246" height="341" /></span></p>
+<p style="text-align: justify;"><span><br /></span><span>En la captura anterior se puede ver la regla ya creada.  Pulsamos <strong>Aplicar cambios</strong>.</span><span><br /><br /></span><span>Una vez aplicados los cambios, ya nos funcionará correctamente el servicio FTP en modo puerto. Se comprueba con el cliente Windows 10 y se puede observar que se accede en modo pasivo y se pueden listar los directorios remotos por ejemplo.<br /></span></p>
+<p style="text-align: center;"><span><img src="ftp-pasivo-W10.png" alt="" width="1221" height="669" /></span></p>
+<p style="text-align: justify;"><span></span></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="prctica_2_firewall_perimieral_con_pfsense.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

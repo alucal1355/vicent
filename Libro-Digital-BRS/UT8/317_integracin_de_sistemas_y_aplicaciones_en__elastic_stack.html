@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-116"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li id="active"><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="active no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3165_suricata_en_kibana.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="318_problemas_y_soluciones.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id159">
+<div class="iDevice emphasis0" >
+<div id="ta159_159_2" class="block iDevice_content">
+<div class="exe-text"><h3 dir="ltr"><strong><span style="color: #ef801b; font-size: 14pt; letter-spacing: 0.5px;">1. Integraciones y configuración más fáciles</span></strong></h3>
+<div dir="ltr">
+<p style="text-align: justify;">La <strong>app Integrations</strong> proporciona una UI basada en la Web en Kibana para agregar y gestionar integraciones de servicios y plataformas populares. Las integraciones no solo proporcionan una forma de agregar fuentes nuevas de datos, sino que también se envían con activos listos para usar como dashboards, visualizaciones y pipelines para extraer campos estructurados de los logs. No es necesario dedicar mucho esfuerzo a configurar el sistema porque se realiza automáticamente.</p>
+<p style="text-align: justify;">Las <strong>nuevas integraciones disponibles</strong> en general permiten <strong>monitorizar la infraestructura del sistema</strong>, incluidos servidores, equipos portátiles, contenedores, máquinas virtuales y más. También se pueden proteger los sistemas ante amenazas de seguridad y analizar eventos de seguridad. Hay más de 70 integraciones disponibles, y elastic trabaja de forma continua para agregar más.</p>
+<p style="text-align: center;"><img src="integrations.png" alt="" width="1079" height="801" /></p>
+<p style="text-align: center;"><em><strong>Figura .</strong> Panel de integraciones.</em></p>
+<p style="text-align: justify;">Si se pulsa sobre un recuadro de una integración, ejemplo, <a href="https://www.elastic.co/guide/en/beats/metricbeat/8.1/metricbeat-module-elasticsearch.html" target="_blank" rel="noopener">Elasticsearch Metrics</a>, aparece una página con las instrucciones para la instalación y configuración de Elasticsearch Metrics.</p>
+<p style="text-align: justify;"></p>
+<p style="text-align: center;"><img src="elasticsearch-metrics.png" alt="" width="750" height="772" /></p>
+<p style="text-align: center;"><em><strong>Figura .</strong> Instalación y configuración de Elasticsearch Metrics.</em></p>
+<p style="text-align: justify;"><strong>Elasticsearch Metrics</strong> permite monitorizar la pila <strong>Elastic Stack</strong>, es decir, <span class="VIiyi" jsaction="mouseup:BR6jm" jsname="jqKxS" lang="es"><span jsaction="agoMJf:PFBcW;usxOmf:aWLT7;jhKsnd:P7O7bd,F8DmGf;Q4AGo:Gm7gYd,qAKMYb;uFUCPb:pvnm0e,pfE8Hb,PFBcW;f56efd:dJXsye;EnoYf:KNzws,ZJsZZ,JgVSJc;zdMJQc:cCQNKb,ZJsZZ,zchEXc;Ytrrj:JJDvdc;tNR8yc:GeFvjb;oFN6Ye:hij5Wb;bmeZHc:iURhpf;Oxj3Xe:qAKMYb,yaf12d" jsname="txFAF" class="JLqJ4b ChMk0b" data-language-for-alternatives="es" data-language-to-translate-into="en" data-phrase-index="4" data-number-of-phrases="5" jscontroller="Zl5N8" jsdata="uqLsIf;_;$35" jsmodel="SsMkhd"><span jsaction="click:qtZ4nf,GFf3ac,tMZCfe; contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:qtZ4nf,c2aHje" jsname="W297wb">para recopilar métricas que se muestran en la interfaz de usuario de Stack Monitoring en Kibana.</span></span></span> </p>
+<p style="text-align: justify;">A continuación, se describe el proceso de<strong> instalación y configuración de Metrics</strong> en el equipo <strong>Elastic Stack</strong>.</p>
+<div class="exe-fx exe-tabs">
+<h2>Instalación de metricbeat</h2>
+<p style="text-align: justify;">Siguiendo la página de instrucciones, en primer lugar se descarga el paquete <span style="font-size: 12pt;">metricbeat-8.1.0-amd64.deb y luego se instala con dpkg.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastics-master01:/home/administrador#</strong>curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.1.0-amd64.deb<br /><strong>root@elastics-master01:/home/administrador#</strong>dpkg -i metricbeat-8.1.0-amd64.deb<br /></span></pre>
+<img src="descarga-installmetric.png" alt="" width="1103" height="208" style="display: block; margin-left: auto; margin-right: auto;" />
+<h2>Configurar metricbeat</h2>
+<p>A continuación, hay que editar el fichero<strong> metricbeat.yml </strong>para configurar kibana y la salida hacia elasticsearch. Como se puede observar en las figuras inferiores, en primer lugar hay que crear las claves con las credenciales del usuario elastic en el <strong>keystorage de metricbeat</strong>.</p>
+<pre><span style="font-size: 12pt;"><span style="color: #000000;"><strong>root@elastics-master01:/#</strong>nano /etc/metricbeat/metricbeat.yml</span> <br /></span></pre>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="kibana-metricbeat.png" alt="" width="404" height="252" /></td>
+<td style="width: 50%; text-align: center;"><img src="metricbeat-yml-elastic.png" alt="" width="532" height="170" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Habilitar módulo system<span style="font-size: 12pt;"><strong></strong></span></h2>
+<p>Al instalar <strong>metricbeat</strong>, el módulo system se habilita de manera automática, pero en caso que no esté habilitado, hay que habilitarlo con el comando siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastics-master01:/#</strong>metricbeat modules enable system</span></pre>
+<p style="text-align: justify;">Mediante este módulo se recogen las métricas del servidor, a saber: cpu, memoria, carga, red, etcéterfa.</p>
+<p style="text-align: center;"><img src="system-yml.png" alt="" width="761" height="666" /></p>
+<h2>Test metricbeat</h2>
+<p style="text-align: justify;">A continuación, <span>hay que ejecutar los comandos de test de metribeat para comprobar que no hay errores tanto en la salida como en el fichero de configuración:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastics-master01:/#</strong>metricbeat -e test output<br /><strong>root@elastics-master01:/#</strong>metricbeat -e test config</span></pre>
+<h2>Cargar dashboards Kibana</h2>
+<p style="text-align: justify;">A continuación, si los <strong>test realizados han tenido éxito</strong>, <span>hay que ejecutar el comando de carga de los paneles para kibana. De forma predeterminada, el comando importa los dashboards del directorio kibana, que está disponible en el paquete metricbeat.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastics-master01:/#</strong>metricbeat setup --dashboards<br /></span></pre>
+<p style="text-align: center;"><img src="loaded-dashboards.png" alt="" width="469" height="76" /></p>
+<h2>Arrancar metricbeat</h2>
+<p style="text-align: justify;">Por último, se inicial Metricbeat y se habilita el inicio automático en el arranque del sistema. </p>
+<pre><span style="font-size: 12pt;"><strong>root@elastics-master01:/#</strong>systemctl enable --now metricbeat</span></pre>
+<p style="text-align: center;"><img src="start-enable.png" alt="" width="983" height="95" /></p>
+<h2>Visualizar dataview del índice Metricbeat</h2>
+<p style="text-align: justify;">Por último, se crea un <strong>dataview</strong> del data strema metricbeat-8.1.0.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="dataview-metricbeat-8-1.png"><img src="dataview-metricbeat-8-1.png" alt="" width="1305" height="925" /></a></td>
+<td style="width: 50%; text-align: center;"><img src="metrica-procesos.png" alt="" width="400" height="399" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"></p>
+</div>
+<p style="text-align: justify;"><span>También se proporciona una <strong>UI basada en la Web</strong> para configurar integraciones para los sistemas y aplicaciones. En lugar de editar archivos YAML, la UI web es más concisa y ofrece orientación y validación. Ya se proporcionan los valores predeterminados para las ubicaciones de métricas y logs comunes, de modo que simplemente se puede hacer clic en guardar para desplegar la integración con un clic. </span></p>
+<p style="text-align: justify;"><span><strong>Ejemplo - Integrar Ngins</strong></span></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span><strong>Ngins </strong>es un servidor web con capacidad de actuar como proxy inverso. A diferencia de Apache, es muy ligero puesto que consigue reducir la cantidad de memoria empleada a través de crear únicamente los hilos justos y necesarios para atender peticiones en un período corto de tiempo. Además, consigue un tiempo de respuesta más rápido y atender un mayor número de peticiones por segundo (principalmente para contenido estático). Al contrario que Apache, Nginx no permite definir directivas de configuración mediante ficheros especiales .htaccess.<br />Otra ventaja de Nginx es que puede actuar como balanceador de carga, consiguiendo repartir el tráfico entrante entre varios servidores web y evitar la saturación de los mismos. Además, ejerciendo como <strong>proxy inverso</strong> permite mejorar la seguridad porque consigue ocultar la existencia o características del servidor origen (inaccesible desde internet), reducir la carga de éste cacheando el contenido o actuar como único punto de autenticación. </span></p>
+<p style="text-align: justify;"><span><strong>Nginx se podría emplear como proxy inverso hacia la herramienta de visualización de datos Kibana.</strong></span></p>
+</div>
+<p style="text-align: justify;"><span>Si se desea integrar <strong>Ngins</strong>, simplemente hay que indicar el <strong>nombre</strong> y una <strong>descripción</strong> opcional, en qué <strong>namepace</strong> se ubica y por último el <strong>agent policy name</strong> <strong>(un solo agente o en un grupo de agentes)</strong>. Si se pulsa sobre<strong> Advanced options</strong> en el pie de la página, se pueden establecer más parámetros.</span></p>
+<p style="text-align: center;"><img src="add-Nginx.png" alt="" width="941" height="923" /></p>
+<p style="text-align: justify;"><span style="font-size: 1em;">Se puede optar por agregar esta integración Nginx en un solo agente o en un grupo de agentes como parte de una política. Una política de agente permite aplicar la misma integración en cualquier cantidad de agentes, lo que simplifica la gestión de varios agentes a escala. Estos agentes recibirán la actualización la próxima vez que se contacten con </span><strong style="font-size: 1em;">Fleet</strong><span style="font-size: 1em;">.</span><br /><span></span></p>
+<p style="text-align: justify;"><a href="https://www.elastic.co/es/blog/elastic-agent-and-fleet-make-it-easier-to-integrate-your-systems-with-elastic" target="_blank" rel="noopener">Fuente</a></p>
+<h3 style="text-align: justify;">2. Gestionar Fleet de manera centralizada</h3>
+<p>Fleet funciona como el plano de control que permite gestionar de forma centralizada grandes grupos de agentes. Se puede consultar el estado de todos los agentes en la página de Fleet. Aquí se puede comprobar cuáles agentes están en línea y en buen estado, cuáles tienen problemas y la última vez que se contactaron. También se puede ver la versión del binario de agente y la política de agentes.</p>
+<p>A continuación, se describen los pasos para configurar el servidor fleet.</p>
+<div class="exe-fx exe-tabs">
+<h2>Paso 1</h2>
+<p>En primer lugar hay que acceder a la url <strong>http://192.168.0.254:5601/app/fleet/agents</strong>. En el primer punto se puede crear un nueva política para los agentes a integrar o utilizar la que existe por defecto. Para este caso se crea una nueva a la que se llama como '<strong>Fleet Server policy Ciber-local</strong>'. A continuación, hay que pulsar el botón 'Create policy' para que se cree. El sistema informa si se ha creado correctamente con el mensaje <img src="agent-plicy-created.png" alt="" width="188" height="36" />.</p>
+<p style="text-align: center;"><img src="add-fleet-server-01.png" alt="" width="1136" height="801" /></p>
+<h2>Paso 2</h2>
+<p style="text-align: justify;">En el segundo punto, hay que descargar el agente de elastic para instalarlo sobre el equipo donde residirá el servidor fleet que para este caso, es el mismo equipo. En primer lugar hay que pulsar en el enlace '<strong>Go to download page</strong>' para acceder a la página de descarga. Si se observa en la figura de la derecha (página de descarga), el sistema ofrece la posibilidad de descargar el agente para diferentes sistemas operativos, para nuesto caso, hay que copiar el enlace DEB 64-BIT y que corresponde a la url <strong>https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.1.0-amd64.deb.</strong></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="punto2.png" alt="" width="974" height="249" /></td>
+<td style="width: 50%; text-align: center;"><img src="ealstic-agent-8.1.png" alt="" width="313" height="322" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">El proceso es el siguiente, una vez se ha copiado el enlace de descargar, hay que descargar el fichero deb y luego instalarlo con dpkg.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastics-master01:/home/administrador#</strong>curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.1.0-amd64.deb<br /><strong>root@elastics-master01:/home/administrador#</strong>dpkg -i elastic-agent-8.1.0-amd64.deb<br /></span></pre>
+<p style="text-align: center;"><img src="install-elastic-agent.png" alt="" width="1152" height="218" /></p>
+<h2>Paso 3</h2>
+<p>El siguiente paso es elegir el modo de implementación para la seguridad. Para nuestro caso, se elige '<strong>Quick start</strong>' por tratarse de un ejemplo, pero para sistemas en producción, habría que elegir '<strong>Production</strong>'.</p>
+<p style="text-align: center;"><img src="paso3-new.png" alt="" width="981" height="248" /></p>
+<h2>Paso 4</h2>
+<p>En el siguiente paso, hay que establecer la url que usarán los agentes de elastic para conectarse con el servidor Fleet. Para este caso, la url es: <strong>https://192.168.0.254:8220.</strong></p>
+<p style="text-align: center;"><img src="paso4.png" alt="" width="983" height="191" /></p>
+<h2>Paso 5</h2>
+<p>Ahora, hay que generar un token de servicio para otorgar permisos de Fleet Server para escribir en Elasticsearch. Para ello, hay que pulsar sobre '<strong>Generate service token</strong>' y el sistema devuelve el token generado que hay que guardar (figura derecha).</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="paso5.png" alt="" width="642" height="165" /></td>
+<td style="width: 50%; text-align: center;"><img src="paso5-token.png" alt="" width="695" height="152" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">El <strong>token generado</strong> es:</p>
+<pre><span style="font-size: 12pt;">AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE2NDkxNTEwNTA5NTY6QWJHTUM0cUNUd2E0UmlWbW9XTzJBdw</span></pre>
+<h2>Paso 6</h2>
+<p>A continuación, hay que iniciar el servidor Fleet, para ello, hay que pulsar en la pestaña RPM/DEB y copiar el código que ha generado para ejecutarlo en el equipo.</p>
+<p style="text-align: center;"><img src="paso6.png" alt="" width="1179" height="409" /></p>
+<h2>Paso 7</h2>
+<p>Por último, hay que ejecutar el comando para iniciar el servidor Fleet.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastics-master01:/#</strong>elastic-agent enroll \<br />--fleet-server-es=https://192.168.0.254:9200 \<br />--fleet-server-service-token=AAEAAWVsYXN0aWMvZmxlZXQtc2VydmVyL3Rva2VuLTE2NDkxNTEwNTA5NTY6QWJHTUM0cUNUd2E0UmlWbW9XTzJBdw \<br />--fleet-server-policy=fleet-server-policy \<br />--fleet-server-es-ca-trusted-fingerprint=6b31631457bb60e6ffaa0dfa311a5a62c6190cd8a5ffbd2a9b8bdb01b154b4f3 \<br />--fleet-server-insecure-http</span></pre>
+<p style="text-align: center;"><img src="elastic-agent-enroll.png" alt="" width="1528" height="850" /></p>
+<h2>Paso 8</h2>
+<p>Si se accede a Fleet --&gt; Settings, se puede observar que ya se tiene disponible el servidor de fleet y los agentes que están enviando datos (output).</p>
+<p style="text-align: center;"><img src="fleet-settings.png" alt="" width="1221" height="753" /></p>
+</div>
+<h3><span>3. Integración de hosts</span></h3>
+<p>En el siguiente <a href="https://www.elastic.co/guide/en/fleet/8.1/install-standalone-elastic-agent.html" target="_blank" rel="noopener">enlace</a>, se tiene el proceso para añadir agentes (hosts) al servidor de fleet.</p>
+<p style="text-align: justify;">Para el caso de añadir un agente Windows, hay que descargar el zip de instalación y a continuación descomprimirlo para que editar el fichero <strong>elastic-agent.yml</strong> y poder configurar los datos del servidor fleet.</p>
+<p style="text-align: center;"><img src="elastic-agent-yml.png" alt="" width="1308" height="625" /></p>
+<p style="text-align: justify;">Una vez configurado, se ejecuta en la consola el binario<strong> elastic-agent.exe.</strong></p>
+<p style="text-align: center;"><img src="exec-elastic-agent.png" alt="" width="1305" height="388" /></p>
+</div></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3165_suricata_en_kibana.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="318_problemas_y_soluciones.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

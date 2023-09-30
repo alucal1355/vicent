@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.2 Mejoras en el diseño de la red de tu organización | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-147"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_firewall_perimetral.html" class="current-page-parent daddy">6. Firewall perimetral</a>
+   <ul>
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="active no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_contramedidas_ddos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.2 Mejoras en el diseño de la red de tu organización</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id186">
+<div class="iDevice emphasis0" >
+<div id="ta186_186_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">En este capítulo vamos a proponer una <strong>serie de recomendaciones a la hora de mejorar el diseño de la red</strong> que se implanta en todos los centros públicos dependientes de la Conselleria de Educación.</p>
+<p style="text-align: justify;">Como es obvio, desde la administración se propone un modelo simple, sencillo de implantar en los miles de centros repartidos por todo el territorio de la Comunidad Valenciana.</p>
+<p style="text-align: justify;">Este <strong>modelo de red</strong> consiste en dos redes planas separadas, una para aulas y departamentos y otra para secretaría y dirección. Por razones de seguridad, ambas redes no deben estar conectadas y llevan una gestión diferente. </p>
+<p style="text-align: justify;">La <strong>gestión de la red de los centros se otorga a una empresa por concurso público</strong>, y en el momento de escribir este curso, es Telefónica (Movistar) la que la gestiona. En todos los centros se instala un router marca Teldat con conectividad a Internet por fibra óptica - a través de un conversor de medios de fibra a ethernet - a la red del operador, utilizando una tecnología Metroethernet que Telefónica comercializa bajo el nombre de Macrolan. Esta tecnología utiliza redes privadas virtuales (VPN) con el protocolo MPLS.</p>
+<p style="text-align: justify;">Este router tiene un módulo con varios puertos ethernet que hace las funciones de conmutador ethernet, y divide los puertos normalmente en tres segmentos de red o VLAN: red de aulas, secretaria/dirección y telefonía IP (ToIP). Cada una de estas tres redes tiene su direccionamiento IP propio.</p>
+<p style="text-align: justify;">En esta sección nos centraremos en la <strong>red de aulas</strong>, que es la <strong>candidata a sufrir más ataques</strong> debido a que es la que se conecta el alumando. El router del operador proporciona servicio DHCP en el rango privado interno que tienen los centros dentro del direccionamiento privado de clase B 172.16.0.0/12. Cada centro tiene su direccionamiento propio de forma que un centro, en función del número de equipos, puede tener asignada una red /24 con 254 direcciones IP utilizables o normalmente una /23, con 510 direcciones IP utilizables, ya que los centros con muchas aulas de informática y departamentos didácticos pueden sobrepasar fácilmente los 300 ordenadores en el centro. Por ejemplo en un centro educativo de ejemplo se tiene asignado un rango interno con prefijo /23 o 255.255.254.0 como máscara de subred.</p>
+<p style="text-align: justify;">En la siguiente figura puedes ver un esquema del modelo de red de un centro educativo típico:</p>
+<p style="text-align: center;"><img src="modelo_de_centro.png" alt="" width="643" height="406" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Esquema de red del modelo de centro básico.</em></p>
+<p style="text-align: justify;"><br />En este modelo se ha representado la interconexión de todos los puntos de red a través de conmutadores de acceso e intermedios hasta que finalmente se interconectan al router central de salida a Internet.</p>
+<p style="text-align: justify;">Por ejemplo, es habitual que en cada aula haya un conmutador que recoge las tomas de red de todos los puestos del aula y a su vez, todos los conmutadores de aulas, se recogen en un conmutador central o bien directamente en el conmutador integrado que tiene el router del proveedor, suponiendo que tiene puertos suficientes. En estos casos, estos conmutadores de acceso e intermedios suelen ser equipos no gestionados o sin ninguna configuración: simplemente dejados caer y concentrando todas las conexiones de aulas hasta el conmutador central en una red en árbol o estrella extendida, como se puede observar en la figura anterior.</p>
+<p style="text-align: justify;">Como se ha comentado, vamos a centrarnos en la parte de la derecha del esquema, donde se encuentra la conexión de aulas y departamentos. Tanto aulas como departamentos se encuentran en la misma subred y por tanto comparten direccionamiento IP para alumnos y profesores, con el peligro que eso conlleva ya que hay visibilidad directa entre ellos.</p>
+<p style="text-align: justify;"><strong>La ventaja de este modelo es clara:</strong> es un <strong>modelo simple y sencillo</strong> de implantar en todos los centros.</p>
+<p style="text-align: justify;">Sin embargo, los problemas que acarrea son varios como:</p>
+<ul>
+<li style="text-align: justify;"><strong>Problemas de rendimiento:</strong> al interconectar todos los conmutadores entre sí en una estrella, se crea un dominio de difusión (broadcast) más grande. En un switch, el broadcast de nivel 2 (con protocolos como DHCP, ARP, CIFS/SMB, etc) se envía por todos los puertos, así es que llega a todas las aulas afectando al rendimiento de todos los equipos que deben procesar el tráfico de broadcast para ver si está dirigido a ellos.</li>
+<li style="text-align: justify;"><strong>Problemas de seguridad:</strong> un equipo infectado con un gusano, puede afectar a toda la red del centro y propagarse a los equipos no actualizados correctamente. Estamos hablando lógicamente de gusanos tipo Sasser o Blaster que se propagan por la red local y no los que se propagan por correo electrónico, por ejemplo. También es un problema si un alumno realiza un ataque MITM como el envenenamiento ARP. En este caso tendría efectividad en toda la red del centro, pudiendo interceptar el tráfico de cualquier equipo conectado a aulas o departamentos. También es posible atacar al servidor DHCP instalado en el router del ISP y que en el momento de escribir este libro, son vulnerables a estos ataques en todos los centros.</li>
+<li style="text-align: justify;"><span style="color: #333333; font-size: 1em;"><strong>Problemas de <a href="https://programoweb.com/como-evitar-las-tormentas-de-broadcast/" target="_blank" rel="noopener">tormentas de broadcast</a></strong>: si se produce un bucle en la red como consecuencia de conectar dos switches entre sí con más de un cable o simplemente conectando en el aula dos puertos del mismo switch con un cable, se produce una tormenta de broadcast donde en pocos segundos el broadcast se adueña de la red, no funcionando nada. Esto se evita con switches gestionables activando el protocolo <a href="https://es.wikipedia.org/wiki/Spanning_tree" target="_blank" rel="noopener">spanning-tree</a>.</span></li>
+<li style="text-align: justify;"><strong>Problemas de clonado de aulas:</strong> si se está clonando un aula en horario lectivo con una herramienta multicast como Norton Ghost, Acronis o Clonezilla/DRBL, el tráfico multicast se convierte en broadcast en lo switches no gestionables (no tienen IGMP snooping activado) y se satura todo el centro con excesivo tráfico debido a la clonación, funcionando muy lenta la red.</li>
+</ul>
+<p style="text-align: justify;">Todos <strong>estos problemas afectan lógica a la red de aulas y departamentos</strong> que están todos <strong>conectados al mismo segmento</strong> y por tanto no afectan a la red de secretaría/dirección que se encuentran en otro segmento de red con otro direccionamiento.</p>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id48">
+<div class="iDevice emphasis1">
+<div class="iDevice_header">
+<h2 class="iDeviceTitle">Casos reales</h2>
+<p class="toggle-idevice toggle-em1"><a href="#" id="toggle-idevice-id48-em1" title="Ocultar"><span>Ocultar</span></a></p>
+</div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta48_41_2" class="block iDevice_content">
+<p><strong>Situaciones reales</strong><span> </span>vividas en centros que he estado:</p>
+<p style="text-align: justify;">Un día nos llaman desde el edificio donde impartía clase otra familia profesional y no les funcionaba la red. Con un analizador de protocolos como Wireshark vimos que había más de un 90% de tráfico de broadcast, síntoma claro de una <strong>tormenta de broadcast creada por un bucle en la red</strong>. En un aula, un alumno había conectado un latiguillo de red suelto, de nuevo hacia el switch del aula en otro puerto libre, provocando un bucle en la red. No lo hizo con mala intención pero provocó la caída de la red. Gracias a tener la red segmentada, no afectó al resto del centro.</p>
+<p>En otra ocasión, cada vez que un profesor de mantenimiento de un aula, restauraba el aula con el Norton Multicast, dejaba a todo el centro sin Internet debido a la cantidad de tráfico que generaba desde el servidor hacia todo el centro. Si las aulas estuvieran en redes separadas cada una, no hubiera pasado esto.</p>
+<div class="exe-figure exe-image position-center" style="width: 647px;"><img src="bucle_red.png" alt="" width="647" height="422" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" />
+<div class="figcaption"><span class="title"><em>Figura donde puede verse un bucle realizado en un aula</em></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id49">
+<p class="toggle-idevice toggle-em0"><span><a href="#" id="toggle-idevice-id49-em0" title="Ocultar">Ocultar</a></span></p>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id49">
+<div class="iDevice emphasis0">
+<div id="ta49_85" class="block iDevice_content">
+<p><span><strong>Propuestas de mejora para la red de los centros educativos</strong></span></p>
+<hr size="4" />
+<p><span><strong></strong></span>Si queremos mejorar el diseño implantado en los centros educativos, no tenemos más remedio que intentar modificar este diseño, para eliminar o minimizar los problemas que se han comentado. En función de las horas de que dispongamos en el horario y del presupuesto disponible en el centro, se plantean una serie de soluciones a continuación, para que cada uno aplique la que considere más conveniente a su caso particular.</p>
+<p> </p>
+<p><span><strong>PROPUESTA 1: routers neutros intermedios</strong></span></p>
+<p style="text-align: justify;">En esta propuesta se pretende <strong>segmentar la red de aulas y departamentos del centro</strong> en subredes más pequeñas utilizando routers en cada red. De esta forma, cada router corta el broadcast y estamos creando segmentos de broadcast más pequeños y controlados ante ataques tipo MITM, infecciones por gusanos o clonaciones de aulas.</p>
+<p style="text-align: justify;">Esta solución es barata y se necesita disponer de un router neutro por aula (sólo con puertos ethernet para las interfaces de LAN y de WAN) que además puede ser wifi (si la wfi no interesa se puede deshabilitar). Los puertos marcados como LAN se conectan al switch del aula y el puerto marcado como WAN iría conectado a la red de aulas, es decir, al router del ISP del cual obtendría dirección IP privada en el rango del centro. En la siguiente imagen puede verse un router neutro Linksys WRT160n:</p>
+<center>
+<div class="exe-figure exe-image position-center" style="width: 769px;"><img src="linksys_wrt160n.jpeg" alt="" width="535" height="128" />
+<div class="figcaption"><span class="title"><em>Router neutro con el puerto WAN (Internet) en amarillo y los puertos LAN en azul</em></span></div>
+</div>
+</center>
+<p style="text-align: justify;">La red LAN interma y wifi de estos routers inalámbricos suele ser en el rango<span> </span><strong>192.168.0.0/24</strong><span> </span>o<span> </span><strong>192.168.1.0/24</strong>. Cualquiera de estos puertos LAN debe conectarse al switch interno del aula y el mismo router se encargará de dar servicio DHCP a los clientes del aula, además de realizar la traducción de direcciones IP internas (NAT, Network Address Translation) a la dirección IP que el router coge por la interfaz WAN (Internet), que será una IP del rango de la red de aulas que ha asignado el operador al centro. Suponiendo que este rango es 172.28.100.0/23, el esquema podría quedar de la siguiente manera:</p>
+<p><img src="propuesta_modelo_de_red_1.png" height="439" width="602" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;">Como se puede ver en este esquema, todos los routers intermedios tienen en su interfaz WAN una dirección IP del rango 172.28.100.0/23 del centro, que les asigna por DHCP el router ISP del centro. Todos se conectan al router ISP mediante uno o más conmutadores que recogen las conexiones WAN de todas las aulas y departamentos. Internamente todos tienen la misma red pero no es problema ya que es enmascarada por el router al hacer la función del NAT y traducir las direcciones privadas internas por la dirección IP del router en la red del centro.</p>
+<p style="text-align: justify;">La ventaja es que no es necesario hacer ningún diseño de direccionamiento para cada aula o departamento, ya que el hecho de conectar los routers intermedios de esta manera, se separan la red interna de cada aula o departamento del resto y  de la red del centro. Por tanto se consigue hacer dominios de broadcast más pequeños y solucionar los problemas del modelo de centro simple.</p>
+<p style="text-align: justify;">Además el router protege cada ordenador de aula de intentos de acceso desde otra aula o desde la red del centro. Sólo es posible hacerlo si se redirecciona algún puerto en el router de aula, de la misma manera que podemos hacer en el router de nuestra casa para que desde Internet se pueda acceder a algún ordenador de nuestro hogar por algún servicio concreto.</p>
+<p style="text-align: justify;">Esto último que se puede ver como una ventaja, también puede ser un inconveniente si se pretende poder acceder a cualquier equipo del centro desde otra ubicación, aunque sea de manera controlada a través de un cortafuegos. También puede ser un problema si se pretende monitorizar las páginas o servicios que son visitados por cada alumno, ya que su dirección se enmascara con este sistema.</p>
+<p style="text-align: justify;">Personalmente no soy partidario de ningún sistema que introduzca NAT internamente en la red del centro, al menos más del estrictamente necesario.</p>
+<p style="text-align: justify;">Otra posible desventaja es que según el modelo de router que se utilice, puede suponer un cuello de botella en cuanto a rendimiento, pues algunos son equipos domésticos pensados para 5 o 10 ordenadores como máximo y tienen limitaciones importante en cuanto a RAM, tabla NAT, capacidad de paquetes procesados por segundo, etc. En ese caso será necesario adquirir routers más potentes, o usar un servidor como router.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id50">
+<p class="toggle-idevice toggle-em0"><a href="#" id="toggle-idevice-id50-em0" title="Ocultar"><span>Ocultar</span></a></p>
+<div class="iDevice emphasis0">
+<div id="ta50_85" class="block iDevice_content">
+<p><span><strong>PROPUESTA 2: routers neutros intermedios sin NAT+ router central interno<br /></strong></span></p>
+<p style="text-align: justify;">Esta propuesta es una variante de la anterior para solucionar el problema del NAT interno y el enmascaramiento de las direcciones IP de los ordenadores de aulas y departamentos.</p>
+<p style="text-align: justify;">En este caso se deshabilita el NAT en los router intermedios (suponiendo que puede hacerse en el modelo adquirido) pero es necesario hacer un pequeño esquema de direccionamiento con una subred única para cada aula o departamento. Además este direccionamiento es desconocido por el router ISP que no sabrá enrutar los paquetes de vuelta, por tanto es necesario que haya un router central interno que realice el NAT de todo el direccionamiento interno asignado y traducirlo a una dirección del rango del centro (172.28.100.2/23 en el ejemplo) que es el que conoce el router ISP. No tenemos acceso al router ISP y por tanto no cabe la pasibilidad de poder hacer rutas estáticas en él hacia cada uno de los routers de aula.</p>
+<p style="text-align: justify;">Este router central interno debe ser una máquina más potente y con más capacidad que los routers intermedios, por lo que se recomienda usar un PC con funciones de enrutamiento y NAT activadas, además de configurarle las rutas estáticas de la red de a cada aula y departamento hacia cada router intermedio. Este PC también puede hacer funciones de cortafuegos entre redes.</p>
+<p style="text-align: justify;">Si no se quiere usar un PC porque no se dispone de ninguno, existe una alternativa de muy buen rendimiento y que está funcionando en algún centro que lo recomendé y son los modelos de router<span> </span><a target="_blank" href="https://www.ubnt.com/edgemax/edgerouter/" rel="noopener"><span><strong>Edgerouter</strong></span></a><span> </span>de<span> </span><a target="_blank" href="https://www.ubnt.com/" rel="noopener"><span><strong>Ubiquity</strong></span></a>, con un coste desde 100 euros y un rendimiento espectacular.</p>
+<p style="text-align: justify;">En la siguiente figura se muestra el esquema de la red configurada de esta manera:</p>
+<p><img src="propuesta_modelo_de_red_2.png" height="458" width="541" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;">Como se puede ver en la figura, el router central interno es un PC con dos tarjetas de red, una conectada al router ISP y con dirección 172.28.100.2/23 en el direccionamiento de la red de centro, y otra interna con dirección 192.168.0.1/24 en la red que conecta este router con todos los routers intermedios.</p>
+<p style="text-align: justify;">Los routers intermedios de aula se configuran de la siguiente manera:</p>
+<ul style="text-align: justify;">
+<li>NAT deshabilitado.</li>
+<li>Dirección IP única en la interfaz WAN en el direccionamiento 192.168.0.0/24 de la red que interconecta los routers de aula con el router central interno.</li>
+<li>Red interna y servidor DHCP con un rango único y diferente para cada aula o departamento del centro.</li>
+</ul>
+<p style="text-align: justify;">En el ejemplo, dependiendo del aula o departamento en que estemos, tendremos una dirección en el rango 192.168.X.0/24, con X diferente en cada red. El router intermedio tendrá la primera IP de este rango (192.168.X.1) y será la puerta de enlace para los ordenadores del aula o departamento.</p>
+<p style="text-align: justify;">El router central interno debe tener<span> </span><strong>rutas estáticas</strong><span> </span>para cada red de aula o departamento apuntando a la correspondiente IP del router intermedio.</p>
+<p style="text-align: justify;">En el ejemplo:</p>
+<ul>
+<li style="text-align: justify;">192.168.1.0/24 a través de 192.168.0.2</li>
+<li style="text-align: justify;">192.168.N.0/24 a través de 192.168.0.3</li>
+<li style="text-align: justify;">192.168.100.0/24 a través de 192.168.0.4</li>
+</ul>
+<p style="text-align: justify;">Una<span> </span><strong>desventaja</strong><span> </span>de esta solución, así como de la primer propuesta, es que el router de aula es un<span> </span><strong>punto de fallo</strong><span> </span>de forma que si se produce u error y deja de funcionar, no funciona la red en el aula ni el ordenador del profesor. Además si son equipos económicos tipo como los domésticos, algunos modelos se cuelgan y hay que reiniciarlos de vez en cuando, muchas veces por falta de capacidad.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id51">
+<p class="toggle-idevice toggle-em0"><a href="#" id="toggle-idevice-id51-em0" title="Ocultar"><span>Ocultar</span></a></p>
+<div class="iDevice emphasis0">
+<div id="ta51_85" class="block iDevice_content">
+<p><span><strong>PROPUESTA 3: servidores de aula<br /></strong></span></p>
+<p style="text-align: justify;">Esta propuesta es una variante de las dos anteriores, pero reemplazando los routers intermedios por un servidor de aula con dos tarjetas y servicios de enrutamiento, DHCP y/o proxy de red. Se puede hacer con cualquier sistema operativo, pero en este caso, el sistema operativo LliureX proporciona este modelo en su instalación.</p>
+<p style="text-align: justify;">En estos casos el servidor de aula suele ser el ordenador del profesor, que además dispone de algún sistema de control de los ordenadores del aula, como Epoptes o ControlAula. Con este sistema el ordenador del profesor tiene control de lo que están haciendo, capturas su pantalla, enviarles una presentación, bloquear el ordenador, cortar Internet, etc. por tanto es una opción recomendable cuando se quiere tener control del aula.</p>
+<p style="text-align: justify;">En este caso el esquema sería el mismo que la propuesta 1 o 2, pero cambiando el router intermedio por un servidor:</p>
+<p><img src="propuesta_modelo_de_red_3.png" height="466" width="616" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;">La principal<span> </span><strong>desventaja</strong><span> </span>de esta solución, es el<span> </span><strong>punto de fallo</strong><span> </span>que supone el servidor de aula, pues al ser un elemento más complejo que un router, puede haber más probabilidad de fallos en algún servicio, una tarjeta de red, etcétera.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id52">
+<p class="toggle-idevice toggle-em0"><a href="#" id="toggle-idevice-id52-em0" title="Ocultar"><span>Ocultar</span></a></p>
+<div class="iDevice emphasis0">
+<div id="ta52_85" class="block iDevice_content">
+<p><span><strong>PROPUESTA 4: Segmentación con VLAN y router central interno<br /></strong></span></p>
+<p style="text-align: justify;">Esta propuesta es la más robusta y estable, pero requiere tener conmutadores gestionables y la configuración de redes locales virtuales (VLAN) en los switches y en el router central interno. Esta es la solución que usamos en el CIPFP Mislata.</p>
+<p style="text-align: justify;">No se va a entrar en detalles técnicos de configuración de VLAN ni de enlaces troncales 802.1Q ya que no es el obtivo de este curso y si en otros cursos de redes como los de Cisco que se ofertan en el CEFIRE todos los años. Existe mucha documentación e Internet disponible para configurar VLAN y en cualquier caso, hay que consultar el manual del fabricante del switch.</p>
+<p style="text-align: justify;">La idea consiste en diseñar un esquema de direccionamiento para cada aula o departamento y asignarle una VLAN. Estas VLAN se crean en todos los switches gestionables y también en el servidor central, que hace las funciones de router. En nuestro caso el servidor central es un<span> </span><strong>CentOS</strong>, elegido por su compatibilidad binaria con Red Hat Enterprise Linux, distribución profesional con soporte de hardware de muchos fabricantes de tarjetas, controladoras SCSI, etc.</p>
+<p style="text-align: justify;">El único equipo que realiza la función de enrutamiento, NAT, cortafuegos, DHCP, DNS, proxy, etc es el servidor central interno, por tanto de esta forma simplificamos la administración porque todo se hace de forma<span> </span><strong>centralizada</strong><span> </span>y el resto de la red sólo se usa switches gestionables.</p>
+<p style="text-align: justify;">El servidor central se conectará con al menos un cable ethernet al switch central y enrutará el tráfico entre todas las VLAN mediante subinterfaces VLAN. Tendrá por tanto una subinterfaz VLAN por cada red de aula o departamento. Esto es fácil de realizar con un sistema GNU/Linux, cualquiera que se elija.</p>
+<p style="text-align: justify;">Por tanto para todas las redes, el servidor central es su puerta de enlace en su correspondiente dirección IP en la subred de aula. El esquema sería como el de la figura siguiente:</p>
+<p><img src="propuesta_modelo_de_red_4.png" height="431" width="521" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper activityIdevice em_iDevice em_iDevice_activity" id="id53">
+<div class="iDevice emphasis1">
+<div class="iDevice_header">
+<h2 class="iDeviceTitle">Modelo de red de un Centro Educativo real</h2>
+<p class="toggle-idevice toggle-em1"><a href="#" id="toggle-idevice-id53-em1" title="Ocultar"><span>Ocultar</span></a></p>
+</div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta53_44_2" class="block iDevice_content">
+<p style="text-align: justify;">En un centro educativo real, se usa esta última propuesta de diseño de red de centro, mediante conmutadores gestionables y un servidor central haciendo funciones de router, NAT, DHCP, DNS cortafuegos y proxy (además de otros servicios de red).</p>
+<p style="text-align: justify;">Se tienen 35 VLAN creadas en el conmutador central (muchas son de prueba) y el servidor tiene una interfaz virtual VLAN en cada una de ellas, para hacer las funciones de puerta de enlace en cada VLAN.</p>
+<p style="text-align: justify;">Para dar más capacidad y mejorar la disponibilidad, se usan varias interfaces ethernet en el servidor unidas virtualmente mediante el protocolo de agregación de enlaces<span> </span><strong>LACP</strong><span> </span>soportado por la mayoría de fabricantes de switches gestionables. De esta forma si falla una interfaz o un cable, la conexión sigue funcionando por los restantes. Además este protocolo balancea la carga usando todas las interfaces y aumentando por tanto la velocidad global.</p>
+<p style="text-align: justify;">Para mejorar la disponibilidad del servidor, se usan dos servidores CentOS funcionando como cluster en una configuración activo/pasivo de forma que cuando un servidor cae, el otro asume todos sus servicios. En unas aulas el servidor maestro es uno de los dos y el otro es backup y en el resto de aulas es al revés. De esta forma repartimos la carga entre los dos servidores, de forma que uno no tenga toda la carga y el otro sólo está haciendo funciones de backup.</p>
+<p style="text-align: justify;">También existe redundancia en el conmutador central, utilizando el protocolo spanning tree para evitar bucles en la red. El esquema completo con redundancia total en un futuro sería el siguiente, donde el único punto de fallo es el router de Internet que no está redundado:</p>
+<p><img src="propuesta_modelo_de_red_Centro-real.png" height="502" width="803" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id57">
+<p class="toggle-idevice toggle-em0"><a href="#" id="toggle-idevice-id57-em0" title="Ocultar"><span>Ocultar</span></a></p>
+<div class="iDevice emphasis0">
+<div id="ta57_85" class="block iDevice_content">
+<p><span><strong>PROPUESTAS MIXTAS<br /></strong></span></p>
+<p style="text-align: justify;">Finalmente, el diseño de la red puede adaptarse a las necesidades del centro y tener una combinación de las soluciones comentadas anteriormente. Por ejemplo puede haber aulas con routers intermedios, aulas con servidor de aula (modelo de aula LliureX) y otras  mediantes VLAN en los conmutadores. Simplemente se quería hacer constar esta posibilidad en este punto, aunque en la medida de lo posible y en aras de la facilidad de administración, es conveniente aplicar el mismo modelo a todo el centro.</p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_contramedidas_ddos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

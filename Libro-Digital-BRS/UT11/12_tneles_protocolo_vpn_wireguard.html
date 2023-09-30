@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.2 Túneles (protocolo VPN WireGuard) | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-116"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li class="current-page-parent"><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="current-page-parent daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul>
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li id="active"><a href="12_tneles_protocolo_vpn_wireguard.html" class="active no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li><a href="2_vpn_de_acceso_remoto.html" class="daddy">2. VPN de acceso remoto</a>
+   <ul class="other-section">
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li><a href="22_wireguard.html" class="daddy">2.2 WireGuard</a>
+      <ul class="other-section">
+         <li><a href="221_instalacin_y_configuracin_de_wireguard.html" class="daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul class="other-section">
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_gestin_de_accesos_sistemas_nac.html" class="daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_servidor_radius_vpn.html" class="daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul class="other-section">
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="11_tneles_protocolo_vpn_ipsec.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_vpn_de_acceso_remoto.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.2 Túneles (protocolo VPN WireGuard)</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id150">
+<div class="iDevice emphasis0">
+<div id="ta150_85" class="block iDevice_content">
+<h3>1. VPN de router a router utilizando MikroTik y Wireguard</h3>
+<p style="text-align: justify;">En esta capítulo se va a implementar una <strong>VPN</strong> (tipo router a router) entre dos sedes de una empresa mediante un túnel implementado con <strong>WireGuard</strong> (tecnología asimétrica).</p>
+<p style="text-align: justify;"><strong>WireGuard VPN</strong><span> </span>es una aplicación gratuita que permite establecer <strong>túneles VPN</strong> incorporando todos los protocolos de comunicación y criptografía necesarios, para establecer una red privada virtual entre varios clientes y un servidor.</p>
+<p style="text-align: justify;"><strong>WireGuard</strong><span> </span><strong>proporciona mejor rendimiento que el protocolo IPsec y que OpenVPN</strong><span> </span>(tanto en velocidad como en latencia de las conexiones), por lo que actualmente se le considera como una de las <strong>mejores VPN del momento</strong>.</p>
+<p style="text-align: justify;">Entre sus <strong>características</strong> más importantes:</p>
+<ul>
+<li style="text-align: justify;">Protocolo VPN de software libre.</li>
+<li style="text-align: justify;">Más rápida que IPSec y OpenVPN.</li>
+<li style="text-align: justify;">Sencillez.</li>
+<li style="text-align: justify;">Utiliza cifrado de última generación, como el marco del protocolo Noise, Curve25519, ChaCha20, Poly1305, BLAKE2, SipHash24, HKDF.</li>
+</ul>
+<h3>2. Escenario y esquema de red</h3>
+<h4>2.1 Sede donde se encuentra el servidor Wireguard - Sede Principal</h4>
+<p style="text-align: justify;">Se tiene un <strong>equipo Mikrotik </strong>en la<strong> sede princiapl TeuIT </strong>con<strong><span> </span>ip pública 45.155.48.16</strong><span> </span>(45.155.48.16:28291). El nombre del equipo es<span> </span><strong>Server_Wireguard_TeuIT</strong>. Este equipo hará las veces de servidor Wireguard.</p>
+<p>La dirección de la<strong><span> </span>red LAN del mikoritk</strong><span> </span>es 192.168.88.0/24. En la red LAN del mikrotik, se tiene configurado/instalado un teléfono IP.</p>
+<p><img src="ip-telefono.png" width="238" height="163" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<h4>2.2 Centro educativo - Sede remota</h4>
+<p>Se tiene un<span> </span><strong>equipo Mikrotik </strong>en la<strong> sede remota. </strong>El esquema de sedes es el siguiente.</p>
+<p style="text-align: justify;"></p>
+<p style="text-align: center;"><img src="VPN-Router-to-_router-MikroTik-Wireguard.png" width="675" height="502" /></p>
+<p style="text-align: justify;">El <strong>esquema de red ampliado</strong> del Centro Educativo, es el siguiente:</p>
+<p style="text-align: center;"><img src="sede-principal.png" alt="" width="920" height="666" /></p>
+<h3>3. Trabajo a realizar en la sede principal  - Servidor Wireguard</h3>
+<p style="text-align: justify;">En primer lugar, vamos a comenzar con las configuraciones en el equipo ubicado en la sede TeuIT (sede principal) y que hará las veces de servidor Wireguard. </p>
+<p style="text-align: justify;">Las configuraciones a realizar, se describen a continuación. </p>
+<p style="text-align: justify;"><strong>1.</strong> <strong>Crear</strong> <strong>una interfaz Wireguard</strong><span> </span></p>
+<p style="text-align: justify;">Hay que acceder al Menú Wireguard y pulsar en + para crear una nueva interfaz, donde:</p>
+<ul>
+<li><strong>Name</strong>: Se le pone como nombre wireguard1.</li>
+<li><strong>Listen Port:</strong><span> </span>Se le pone el puerto 13231 y es donde estará a la escucha.</li>
+<li><strong>Public y Private Key:</strong><span> </span>A pulsar Ok, se crean las claves pública y privada. La clave pública hay que anotarla ya que será las que se distribuya a las sedes remotas para configurar la conexión en el otro extremo (cliente wireguard en sede remota).</li>
+</ul>
+<p><img src="Wireguard-remoto.png" width="846" height="119" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><strong>2. Acceso en capa 3 entre dispositivos</strong></p>
+<p style="text-align: justify;">Una vez creada la interfaz, para tener <strong>acceso en capa 3 entre los 2 dispositivos</strong>, lo que se hará es anotar una ip en un extremo y el otro para tener interconexión. Por lo tanto, hay que <strong>crear una dirección asociada a la interfaz Wireguard </strong>que hemos creado con anterioridad. Como ejemplo, se establece la dirección de red <strong>10.200.1.0/24</strong> para establecer direcciones en los extremos de los túneles.</p>
+<p style="text-align: justify;">Seleccionamos la primera dirección de esa subred para el <strong>servidor wireguard</strong>, que para este caso será: <strong>10.200.1.1/24</strong> y que define la dirección para el punto del túnel en este Mikrotik.</p>
+<p style="text-align: center;"><img src="address-list-teuit.png" alt="" width="323" height="136" /></p>
+<p align="justify" style="text-align: justify;"><span>Por último, decir que se ha creado de manera automática una regla de e</span><span>ncaminamiento para que el <strong>tráfico que se genere sobre la ip 10.200.1.0/24</strong> se transfiera <strong>por la interfaz wireguard1</strong>.</span></p>
+<p align="justify" style="text-align: center;"><span><img src="ruta-wireguard1.png" alt="" width="461" height="20" /></span></p>
+<p style="text-align: justify;">Por el momento, esta es la configuración inicial en este extremo. Una vez realicemos la configuración en el otro extremo (sede remota), volveremos al equipo de esta sede para finalizar la configuración (apartado 5).</p>
+<h3>4. Trabajo a realizar en la sede remota - Centro Educativo</h3>
+<p><strong>1. Crear interfaz wireguard</strong></p>
+<p><span>En primer lugar, </span>hay que acceder al Menú Wireguard y pulsar en <span style="color: #0000ff;"><strong>+</strong></span> para crear una nueva interfaz, donde:</p>
+<ul>
+<li><strong>Name</strong>: Se pone el nombre de la inerfaz que para este caso es <strong>wireguard_CEducativo.</strong></li>
+<li><strong>MTU: </strong>Se deja por defecto <strong>1420.</strong></li>
+<li><strong>Listen port:  </strong>Se pone el puerto que se utilizará para establecer la conexión, para este caso,<strong>13231.</strong></li>
+<li><strong>Commnet: </strong>Ponemos como comentario '<strong>Tunel VPN: Client to Server'.</strong></li>
+</ul>
+<p><img src="mikrotik-sede-principal.png" width="490" height="251" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;">Al pulsar <strong>Ok,</strong> se crean las claves públicas y privadas para esta interfaz. La clave pública, la necesitaremos para configurar la conexión en el otro extremo (sede principal). El resultado es el siguiente:</p>
+<p style="text-align: center;"><img src="wireguard-Interface-CEducativo.png" alt="" width="750" height="130" /></p>
+<p>A continuación, hay que <strong>crear un Peer</strong> donde,</p>
+<ul>
+<li><strong>Interface</strong>: Hay que poner la que acabamos de crear, que para este caso es wireguard_CEducativo.</li>
+<li><strong>Public key</strong>: Clave pública del servidor wireguard (sede principal), que para este caso se llama wireguard1.</li>
+<li style="text-align: justify;"><strong>Endpoint</strong>: Se le indica la ip (uno de los extremos ha de tener la información del otro punto del túnel) del router físico que para este caso es: 45.155.48.16. </li>
+<li style="text-align: justify;"><strong>Endpoint Port:</strong> Puerto a la escucha configurado en la sede principal (servidor wireguard), que para este caso es 13231. </li>
+<li style="text-align: justify;"><strong>Allowed Address:</strong>  Ponemos 0.0.0.0/0 (desde cualquier ip valdría) aunque se podría poner 45.155.48.16 para permitir solo esa.</li>
+</ul>
+<p><img src="Peers-Wireguard-CEducativo2.png" width="419" height="279" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;">Al pulsar <strong>OK</strong>, el resultado es el siguiente:</p>
+<p style="text-align: center;"><img src="peers-wireguard-CEducativo.png" alt="" width="699" height="118" /></p>
+<p><span>A continuación, hay que crear una dirección ip. Para este caso, se crea la </span><strong>10.200.1.5/24<span> </span></strong><span>y se asigna a la interfaz<strong> wireguard_Ceducativo.</strong></span></p>
+<p style="text-align: center;"><span><strong><img src="address-list-Ceducativo.png" width="387" height="98" /><br /></strong></span></p>
+<div class="cuadro-nota-centro-new">
+<p align="justify"><span>Para este caso se le asigna la ip <strong>10.200.1.5</strong></span><span>, ya que la <strong>10.200.1.1</strong>, <strong>10.200.1.2</strong>, <strong>10.200.1.3</strong> y <strong>10.200.1.4</strong> están siendo usadas por otras sedes remotas.</span></p>
+</div>
+<p align="justify"><strong>2. Crear reglas </strong></p>
+<p style="text-align: justify;">El siguiente paso es <b>crea una </b><b>regla </b><b>que enmascare (masquerade) todo el tráfico que vaya </b><span> hacia la red 10.</span><span>2</span><span>00.1.0/24 </span><span>para que sepa volver.</span></p>
+<p style="text-align: center;"><span><img src="masquerade-red-VPN.png" width="471" height="143" /></span></p>
+<h3 align="justify">5. Añadir peer de CEducativo en el servidor Wireguard y crear reglas</h3>
+<p style="text-align: justify;"><strong>1. Añadir Peer de sede remota</strong></p>
+<p style="text-align: justify;">En este punto, volvemos la <strong>mikrotik de la sede principal</strong> para finalizar con la configuración del túnel, es decir, hay que añadir el enlace entre la sede remota y principal, y para ello, añadimos un nuevo<span> </span><strong>Peer</strong><span> </span>con la<strong><span> </span>clave pública</strong> y el<span> </span><strong>puerto</strong><span> </span>13231<span> </span><strong>configurado en el otro extremo (sede remota Centro Educativo),<span> </span></strong>donde:</p>
+<ul>
+<li><strong>Interface:</strong><span> </span>Se pone el nombre del servidor wireguard que para este caso es wireguard1.</li>
+<li><strong>Public Key:</strong><span> </span>Clave pública de la sede remota (Centro educativo).</li>
+<li><strong>Endpoint Port:</strong><span> </span>Puerto configurado en la sede remota (Centro educativo).</li>
+<li><strong>Allowed Address:</strong>  Ponemos 0.0.0.0/0 (desde cualquier ip valdría).</li>
+</ul>
+<p><strong><img src="peer-CEducativo.png" width="419" height="278" style="display: block; margin-left: auto; margin-right: auto;" /></strong></p>
+<p style="text-align: justify;">Como se puede observar en la figura superior, ya se han interconectado hace 3 segundos (<strong>Handshake</strong>). Esto nos permitirá validar que la conexión se ha establecido correctamente.</p>
+<p style="text-align: justify;"><strong>2. Crear reglas en mikrotik sede principal - Servidor Wireguard</strong></p>
+<p style="text-align: justify;"><span>El siguiente paso es crear una regla que <strong>permita el tráfico de entrada udp en el puerto 13231</strong> en la interfaz de entrada (puerto wan del router).</span></p>
+<p style="text-align: center;"><span><img src="reglas-wireguard.png" alt="" width="1039" height="191" /></span></p>
+<h3 style="text-align: justify;"><span>6. Comprobaciones extremo a extremo Wireguard</span></h3>
+<p align="justify" style="text-align: justify;"><span>Desde el<strong> mikrotik de la sede remota</strong> (Centro educativo) se hace un ping al mikrotik de la sede principal </span><b>TeuIT </b><span>cuya dirección wireguard es 10.200.1.1 y se comprueba que contesta.</span></p>
+<p align="justify" style="text-align: center;"><span><img src="ping-wireguard-teuit.png" alt="" width="572" height="270" /></span></p>
+<p><span>Otra opción es abrir </span><span>la interfaz del wireguard y ver la gráfica/tabla de tráfico.</span></p>
+<p style="text-align: center;"><span><img src="grafico-trafico-wireguard.png" alt="" width="492" height="448" /></span></p>
+<h3><b>7. Acceso a dispositivos en la sede Principal desde la sede Remota</b></h3>
+<p align="justify" style="text-align: justify;"><span>En la red </span><b> </b><b>TeuIT,</b><span> </span><span>se tiene un <strong>teléfono ip</strong> en la dirección <strong>192.168.88.253,</strong> a la que se desea que los equipos del centro educativo se puedan conectar. Para ello, en el router de la sede remota (Centro educativo), hay que crear una regla de encaminamiento para que el <strong>tráfico que se genere sobre la ip 192.168.88.253</strong> se transfiera <strong>por la interfaz Wireguard</strong>. Para ello, se accede al menú<strong> </strong></span><strong>Ip &gt; Routes </strong>y se configura con los siguientes datos:</p>
+<ul>
+<li style="text-align: justify;"><span>En el <strong>Dst. Address,</strong> se pone la dirección de red donde se encuentra el teléfono ip y que para este caso es: 192.168.88.0/24.</span></li>
+<li style="text-align: justify;"><span>En el <strong>gateway,</strong> se pone la dirección ip del otro extremo del wireguard, es decir, la ip del wireguard de la </span><b>sede principal </b>(servidor Wireguard).</li>
+<li style="text-align: justify;"><strong>Distance</strong> 1, <strong>scope</strong> 30, <strong>target scope</strong> 10 y<strong> routing table</strong> main.</li>
+</ul>
+<p>Pulsamos <strong>Ok</strong>, para guardar.</p>
+<p style="text-align: center;"><b><img src="route-ip-privada.png" width="416" height="471" /></b></p>
+<p style="text-align: justify;">La<strong> regla de encaminamiento para acceder al direccionamiento de la red VPN</strong>, tendrá como Gateway la interfaz wireguard (ver imagen inferior).</p>
+<p style="text-align: center;"><b><img src="route-red-VPN.png" alt="" width="413" height="472" /></b></p>
+<p style="text-align: justify;">El resultado de crear las reglas de encaminamiento, es el siguiente:</p>
+<p style="text-align: center;"><b><img src="route-list-sedeRemota.png" alt="" width="440" height="225" /></b><b></b></p>
+<p>A continuación, hay que<strong> crear una regla de enmascaramiento</strong> para que esos paquetes que pasen por esta ruta, <strong>192.168.88.0/24</strong>, sepan volver.</p>
+<p style="text-align: center;"><img src="masquerda-red-Privda-VPN.png" width="470" height="174" /></p>
+<h4><b>7.1 Comprobaciones</b></h4>
+<p>Si se hace un <strong>ping</strong> desde un equipo de la red de dirección por ejemplo <strong>a la ip del teléfono ip</strong> 192.168.88.253, contesta:</p>
+<p style="text-align: center;"><img src="ping-red-direccion-telf-ip.png" alt="" width="484" height="222" /></p>
+<p style="text-align: justify;">Si se hace un<strong> ping desde un equipo de la VLAN del aula 1</strong>, también contesta:</p>
+<p style="text-align: center;"><img src="ping-aula-telf-ip.png" alt="" width="390" height="172" /></p>
+<p style="text-align: justify;"><span>Con un <strong>trace, </strong>podemos comprobar los saltos que hace el paquete, como se observa en la imagen inferior, los paquetes se encaminan por </span><span>el túnel VPN (10.200.1.1).</span></p>
+<p style="text-align: center;"><span><img src="tracert.png" alt="" width="531" height="101" /></span></p>
+<h4><b>7.2 Acceso al teléfono IP</b></h4>
+<p style="text-align: justify;"><span>Mediante el appliance <strong>Firefox 31.1.1~2</strong> que se ha instalado previamente y configurado en la interfaz Gi1/1 en la vlan 5 (profesorado), vemos que se accede a la ip del dispositivo en la red </span><b>TeuIT.</b></p>
+<p style="text-align: center;"><b><img src="acceso-telefono-ip.png" alt="" width="810" height="624" /></b></p>
+<p style="text-align: justify;">Todos los usuarios de la red (alumnado, profesorado, etcétera), tienen acceso al servidor VPN con Wireguard que se ha creado, por lo que podrían acceder a los servicios que estén en el otro extremo, ejemplo, el teléfono ip, servidor web, etcétera.</p>
+<p style="text-align: justify;"><strong>¿Cómo podemos evitar que eso pase?</strong></p>
+<p style="text-align: justify;">Imaginemos que en el otro extremo de la VPN hay un servidor con unos servicios donde sólo los del equipo de dirección pueden tener acceso al mismo. Opciones:</p>
+<ol style="list-style-type: lower-alpha;">
+<li style="text-align: justify;">Una de las opciones es utilizar reglas de firewall para decir qué equipos/usuarios pueden pasar y cuales no.</li>
+<li style="text-align: justify;">Otra opción es el uso de marcas de ruta.</li>
+</ol>
+<p style="text-align: center;"><img src="route-list-mikortik-CEducativo.png" alt="" width="551" height="228" /></p>
+<p style="text-align: justify;">Si observamos la tabla de rutas del mikrotik (imagen superior), hay una ruta que dice que todo paquete a la red privada 192.168.88.0/24 (donde está el servidor de acceso al equipo de dirección), se enruta por la 10.200.1.1 que es la ip de la VPN en el otro extremo (servidor Wireguard). Como se puede observar, esta ruta está en la tabla de rutas principal por lo que todo el mundo puede ver esta ruta.</p>
+<p style="text-align: justify;">Lo que vamos hacer es crearnos un <strong>routing tables</strong> (menú Routing → Tables) y creamos uno nuevo al que le llamaremos <strong>filtrado_solo_Direccion</strong>.</p>
+<p style="text-align: center;"><img src="new-routing-table.png" alt="" width="225" height="109" /></p>
+<p style="text-align: center;"><img src="tables.png" alt="" width="335" height="106" /></p>
+<p style="text-align: justify;">A continuación, accedemos a<strong> Route list</strong> y le decimos a la ruta 192.168.88.0 que su tabla no es la main sino la que se acaba de crear. Con esto le decimos, que queremos que hasta aquí lleguen.</p>
+<p style="text-align: center;"><img src="routes.png" alt="" width="410" height="382" /></p>
+<p style="text-align: justify;">A continuación, en<strong> Ip → firewall → Mangle</strong>, vamos a marcar ciertas conexiones/paquetes para que cumplan lo que nosotros queramos en la tabla de rutas.</p>
+<p style="text-align: center;"><img src="mark-routing.png" alt="" width="842" height="112" /></p>
+<p style="text-align: justify;">donde se han configurado los siguientes parámetros:</p>
+<ul>
+<li><strong>Chain:</strong> prerouting (antes de enrutarlo se marca).</li>
+<li><strong>Dst.Address:</strong> 192.168.88.253.</li>
+<li><strong>Src.Address List:</strong> direccion.</li>
+<li><strong>Action:</strong> mark routing.</li>
+<li><strong>New routing mark</strong>: filtrado_solo_Direccion.</li>
+</ul>
+<p style="text-align: justify;">Con esto conseguimos que <strong>todo paquete que venga desde la Address List direccion</strong> y <strong>vaya encaminado hasta la ip 192.168.88.253</strong> (servidor del otro extremo de la VPN) lo que <strong>hacemos es marcar la ruta y marcada como filtrado_solo_direccion</strong>, de forma que, le hemos dicho, cada paquete que venga de direccion y vaya destinado a la ip 192.168.88.253, tendrá una marca de ruta. Eso implica que ese paquete irá a ver las rutas y solo verá de la tabla de rutas, las rutas que tengan su routing table, para este caso, será donde aparezca filtrado_solo_Dirección.</p>
+<p style="text-align: center;"><img src="route-list-mar.png" alt="" width="894" height="234" /></p>
+<p style="text-align: justify;">Por lo tanto, los paquetes que no vengan de direccion, como vendran con routing table main, no tendrán ninguna ruta para poder llegar a la ip 192.168.88.253 y por lo tanto no sería accesible.</p>
+<p style="text-align: justify;">Si accedemos desde un equipo del aula 2 por ejemplo, no se tiene acceso al servidor que está en la ip 192.168.88.253, pero si llegamos con pin al otro extremo de la VPN (10.200.1.1).</p>
+<p style="text-align: center;"><img src="no-acceso-telf-ip.png" alt="" width="801" height="622" /></p>
+<p style="text-align: justify;">Tampoco se tendría acceso desde el propio mikrotik ya que sale como tabla de ruta main.</p>
+<p style="text-align: center;"><img src="ping-no-mikrotik-tabla-ruta.png" alt="" width="464" height="293" /></p>
+<p style="text-align: justify;">Si accedemos con un equipo de dirección (ejemplo el equipo Kali), sí podremos llegar al servidor.</p>
+<p style="text-align: center;"><img src="red-doreccion.png" alt="" width="528" height="258" /></p>
+<p style="text-align: center;"><img src="si-acceso-telf-ip.png" alt="" width="1024" height="697" /></p>
+<p style="text-align: justify;">Desde el PC del director/a también se podría.</p>
+<p style="text-align: center;"><img src="ping-telf-ip-pc-direcror.png" alt="" width="483" height="340" /></p>
+<p style="text-align: justify;">Desde un equipo de alumno del aula 2, tampoco se podría.</p>
+<p style="text-align: center;"><img src="pc-alumno-no-telf-ip.png" alt="" width="486" height="224" /></p>
+<h4><b>7.3 Comprobaciones en el servidor wireguard (sede central)</b></h4>
+<p>Comprobamos en el servidor VPN (Mikrotik <b>TeuIT</b><b>)</b> la conexión con el mikrotik de la sede remota (Centro educativo, RX Y TX y last handshake).</p>
+<p style="text-align: center;"><img src="comprbar-vpn-sede-central.png" width="1002" height="141" /></p>
+<h3 style="text-align: justify;">8. Vídeotutorial de puesta en producción de un escenario entre 2 sedes</h3>
+<p style="text-align: justify;">En el siguiente vídeo, <strong>se describe un escenario de ejemplo para simular la conexión entre 2 routers</strong> (1 físico y otro virtualizado) mediante el protocolo Wireguard.</p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/d8CJbdfVSUw"></iframe></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="11_tneles_protocolo_vpn_ipsec.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_vpn_de_acceso_remoto.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

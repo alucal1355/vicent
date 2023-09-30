@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3.2 Instalar y configurar NPS/Radius en Windows Server | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-83"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_servidor_de_autenticacin_radius.html" class="current-page-parent daddy">3. Servidor de autenticación Radius</a>
+   <ul>
+      <li><a href="31_freeradius.html" class="daddy">3.1 FreeRadius</a>
+      <ul class="other-section">
+         <li><a href="311_instalacin_servidor_radius.html" class="daddy">3.1.1. Instalación servidor Radius</a>
+         <ul class="other-section">
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul class="other-section">
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="current-page-parent daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul>
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li id="active"><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="active no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="333_configurar_el_routerap.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3.2 Instalar y configurar NPS/Radius en Windows Server</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id114">
+<div class="iDevice emphasis0" >
+<div id="ta114_114_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Instalar NPS/Radius en Windows Server</h3>
+<p style="text-align: justify;"><span></span>La siguiente etapa es <strong>instalar</strong> y <strong>configurar</strong> <strong>NPS/Radius</strong>, es decir, instalar y realizar el despliegue de roles <span><strong>Radius</strong></span>. </p>
+<p style="text-align: justify;"><span>En primer lugar, se inicia el <strong><em>Administrador del servidor</em></strong> y en <strong><em>Administrar</em></strong> (arriba a la derecha) hay que marcar <strong><em>Agregar roles y características</em></strong>.</span></p>
+<p style="text-align: center;"><img src="RAD-000.png" alt="" width="387" height="171" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 1.</strong> Seleccionar 'Agregar roles y características'</span></em></p>
+<p style="text-align: center;"><img src="raadius-Wpa2-0.png" alt="" width="784" height="556" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 2.</strong> Pantalla inicial del asistente.</span></em></p>
+<p style="text-align: justify;"><span>Una vez abierto el asistente, hacemos clic en <strong><em>Siguiente, </em></strong>aparece una nueva pantalla donde '<strong><em>Marcamos</em></strong>' nuestro servidor de la lista. Dado que sólo tenemos un servidor en la red, sólo aparece el nuestro.</span></p>
+<p style="text-align: center;"><img src="radius-WAP2-02.png" alt="" width="782" height="554" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 3.</strong> Selección del servidor de destino.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, pulsamos <strong>Siguiente </strong>y aparece una nueva pantalla donde hay que seleccionar el rol '<strong><em>Servicios de acceso y directivas de redes'</em></strong><strong>.</strong> Es frecuente que la instalación de un rol traiga aparejada la necesidad de instalar algunas herramientas y utilidades llamadas características. El asistente muestra con detalle qué va a necesitar de forma complementaria. Hacemos clic sobre el botón <strong><em>Agregar características</em></strong>.</span></p>
+<p style="text-align: center;"><img src="radius-WAP2-03.png" alt="" width="784" height="554" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 4.</strong> Rol y características seleccionadas.</em></span></p>
+<p style="text-align: justify;"><span>El asistente lleva a una pantalla, sin otra función más que introducir la funcionalidad que se ha incorporado al servidor. Hay que hacer pulsar el botón <strong>Siguiente</strong> para que comience el proceso de instalación propiamente dicho.</span></p>
+<p style="text-align: center;"><span><img src="radius-WAP2-04.png" alt="" width="781" height="555" /><br /></span></p>
+<p style="text-align: center;"><em><span><strong>Figura 5.</strong> Funcionalidad lista para instalar.</span></em></p>
+<p style="text-align: justify;"><span>A continuación, el asistente muestra una nueva pantalla informativa sobre <strong>Servicios de acceso y directivas de redes </strong>donde se da una breve explicación de las funciones del rol y desde dónde se puede configurar. Para continuar, hay que pulsar <strong>Siguiente.</strong></span></p>
+<p style="text-align: center;"><span><img src="radius-WAP2-05.png" alt="" width="780" height="554" style="display: block; margin-left: auto; margin-right: auto;" /></span><em><span><strong>Figura 6.</strong> Pantalla informativa.</span></em></p>
+<p style="text-align: justify;"><span>Aparece una nueva pantalla para confirmar la selección efectuada y donde hay que chequear si se quiere en '<strong>Reiniciar automáticamente el servidor de destino en caso necesario</strong>'. </span></p>
+<p style="text-align: center;"><span><img src="radius-WAp2-06.png" alt="" width="783" height="558" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 7.</strong> Confirmación.</em></span></p>
+<p style="text-align: justify;"><span>Para comenzar con el proceso de instalación del rol, hay que pulsar el botón '<strong>Instalar</strong>'. Una vez finalice la instalación, se podrá cerrar el asistente.</span></p>
+<p style="text-align: center;"><img src="radius-WAP2-07.png" alt="" width="783" height="555" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 8.</strong> Proceso de instalación del rol.</span></em></p>
+<p id="8190" style="text-align: justify;"><span>El proceso anterior realizado mediante la herramienta gráfica se puede simplificar realizando la instalación desde <strong>PowerShell</strong> con credenciales de administrador. El comando a utilizar es el siguiente:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Install-WindowsFeature NPAS -IncludeManagementTools</span></pre>
+<p id="5969" style="text-align: justify;"><span>Por defecto, <strong>NPS</strong> escucha el tráfico RADIUS en los puertos <strong>1812, 1813, 1645 y 1646</strong> en todos los adaptadores de red instalados. Si el <strong><em>Firewall de Windows con seguridad avanzada</em></strong> está activado al instalar <strong>NPS</strong>, se crean automáticamente reglas para estos puertos.</span></p>
+<p><span><img src="rad-012.png" alt="" width="1259" height="622" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><em><span><strong>Figura 9.</strong> Reglas creadas automáticamente para NPS.</span></em></p>
+<div class="cuadro-nota-centro" style="text-align: justify;">
+<p><span>En el caso de que el sistema no creara las reglas, habría que crearlas para permitir el tráfico de entrada en esos puertos.</span></p>
+</div>
+<p id="a150" style="text-align: justify;"><span>A nivel de <em><strong><a href="http://neosysforensics.blogspot.com/2009/02/data-carving.html" onclick="browseURL(this); return false" target="_blank" rel="noopener">data carving</a></strong></em>, <strong>NPS</strong> tiene la funcionalidad de almacenamiento de todos los registros generados por las cuentas en:</span></p>
+<ul style="text-align: justify;">
+<li>Una base de datos en un servidor SQL</li>
+<li>En un archivo de texto en la maquina local, por defecto situado en <em>C:\Windows\System32\LogFiles</em></li>
+<li>Simultáneamente en un servidor SQL y un archivo de texto.</li>
+</ul>
+<p id="ef15" style="text-align: justify;"><span>Desde el punto de vista de la <em>seguridad</em>, RADIUS tiene debilidades relacionadas con uso del protocolo UDP. Su arquitectura le hace propenso a:</span></p>
+<ul style="text-align: justify;">
+<li>Ataques de fuerza bruta sobre las credenciales del usuario.</li>
+<li>Denegación de servicio.</li>
+<li>Ataques de repetición de sesión.</li>
+<li>Inyección de paquetes.</li>
+</ul>
+<h3 style="text-align: justify;">2. <span>Registrar el servidor de directivas de redes en Active Directory </span></h3>
+<p style="text-align: justify;">Una vez se ha instalado el rol, toca realizar el registro del servidor de directiva de redes (NPS) en <strong>Active Directory</strong> para que tengan permiso de leer las propiedades de acceso telefónico de las cuentas de usuario durante el proceso de autorización. Al registrar un <strong>NPS</strong>, se agrega el servidor al grupo <strong>Servidores RAS e IAS</strong> en Active Directory.</p>
+<p id="b8e4" style="text-align: justify;"><span>Para abrir el <strong>Servidor de directivas de redes</strong> se puede realizar de diferentes formas:</span></p>
+<ul style="text-align: justify;">
+<li><span>Desde el <em>Administrador del servidor</em>, en <em>Herramientas</em>.</span></li>
+<li><span>Utilizando <em>Herramientas administrativas de Windows</em> desde el menú inicio.</span></li>
+<li><span>o desde PowerShell:</span></li>
+</ul>
+<p style="text-align: justify;">Para este caso, se ejecuta el comando<strong><em><span> </span>nps.msc</em></strong><span> </span>dese PowerShell.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>nps.msc</span></pre>
+<div class="exe-fx exe-tabs">
+<h2>Registrar NPS en AD</h2>
+<p style="text-align: justify;"><span>Esta herramienta, como casi todas las basadas en <a href="https://docs.microsoft.com/es-es/troubleshoot/windows-server/system-management-components/what-is-microsoft-management-console" target="_blank" rel="noopener"><strong><em>Microsoft Management Console (MMC)</em></strong></a> está estructurada con un panel izquierdo con estructura en árbol para navegar por las opciones, un panel central con el detalle de lo marcado en el izquierdo y tenemos la posibilidad de agregar un panel derecho con acciones a realizar. </span>Hay que seleccionar el nodo <strong>NPS</strong> del árbol y hacer click con el botón derecho del ratón para que aparezca un menú emergente donde hay que seleccionar la opción '<strong>Registrar servidor en Active Directory', </strong>de esta forma, se autoriza al <strong><span><em>servidor NPS </em></span></strong>para usar <strong><span><em>Active Directory </em></span></strong>en la <strong><span><em>autenticación de usuarios y grupos, </em></span></strong>además, esto permite el control de usuarios a través de las <strong><span>propiedades de marcado. </span></strong></p>
+<p style="text-align: center;"><img src="radius-WAP2-08.png" alt="" width="991" height="540" /></p>
+<h2>Autorización</h2>
+<p style="text-align: justify;">El sistema pregunta si se desea autorizar al equipo el leer las propiedades de marcado de los usuarios, como respuesta, hay que pulsar '<strong>Aceptar</strong>'. Una vez pulsado aceptar, aparece una ventana donde se confirma la autorización.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="radius-WPA2-09.png" alt="" width="405" height="192" /></td>
+<td style="width: 50%; text-align: center;"><img src="radius-WAP2-10.png" alt="" width="398" height="190" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Comprobación</h2>
+<p style="text-align: justify;">Si se accede a la consola de '<strong>Usuarios y equipos de Active Dircetory</strong>', sobre el contenedor <strong>Users</strong>, se puede ver el Grupo de seguridad de Dominio local<strong> Servidores RAS e IAS</strong> y como miembro, se tiene el servidor RADIUS que se acaba de instalar, para este escenario es <strong>PERSEO</strong>.</p>
+<p style="text-align: center;"><img src="radius-WAP2-11.png" alt="" width="962" height="584" /><span style="font-size: 1em; text-align: left;">.</span></p>
+</div>
+<h3 class="entry-title">3. Configurar NPS</h3>
+<p style="text-align: justify;">A continuación, se realiza el despliegue de <strong>clientes RADIUS</strong> y configuración de directivas de red<span> para conexiones inalámbricas en el servidor<strong> RADIUS-NPS </strong>que se acaba de instalar. </span>Para ello, hay que abrir el '<strong><em>Servidor de directivas de redes</em></strong>' de alguna de las siguientes maneras:</p>
+<p style="text-align: justify;"><span>Para este escenario, se va a implementar un <em>Servidor RADIUS</em> para conexiones <em>inalámbricas 802.1.x</em>, donde se desea controlar el acceso a la red Wireless. Este perfil está destinado a <strong>securizar las redes internas</strong> de una organización ya sea usando algún tipo de cableado o conexión inalámbrica. Los perfiles de servidor existentes son:</span></p>
+<ul style="text-align: justify;">
+<li><span>Para conexiones VPN o de acceso telefónico.</span></li>
+<li><span>Para conexiones cableadas o inalámbricas 802.1X.</span></li>
+</ul>
+<p style="text-align: center;"><span><img src="eleccion-perfiles.png" alt="" width="621" height="291" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 10.</strong> Perfiles de servidor existentes.</em></span></p>
+<p><span style="color: #333333; font-size: 1em;">Para este caso, hay que hacer clic sobre </span><strong style="color: #333333; font-size: 1em;"><em>Configurar 802.1X</em></strong><span style="color: #333333; font-size: 1em;">. </span></p>
+<p style="text-align: center;"><a href="configurar-802.1.png"><em><span><strong><img src="configurar-802.1.png" alt="" width="1090" height="370" /></strong></span></em></a></p>
+<p style="text-align: center;"><em><span><strong>Figura 11.</strong> Configurar 802.1X.</span></em></p>
+<p style="text-align: justify;"><span>A continuación, el asistente muestra una pantalla donde hay que seleccionar el <strong>tipo de conexiones 802.1X</strong>, para este escenario, se selecciona la primera opción '<strong>Conexiones inalámbricas seguras</strong>' y se rellena un nombre para la directiva, como ejemplo, se pone <strong>radius-WAP2-Enterprise</strong>. Para continuar hay que pulsar <em><strong>Siguiente.</strong></em></span></p>
+<p style="text-align: center;"><span><img src="tipo-conexion-802.png" alt="" width="555" height="586" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 12.</strong> Seleccionar el tipo de conexión 802.1X.</em></span></p>
+<p style="text-align: justify;"><span>En el siguiente paso hay que indicar los <strong><em>clientes RADIUS</em></strong> que se desean incluir. Para este escenario, se va a agregar el punto de acceso que se configurará en la <strong>etapa 3</strong> y para ello, hay que </span><span>pulsar el botón '<strong>Agregar</strong>'. A</span><span>parece una nueva pantalla donde se debe rellenar lo siguiente:</span></p>
+<ul style="text-align: justify;">
+<li><span>Un <strong>nombre para el cliente</strong>, para este caso se pone TP-LINK-Radius.</span></li>
+<li><span>La <strong>dirección IP </strong>que se debe validar. Para este caso, la ip del TP-LINK es 192.168.0.250.</span></li>
+<li><span>Generar o introducir un <strong>secreto compartido</strong>. (advierte de que algunos clientes RADIUS no soportan claves largas). Para este caso, se indica de forma manual el secreto compartido: <strong>eeepsr10 </strong>que es el que se configurará también</span><span> el equipo <strong>router TP-LINK.</strong></span><span></span></li>
+</ul>
+<p><span><strong>Fuente</strong></span></p>
+<ul>
+<li><span><strong><a href="https://docs.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/wireless/e-wireless-access-deployment#to-configure-your-wireless-aps" target="_blank" rel="noreferrer noopener">https://docs.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/wireless/e-wireless-access-deployment#to-configure-your-wireless-aps</a></strong></span></li>
+</ul>
+<p style="text-align: justify;"><strong>NOTA:</strong> Este proceso hay que realizarlo con cada cliente RADIUS que se quiera añadir a la infraestructura, para este caso sólo se tiene uno, pero podrían haber muchos más.</p>
+<table border="0" style="height: 612px; width: 100%;">
+<tbody>
+<tr style="height: 592px;">
+<td style="width: 50%; text-align: center; height: 592px;"><img src="clientes-radius-Agregar.png" alt="" width="554" height="586" /></td>
+<td style="width: 50%; height: 592px; text-align: center;"><img src="nuevo-cliente-radius.png" alt="" width="452" height="559" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 13.</strong> Agregar cliente Radius.</em></span></td>
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 14.</strong> Configuración del cliente Radius a agregar.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span>Para continuar, hay que pulsar el botón '<strong>Aceptar</strong>' y como se puede observar en la figura inferior ya el cliente radius recién añadido.</span></p>
+<p style="text-align: center;"><span><img src="cliente-radius-anadido.png" alt="" width="554" height="585" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 15.</strong> Cliente RADIUS agregado.</em></span></p>
+<p style="text-align: justify;"><span>Para continuar, hay que pulsar '<strong>Siguiente</strong>'. Aparece una nueva ventana donde hay que seleccionar el tipo de EAP para esta directiva (ver figura inferior), es decir, el método de autenticación. Se configura el método de autenticación <strong>Microsoft:</strong> <a href="https://wiki.freeradius.org/protocol/EAP-PEAP" target="_blank" rel="noopener">EAP protegido (PEAP)</a><strong>. </strong>A continuación se pulsa<strong> 'Configurar' </strong>para seleccionar un certificado para probar la identidad del <strong>servidor RADIUS</strong> a los clientes. Aquí es donde se va a utilizar el <strong>certificado de equipo</strong> que se ha </span><span>emitido anteriormente en la <strong>etapa 1</strong>.</span></p>
+<p style="text-align: justify;"><span><strong>IMPORTANTE:</strong> Los <strong>clientes deben confiar</strong> en ese <strong>certificado</strong>, de lo contrario, el usuario no podrá conectarse a la red inalámbrica.</span></p>
+<p style="text-align: justify;"><span>Para continuar, hay que hacer clic en <strong>Siguiente</strong>.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="tipos-EAP.png" alt="" width="554" height="584" /></td>
+<td style="width: 50%; text-align: center;"><img src="editar-EAP.png" alt="" width="430" height="387" /></td>
+</tr>
+<tr>
+<td style="width: 50%;">
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 16.</strong> Selección del tipo de EAP.</em></span></p>
+</td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 17.</strong> Editar las propiedades de EAP protegido.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p id="7039" style="text-align: justify;"><span><strong>NPS</strong> admite métodos de autenticación basados en contraseña y basados en certificados. Hay que tener en consideración qué métodos admite el cliente para seleccionar uno u otro y no solo el propio interés o la seguridad. Podría ser necesario configurar un tipo para cada una.</span></p>
+<p id="6ecd" style="text-align: justify;"><span>Los métodos de autenticación basados en certificados tienen la ventaja de proporcionar una gran seguridad, pero requieren más trabajo de implementación.</span></p>
+<ul>
+<li id="5bc0" style="text-align: justify;"><span>Para <strong>EAP-TLS</strong> se necesita montar una <strong>PKI</strong> y eso conllevaría a una autenticación con certificados tanto de cliente como de servidor. Se suele utilizar para <strong>VPN</strong> por su robusta seguridad.</span></li>
+<li style="text-align: justify;"><span>Con <strong>PEAP-MS-CHAP v2</strong> se usa un certificado para la autenticación del servidor y credenciales para los usuarios. No requiere <strong>PKI</strong> y además se podría utilizar <strong>Active Directory servicios de Certificate Server (AD CS)</strong> para la inscripción de certificados en NPS. <strong>PEAP-MS-CHAP v2</strong> está especialmente diseñada para portátiles y otros dispositivos. Permite una reconexión rápida sin necesitar volver a autenticar. Por eso se usa más como método de autenticación para las conexiones inalámbricas. </span></li>
+</ul>
+<p id="f704" style="text-align: justify;"><span><strong>MS-CHAP v2</strong> proporciona autenticación mutua, claves de cifrado de datos iniciales más fuertes y claves de cifrado diferentes para el envío y la recepción. La clave criptográfica se basa siempre en la contraseña del usuario y en una cadena de desafío aleatoria. Cada vez que se autentifica, se utiliza una nueva cadena. </span></p>
+<p>La autenticación con éxito de <strong>PEAP-MS-CHAP v2</strong> tiene dos partes principales:</p>
+<ul>
+<li style="text-align: justify;">El <strong>cliente autentica el NPS</strong>. Durante esta fase de autenticación mutua, el NPS envía su certificado de servidor al equipo del cliente para que el cliente pueda verificar la identidad del NPS con el certificado. Para autenticar correctamente el NPS, el equipo cliente debe confiar en la CA que emitió el certificado NPS. El cliente confía en esta CA cuando el certificado de la CA está presente en el almacén de certificados de las Autoridades de certificación raíz de confianza en el equipo cliente.</li>
+<li style="text-align: justify;">El <strong>NPS autentica al usuario.</strong> Una vez que el cliente autentica correctamente el NPS, el cliente envía las credenciales basadas en contraseña del usuario al NPS, que verifica las credenciales del usuario con la base de datos de cuentas de usuario en Active Directory Domain Services (AD DS).</li>
+</ul>
+<p style="text-align: justify;">Si las credenciales son válidas y la autenticación se realiza correctamente, el <strong>NPS</strong> comienza la fase de autorización del procesamiento de la solicitud de conexión. Si las credenciales no son válidas y la autenticación falla, NPS envía un mensaje de rechazo de acceso y se deniega la solicitud de conexión.</p>
+<p style="text-align: justify;"><span><strong>Fuente</strong>: </span></p>
+<ul>
+<li style="text-align: justify;"><span><a href="https://www.securew2.com/solutions/wpa2-enterprise-and-802-1x-simplified" target="_blank" rel="noreferrer noopener">https://www.securew2.com/solutions/wpa2-enterprise-and-802-1x-simplified</a></span></li>
+<li style="text-align: justify;">
+<p><a href="https://docs.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access#authentication" target="_blank" rel="noreferrer noopener">https://docs.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access#authentication</a></p>
+</li>
+</ul>
+<p id="a048" style="text-align: justify;"><span>En el siguiente paso, el asistente solicita indicar los <strong>grupos</strong> que se verán afectados por esta configuración, es decir, los grupos de usuarios que tendrán acceso a la red Wifi. Es evidente que se trata de una buena práctica, pues permite sacar o meter de ese grupo a los usuarios que se desean que tengan acceso a la red Wifi. Si no se rellena ninguno, afectaría a todos los usuarios del dominio.</span></p>
+<p style="text-align: justify;"><span>Se crea el grupo <strong>radius-WAP2 </strong>con el usuario que tendrá acceso a la red wifi.</span></p>
+<p style="text-align: center;"><img src="grupo-WALN.png" alt="" width="1060" height="509" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 18.</strong> Grupo acceso a la WLAN.</em></span></p>
+<p id="a1d5" style="text-align: justify;"><span>A continuación, Se agrega el grupo '<strong>usuarios-WLAN</strong>' que se ha creado.</span></p>
+<p style="text-align: center;"><img src="especificar-grupos.png" alt="" width="553" height="583" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 19.</strong> Adición del grupo radius-WPA2.</span></em></p>
+<p id="a1d5" style="text-align: justify;">Para continuar, hay que pulsar '<strong>Siguiente</strong>' y aparece una nueva pantalla relacionada con la configuración de controles de tráfico (atributos de túnel RADIUS) para permitir y denegar el tráfico a los usuarios en función de sus VLAN asignadas. Se deja tal cual está, y se hace clic en <strong>Siguiente</strong>.</p>
+<p><strong>Configurar Controles de tráfico - </strong><strong>Uso de virtual LANs (VLANs) y listas de control de acceso (ACLs) para el control del tráfico de red</strong><a href="https://docs.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-np-configure#configure-nps-for-vlans" target="_blank" rel="noreferrer noopener"></a></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-np-configure#configure-nps-for-vlans" target="_blank" rel="noreferrer noopener">https://docs.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-np-configure#configure-nps-for-vlans</a></li>
+</ul>
+<p style="text-align: center;"><img src="configurar-controles-trafico.png" alt="" width="551" height="582" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 20.</strong> Configurar controles de tráfico.</span></em></p>
+<p style="text-align: justify;">El asistente muestra un resumen de los realizado donde si se pulsa el enlace '<strong>Detalles de configuración</strong>', el asistente ofrece la información más detallada. Para finalizar el proceso, hay que pulsar el botón '<strong>Finalizar</strong>'.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr style="text-align: center;">
+<td style="width: 50%; text-align: center;"><img src="resumen-nuevo-cliente.png" alt="" width="554" height="585" /></td>
+<td style="width: 50%; text-align: center;"><img src="resumen-detallado.png" alt="" width="1037" height="716" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 21.</strong> Resumen de la configuración.</em></span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 22.</strong> Informe detallado de la configuración.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><span><em><strong>Figura .</strong> Filtros de entrada para IPv4</em>.</span></p>
+<p style="text-align: justify;">Como se puede observar, ya se tiene el <strong>cliente Radius. </strong></p>
+<p style="text-align: center;"><img src="cliente-Radiu-Panel.png" alt="" width="943" height="257" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 23.</strong> Cliente Radius configurado.</em></span></p>
+<p style="text-align: justify;">Además, el asistente ha creado una<strong> Política de solicitud de conexión y una Política de red.</strong> Si se accede a alguna de ellas, se pueden realizar cambios en su configuración.</p>
+<table border="0" style="height: 242px; width: 100%;">
+<tbody>
+<tr style="height: 217px;">
+<td style="width: 50%; text-align: center; height: 217px;"><img src="directiva-red-conf.png" alt="" width="1207" height="689" /></td>
+<td style="width: 50%; height: 217px; text-align: center;"><img src="directiva-sol-conexion.png" alt="" width="1209" height="690" /></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 50%; text-align: center; height: 25px;"><span style="font-size: 12pt;"><em><strong>Figura 24.</strong> Directiva de red configurada.</em></span></td>
+<td style="width: 50%; height: 25px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 25.</strong> Directiva de solicitud de conexión.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">De forma <strong>predeterminada</strong>, el asistente configura la <strong>directiva de solicitud de conexión</strong> para procesar la solicitud de autenticación localmente en el servidor.</p>
+<p style="text-align: justify;"><strong>Directiva de solicitud de conexión</strong><a href="https://docs.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-crp-crpolicies" target="_blank" rel="noreferrer noopener"></a></p>
+<ul>
+<li style="text-align: justify;"><a href="https://docs.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-crp-crpolicies" target="_blank" rel="noreferrer noopener">https://docs.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-crp-crpolicies</a></li>
+</ul>
+<p style="text-align: center;"><img src="autenticacion-solicitudes-conexion.png" alt="" width="722" height="600" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 26. </strong>Procesar la solicitud de autenticación localmente en el servidor.</em></span></p>
+<p style="text-align: justify;">De forma <strong>predeterminada</strong>, el asistente configura la <a href="https://docs.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-np-overview" target="_blank" rel="noopener"><strong>directiva Política de red</strong>.</a> Se dejará tal cual como el asistente la ha configurado. </p>
+<p style="text-align: justify;">Las <strong>políticas de red</strong> son conjuntos de condiciones, restricciones y configuraciones que permiten designar quién está autorizado para conectarse a la red y las circunstancias bajo las cuales pueden o no conectarse.</p>
+<p style="text-align: center;"><img src="directiva-red.png" alt="" width="1172" height="542" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 27. </strong>Directiva de red.</em></span></p>
+<h4 style="text-align: justify;">Configurar Contabilidad (Accounting)</h4>
+<p style="text-align: justify;">También es posible configurar <a href="https://docs.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-accounting-configure" target="_blank" rel="noopener"><strong>Contabilidad</strong> para el servidor NPS</a>, donde se puede establecer la ruta donde guardar el fichero de log, registrar una base de datos para almacenar la contabilidad, etcétera.</p>
+<p style="text-align: center;"><img src="accounting.png" alt="" width="1116" height="537" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 28. </strong>Panel de configuración de la contabilidad.</em></span></p>
+<h4 style="text-align: justify;"><span>Comprobación de las acciones realizadas</span></h4>
+<p style="text-align: justify;"><span>Para obtener información de todos los <em>clientes Radius</em> que se han implementado, ejecutamos el cmdlet <strong>Get-NpsRadiusClient</strong>:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\&gt;</strong>Get-NpsRadiusClient</span></pre>
+<p style="text-align: center;"><img src="get-npsRAdiusClient.png" alt="" width="491" height="260" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 29. </strong>Información del cliente radius.</em></span></p>
+<h3>4. Referencias</h3>
+<ul>
+<li><span>En caso de necesitar ayuda para la instalación de estos requisitos previos, a continuación tienes una <a href="https://vlade.medium.com/instalaci%C3%B3n-de-servidor-windows-server-2016-c396a67a344c" target="_blank" rel="noopener">guía completa de instalación de un servidor Windows Server 2016</a>, que es totalmente traducible a la versión 2019.</span></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="333_configurar_el_routerap.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

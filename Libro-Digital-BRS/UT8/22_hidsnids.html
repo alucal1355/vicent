@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2 HIDS/NIDS | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-73"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="current-page-parent daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul>
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li id="active"><a href="22_hidsnids.html" class="active daddy">2.2 HIDS/NIDS</a>
+      <ul>
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul class="other-section">
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="221_nids_suricata.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2 HIDS/NIDS</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id122">
+<div class="iDevice emphasis0">
+<div id="ta122_85" class="block iDevice_content">
+<h3 style="text-align: justify;">1. ¿Qué es Host IDS?</h3>
+<p style="text-align: justify;">Se enfoca en la detección basada en host de una única máquina, mirando sus registros de auditoria. Algunos ejemplos de HIDS son: Ossec, Wazuh, Samhain.</p>
+<p style="text-align: justify;">HIDS es un<strong> tipo de <a href="https://www.incibe.es/protege-tu-empresa/blog/son-y-sirven-los-siem-ids-e-ips" target="_blank" rel="noopener">IDS</a></strong> (Intrusion Detection System) que se diferencia de otros tipos como el <a href="https://es.wikipedia.org/wiki/NIDS#:~:text=NIDS%20(Network%20Intrusion%20Detection%20System,de%20intrusos%20en%20una%20Red.&amp;text=Los%20NIDS%20no%20s%C3%B3lo%20vigilan,desde%20el%20propio%20sistema%20protegido." target="_blank" rel="noopener">NIDS</a> (Network IDS) en que está instalado en un equipo en vez de monitorizar un segmento de red. Se encarga de monitorizar el sistema operativo, los procesos y el tráfico existente en un equipo y de detectar posibles amenazas como cambios en el registro, directorios y otras acciones sospechosas.</p>
+<h3 style="text-align: justify;">2. Funcionamiento HIDS</h3>
+<p style="text-align: justify;">El <strong>host</strong> <strong>IDS</strong> realiza una copia de seguridad sobre los archivos de configuración del sistema, permitiendo así que si se realiza cualquier tipo de ataque en el equipo, estos se restauren. También permite informar de si algún archivo fundamental del sistema ha sido modificado.</p>
+<p style="text-align: justify;">Otra de las opciones de los <a href="https://es.wikipedia.org/wiki/Host-based_intrusion_detection_system#:~:text=HIDS%20es%20tambi%C3%A9n%20conocido%20como,a%20las%20de%20los%20IDS." target="_blank" rel="noopener"><strong>HIDS</strong></a> es usarlo de forma distribuida, es decir, más de un equipo en una red. Para ello es necesario instalar el <strong>HIDS</strong> en todos estos equipos. También es necesario tener un módulo centralizado que se encargue de gestionar todos estos hosts.</p>
+<p style="text-align: justify;">Algunos <strong>HIDS</strong> más famosos son:</p>
+<ul>
+<li style="text-align: justify;"><strong><a href="https://www.ossec.net/" target="_blank" rel="noopener">OSSEC</a></strong>: Procesa logs de manera eficiente, pero sin interfaz de usuario.</li>
+<li style="text-align: justify;"><a href="https://www.papertrail.com/" target="_blank" rel="noopener">SolarWinds Papertail:</a> HIDS basado en la nube y centralización de logs.<br /><a href="https://www.dynatrace.com/" target="_blank" rel="noopener"><strong>ManageEngine EventLog Analyzer</strong></a>: Tiene capacidad de funcionar como HIDS o NIDS y de centralizar logs.</li>
+<li style="text-align: justify;"><a href="https://www.splunk.com/" target="_blank" rel="noopener"><strong>Splunk</strong></a>: HIDS especializado en detectar anomalías en el sistema.</li>
+<li style="text-align: justify;"><strong><a href="https://en.wikipedia.org/wiki/Sagan_(software)" target="_blank" rel="noopener">Sagan</a></strong>: HIDS con capacidad de detectar anomalías y de mostrar alertas mediante reglas, incluyendo opciones interesantes como la Geolocalización IP.</li>
+<li style="text-align: justify;"><strong><a href="https://www.la-samhna.de/samhain/" target="_blank" rel="noopener">Samhain</a></strong>: HIDS con funciones como comprobación de integridad de ficheros, monitorización y análisis de estos.</li>
+</ul>
+<h3>3. Ejemplo de Host IDS: <span>Wazuh</span></h3>
+<p style="text-align: justify;"><a href="https://wazuh.com/" target="_blank" rel="noopener"><strong>Wazuh</strong></a> es un <strong>servidor de Host IDS</strong> <span>de código abierto y libre </span>cuya función es el análisis, comprobación y supervisión de registros. Además proporciona <span>detección de <a href="https://www.avast.com/es-es/c-rootkit?ppc_code=012&amp;ppc=m&amp;gclid=CjwKCAiA6Y2QBhAtEiwAGHybPYW2xtJ5QNPccEJt9cD9T75FeJ9gsHYWh0bQ0kmfJrMVkqRFyvV1txoCjBYQAvD_BwE&amp;gclsrc=aw.ds" target="_blank" rel="noopener"><strong>rootkits</strong></a>, alertas basadas en el tiempo y respuesta activa.</span></p>
+<p style="text-align: justify;"><span>En este apartado, se realizará la configuración de un <strong>servidor HIDS</strong> que permitirá instalar agentes en sistemas Windows, Linux y Mac. </span></p>
+<h4 style="text-align: justify;"><span>3.1 Escenario de trabajo y requerimientos mínimos</span></h4>
+<p style="text-align: justify;"><span>El escenario de trabajo es el siguiente:</span></p>
+<table border="0" style="width: 99.2586%;">
+<tbody>
+<tr>
+<td style="width: 36.9363%;">
+<p><strong><span style="font-size: 12pt;">Servidor wazuh</span></strong></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Equipo con <strong>Ubuntu Server 20.04.3</strong> con un mínimo de <strong>4GB de RAM y 2 núcleos.</strong></span></li>
+</ul>
+</td>
+<td style="width: 62.3237%; text-align: center;"><img src="req-MV-wazuh.png" alt="" width="480" height="102" style="float: left;" /></td>
+</tr>
+<tr>
+<td style="width: 36.9363%;">
+<p><strong><span style="font-size: 12pt;">2 agentes:</span></strong></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Equipo <strong>Windows Server 2019 Datacenter</strong> promocionado a CD <strong>ciber.local</strong>.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Equipo con <strong>Windows 10 Enterprise</strong> integrado en el dominio <strong>ciber.local</strong>.</span></li>
+</ul>
+</td>
+<td style="width: 62.3237%; text-align: center;">
+<p><img src="W2019-Agente.png" alt="" width="398" height="302" />  <img src="W10-agente.png" alt="" width="491" height="320" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul></ul>
+<h4><span>3.2 Instalación y configuración servidor HIDS</span></h4>
+<p><span>En el siguiente vídeo, se describe el proceso de configuración del <strong>servidor HIDS Wazuh.</strong></span></p>
+<p style="text-align: center;"><em><strong><iframe width="560" height="314" src="https://www.youtube.com/embed/X2n5mzbPx0g" allowfullscreen="allowfullscreen"></iframe><br /><br /></strong></em><em><strong>Vídeo 1.</strong> Instalación y configuración de Wazuh.</em></p>
+<p><span>Una vez instalado, se obtiene las credenciales de acceso para distintos usuarios/perfiles:</span></p>
+<pre><span style="font-size: 12pt;">The password for wazuh is Iq7k65_hzHSG6i4RcVZ9DvdkGDY3zsT0</span><br /><span style="font-size: 12pt;">The password for admin is KTCZjCocCUP2oMCxSkQ8vJs8WP3MxEdA</span><br /><span style="font-size: 12pt;">The password for kibanaserver is In4wNgTOwhEEixpZ2vs8_wA7bBubCJLL</span><br /><span style="font-size: 12pt;">The password for kibanaro is 2_gvFLzlIsDIAWbJmPqlpV0tf6HYkTyz</span><br /><span style="font-size: 12pt;">The password for logstash is JczuQTkTZhQXdYssYUbtVtEHe8cYNOX3</span><br /><span style="font-size: 12pt;">The password for readall is tVpVxxavXHQP6gEVL13pkRAKKo_aH7xc</span><br /><span style="font-size: 12pt;">The password for snapshotrestore is hXiqm49mteWHmfAEqLcebMi7n62ij060</span><br /><span style="font-size: 12pt;">The password for wazuh_admin is Cwh5a3aRGESVzUwWSJ3KZXwSGq38Uju5</span><br /><span style="font-size: 12pt;">The password for wazuh_user is DtSyceqSjYBsJOswCwnRqM_mD394FErZ</span><br /><span style="font-size: 12pt;">01/23/2022 11:18:10 INFO: Passwords changed. Remember to update the password in /etc/filebeat/filebeat.yml and /etc/kibana/kibana.yml if necessary and restart the services. More info: https://documentation.wazuh.com/current/user-manual/elasticsearch/elastic-tuning.html#change-users-password</span><br /><span style="font-size: 12pt;">01/23/2022 11:18:10 INFO: Checking the installation...</span><br /><span style="font-size: 12pt;">01/23/2022 11:18:10 INFO: Elasticsearch installation succeeded.</span><br /><span style="font-size: 12pt;">01/23/2022 11:18:11 INFO: Filebeat installation succeeded.</span><br /><span style="font-size: 12pt;">01/23/2022 11:18:11 INFO: Initializing Kibana (this may take a while)</span><br /><span style="font-size: 12pt;">01/23/2022 11:18:21 INFO: Installation finished</span><br /><span style="font-size: 12pt;">01/23/2022 11:18:21 INFO: You can access the web interface https://&lt;kibana_ip&gt;. The credentials are <strong>wazuh:Iq7k65_hzHSG6i4RcVZ9DvdkGDY3zsT0</strong></span></pre>
+<h4>3.3. Operaciones administrativas en los servicios kibana y elasticsearch </h4>
+<p>Si al acceder por https aparece la siguiente alerta:<span></span></p>
+<p style="text-align: center;"><span><img src="kibana-server-not-ready.png" alt="" width="412" height="137" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Alerta informativa sobre el servidor Kibana.</em></p>
+<p style="text-align: justify;">Si se lista el estado del kibana, se puede observar que el problema es originado con la conexión con elasticsearch.</p>
+<p style="text-align: center;"><img src="status-kibana.png" alt="" width="1639" height="340" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Status de Kibana.</em></p>
+<p style="text-align: justify;">Para solucionar el problema, hay que modificar la dirección de localhost por la ip del servidor.</p>
+<p style="text-align: justify;">Para este escenario, la ip del servidor es 192.168.0.30. El comando a ejecutar es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/# </strong>curl -u elastic:changeme http://192.168.0.30:9200</span></pre>
+<p>Una vez ejecutado el comando, no es necesario hacer un restart del servicio kibana. Si se lista de nuevo el estado del kibana, se puede observar que el problema se ha solucionado.</p>
+<p style="text-align: center;"><span style="color: #ef801b; font-size: 1.2em; letter-spacing: 0.5px;"><img src="statuskibana-ok.png" alt="" width="1890" height="326" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Status de Kibana.</em></p>
+<h3>4. NIDS</h3>
+<p style="text-align: justify;">Un <strong>NIDS</strong> (Network Intrusion Detections System) se enfoca en la detección monitorizando el tráfico de la red a la que están conectados los hosts. Algunos ejemplos de NIDS: Snort, Suricata, Bro, Kismet.</p>
+<p style="text-align: center;"><img src="snort.png" alt="" width="306" height="172" /></p>
+<h3>5. HIDS (wazuh) vs NIDS (suricata)</h3>
+<p style="text-align: justify;"><strong>Wazuh</strong> es un excelente <strong>HIDS</strong> (Host based Intrusion Detection System) entre otras cosas. Adicionalmente en su análisis basado en reglas de los eventos que hay en los logs usando agentes y otros dispositivos también hace una monitorización de la integridad de los archivos y detecta anomalías. Esto provee un gran detalle en la seguridad de nuestros activos digitales.</p>
+<p style="text-align: justify;">Aun así, algunos temas de seguridad son detectados más eficientemente inspeccionando el tráfico de red del servidor o grupos hosts de interés, que generalmente no se guarda ninguna información a los logs. Aquí es donde un <strong>NIDS</strong> (Network intrusion detection system) como <strong>Suricata</strong> sobresale porque puede aportar información de seguridad adicional de forma complementaría al que haría wazuh.</p>
+<p style="text-align: center;"><img src="hids-nids.png" alt="" width="520" height="320" /></p>
+<h3>6. Referencias</h3>
+<ul>
+<li><a href="https://documentation.wazuh.com/current/installation-guide/open-distro/all-in-one-deployment/unattended-installation.html" target="_blank" rel="noopener">Unattended installation</a></li>
+<li><a href="https://documentation.wazuh.com/current/installation-guide/index.html">Instalación de Wazuh</a></li>
+<li><a href="https://documentation.wazuh.com/current/user-manual/registering/index.html" target="_blank" rel="noopener">Para registrar un equipo manualmenteen Wazuh</a></li>
+<li><a href="https://documentation.wazuh.com/current/user-manual/agents/remove-agents/remove.html" target="_blank" rel="noopener">Eliminar agentes</a></li>
+<li><a href="https://attack.mitre.org/" target="_blank" rel="noopener">MITRE ATT&amp;CK</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="221_nids_suricata.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

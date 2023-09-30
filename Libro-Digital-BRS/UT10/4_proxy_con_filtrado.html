@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4. Proxy con filtrado | UT10. Fortificación perimetral: proxy </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-139"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT10. Fortificación perimetral: proxy</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT10. Fortificación perimetral: proxy</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_los_proxys.html" class="no-ch">1. Introducción a los proxys</a></li>
+   <li><a href="2_proxy_webcach.html" class="daddy">2. Proxy web/caché</a>
+   <ul class="other-section">
+      <li><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="no-ch">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proxy_con_autenticacin_bsica.html" class="no-ch">3. Proxy con autenticación básica</a></li>
+   <li id="active"><a href="4_proxy_con_filtrado.html" class="active no-ch">4. Proxy con filtrado</a></li>
+   <li><a href="5_proxy_transparente_para_httphttps.html" class="daddy">5. Proxy transparente para HTTP/HTTPS</a>
+   <ul class="other-section">
+      <li><a href="51_proxy_transparente_para_http.html" class="no-ch">5.1 Proxy transparente para HTTP</a></li>
+      <li><a href="52_proxy_transparente_para_https.html" class="no-ch">5.2 Proxy transparente para HTTPS</a></li>
+   </ul>
+   </li>
+   <li><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="daddy">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_proxy_squid_con_pfsense.html" class="no-ch">Práctica 1. Proxy Squid con PfSense</a></li>
+   </ul>
+   </li>
+   <li><a href="7_proxy_dns__pihole.html" class="daddy">7. Proxy DNS - PiHole</a>
+   <ul class="other-section">
+      <li><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="no-ch">Práctica 2.Implantación del proxy DNS Pi-Hole</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3_proxy_con_autenticacin_bsica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_proxy_transparente_para_httphttps.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4. Proxy con filtrado</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id178">
+<div class="iDevice emphasis0">
+<div id="ta178_85" class="block iDevice_content">
+<h3 class="western" style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">En el capítulo anterior, se se ha establecido quién puede acceder a los servicios del proxy de la red, pero además, se puede configurar el mismo para permitir o denegar aspectos como por ejemplo:</p>
+<ol style="list-style-type: lower-alpha;">
+<li style="text-align: justify;">Las páginas web y los dominios.</li>
+<li style="text-align: justify;">Los días de la semana y las horas.</li>
+<li style="text-align: justify;">Hosts origen.</li>
+<li style="text-align: justify;">Puertos destino.</li>
+<li style="text-align: justify;">Protocolos.</li>
+</ol>
+<p style="text-align: justify;">Aunque existen aplicaciones como <a href="https://help.ubuntu.com/community/DansGuardian" target="_blank" rel="noopener">DansGuardian</a> que filtran el contenido de las páginas web y que son más potentes que Squid, en este capítulo se utilizan las herramientas que se disponen en el proxy sobre Ubuntu Server.</p>
+<p style="text-align: justify;">En general, para cada uno de los casos, se va a definir una lista de acceso (acl) y se va a aplicar para denegar o permitir el acceso, teniendo en cuenta que, aunque la definición de las acl no tiene por qué seguir un orden, su aplicación sí que debe escribirse guardando el orden en el que se desea que sea consultada.</p>
+<p style="text-align: justify;">A continuación, se puede observar la sintaxis de algunas algunos tipos de <span style="font-family: courier new, courier, monospace;">acl</span> recogidos en el fichero <strong>/etc/squid/squid.conf </strong>referidos a tiempo.</p>
+<pre class="western"><span style="font-size: 10pt;">#      <strong> acl aclname time [day-abbrevs] [h1:m1-h2:m2]</strong></span><br /><span style="font-size: 10pt;">#         # [fast]</span><br /><span style="font-size: 10pt;">#         #  day-abbrevs:</span><br /><span style="font-size: 10pt;">#         #     S - Sunday</span><br /><span style="font-size: 10pt;">#         #     M - Monday</span><br /><span style="font-size: 10pt;">#         #     T - Tuesday</span><br /><span style="font-size: 10pt;">#         #     W - Wednesday</span><br /><span style="font-size: 10pt;">#         #     H - Thursday</span><br /><span style="font-size: 10pt;">#         #     F - Friday</span><br /><span style="font-size: 10pt;">#         #     A - Saturday</span><br /><span style="font-size: 10pt;">#         #  h1:m1 must be less than h2:m2</span></pre>
+<p style="text-align: justify;">Una vez se tengan definidas las acl, hay que usar la etiqueta <strong>http_access</strong> para permitir o denegar el acceso HTTP, HTTPS o FTP basándose en las <span style="font-family: courier new, courier, monospace;">acl</span>. La <strong>sintaxis</strong> es:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong><span style="font-family: courier new, courier, monospace;">http_access</span></strong><span style="font-family: courier new, courier, monospace;"> </span><em><span style="font-family: courier new, courier, monospace;">allow</span></em><span style="font-family: courier new, courier, monospace;">|</span><em><span style="font-family: courier new, courier, monospace;">deny</span></em><span style="font-family: courier new, courier, monospace;"> </span><em><span style="font-family: courier new, courier, monospace;">[!]</span></em><span style="font-family: courier new, courier, monospace;">aclname ...</span></span></pre>
+<p style="text-align: justify;">Donde,</p>
+<ul>
+<li style="text-align: justify;"><strong><em>allow</em></strong> indica que si la acl coincide con la petición el acceso se permite. Obligatoriamente, debe aparecer <em>allow</em> o <em>deny</em>, pero no ambas.</li>
+<li style="text-align: justify;"><strong><em>deny</em></strong> indica que si la acl coincide con la petición el acceso se deniega. Obligatoriamente, debe aparecer <em>allow</em> o <em>deny</em>, pero no ambas.</li>
+<li style="text-align: justify;"><strong>!</strong> indica que <strong style="color: #333333; font-size: 1em;">http_acces</strong><span style="color: #333333; font-size: 1em;"> permitirá o denegará en el caso de que la petición NO coincida con la definición de la </span><span style="font-family: arial, helvetica, sans-serif;">acl</span><span style="color: #333333; font-size: 1em;">. Los corchetes indican que este símbolo puede aparecer o no. Hay que tener en cuenta que los corchetes no deben escribirse.</span></li>
+</ul>
+<p style="text-align: justify;">Es importante tener cuenta que:</p>
+<ul>
+<li style="text-align: justify;">Si no hay líneas de "http_access" presentes, el valor predeterminado es <strong>denegar</strong> la solicitud.</li>
+<li style="text-align: justify;">Si ninguna de las líneas de "http_access" causa una coincidencia, el valor predeterminado es opuesto a la última línea de la lista. Es decir, si la última línea fue denegar, el valor predeterminado es permitir. Por el contrario, si la última línea permite, el valor predeterminado será denegar.</li>
+</ul>
+<p style="text-align: justify;"><span lang="es-ES">Por estas razones, es buena idea tener una entrada "<strong>deny all</strong>" al final de la listas para evitar posibles confusiones. </span></p>
+<h3 class="western" style="text-align: justify;">2. Caso práctico</h3>
+<p style="text-align: justify;">Como ejemplo, se van a insertar en el servidor proxy estas tres <span style="font-family: courier new, courier, monospace;">acl</span> (después de la última acl) en el fichero <strong>squid.conf.</strong></p>
+<pre class="western"><span style="font-size: 12pt;"><strong>acl</strong> sitiospermitidos <strong>dst</strong> portal.edu.gva.es
+<strong>acl</strong> dominiosprohibidos <strong>dstdomain</strong> .adnstream.com
+<strong>acl</strong> horariocentro <strong>time</strong> MTWHF 08:00-16:00</span></pre>
+<p style="text-align: center;"><img src="acl-horario-permitido-deneado.png" alt="" width="666" height="145" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Configuración de las acl's.</em></p>
+<p style="text-align: justify;">Con ellas se está definiendo lo siguiente:</p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong><em>sitiospermitidos:</em></strong> <em>recoge el sitio portal.edu.gva.es.</em></span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><em><strong>dominiosprohibidos</strong>: define cualquier sitio del dominio .adnstream.com.</em></span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><em><strong>horariocentro</strong>: se define como el tiempo comprendido entre las 8:00 y las 16:00 de lunes a viernes.</em></span></li>
+</ul>
+<p style="text-align: justify;">Una vez creadas las acl, el siguiente paso es añadir las etiquetas <strong>http_access</strong> para que quede de la siguiente manera:</p>
+<pre class="western"><span style="font-size: 10pt;">#
+# INSERT YOUR OWN RULE(S) HERE TO ALLOW ACCESS FROM YOUR CLIENTS
+#
+# Example rule allowing access from your local networks.
+# Adapt localnet in the ACL section to list your (internal) IP networks
+# from where browsing should be allowed
+http_access allow localhost
+<strong>http_access deny !horariocentro</strong>
+<strong>http_access allow sitiospermitidos password</strong>
+<strong>http_access deny dominiosprohibidos</strong>
+http_access allow password
+<strong><span style="color: #ff0000;">#</span></strong>http_access allow localnet
+# And finally deny all other access to this proxy
+http_access deny all</span></pre>
+<p style="text-align: justify;">En negrita aparecen las nuevas entradas, en rojo la almohadilla que anula la aplicación de la acl localnet. Ten en cuenta que el orden debe ser el mismo, ya que si lo cambias puede que el escenario no funcione como se espera. La configuración queda de la siguiente manera:</p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">En negrita aparecen las nuevas entradas, en rojo la almohadilla que anula la aplicación de la acl localnet. Es importante que el orden sea el mismo.</p>
+</div>
+<p style="text-align: justify;">La configuración queda de la siguiente manera:</p>
+<ul>
+<li style="text-align: justify;">Se permiten todas las peticiones que vienen del mismo equipo en el que está instalado el proxy.</li>
+<li style="text-align: justify;">Se deniegan las peticiones fuera del horario del centro que no vengan del propio equipo.</li>
+<li style="text-align: justify;">Se permite el acceso a todas las páginas web incluidas en la acl sitiospermitidos, si son realizadas dentro del horario del centro y por un usuario validado (password).</li>
+<li style="text-align: justify;">Se deniega el acceso a todos los sitios web de los dominios definidos en dominiosprohibidos. Ten en cuenta que se podría tener acceso a alguno de ellos si está incluido en la acl sitiospermitidos.</li>
+<li style="text-align: justify;">Se permiten todos los accesos realizados por usuarios validados.</li>
+<li style="text-align: justify;">Se deniega el resto de tráfico.</li>
+</ul>
+<p style="text-align: center;"><img src="http_acces_filtro.png" alt="" width="662" height="424" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Configuración de los accesos.</em></p>
+<h4 style="text-align: justify;">2.1 Comprobaciones</h4>
+<p style="text-align: justify;">Una vez se aplica la nueva configuración en el servidor, se realiza una batería de pruebas desde el navegador de un equipo de la red interna con el proxy configurado para realizar las peticiones al proxy.</p>
+<table border="0" style="height: 336px; width: 100%;">
+<tbody>
+<tr style="height: 316px;">
+<td style="width: 50%; text-align: center; height: 316px;"><a href="acl-horario-permitido-deneado.png" target="_blank" rel="noopener"><img src="error-acceso-dominio-prohibido.png" alt="" width="985" height="599" /></a></td>
+<td style="width: 50%; text-align: center; height: 316px;"><a href="acceso-permitido.png" target="_blank" rel="noopener"><img src="acceso-permitido.png" alt="" width="983" height="600" /></a></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 3.</strong> Acceso denegado al dominio configurado como no permitido.</span></em></td>
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 4. </strong>Acceso al sitio permitido</em>.</span></td>
+</tr>
+</tbody>
+</table>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="noAcceso-por-horario.png"><img src="noAcceso-por-horario.png" alt="" width="986" height="601" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="acceso-sabado.png" target="_blank" rel="noopener"><img src="acceso-sabado.png" alt="" width="1123" height="680" /></a></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 5.</strong> Acceso no permitido fuera de horario.</span></em></td>
+<td style="width: 50%; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 6.</strong> Acceso no permitido fuera de día.</span></em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3_proxy_con_autenticacin_bsica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_proxy_transparente_para_httphttps.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.1 Túneles (protocolo VPN IPSec) | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-103"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li class="current-page-parent"><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="current-page-parent daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul>
+      <li id="active"><a href="11_tneles_protocolo_vpn_ipsec.html" class="active no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li><a href="2_vpn_de_acceso_remoto.html" class="daddy">2. VPN de acceso remoto</a>
+   <ul class="other-section">
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li><a href="22_wireguard.html" class="daddy">2.2 WireGuard</a>
+      <ul class="other-section">
+         <li><a href="221_instalacin_y_configuracin_de_wireguard.html" class="daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul class="other-section">
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_gestin_de_accesos_sistemas_nac.html" class="daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_servidor_radius_vpn.html" class="daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul class="other-section">
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="12_tneles_protocolo_vpn_wireguard.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.1 Túneles (protocolo VPN IPSec)</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id139">
+<div class="iDevice emphasis0" >
+<div id="ta139_139_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. VPN de router a router utilizando MikroTik</h3>
+<p style="text-align: justify;">En esta capítulo se va a implementar una VPN (tipo router a router) entre dos sedes de una empresa mediante un túnel implementado con IPsec. </p>
+<h3 style="text-align: justify;">2. Escenario y esquema de red</h3>
+<p>En las figuras inferiores se tienen el escenario real y el virtualizado. Los componentes del esquema virtualizado son:</p>
+<ul>
+<li><strong>Routers Mikrotik.</strong>
+<ul>
+<li>Sede principal ciber.</li>
+<li>Sede 1 bastionado.</li>
+<li>Equipo para unir la infraestructura de red entre sedes con internet.</li>
+</ul>
+</li>
+<li style="text-align: justify;">Equipo <strong>Ubuntu Server servidor SSH.</strong></li>
+<li style="text-align: justify;"><strong>Ubuntu Desktop</strong> para implementar el acceso de un cliente.</li>
+<li style="text-align: justify;"><strong>PC físico</strong> encargado de configurar los componentes de la red.</li>
+</ul>
+<table border="0" style="height: 510px; width: 100%;">
+<tbody>
+<tr style="height: 499px;">
+<td style="width: 50%; text-align: center; height: 499px;"><img src="VPN-Router-to-_router-MikroTik.png" alt="" width="660" height="493" /></td>
+<td style="width: 50%; height: 499px; text-align: center;"><a href="VPN-Router-to-_router-MikroTik-Virtual.png" target="_blank" rel="noopener"><img src="VPN-Router-to-_router-MikroTik-Virtual.png" alt="" width="741" height="608" /></a></td>
+</tr>
+<tr style="height: 11px;">
+<td style="width: 50%; text-align: center; height: 11px;"><em><span style="font-size: 12pt;"><strong>Figura 1.</strong> Escenario Real.</span></em></td>
+<td style="width: 50%; height: 11px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 2.</strong> Escenario Virtualizado.</span></em></td>
+</tr>
+</tbody>
+</table>
+<h3 style="text-align: justify;">3. Configuración de los routers</h3>
+<h4>3.1 Router WAN/LAN (internet)</h4>
+<p style="text-align: justify;">Se configura la red WAN (ether1) en dinámico para que el router del proveedor de internet le proporcione la configuración tcp/ip. Por otro lado, se configura una ip estática en la red LAN (ether2) 192.168.1.240/24 y se chequea NAT para añadir la <strong>regla masquerade</strong> (<span>enmascarar la dirección IP de los equipos de la red interna para que puedan «salir» a internet y además, que el tráfico sepa después «volver».)</span></p>
+<p style="text-align: center;"><img src="QuickSet-Router-W-L.png" alt="" width="840" height="657" /></p>
+<h4 style="text-align: justify;"><strong>3.2 Router Sede Principal Ciber</strong></h4>
+<div class="exe-fx exe-tabs">
+<h2>1. QuickSet</h2>
+<p style="text-align: justify;">Se configura la <strong>ip estática 192.168.1.2 </strong>para la interfaz WAN (ether1) dentro de la subred 192.168.1.0/24 LAN del router Router WAN/LAN (internet). Por otro lado, el gateway y DNS es la ip de la red LAN (ether2) del router WAN/LAN (internet). Respecto a la interfaz LAN (ether2), se configura la ip<strong> 192.168.11.1/24</strong>. Se configura el servidor DHCP y el NAT.</p>
+<p style="text-align: center;"><img src="QuickSet-SedePrincipal.png" alt="" width="717" height="615" /></p>
+<h2>2. Configurar IPSec</h2>
+<p>Hay que acceder a la opción del menú<strong> Ip &gt; IPsec </strong>para añadir una nueva política. Las acciones a realizar son:</p>
+<p><strong>1. Acceder a la pestaña Peers.</strong> Hay que crear un nuevo Peer, es decir, indicar quién va a estar al otro lado del túnel. Los campos a configurar son:</p>
+<ul>
+<li><strong><span class=" changed">Name:</span></strong><span class=" changed"> peer-Sede1 (nombre identificativo del peer).</span></li>
+<li><strong>Address</strong>: 192.168.1.1 (dirección ip de la red WAN del router de la Sede 1).</li>
+<li><span class=" changed"><strong>Comment: </strong>Peer Sede 1 bastionado.</span></li>
+</ul>
+<p>El resto de opciones se dejan por defecto.</p>
+<p><strong>2. Acceder a la pestaña Identities.</strong> Hay que crear una nueva Identity en la que hay que indicar el peer y Secret (cómo se va a realizar la autenticación). Los campos a configurar son:</p>
+<ul>
+<li><strong><span class=" changed">Enabled: </span></strong><span class=" changed"></span><span class=" changed"> Hay que chequearlo.</span><span class=" changed">.</span></li>
+<li><strong>Peer</strong>: peer-Sede1.</li>
+<li><span class=" changed"><strong>Secret</strong>: Establecer una cadena de texto compleja para el secreto compartido que permitirá la validación entre routers para el establecimineto del túnel.</span></li>
+<li><span class=" changed"><strong>Comment: </strong>Identities con Sede 1.</span></li>
+</ul>
+<p>El resto de opciones se dejan por defecto.</p>
+<p><strong>3. Acceder a la pestaña Policies.</strong> Hay que añadir una nueva política donde los campos a configura son:</p>
+<ul>
+<li><strong><span class=" changed">Enabled:</span></strong><span class=" changed"> Hay que chequearlo.</span><span class=" changed">.</span></li>
+<li><strong><span class=" changed"><span class="">Peer: </span></span></strong><span class=" changed"><span class="">peer-Sede1.</span></span></li>
+<li><strong><span class=" changed">Tunnel: </span></strong><span class=" changed">Hay que chequearlo.</span></li>
+<li><strong>Src. Address:</strong> 192.168.11.0/24. Indicar la dirección de red del router de la sede Principal.</li>
+<li><strong>Dst. Address</strong>:  192.168.10.0/24. Indicar la dirección de red del router (Sede 1) al que se quiere enviar el tráfico por el túnel que se va a realizar con IPsec.</li>
+<li><strong>Action</strong>: encrypt.</li>
+<li><span class=" changed"><strong>Comment</strong>: IPSec Sede principal.</span></li>
+</ul>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><a href="peer-sedePrincipal.png" target="_blank" rel="noopener"><img src="peer-sedePrincipal.png" alt="" width="645" height="725" /></a></td>
+<td style="width: 33.3333%; text-align: center;"><a href="identities-SedePrincipal.png" target="_blank" rel="noopener"><img src="identities-SedePrincipal.png" alt="" width="680" height="703" /></a></td>
+<td style="width: 33.3333%; text-align: center;"><a href="ipsec-SedePrincipal.png" target="_blank" rel="noopener"><img src="ipsec-SedePrincipal.png" alt="" width="402" height="754" /></a></td>
+</tr>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><strong><span style="font-size: 12pt;">Configuración Peer</span></strong></td>
+<td style="width: 33.3333%; text-align: center;"><strong><span style="font-size: 12pt;">Configuración Identities</span></strong></td>
+<td style="width: 33.3333%; text-align: center;"><strong><span style="font-size: 12pt;">Configuración IPSec</span></strong></td>
+</tr>
+</tbody>
+</table>
+<h2>3. Configurar Firewall</h2>
+<p>Hay que acceder a la opción<strong> IP &gt; Firewall</strong>, pestaña <strong>NAT </strong>para añadir una regla para indicar que no se aplique el enmascaramiento entre las redes (router to router) con los siguientes campos:</p>
+<ul>
+<li><strong>Chain: </strong>srcnat.</li>
+<li><strong>Src. Address: </strong>192.168.11.0/24 (dirección de red del router de la sede Principal).</li>
+<li><strong>Dst. Address: </strong>192.168.10.0/24 (dirección de red del router de la sede 1).</li>
+<li><strong>Action</strong>: accept.</li>
+</ul>
+<p>El resto de opciones se dejan por defecto y se pulsa en Ok. Por último, la regla creada hay que subirla a la primera posición de la lista para que sea la primera que se evalúe</p>
+<p style="text-align: center;"><img src="reglas-Nat-SedeP.png" alt="" width="571" height="257" /></p>
+</div>
+<h4 style="text-align: justify;"><strong>3.3 Router Sede 1 Bastionado</strong></h4>
+<div class="exe-fx exe-tabs">
+<h2>1. QuicSet</h2>
+<p>Se configura la <strong>ip estática 192.168.1.1 </strong>para la interfaz WAN (ether1) dentro de la subred 192.168.1.0/24 LAN del router Router WAN/LAN (internet). Por otro lado, el gateway y DNS es la ip de la red LAN (ether2) del router WAN/LAN (internet). Respecto a la interfaz LAN (ether2), se configura la ip<strong> 192.168.10.1/24</strong>. Se configura el servidor DHCP y el NAT.</p>
+<p style="text-align: center;"><img src="QuickSet-Sede1.png" alt="" width="640" height="590" /></p>
+<h2>2. Configurar IPSec</h2>
+<p>Hay que acceder a la opción del menú<strong> Ip &gt; IPsec </strong>para añadir una nueva política. Las acciones a realizar son:</p>
+<p><strong>1. Acceder a la pestaña Peers.</strong> Hay que crear un nuevo Peer, es decir, indicar quién va a estar al otro lado del túnel. Los campos a configurar son:</p>
+<ul>
+<li><strong><span class=" changed">Name:</span></strong><span class=" changed"> peer-SedePrincipal (nombre identificativo del peer).</span></li>
+<li><strong>Address</strong>: 192.168.1.2 (dirección ip de la red WAN del router de la Sede Principal).</li>
+<li><span class=" changed"><strong>Comment: </strong>Peer Sede Principal.</span></li>
+</ul>
+<p>El resto de opciones se dejan por defecto.</p>
+<p><strong>2. Acceder a la pestaña Identities.</strong> Hay que crear una nueva Identity en la que hay que indicar el peer y Secret (cómo se va a realizar la autenticación). Los campos a configurar son:</p>
+<ul>
+<li><strong><span class=" changed">Enabled: </span></strong><span class=" changed"></span><span class=" changed"> Hay que chequearlo.</span><span class=" changed">.</span></li>
+<li><strong>Peer</strong>: peer-<span class=" changed">SedePrincipal</span>.</li>
+<li><span class=" changed"><strong>Secret</strong>: Establecer una cadena de texto compleja para el secreto compartido que permitirá la validación entre routers para el establecimiento del túnel.</span></li>
+<li><span class=" changed"><strong>Comment: </strong>Identities con Sede Principal.</span></li>
+</ul>
+<p>El resto de opciones se dejan por defecto.</p>
+<p><strong>3. Acceder a la pestaña Policies.</strong> Hay que añadir una nueva política donde los campos a configura son:</p>
+<ul>
+<li><strong><span class=" changed">Enabled:</span></strong><span class=" changed"> Hay que chequearlo.</span><span class=" changed">.</span></li>
+<li><strong><span class=" changed"><span class="">Peer: </span></span></strong><span class=" changed"><span class="">peer-SedePrincipal.</span></span></li>
+<li><strong><span class=" changed">Tunnel: </span></strong><span class=" changed">Hay que chequearlo.</span></li>
+<li><strong>Src. Address:</strong> 192.168.10.0/24. Indicar la dirección de red del router de la Sede 1.</li>
+<li><strong>Dst. Address</strong>:  192.168.11.0/24. Indicar la dirección de red del router al que se quiere enviar el tráfico (Sede Principal) por el túnel que se va a realizar con IPsec.</li>
+<li><strong>Action</strong>: encrypt.</li>
+<li><span class=" changed"><strong>Comment</strong>: IPSec Sede 1.</span></li>
+</ul>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><a href="ipsec-sede1.png" target="_blank" rel="noopener"><img src="ipsec-sede1.png" alt="" width="343" height="750" /></a></td>
+<td style="width: 33.3333%; text-align: center;"><a href="Identities-Sede1.png" target="_blank" rel="noopener"><img src="Identities-Sede1.png" alt="" width="461" height="449" /></a></td>
+<td style="width: 33.3333%; text-align: center;"><a href="ipsec-Sede1.png" target="_blank" rel="noopener"><img src="ipsec-Sede1.png" alt="" width="380" height="751" /></a></td>
+</tr>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><strong><span style="font-size: 12pt;">Configuración Peer</span></strong></td>
+<td style="width: 33.3333%; text-align: center;"><strong><span style="font-size: 12pt;">Configuración Identities</span></strong></td>
+<td style="width: 33.3333%; text-align: center;"><strong><span style="font-size: 12pt;">Configuración IPSec</span></strong></td>
+</tr>
+</tbody>
+</table>
+<h2>3. Configurar Firewall</h2>
+<p>Hay que acceder a la opción<strong> IP &gt; Firewall</strong>, pestaña <strong>NAT </strong>para añadir una regla para indicar que no se aplique el enmascaramiento entre las redes (router to router) con los siguientes campos:</p>
+<ul>
+<li><strong>Chain: </strong>srcnat.</li>
+<li><strong>Src. Address: </strong>192.168.10.0/24 (dirección de red del router de la sede 1).</li>
+<li><strong>Dst. Address: </strong>192.168.11.0/24 (dirección de red del router de la sede Principal).</li>
+<li><strong>Action</strong>: accept.</li>
+</ul>
+<p>El resto de opciones se dejan por defecto y se pulsa en Ok. Por último, la regla creada hay que subirla a la primera posición de la lista para que sea la primera que se evalúe.</p>
+<p style="text-align: center;"><img src="reglas-Nat-Sede1.png" alt="" width="598" height="267" /></p>
+</div>
+<h3 style="text-align: justify;">4. Comprobaciones</h3>
+<p>En este apartado se van a realizar una serie de operaciones para comprobar la VPN entre dos equipos conectados en las dos sedes.</p>
+<h4>4.1 Realizar ping router to router</h4>
+<p>En primer lugar se realiza un ping desde el router de la sede principal a la sede 1 pero a las direcciones privadas de los mismos. Los campos a completar son los siguientes:</p>
+<ul>
+<li><strong>Ping To</strong>:  192.168.10.1 (dirección ether2 de la Sede 1)</li>
+<li><strong>Src. Addess:</strong> 192.168.11.1 (dirección ether 2 de la Sede Principal, desde donde se hace el ping).</li>
+</ul>
+<p style="text-align: center;"><img src="ping-SedeP-to-Sede1.png" alt="" width="649" height="543" /></p>
+<p style="text-align: justify;">Ahora, se realiza la prueba al contrario, desde el router de la Sede 1 al router de la Sede Principal. Los campos a completar son los siguientes:</p>
+<ul>
+<li><strong>Ping To</strong>:  192.168.11.1 (dirección ether2 de la Sede Principal)</li>
+<li><strong>Src. Addess:</strong> 192.168.10.1 (dirección ether 2 de la Sede 1, desde donde se hace el ping).</li>
+</ul>
+<p style="text-align: center;"><img src="ping-Sede1-to-SedeP.png" alt="" width="545" height="633" /></p>
+<h4>4.2 Comprobar conectividad con los equipos entre sedes</h4>
+<p>Desde un equipo Ubuntu Desktop en la Sede 1, se realiza una serie pings a todas las interfaces de los routers y com ose puede observar, se contesta a las peticiones sin problemas.</p>
+<p style="text-align: center;"><img src="ping-PC-Sede1-A-Redes.png" alt="" width="685" height="593" /></p>
+<p style="text-align: justify;">Desde este mismo <strong>equipo Ubuntu Desktop en la Sede 1</strong>, se realiza una conexión ssh con el servidor HTTP (perseo) ubicado en la sede Principal. Como se puede observar en la figura inferior, se accede al servidor ubicado en la otra sede con capacidad de administración del mismo.</p>
+<p style="text-align: center;"><img src="ssh-servidorSedePrincipal.png" alt="" width="1917" height="980" /></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="12_tneles_protocolo_vpn_wireguard.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.8 Problemas y soluciones | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-125"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li id="active"><a href="318_problemas_y_soluciones.html" class="active no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.8 Problemas y soluciones</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id165">
+<div class="iDevice emphasis0" >
+<div id="ta165_165_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Panel Security</h3>
+<p>Si al acceder al panel de Security ya sea Overview, hosts, network, puede aparecer los siguientes errores:</p>
+<table style="height: 176px; width: 100%;" border="0">
+<tbody>
+<tr style="height: 151px;">
+<td style="width: 33.3333%; text-align: center; height: 151px;"><img src="failed-to-querey-events-dat.png" alt="" width="300" height="122" /></td>
+<td style="width: 33.3333%; text-align: center; height: 151px;"><img src="failed-alerts.png" alt="" width="303" height="123" /></td>
+<td style="width: 33.3333%; text-align: center; height: 151px;"><img src="failed-hosts.png" alt="" width="303" height="146" /></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 33.3333%; text-align: center; height: 25px;"><span style="font-size: 12pt;"><em><strong>Figura 1.</strong></em> <em>Error al obtener datos de eventos.</em></span></td>
+<td style="width: 33.3333%; text-align: center; height: 25px;"><span style="font-size: 12pt;"><em><strong>Figura 2.</strong></em> <em>Error al obtener datos de alertas.</em></span></td>
+<td style="width: 33.3333%; text-align: center; height: 25px;"><span style="font-size: 12pt;"><em><strong>Figura 3.</strong></em> <em>Error al obtener datos de hosts.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Si se accede al detalle del error (ejemplo del de eventos), aperece una descripicón del mismo donde se indica que en el índice que se está utilizando para obtener los datos, no se tiene asignado el campo <strong>fielddata</strong> a true de <strong>event.dataset</strong>. En este caso el índice que se ha seleccionado es <span style="font-size: 12pt;"><strong>auth-syslog-2022.03.2</strong></span>.</p>
+<p style="text-align: center;"><img src="descripcin-fallo-events-data.png" alt="" width="748" height="669" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Detalle del error.</em></p>
+<p style="text-align: justify;">La solución a este problema consiste en acceder a la <strong>consola del panel de herramientas de desarrollo</strong> y ejecutar (pulsar la flecha verde) el PUT siguiente para <strong>establecer el campo fielddata a true</strong>. Para acceder a la consola hay que ir a: <strong>Menú Management</strong> --&gt; <strong>Dev Tools.</strong></p>
+<p style="text-align: center;"><strong><img src="DEv-tools.png" alt="" width="229" height="88" /></strong></p>
+<pre><span style="font-size: 12pt;"><strong></strong>PUT <strong>auth-syslog-2022.03.21</strong>/_mapping<br />{<br />  "properties": {<br />    "event.module": { <br />      "type": "text",<br />      "fielddata": true<br />    }<br />  }<br />}</span></pre>
+<p style="text-align: justify;">Como se puede observar en la figura inferior, al ejcutar el PUT en la ventana derecha aparece acknowledged:true indicando que se ha realizado con éxito.</p>
+<p style="text-align: center;"><img src="event-module-fielddata-true.png" alt="" width="1282" height="330" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Consola de desarrollo.</em></p>
+<p style="text-align: justify;">Para el resto hay que hacer lo mismo, es decir, para resolver el problema de hosts en el PUT sería el siguiente donde se ha modificado event.module por host.name para este caso.<strong></strong><span style="font-size: 12pt;"><strong></strong></span><strong></strong></p>
+<pre><span style="font-size: 12pt;"><strong></strong>PUT <strong>auth-syslog-2022.03.21</strong>/_mapping<br />{<br />  "properties": {<br />    "<strong>host.name</strong>": { <br />      "type": "text",<br />      "fielddata": true<br />    }<br />  }<br />}</span></pre>
+<p style="text-align: center;"><img src="host-name-put-fileddata-true.png" alt="" width="1281" height="322" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong> Consola de desarrollo.</em></p>
+<p style="text-align: justify;">Si se accede al índice y una vez allí a <strong>Mappings</strong>, se puede observar que el campo fielddata está a true.</p>
+<p style="text-align: center;"><img src="fielddata-ssh-auth.png" alt="" width="477" height="457" /></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

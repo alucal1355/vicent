@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3. Introducción a los cortafuegos | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-49"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li id="active"><a href="3_introduccin_a_los_cortafuegos.html" class="active no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2_elementos_de_arquitectura_segura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_introduccin_a_la_dmz.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3. Introducción a los cortafuegos</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id81">
+<div class="iDevice emphasis0" >
+<div id="ta81_115_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">Una de las <strong>medidas a implementar en la red perimetral</strong> para proteger los equipos y servidores de la organización frente a algunas de las amenazas que llegan a los sistemas por medio de las redes de ordenadores, es el uso de <strong>cortafuegos</strong>. </p>
+<p style="text-align: justify;">El <strong>uso de cortafuegos</strong>, <strong>reduce el riesgo</strong> de robo de información y de que los equipos sean usados contra otros dispositivos de la red o de terceros.</p>
+<h3 style="text-align: justify;">2. Qué es un cortafuegos y para qué sirve</h3>
+<p style="text-align: justify;">Un cortafuegos (firewall en inglés), es un dispositivo hardware o software capaz de examinar y procesar el tráfico de red de acuerdo a unas especificaciones establecidas por el propio sistema operativo o por un usuario.</p>
+<p style="text-align: justify;">El cortafuegos reduce las posibilidades de éxito de muchos de los ataques que usan las redes de ordenadores para alcanzar su objetivo.</p>
+<h4 style="text-align: justify;">2.1 Cortafuegos tradicionales</h4>
+<table border="1" style="width: 100%; height: 65px;">
+<tbody>
+<tr style="height: 25px;">
+<td style="width: 31.0382%; background-color: #e3dcdc; height: 25px;"><strong><span style="font-size: 12pt;">Los cortafuegos controlan...</span></strong></td>
+<td style="width: 68.9618%; background-color: #e3dcdc; height: 25px;"><strong><span style="font-size: 12pt;">Ejemplos</span></strong></td>
+</tr>
+<tr style="height: 10px;">
+<td style="width: 31.0382%; height: 10px; text-align: justify;"><span style="font-size: 12pt;">Los accesos a determinados equipos y servicios.</span></td>
+<td style="width: 68.9618%; height: 10px;">
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"> Bloqueo de accesos al servicio Telnet de uno de los equipos. </span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">No permitir las conexiones SSH a equipos de fuera de la red. </span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Evitar que los equipos infectados por una botnet ataquen a otros servidores. </span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Acceso de los usuarios a servicios no apropiados.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="height: 10px;">
+<td style="width: 31.0382%; height: 10px; text-align: justify;"><span style="font-size: 12pt;">Los accesos desde determinados equipos y servicios.</span></td>
+<td style="width: 68.9618%; height: 10px;">
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Evitar accesos desde Internet a uno o varios equipos de la red. </span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Permitir el acceso SSH al servidor únicamente desde el equipo de trabajo del administrador.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="height: 10px;">
+<td style="width: 31.0382%; height: 10px; text-align: justify;"><span style="font-size: 12pt;">El uso fraudulento de flujos de paquetes modificados a nivel de aplicación.</span></td>
+<td style="width: 68.9618%; height: 10px; text-align: justify;">
+<ul>
+<li><span style="font-size: 12pt;">Rechazar paquetes que provienen de Internet que simulan pertenecer a una conexión iniciada dentro de la LAN de la organización.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Aunque se tenga un cortafuegos bien configurado aún se puede ser vulnerable tanto por amenazas que no usan la red, como por ataques a los equipos y servicios a los que el cortafuegos permite el acceso.</p>
+<table border="1" style="width: 100%; height: 176px;">
+<tbody>
+<tr style="height: 20px;">
+<td style="width: 31.4422%; height: 20px; text-align: justify; background-color: #ede8e8;"><strong><span style="font-size: 12pt;">Los cortafuegos no evitan... </span></strong></td>
+<td style="width: 68.5578%; height: 20px; text-align: justify; background-color: #ede8e8;"><strong><span style="font-size: 12pt;">Ejemplos</span></strong></td>
+</tr>
+<tr style="height: 20px; text-align: justify;">
+<td style="width: 31.4422%; height: 20px;"><span style="font-size: 12pt;">Ataques físicos.</span></td>
+<td style="width: 68.5578%; height: 20px;">
+<ul>
+<li><span style="font-size: 12pt;">Acceso físico a un ordenador para robar la información de los discos duros.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="height: 40px; text-align: justify;">
+<td style="width: 31.4422%; height: 40px;"><span style="font-size: 12pt;">Ataques al sistema de autenticación.</span></td>
+<td style="width: 68.5578%; height: 40px;">
+<ul>
+<li><span style="font-size: 12pt;">Uso remoto de credenciales robadas. </span></li>
+<li><span style="font-size: 12pt;">Ataques por diccionario.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="height: 20px; text-align: justify;">
+<td style="width: 31.4422%; height: 20px;"><span style="font-size: 12pt;">Uso de malware que explota vulnerabilidades de servicios o del sistema operativo.</span></td>
+<td style="width: 68.5578%; height: 20px;">
+<ul>
+<li><span style="font-size: 12pt;">Ataques por inyección SQL a las aplicaciones web. </span></li>
+<li><span style="font-size: 12pt;">Uso de exploits de vulnerabilidades del servidor web.</span></li>
+</ul>
+</td>
+</tr>
+<tr style="height: 76px;">
+<td style="width: 31.4422%; text-align: justify; height: 76px;"><span style="font-size: 12pt;">Infección por malware.</span></td>
+<td style="width: 68.5578%; text-align: justify; height: 76px;">
+<ul>
+<li><span style="font-size: 12pt;">Malware dentro de archivos que se reciben por correo.</span></li>
+<li><span style="font-size: 12pt;">Acceso a enlaces de correo basura que infectan un equipo.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Otra cuestión a tener en cuenta es que la configuración del cortafuegos <strong>no debe interferir</strong> en el <strong>correcto funcionamiento de las aplicaciones y comunicaciones legítimas</strong> del sistema informático. Por ejemplo, si se bloquea todo el acceso web al servidor, se evitarán ataques contra este servicio, pero también se impedirá que los usuarios de la web accedan al servidor.</p>
+<h3 style="text-align: justify;">3. Funcionamiento</h3>
+<h4>3.1 Políticas de configuración</h4>
+<p>Cuando se configura un cortafuegos se sigue una determinada política general a la que se van añadiendo excepciones.</p>
+<p>Se pueden utilizar 2 políticas: Política restrictiva y permisiva.</p>
+<p style="text-align: justify;"><strong>Política restrictiva. </strong>Se configura el dispositivo de forma que, por defecto, se deniega todo el tráfico. Como es lógico, se tendrá que cambiar la configuración para ir añadiendo las excepciones, es decir, el tráfico que se acepta.</p>
+<p style="text-align: justify;">Es la <strong>política indicada</strong> en entornos que necesitan <strong>máxima seguridad</strong>, pero también la más restrictiva para los usuarios, por lo que el administrador centrará su trabajo en averiguar cuáles son las necesidades de los usuarios para adaptar la configuración.</p>
+<p style="text-align: justify;">Por ejemplo, se aplicará esta política para el tráfico entrante, como el que llega a un router desde Internet.</p>
+<p style="text-align: justify;"><strong>Política permisiva. </strong>Se configura el dispositivo para que acepte todo el tráfico, luego, hay que centrarse en adaptar la configuración para incluir excepciones que limiten parte de él.</p>
+<p style="text-align: justify;">Debe <strong>usarse</strong> en <strong>entornos de confianza</strong> donde el <strong>riesgo no sea muy alto</strong>. En este caso, el administrador debe averiguar cuáles son las amenazas para intentar controlarlas, aunque es difícil anticiparse a ellas.</p>
+<p style="text-align: justify;">Por ejemplo, se aplicará esta política al tráfico saliente, como el que se genera en un equipo para acceder a un servidor remoto.</p>
+<h3 style="text-align: justify;">4. Tipos de cortafuegos</h3>
+<p style="text-align: justify;">No todos los cortafuegos tienen las mismas características, o se sitúan en el mismo lugar del sistema informático o lo protegen de las mismas amenazas.</p>
+<p style="text-align: justify;"><strong>1. Según su posición. </strong>Atendiendo a la posición que ocupan en el sistema informático, se pueden encontrar los siguientes tipos de cortafuegos:</p>
+<ul>
+<li style="text-align: justify;"><strong>Cortafuegos de equipo o personal. </strong>Controlan el tráfico de red cuyo origen o destino es el equipo donde se encuentra instalado. Su función principal es proteger el propio equipo de amenazas que llegan a través de la red, aunque también puede limitar los accesos que se efectúan desde este equipo a otros dispositivos de la LAN o de cualquier otra red. Se instalan tanto en equipos personales como en servidores.</li>
+<li style="text-align: justify;"><strong>Cortafuegos de red o perimetral. </strong>Este tipo de cortafuegos, además de controlar el tráfico entrante y saliente, también es capaz de filtrar el tráfico que pasa a través de él, es decir, aquel cuyo origen o destino no es el equipo donde está instalado. Pueden usarse en routers o dispositivos dedicados DMZ.</li>
+</ul>
+<p><strong>2. Según su generación. </strong>La mayoría de la documentación disponible clasifica los cortafuegos por generaciones, dependiendo de la información de los paquetes que comprueban para decidir el tratamiento que les van a dar.</p>
+<p style="text-align: justify;"><strong>1ª generación de cortafuegos: Filtrado de paquetes. </strong>Analizan el origen y el destino de una comunicación y filtran únicamente en función de estos parámetros. La información analizada incluye:</p>
+<ul>
+<li style="text-align: justify;">Direcciones IP de origen y destino.</li>
+<li style="text-align: justify;">Protocolo de comunicación (TCP, UDP, ICMP).</li>
+<li style="text-align: justify;">Puertos TCP/UDP de origen y destino.</li>
+<li style="text-align: justify;">Si incluyen características de firewall L7, pueden inspeccionar parte del contenido de los datagramas y controlar el protocolo de la capa de aplicación.</li>
+</ul>
+<p style="text-align: justify;"><strong>2ª generación de cortafuegos: Filtrado de paquetes con estado. </strong>Además de la información tenida en cuenta en los cortafuegos de primera generación, analizan el orden de un paquete dentro de una serie, por lo que pueden determinar si es un paquete es el inicio de una nueve conexión, si forma parte de un flujo TCP o conexión UDP ya o si es un paquete erróneo. Esto permite detectar paquetes maliciosos cuya información ha sido alterada para realizar ciertos ataques.</p>
+<p style="text-align: justify;"><strong>3ª generación de cortafuegos: Capa de aplicación.</strong> Además de las características que presentan los cortafuegos de filtrado de paquetes con estado, pueden entender la comunicación producida por ciertos protocolos de aplicación al inspeccionar el contenido de los paquetes y no solo sus cabeceras. Esto los hace más lentos y requieren de más recursos para su operativa. Incluyen características como:</p>
+<ul>
+<li style="text-align: justify;">Filtrado de contenidos.</li>
+<li style="text-align: justify;">Sistemas de prevención de intrusiones (IDS).</li>
+<li style="text-align: justify;">Gestión de identidad de usuario (IAM).</li>
+<li style="text-align: justify;">Cortafuego de aplicación web (WAF).</li>
+</ul>
+<p style="text-align: justify;"><strong>3. Según su implementación. </strong>Dependiendo de la implementación del cortafuegos, se pueden clasificar como:</p>
+<p style="text-align: justify;"><strong>1. Cortafuegos integrados en el router. </strong>En la mayoría de los casos se trata de cortafuegos de filtrado de paquetes con o sin estado y funcionalidad básica (inspeccionan únicamente las cabeceras), aunque en algunos casos pueden presentar algunas características de firewall L7 de forma limitada.</p>
+<p style="text-align: justify;"><strong>2. Cortafuegos dedicado (por software). </strong>Se trata de un equipo dedicado con funciones de cortafuegos similares a los integrados en el router. Normalmente, se trata de equipos GNU/Linux en los que se hace uso de aplicaciones que pueden ser añadidas o integradas en el núcleo, como iptables. Se les puede añadir características de firewall L7 que complemente el filtrado de las comunicaciones. Ayudan a que el rendimiento del router no se deteriore demasiado.</p>
+<p style="text-align: justify;"><strong>3. Dispositivo cortafuegos (firewall appliance). </strong>Un appliance es un dispositivo diseñado para realizar una tarea específica. En este sentido, un firewall appliance es un dispositivo, habitualmente hardware, diseñado para realizar el análisis y filtrado de todo el tráfico de red.<br />Algunos dispositivos se distribuyen como software libre que pueden instalados en equipos dedicados con arquitecturas i386 o ARM. Basados en FreeBSD podemos encontrar <strong>pfSense</strong> y <strong>OPNSense</strong>. Basados en Linux tenemos <strong>Smoothwall</strong>. Las empresas que proporcionan este software también comercializan dispositivos físicos ya preconfigurados.<br />Estos dispositivos cortafuegos entran en la <strong>categoría de gestor unificado de amenazas (UTM)</strong>, equipos con capacidad para gestionar todas las capas del modelo OSI. Al inspeccionar el contenido de la comunicación y no solo las cabeceras pueden averiguar qué ha sucedido en la red durante un periodo de tiempo, a qué aplicación corresponde un paquete, para que se usará, si incluye un ejecutable, si es un ataque de día cero (por ejemplo, simulando la ejecución del potencial riesgo en un entorno seguro y analizando su comportamiento), etc.</p>
+<h3 style="text-align: justify;">5. Router-Firewall vs Firewall</h3>
+<p style="text-align: justify;">Muchas veces, se pueden encontrar en las redes equipos de enrutamiento que hacen de cortafuegos, equipos cortafuegos que hacen de router y equipos puros que sólo realizan el trabajo de cortafuegos o enrutamiento.</p>
+<ul>
+<li style="text-align: justify;"><strong>Equipo router con reglas básicas de cortafuegos:</strong> Estos equipos están basados en el enrutamiento pero que tienen reglas básicas de cortafuegos.</li>
+<li style="text-align: justify;"><strong>Equipo cortafuegos con reglas básicas de enrutamiento:</strong> Estos equipos tienen reglas avanzadas de cortafuegos para filtrar tráfico de contenido, ancho de banda, protocolo, etcétera, con configuraciones básicas de enrutamiento.</li>
+<li style="text-align: justify;"><strong>Equipos puros:</strong> Son equipos ya sean enrutadores o cortafuegos que sólo realizan ese trabajo con configuraciones muy básicas de router o firewalls. Cuando se elige por equipos puros, en la red siempre existirá un router y un cortafuegos mínimo, nunca un equipo que haga de router y cortafuegos.</li>
+</ul>
+<p style="text-align: justify;">Saber cuando hay que implementar un equipo mixto o puro, dependerá del sistema a proteger y/o organización y también la inversión económica que se quiere realizar.</p>
+<h4 style="text-align: justify;">5.1 Conclusiones</h4>
+<p style="text-align: justify;"><strong>No es conveniente</strong> usar un <strong>router como firewall</strong> si se tienen muchos equipos a no ser que el equipo sea muy potente y tenga reglas de firewall avanzadas. Las posibles opciones que se tienen según el tamaño de la empresa y presupuesto para la implementación de un firewall serían las siguientes:</p>
+<ol>
+<li style="text-align: justify;"><strong>Pequeña y Mediana empresa (presupuesto bajo):</strong><span> </span>Equipo con PfSense instalado. PfSense es una distribución personalizada de freeBSD adaptado para su suso como firewall y router. Tiene soporte para empresas con coste económico.</li>
+<li style="text-align: justify;"><strong>Gran empresa:</strong><span> </span>Firewall privativa, ejemplos: Fortinet o Cisco ASA (uno de los firewalls más utilizado en entornos empresariales en el mundo). (<a href="http://www.nsit.com.co/fortinet-vs-cisco-cual-es-la-mejor-opcion">www.nsit.com.co/fortinet-vs-cisco-cual-es-la-mejor-opcion</a>)</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2_elementos_de_arquitectura_segura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_introduccin_a_la_dmz.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

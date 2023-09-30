@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1. Esquema de Instalación | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-82"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul class="other-section">
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li><a href="2_vpn_de_acceso_remoto.html" class="daddy">2. VPN de acceso remoto</a>
+   <ul class="other-section">
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li><a href="22_wireguard.html" class="daddy">2.2 WireGuard</a>
+      <ul class="other-section">
+         <li><a href="221_instalacin_y_configuracin_de_wireguard.html" class="daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul class="other-section">
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_gestin_de_accesos_sistemas_nac.html" class="current-page-parent daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul>
+      <li class="current-page-parent"><a href="laboratorio_1_servidor_radius_vpn.html" class="current-page-parent daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul>
+         <li id="active"><a href="1_esquema_de_instalacin.html" class="active no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_1_servidor_radius_vpn.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1. Esquema de Instalación</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id113">
+<div class="iDevice emphasis0" >
+<div id="ta113_113_2" class="block iDevice_content">
+<div class="exe-text"><h3><span>1. Tabla de equipos</span></h3>
+<p style="text-align: justify;">En la siguiente tabla, se detalla las configuraciones a realizar en cada uno de los equipos que intervienen.​</p>
+<table border="1" style="margin-left: auto; margin-right: auto; height: 707px; width: 856px;">
+<tbody>
+<tr style="height: 25px;">
+<td style="height: 25px; width: 166.391px;"></td>
+<td style="text-align: center; height: 25px; width: 210.5px;"><span style="font-size: 12pt;"><strong>Servidor RADIUS</strong></span></td>
+<td style="text-align: center; height: 25px; width: 235.562px;"><span style="font-size: 12pt;"><strong>Cliente RADIUS</strong></span></td>
+<td style="text-align: center; height: 25px; width: 215.547px;"><span style="font-size: 12pt;"><strong>Cliente</strong></span></td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 25px; width: 166.391px;"><span style="font-size: 12pt;"><strong>Sistema Operativo</strong></span></td>
+<td style="height: 25px; width: 210.5px;"><span style="font-size: 12pt;">Windows Server 2019 DataCenter</span></td>
+<td style="height: 25px; width: 235.562px;"><span style="font-size: 12pt;">Windows Server 2019 DataCenter</span></td>
+<td style="height: 25px; width: 215.547px;"><span style="font-size: 12pt;">Windows 10 Enterprise</span></td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 25px; width: 166.391px;"><span style="font-size: 12pt;"><strong>Nombre del equipo</strong></span></td>
+<td style="height: 25px; width: 210.5px;"><span style="font-size: 12pt;">srv-radius</span></td>
+<td style="height: 25px; width: 235.562px;"><span style="font-size: 12pt;">cli-radius</span></td>
+<td style="height: 25px; width: 215.547px;"><span style="font-size: 12pt;">User_Radius</span></td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 25px; width: 166.391px;"><span style="font-size: 12pt;"><strong>Adaptador de Red 1</strong></span></td>
+<td style="height: 25px; width: 210.5px;"><span style="font-size: 12pt;">Solo-Anfitrión</span></td>
+<td style="height: 25px; width: 235.562px;"><span style="font-size: 12pt;">Solo-Anfitrión - Red interna</span></td>
+<td style="height: 25px; width: 215.547px;"></td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 25px; width: 166.391px;"><span style="font-size: 12pt;"><strong>Adaptador de Red 2</strong></span></td>
+<td style="height: 25px; width: 210.5px;"></td>
+<td style="height: 25px; width: 235.562px;"><span style="font-size: 12pt;">Red_NAT - Red Externa</span></td>
+<td style="height: 25px; width: 215.547px;"><span style="font-size: 12pt;">Red_NAT</span></td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 25px; width: 166.391px;"><span style="font-size: 12pt;"><strong>TCP/IP Adaptador de Red 1</strong></span></td>
+<td style="height: 25px; width: 210.5px;">
+<p><span style="font-size: 12pt;">IP: 192.168.11.254</span></p>
+<p><span style="font-size: 12pt;">mask: 255.255.255.0</span></p>
+<p><span style="font-size: 12pt;">DNS principal: 127.0.0.1</span></p>
+<p><span style="font-size: 12pt;">DNS secundario: -</span></p>
+<p><span style="font-size: 12pt;">Gateway: 192.168.11.253</span></p>
+</td>
+<td style="height: 25px; width: 235.562px;">
+<p><span style="font-size: 12pt;"><strong>Interfaz</strong>: Interna</span></p>
+<p><span style="font-size: 12pt;">IP: 192.168.11.253</span></p>
+<p><span style="font-size: 12pt;">mask: 255.255.255.0</span></p>
+<p><span style="font-size: 12pt;">DNS principal: 192.168.11.254</span></p>
+<p><span style="font-size: 12pt;">DNS secundario: -</span></p>
+</td>
+<td style="height: 25px; width: 215.547px;">
+<p><span style="font-size: 12pt;">IP: dinámica (172.10.0.5)</span></p>
+<p><span style="font-size: 12pt;">DNS principal: dinámica</span></p>
+<p><span style="font-size: 12pt;">Gateway: Dinámica</span></p>
+</td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 25px; width: 166.391px;"><span style="font-size: 12pt;"><strong>TCP/IP Adaptador de Red 2 - Externa</strong></span></td>
+<td style="height: 25px; width: 210.5px;">
+<p style="text-align: center;"><strong><span style="font-size: 12pt;">-</span></strong></p>
+</td>
+<td style="height: 25px; width: 235.562px;">
+<p><span style="font-size: 12pt;"><strong>Interfaz</strong>: Externa</span></p>
+<p><span style="font-size: 12pt;">IP: Dinámica (172.10.0.4)</span></p>
+<p><span style="font-size: 12pt;">DNS principal: Dinámico </span></p>
+<p><span style="font-size: 12pt;">Gateway: Dinámico (172.10.0.1)</span></p>
+</td>
+<td style="height: 25px; width: 215.547px; text-align: center;"><span style="font-size: 12pt;"><strong>-</strong></span></td>
+</tr>
+<tr style="height: 25px;">
+<td style="height: 25px; width: 166.391px;"><span style="font-size: 12pt;"><strong>Dominio</strong></span></td>
+<td style="height: 25px; width: 210.5px;"><span style="font-size: 12pt;">DC dominio.local</span></td>
+<td style="height: 25px; width: 235.562px;"><span style="font-size: 12pt;">Integrado en dominio.local</span></td>
+<td style="height: 25px; width: 215.547px;"></td>
+</tr>
+<tr style="height: 138px;">
+<td style="height: 138px; width: 166.391px;"><span style="font-size: 12pt;"><strong>Roles y Características</strong></span></td>
+<td style="height: 138px; width: 210.5px;">
+<p><span style="font-size: 12pt;">Servicios de Dominio de AD</span></p>
+<p><span style="font-size: 12pt;">DNS</span></p>
+<p><span style="font-size: 12pt;">DHCP</span></p>
+<p><span style="font-size: 12pt;">NPS</span></p>
+</td>
+<td style="height: 138px; width: 235.562px;"><span style="font-size: 12pt;">Enrutamiento y acceso remoto</span></td>
+<td style="height: 138px; width: 215.547px;"></td>
+</tr>
+<tr style="height: 73px;">
+<td style="height: 73px; width: 166.391px;"><span style="font-size: 12pt;"><strong>Usuarios</strong></span></td>
+<td style="height: 73px; width: 210.5px;">
+<p><span style="font-size: 12pt;">cuenta: radiustest</span></p>
+<p><span style="font-size: 12pt;">password: password123456.</span></p>
+</td>
+<td style="height: 73px; width: 235.562px;"></td>
+<td style="height: 73px; width: 215.547px;"></td>
+</tr>
+<tr style="height: 73px;">
+<td style="height: 73px; width: 166.391px;"><span style="font-size: 12pt;"><strong>Grupos</strong></span></td>
+<td style="height: 73px; width: 210.5px;">
+<p><span style="font-size: 12pt;">radius: Seguridad y Global</span></p>
+<p><span style="font-size: 12pt;">Miembros: radiustest</span></p>
+</td>
+<td style="height: 73px; width: 235.562px;"></td>
+<td style="height: 73px; width: 215.547px;"></td>
+</tr>
+<tr style="height: 73px;">
+<td style="height: 73px; width: 166.391px;">
+<p><span style="font-size: 12pt;"><strong>Secreto compartido</strong></span></p>
+<p><span style="font-size: 12pt;"><strong>con cliente RADIUS</strong></span></p>
+</td>
+<td style="height: 73px; width: 210.5px;">
+<p><span style="font-size: 12pt;">eeepc20</span></p>
+</td>
+<td style="height: 73px; width: 235.562px;"></td>
+<td style="height: 73px; width: 215.547px;"></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><em><strong>Tabla 1.</strong><span> </span>Datos de los equipos que intervienen.</em></p>
+<p></p>
+<p style="text-align: center;"><img src="confRadius-WServer2019-1.png" alt="" width="621" height="230" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong>  Esquema de la red.</em></p>
+<h3><span>2. Configuraciones de red en Virtual Box</span></h3>
+<p style="text-align: justify;"><span>En el Cliente Radius y servidor VPN, se configuran 2 adaptadores de red, y que son:</span></p>
+<ul style="text-align: justify;">
+<li><strong>Red_interna:</strong><span> </span>Para la red interna (privada) de la organización.</li>
+<li><strong>Red_nat:</strong><span> </span>Para la red externa (pública) acceso a internet.</li>
+</ul>
+<p style="text-align: justify;"><span>Para los equipos que se conectan a la red externa (internet) se crea una red nat con direccionamiento de red público:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">#vboxmanage natnetwork add --netname red-nat-2 --network 172.10.0.0/24</span></pre>
+<p style="text-align: justify;"><span>Los adaptadores de red del Cliente Radius y servidor VPN son los siguientes:</span></p>
+<p><img src="adaptador2Red-CliRadius-ServVPN.png" alt="" width="853" height="566" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><strong>Figura 2. </strong> Adaptador con red nat.</em></p>
+<p><img src="adaptador1Red-CliRadius-ServVPN.png" alt="" width="854" height="565" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><strong><em>Figura 3</em>.</strong><span> </span><em>Adaptador con red interna.</em></p>
+<p style="text-align: justify;"><span>El adaptador de red del Servidor Radius es el siguiente:</span></p>
+<p><img src="adaptadorRed-ServRadius.png" alt="" width="854" height="566" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><strong><em>Figura 4</em></strong>.<span> </span><em>Adaptador con red interna.</em></p>
+<p style="text-align: justify;">Por último, <span>el adaptador de red del Cliente VPN con autenticación Radius Windows 10 es el siguiente:</span></p>
+<p><em><img src="AdaptadorRed-W10.png" alt="" width="853" height="566" style="display: block; margin-left: auto; margin-right: auto;" /></em></p>
+<p style="text-align: center;"><em>Figura 5. Adaptador con red interna.</em></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_1_servidor_radius_vpn.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

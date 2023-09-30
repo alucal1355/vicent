@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.4.2 Reducción del número de servicios | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-46"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li class="current-page-parent"><a href="2_hardening.html" class="current-page-parent daddy">2. Hardening</a>
+   <ul>
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li class="current-page-parent"><a href="24_hardening_windows.html" class="current-page-parent daddy">2.4 Hardening Windows</a>
+      <ul>
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li id="active"><a href="242_reduccin_del_nmero_de_servicios.html" class="active daddy">2.4.2 Reducción del número de servicios</a>
+         <ul>
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="daddy">3. Securización de los sistemas de administración remota</a>
+   <ul class="other-section">
+      <li><a href="31_secureshell.html" class="daddy">3.1 SecureShell</a>
+      <ul class="other-section">
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul class="other-section">
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_1_process_hacker.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.4.2 Reducción del número de servicios</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id81">
+<div class="iDevice emphasis0" >
+<div id="ta81_109_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;">Los equipos clientes Windows disponen, por defecto, de varios <strong>puertos</strong> abiertos para permitir escuchar a los <strong>servicios</strong> que están activos.</p>
+<p style="text-align: justify;">Muchos de estos servicios no interesa que estén funcionando, ya que si no son necesarios pueden suponer una fuga de información e incluso puertas para que un atacante acceda a nuestro equipo. Por lo que la principal preocupación en la configuración de los sistemas informáticos debe ser la '<em><strong><span>Reducción de la superficie de ataque, empezando por la reducción de servicios'.</span></strong></em></p>
+<h3 style="text-align: justify;"><strong>2. Servicios</strong></h3>
+<p>Los servicios más conocidos son los siguientes:</p>
+<ul>
+<li style="text-align: justify;"><strong><span style="color: #333300;">23 (TCP).</span> </strong>Puerto Telnet. Es utilizado para comunicación entre sistemas, anterior a SSH, en versiones anteriores a Windows 10 se encontraba activado por defecto. </li>
+<li style="text-align: justify;"><strong style="color: #333333; font-size: 1em;">139 (TCP). </strong><span style="color: #333333; font-size: 1em;">Puerto NETBIOS. Este puerto permite a los equipos de la red local comunicarse entre sí e identificarse mediante los nombres NETBIOS. </span></li>
+<li style="text-align: justify;"><strong style="color: #333333; font-size: 1em;">445 (TCP). </strong><span style="color: #333333; font-size: 1em;">Puerto SMB. Permite compartir información entre equipos. Al compartir una carpeta en la red se realizará sobre este puerto.</span></li>
+<li style="text-align: justify;"><strong style="color: #333333; font-size: 1em;">995 (TCP).</strong><span style="color: #333333; font-size: 1em;"> Puerto POP3. Si disponemos de un cliente de correo en nuestro equipo, es probable que lo tengamos configurado con POP3 y, por lo tanto, tengamos este puerto abierto en nuestro equipo.</span></li>
+<li style="text-align: justify;"><strong style="color: #333333; font-size: 1em;">5357 (TCP).</strong><span style="color: #333333; font-size: 1em;"> Puerto HTTPAPI de Microsoft. Este puerto se activa al permitir ser encontrado por otros equipos, por ejemplo cuando nos conectamos por primera vez a una nueva red o en caso de marcar la red como de</span><span style="color: #333333; font-size: 1em;"> </span><strong style="color: #333333; font-size: 1em;">Trabajo</strong><span style="color: #333333; font-size: 1em;"> </span><span style="color: #333333; font-size: 1em;">u</span><span style="color: #333333; font-size: 1em;"> </span><strong style="color: #333333; font-size: 1em;">Hogar</strong><span style="color: #333333; font-size: 1em;">. </span></li>
+<li style="text-align: justify;"><strong style="color: #333333; font-size: 1em;">3389 (TCP).</strong><span style="color: #333333; font-size: 1em;"> Puerto</span><span style="color: #333333; font-size: 1em;"> </span><strong><a href="https://es.wikipedia.org/wiki/Remote_Desktop_Protocol" id="link237c5619-0063-ca17-4a6f-320aac64137b" class="exe-tooltip definition-tt titled-tt" data-hasqtip="0" oldtitle="RDP | " style="font-size: 1em;" target="_blank" rel="noopener">RDP</a></strong><span style="color: #333333; font-size: 1em;">. Es el puerto por defecto que permite a un usuario externo acceder de forma remota al equipo pudiendo controlarlo gráficamente desde otro equipo.</span></li>
+</ul>
+<h3>3. Consultar los servicios</h3>
+<p style="text-align: justify;">Para listar todos los servicios, se tiene la herramienta gráfica <strong>services.msc</strong>, pero también, se puede hacer uso de la consola powershell. El Cmdlet que permite listar los servicios es<strong> </strong><span><strong>Get-Service</strong> cuyo alias es <strong>gsv</strong> y donde su salida indica el estado del servicio, su nombre y descripción.</span></p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\&gt; </strong>Get-Service</span></pre>
+<p style="text-align: center;"><img src="get-service.png" alt="" width="575" height="479" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Ejecución del Cmdlet Get-service.</em></p>
+<p>El CmdLet <strong>Get-service</strong> acepta los siguientes parámetros con sus respectivos alias:</p>
+<ul>
+<li>Name {ServiceName}</li>
+<li>ComputerName {Cn}</li>
+<li>DependentServices {DS}</li>
+<li>RequiredServices {SDO, ServicesDependedOn}</li>
+<li>DisplayName {}</li>
+<li>Include {}</li>
+<li>Exclude {}</li>
+<li>InputObject {}</li>
+<li>Verbose {vb}</li>
+<li>Debug {db}</li>
+<li>ErrorAction {ea}</li>
+<li>WarningAction {wa}</li>
+<li>InformationAction {infa}</li>
+<li>ErrorVariable {ev}</li>
+<li>WarningVariable {wv}</li>
+<li>InformationVariable {iv}</li>
+<li>OutVariable {ov}</li>
+<li>OutBuffer {ob}</li>
+<li>PipelineVariable {pv}</li>
+</ul>
+<p>Como ejemplo práctico de uso del comando, si se desean ver los servicios que dependen de otros, la construcción del comando es la siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\&gt; </strong>Get-Service | select Name,ServicesDependedOn</span></pre>
+<p style="text-align: center;"><img src="services-depend.png" alt="" width="622" height="540" /><br /><em><strong>Figura 2.</strong> Listar las dependencias de los servicios</em></p>
+<p><span>Otra forma de acceder a información de los servicios es con <strong>WMI</strong></span></p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\&gt; </strong>Get-WmiObject -Class Win32_Service</span></pre>
+<p style="text-align: center;"><span><img src="wmi-win32-service.png" alt="" width="360" height="460" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 3.</strong> Salida con la información de los servicios del sistema.</em></span></p>
+<p style="text-align: justify;"><span>Como ejemplo, si se quiere consultar los servicios que están en ejecución '<strong>Running'</strong>, el comando es el siguiente:</span></p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\&gt; </strong>Get-WmiObject -Class Win32_Service | Where-Object State -EQ 'Running'</span></pre>
+<p style="text-align: center;"><span><img src="listado-servicios-running.png" alt="" width="621" height="539" /><br /></span><span><em><strong>Figura 4.</strong> Consulta de los servicios en ejecución.</em></span></p>
+<h3>4. Bloquear puertos NetBIOS y SMB</h3>
+<p style="text-align: justify;"><span><strong>NetBios</strong> (<em>Network Basic Input Output System) </em>es un protocolo que permite que los equipos de una red se comuniquen entre sí y compartan impresoras y archivos. El problema radica en que Windows habilita NetBios automáticamente para todos y cada uno de los adaptadores de red que se tengan en el equipo (incluido el adaptador que permite acceder a internet). Por lo que tener habilitado NetBIOS sin tomar precauciones es un enorme riesgo de seguridad.</span></p>
+<p style="text-align: justify;"><span>Para evitar el peligro, se pueden hacer tres cosas:</span></p>
+<ul>
+<li style="text-align: justify;"><span>Deshabilitar NetBIOS.</span></li>
+<li style="text-align: justify;"><span>Dejar habilitado NetBIOS y evitar las comunicaciones por sus puertos con Internet a través del firewall.</span></li>
+<li style="text-align: justify;"><span>Deshabilitar NetBIOS y evitar las comunicaciones por sus puertos con Internet a través del firewall.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-size: 1em;">Por otro lado, la razón de bloquear el puerto </span><strong style="font-size: 1em;">SMB</strong><span style="font-size: 1em;"> se debe a </span><span style="font-size: 1em;">que es poco probable que cualquier comunicación <strong>SMB</strong> procedente de Internet o destinada a Internet sea legítima. Uno de los usos principales de <strong>SMB</strong> puede ser para un servidor o servicio basado en la nube, como Azure Files. Para este caso, habría que crear restricciones basadas en direcciones IP en el firewall perimetral para permitir solo esos puntos de conexión específicos. </span><span></span><span></span></p>
+<p style="text-align: center;"><span style="font-size: 1em;"><img src="SMB-Port-445-139.jpg" alt="" width="230" height="162" /></span></p>
+<p style="text-align: justify;"><span></span></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span>El uso de NetBIOS para el transporte SMB terminó en Windows Vista, Windows Server 2008 y en todos los sistemas operativos de Microsoft posteriores cuando Microsoft introdujo SMB 2.02. <strong><a href="https://support.microsoft.com/es-es/topic/impedir-que-el-tr%C3%A1fico-smb-se-conexiones-laterales-e-introduzca-o-abandone-la-red-c0541db7-2244-0dce-18fd-14a3ddeb282a" target="_blank" rel="noopener">Fuente</a>.</strong></span></p>
+</div>
+<p style="text-align: justify;">A continuación, se describe cómo deshabilitar el uso de los puertos <strong>139 (NetBIOS)</strong> y <strong>445 (SMB)</strong>, para ello, hay que acceder a la ventana de Ejecutar mediante<span> la combinación de teclas </span><strong>Windows + R<span> </span></strong>y a continuación, hay que escribir en la caja de texto<span> </span><strong>regedit:</strong></p>
+<p style="text-align: center;"><strong><img src="regedit.png" alt="" width="394" height="199" /><br /></strong></p>
+<p style="text-align: center;"><em><strong>Figura 5. </strong>Acceso al regedit.</em></p>
+<p style="text-align: justify;"><span>Con esto, se accede al </span><strong>Editor de Registro</strong><span> del equipo.</span></p>
+<p style="text-align: center;"><span><img src="regedit-02.png" alt="" width="644" height="415" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 6. </strong>Regedit.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">Una vez dentro, hay que buscar la siguiente ruta:</span><br /><span></span></p>
+<pre><span style="font-size: 12pt;"><strong>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NetBT\Parameters</strong></span></pre>
+<p style="text-align: center;"><strong><img src="netbt-parameters.png" alt="" width="766" height="414" /></strong></p>
+<p style="text-align: center;"><strong><span><em>Figura 7.</em></span></strong><em> </em><em>Acceso a </em><em><span style="font-size: 12pt;">Services\NetBT\Parameters</span></em><strong><span><em>.</em></span></strong></p>
+<p>A continuación, hay que editar la cadena con nombre <strong>TransportBindName</strong> a <strong>TransportBindName_</strong></p>
+<p style="text-align: center;"><img src="cambiar-param-TransportBindName.png" alt="" width="804" height="452" /></p>
+<p style="text-align: center;"><strong><span><em>Figura 8.</em></span></strong><em> </em><em>Modificación de la entrada <strong>TransportBindName.</strong></em></p>
+<p style="text-align: justify;"><span>Con este cambio de nombre lo que se consigue es mantener la entrada en el Registro de Windows pero ya no es una instrucción reconocida.</span></p>
+<p style="text-align: center;"><span><img src="transportbindname_.png" alt="" width="411" height="45" /></span></p>
+<p style="text-align: justify;">Una vez cambiado este parámetro, hay reiniciar el equipo para que se consoliden los cambios. Una vez se inicia sesión, hay que deshabilitar el servicio, para ello, hay que acceder a siguiente ruta para detener el servicio.</p>
+<p><strong>Panel de control &gt; Herramientas Administrativas &gt; Servicios &gt; Aplicación auxiliar de NetBIOS sobre TCP/IP.</strong></p>
+<p style="text-align: center;"><strong><img src="detener-servicio.png" alt="" width="1054" height="587" /></strong></p>
+<p style="text-align: center;"><strong><span><em>Figura 9.</em></span></strong><em> </em><em>Detener el servicio Aplicación auxiliar de NetBIOS sobre TCP/IP.</em></p>
+<p style="text-align: justify;"><span>Para que esta configuración sea permanente hay que ir a las propiedades del servicio y seleccionar "<strong>Deshabilitado</strong>" en la opción "<strong>Tipo de inicio"</strong> y aplicar los cambios.</span></p>
+<p style="text-align: center;"><span><img src="deshabilitar-servicio.png" alt="" width="400" height="484" /></span></p>
+<p style="text-align: center;"><span><strong><em>Figura 10.</em></strong><em> </em><em>Deshabilitar el servicio Aplicación auxiliar de NetBIOS sobre TCP/IP.</em></span></p>
+<h3>5. Desactivar puerto 5357</h3>
+<p style="text-align: justify;">El puerto <strong>5357</strong> de <strong>descubrimiento de red</strong><span> es vulnerable a problemas de fuga de información, lo que le permite acceder de forma remota por autores maliciosos.</span></p>
+<p style="text-align: justify;">Para deshabilitar el puerto, hay que acceder a la siguiente ruta:</p>
+<p style="text-align: justify;"><strong>Panel de control -&gt; Redes e Internet-&gt; Centro de redes y recursos compartidos-&gt; Cambiar configuración de uso compartido avanzado</strong> y se <strong>desactiva la detección de redes</strong>. Para finalizar, hay que pulsar '<strong>Guardar cambios</strong>'<strong><span>.</span></strong></p>
+<p style="text-align: center;"><strong><img src="configuracion-uso-compartido-avanzado.png" alt="" width="929" height="591" /></strong></p>
+<p style="text-align: center;"><span><strong><em>Figura 11.</em></strong><em> </em><em>Desactivar la detección de redes en el Dominio.</em></span></p>
+<h3>6. Cambiar puerto RDP</h3>
+<p style="text-align: justify;"><span>Actualmente, es frecuente necesitar conectarse a la oficina para teletrabajar y terminar informes, ficheros de código, etcétera, pendientes. Tan solo hay que escribir en la terminal </span><strong>mstsc.exe</strong><span> y añadir la IP pública de la oficina para acceder al equipo de la empresa y con las  credenciales seguras, se inicia sesión para comenzar a trabajar. </span></p>
+<p style="text-align: justify;"><span>Los servicios de <strong>Escritorio Remoto</strong> han sido desarrollados para realizar muy bien esta misión, pero no están exentos de problemas y efectos colaterales que hay que conocer.</span></p>
+<p style="text-align: justify;"><span>A fecha de escribir este apartado (23/12/2022), existen aproximadamente 25 vulnerabilidades conocidas sobre esta aplicación. La última es la conocida como <a href="https://www.incibe-cert.es/alerta-temprana/vulnerabilidades/cve-2019-0708" target="_blank" rel="noopener"><strong>BlueKeep</strong>(CVE-2019-0708)</a>. Tan solo ejecutando un pequeño programa en Python el atacante puede acceder a un equipo sin actualizar y tener una línea de comandos (SHELL) a su disposición.</span></p>
+<p style="text-align: center;"><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-0708" target="_blank" rel="noopener"><span><img src="CVE-2019-0708.png" alt="" width="1243" height="723" /></span></a></p>
+<p style="text-align: justify;"><span>Como ejemplo práctico,  decir que atacantes han utilizado alguna de estas vulnerabilidades para entrar en los sistemas del cliente, ejecutar un <strong>Cryptolocker</strong> (software malicioso que cifra todos los archivos y solicita un rescate). Sin la contraseña de descifrado, NO se podrá recuperar los datos. Como consecuencia, <strong>el impacto en una empresa puede ser muy alto</strong> (tiendas que no pueden vender sus productos, pérdida de datos de contabilidad y facturación o fuga de información critica de la empresa).</span></p>
+<p style="text-align: justify;"><span>Para comprobar la </span>criticidad, si se escribe en Google ‘<strong>2019-cve-0708 exploit github</strong>‘, saldrán cientos de artículos y enlaces al código fuente de muchas herramientas que aprovechan este fallo de seguridad.<span> </span></p>
+<p style="text-align: center;"><img src="2019-cve-0708-_exploit-github.png" alt="" width="860" height="812" /></p>
+<p style="text-align: justify;"><span>Para <strong>mitigar esta vulnerabilidad</strong>, e</span>n este caso no se va a bloquear el puerto, simplemente se va a cambiarlo a otro para <strong><em>evitar su enumeración</em></strong> por parte de un atacante.</p>
+<p style="text-align: justify;">Si se hace un escaneo de puertos (<strong>nmap</strong>) sobre un equipo concreto, ejemplo: equipo Windows 10 Enterprise con ip 192.168.191.55, se puede observar que el puerto<span> </span><strong>3389/tcp</strong><span> </span>está abierto (WBT - Windows Based Terminal).</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong> nmap -T4 -F -Pn 192.168.191.55</span></pre>
+<p style="text-align: center;"><img src="nmap-ip-W10.png" alt="" width="748" height="378" /></p>
+<p style="text-align: center;"><span><strong><em>Figura 12.</em></strong><em> </em><em>Escaneo con nmap sobre un equipo Windows 10 cliente del dominio ciber.local.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, se va a reconfigurar el número de puerto, para ello, hay que acceder al <strong>regedit </strong>para acceder a la ruta siguiente y modificar la entrada <strong>PortNumber.</strong></span></p>
+<p style="text-align: justify;"><strong>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp</strong></p>
+<p style="text-align: center;"><strong><img src="regedit-rdp.png" alt="" width="883" height="485" /></strong></p>
+<p style="text-align: center;"><strong><span><em>Figura 13. </em></span></strong><em>Modificar entrada en el registro.</em></p>
+<p style="text-align: justify;">Como ejemplo, se le establece una nueva numeración de puerto en concreto, el <strong>5151</strong>. Para consolidar el cambio hay que reiniciar el equipo.</p>
+<p style="text-align: center;"><img src="new-portnumber.png" alt="" width="315" height="192" /></p>
+<p style="text-align: center;"><strong><span><em>Figura 14. </em></span></strong><em>Nueva numeración del puerto.</em></p>
+<p style="text-align: justify;">A partir de este momento, si <span>alguien quiere conectarse por RDP al equipo deberá especificar el puerto que se ha definido para poder acceder.</span></p>
+<p style="text-align: justify;"><span>Si se realiza de nuevo un escaneo de puertos en el equipo, el resultado es el que se puede observar en la imagen inferior donde ya no se encuentra el puerto <strong>3389/tcp</strong> dado que se ha renombrado a uno no conocido (5151).</span></p>
+<p style="text-align: center;"><span><img src="nmap-new-portnumber.png" alt="" width="617" height="283" /></span></p>
+<p style="text-align: center;"><span><strong><em>Figura 15. </em></strong><em>Escaneo con nmap sobre un equipo Windows 10 cliente del dominio ciber.local.</em></span></p>
+<h3 style="text-align: justify;"><span>7. Referencias</span></h3>
+<ul>
+<li style="text-align: justify;"><a href="https://www.pchardwarepro.com/que-es-un-puerto-smb-para-que-se-utilizan-los-puertos-445-y-139/" target="_blank" rel="noopener">[Puerto smb]</a></li>
+<li style="text-align: justify;">
+<p><a href="https://www.ccn-cert.cni.es/pdf/guias/series-ccn-stic/guias-de-acceso-publico-ccn-stic/3088-ccn-stic-599b18-seguridad-en-windows-10-enterprise-ltsb-cliente-independiente-anexo-a/file.html" target="_blank" rel="noopener">[Implementación de seguridad sobre microsoft windows 10 - CCN-STIC 599B18]</a></p>
+</li>
+<li style="text-align: justify;"><a href="https://www.cloudcenterandalucia.es/blog/grave-vulnerabilidad-de-escritorio-remoto-rdp/" target="_blank" rel="noopener">[Grave vulnerabilidad de RDP]</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_1_process_hacker.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

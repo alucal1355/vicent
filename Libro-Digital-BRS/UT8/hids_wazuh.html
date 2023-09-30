@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>HIDS Wazuh | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-134"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="current-page-parent daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul>
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li class="current-page-parent"><a href="22_hidsnids.html" class="current-page-parent daddy">2.2 HIDS/NIDS</a>
+      <ul>
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li class="current-page-parent"><a href="laboratorio_1_suricata_en_pfsense.html" class="current-page-parent daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul>
+            <li id="active"><a href="hids_wazuh.html" class="active no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul class="other-section">
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_1_suricata_en_pfsense.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="graylog.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">HIDS Wazuh</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id178">
+<div class="iDevice emphasis0" >
+<div id="ta178_178_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Instalación del HIDS Wazuh</h3>
+<h4>1.1 Instalar Wazuh</h4>
+<p>Podemos instalar wazuh server en el cloud o en un equipo local.</p>
+<p><strong>1. Wazuh Cloud (14 días trial).</strong></p>
+<ul>
+<li><a href="https://13zzcpbxfvj6.cloud.wazuh.com">https://13zzcpbxfvj6.cloud.wazuh.com</a></li>
+</ul>
+<p><strong>2. Instalar Wazuh en Ubuntu Server. </strong>Para este caso, se instala virtualizado en KVM, donde el nombre del servidor es <strong>orion</strong> y su ip la<strong> 192.168.122.97</strong>.</p>
+<div class="exe-fx exe-tabs">
+<h2>1. Ubuntu server virtualizado en KVM</h2>
+<p style="text-align: center;"><img src="serv-wazuh-kvm.png" alt="" width="797" height="397" /></p>
+<h2>2. Instalar wazuh server</h2>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/#</strong> curl -sO https://packages.wazuh.com/4.3/wazuh-install.sh &amp;&amp; sudo bash . /wazuh-install.sh -a</span></pre>
+<p style="text-align: justify;">Al finalizar hay que copiar el password que ha generado:</p>
+<ul>
+<li style="text-align: justify;">User: admin</li>
+<li style="text-align: justify;">Password: o8.WH..A.w463dOpwUT25866eUei2Ml7</li>
+</ul>
+<h2>3. Iniciar y habilitar Wazuh</h2>
+<p>Una vez instalado, hay que iniciarlo y habilitarlo:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/#</strong> systemctl daemon-reload<br /><strong>root@orion:/# </strong>systemctl enable –now wazuh-manager<br /><strong>root@orion:/# </strong>systemctl status wazuh-manager<br /></span></pre>
+<p style="text-align: center;"><img src="status-wazih.png" alt="" width="798" height="477" /></p>
+<h2>4. Acceso al panel</h2>
+<p>Para acceder: <a href="https://192.168.122.97/">https://192.168.122.97/</a></p>
+<p style="text-align: center;"><a href="panel-wazuh-init.png" target="_blank" rel="noopener"><img src="panel-wazuh-init.png" alt="" width="1034" height="547" /></a></p>
+<h2>5. Consultar credenciales</h2>
+<p style="text-align: justify;">Para consultar las credenciales de los usuarios de wazuh, el comando es: </p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/#</strong> tar -O -xvf wazuh-install-files.tar wazuh-install-files/wazuh-passwords.txt</span></pre>
+<p style="text-align: center;"><img src="consultar-pass-wazuh.png" alt="" width="870" height="734" /></p>
+</div>
+<p style="text-align: justify;">A continuación <strong>se describen los pasos</strong> para <strong>implementar en agente wazuh en PfSense</strong>.</p>
+<p style="text-align: justify;"><strong>Paso 1.</strong> Hay que instalar el agente wazuh en pfsense. Para ello, hay que acceder a la consola de pfsense y habilitar los repositorios de paquetes de FreeBSD.  Hay que establecer la directiva "<strong>enabled</strong>" a "<strong>yes</strong>" en el fichero<strong> /etc/pkg/FreeBSD.conf</strong>.</p>
+<p style="text-align: center;"><img src="freebsd-conf.png" width="717" height="276" /></p>
+<p style="text-align: justify;"><strong>Paso 2.</strong>  Hay que modificar las directivas del fichero <strong>/usr/local/etc/pkg/repos/FreeBSD.conf</strong>:</p>
+<ul>
+<li>"FreeBSD: { enabled: no }" a "<strong>FreeBSD: { enabled: yes }</strong>"<strong></strong></li>
+</ul>
+<p style="text-align: center;"><img src="FreeBSD-conf.png" alt="" width="458" height="64" /></p>
+<p style="text-align: justify;"><strong>Paso 3.</strong> Hay que modificar las directivas del fichero <strong>/usr/local/etc/pkg/repos/pfSense.conf</strong>:</p>
+<ul>
+<li>enabled: no" a "<strong>enabled: yes</strong>".</li>
+</ul>
+<p style="text-align: center;"><img src="FreeBSD.conf-2.png" alt="" width="713" height="313" /></p>
+<p style="text-align: justify;"><strong>Paso 4.</strong> Los paquetes de Wazuh no están disponibles en los repositorios oficiales de pfSense. Por lo tanto, la única forma de poder instalar el agente Wazuh en pfSense es mediante el uso de repositorios oficiales de FreeBSD.</p>
+<pre><span style="font-size: 12pt;"><strong>/root:</strong> pkg update</span></pre>
+<p style="text-align: center;"><img src="pkg-update.png" width="674" height="231" /></p>
+<p style="text-align: justify;">A continuación, buscamos si hay disponible un paquete agente wazuh, el comando es:</p>
+<pre><span style="font-size: 12pt;"><strong>/root:</strong> pkg search wazuh-agent</span></pre>
+<p style="text-align: center;"><img src="search-wazuh-agent.png" width="791" height="80" /></p>
+<p style="text-align: justify;">Para este caso, devuelve que sí se tiene un agente. Lo instalamos con el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>/root:</strong> pkg install wazuh-agent-4.3.10_1</span></pre>
+<p style="text-align: center;"><img src="install-wazuh-agent.png" alt="" width="792" height="385" /></p>
+<p style="text-align: justify;"><strong>Paso 5. </strong>Una vez instalado, hay que realizar unas configuraciones, es decir, configurar donde está el servidor de wazuh. Para ello, hay que habilitar y conectar el agente. </p>
+<p style="text-align: justify;">Editamos el fichero /usr/local/etc/rc.d/wazuh-agent y cambiamos la línea {wazuh_agent_enable:="NO"}) a {wazuh_agent_enable:="<strong>YES</strong>"})</p>
+<pre><span style="font-size: 12pt;"><strong>/root:</strong> vi /usr/local/etc/rc.d/wazuh-agent</span></pre>
+<p style="text-align: center;"><img src="agent-enabled-yes.png" alt="" width="792" height="413" /></p>
+<p style="text-align: justify;">A continuación, hay que editar el fichero <strong>/var/ossec/etc/ossec.conf</strong> y añadir la ip en la sección server, que para este caso, es la <strong>192.168.122.97</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>/root:</strong> vi /var/ossec/etc/ossec.conf</span></pre>
+<pre><span style="font-size: 12pt;">&lt;server&gt;</span><br /><span style="font-size: 12pt;">  &lt;address&gt;WAZUH-MANAGER-IP-ADDRESS&lt;/address&gt;</span><br /><span style="font-size: 12pt;">&lt;/server&gt;</span></pre>
+<p style="text-align: center;"><img src="ip-server-wazuh.png" alt="" width="629" height="468" /></p>
+<p style="text-align: justify;">A continuación, hay que agregar registros de extracción de pfSense para monitorizar. Para este caso de ejemplo, además de los archivos de registro predeterminados monitorizados por Wazuh de forma predeterminada; vamos a agregar algunos más y son los siguientes:</p>
+<pre><span style="font-size: 12pt;">&lt;localfile&gt;</span><br /><span style="font-size: 12pt;">    &lt;log_format&gt;syslog&lt;/log_format&gt;</span><br /><span style="font-size: 12pt;">    &lt;location&gt;/var/log/openvpn.log&lt;/location&gt;</span><br /><span style="font-size: 12pt;">&lt;/localfile&gt;</span><br /><span style="font-size: 12pt;">&lt;localfile&gt;</span><br /><span style="font-size: 12pt;">    &lt;log_format&gt;syslog&lt;/log_format&gt;</span><br /><span style="font-size: 12pt;">    &lt;location&gt;/var/log/system.log&lt;/location&gt;</span><br /><span style="font-size: 12pt;">&lt;/localfile&gt;</span><br /><span style="font-size: 12pt;">&lt;localfile&gt;</span><br /><span style="font-size: 12pt;">    &lt;log_format&gt;syslog&lt;/log_format&gt;</span><br /><span style="font-size: 12pt;">    &lt;location&gt;/var/log/gateways.log&lt;/location&gt;</span><br /><span style="font-size: 12pt;">&lt;/localfile&gt;</span><br /><span style="font-size: 12pt;">&lt;localfile&gt;</span><br /><span style="font-size: 12pt;">    &lt;log_format&gt;syslog&lt;/log_format&gt;</span><br /><span style="font-size: 12pt;">    &lt;location&gt;/var/log/userlog&lt;/location&gt;</span><br /><span style="font-size: 12pt;">&lt;/localfile&gt;<br />&lt;localfile&gt;<br />   &lt;log_format&gt;syslog&lt;/log_format&gt;<br />   &lt;location&gt;/var/log/suricata/*/eve.json&lt;/location&gt;<br />&lt;/localfile&gt;<br /></span></pre>
+<p style="text-align: justify;"><strong style="font-size: 1em;">Paso 6. Habilitar e iniciar el agente de Wazuh</strong><br /><strong></strong></p>
+<pre><span style="font-size: 12pt;"></span><span style="font-size: 12pt;"><strong>/root:</strong> /var/ossec/bin/agent-auth -m 192.168.122.97</span></pre>
+<p style="text-align: center;"><img src="agent-auth.png" alt="" width="793" height="200" /></p>
+<p style="text-align: justify;">Si se observa la figura superior, la salida del comando nos indica que se ha recibido la key válida. Si se accede al front end de wazuh, se puede observar que ya aparece el agente de pfsense.</p>
+<p style="text-align: center;"><img src="agent-auth-panel-wazuh.png" alt="" width="1314" height="745" /></p>
+<p style="text-align: justify;">Ahora, hay que iniciar el agente de Wazuh y habilitar el inicio del mismo en el arranque.</p>
+<pre><span style="font-size: 12pt;"><strong>/root:</strong> sysrc wazuh_agent_enable="YES"</span><br /><span style="font-size: 12pt;"><strong>/root:</strong> /var/ossec/bin/wazuh-control start</span></pre>
+<p style="text-align: center;"><img src="start-agent-pfsense.png" alt="" width="893" height="324" /></p>
+<p style="text-align: justify;">Si se accede al front end de wazuh, se puede observar que ya está activo el agente de pfsense.</p>
+<p style="text-align: center;"><img src="active-agent-pfsense.png" alt="" width="1316" height="709" /></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Si se conecta con un wazuh manager en el cloud (ejemplo:<strong> https://13zzcpbxfvj6.cloud.wazuh.com</strong>), en el comando /var/ossec/bin/agent-auth -m ip-serv-wazuh,  hay que poner -P ENROLLMENT_PASSWORD. Para obtener este password, hay que ir a Wazuh → Agents → Deploy new agent → Debian/Ubuntu. En el punto 5, hay que seleccionar Show password para que aparezca en claro en el comando de integración del agente. Para este caso, el passord es: ‘rrzNJsh97AUSg3BzHxQtbiJOyENstBjfq’.  Ejemplo: El comando para integrar un equipo basado en debian para arquitectura de 64 bits sería:</p>
+<p style="text-align: justify;">curl -so wazuh-agent-4.3.5.deb https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.3.5 -1_amd64.deb </p>
+<p style="text-align: justify;">&amp;&amp; sudo WAZUH_MANAGER='13zzcpbxfvj6.cloud.wazuh.com' WAZUH_REGISTRATION_PASSWORD='rzNJsh97AUSg3BzHxQtbiJOyENstBjfq' dpkg -i . /wazuh-agent-4.3.5.deb</p>
+<p style="text-align: center;"><a href="install-agent.png" target="_blank" rel="noopener"><img src="install-agent.png" width="478" height="529" /></a></p>
+<p style="text-align: justify;">13zzcpbxfvj6.cloud.wazuh.com es la url del wazuh en el cloud.</p>
+</div>
+<h3 style="text-align: justify;">2. Registrar agente Wazuh en Kali Linux</h3>
+<p>En este punto, vamos a añadir un nuevo agente, para este caso de ejemplo, un equipo Kali.</p>
+<p style="text-align: center;"><img src="red-kali-wazuh.png" alt="" width="760" height="380" /></p>
+<p style="text-align: justify;">Para añadir un nuevo agente de un equipo basado en debian, las acciones a realizar son las siguientes:</p>
+<p style="text-align: justify;">Acceder a: <strong>Wazuh → Agents → Deploy new agent → Debian/Ubuntu.</strong></p>
+<p style="text-align: center;"><img src="depluy-new-agent-kali.png" alt="" width="1316" height="709" /></p>
+<p style="text-align: justify;">Una vez se pulsa en '<strong>Deploy new agent</strong>', hay que cumplimentar los siguientes campos:</p>
+<ol>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Seleccionar</strong> → Debian.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Seleccionar arquitectura</strong> → 64 bits.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Wazuh server address</strong> → 192.168.122.97</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Assign the agent to a group</strong> → Default</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Install and enroll the agent</strong> → Hay que ejecutar el siguiente comando en el equipo a integrar.<br />curl -so wazuh-agent-4.3.5.deb https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.3.5-1_amd64<br />.deb &amp;&amp; sudo WAZUH_MANAGER='192.168.122.97' WAZUH_AGENT_GROUP='default' dpkg -i ./wazuh-agent-4.3.5.deb</span></li>
+</ol>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="add-kali-A.png" alt="" width="611" height="297" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="add-kali.png" alt="" width="905" height="386" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="add-kali-C.png" alt="" width="850" height="506" /></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Una vez se han cumplimentado los campos, se habrá generado el comando a ejecutar en Kali para desplegar el agente.</span></p>
+<pre><span style="font-size: 12pt;"><strong>(root@kali-Practica4)-[~] </strong>curl -so wazuh-agent-4.3.5.deb https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.3.5-1_amd64<br />.deb &amp;&amp; sudo WAZUH_MANAGER='192.168.122.97' WAZUH_AGENT_GROUP='default' dpkg -i ./wazuh-agent-4.3.5.deb</span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="exec-comando-kali.png" alt="" width="907" height="187" /></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">A continuación, habilitamos e iniciamos el servicio:</span></p>
+<pre><span style="font-size: 16px;"><span style="font-size: 12pt;"><strong>(root@kali-Practica4)-[~] </strong>systemctl </span>daemon-reload<br /><span style="font-size: 12pt;"><strong>(root@kali-Practica4)-[~] </strong>systemctl </span>start wazuh-agent<br /><span style="font-size: 12pt;"><strong>(root@kali-Practica4)-[~] </strong>systemctl </span>enable wazuh-agent<br /><span style="font-size: 12pt;"><strong>(root@kali-Practica4)-[~] </strong>systemctl </span>status wazuh-agent</span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="ebanble-servicio-kali.png" alt="" width="908" height="209" /></span></p>
+<p style="text-align: center;"><img src="status-wazuh-kali.png" alt="" width="919" height="483" /></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si accedemos al panel de Wazuh, podemos observar que el equipo ha sido reconocido.</span></p>
+<p style="text-align: center;"><img src="agent-kali-en-wazuh.png" alt="" width="1324" height="740" /></p>
+<p style="text-align: justify;">Si accedemos a los datos del agente.</p>
+<p style="text-align: center;"><img src="datos-agente-kali.png" alt="" width="1298" height="784" /><span style="font-size: 12pt;"></span></p>
+<h3 style="text-align: justify;">3. Registrar agente Wazuh en Windows Server</h3>
+<p>Para añadir un nuevo agente de un equipo basado en Windows, las acciones a realizar son las siguientes:<br /><strong>Wazuh → Agents → Deploy new agent →Windows.</strong></p>
+<p style="text-align: justify;">Una vez se pulsa en '<strong>Deploy new agent</strong>', hay que cumplimentar los siguientes campos:</p>
+<ol>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Seleccionar</strong> → Windows.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Wazuh server address</strong> → 192.168.122.97</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Assign the agent to a group</strong> → Default</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Install and enroll the agent</strong> → Hay que ejecutar el siguiente comando en el equipo a integrar.<br /></span><span style="font-size: 12pt;">Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.3.5-1.msi <br />-OutFile ${env:tmp}\wazuh-agent-4.3.5.msi; msiexec.exe /i ${env:tmp}\wazuh-agent-4.3.5.msi <br />/q WAZUH_MANAGER='192.168.122.97' WAZUH_REGISTRATION_SERVER='192.168.122.97' WAZUH_AGENT_GROUP='default'</span></li>
+</ol>
+<p style="text-align: center;"><img src="new-agent-windows.png" alt="" width="635" height="808" /></p>
+<p style="text-align: justify;">Accedemos a la máquina virtual KVM de Windows Server 2019 y ejecutamos el siguiente comando:</p>
+<pre><span style="font-size: 16px;"><span style="font-size: 12pt;"><strong>PS C:\Users\Administrador&gt; </strong>Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.3.5-1.msi <br />-OutFile ${env:tmp}\wazuh-agent-4.3.5.msi; msiexec.exe /i ${env:tmp}\wazuh-agent-4.3.5.msi <br />/q WAZUH_MANAGER='192.168.122.97' WAZUH_REGISTRATION_SERVER='192.168.122.97' WAZUH_AGENT_GROUP='default'</span></span></pre>
+<p style="text-align: center;"><img src="comando-new-agent-windows.png" alt="" width="830" height="143" /></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Una vez ejecutado el comando en powershell, hay que editar el fichero c:\Program Files (x86)\ossec-agent\ossec.conf y poner registry_enabled NO y asegurarse que la ip del manager sea la correcta.</p>
+</div>
+<p style="text-align: justify;">Por último, hay que iniciar el agente.</p>
+<pre><span style="font-size: 16px;"><span style="font-size: 12pt;"><strong>PS C:\Users\Administrador&gt; </strong>NET START WazuhSvc</span></span></pre>
+<p style="text-align: center;"><img src="net-start-wazuh-windows.png" alt="" width="374" height="113" /></p>
+<p style="text-align: justify;">Si accedemos al panel de Wazuh, podemos ver que ya se tiene el agente activo.</p>
+<p style="text-align: center;"><img src="panel-wazuh-agente-Windows.png" width="1302" height="777" /></p>
+<h3>4. Comprobar reglas</h3>
+<p>Desde el equipo Kali, ejecutamos el ataque hping3 sobre la ip de la LAN 192.168.100.1.</p>
+<p style="text-align: center;"><img src="ataque.png" alt="" width="758" height="180" /></p>
+<p style="text-align: justify;">Si observamos en el apartado <strong>Discover de Wazuh</strong>, vemos que se ha detectado el ataque a la raíz de la regla creada en suricata:</p>
+<p style="text-align: justify;"><strong>#Detección DoS</strong><br />alert tcp any any -&gt; $HOME_NET 80 (flags: S; msg:"Posible Ataque DoS Type : SYNflood"; flow:stateless; sid:1000001; detection_filter:track by_dst, count 20, seconds 10;)</p>
+<p style="text-align: justify;">Como se observa en la graica, se han detectado más de 6.000 eventos y que corresponden al ataque hping3.</p>
+<p style="text-align: center;"><img src="hits-atawue.png" alt="" width="1014" height="275" /></p>
+<p style="text-align: justify;">Si accedemos a un evento en concreto, podemos observar el texto de la regla.</p>
+<p style="text-align: center;"><img src="ataqueDoS.png" alt="" width="1282" height="761" /></p>
+<h3>5. Eliminar agentes</h3>
+<p style="text-align: justify;">Para eliminar un agente, hay que utilizar el comando <span style="font-size: 12pt;">manage_agents con la opción -r y el id del agente a eliminar. Ejemplo, para eliminar el agente 002, el comando es:</span></p>
+<pre><span style="font-size: 12pt;">root@orion:/# /var/ossec/bin/manage_agents -r 002</span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="eliinar-agente.png" alt="" width="552" height="404" /></span></p>
+<p style="text-align: justify;"><strong><span style="font-size: 12pt;">Referencia:</span></strong></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><a href="https://documentation.wazuh.com/current/user-manual/agents/remove-agents/remove.html">https://documentation.wazuh.com/current/user-manual/agents/remove-agents/remove.html</a></span><span style="font-size: 12pt;"></span></li>
+</ul>
+<p><strong><span style="font-size: 12pt;">En el siguiente vídeo, se describe el sistema en producción</span></strong></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><iframe width="560" height="314" src="https://www.youtube.com/embed/fgy4clUsMzs"></iframe><br /></span></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_1_suricata_en_pfsense.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="graylog.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

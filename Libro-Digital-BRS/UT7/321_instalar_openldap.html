@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.1 Instalar openLDAP | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-116"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_servidor_de_autenticacin_radius.html" class="current-page-parent daddy">3. Servidor de autenticación Radius</a>
+   <ul>
+      <li><a href="31_freeradius.html" class="daddy">3.1 FreeRadius</a>
+      <ul class="other-section">
+         <li><a href="311_instalacin_servidor_radius.html" class="daddy">3.1.1. Instalación servidor Radius</a>
+         <ul class="other-section">
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="current-page-parent daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul>
+         <li id="active"><a href="321_instalar_openldap.html" class="active no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul class="other-section">
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="32_freeradius__validacin_con_usuarios_ldap.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.1 Instalar openLDAP</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id155">
+<div class="iDevice emphasis0" >
+<div id="ta155_154_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción </h3>
+<p><a href="https://www.openldap.org/" target="_blank" rel="noopener">OpenLDAP</a> es una implementación de código abierto del protocolo ligero de acceso a directorios (LDAP).</p>
+<h3>2. Escenario</h3>
+<ul>
+<li>Ubuntu Server 20.04.3 con openssl y ssh instalado.</li>
+<li>Dominio a crear: ciber.local</li>
+</ul>
+<p style="text-align: justify;">Para este escenario, se van a crear una serie de objetos, a saber: dos unidades organizativas, cuatro usuarios y dos grupos en LDAP usando el siguiente <a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/RADIUS/openLDAP/crear_objetos_ldap.ldif" target="_blank" rel="noopener">archivo LDIF</a>. El propósito de crear estos usuarios y grupos es permitir que FreeRADIUS autorice a usuarios específicos a conectarse a la red WIFI corporativa, en concreto, se permitirá el acceso a la red Wifi a los usuarios del grupo GGProgramacion que pertenecen al departamento de Informática.</p>
+<p style="text-align: center;"><img src="LDAP_Access_Diagram.png" alt="" width="874" height="381" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Esquema de autenticación de usuarios LDAP.</em></p>
+<h3>2. Instalación y configuración del servidor OpenLDAP</h3>
+<p>Para la instalación y configuración, se van a seguir los siguientes puntos.</p>
+<p><strong>1. Cambiar el nombre de host del servidor openLDAP</strong></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>hostnamectl set-hostname radius-openldap.ciber.local<strong><br /></strong></span></pre>
+<p><strong>2. Añadir en el fichero de /etc/hosts la siguiente líne<span style="font-size: 12pt;"></span>a:</strong></p>
+<pre><span style="font-size: 12pt;">192.168.0.101 radius-openldap.ciber.local</span></pre>
+<p style="text-align: center;"><img src="etc-hosts.png" alt="" width="635" height="203" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Fichero hosts.</em></p>
+<p style="text-align: justify;"><strong>3. Instalar los paquetes necesarios (LDAP y utilidades)</strong></p>
+<p style="text-align: justify;">Antes de proceder con la instalación, se realiza una actualización de los respositorios.</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>apt update -y<strong><br />root@radius-openldap:/#</strong>apt install slapd ldap-utils</span></pre>
+<p style="text-align: center;"><img src="ldap-00.png" alt="" width="1009" height="255" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Instalación de LDAP y utilidades.</em></p>
+<p style="text-align: justify;">Durante la instalación, hay que introducir la contraseña del administrador admin 2 veces. Este es el usuario que se empleará para gestionar openLDAP.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="ldap-01.png" alt="" width="1030" height="343" /></td>
+<td style="width: 50%; text-align: center;"><img src="ldap-02.png" alt="" width="1089" height="361" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;" colspan="2"><span style="font-size: 12pt;"><em><strong>Figura 4.</strong> Insertar la contraseña del administrador de LDAP.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p>Una vez se finaliza el proceso, ya se está en disposición de crear objetos y gestionar openLDAP.</p>
+<p>Si se necesitara configurar el servidor openLDAP, se tiene el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>dpkg-reconfigure slapd</span></pre>
+<p style="text-align: center;"><img src="reconfigure-slapd.png" alt="" width="753" height="292" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Reconfigurar el servidor openLDAP.</em></p>
+<p style="text-align: justify;"><strong>4. Crear los objetos en openLDAP</strong></p>
+<p style="text-align: justify;">Una vez se ha creado el fichero ldif con los objetos del dominio, hay que ejecutar el siguiente comando para que se creen. Al ejecutar el comando, el sistema solicita la contraseña del usuario administrador del servidor openLDAP.</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>ldapadd -x -D cn=admin,dc=ciber,dc=local -W -f create_ldap_objects.ldif</span></pre>
+<p>donde,</p>
+<ul>
+<li><span style="font-size: 12pt;"><strong>create_ldap_objects.ldif:</strong> Es el fichero con la definición de los objetos a crear.</span></li>
+<li><span style="font-size: 12pt;"><strong>cn=admin</strong>: Es el usuario administrador del servidor openLDAP.</span></li>
+<li><span style="font-size: 12pt;"><strong>dc=ciber,dc=local.</strong> Es el dominio del escenario actual.</span></li>
+</ul>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="ldap-05.png" alt="" width="873" height="172" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 6.</strong> Creación de objetos en openLDAP.</em></span></p>
+<h3>3. Consultas LDAP</h3>
+<p>La utilidad para consultar dentro de LDAP es <strong>ldapsearch</strong>, su sinopsis es:</p>
+<pre><span style="font-size: 10pt;">      ldapsearch   [-V[V]]   [-d debuglevel]  [-n]  [-v]  [-c]  [-u]  [-t[t]]
+      [-T path] [-F prefix] [-A]  [-L[L[L]]]  [-S attribute]  [-b searchbase]
+      [-s {base|one|sub|children}]  [-a {never|always|search|find}] [-l time-
+      limit]  [-z sizelimit]  [-f file]   [-M[M]]   [-x]   [-D binddn]   [-W]
+      [-w passwd]  [-y passwdfile]  [-H ldapuri]  [-h ldaphost] [-p ldapport]
+      [-P {2|3}] [-e [!]ext[=extparam]] [-E [!]ext[=extparam]]  [-o opt[=opt-
+      param]] [-O security-properties] [-I] [-Q] [-N] [-U authcid] [-R realm]
+      [-X authzid] [-Y mech] [-Z[Z]] filter [attrs...]
+</span></pre>
+<p style="text-align: justify;">El comando <strong>ldapsearch,</strong><span> </span>abre una conexión a un<span> </span><strong>servidor LDAP </strong>enlazando y ejecutando una búsqueda en el mismo usando los parámetros especificados. El filtro debe ajustarse a la representación de cadena de filtros de búsqueda de<span> </span><a class="external mw-magiclink-rfc" rel="nofollow" href="http://tools.ietf.org/html/rfc4515" onclick="browseURL(this); return false">RFC 4515</a>. Si la consulta encuentra alguna coincidencia, muestra los atributos pedidos, si no se especifican atributos, los muestra todos. Los resultados los muestra en formato LDIF.</p>
+<p><strong>ldapsearch</strong><span> </span>tiene multitud de parámetros. Los que más interesan son:</p>
+<ul>
+<li>-x Simple autentificación. En vez de con SASL.</li>
+<li>-LLL La primera L restringe la salida a LDIF, la segunda quita los comentarios y la tercera desactiva la impresión de la versión de LDIF.</li>
+<li>-H Especifica la URI del servidor LDAP. Si es local se puede poner ldap:///</li>
+<li>-D En caso de que sea necesario autentificarse para buscar dentro del directorio, con -D se puede poner el DN del usuario con el que nos autentificamos.</li>
+<li>-w Para poner la contraseña para autentificarse.</li>
+<li>-W Para no ponerla y que nos la pida por la terminal.</li>
+<li>-b Para especificar la base a partir de la que se busca.</li>
+</ul>
+<p><span><strong>Ejemplo:</strong> Si se desea obtener información del dominio, el comando es:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>ldapsearch -x -LLL -b dc=ciber,dc=local</span></pre>
+<p style="text-align: center;"><img src="ldpsearch-consulta-AD.png" alt="" width="533" height="476" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 7.</strong> Consulta sobre el dominio.</em></span></p>
+<p>donde,</p>
+<ul>
+<li><span style="font-size: 12pt;"><strong>dc=ciber,dc=local.</strong> Es el dominio del escenario actual.</span></li>
+</ul>
+<p>Si se desea consultar un usuario en concreto, el comando es:</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>ldapsearch -x -LLL -b dc=ciber,dc=local 'uid=user02'</span></pre>
+<p style="text-align: center;"><img src="user02.png" alt="" width="619" height="225" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 8.</strong> Consulta del usuarios user02.</em></span></p>
+<p>Por último, si se desea realizar una consulta que devuelva los objetos, el comando es:</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>ldapsearch -x -h localhost -b "dc=ciber,dc=local" "*" | grep dn | cut -d' ' -f'2-'</span></pre>
+<p style="text-align: center;"><img src="consulta-Objetos-LDAP.png" alt="" width="932" height="175" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 9.</strong> Consulta los objetos del dominio.</em></span></p>
+<h3>4. Referencias</h3>
+<ul>
+<li><a href="https://docs.google.com/document/d/1-twBTs9vRCelql-T_c1KZ-SPrFdZ4JPjI_risXEMirg/edit?usp=sharing" target="_blank" rel="noopener">Enlace al Anexo. Gestión de openLDAP</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="32_freeradius__validacin_con_usuarios_ldap.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

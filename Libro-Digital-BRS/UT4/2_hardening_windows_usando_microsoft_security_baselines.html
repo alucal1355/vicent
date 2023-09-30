@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2. Hardening Windows usando Microsoft Security Baselines | UT04. Fortificación de equipos: Línea base </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-42"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT04. Fortificación de equipos: Línea base</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT4. Fortificación de equipos: Línea base</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_hardening.html" class="no-ch">1. Hardening</a></li>
+   <li id="active"><a href="2_hardening_windows_usando_microsoft_security_baselines.html" class="active daddy">2. Hardening Windows usando Microsoft Security Baselines</a>
+   <ul>
+      <li><a href="prctica_1_sct__policy_analyzer.html" class="no-ch">Práctica 1. SCT - Policy Analyzer</a></li>
+      <li><a href="prctica_2_sct__aplicar_lneas_base_a_objetos_del_subdominio.html" class="no-ch">Práctica 2. SCT - Aplicar líneas base a objetos del subdominio</a></li>
+   </ul>
+   </li>
+   <li><a href="3_referencias.html" class="no-ch">3. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_hardening.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_1_sct__policy_analyzer.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2. Hardening Windows usando Microsoft Security Baselines</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id76">
+<div class="iDevice emphasis0">
+<div id="ta76_85" class="block iDevice_content">
+<h3>1. <span>Líneas base de seguridad de Windows</span></h3>
+<p style="text-align: justify;">El <strong><em>compromiso de Microsoft con sus clientes</em></strong> se basa en ofrecer productos y servicios seguros ya sea en las versiones de <strong><em>Escritorio Windows 10/11</em></strong> como en las versiones de servidor <strong><em>Windows Server</em></strong> además de otras aplicaciones adicionales dentro del sistema operativo.</p>
+<p style="text-align: justify;">Por defecto, el diseño de los sistemas operativos esta enfocado a la seguridad, pero la configuración depende de muchos factores por lo que se pueden establecer configuraciones especificas y más detalladas en función de las necesidades de cada organización, es decir, se pude ser más o menos restrictivo a la hora de realizar las distintas configuraciones del sistema.</p>
+<p style="text-align: justify;"> Estas instrucciones son las llamadas “<strong>líneas base de seguridad</strong>” y Microsoft ya tiene una serie de ellas establecidas, como pueden ser: </p>
+<ul style="text-align: justify;">
+<li>Protección de aplicaciones web.</li>
+<li>Protección de la información.</li>
+<li>Protección de aplicaciones.</li>
+<li>Protección para dispositivos.</li>
+</ul>
+<p style="text-align: justify;">Por lo tanto, estas líneas base son un grupo de configuraciones recomendadas por un amplio grupo de usuarios, tanto personal de Microsoft, como partners, clientes o usuarios avanzados (Microsoft Most Valuable Proffesional).</p>
+<p style="text-align: justify;">Las líneas base son un buen punto de partida para proteger nuestros sistemas ante amenazas. La estrategia a seguir para implantar las líneas base de seguridad en nuestro sistema sería la siguiente:</p>
+<p style="text-align: justify;"><strong>Paso 1.</strong> Aplicar las líneas base que se consideren en una Unidad Organizativa de Pruebas (ejemplo: testLineasBase) donde se tendrán usuarios y equipos de test.</p>
+<p style="text-align: justify;"><strong>Paso 2. </strong>Agregar o modificar las configuraciones que trae por defecto de acuerdo con los requerimientos y directivas internas de la empresa/organización.</p>
+<p style="text-align: justify;"><strong>Paso 3.</strong> Aplicar las líneas base de seguridad en los equipos de producción.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="objetosDominio-ciber.png" alt="" width="795" height="360" /></td>
+<td style="width: 50%; text-align: center;"><img src="GPO-Uo-test.png" alt="" width="559" height="400" /></td>
+</tr>
+</tbody>
+</table>
+<h3>2. Microsoft Security Compliance Toolkit 1.0</h3>
+<p style="text-align: justify;"><span>Existen guías de fortificación que nos pueden ayudar a aumentar la seguridad de los equipos. En esta ocasión, vamos a fortificar sistemas Windows gracias a las guías y herramientas proporcionadas por Microsoft, en concreto, trabajaremos con </span><span data-ttu-id="38cca-104"><strong>Security Compliance Toolkit</strong>. Vamos descargarnos las líneas base de seguridad y aprender a identificar y localizar los distintos objetos de directivas de grupo (GPO).</span></p>
+<p style="text-align: justify;">Las líneas base se pueden descargar a través del<span> </span><a href="https://www.microsoft.com/en-us/download/details.aspx?id=55319">Centro de Descargas de Microsoft</a> como un conjunto de herramientas (Toolkit) que permite a los administradores descargar, analizar, probar, editar y aplicar las recomendaciones o líneas base para Windows y otros productos.</p>
+<p style="text-align: center;"><img src="microsft-security-compliance.png" alt="" width="715" height="885" /></p>
+<p style="text-align: center;"><em><strong>Figura 1. </strong>Microsoft Security Compliance Toolkit 1.0.</em></p>
+<p style="text-align: justify;"><span>Como se puede observar en la <strong><em>Figura 1,</em></strong> existen distintas líneas base de seguridad para varias versiones de Windows 10/11, Windows Server (2012, 2016, 2019-2022), incluso para Microsoft 365 y Edge. También, se proporcionan Herramientas y scripts para Power Shell. </span></p>
+<p style="text-align: justify;"><span>A fecha <em>19 de diciembre de 2022</em>, el <a href="https://learn.microsoft.com/es-es/windows/security/threat-protection/windows-security-configuration-framework/security-compliance-toolkit-10" target="_blank" rel="noopener">Security Compliance Toolkit</a> está formado por lo siguiente:</span></p>
+<ul>
+<li>
+<p>Líneas base de seguridad de Windows 11</p>
+<ul>
+<li>
+<p>Windows 11, versión 22H2</p>
+</li>
+<li>
+<p>Windows 11, versión 21H2</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Líneas base de seguridad de Windows 10</p>
+<ul>
+<li>Windows 10 version 22H2 (actualización de noviembre de 2022).</li>
+<li>Windows 10, versión 21H2 (actualización de noviembre de 2021).</li>
+<li>Windows 10, versión 21H1 (actualización de mayo de 2021).</li>
+<li>Windows 10, versión 20H2 (actualización de octubre de 2020).</li>
+<li>Windows 10, versión 1809 (actualización de octubre de 2018).</li>
+<li>Windows 10, versión 1607 (actualización de aniversario).</li>
+<li>Windows 10, versión 1507.</li>
+</ul>
+</li>
+<li>
+<p>Líneas base de seguridad de Windows Server</p>
+<ul>
+<li>Windows Server 2022.</li>
+<li>Windows Server 2019.</li>
+<li>Windows Server 2016.</li>
+<li>Windows Server 2012 R2.</li>
+</ul>
+</li>
+<li>
+<p>Línea base de seguridad de Microsoft Office</p>
+<ul>
+<li>
+<p>Office 2016</p>
+</li>
+<li>
+<p>Aplicaciones Microsoft 365 para empresas versión 2206</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Microsoft Edge línea base de seguridad: <span style="font-size: 0.95em;">Versión 107.</span></p>
+</li>
+<li>
+<p>Herramientas:</p>
+<ul>
+<li>Herramienta Analizador de directivas.</li>
+<li>Herramienta Objeto de directiva de grupo local (LGPO). </li>
+<li>Establecer herramienta de seguridad de objetos.</li>
+<li>Herramienta GPO a PolicyRules.</li>
+</ul>
+</li>
+<li>
+<p>Scripts</p>
+<ul>
+<li>Baseline-ADImport.ps1</li>
+<li>Baseline-LocalInstall.ps1</li>
+<li>Remove-EPBaselineSettings.ps1</li>
+<li>MapGuidsToGpoNames.ps1</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: justify;">Respecto a las versiones, la <b>versión 2022</b> de <b>Windows Server</b> es la siguiente <b>versión</b> del canal semianual de <b>Windows Server</b>. La <b>versión</b> <strong>20H2</strong> que incluye Windows 10 y Windows Server, tiene soporte técnico durante 18 meses a partir de su lanzamiento, es decir, el soporte finalizó el 10 de mayo del 2022. Por otro lado, la versión <strong>1809</strong> que incluye Windows Server 2019 y Windows 10, tiene soporte estándar hasta el 09 de Enero de 2024.</p>
+<p style="text-align: center;"><a href="https://learn.microsoft.com/es-es/windows-server/get-started/windows-server-release-info" target="_blank" rel="noopener"><img src="versiones-WServer.png" alt="" width="873" height="357" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 2. </strong>Versiones actuales de Windows Server mediante la opción de mantenimiento.</em></p>
+<p style="text-align: justify;"><strong>Referencias</strong></p>
+<ul>
+<li style="text-align: justify;"><a href="https://docs.microsoft.com/es-es/windows-server/get-started/whats-new-in-windows-server-2004-20h2" target="_blank" rel="noopener">[Novedades de Windows Server, versiones 2004 y 20H2]</a></li>
+<li style="text-align: justify;"><a href="https://docs.microsoft.com/es-es/windows-server/get-started/windows-server-release-info" target="_blank" rel="noopener">Información de la versión de Windows Server</a></li>
+<li style="text-align: justify;"><a href="https://docs.microsoft.com/es-es/windows/security/threat-protection/security-compliance-toolkit-10" target="_blank" rel="noopener">[Security Compliance Toolkit-10]</a></li>
+<li style="text-align: justify;"><a href="https://support.microsoft.com/es-es/topic/windows-server-container-update-history-23c939c5-3ca5-3a16-27b8-d18e00d2408a" target="_blank" rel="noopener">[Windows Server container update history]</a>
+<ul>
+<li style="text-align: justify;"><a href="https://support.microsoft.com/es-es/topic/kb5007667-windows-server-para-noviembre-de-2021-ac7a0ef0-f2c4-4f19-96ae-2e9048573854" target="_blank" rel="noopener">Contenedores de Windows Server de noviembre de 2021</a></li>
+</ul>
+</li>
+</ul>
+<h3 style="text-align: justify;">3. Security Compliance Toolkit - Línea base de seguridad</h3>
+<p style="text-align: justify;">Las <strong><em>líneas base de seguridad de Microsoft</em></strong> contienen la <strong><em>configuración recomendad</em><em>a</em></strong> que Microsoft sugiere para las estaciones de trabajo y los servidores de Windows para proporcionar una configuración segura y proteger los controladores de dominio, los servidores, las equipos y los usuarios.</p>
+<p style="text-align: justify;"><strong>Microsoft</strong> ha desarrollado plantillas y objetos de política de grupo de referencia basados ​​en las líneas de base de seguridad. Los administradores pueden aplicarlos en sus dominios Active Directory.</p>
+<p style="text-align: justify;">La configuración de seguridad en <strong><em>Microsoft Security Baseline GPO</em></strong> permite a los administradores proteger la infraestructura de Windows de acuerdo con las últimas mejores prácticas de seguridad global. </p>
+<p style="text-align: justify;">En este apartado, se estudian las guías y herramientas proporcionadas por Microsoft, en concreto,<span> </span><span data-ttu-id="38cca-104"><a href="https://www.microsoft.com/en-us/download/details.aspx?id=55319" target="_blank" rel="noopener"><strong>Security Compliance Toolkit</strong></a>. </span></p>
+<h4><span data-ttu-id="38cca-104">3.1 Descarga de las líneas base y lectura de documentación</span></h4>
+<p style="text-align: justify;"><span data-ttu-id="38cca-104">Para descargar las líneas base hay que acceder a la <strong><a href="https://docs.microsoft.com/es-es/windows/security/threat-protection/windows-security-configuration-framework/windows-security-baselines" target="_blank" rel="noopener">url</a>. En el artículo que no te llevará más de 4 minutos en leerlo, </strong> se explica lo que son las líneas base de seguridad y su uso.</span></p>
+<p style="text-align: center;"><a href="https://docs.microsoft.com/es-es/windows/security/threat-protection/windows-security-configuration-framework/windows-security-baselines" target="_blank" rel="noopener"><span data-ttu-id="38cca-104"><img src="leer-lineas-Base.jpeg" alt="" width="500" height="557" /></span></a></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Leer el artículo sobre las líneas base de seguridad.</em></p>
+<p style="text-align: justify;"><span data-ttu-id="38cca-104">Para aprender a identificar y localizar los distintos objetos de directivas de grupo (<strong>GPO</strong>), tenemos que descargar las líneas base de seguridad (pulsa la imagen inferior).</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="https://www.microsoft.com/en-us/download/details.aspx?id=55319" target="_blank" rel="noopener"><img src="domwload-lineas-base.png" alt="" width="786" height="147" /></a></td>
+<td style="width: 50%; text-align: center;"><img src="logo-GPO.png" alt="" width="270" height="247" /></td>
+</tr>
+</tbody>
+</table>
+<h4 style="text-align: justify;">3.2 Escenario</h4>
+<p style="text-align: justify;">Dado que nuestro escenario de trabajo en entornos Windows parte de un controlador del dominio <strong><em>Windows Server 2019 Datacenter</em></strong> y un cliente <strong><em>W10-19043.928.210409-1212.21h1_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64</em></strong>, trabajaremos con las últimas versiones disponibles, es decir:</p>
+<ul>
+<li style="text-align: justify;">Windows 10 version 22H2 Security Baseline.zip (última actualización).</li>
+<li style="text-align: justify;">Windows 10 Version 1809 and Windows Server 2019 Security Baseline.zip.</li>
+</ul>
+<p style="text-align: justify;"><span style="font-size: 12pt;">En estos ficheros, podemos encontrar<strong> </strong></span><span style="font-size: 12pt;"><span><strong>plantillas de línea de base de seguridad de GPO</strong> para diferentes elementos de la infraestructura de Windows: políticas para equipos, usuarios, servidores de dominio, controladores de dominio (hay una política separada para los controladores de dominio virtuales), así como Internet Explorer, BitLocker, Credential Guard, configuración de antivirus de Windows Defender. Las políticas de grupo configuradas para varios escenarios se encuentran en la carpeta GPO (puedes ver la lista de GPO para Windows Server 2019 y Windows 10 22H2 a continuación):</span></span></p>
+<ul>
+<li style="text-align: justify;">MSFT Internet Explorer 11 - Computer.</li>
+<li style="text-align: justify;">MSFT Internet Explorer 11 - User.</li>
+<li style="text-align: justify;">MSFT Windows 10 22H2 - BitLocker.</li>
+<li style="text-align: justify;">MSFT Windows 10 22H2 - Computer.</li>
+<li style="text-align: justify;">MSFT Windows 10 22H2- User.</li>
+<li style="text-align: justify;">MSFT Windows 10 22H2 - Credential Guard.</li>
+<li style="text-align: justify;">MSFT Windows 10 22H2 - Defender Antivirus.</li>
+<li style="text-align: justify;">MSFT Windows 10 22H2 - Domain Security.</li>
+<li style="text-align: justify;">MSFT Windows 10 1809 and Server 2019 - Defender Antivirus.</li>
+<li style="text-align: justify;">MSFT Windows 10 1809 and Server 2019 - Domain Security.</li>
+<li style="text-align: justify;">MSFT Windows 10 1809 and Server 2019 Member Server - Credential Guard.</li>
+<li style="text-align: justify;">MSFT Windows Server 2019 - Domain Controller.</li>
+<li style="text-align: justify;">MSFT Windows Server 2019 - Domain Controller Virtualization Based Security.</li>
+<li style="text-align: justify;">MSFT Windows Server 2019 - Member Server.</li>
+</ul>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span>Hay que tener en cuenta que hay una línea de base de seguridad separada para cada versión de Windows Server o compilación de Windows 10.</span></p>
+</div>
+<h4 style="text-align: justify;"><img src="icon_activity.png" alt="" width="70" height="70" /><span style="font-size: 14pt;">Tarea 1</span></h4>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Accede al recurso <a href="https://docs.microsoft.com/es-es/windows/security/threat-protection/security-compliance-toolkit-10" target="_blank" rel="noopener">Security Compliance Toolkit de Microsoft 1.0</a> y lee atentamente las secciones:</span></p>
+<ul style="text-align: justify;">
+<li><span data-ttu-id="38cca-105" style="font-size: 12pt;">¿Qué es el Security Compliance Toolkit (SCT)?.</span></li>
+<li><span style="font-size: 12pt;">¿Qué es la herramienta Analizador de directivas?.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Al final de la primera sección encontrarás el enlace <a href="https://www.microsoft.com/download/details.aspx?id=55319" data-linktype="external">descargar las herramientas</a>, accede a él, bájate y descomprime los siguientes elementos:</span></p>
+<ul style="text-align: justify;">
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>PolicyAnalyzer.zip</strong> (se usará en la práctica 1).</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Windows 10 version 22H2</strong> Security Baseline.zip (o el más actual).</span><span style="font-size: 12pt;"></span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Windows <strong>Windows 10 1809 and Server 2019</strong> Security Baseline.zip (o el más actual).</span></li>
+</ul>
+<div class="files-more" style="text-align: justify;">
+<p class="" style="text-align: justify;"><span style="font-size: 12pt;">Una vez se descomprimen los elementos anteriores:</span></p>
+</div>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong>1.</strong> Accede a la carpeta '<strong>Windows-10-v22H2-Security-Baseline</strong>' y luego a la carpeta '<strong>Documentation</strong><em>'. </em>A continuación,abre el archivo '<strong>MS Security Baseline Windows 10 v22H2.xlsx</strong><i>'</i>. En esta hoja de cálculo se muestran todas las configuraciones recomendadas de directivas de grupo (Group Policy) para clientes Windows. </span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong>2.</strong> Realiza la misma operación con el fichero<strong> 'Windows 10 1809 and Server 2019 Security Baseline.zip</strong>'. En la carpeta '<strong>Documentation</strong><em>', </em>abre el archivo <strong>'MS Security Baseline Windows 10 v1809 and Server 2019.xlsx</strong><i>'</i>. En esta hoja de cálculo se muestran todas las configuraciones recomendadas de directivas de grupo (Group Policy) para windows Server y Windows 10 (versión más antigua que la del apartado 1).</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong>3.</strong> Investiga las hojas de cálculo y date cuenta que cada categoría de directivas tiene su propia hoja (pestaña), y que en cada una de ellas puedes ver los valores que se aplicaran a las distintas directivas dependiendo si se trata de:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Windows 10.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Windows Server miembro del dominio.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Windows Server controlador de dominio.</span></li>
+</ul>
+<p><img src="hoja-calculo.png" alt="" width="1209" height="226" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><span style="font-size: 12pt;"><strong>4.</strong> Accede ahora a la carpeta '<strong>Windows-10-v22H2-Security-Baseline</strong>' y luego a la carpeta '<strong>GPOs</strong><em>'</em>, donde encontrarás varias carpetas con los distintos objetos de directivas de grupo (GPO). Para saber a qué corresponde cada una de ellas tendrás que buscar los nombres de las carpetas en las etiquetas &lt;ID&gt; del archivo <strong>manifest.xml</strong>. Una vez localizada, en el correspondiente campo &lt;GPODisplayName&gt; verás su nombre descriptivo.</span></p>
+<p><span style="font-size: 12pt;"><strong>5.</strong> Para el servidor, realiza la misma operación que en el apartado anterior (4).</span></p>
+<table border="0" style="height: 186px; width: 1026px;">
+<tbody>
+<tr style="height: 146px;">
+<td style="height: 146px; width: 68.7344px; text-align: justify;"></td>
+<td style="height: 146px; width: 941.266px; text-align: justify;">
+<p><span style="font-size: 12pt;">Localiza los nombres de las carpetas que almacenan estas GPO:</span></p>
+<ol style="list-style-type: lower-alpha;">
+<li><span style="font-size: 12pt;">MSFT Windows Server 1809 - Member Server</span></li>
+<li><span style="font-size: 12pt;">MSFT Windows Server 1809 - Domain Controller</span></li>
+<li><span style="font-size: 12pt;">MSFT Windows Server 1809 - Domain Controller Virtualization Based Security</span></li>
+</ol>
+<p><span style="font-size: 12pt;">Para los dos siguientes, has de acceder a la carpeta '<strong>Windows-10-v22H2-Security-Baseline/GPOs':</strong></span></p>
+<ol style="list-style-type: lower-alpha;">
+<li><span style="font-size: 12pt;">MSFT Windows 10 22H2 - Defender Antivirus</span></li>
+<li><span style="font-size: 12pt;">MSFT Windows 10 22H2 - BitLocker</span></li>
+</ol>
+</td>
+</tr>
+<tr style="height: 40px;">
+<td style="width: 68.7344px; text-align: justify; height: 40px;">
+<p style="text-align: center;"><img src="icon_ask.png" alt="" width="70" height="70" /></p>
+</td>
+<td style="width: 941.266px; text-align: justify; height: 40px;">
+<p><strong><span style="font-size: 12pt;">¿Cómo se llaman las carpetas que corresponde a cada apartado (a, b, c y a, b) ?. </span></strong></p>
+<p><span style="font-size: 12pt;"><strong>Ayuda</strong>: Microsoft proporciona un script de powershell en la capeta Tools que está en Local:Script, que nos permita saber cuál es el GUID asociado al MSFT. Si se observa la figura inferior, al script se le pasa como argumento la ruta relativa donde se encuentra el directorio GPOs.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="map_guids-gpos.png" alt="" width="946" height="234" /></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 style="text-align: justify;">4. Policy Analyzer</h3>
+<p style="text-align: justify;"><span>Generalmente, antes de aplicar las <strong>GPO</strong> descargadas e identificadas para utilizar en nuestro sistema, hay que comprobar qué van a aportar las líneas base de configuración de seguridad de Microsoft al mismo. Para ello, Microsoft nos proporciona </span><span data-ttu-id="38cca-104">la herramienta <strong>Policy Analizer</strong> que nos permitirá realizar ese análisis.</span></p>
+<p style="text-align: justify;"><span data-ttu-id="38cca-104">En los siguientes puntos, se describe el proceso para comparar la línea base que se ha trabajado en la tarea anterior con la configuración actual de un sistema, en este caso de ejemplo, un servidor <strong>Windows Server 2019 Datacenter</strong> promocionado a controlador del dominio <strong>ciber.local</strong>.</span></p>
+<p style="text-align: center;"><img src="perseo.png" alt="" width="998" height="492" /></p>
+<p style="text-align: center;"><span data-ttu-id="38cca-104"><em><strong>Figura 4.</strong> Servidor Windows Server 2019 Datacenter controlador del dominio ciber.local.</em></span></p>
+<p><span><strong>1. Ejecutar PolicyAnalyzer</strong></span></p>
+<p><span>A partir del fichero <strong><em>PolicyAnalyzer.zip</em></strong> , descomprimimos el mismo y ejecutamos e</span>l programa<span> </span><strong>PolicyAnalyzer</strong>.</p>
+<p style="text-align: center;"><img src="polixy-analizer.png" alt="" width="627" height="238" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Ejecutar PolicyAnalyzer.</em></p>
+<p><strong>2. Importar las reglas.</strong></p>
+<p style="text-align: justify;">A continuación, hay que pulsar el botón<span> </span><strong>Add...</strong><span> </span>para importar las reglas desde las carpetas de directivas de grupo. Seguidamente, hay que acceder a <strong>File --&gt; Add files from GPO(s)...</strong> y luego, seleccionar la carpeta correspondiente a <strong>MSFT Windows Server 1809 - Domain Controller</strong> (ver tarea 1) y añadirla (<strong>User+Computer</strong>). Para finalizar, hay que pulsar el botón <strong>Import...</strong> <strong>Nota:</strong> Si de da algún error, proseguiremos de igual modo.</p>
+<p style="text-align: center;"><img src="computer-user.png" alt="" width="552" height="40" /></p>
+<p style="text-align: center;"><img src="policy-Analyzer-01.png" alt="" width="1077" height="440" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong> Añadir reglas.</em></p>
+<p style="text-align: justify;">Una vez se ha pulsado le botón <strong>Import...</strong>, hay que establecer un nombre para guardarlo en disco. Para este caso de ejemplo, se guarda la GPO con este nombre: <strong>MSFT Windows Server Domain Controller-ciber-local</strong>. Una vez guardado, nos aparece el registro en el panel (ver imagen inferior).</p>
+<p style="text-align: center;"><img src="msft-ciber-local.png" width="535" height="121" /></p>
+<p style="text-align: center;"><em><strong>Figura 7.</strong> Reglas importadas.</em></p>
+<p><strong>3. Compare to Effective State</strong></p>
+<p style="text-align: justify;">El siguiente paso, es asegurar que las reglas que se acaban de añadir estén seleccionadas y a continuación hay que pulsar el botón<span> </span><strong>Compare to Effective State</strong>. Como se puede observar, se ha añadido un nuevo conjunto de reglas con la configuración afectiva (imagen inferior).</p>
+<p style="text-align: center;"><img src="policy-Analyzer-04.png" width="722" height="463" /></p>
+<p style="text-align: center;"><em><strong>Figura 8.</strong> Pulsar 'Compare to Effective State'.</em></p>
+<p style="text-align: justify;">Una vez pulsado el botón '<strong><em>Compare to Effective State</em></strong>' En el visor de directivas se puede ver las reglas incluidas en la línea base, con su valor (penúltima columna) y el valor que tiene en el sistema actualmente (última columna). Además, si hacemos clic sobre alguna de las directivas, se puede ver su descripción y los valores detallados tanto en la línea base como en la configuración efectiva (ver imagen inferior).</p>
+<p style="text-align: center;"><img src="policy-analyzer-05.png" width="991" height="559" /></p>
+<p style="text-align: center;"><em><strong>Figura 9.</strong> Visor de directivas.</em></p>
+<p style="text-align: justify;">Desde el<span> </span><strong>menú View</strong><span> </span>se puede focalizar la atención sobre las directivas configuradas con valores distintos (fondo de celda gris). Si se tienen directivas que entran en conflicto, el fondo de la celda es amarillo, ejemplo:</p>
+<p style="text-align: center;"><img src="conflicto-directiva.png" width="406" height="50" /></p>
+<p style="text-align: justify;">Como se puede observar en la imagen superior, se ha encontrado un conflicto referido al<strong> ICMP redirect</strong>, donde la línea base nos dice que debería estar deshabilitado.</p>
+<p style="text-align: justify;">Desde el menú <strong>View</strong>, se puede seleccionar que sólo presente las diferencias, o sólo los conflictos para reducir la salida del informe y sólo centrarnos en lo necesario.</p>
+<p style="text-align: center;"><img src="policy-analyze-06.png" alt="" width="917" height="587" /></p>
+<p style="text-align: center;"><em><strong>Figura 10.</strong> Menú View - Only Differences.</em></p>
+<h3>5. Importación de líneas base</h3>
+<h4><strong>5.1 Importar una línea base de seguridad</strong></h4>
+<p style="text-align: justify;">Como ejemplo, se va a importar la GPO descargada en la <strong>Tarea 1, </strong>en concreto, <strong> MSFT Windows Server 1809 - Domain Controller </strong>en la categoría Objetos de directiva de grupo del controlador del dominio. Para ello, hay que inicia sesión en el controlador del dominio con un usuario con los privilegios necesarios para administrar las directivas de grupo.</p>
+<p style="text-align: justify;">A continuación, hay que acceder a Menú<span> </span><em><strong>Windows --&gt; Administrador del Servidor --&gt; Herramientas --&gt; Administración de directivas de grupo</strong></em><span> </span>o ejecutar <strong>gpmc.msc.</strong> en la consola cmd.</p>
+<p style="text-align: center;"><img src="import-LB-01.png" alt="" width="955" height="454" /></p>
+<p style="text-align: center;"><em><strong>Figura 11.</strong> Panel de Administración de directivas de grupo.</em></p>
+<p style="text-align: justify;">Una vez estamos en el Panel '<strong>Administración de directivas de grupo</strong>', tenemos que desplegar los siguientes elementos del panel lateral: <strong>Bosque</strong>: (nuestro bosque) --&gt; <strong>Dominios</strong> --&gt; (para este caso ciber.local). En ese nodo del árbol, creamos un nuevo objeto de directiva de grupo por medio del menú contextual de la categoría '<strong>Objetos de directiva de grupo</strong>'.</p>
+<p style="text-align: center;"><img src="nuevaGPO-LBase.png" alt="" width="955" height="451" /></p>
+<p style="text-align: center;"><em><strong>Figura 12.</strong> Crear nuevo objeto de directivas de grupo.</em></p>
+<p style="text-align: justify;">Para este caso de ejemplo, le ponemos como nombre <strong>MSFT Windows Server 1809 - Domain Controller-ciber </strong>y pulsamos Aceptar.</p>
+<p style="text-align: center;"><span><img src="nuevaGPO.png" alt="" width="382" height="172" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 13. </strong>Nombrado de la GPO.</em></p>
+<p style="text-align: justify;"><span>Si todo ha ido bien, en el panel central aparecerá ya creado el nuevo objeto.</span></p>
+<p style="text-align: center;"><img src="import-LB-02.png" width="954" height="454" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 14.</strong> Nuevo objeto de directiva de grupo creado.</em></span></p>
+<p style="text-align: justify;"><span>Una vez se ha creado el nuevo objeto, lo seleccionamos y hacemos <strong>click</strong> con el botón derecho del ratón y seleccionamos la opción '<strong>Importar configuración</strong>' de su menú contextual. Aparece un asistente (ver figura 15) donde nos aparecen una serie de indicaciones para realizar la importación, a saber: Realizar copia de seguridad, directorio donde está la configuración a importar, etcétera.</span></p>
+<p style="text-align: center;"><span><img src="importar-LineasBase-04.png" alt="" width="495" height="395" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 15.</strong> Asistente para importar configuración.</em></span></p>
+<p style="text-align: justify;"><span>En el punto donde nos solicita el directorio donde está la configuración a importar, hay que seleccionar el directorio GPOs del directorio '<strong>Windows 10 Version 1809 and Windows Server 2019 Security Baselin</strong>e' para poder importar para </span>este caso de ejemplo, la configuración de '<strong>MSFT Windows Server 2019 - Domain Controller'.</strong></p>
+<p style="text-align: center;"><strong><img src="seldirecGPO.png" alt="" width="935" height="395" /></strong></p>
+<p style="text-align: center;"><em><strong>Figura 16. </strong>Examinar la carpeta de GPOs.</em></p>
+<p style="text-align: justify;">Una vez seleccionado el directorio, el siguiente paso es seleccionar '<strong>MSFT Windows Server 2019 - Domain Controller</strong>' (ver figura inferior) y pulsar <strong>Siguiente</strong>.</p>
+<p style="text-align: center;"><img src="importar-LineasBase-05.png" width="495" height="393" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 17.</strong> Selección de la configuración a importar.</em></span><span></span></p>
+<div class="cuadro-nota-centro-new">
+<p><span>En el caso de que la configuración a importar contenga referencias a entidades o rutas que no tengamos en nuestro sistema, se deben cambiar por las que se tengan.</span></p>
+<p style="text-align: center;"><span><img src="importar-LineasBase-07.png" alt="" width="495" height="392" /></span></p>
+</div>
+<p style="text-align: justify;">Por último, indicamos que se <span>copien directamente sin adaptarlas. Cuando finalice el proceso de importación se nos advertirá de los posibles problemas.</span></p>
+<p style="text-align: center;"><span><img src="importar-LineasBase-08.png" alt="" width="496" height="394" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 18.</strong> Copiado igual que al origen.</em></span></p>
+<p style="text-align: justify;"><span>Al pulsar '<strong>Siguiente</strong>', el asistente nos informa que la configuración se completó correctamente (si todo ha ido bien) por lo que ahora, podemos pulsar '<strong>Finalizar</strong>' para que comience el proceso de importación.</span></p>
+<p style="text-align: center;"><img src="importar-LineasBase-09.png" width="492" height="393" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 19.</strong> Fin de la importación.</em></span></p>
+<p style="text-align: justify;"><span>Una vez finaliza el proceso de importación, el asistente nos informa del Estado del mismo. Para este ejemplo, nos salen unos mensajes de '<strong>Advertencias</strong>' referidas a nombrados en Inglés y que en nuestro caso, el sistema está en Español.</span></p>
+<p style="text-align: center;"><img src="importar-LineasBase-10.png" alt="" width="525" height="435" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 20.</strong> Progreso de importación.</em></span></p>
+<p style="text-align: justify;"><span>Una vez ha finalizado la importación, podemos observar que ya está habilitada y podemos consultar, por ejemplo, la configuración aplicada.</span></p>
+<p style="text-align: center;"><img src="importar-LineasBase-11.png" width="1124" height="538" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 21.</strong> Configuración aplicada.</em></span></p>
+<h4 style="text-align: justify;"><span>5.2 Aplicar varias configuraciones de GPO a la máquina local</span></h4>
+<p style="text-align: justify;">Para aplicar varias configuraciones de GPO en el equipo de manera automática, Microsoft ha desarrollado un script en Power Shell '<strong>BaselineLocalInstall.ps1</strong>' que se encuentra en el directorio '<strong>Local_Script'</strong><span>'.</span></p>
+<p style="text-align: center;"><img src="localscript.png" alt="" width="753" height="274" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 22.</strong> Acceso a la carpeta que contiene el script.</em></span></p>
+<p style="text-align: justify;"><span>Antes de ejecutar el script, hay que copiar el fichero <strong>LGPO.exe</strong> en el directorio <strong>Tools</strong> dado que se utiliza para desplegar la configuración de las GPOs en el equipo. El no tener el fichero LGPO en el directorio Tools, generará el siguiente error.</span></p>
+<p style="text-align: center;"><span><img src="error-LGPO.png" alt="" width="1027" height="205" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 23.</strong> Error al ejecutar el script.</em></p>
+<p style="text-align: justify;"><span>El script <strong>Baseline-LocalInstall.ps1</strong> necesita de un parámetro para saber qué GPOs se quieren aplicar y que para este caso, es la 'Windows 10 Version 1809 and Windows Server 2019 Security Baseline'. Los parámetros posibles son (se pueden consultar en el propio script):</span></p>
+<ul>
+<li style="text-align: justify;"><span> -Win10DomainJoined - Windows 10 v1809, domain-joined</span></li>
+<li style="text-align: justify;"><span>-Win10NonDomainJoined - Windows 10 v1809, non-domain-joined</span></li>
+<li style="text-align: justify;"><span>-WS2019Member - Windows Server 2019, domain-joined member server</span></li>
+<li style="text-align: justify;"><span>-WS2019NonDomainJoined - Windows Server 2019, non-domain-joined</span></li>
+<li style="text-align: justify;"><span><strong>-WS2019DomainController</strong> - Windows Server 2019, domain controller</span></li>
+</ul>
+<p style="text-align: justify;">Para nuestro caso de estudio, le pasaremos el parámetro <strong>-WS2019DomainController</strong> ya que se desea aplicar todo lo relacionado a un servidor controlador del dominio.</p>
+<p style="text-align: justify;"><span>A continuación, abrimos una <strong><em>terminal de Powershell</em></strong> como Administrador y ejecutamos el script <strong>Baseline-LocalInstall.ps1</strong> con el parámetro <strong>-WS2019DomainController.</strong></span><span></span><span><strong></strong></span></p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\BaseLine\Windows 10 Version 1809 and Windows Server 2019 Security Baseline\Local_Scripts&gt;</strong>.\Baseline-LocalInstall.ps1 -WS2019DomainController</span></pre>
+<p style="text-align: center;"><img src="BaseLineImportLocal.png" alt="" width="1090" height="618" /></p>
+<p style="text-align: center;"><em><strong>Figura 24.</strong> Ejecución del script y configuración de las GPOs relacionadas a WS2019DomainController.</em></p>
+<p style="text-align: justify;">La ejecución del script, crea un fichero log que para este caso es: '<strong>BaselineInstall-20221219-1717-</strong><wbr /><span><strong>55</strong>' donde podemos consultar toda la información de la ejecución del script.</span></p>
+<p style="text-align: center;"><span><img src="BaseLineImpor-log.png" alt="" width="212" height="105" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 25.</strong> Fichero de log creado por el script.</em></p>
+<div class="cuadro-nota-centro-new">
+<p><span>Una vez se ejecuta el script se aplicarán automáticamente todas las configuraciones.</span></p>
+</div>
+<h4 style="text-align: justify;">5.3 Importar todas las líneas base de seguridad automáticamente</h4>
+<p style="text-align: justify;">Para importar todas las líneas base de seguridad de manera automática, Microsoft ha desarrollado un script '<strong>Baseline-ADImport.ps1</strong>', que permite importar todas las GPO a Active Directory, estas se mostrarán en "<strong>Objetos de directiva de grupo</strong>" y no se aplicarán a nada.</p>
+<p style="text-align: justify;">Para el caso de estudio, este script no viene en el directorio <strong>Local_Script,</strong> por lo que hay que copiarlo éste y sus dependencias desde cualquier otra línea base, ejemplo: '<strong>Windows-10-v22H2-Security-Baseline</strong>'. Como se observa en la imagen inferior, se ha copiado el directorio Scripts de '<strong>Windows-10-v22H2-Security-Baseline</strong>' a '<strong>Windows 10 Version 1809 and Windows Server 2019 Security Baseline</strong>'.</p>
+<p style="text-align: center;"><img src="copiar-script.png" alt="" width="730" height="292" /></p>
+<p style="text-align: center;"><em><strong>Figura 26.</strong> Copia del directorio Scripts.</em></p>
+<p style="text-align: justify;">Una vez copiado, hay que acceder al directorio <strong>Scripts</strong> y ejecutar el script <strong>Baseline-ADImport.ps1</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\BaseLine\Windows 10 Version 1809 and Windows Server 2019 Security Baseline\Scripts&gt; </strong>.\Baseline-ADImport.ps1</span></pre>
+<p style="text-align: justify;">Por pantalla, se va informando de las importaciones que está realizando.</p>
+<p style="text-align: center;"><img src="baseline-adimport.png" alt="" width="867" height="623" /></p>
+<p style="text-align: center;"><em><strong>Figura 27.</strong> Importación automática de las líneas base.</em></p>
+<p style="text-align: justify;">Una vez ha finalizado el script, ya se puede acceder al panel de '<strong>Administración de directivas de grupo</strong>' par comprobar la importación.</p>
+<p style="text-align: center;"><a href="lineas-base-importadas.png" target="_blank" rel="noopener"><em><img src="lineas-base-importadas.png" alt="" width="934" height="435" /></em></a></p>
+<p style="text-align: center;"><em><strong>Figura 28.</strong> Lineas base importadas.</em></p>
+<h3 style="text-align: justify;">6. Probar las líneas base</h3>
+<p style="text-align: justify;">Antes de aplicar las líneas base a un sistema en producción, hay que probarlas en un entorno de pruebas. Para ello, habría que crear una serie de unidades organizativas y aplicar las líneas base necesarias a la unidad organizativa. A continuación, habría que mover los equipo de prueba a las mismas y verificar la funcionalidad. También se puede usar el script de importación local para probar una máquina independiente sin riesgo de afectar a ninguna otra máquina en el dominio.</p>
+<p style="text-align: justify;">Una vez aplicadas las lineas base, habría que probar el acceso a los recursos de la red, escanear la máquina con un escáner de vulnerabilidades, probar el acceso remoto, etcétera.</p>
+<h3 style="text-align: justify;">7. Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://docs.microsoft.com/es-es/windows/security/threat-protection/windows-security-configuration-framework/windows-security-baselines" target="_blank" rel="noopener">[Líneas base de seguridad Windows]</a></li>
+</ul>
+<h1 class="iDevice_header"><span style="font-size: 18pt;">Para saber más</span></h1>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta81_128" class="block iDevice_content">
+<p><strong>A continuación puedes encontrar varios enlaces donde profundizar en las líneas base de seguridad de Windows</strong></p>
+<ul>
+<li>Web general sobre líneas base de seguridad: <a href="https://docs.microsoft.com/es-es/windows/security/threat-protection/windows-security-baselines">https://docs.microsoft.com/es-es/windows/security/threat-protection/windows-security-baselines</a></li>
+<li>Web para la descargar del Toolkit: <a href="https://docs.microsoft.com/es-es/windows/security/threat-protection/security-compliance-toolkit-10" target="_blank" rel="noopener">https://docs.microsoft.com/es-es/windows/security/threat-protection/security-compliance-toolkit-10</a></li>
+</ul>
+<p><strong>Herramientas:</strong></p>
+<ul>
+<li>LGPO:<span> </span><a href="https://techcommunity.microsoft.com/t5/microsoft-security-baselines/lgpo-exe-local-group-policy-object-utility-v1-0/ba-p/701045">https://techcommunity.microsoft.com/t5/microsoft-security-baselines/lgpo-exe-local-group-policy-object-utility-v1-0/ba-p/701045</a></li>
+<li>Policy Analyzer: <a href="https://techcommunity.microsoft.com/t5/microsoft-security-baselines/new-tool-policy-analyzer/ba-p/701049">https://techcommunity.microsoft.com/t5/microsoft-security-baselines/new-tool-policy-analyzer/ba-p/70104</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_hardening.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_1_sct__policy_analyzer.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2.1.3 Usuarios | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-79"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="daddy">3. Securización de los sistemas de administración remota</a>
+   <ul class="other-section">
+      <li><a href="31_secureshell.html" class="daddy">3.1 SecureShell</a>
+      <ul class="other-section">
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="current-page-parent daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul>
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="42_antivirus_endpoint_detection__response_edr.html" class="current-page-parent daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul>
+         <li class="current-page-parent"><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="current-page-parent daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul>
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li id="active"><a href="4213_usuarios.html" class="active no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4214_dispositivos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2.1.3 Usuarios</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id117">
+<div class="iDevice emphasis0">
+<div id="ta117_85" class="block iDevice_content">
+<h3>1. Creación de usuarios</h3>
+<p>A través de las cuentas de correo se pueden crear todos los usuarios y después agruparlos para especificar que perfil de seguridad se le asignan.</p>
+<ul>
+<li>Ver y modificar la lista de usuarios.</li>
+<li>Crear grupos de usuarios y distribuir los usuarios entre esos grupos.</li>
+<li>Conceder derechos a los usuarios.</li>
+<li>Editar la información de los usuarios.</li>
+</ul>
+<h3>2. Visualización de la lista de usuarios</h3>
+<p>La sección Usuarios de la Consola de gestión de <strong><em>Kaspersky Endpoint Security Cloud</em></strong> muestra los usuarios y grupos de usuarios que se han agregado a la Consola de gestión.</p>
+<p>La lista contiene columnas con los siguientes datos de usuarios y sus dispositivos:</p>
+<ul>
+<li style="text-align: justify;"><strong>Estado</strong>. Un icono refleja el estado de la protección de los dispositivos del usuario (equipos o dispositivos móviles que se hayan conectado a Kaspersky Endpoint Security Cloud), en orden descendente de gravedad:
+<ul>
+<li style="text-align: justify;"><strong>(Crítico).</strong> Un evento crítico que haya tenido lugar en al menos un dispositivo del usuario, por ejemplo, la detección de un objeto infectado o una instancia de malware.</li>
+<li style="text-align: justify;"><strong>(Advertencia).</strong> Un evento importante que requiere atención ha ocurrido en al menos un dispositivo del usuario.</li>
+<li style="text-align: justify;"><strong>(Sin inconvenientes).</strong> Ni eventos críticos ni importantes en los dispositivos del usuario.</li>
+<li style="text-align: justify;"><strong>(Desconocido).</strong> El usuario no posee ningún dispositivo que esté conectado a Kaspersky Endpoint Security Cloud; o no se pueden recuperar datos sobre los eventos que hayan tenido lugar en tales dispositivos.</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: justify;">Si el usuario tiene varios dispositivos con diferentes estados, se muestra el estado más importante. Por ejemplo, si en distintos dispositivos tienen lugar un evento importante y un evento crítico, se mostrará el estado correspondiente al crítico.</p>
+<ul>
+<li style="text-align: justify;"><strong>Dirección de correo electrónico y alias del usuario/Nombre del grupo</strong>. Contiene el nombre de usuario y la dirección de correo electrónico (para usuarios independientes) o el nombre de grupo y el número de usuarios del grupo (para grupos de usuarios). Puede hacer clic en el enlace con el nombre para ir a la página con información detallada sobre los usuarios o grupo de usuarios.</li>
+<li style="text-align: justify;"><strong>Número de dispositivos.</strong> Contiene el número de dispositivos que posee el usuario o grupo de usuarios que están conectados a Kaspersky Endpoint Security Cloud.</li>
+<li style="text-align: justify;"><strong>Comentario.</strong> Contiene el comentario que introdujo al editar los datos del usuario o al añadir el grupo de usuarios.</li>
+<li style="text-align: justify;"><strong>Derechos de acceso.</strong> Contiene los derechos de acceso que se le hayan concedido al usuario. La etiqueta Admin significa que se le han concedido derechos de administrador al usuario. Si no se le han concedido derechos de administrador al usuario, esta columna se quedará vacía para este usuario.</li>
+<li style="text-align: justify;"><strong>Perfil de seguridad.</strong> Contiene el perfil de seguridad que se le ha asignado a la cuenta de usuario o de grupo de usuarios. En caso necesario, puede asignar un perfil de seguridad diferente. Para ello, seleccione uno de la lista desplegable. El perfil de seguridad que haya asignado se aplicará inmediatamente a los dispositivos del usuario.</li>
+</ul>
+<p style="text-align: justify;">Puede clasificar la lista de cuentas de usuario por las columnas: <strong>Estado, Dirección de correo electrónico y alias del usuario/Nombre del grupo, Número de dispositivos, Comentario o Derechos de acceso.</strong></p>
+<p style="text-align: justify;">Para filtrar la lista de usuarios por estado de los dispositivos del usuario, junto a <strong>Mostrar usuarios</strong>, haga clic en el enlace con el estado del dispositivo correspondiente. Para ver a todos los usuarios independientemente de los estados de sus dispositivos, haga clic en el enlace <strong>Todos</strong>.</p>
+<p style="text-align: justify;">Para clasificar la lista de cuentas de usuario, Haga clic en el enlace que contiene el nombre de la columna. El nombre de la columna se muestra en mayúsculas. Junto al nombre de la columna, una flecha hacia arriba (<strong>˄</strong>) indica la dirección de la clasificación. Para cambiar la dirección de la clasificación, vuelva a hacer clic. Junto al nombre de la columna, aparece una flecha hacia abajo (<strong>˅</strong>).</p>
+<p style="text-align: justify;">El campo de entrada <strong>Buscar</strong> para buscar a usuarios está ubicado sobre la lista de usuarios. Puede usar la función de búsqueda para cambiar rápidamente a un usuario en una lista larga.</p>
+<h3>3. Creación de grupos de usuarios</h3>
+<p>Puede crear grupos de usuarios para asignar rápidamente a los usuarios perfiles de seguridad que coincidan con sus tareas y el ámbito de sus obligaciones.</p>
+<p>No se pueden crear <strong>más de 20 grupos de usuario</strong>s. A continuación, se describe el proceso.</p>
+<div class="exe-fx exe-tabs">
+<h2>1.</h2>
+<p><span>Abrir la Consola de administración de Kaspersky Endpoint Security Cloud.</span></p>
+<p style="text-align: center;"><span><img src="crear-grupos-01.png" alt="" width="1147" height="465" /></span></p>
+<h2>2.</h2>
+<p style="text-align: justify;"><span>A continuación, hay que seleccionar la sección <strong>Usuarios</strong>. La sección </span><span><strong>Usuarios</strong></span><span> contiene una lista de usuarios y grupos de usuarios que se han añadido a Kaspersky Endpoint Security Cloud.</span></p>
+<p style="text-align: center;"><span><img src="crear-grupos-02.png" alt="" width="1146" height="410" /></span></p>
+<h2>3.</h2>
+<p style="text-align: justify;"><span>A continuación, hay que hacer</span> clic en el botón<span> </span><span><strong>Crear grupo</strong></span><span> </span>que hay sobre la lista de usuarios. Se abrirá la ventana<span> </span><span><strong>Configuración de grupo de usuarios</strong></span><span> </span>(consulta la figura siguiente), donde hay que introducir el nombre de un grupo de usuarios y un comentario. En los campos de entrada<span> </span><span><strong>Nombre de grupo</strong></span><span> </span>y<span> </span><span><strong>Comentario</strong></span>, se puede introducir un texto de 255 caracteres como máximo. La cadena puede contener símbolos alfanuméricos en mayúscula y minúscula, espacios en blanco, puntos, comas, signos menos, guiones y guiones bajos. </p>
+<p style="text-align: justify;">En la lista desplegable<span> </span><span><strong>Perfil de seguridad</strong></span>, hay que seleccionar el perfil de seguridad que se quiera asignar al grupo. De forma predeterminada, el perfil de seguridad<span> </span><span><strong>Predeterminado</strong></span><span> </span>está seleccionado para cada grupo. El perfil de seguridad<span> </span><span><strong>Predeterminado</strong></span><span> </span>lo configuran los expertos de Kaspersky para dispositivos con Windows, Mac, Android e iOS.</p>
+<p style="text-align: justify;">Para finalizar, hay que pulsar '<strong>Aceptar</strong>'</p>
+<p style="text-align: center;"><img src="crear-grupos-03.png" alt="" width="1146" height="663" /></p>
+<p style="text-align: center;"></p>
+<h2>4.</h2>
+<p style="text-align: justify;"><span>Los grupos recién creados aparecen en la lista de usuarios y de grupos de usuarios (vea la siguiente imagen). Un grupo recién creado no contiene ningún usuario. Cuando el grupo esté creado, puede proceder a agregar usuarios al grupo.</span></p>
+<p style="text-align: center;"><span><img src="crear-grupos-04.png" alt="" width="1411" height="655" /></span></p>
+</div>
+<h3>4. Modificación de la información de usuario</h3>
+<p>Para la modificación de la información de los usuarios, hay que seguir los siguientes puntos:</p>
+<p><strong>1. </strong> Abrir la con<span>sola de administración de Kaspersky Endpoint Security Cloud.</span></p>
+<p><span><strong>2.</strong> </span>Seleccionar la sección<span> </span><span><strong>Usuarios</strong></span>. La sección<span> </span><span><strong>Usuarios</strong></span><span> </span>contiene una lista de usuarios y grupos de usuarios que se han añadido a <strong>Kaspersky Endpoint Security Cloud</strong>.</p>
+<p><span><strong>3.</strong> En la lista, hay que seleccionar la casilla junto al usuario cuya información se desea editar.</span></p>
+<p style="text-align: center;"><span><img src="usuarios-mod-01.png" alt="" width="1414" height="657" /></span></p>
+<p style="text-align: justify;"><strong>4. </strong>Hay que hacer clic en el botón<span> </span><span><strong>Modificar</strong></span><span> </span>que hay sobre la lista de usuarios. Se abrirá una ventana que contiene la información detallada sobre el usuario. A continuación, hay que <strong>Editar</strong> la información de los usuarios:</p>
+<ul>
+<li>Alias de usuario.</li>
+<li>Dirección de correo electrónico.</li>
+</ul>
+<div class="cuadro-nota-centro">
+<p style="text-align: justify;"><strong>No se puede editar las direcciones de correo electrónico de los usuarios a los que se les han otorgado derechos de administrador. </strong>Tales usuarios pueden modificar sus direcciones de correo electrónico en el portal de Kaspersky Business Hub.</p>
+</div>
+<ul>
+<li>Comentario</li>
+</ul>
+<p style="text-align: justify;">Si quiere mover usuarios a un grupo, conceder derechos de administrador a usuarios (o revocar los derechos de administrador) o enviarles instrucciones para que instalen una aplicación de seguridad en sus dispositivos, hay que hacer clic en los botones correspondientes de la sección<span> </span><span><strong>Comandos</strong></span>.</p>
+<p style="text-align: center;"><img src="usaurios-mod-02.png" alt="" width="1178" height="869" /></p>
+<p style="text-align: justify;"><strong>5.</strong> Para consolidar los cambios, hay que realizar clic en el botón<span> </span><strong>Guardar</strong>. También se puede editar la información del usuario al abrir la ventana de un usuario. Para modificar la información de un usuario, hay que hacer clic en el enlace del nombre de la cuenta de usuario y hacer clic en<span> </span><span><strong>Modificar</strong></span>.</p>
+<p style="text-align: justify;">Los datos que se editen, se mostrarán en la lista de cuentas de usuario y en la página de configuración de usuario.</p>
+<h3>5. Traspaso de usuarios de un grupo a otro</h3>
+<p>Para traspasar usuarios de un grupo a otro, hay que seguir los siguientes puntos:</p>
+<p><strong>1. </strong> Abrir la con<span>sola de administración de Kaspersky Endpoint Security Cloud.</span></p>
+<p><span><strong>2.</strong> </span>Seleccionar la sección<span> </span><span><strong>Usuarios</strong></span>. La sección<span> </span><span><strong>Usuarios</strong></span><span> </span>contiene una lista de usuarios y grupos de usuarios que se han añadido a Kaspersky Endpoint Security Cloud.</p>
+<p><span><strong>3.</strong> En la lista, hay que seleccionar la casilla junto al usuario que se desea añadir al grupo.</span></p>
+<p style="text-align: justify;"><span>4. Hacer </span>clic en el botón<span> </span><span><strong>Mover al grupo</strong></span><span> </span>que hay sobre la lista. El botón<span> </span><span><strong>Mover al grupo</strong></span><span> </span>solo está disponible si se ha creado al menos un grupo. Se abrirá la ventana<span> </span><span><strong>Mover usuarios a grupo</strong></span>. E<span>n la lista desplegable, hay que seleccionar el nombre del grupo al que se desea mover el usuario (ejemplo: mover al grupo ciber-caminas).</span></p>
+<p style="text-align: center;"><span><img src="mover-grupos-01.png" alt="" width="597" height="297" /></span></p>
+<p><strong>5.</strong> Por último, hay que hacer clic en el botón<span> </span><span><strong>Aceptar </strong>para que e</span>l usuario se añada al grupo.</p>
+<p style="text-align: justify;">Se pueden añadir los usuarios mientras se encuentra en la ventana de un grupo. Para añadir un usuario, hay que hacer clic en el enlace del nombre de un grupo y hacer clic en<span> </span><span><strong>Añadir usuarios</strong></span>.</p>
+<p style="text-align: justify;">Los usuarios añadidos a un grupo no aparecen en la lista general de usuarios. El perfil de seguridad que tuviera asignado el usuario se reemplazará por el perfil de seguridad que haya asignado al grupo al que se ha añadido la cuenta de usuario</p>
+<h3>6. Eliminación de cuentas de usuario</h3>
+<p>Para eliminar cuentas de usuario, hay que seguir los siguientes puntos:</p>
+<p><strong>1. </strong> Abrir la con<span>sola de administración de Kaspersky Endpoint Security Cloud.</span></p>
+<p><span><strong>2.</strong> </span>Seleccionar la sección<span> </span><span><strong>Usuarios</strong></span>. La sección<span> </span><span><strong>Usuarios</strong></span><span> </span>contiene una lista de usuarios y grupos de usuarios que se han añadido a <strong>Kaspersky Endpoint Security Cloud</strong>.</p>
+<p><span><strong>3.</strong> A continuación, hay que seleccionar la casilla de verificación junto al nombre del usuario o junto a varios nombres de usuarios que se desean eliminar. </span></p>
+<p><span><strong>4.</strong> A continuación, hay que hacer clic en el botón <strong>Eliminar</strong> que hay sobre la lista.</span></p>
+<p style="text-align: justify;">Después de confirmar la eliminación del usuario, <strong>Kaspersky Endpoint Security Cloud</strong> elimina la cuenta de usuario de la lista.</p>
+<p style="text-align: justify;">Si el usuario es el administrador, se le enviará un mensaje de correo electrónico sobre la revocación de los derechos de administrador.</p>
+<p style="text-align: justify;">Existen restricciones en la eliminación de usuarios:</p>
+<ul>
+<li style="text-align: justify;">No puede eliminar un usuario que tiene dispositivos administrados. Si tiene que eliminar la cuenta de usuario de un propietario del dispositivo, primero debe eliminar los dispositivos que posea dicho usuario.</li>
+<li style="text-align: justify;">No puede eliminar la cuenta del administrador único de la empresa.</li>
+</ul>
+<h3>7. Eliminación de grupos de usuarios</h3>
+<p>Para traspasar usuarios de un grupo a otro, hay que seguir los siguientes puntos:</p>
+<p><strong>1. </strong> Abrir la con<span>sola de administración de Kaspersky Endpoint Security Cloud.</span></p>
+<p><span><strong>2.</strong> </span>Seleccionar la sección<span> </span><span><strong>Usuarios</strong></span>. La sección<span> </span><span><strong>Usuarios</strong></span><span> </span>contiene una lista de usuarios y grupos de usuarios que se han añadido a <strong>Kaspersky Endpoint Security Cloud.</strong></p>
+<p><span><strong>3.</strong> A continuación, hay que seleccionar la casilla de verificación que hay junto al nombre del grupo de usuarios que desee eliminar.</span></p>
+<p><span>4. A continuación, hay que hacer clic en el botón <strong>Eliminar</strong> que hay sobre la lista, se abrirá la ventana <strong>Eliminar grupo. </strong></span><span><strong></strong></span></p>
+<p style="text-align: center;"><span><img src="eliminar-grupo.png" alt="" width="584" height="140" /></span></p>
+<p style="text-align: justify;"><span><strong>5.</strong> Si el grupo de usuarios contiene al menos un usuario, en la lista desplegable de la ventana <strong>Eliminar grupo</strong>, se le solicitará que seleccione un grupo o lista general de cuentas de usuario donde mover los usuarios del grupo que se eliminará.</span></p>
+<p><strong>6</strong>. Hay que hacer clic en el botón<span> </span><span><strong>Quitar</strong></span><span> </span>para confirmar la eliminación del grupo. Después de mover a los usuarios, el grupo de usuarios se elimina.</p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4214_dispositivos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

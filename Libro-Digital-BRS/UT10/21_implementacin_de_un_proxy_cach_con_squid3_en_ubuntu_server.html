@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server | UT10. Fortificación perimetral: proxy </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-149"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT10. Fortificación perimetral: proxy</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT10. Fortificación perimetral: proxy</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_los_proxys.html" class="no-ch">1. Introducción a los proxys</a></li>
+   <li class="current-page-parent"><a href="2_proxy_webcach.html" class="current-page-parent daddy">2. Proxy web/caché</a>
+   <ul>
+      <li id="active"><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="active no-ch">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proxy_con_autenticacin_bsica.html" class="no-ch">3. Proxy con autenticación básica</a></li>
+   <li><a href="4_proxy_con_filtrado.html" class="no-ch">4. Proxy con filtrado</a></li>
+   <li><a href="5_proxy_transparente_para_httphttps.html" class="daddy">5. Proxy transparente para HTTP/HTTPS</a>
+   <ul class="other-section">
+      <li><a href="51_proxy_transparente_para_http.html" class="no-ch">5.1 Proxy transparente para HTTP</a></li>
+      <li><a href="52_proxy_transparente_para_https.html" class="no-ch">5.2 Proxy transparente para HTTPS</a></li>
+   </ul>
+   </li>
+   <li><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="daddy">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_proxy_squid_con_pfsense.html" class="no-ch">Práctica 1. Proxy Squid con PfSense</a></li>
+   </ul>
+   </li>
+   <li><a href="7_proxy_dns__pihole.html" class="daddy">7. Proxy DNS - PiHole</a>
+   <ul class="other-section">
+      <li><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="no-ch">Práctica 2.Implantación del proxy DNS Pi-Hole</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2_proxy_webcach.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_proxy_con_autenticacin_bsica.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id188">
+<div class="iDevice emphasis0" >
+<div id="ta188_188_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">Cuando el acceso a internet por parte de los equipos de la red supone un cuello de botella en las comunicaciones de una empresa, suele ser buena idea incorporar un proxy a tu red.</p>
+<p style="text-align: justify;">En este capítulo se va a instalar<span> </span><strong>Squid sobre un Ubuntu Server</strong><span> ubicado en la red interna </span>para que el resto de equipos le realicen a él las peticiones HTTP, FTP, email, etcétera. En los equipos clientes habrá que configurar en los navegadores web el proxy para que todas las peticiones a internet pasen por el servidor proxy. Por último, se configurarán unas<span> </span><strong><em>reglas en el firewall ( IP --&gt; Firewall --&gt; Filter Rules) del router BackEnd para impedir que los clientes se salten el proxy</em></strong>, es decir, sólo se permitirá el acceso a internet cuando las peticiones vengan del servidor proxy ubuntu server, de esta manera, se optimizará el uso de la red WAN por parte de los equipos de la red interna.</p>
+<p style="text-align: justify;">Partiendo de la<em><strong> infraestructura de red que se implementó en la unidad de trabajo anterior</strong></em>, donde se tienen 2 routers Mikoritk que implementan el esquema de 2 DMZ'z, se añade un nuevo equipo en la red interna que hará de servidor proxy. Para este caso, se creará una máquina virtual con ubuntu server 20.04 para que posteriormente se realicen las instalaciones y configuraciones pertinentes para conseguir el objetivo de este capítulo. El esquema de red a implementar es el siguiente:</p>
+<p style="text-align: center;"><a href="Esquema-red-Proxy-Squid-2DMZ.png" target="_blank" rel="noopener"><img src="Esquema-red-Proxy-Squid-2DMZ.png" alt="" width="569" height="576" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong><span> </span>Esquema de red - Proxy Squid en ubuntu server con 2 DMZ Mikrotik.</em></p>
+<h3 style="text-align: justify;">2. Instalación y configuración de Squid en Ubuntu Server</h3>
+<p>A continuación se describe el proceso de instalación y configuración de squid en el equipo ubuntu server de la red interna.</p>
+<h4>1. Instalar squid3</h4>
+<p>En primer lugar hay que realizar una actualización de los repositorio y a continuación, se instala el paquete squid3.</p>
+<p style="text-align: center;"><img src="apt-update-install-squid3.png" alt="" width="757" height="455" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong><span> </span>Instalación de squid3.</em></p>
+<h4>2. Configuración del proxy squid3</h4>
+<p style="text-align: justify;">Para comenzar con la configuración, hay que acceder al fichero de configuración de squid3 que está en <strong>/etc/squid/squid.conf.</strong></p>
+<p style="text-align: justify;"><strong>Crear acl localnet</strong></p>
+<p>Si se observa la sección<span> </span><strong>TAG: acl,</strong> se puede observar que las acl's siguen el siguiente formato:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>acl</strong> <em>aclname</em> <em>acltype</em> argument ...</span><br /><span style="font-size: 12pt;"><strong>acl</strong> <em>aclname</em> <em>acltype</em> "file" ...</span></pre>
+<p>Donde,</p>
+<ul>
+<li style="text-align: justify;"><strong><em>aclname</em></strong><span> </span>es el nombre descriptivo que se le pondrá a la acl. </li>
+<li style="text-align: justify;"><strong><em>acltype</em></strong><span> </span>es el tipo de acl que se está definiendo.</li>
+<li style="text-align: justify;"><strong>argument</strong><span> </span>es la lista de parámetros separados por espacios. Por ejemplo, la lista de sitios web permitidos. "<strong>file</strong>" es el nombre y ruta completa de una archivo que contiene una lista de parámetros, cada uno de ellos en una línea. Por ejemplo, los dominios destino a los que no se permite acceder.</li>
+</ul>
+<p>A continuación, se puede observar la sintaxis de algunas algunos tipos de<span> </span><span>acl</span><span> </span>recogidos en el fichero <strong>/etc/squid/squid.conf</strong>: </p>
+<pre class="western"><span>#
+#       <strong>acl aclname dst [-n] ip-address/mask ...</strong>        # URL host's IP address [slow]
+#       <strong>acl aclname dstdomain [-n] .foo.com ...</strong>         
+#         # Destination server from URL [fast]
+#       <strong>acl aclname time [day-abbrevs] [h1:m1-h2:m2]</strong><br /></span></pre>
+<p style="text-align: justify;">Una vez definido el formato de las acl, el siguiente paso es localizar la cadena <strong>localnet</strong> (en nano pulsar Ctrl+W) para crear la acl asociada a la red interna, el resto de acl's, se comentarán. Para este caso, dado que la red interna es la 192.168.2.0/24, la línea quedaría así: </p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>acl localnet src 192.168.2.0/24</strong></span></pre>
+<p style="text-align: center;"><strong><img src="acl-localnet.png" alt="" width="799" height="412" /></strong></p>
+<p style="text-align: center;"><strong><em>Figura 3. </em></strong><em>Establecer </em><em>acl localnet src 192.168.2.0/24.</em></p>
+<p style="text-align: justify;">La <strong>siguiente modificación</strong> que hay que realizar en el fichero <strong>squid.conf</strong> es indicar que <strong>permita el acceso al proxy</strong> no solo desde localhost sino también de <strong>localnet </strong>(red interna), para ello, se añade la siguiente directiva:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>http_access allow localnet</strong></span></pre>
+<p style="text-align: center;"><img src="http_acces_proxy-cache-2-1.png" alt="" width="664" height="251" /></p>
+<p style="text-align: center;"><strong><em>Figura 4. </em></strong><em>Permitir el acceso desde la red local.</em></p>
+<p style="text-align: justify;">A continuación, se comprueba el puerto a la escucha del proxy ya que será necesario a la hora de configurar el proxy en los navegadores de los equipos clientes de la red interna. Como se puede ver en la figura inferior, el <strong>puerto a la escucha</strong> es el <strong>3128</strong>.</p>
+<p style="text-align: center;"><img src="http-port.png" alt="" width="363" height="56" /></p>
+<p style="text-align: center;"><strong><em>Figura 5. </em></strong><em>Puerto a la escucha.</em></p>
+<p style="text-align: justify;">La siguiente comprobación está relacionada con la cache, donde se indica la cantidad de memoria RAM que se utilizará para la caché, para ello, se busca la cadena <strong>cache_mem. </strong>Como se puede observar, está comentada la línea y por defecto el tamaño es de 256 MBytes, por lo tanto, se descomenta y se deja el valor por defecto. El valor se tendrá que ir ajustando según necesidad.</p>
+<p style="text-align: center;"><strong><img src="cache_mem.png" alt="" width="167" height="45" /></strong></p>
+<p style="text-align: center;"><strong><em>Figura 6. </em></strong><em>Tamaño de la RAM para la caché.</em></p>
+<p style="text-align: justify;">La última comprobación está relacionada con la cache del disco, para ello, se busca la cadena <strong>cache_dir. </strong>Como se puede observar, está comentada la línea, por lo tanto, se descomenta y se le indica que utilice el disco duro para la caché donde:</p>
+<ul>
+<li style="text-align: justify;"><strong>ufs</strong>: Sistema de archivos que usará.</li>
+<li style="text-align: justify;"><strong>/var/spool/squid</strong>: Lugar donde almacenará la caché.</li>
+<li style="text-align: justify;"><strong>100, 16, 256:</strong> 100 MBytes de espacio del disco duro a utilizar, 16 directorios de primer nivel que creará y 256 directorios de segundo nivel que va a crear por cada directorio de primer nivel.</li>
+</ul>
+<p style="text-align: center;"><img src="cache_dir.png" alt="" width="552" height="51" /></p>
+<p style="text-align: center;"><strong><em>Figura 7. </em></strong><em>Tamaño del disco para la caché.</em></p>
+<h4>3. Crear la estructura en /var/spool/squid</h4>
+<p>En primer lugar, hay que asegurarse que el usuario proxy tiene permisos de escritura en el directorio squid ubicado en /var/spool. Si se observa la figura inferior, sí se tiene permiso de escritura para el usuario.</p>
+<p style="text-align: center;"><img src="quid-spool.png" alt="" width="497" height="150" /></p>
+<p style="text-align: center;"><strong><em>Figura 8. </em></strong><em>Comprobación de permisos</em><em>.</em></p>
+<p style="text-align: justify;">Antes de comenzar a crear la estructura hay que para el servidor proxy mediante el comando <strong>systemctl stop squid.service.</strong></p>
+<p style="text-align: center;"><strong><img src="stop-squid.png" alt="" width="436" height="35" /></strong></p>
+<p style="text-align: center;"><strong><em>Figura 9. </em></strong><em>Parada del servicio.</em></p>
+<p style="text-align: justify;">Una vez se tiene el servicio parado, hay que ejecutar el siguiente comando que creará los 16 directorios de 1er nivel y en cada uno de ellos, los 256 directorios de 2º nivel.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/var/spool#</strong>squid3 -z</span></pre>
+<p style="text-align: center;"><img src="squid3-z.png" alt="" width="677" height="375" /></p>
+<p style="text-align: center;"><strong><em>Figura 10. </em></strong><em>Creación de la estructura de directorios.</em></p>
+<p style="text-align: justify;">Una vez creada la estructura de carpetas, hay que iniciar el servicio:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/var/spool#</strong>systemctl start squid.service.</span></pre>
+<h3 style="text-align: justify;">3. Configurar regla en Mikrotik BackEnd</h3>
+<p style="text-align: justify;">El siguiente paso es configurar el firewall BackEnd para que los usuarios de la red interna no puedan saltarse el proxy a la hora de navegar en internet. Para ello, hay que crear una<span style="font-size: 1em;"> nueva regla en IP &gt; Firewall &gt; Filter Rules &gt; Add, con lo siguiente:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 1em;"><strong>Chain</strong>: forward (tráfico que pase por el router).</span></li>
+<li style="text-align: justify;"><span style="font-size: 1em;"><strong>Src.Address</strong>: !192.168.2.254 (las que no sean las del servidor proxy).</span></li>
+<li style="text-align: justify;"><span style="font-size: 1em;"><strong>Procolo</strong>: tcp.</span></li>
+<li style="text-align: justify;"><span style="font-size: 1em;"><strong>Dst.Port</strong>: 80,21,443, 1080 (los puertos que el navegador busca a través del proxy).</span></li>
+<li style="text-align: justify;"><span style="font-size: 1em;"><strong>In. Interface</strong>: ether2.</span></li>
+<li style="text-align: justify;"><span style="font-size: 1em;"><strong>Out. Interface</strong>: ether1.</span></li>
+<li style="text-align: justify;"><span style="font-size: 1em;"><strong>action</strong>: reject.</span></li>
+</ul>
+<p style="text-align: justify;">La regla quedaría así, donde se desplaza a la posición 1 para que tenga efecto.</p>
+<p style="text-align: center;"><a href="filter-rules-bakend.png" target="_blank" rel="noopener"><img src="filter-rules-bakend.png" alt="" width="1036" height="549" /></a></p>
+<p style="text-align: center;"><strong><em>Figura 11. </em></strong><em>Regla en el firewall</em><em>.</em></p>
+<h3 style="text-align: justify;">4. Configurar el cliente y pruebas</h3>
+<p style="text-align: justify;">Por último, se configuran los navegadores web de los distintos equipos clientes de la red interna para que lo hagan vía el proxy.</p>
+<p style="text-align: justify;">Como ejemplo, se configura el navegador firefox en un equipo Ubuntu Desktop de la red interna (intnetA).</p>
+<p style="text-align: center;"><a href="conf-proxy-Udesktop.png"><img src="conf-proxy-Udesktop.png" alt="" width="828" height="480" /></a></p>
+<p style="text-align: center;"><strong><em>Figura 12. </em></strong><em>Configuración del proxy en el navegador Firefox.</em></p>
+<p style="text-align: justify;">Si se accede desde otro equipo (Windows 10) sin haber configurado el proxy en el navegador, se puede observar que no tiene acceso a internet.</p>
+<p style="text-align: center;"><a href="no-acceso-internet.png"><img src="no-acceso-internet.png" alt="" width="879" height="463" /></a></p>
+<p style="text-align: center;"><strong><em>Figura 13. </em></strong><em>Sin acceso a internet por no tener configurado el proxy en el navegador.</em></p>
+<h3 style="text-align: justify;">5. Comprobaciones</h3>
+<p style="text-align: justify;">Si se accede al log de squid, ejemplo al fichero access.log, se pueden observar las conexiones que se han ido realizando en el proxy.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/var/spool#</strong>cat /var/log/squid/access.log</span></pre>
+<p style="text-align: center;"><img src="log-access-01.png" alt="" width="1273" height="843" /></p>
+<p style="text-align: center;"><strong><em>Figura 14. </em></strong><em>Log de accesos al proxy.</em></p>
+<p style="text-align: justify;">Por último, si se comprueba un resumen del espacio de caché almacenado en el directorio /var/spool/squid, se puede observar que no llega a 20 Mbytes ya que no se han realizado muchas peticiones a internet.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>du /var/spool/squid</span></pre>
+<p style="text-align: center;"><img src="resumen-espacio-ocupado-spool.png" alt="" width="329" height="57" /></p>
+<p style="text-align: center;"><strong><em>Figura 15. </em></strong><em>R</em><em>esumen del espacio de caché</em><em>.</em></p>
+<h3 style="text-align: justify;">6. Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://noviello.it/es/como-instalar-y-configurar-squid-proxy-en-ubuntu-20-04/" target="_blank" rel="noopener">[Instalar y configurar un proxy caché en Ubuntu Server 20.04.]</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2_proxy_webcach.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_proxy_con_autenticacin_bsica.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

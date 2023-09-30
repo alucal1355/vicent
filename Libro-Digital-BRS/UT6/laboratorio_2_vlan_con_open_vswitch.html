@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 2. VLAN con Open vSwitch | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-54"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_redes_virtuales_vlans.html" class="current-page-parent daddy">6. Redes virtuales (VLANs)</a>
+   <ul>
+      <li><a href="61_introduccin_a_gns3.html" class="daddy">6.1 Introducción a GNS3</a>
+      <ul class="other-section">
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li id="active"><a href="laboratorio_2_vlan_con_open_vswitch.html" class="active no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_4_vlan_con_open_vswitch.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 2. VLAN con Open vSwitch</h1></div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id90">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header" style="background-image:url(icon_activity.png)"><span class="iDeviceTitle">&nbsp;</span></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta90_108_2" class="block iDevice_content">
+<div class="pbl-task-description"><h3>1. Introducción</h3>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 9.37912%; text-align: justify;"><img src="vswitch.png" alt="" width="154" height="100" /></td>
+<td style="width: 90.6209%; text-align: justify;"><span style="font-size: 12pt;"><a href="https://www.openvswitch.org/" target="_blank" rel="noopener"><strong>Open vSwitch</strong></a> es una herramienta que funciona exactamente igual que lo haría un Switch multicapa normal y corriente, pero que es totalmente virtual.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Open vSwitch, principalmente es usada para automatizar grandes cantidades de redes que en la vida real sería muy costoso de realizar, teniendo así la capacidad de por ejemplo, segmentar redes en diferentes subredes virtuales, como se verá en este laboratorio.</p>
+<p style="text-align: justify;">Open vSwitch, es un software de código abierto, diseñado para ser utilizado como un switch virtual en entornos de servidores virtualizados. Es el encargado de reenviar el tráfico entre diferentes máquinas virtuales (VMs) en el mismo host físico y también reenviar el tráfico entre las maquinas virtuales y la red física.</p>
+<h3 style="text-align: justify;">2. Escenario</h3>
+<p style="text-align: justify;">La instalación y posterior uso del <strong>switch virtual</strong> se va a realizar sobre un equipo anfitrión con sistema operativo Linux, para este caso,<strong> Linux Mint 20 Mate</strong>.</p>
+<p style="text-align: center;"><img src="linux-mint-20.png" alt="" width="799" height="598" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Equipo Linux Mint 20 Mate (Anfitrión).</em></p>
+<table border="0" style="height: 382px; width: 100%;">
+<tbody>
+<tr style="height: 362px;">
+<td style="width: 50%; text-align: center; height: 362px;"><img src="equipo-W10.png" alt="" width="757" height="471" /></td>
+<td style="width: 50%; text-align: center; height: 362px;"><img src="MV-Udesktop-20.png" alt="" width="910" height="632" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 2.</strong> Equipo Windows 10 Enterprise (Huésped 1)</span></em></td>
+<td style="width: 50%; height: 20px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 3.</strong> Equipo Ubuntu Desktop 20.04.3. (Huésped 2)</span></em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">El equipo anfitrión tiene una interfaz wireless con conexión a internet, otra para el conexionado por cable, otra para el loopback y por último la de virtualbox.</p>
+<p style="text-align: center;"><img src="ip-a-linux-mint.png" alt="" width="989" height="293" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Interfaces de red del equipo Linux Mint 20 Mate (Anfitrión).</em></p>
+<p style="text-align: justify;">En la siguiente figura, se tiene el esquema de red a implementar, donde se instalará el virtual switch en el equipo anfitrión y posteriormente, se conectarán al mismo los 2 equipos invitados (Windows 10y Ubuntu Desktop).</p>
+<p style="text-align: center;"><a href="esquema-red.png"><img src="esquema-red.png" alt="" width="562" height="420" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Esquema de red a implementar.</em></p>
+<h3 style="text-align: justify;">3. Instalación de Open vSwitch</h3>
+<p style="text-align: justify;">Hay disponible un manual <span>en esta página: </span><a href="https://docs.openvswitch.org/en/latest/intro/install/general/">https://docs.openvswitch.org/en/latest/intro/install/general/</a>, donde se puede consultar para ampliar y/o consultar todo sobre el programa.</p>
+<p align="justify">En primer lugar, para facilitar la ejecución de los comandos y dado que en la mayoría de ellos hay que ser root, iniciamos una sesión root mediante el siguiente comando:</p>
+<pre><span><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>sudo -s</span></span></pre>
+<p align="justify" style="text-align: center;"><img src="sudo-s.png" alt="" width="291" height="61" /></p>
+<p align="justify">A continuación, se actualizan los repositorios locales y se actualiza el sistema:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong><strong> </strong>apt update -y &amp;&amp; apt upgrade -y<strong><br /></strong></span></span></pre>
+<p style="text-align: center;"><img src="apt-update-upgrade.png" alt="" width="671" height="181" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong> Actualización del equipo.</em></p>
+<p>Una vez actualizado el equipo, ya se puede comenzar a instalar el programa, para ello, se ejecuta el siguiente comando:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong> apt install -y openvswitch-switch</span></span></pre>
+<p style="text-align: center;"><img src="install-openswitch.png" alt="" width="897" height="544" /></p>
+<p style="text-align: center;"><em><strong>Figura 7.</strong> Instalar Open vSwitch.</em><span><span style="font-size: 12pt;"></span></span><span><span style="font-size: 12pt;"></span></span><span><span style="font-size: 12pt;"></span></span><span><span style="font-size: 12pt;"></span></span></p>
+<p style="text-align: justify;">Una vez instalado se comprueban los módulo que se han cargado de <span><span style="font-size: 12pt;">openvswitch</span></span>, <span style="font-size: 1em; text-align: left;">para ello, hay que ejecutar el siguiente comando: </span><span><span style="font-size: 12pt;"><strong></strong></span></span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong> /sbin/lsmod | grep openvswitch</span></span></pre>
+<p style="text-align: center;"><img src="mod-cargados.png" alt="" width="692" height="159" /></p>
+<p style="text-align: center;"><em><strong>Figura 8.</strong> Comprobar los módulos cargados.</em></p>
+<h3 style="text-align: justify;">4. Configuración del vswitch</h3>
+<p style="text-align: justify;">Un <strong>bridge</strong> es un dispositivo de interconexión de redes que opera en la <strong>capa 2</strong> (nivel de enlace de datos) del modelo OSI. </p>
+<p style="text-align: justify;">Inicialmente el <strong>bridge</strong> no está creado por lo que no tiene asignado ningún puerto/interfaz. Para consultar los bridges definidos y las interfaces, el comando es el siguiente:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ovs-vsctl show</span></span><span></span></pre>
+<p style="text-align: center;"><img src="ovs-vsctl-show.png" alt="" width="343" height="80" /></p>
+<p style="text-align: center;"><em><strong>Figura 9.</strong> Consultar los bridges definidos.</em><span><span style="font-size: 12pt;"></span></span></p>
+<p style="text-align: justify;"><span>Para crear un nuevo bridge (switch virtual) en el equipo, hay que ejecutar el siguiente comando donde </span><span><strong><span style="font-size: 12pt;">lan0</span></strong><span style="font-size: 12pt;"> es el nombre elegido para el mismo. Con <strong>ovs-vsctl show</strong>, se comprueba que se ha creado correctamente.</span></span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ovs-vsctl add-br lan0<br /><strong>root@jc-Latitude-E6430:~#</strong>ovs-vsctl show<br /></span></span></pre>
+<p style="text-align: center;"><img src="add-br-lan0.png" alt="" width="399" height="168" /></p>
+<p style="text-align: center;"><em><strong>Figura 10.</strong> Consultar los bridges definidos.</em></p>
+<p style="text-align: justify;"><span>Opcionalmente, se le puede configurar una dirección ip al bridge, </span>el comando es el siguiente:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ip addr add 192.168.0.100/24 dev lan0<br /></span></span></pre>
+<p style="text-align: center;"><img src="ipa-lan0.png" alt="" width="818" height="103" /></p>
+<p style="text-align: justify;">Además de añadir interfaces físicos es necesario crear interfaces virtuales (ethernet virtuales) que son las llamadas tap (<span>dispositivos <strong>tun/tap) </strong>para poder vincularlas a los equipos cliente (guests) más tarde. </span></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span>Los dispositivos <strong>tun/tap</strong> proveen de recepción y transmisión de paquetes para programas de usuario y pueden ser vistos como dispositivos simples Punto-a-Punto o dispositivos Ethernet.</span></p>
+</div>
+<p style="text-align: justify;"><span>Para este caso de ejemplo, se van a crear 8 interfaces virtuales (8 puertos del switch) mediante las instrucciones siguientes:</span></p>
+<pre><span><span style="font-size: 12pt;">for tap in `seq 0 7`; do<strong><br /></strong>  ip tuntap add mode tap lan0p$tap<strong><br /></strong>done;<br /></span></span></pre>
+<p style="text-align: center;"><img src="crear-taps.png" alt="" width="449" height="87" /></p>
+<p style="text-align: center;"><em><strong>Figura 11.</strong> Bucle de creación de las interfaces virtuales.</em></p>
+<p style="text-align: justify;">A continuación, se comprueban  las interfaces que se acaban de crear mediante el siguiente comando:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ip tuntap list</span></span></pre>
+<p style="text-align: center;"><img src="tuntap-lit.png" alt="" width="377" height="204" /></p>
+<p style="text-align: center;"><em><strong>Figura 11.</strong> Comprobación de las interfaces tuntap.</em></p>
+<p style="text-align: justify;">Si se consultan las interfaces del equipo, se puede observar que se tienen disponibles las creadas anteriormente pero están bajadas (DOWN):</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ip link</span></span></pre>
+<p style="text-align: center;"><img src="ip-link-1.png" alt="" width="982" height="340" /></p>
+<p style="text-align: center;"><em><strong>Figura 12.</strong> Comprobación de las interfaces tuntap.</em></p>
+<p style="text-align: justify;">Como se puede observar en la imagen anterior, las interfaces están bajadas (down). Por el momento no se realizará el '<strong>up</strong>' de las mismas hasta que no se hayan conectado los equipos. Una vez el equipo se configure con una interfaz virtual, se podrá ejecutar el comando<span style="font-size: 12pt;"> <strong>ip link set lan0p0 up</strong>, para levantar la interfaz lan0p0 por ejemplo.</span><span><span style="font-size: 12pt;"></span></span></p>
+<h4 style="text-align: justify;">Vincular los dispositivos tap al switch "<strong>lan0</strong>"</h4>
+<p style="text-align: justify;">El siguiente paso es vincular los dispositivos tap al switch "<strong>lan0</strong>", para ello, hay que ejecutar el siguiente conjunto de instrucciones:</p>
+<pre><span style="font-size: 12pt;">for tap in `seq 0 7`; do</span><br /><span style="font-size: 12pt;">        ovs-vsctl add-port lan0 lan0p$tap</span><br /><span style="font-size: 12pt;">done;</span></pre>
+<p style="text-align: center;"><img src="add-port-lan0-tap.png" alt="" width="425" height="87" /></p>
+<p style="text-align: center;"><em><strong>Figura 13.</strong> Vincular los dispositivos tap al vswitch.</em></p>
+<p style="text-align: justify;">Para consultar los <strong><em>dispositivos tap</em> </strong>que están en los puertos del <em><strong>switch lan0 </strong></em>y comprobar que el comando anterior se ha realizado de manera exitosa, el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ovs-vsctl list-ports lan0</span></pre>
+<p style="text-align: center;"><img src="list-ports.png" alt="" width="419" height="188" /></p>
+<p style="text-align: center;"><em><strong>Figura 14.</strong> Consultar los dispositivos tap del vswitch.</em></p>
+<p style="text-align: justify;"><span>En estos momentos se tiene un<strong><em> switch virtual de 8 puertos</em></strong> llamado <em><strong>lan0</strong></em> con 8 interfaces tap vinculadas al mismo. </span>Para consultar los <strong><em>bridges definidos</em></strong> (en este caso sólo se ha definido el lan0) y las <strong><em>interfaces</em></strong>, el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ovs-vsctl show</span></pre>
+<p style="text-align: center;"><img src="ovs-vsctl-show-2.png" alt="" width="338" height="414" /></p>
+<p style="text-align: center;"><em><strong>Figura 15.</strong> Consulta de los bridges definidos y las interfaces.</em></p>
+<h3 style="text-align: justify;">5. Conectar los equipos de la red (máquinas virtuales - guest) al switch virtual</h3>
+<p style="text-align: justify;">El siguiente paso es conectar los equipos (VMs de virtualbox) al switch virtual, para ello,  hay que configurar el adaptador de red de los mismos de la siguiente manera:</p>
+<ul>
+<li style="text-align: justify;">Conectado a: '<strong>Adaptador puente</strong>'.</li>
+<li style="text-align: justify;">'<strong>Nombre</strong>:' hay que seleccionar un tap disponible de los 8 del switch virtual. Para este caso, para el equipo <strong>Ubuntu Desktop</strong> se selecciona el <strong>lan0p0 </strong>(número de puerto 0 del switch) y para el equipo <strong>Windows 10</strong> el <strong>lan0p1</strong> (número de puerto 1 del switch).</li>
+</ul>
+<table border="0" style="height: 335px; width: 100%;">
+<tbody>
+<tr style="height: 284px;">
+<td style="width: 32.6725%; text-align: center; height: 310px;"><img src="selecc-Nombre-Adpa-Puente.png" alt="" width="862" height="524" /></td>
+<td style="width: 31.0606%; text-align: center; height: 310px;"><img src="adaptador1-Cliente1-UD.png" alt="" width="445" height="278" /></td>
+<td style="width: 36.2669%; text-align: center; height: 310px;"><img src="adaptador1-Cliente-02.png" alt="" width="537" height="278" /></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 32.6725%; height: 25px; text-align: justify;"><span style="font-size: 12pt;">Cuando se despliegue el Nombre, aparecen todos las interfaces disponibles, tanto las físicas como las virtuales.</span></td>
+<td style="width: 31.0606%; text-align: center; height: 25px;"><em><span style="font-size: 12pt;"><strong>Figura 16.</strong> Equipo Ubuntu Desktop 20.0.4.3.</span></em></td>
+<td style="width: 36.2669%; height: 25px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 17.</strong> Equipo Windows 10 Enterprise.</span></em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Con esto, lo que se consigue es conectar las 2 máquinas virtuales en una red virtual.</p>
+<h4 style="text-align: justify;">5.1 Pruebas de conectividad</h4>
+<p style="text-align: justify;">Para comenzar con las pruebas, hay que poner en marcha las 2 máquinas virtuales. Una vez se haya iniciado sesión en las mismas, hay que subir las interfaces lan0p0 y lan0p1 en el equipo Anfitrión mediante los siguientes comandos:</p>
+<pre><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong> ip link set lan0p0 up<br /><strong>root@jc-Latitude-E6430:~#</strong> ip link set lan0p1 up<br /></span></pre>
+<p style="text-align: justify;"><span>A continuación, se comprueban las interfaces y como se puede observar en la figura inferior, están '<strong>up</strong>':</span><span></span></p>
+<p style="text-align: center;"><img src="ip-link-2.png" alt="" width="1123" height="518" /></p>
+<p style="text-align: center;"><em><strong>Figura 18.</strong> Consulta las interfaces.</em></p>
+<p style="text-align: justify;"><span>Otra forma de comprobarlo es mediante el siguiente comando que permite conocer los datos estadísticos de cada puerto. Se puede observar que el puerto 1 y 2 están up (config: 0 y state:0) y el LOCAL (lan0) también.</span></p>
+<pre><span style="font-size: 12pt;"><strong><span>root@jc-Latitude-E6430:~#</span></strong>ovs-ofctl show lan0</span></pre>
+<p style="text-align: center;"><span><img src="ofctl-show-lan0.png" alt="" width="1099" height="987" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 19.</strong> Consulta los datos estadísticos de cada puerto del vswitch.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, se muestra la <strong>tabla  ARP </strong>del switch para poder ver en qué puerto está conectado cada equipo y la VLAN a la que pertenece.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ovs-appctl fdb/show <span>lan0</span></span></pre>
+<p style="text-align: center;"><img src="fdp-show-lan0.png" alt="" width="460" height="93" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 20.</strong> Consulta la tabla ARP del vswitch.</em></span></p>
+<p style="text-align: justify;">Como se puede observar, la salida del comando corresponde a los equipos <em><strong>Ubuntu Desktop 20.04.3</strong></em> y <strong><em>Windows 10</em></strong> (ver imágenes inferiores) que están conectados en el puerto 1 y 2 del switch respectivamente. Además, también se puede observar que están en la misma VLAN (la 0).</p>
+<table border="0" style="height: 475px; width: 100%;">
+<tbody>
+<tr style="height: 450px;">
+<td style="width: 50%; text-align: center; height: 450px;"><img src="W10-ipconfig-all.png" alt="" width="708" height="444" /></td>
+<td style="width: 50%; text-align: center; height: 450px;"><img src="ip-a-UDesktop.png" alt="" width="945" height="237" /></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 50%; text-align: center; height: 25px;"><em><span style="font-size: 12pt;"><strong>Figura 21.</strong> Configuración IP del equipo Windows 10 Enterprise.</span></em></td>
+<td style="width: 50%; height: 25px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 22.</strong> Configuración IP del equipo Ubuntu Desktop 20.04.3 LTS.</span></em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">A continuación, para probar la conectividad se realizará un ping del equipo Windows 10 al equipo Ubuntu Desktop y viceversa.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="ping-W10-20-a-UD-10.png" alt="" width="995" height="616" /></td>
+<td style="width: 50%; text-align: center;"><img src="ping-UD-10-a-W10-20.png" alt="" width="1089" height="548" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 23.</strong> Configuración IP del equipo Windows 10 Enterprise.</span></em></td>
+<td style="width: 50%; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 24.</strong> Configuración IP del equipo Ubuntu Desktop 20.04.3 LTS.</span></em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Como se puede observar en las figuras superiores, los dos equipos contestan a las solicitudes ya que están en la misma VLAN.<span style="font-size: 12pt;"></span></p>
+<h3 style="text-align: justify;">6. Configurar cada equipo en una VLAN diferente</h3>
+<p style="text-align: justify;">En este apartado, se va a configurar en el switch una VLAN diferente para los equipos clientes conectados al mismo. El puerto 1 (lan0p0) se etiquetará con 10 y el puerto 2 (lan0p1) se etiquetará con 20. Una vez realizado la configuración, se realizará un ping entre los dos equipos para comprobar que ya no tienen conexión. El comando tiene la siguiente sintaxis:</p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>ovs-vsctl set port [puerto] tag=etiqueta</strong>. Donde el puerto será lan0p0, lan0p1, etcétera y la etiqueta será el número de la VALN, ejemplo: 10, 20, etcétera.</span></li>
+</ul>
+<p style="text-align: justify;">Para este caso de ejemplo, la primera VLAN (donde está conectado el equipo Ubuntu Desktop) tendrá el id 10 y la segunda (donde está conectado el equipo Windows 10) el id 20.</p>
+<pre><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ovs-vsctl set port lan0p0 tag=10<br /><strong>root@jc-Latitude-E6430:~#</strong>ovs-vsctl set port lan0p1 tag=20<br /></span><span style="font-size: 12pt;"></span></pre>
+<blockquote></blockquote>
+<p style="text-align: center;"><img src="set-tag.png" alt="" width="478" height="523" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 25.</strong> Etiquetado de las VLAN.</em></span></p>
+<table border="0" style="height: 45px; width: 100%;">
+<tbody>
+<tr style="height: 20px;">
+<td style="width: 50%; text-align: center; height: 20px;"><img src="ping-W10-a-UD-tag.png" alt="" width="997" height="616" /></td>
+<td style="width: 50%; height: 20px; text-align: center;"><img src="ping-UD-W10-tag.png" alt="" width="1119" height="562" /></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 50%; height: 25px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 26.</strong> Ping al equipo Ubuntu Desktop.</span></em></td>
+<td style="width: 50%; height: 25px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 27.</strong> Ping al equipo Windows 10 Enterprise.</span></em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"></p>
+<h3 style="text-align: justify;">7. Otras operaciones</h3>
+<p style="text-align: justify;">Otros comandos referidos a la obtención de datos estadísticos son:</p>
+<p style="text-align: justify;">Contadores de paquetes:</p>
+<pre><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ovs-ofctl dump-flows lan0</span></pre>
+<p style="text-align: center;"><img src="ovs-ofctl-dump-flows.png" alt="" width="775" height="54" /></p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 28.</strong> Contador de paquetes.</span></em></p>
+<p style="text-align: justify;">Datos estadísticos de todos los puertos del vswitch:</p>
+<pre><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ovs-vsctl list Interface</span></pre>
+<p style="text-align: center;"><img src="list-interface-vsctl.png" alt="" width="921" height="701" /></p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 29.</strong> Datos estadísticos de todos los puertos del vswitch.</span></em></p>
+<p style="text-align: justify;">Otros comandos interesantes a conocer es cómo borrar los puertos que se han creado, el bridge, etc..</p>
+<h4 style="text-align: justify;">1. Eliminar los puertos asociados al bridge lan0.</h4>
+<pre><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ovs-vsctl del-port lan0 lan0p0</span></pre>
+<h4 style="text-align: justify;">2. Eliminar el bridge lan0</h4>
+<pre><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ovs-vsctl del-br lan0</span></pre>
+<h4 style="text-align: justify;">3. Eliminar las interfaces virtuales creadas</h4>
+<pre><span style="font-size: 12pt;"><strong>root@jc-Latitude-E6430:~#</strong>ip tuntap del mode tap lan0p0</span></pre>
+<h3 style="text-align: justify;">8. Referencias</h3>
+<ul style="text-align: center;">
+<li style="text-align: justify;">
+<p class="content-title"><a href="https://docs.pica8.com/plugins/servlet/mobile?contentId=3086738#content/view/3086738" target="_blank" rel="noopener">[Configuring Open vSwitch]</a></p>
+</li>
+<li style="text-align: justify;">
+<p class="content-title"><a href="https://www.eduardocollado.com/2018/09/25/podcast-176-primeros-pasos-con-open-vswitch/" style="font-size: 0.95em;" target="_blank" rel="noopener">https://www.eduardocollado.com/2018/09/25/podcast-176-primeros-pasos-con-open-vswitch/</a></p>
+</li>
+<li style="text-align: justify;">
+<p class="content-title"><a href="https://docs.openvswitch.org/en/latest/faq/issues/" target="_blank" rel="noopener">https://docs.openvswitch.org/en/latest/faq/issues/</a></p>
+</li>
+<li style="text-align: justify;">
+<p class="content-title"><a href="https://programmerclick.com/article/33321925977/" target="_blank" rel="noopener">https://programmerclick.com/article/33321925977/</a></p>
+</li>
+<li style="text-align: justify;"><a href="https://man7.org/linux/man-pages/man8/ip-link.8.html" target="_blank" rel="noopener">[ip-link]</a></li>
+<li style="text-align: justify;"><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/VLAN/OpenvSwitch.sh" target="_blank" rel="noopener">https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/VLAN/OpenvSwitch.sh</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_4_vlan_con_open_vswitch.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

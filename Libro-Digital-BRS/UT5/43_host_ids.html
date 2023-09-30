@@ -1,0 +1,688 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.3. Host IDS | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-73"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas_y_entorno_de_trabajo.html" class="no-ch">2.4.1 Contraseñas y entorno de trabajo</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="daddy">3. Securización de los sistemas de administración remota</a>
+   <ul class="other-section">
+      <li><a href="31_secureshell.html" class="daddy">3.1 SecureShell</a>
+      <ul class="other-section">
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="current-page-parent daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul>
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_y_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información: Configuración y primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li id="active"><a href="43_host_ids.html" class="active daddy">4.3. Host IDS</a>
+      <ul>
+         <li><a href="431_monitorizar_integridad_en_agente.html" class="no-ch">4.3.1 Monitorizar integridad en agente</a></li>
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="521_consulta_de_actualizaciones_en_ps.html" class="no-ch">5.2.1 Consulta de actualizaciones en PS</a></li>
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_windows_kaspersky.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="431_monitorizar_integridad_en_agente.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.3. Host IDS</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id122">
+<div class="iDevice emphasis0">
+<div id="ta122_85" class="block iDevice_content">
+<h3 style="text-align: justify;">1. ¿Qué es Host IDS?</h3>
+<p style="text-align: justify;">Es un<strong> tipo de <a href="https://www.incibe.es/protege-tu-empresa/blog/son-y-sirven-los-siem-ids-e-ips" target="_blank" rel="noopener">IDS</a></strong> (Intrusion Detection System) que se diferencia de otros tipos como el <a href="https://es.wikipedia.org/wiki/NIDS#:~:text=NIDS%20(Network%20Intrusion%20Detection%20System,de%20intrusos%20en%20una%20Red.&amp;text=Los%20NIDS%20no%20s%C3%B3lo%20vigilan,desde%20el%20propio%20sistema%20protegido." target="_blank" rel="noopener">NIDS</a> (Network IDS) en que está instalado en un equipo en vez de monitorizar un segmento de red. Se encarga de monitorizar el sistema operativo, los procesos y el tráfico existente en un equipo y de detectar posibles amenazas como cambios en el registro, directorios y otras acciones sospechosas.</p>
+<h4 style="text-align: justify;">1.1. Funcionamiento</h4>
+<p style="text-align: justify;">El <strong>host</strong> <strong>IDS</strong> realiza una copia de seguridad sobre los archivos de configuración del sistema, permitiendo así que si se realiza cualquier tipo de ataque en el equipo, estos se restauren. También permite informar de si algún archivo fundamental del sistema ha sido modificado.</p>
+<p style="text-align: justify;">Otra de las opciones de los <a href="https://es.wikipedia.org/wiki/Host-based_intrusion_detection_system#:~:text=HIDS%20es%20tambi%C3%A9n%20conocido%20como,a%20las%20de%20los%20IDS." target="_blank" rel="noopener"><strong>HIDS</strong></a> es usarlo de forma distribuida, es decir, más de un equipo en una red. Para ello es necesario instalar el <strong>HIDS</strong> en todos estos equipos. También es necesario tener un módulo centralizado que se encargue de gestionar todos estos hosts.</p>
+<p style="text-align: justify;">Algunos <strong>HIDS</strong> más famosos son:</p>
+<ul>
+<li style="text-align: justify;"><strong><a href="https://www.ossec.net/" target="_blank" rel="noopener">OSSEC</a></strong>: Procesa logs de manera eficiente, pero sin interfaz de usuario.</li>
+<li style="text-align: justify;"><strong><a href="https://www.papertrail.com/" target="_blank" rel="noopener">SolarWinds Papertail:</a></strong> HIDS basado en la nube y centralización de logs.<br /><a href="https://www.dynatrace.com/" target="_blank" rel="noopener"><strong>ManageEngine EventLog Analyzer</strong></a>: Tiene capacidad de funcionar como HIDS o NIDS y de centralizar logs.</li>
+<li style="text-align: justify;"><a href="https://www.splunk.com/" target="_blank" rel="noopener"><strong>Splunk</strong></a>: HIDS especializado en detectar anomalías en el sistema.</li>
+<li style="text-align: justify;"><strong><a href="https://en.wikipedia.org/wiki/Sagan_(software)" target="_blank" rel="noopener">Sagan</a></strong>: HIDS con capacidad de detectar anomalías y de mostrar alertas mediante reglas, incluyendo opciones interesantes como la Geolocalización IP.</li>
+<li style="text-align: justify;"><strong><a href="https://www.la-samhna.de/samhain/" target="_blank" rel="noopener">Samhain</a></strong>: HIDS con funciones como comprobación de integridad de ficheros, monitorización y análisis de estos.</li>
+</ul>
+<h4>1.2. Ejemplo de Host IDS: <span>Wazuh</span></h4>
+<p style="text-align: justify;"><a href="https://wazuh.com/" target="_blank" rel="noopener"><strong>Wazuh</strong></a> es un <strong>servidor de Host IDS</strong> <span>de código abierto y libre </span>cuya función es el análisis, comprobación y supervisión de registros. Además proporciona <span>detección de <a href="https://www.avast.com/es-es/c-rootkit?ppc_code=012&amp;ppc=m&amp;gclid=CjwKCAiA6Y2QBhAtEiwAGHybPYW2xtJ5QNPccEJt9cD9T75FeJ9gsHYWh0bQ0kmfJrMVkqRFyvV1txoCjBYQAvD_BwE&amp;gclsrc=aw.ds" target="_blank" rel="noopener"><strong>rootkits</strong></a>, alertas basadas en el tiempo y respuesta activa. Sus componentes se rigen por la Licencia Pública General GNU, versión 2, y la Licencia Apache, Versión 2.0 (ALv2).</span></p>
+<p style="text-align: justify;"><span>Wazuh también ofrece una solución de software como servicio (SaaS), y que es, <a href="https://wazuh.com/cloud/" target="_blank" rel="noopener">Wazuh Cloud</a><strong>. </strong>Puedes consultar la <a href="https://documentation.wazuh.com/current/cloud-service/index.html" target="_blank" rel="noopener">documentación del servicio en la nube</a> para obtener más información y aprovechar la versión de prueba de la nube para explorar este servicio.</span></p>
+<p style="text-align: justify;"><span>En este apartado, se realizará la configuración de un <strong>servidor HIDS</strong> que permitirá instalar agentes en sistemas Windows, Linux y Mac. </span></p>
+<h3 style="text-align: justify;"><span>2. Escenario de trabajo</span></h3>
+<p><span>De la <a href="https://documentation.wazuh.com/current/installation-guide/wazuh-server/index.html" target="_blank" rel="noopener">página oficial</a>, se obtienen los requerimientos mínimos y recomendados.</span></p>
+<table border="0" style="height: 478px; width: 100%;">
+<tbody>
+<tr style="height: 458px;">
+<td style="width: 50%; text-align: center; height: 458px;"><img src="requerimientos.png" alt="" width="705" height="339" /></td>
+<td style="width: 50%; text-align: center; height: 458px;"><img src="req-espacio.png" alt="" width="809" height="495" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; text-align: center; height: 20px;" colspan="2"><span style="font-size: 12pt;"><em><strong>Figura 1.</strong> Requerimientos de wazuh server.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span>El escenario de trabajo es el siguiente:</span></p>
+<table border="0" style="width: 99.2586%;">
+<tbody>
+<tr>
+<td style="width: 38.5955%;">
+<p><strong><span style="font-size: 12pt;">Servidor wazuh</span></strong></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Equipo con <strong>Ubuntu Server 22.04</strong> con <strong>4GB de RAM y 2 núcleos.</strong></span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Nombre: </strong>orion.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>ip: </strong>192.168.0.31.</span></li>
+</ul>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="ip-estatica.png" alt="" width="283" height="232" /></span></p>
+</td>
+<td style="width: 60.6645%; text-align: center;"><img src="req-MV-wazuh.png" alt="" width="480" height="102" style="float: left;" /></td>
+</tr>
+<tr>
+<td style="width: 38.5955%;">
+<p><strong><span style="font-size: 12pt;">2 agentes:</span></strong></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Equipo <strong>Windows Server 2019 Datacenter</strong> promocionado a CD <strong>ciber.local</strong>.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">Equipo con <strong>Windows 10 Enterprise</strong> integrado en el dominio <strong>ciber.local</strong>.</span></li>
+</ul>
+</td>
+<td style="width: 60.6645%; text-align: center;">
+<p><img src="W2019-Agente.png" alt="" width="398" height="302" />  <img src="W10-agente.png" alt="" width="491" height="320" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul></ul>
+<h3><span>3. Instalación y configuración servidor Wazuh</span></h3>
+<p style="text-align: justify;"><strong>Wazuh</strong> se compone de un<strong> único agente universal y tres componentes centrales</strong>:</p>
+<ul>
+<li style="text-align: justify;">El servidor de Wazuh.</li>
+<li style="text-align: justify;">El indexador de Wazuh.</li>
+<li style="text-align: justify;">El panel de control de Wazuh.</li>
+</ul>
+<p>Para obtener más información, consultar la <a href="https://documentation.wazuh.com/current/getting-started/index.html" target="_blank" rel="noopener">documentación de introducción</a>.</p>
+<h4 style="text-align: justify;"><strong>3.1. Instalación de los componentes centrales de Wazuh</strong></h4>
+<p style="text-align: justify;">Se pude elegir entre dos métodos de instalación para cada componente central de Wazuh. Ambas opciones brindan instrucciones para instalar los componentes centrales en un solo host o en hosts separados.</p>
+<p style="text-align: justify;">El <strong>indexador de Wazuh</strong> y el <strong>servidor de Wazuh</strong> pueden instalarse en <strong>un solo host</strong> o <strong>distribuirse</strong> en <strong>configuraciones de clúster</strong>, proporcionando escalabilidad, alta disponibilidad y rendimiento mejorado.</p>
+<p style="text-align: justify;">Para comprobar los requisitos y empezar a instalar el primero de los componentes centrales de Wazuh, hay que acceder la <a href="https://documentation.wazuh.com/current/installation-guide/wazuh-indexer/index.html" target="_blank" rel="noopener">sección indexador de Wazuh</a>.</p>
+<table border="0" style="width: 23.0911%;">
+<tbody>
+<tr>
+<td style="width: 9.47756%;">
+<h4><strong><span style="font-size: 12pt;">1.1 Indexador</span></strong></h4>
+</td>
+<td style="width: 13.6145%; text-align: center;"><img src="indexer.png" alt="" width="202" height="95" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">El<strong> indexador de Wazuh</strong> es un <strong>motor de análisis y búsqueda</strong> de texto completo altamente escalable. Este componente central de Wazuh indexa y almacena alertas generadas por el servidor de Wazuh y proporciona capacidades de análisis y búsqueda de datos casi en tiempo real.</p>
+<p style="text-align: justify;">El <strong>indexador de Wazuh</strong> se puede instalar como un nodo único o como un clúster de nodos múltiples.</p>
+<p style="text-align: justify;"><strong>Requerimientos</strong></p>
+<p style="text-align: justify;"><strong>Sistemas operativos recomendados.</strong> Wazuh se puede instalar en un sistema operativo Linux de 64 bits. Wazuh es compatible con las siguientes versiones del sistema operativo:</p>
+<table style="height: 70px; width: 546px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr class="row-odd" style="height: 35px;">
+<td style="height: 35px; width: 239.344px;">
+<p><span style="font-size: 12pt;">Amazon Linux 2</span></p>
+</td>
+<td style="height: 35px; width: 290.656px;">
+<p><span style="font-size: 12pt;">CentOS 7, 8</span></p>
+</td>
+</tr>
+<tr class="row-even" style="height: 35px;">
+<td style="height: 35px; width: 239.344px;">
+<p><span style="font-size: 12pt;">Red Hat Enterprise Linux 7, 8, 9</span></p>
+</td>
+<td style="height: 35px; width: 290.656px;">
+<p><span style="font-size: 12pt;">Ubuntu 16.04, 18.04, 20.04, 22.04</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hardware</strong></p>
+<table border="1" style="height: 291px; width: 100%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr style="height: 271px;">
+<td style="width: 50%; text-align: center; height: 271px;"><img src="req-indexer-01.png" alt="" width="670" height="185" /></td>
+<td style="width: 50%; text-align: center; height: 271px;"><img src="req-indexer-02.png" alt="" width="542" height="265" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Recomendaciones de hardware para cada nodo</span></td>
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><strong>Requisitos de espacio en disco</strong>. Por ejemplo, para un entorno con 80 estaciones de trabajo, 10 servidores y 10 dispositivos de red, el almacenamiento necesario en el servidor indexador de Wazuh para 90 días de alertas es de 230 GB.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Una vez tengamos un equipo que cumpla con los requisitos mínimos, hay que elegir un método de instalación para comenzar a instalar el indexador de Wazuh. Los método son:</p>
+<ul style="text-align: justify;">
+<li><strong>Asistente de instalación de Wazuh:</strong> Instala el componente ejecutando un asistente que automatiza el proceso de instalación y configuración.</li>
+<li><strong>Instalación paso a paso:</strong> Instala el componente siguiendo las instrucciones detalladas paso a paso.</li>
+</ul>
+<p style="text-align: justify;">Para este caso, <a href="https://documentation.wazuh.com/current/installation-guide/wazuh-indexer/step-by-step.html" target="_blank" rel="noopener">se instala el indexador paso a paso</a>. Este es el flujo de trabajo de instalación que seguirá:</p>
+<ol>
+<li style="text-align: justify;"><span>Creación de certificados.</span></li>
+<li style="text-align: justify;"><span>Instalación de Nodos.</span></li>
+<li style="text-align: justify;"><span>Inicialización de clúster.</span><span></span></li>
+</ol>
+<div class="exe-fx exe-tabs">
+<h2>1. Configurar</h2>
+<p style="text-align: justify;">Los comandos a ejecutar son:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> curl -sO https://packages.wazuh.com/4.3/wazuh-certs-tool.sh<br /><strong>root@orion:/home/administrador#</strong> curl -sO https://packages.wazuh.com/4.3/config.yml<br /></span></pre>
+<p style="text-align: center;"><img src="indexer-ins-01.png" alt="" width="738" height="61" /></p>
+<p style="text-align: justify;">Para este caso, el nombre del <strong>indexer</strong> es <strong>node-1</strong> y el del <strong>server</strong> <strong>wazuh-1. </strong>Dado que el servidor e indexer se instalarán en el mismo equipo, la ip del indexer, servidor y dashboard es la misma.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> nano config.yml</span></pre>
+<p style="text-align: center;"><img src="config-yml.png" width="397" height="501" /></p>
+<h2>2. Generar certificados</h2>
+<p>Se establecen permisos de ejecución en <strong>wazuh-certs-tool.sh</strong> y se crean los certificados.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> chmod 740 wazuh-certs-tool.sh<br /><strong>root@orion:/home/administrador#</strong> ./wazuh-certs-tool.sh -A<br /></span></pre>
+<p style="text-align: center;"><img src="indexer-ins-03.png" alt="" width="536" height="129" /></p>
+<h2>3. Comprimir certificados</h2>
+<p style="text-align: justify;">Se comprimen todos los archivos necesarios, para que posteriormente, se copien en todos los nodos, incluidos el indexador de Wazuh, el servidor de Wazuh y los nodos del panel de control de Wazuh. Para este caso, dado que todos los servicios estarán en el mismo equipo, no será necesario.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> tar -cvf ./wazuh-certificates.tar -C ./wazuh-certificates/ .</span></pre>
+<p style="text-align: center;"><img src="indexer-ins-04.png" width="753" height="233" /></p>
+<h2>4. Instalar paquetes necesarios</h2>
+<p>Hay que instalar los paquetes <strong>debconf, adduser y procps</strong> si no se tienen. Para este caso, ya se tienen instalados.</p>
+<p style="text-align: center;"><img src="indexer-ins-05.png" alt="" width="638" height="215" /></p>
+<h2>5. Agregar el repositorio de Wazuh</h2>
+<p style="text-align: justify;">Los comandos a ejecutar son:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> apt-get install gnupg apt-transport-http</span><br /><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import &amp;&amp; chmod 644 /usr/share/keyrings/wazuh.gpg<br /><strong>root@orion:/home/administrador#</strong> echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list<br /><strong>root@orion:/home/administrador#</strong> apt update <br /></span></pre>
+<p style="text-align: center;"><img src="update.png" alt="" width="654" height="154" /></p>
+<h2>6. Instalar indexador</h2>
+<p>El siguiente paso es instalar el paquete del <strong>indexador de Wazuh.</strong></p>
+<p style="text-align: center;"><img src="indexer-ins-06.png" alt="" width="800" height="290" /></p>
+<p></p>
+<h2>7. Configuración del indexador</h2>
+<p>Establece la dirección de este nodo para el tráfico HTTP y de transporte. El nodo se vinculará a esta dirección y la usará como su dirección de publicación. Acepta una dirección IP o un nombre de host.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> nano /etc/wazuh-indexer/opensearch.yml</span></pre>
+<p style="text-align: justify;"><strong>NOTA: </strong></p>
+<ul>
+<li style="text-align: justify;"><strong>discovery.seed_hosts</strong>, se deja comentado ya que se está  configurando el indexador de Wazuh como un solo nodo. Para configuraciones de múltiples nodos, habría que quitar el comentario y configurar las direcciones IP de cada nodo maestro elegible.</li>
+<li style="text-align: justify;"><strong>plugins.security.nodes_dn:</strong>  Es la lista de los 'Distinguished Names' de los certificados de todos los nodos del clúster del indexador de Wazuh</li>
+</ul>
+<p style="text-align: center;"><img src="indexer-ins-07.png" width="749" height="663" /></p>
+<h2>8. Implementación de certificados</h2>
+<p style="text-align: justify;">Hay que colocar una copia del archivo <strong>wazuh-certificates.tar</strong> creado durante el paso de configuración inicial, en nuestro directorio de trabajo, para ello, hay que ejecutar los siguientes comandos reemplazando &lt;indexer-node-name&gt; con el nombre del nodo indexador de Wazuh que se ha configurando anteriormente en <strong>config.yml.</strong> para este caso, se configuró como node-1.</p>
+<p style="text-align: justify;">Con esto, se consigue implementar los certificados SSL para cifrar las comunicaciones entre los componentes centrales de Wazuh.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> NODE_NAME=node-1</span><br /><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> mkdir /etc/wazuh-indexer/certs<br /><strong>root@orion:/home/administrador#</strong> tar -xf ./wazuh-certificates.tar -C /etc/wazuh-indexer/certs/ ./$NODE_NAME.pem ./$NODE_NAME-key.pem ./admin.pem ./admin-key.pem ./root-ca.pem<br /><strong>root@orion:/home/administrador#</strong> mv -n /etc/wazuh-indexer/certs/$NODE_NAME.pem /etc/wazuh-indexer/certs/indexer.pem<br /><strong>root@orion:/home/administrador#</strong> mv -n /etc/wazuh-indexer/certs/$NODE_NAME-key.pem /etc/wazuh-indexer/certs/indexer-key.pem<br /><strong>root@orion:/home/administrador#</strong> chmod 500 /etc/wazuh-indexer/certs<br /><strong>root@orion:/home/administrador#</strong> chmod 400 /etc/wazuh-indexer/certs/*<br /><strong>root@orion:/home/administrador#</strong> chown -R wazuh-indexer:wazuh-indexer /etc/wazuh-indexer/certs<br /></span></pre>
+<p style="text-align: center;"><img src="indexer-ins-08.png" alt="" width="1089" height="171" /><span style="font-size: 12pt;"></span></p>
+<h2>9. Iniciar servicio</h2>
+<p>A continuación, hay que habilitar e iniciar el servicio de indexación de Wazuh.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl daemon-reload<br /><strong>root@orion:/home/administrador#</strong> systemctl enable wazuh-indexer<br /><strong>root@orion:/home/administrador#</strong> systemctl start wazuh-indexer<br /></span></pre>
+<p style="text-align: center;"><img src="habiliar-inicir-sevicio.png" alt="" width="1021" height="106" /></p>
+<h2>10. Estado del servicio</h2>
+<p>Se comprueba el estado del servicio y como se observar, sólo aparecen unos warnings que no son importantes.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl status wazuh-indexer</span></pre>
+<p style="text-align: center;"><img src="esatdo-servicio.png" alt="" width="1093" height="344" /></p>
+<h2>11. Inicialización del cluster</h2>
+<p>Hay que ejecutar el script del indexador de Wazuh <strong>indexer-security-init.sh</strong> en cualquier nodo del indexador de Wazuh para cargar la información de los nuevos certificados e iniciar el clúster de un solo nodo o de varios nodos.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> /usr/share/wazuh-indexer/bin/indexer-security-init.sh</span></pre>
+<p style="text-align: center;"><img src="security-init.png" alt="" width="999" height="572" /></p>
+<h2>12. Prueba del clúster</h2>
+<p>A continuación, se realiza la <strong>prueba de la instalación del clúster</strong>, donde <strong>192.168.0.31</strong> es la ip del servidor.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> curl -k -u admin:admin https://192.168.0.31:9200</span></pre>
+<p style="text-align: center;"><img src="prueba-con-servidor-wazuh.png" alt="" width="661" height="316" /></p>
+</div>
+<p style="text-align: justify;"><span>Una vez el <strong>indexador de Wazuh se ha iniciado</strong> correctamente en el <strong>clúster</strong> de nodo único, ya se puede continuar con la siguiente etapa que es la<strong> instalación del servidor de Wazuh.</strong></span></p>
+<p style="text-align: justify;"><span><strong>Nota:</strong> Si se desea desinstalar el indexador de Wazuh, consulte <a href="https://documentation.wazuh.com/current/user-manual/uninstall/central-components.html#uninstall-indexer" target="_blank" rel="noopener">desinstalar el indexador de Wazuh</a><strong>.</strong></span></p>
+<table border="0" style="width: 26.5625%;">
+<tbody>
+<tr>
+<td style="width: 13.6973%;">
+<h4><strong><span style="font-size: 12pt;">1.2 Servidor de Wazuh</span></strong></h4>
+</td>
+<td style="width: 12.8657%;"><img src="server.png" alt="" width="253" height="121" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">El <strong>servidor de Wazuh</strong> <strong>analiza los datos recibidos de los agentes de Wazuh</strong>, disparando alertas cuando se detectan amenazas o anomalías. También se utiliza para administrar de forma remota la configuración de los agentes y monitorizar su estado. </p>
+<p style="text-align: justify;">Se puede instalar el servidor Wazuh en un solo host. Como alternativa, se puede instalar de manera distribuida en varios nodos en una configuración de clúster. Las configuraciones de varios nodos proporcionan una alta disponibilidad y un rendimiento mejorado, y si se combina con un balanceador de carga de red, se puede lograr un uso eficiente de su capacidad.</p>
+<p style="text-align: justify;"><span>El <strong>servidor Wazuh</strong> se puede instalar como un <strong>nodo único</strong> o como un <strong>clúster de varios nodos</strong>.</span></p>
+<p style="text-align: justify;"><strong>Requerimientos</strong></p>
+<p style="text-align: justify;"><strong>Sistemas operativos recomendados.</strong> Wazuh se puede instalar en un sistema operativo Linux de 64 bits. Wazuh es compatible con las siguientes versiones del sistema operativo:</p>
+<table style="height: 70px; width: 546px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr class="row-odd" style="height: 35px;">
+<td style="height: 35px; width: 239.344px;">
+<p><span style="font-size: 12pt;">Amazon Linux 2</span></p>
+</td>
+<td style="height: 35px; width: 290.656px;">
+<p><span style="font-size: 12pt;">CentOS 7, 8</span></p>
+</td>
+</tr>
+<tr class="row-even" style="height: 35px;">
+<td style="height: 35px; width: 239.344px;">
+<p><span style="font-size: 12pt;">Red Hat Enterprise Linux 7, 8, 9</span></p>
+</td>
+<td style="height: 35px; width: 290.656px;">
+<p><span style="font-size: 12pt;">Ubuntu 16.04, 18.04, 20.04, 22.04</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hardware</strong></p>
+<table border="1" style="height: 291px; width: 100%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr style="height: 271px;">
+<td style="width: 50%; text-align: center; height: 271px;"><img src="hw-server.png" alt="" width="654" height="185" /></td>
+<td style="width: 50%; text-align: center; height: 271px;"><img src="disc-server.png" alt="" width="533" height="263" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: justify;"><span style="font-size: 12pt;">Recomendaciones de hardware para cada nodo</span></td>
+<td style="width: 50%; height: 20px; text-align: justify;"><span style="font-size: 12pt;"><strong>Requisitos de espacio en disco</strong>. La cantidad de datos depende de las alertas generadas por segundo (APS). Esta tabla detalla el espacio en disco estimado necesario por agente para almacenar 90 días de alertas en un servidor de Wazuh, según el tipo de terminales monitorizados. Por ejemplo, para un entorno con 80 estaciones de trabajo, 10 servidores y 10 dispositivos de red, el almacenamiento necesario en el servidor de Wazuh para 90 días de alertas es de 6 GB.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span>La instalación de <a href="https://documentation.wazuh.com/current/installation-guide/wazuh-server/index.html" target="_blank" rel="noopener">wazuh server</a>, se puede realizar de varias maneras (asistente o paso a paso). </span><span></span></p>
+<p style="text-align: justify;">Para este caso, <a href="https://documentation.wazuh.com/current/installation-guide/wazuh-server/step-by-step.html" target="_blank" rel="noopener">se instala el servidor paso a paso</a>. Este es el flujo de trabajo de instalación que seguirá:</p>
+<ol>
+<li style="text-align: justify;">Instalación del nodo del servidor Wazuh.</li>
+<li style="text-align: justify;">Configuración de clúster para implementación de múltiples nodos o único nodo.</li>
+</ol>
+<div class="exe-fx exe-tabs" style="text-align: justify;">
+<h2>1. Agregar el repositorio de Wazuh</h2>
+<p style="text-align: justify;">Dado que para este caso se se está instalando el servidor de Wazuh en el mismo host que el indexador de Wazuh, se pueden omitir estos pasos, ya que se ha agregado el repositorio de Wazuh anteriormente. Los comandos que se utilizaron anteriormente en el indexador son:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> apt-get install gnupg apt-transport-http</span><br /><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import &amp;&amp; chmod 644 /usr/share/keyrings/wazuh.gpg<br /><strong>root@orion:/home/administrador#</strong> echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list<br /><strong>root@orion:/home/administrador#</strong> apt update </span></pre>
+<h2>2. Instalación del administrador de Wazuh</h2>
+<p>Hay que i<span>nstalar el paquete del administrador de Wazuh.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> apt install wazuh-manager</span></pre>
+<p style="text-align: center;"><img src="install-wazuhserver.png" alt="" width="839" height="236" /></p>
+<h2>3. Habilitar e iniciar servicio</h2>
+<p><span>A continuación, hay que habilitar e iniciar el servicio de administrador de Wazuh.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl daemon-reload<br /><strong>root@orion:/home/administrador#</strong> systemctl enable wazuh-manager<br /><strong>root@orion:/home/administrador#</strong> systemctl start wazuh-manager<br /></span></pre>
+<p style="text-align: center;"><img src="enable-init-service-serverwazuh.png" alt="" width="1015" height="126" /></p>
+<h2>4. Verificación</h2>
+<p>Se verifica el estado del administrador de Wazuh.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl status wazuh-manager</span></pre>
+<p style="text-align: center;"><img src="status-serverwazuh.png" alt="" width="872" height="569" /></p>
+<h2>5. Instalar Filebeat</h2>
+<p>Se instala el paquete filebeat.<span style="font-size: 12pt;"></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> apt install filebeat</span></pre>
+<p style="text-align: center;"><img src="install-filebeat.png" alt="" width="747" height="277" /></p>
+<h2>6. Configurar filebeat</h2>
+<p>Hay que descargar el archivo de configuración de Filebeat preconfigurad<span style="font-size: 12pt;"></span>o.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> curl -so /etc/filebeat/filebeat.yml https://packages.wazuh.com/4.3/tpl/wazuh/filebeat/filebeat.yml</span></pre>
+<p>A continuación, hay que editar el archivo de configuración <strong>/etc/filebeat/filebeat.yml</strong> con los valores siguientes:</p>
+<pre><span style="font-size: 12pt;">output.elasticsearch:</span><br /><span style="font-size: 12pt;">hosts: ["192.168.0.31:9200"]</span><br /><span style="font-size: 12pt;">protocol: https</span><br /><span style="font-size: 12pt;">username: ${username}</span><br /><span style="font-size: 12pt;">password: ${passwor</span>d}</pre>
+<p>donde:</p>
+<ul>
+<li><strong>hosts:</strong> Es la  lista de nodos indexadores de Wazuh a los que conectarse. Se puede utilizar direcciones IP o nombres de host. De forma predeterminada, el host se establece en localhost: ["127.0.0.1:9200"]. donde hay que reemplazarlo con la dirección del indexador de Wazuh según corresponda, para este caso, 192.168.0.31.</li>
+<li>Si se tiene <strong>más de un nodo indexador de Wazuh</strong>, se pueden separar las direcciones con comas. Por ejemplo, hosts: ["10.0.0.1:9200", "10.0.0.2:9200", "10.0.0.3:9200"]. Para este caso, no es necesario.</li>
+</ul>
+<p style="text-align: center;"><img src="yml-filebeat.png" alt="" width="484" height="119" /></p>
+<h2>7. Crear filebeat keystore</h2>
+Creamos un almacén de claves de Filebeat para almacenar de forma segura las credenciales de autenticación. Se agrega el nombre de usuario y la contraseña predeterminados admin:admin al almacén de claves de secretos.<br />
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> filebeat keystore create<br /><strong>root@orion:/home/administrador#</strong> echo admin | filebeat keystore add username --stdin --force<br /><strong>root@orion:/home/administrador#</strong> echo admin | filebeat keystore add password --stdin --force<br /></span></pre>
+<p style="text-align: center;"><img src="crear-keystroe.png" alt="" width="766" height="138" /></p>
+<h2>8. Descarga plantilla</h2>
+<p>Descarga la plantilla de alertas para el indexador de Wazu<span style="font-size: 12pt;"></span>h.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> curl -so /etc/filebeat/wazuh-template.json https://raw.githubusercontent.com/wazuh/wazuh/4.3/extensions/elasticsearch/7.x/wazuh-template.json<br /><strong>root@orion:/home/administrador#</strong> chmod go+r /etc/filebeat/wazuh-template.json<br /></span></pre>
+<h2>9. Instalar módulo filebeat</h2>
+<p>Se instala el módulo Wazuh para Filebeat.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> curl -s https://packages.wazuh.com/4.x/filebeat/wazuh-filebeat-0.2.tar.gz | tar -xvz -C /usr/share/filebeat/module</span></pre>
+<p style="text-align: center;"><img src="install-module.png" alt="" width="1174" height="261" /><span style="font-size: 12pt;"></span></p>
+<h2>10. Implementación de certificados </h2>
+<p style="text-align: justify;">Hay que desempaquetar el archivo <strong>wazuh-certificates.tar</strong> creado durante el paso de configuración inicial (indexador), en el directorio /etc/<span style="font-size: 12pt;">filebeat/certs</span>, para ello, hay que ejecutar los siguientes comandos donde NODE_NAME es el nombre del nodo indexador de Wazuh que se ha configurando anteriormente en <strong>config.yml.</strong> para este caso, se configuró como node-1.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> NODE_NAME=node-1</span><br /><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> mkdir /etc/filebeat/certs<br /><strong>root@orion:/home/administrador#</strong> tar -xf ./wazuh-certificates.tar -C /etc/filebeat/certs/ ./$NODE_NAME.pem ./$NODE_NAME-key.pem ./root-ca.pem<br /><strong>root@orion:/home/administrador#</strong> mv -n /etc/filebeat/certs/$NODE_NAME.pem /etc/filebeat/certs/filebeat.pem<br /><strong>root@orion:/home/administrador#</strong> mv -n /etc/filebeat/certs/$NODE_NAME-key.pem /etc/filebeat/certs/filebeat-key.pem<br /><strong>root@orion:/home/administrador#</strong> chmod 500 /etc/filebeat/certs<br /><strong>root@orion:/home/administrador#</strong> chmod 400 /etc/filebeat/certs/*<br /><strong>root@orion:/home/administrador#</strong> chown -R root:root /etc/filebeat/certs</span></pre>
+<p style="text-align: center;"><img src="cert-dashboard.png" alt="" width="1204" height="159" /></p>
+<h2>11. Iniciar servicio</h2>
+<p>A continuación, hay que habilitar e iniciar el servicio de indexación de Wazuh.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl daemon-reload<br /><strong>root@orion:/home/administrador#</strong> systemctl enable filebeat<br /><strong>root@orion:/home/administrador#</strong> systemctl start filebeat<br /></span></pre>
+<p style="text-align: center;"><img src="enable-filebeat.png" width="946" height="128" /></p>
+<h2>12. Estado del servicio</h2>
+<p>Se comprueba el estado del servicio.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl status filebeat</span></pre>
+<p style="text-align: center;"><img src="status-filebeat.png" alt="" width="1207" height="247" /></p>
+<h2>13. Verificar el servicio</h2>
+<p>Para finalizar, hay que ejecutar el siguiente comando para verificar que Filebeat se instaló correctamente. La salida del mismo tiene que ser similar a la de la figura.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> filebeat test output</span></pre>
+<p style="text-align: center;"><img src="filebeat-test-output.png" width="532" height="282" /></p>
+</div>
+<p style="text-align: justify;">Con esto, el <strong>nodo servidor Wazuh ahora está instalado correctamente</strong>. Si se tienen más nodos, habría que repetir esta etapa del proceso de instalación para cada nodo del servidor de Wazuh en el clúster de Wazuh, para luego continuar con la configuración del clúster de Wazuh. Dado que este para este caso se trabaja con un clúster de nodo único del servidor Wazuh, todo está configurado y se puede continuar con la instalación del Dashboard.</p>
+<table border="0" style="width: 26.5625%;">
+<tbody>
+<tr>
+<td style="width: 13.6973%;">
+<h4><strong><span style="font-size: 12pt;">1.3 Dashboard</span></strong></h4>
+</td>
+<td style="width: 12.8657%;"><img src="dashboard.png" alt="" width="255" height="123" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Este <strong>componente central es una interfaz web</strong> flexible e intuitiva para <strong>extraer, analizar y visualizar datos de seguridad</strong>. Proporciona paneles listos para usar, lo que le permite navegar sin problemas a través de la interfaz de usuario.</p>
+<p style="text-align: justify;">Con el <strong>dashboard de Wazuh</strong>, los usuarios pueden visualizar eventos de seguridad, vulnerabilidades detectadas, datos de monitorización de integridad de archivos, resultados de evaluación de configuración, eventos de monitoreo de infraestructura en la nube y estándares de cumplimiento normativo.</p>
+<p style="text-align: justify;"><strong>Requerimientos</strong></p>
+<p style="text-align: justify;"><strong>Sistemas operativos recomendados.</strong> Wazuh se puede instalar en un sistema operativo Linux de 64 bits. Wazuh es compatible con las siguientes versiones del sistema operativo:</p>
+<table style="height: 70px; width: 546px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr class="row-odd" style="height: 35px;">
+<td style="height: 35px; width: 239.344px;">
+<p><span style="font-size: 12pt;">Amazon Linux 2</span></p>
+</td>
+<td style="height: 35px; width: 290.656px;">
+<p><span style="font-size: 12pt;">CentOS 7, 8</span></p>
+</td>
+</tr>
+<tr class="row-even" style="height: 35px;">
+<td style="height: 35px; width: 239.344px;">
+<p><span style="font-size: 12pt;">Red Hat Enterprise Linux 7, 8, 9</span></p>
+</td>
+<td style="height: 35px; width: 290.656px;">
+<p><span style="font-size: 12pt;">Ubuntu 16.04, 18.04, 20.04, 22.04</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hardware</strong></p>
+<table border="1" style="height: 291px; width: 82.9098%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr style="height: 271px;">
+<td style="width: 50%; text-align: center; height: 271px;"><img src="hw-dashboard.png" alt="" width="700" height="190" /></td>
+<td style="width: 32.91%; text-align: center; height: 271px;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Wazuh dashboard soporta los siguientes navegadores:</span></p>
+<ul class="simple">
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Chrome 95 or posterior.</span></p>
+</li>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Firefox 93 or posterior.</span></p>
+</li>
+<li>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Safari 13.7 or posterior.</span></p>
+</li>
+<li>
+<p style="text-align: justify;"><span style="font-size: 12pt;"></span><span style="font-size: 12pt; text-align: center; color: #333333;">Otros navegadores basados ​​en Chromium también podrían funcionar. </span></p>
+</li>
+<li>
+<p style="text-align: justify;"><span style="font-size: 12pt; text-align: center; color: #333333;">Internet Explorer 11 no es compatible.</span></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Recomendaciones hardware.</span></td>
+<td style="width: 32.91%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Compatibilidad del navegador</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span>La instalación de <a href="https://documentation.wazuh.com/current/installation-guide/wazuh-dashboard/index.html" target="_blank" rel="noopener">wazuh dashboard</a>, se puede realizar de varias maneras (asistente o paso a paso).</span><span></span></p>
+<p style="text-align: justify;">Para este caso, <a href="https://documentation.wazuh.com/current/installation-guide/wazuh-dashboard/step-by-step.html" target="_blank" rel="noopener">se instala el dashbooard paso a paso</a>. Este es el flujo de trabajo de instalación que seguirá:</p>
+<ol>
+<li style="text-align: justify;">Instalación de dependencias de paquetes.</li>
+<li style="text-align: justify;">Agregar el repositorio de Wazuh.</li>
+<li style="text-align: justify;">Instalación del dashboard de Wazuh.</li>
+<li style="text-align: justify;">Configuración del dashboard de Wazuh.</li>
+<li style="text-align: justify;">Implementación de certificados.</li>
+<li style="text-align: justify;">Inicio del servicio dashboard de Wazuh.</li>
+<li style="text-align: justify;">Asegurar la instalación de Wazuh.</li>
+</ol>
+<div class="exe-fx exe-tabs" style="text-align: justify;">
+<h2>1. Instalación de dependencias de paquetes</h2>
+<p style="text-align: justify;">Hay que instalar los siguientes paquetes si no se tienen.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> apt install debhelper tar curl libcap2-bin</span></pre>
+<p style="text-align: center;"><img src="apt-ins-paq-dashboard.png" alt="" width="776" height="324" /></p>
+<h2>2. Agregar el repositorio de Wazuh</h2>
+<p style="text-align: justify;">Dado que para este caso se se está instalando el servidor de Wazuh en el mismo host que el indexador y servidor de Wazuh, se pueden omitir estos pasos, ya que ha agregado el repositorio de Wazuh anteriormente. Los comandos que se utilizaron anteriormente en el indexador son:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> apt install gnupg apt-transport-http</span><br /><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import &amp;&amp; chmod 644 /usr/share/keyrings/wazuh.gpg<br /><strong>root@orion:/home/administrador#</strong> echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list<br /><strong>root@orion:/home/administrador#</strong> apt update </span></pre>
+<h2>3. Instalación del dashboard Wazuh</h2>
+<p>A continuación se<strong> instala el dashboard de Wazuh</strong>.<span style="font-size: 12pt;"></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> apt install wazuh-dashboard</span></pre>
+<p style="text-align: center;"><span><img src="apt-ins-dashboard-wazuh.png" alt="" width="777" height="223" /></span></p>
+<h2>4. Configuración</h2>
+<p><span style="font-size: 12pt;">Hay que editar el archivo<strong> /etc/wazuh-dashboard/opensearch_dashboards.yml</strong> y reemplazar los siguientes valores:</span></p>
+<p><strong>server.host:</strong> Es la configuración específica del host del servidor del panel de control de Wazuh. Para permitir que los usuarios remotos se conecten, hay que establecer el valor en la dirección IP o el nombre DNS del servidor del panel de control de Wazuh. El valor 0.0.0.0 aceptará todas las direcciones IP disponibles del host.</p>
+<p><strong>opensearch.hosts:</strong> Son las URL de las instancias del indexador de Wazuh que se usarán para todas las consultas. El dashboard de Wazuh se puede configurar para conectarse a varios nodos indexadores de Wazuh en el mismo clúster. Las direcciones de los nodos se pueden separar por comas. Para nuestro caso, dado que sólo tenermos un cluster, quedaría así:</p>
+<p style="text-align: justify;">server.host: 0.0.0.0<br />server.port: 443<br />opensearch.hosts: https://<strong>192.168.0.31</strong>:9200<br />opensearch.ssl.verificationMode: certificate</p>
+<p style="text-align: center;"><img src="dashboard-yml.png" alt="" width="675" height="260" /></p>
+<h2>5. Implementación de certificados </h2>
+<p style="text-align: justify;">Hay que desempaquetar el archivo <strong>wazuh-certificates.tar</strong> creado durante el paso de configuración inicial (indexador), en el directorio /etc/<span style="font-size: 12pt;">wazuh-dashboard/certs</span>, para ello, hay que ejecutar los siguientes comandos donde NODE_NAME es el nombre del nodo indexador de Wazuh que se ha configurando anteriormente en <strong>config.yml.</strong> para este caso, se configuró como node-1.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> NODE_NAME=node-1</span><br /><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> mkdir /etc/wazuh-dashboard/certs<br /><strong>root@orion:/home/administrador#</strong> tar -xf ./wazuh-certificates.tar -C /etc/wazuh-dashboard/certs/ ./$NODE_NAME.pem ./$NODE_NAME-key.pem ./root-ca.pem<br /><strong>root@orion:/home/administrador#</strong> mv -n /etc/wazuh-dashboard/certs/$NODE_NAME.pem /etc/wazuh-dashboard/certs/dashboard.pem<br /><strong>root@orion:/home/administrador#</strong> mv -n /etc/wazuh-dashboard/certs/$NODE_NAME-key.pem /etc/wazuh-dashboard/certs/dashboard-key.pem<br /><strong>root@orion:/home/administrador#</strong> chmod 500 /etc/wazuh-dashboard/certs<br /><strong>root@orion:/home/administrador#</strong> chmod 400 /etc/wazuh-dashboard/certs/*<br /><strong>root@orion:/home/administrador#</strong> chown -R wazuh-dashboard:wazuh-dashboard /etc/wazuh-dashboard/certs</span></pre>
+<p style="text-align: center;"><img src="cert-dashboard.png" alt="" width="1204" height="159" /></p>
+<h2>6. Habilitar e inicializar el servicio</h2>
+A continuación, hay que <strong>habilitar e iniciar el servicio dashboard de Wazuh</strong>.<br />
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl daemon-reload</span><br /><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl enable wazuh-dashboard<br /><strong>root@orion:/home/administrador#</strong> systemctl start wazuh-dashboard<br /></span></pre>
+<p style="text-align: center;"><span><img src="start-dashboard.png" alt="" width="1058" height="95" /></span><span></span></p>
+<h2>7. Verificar el servicio</h2>
+Se verifica el servicio para comprobar que todo está correcto:<br />
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl status wazuh-dashboard</span></pre>
+<p style="text-align: center;"><span><img src="status-dashboard.png" alt="" width="1033" height="373" /></span></p>
+<h2>8. Acceso</h2>
+<p>Una vez iniciado el servicio, ya podemos acceder a la interfaz web de Wazuh en esta<strong> url https://192.168.0.31 </strong>y con estas credenciales:</p>
+<ul>
+<li>Username: admin</li>
+<li>Password: admin</li>
+</ul>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="access-01.png" alt="" width="878" height="833" /></td>
+<td style="width: 50%; text-align: center;"><img src="access-02.png" alt="" width="880" height="754" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Hay que pulsa Acceder (sitio no seguro)</span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Insertamos las credenciales por defecto</span></td>
+</tr>
+</tbody>
+</table>
+<h2>9. Panel</h2>
+<p>Una vez se han validado las credenciales correctamente, se abre el panel principal del administrador wazuh.</p>
+<p style="text-align: center;"><img src="panel.png" alt="" width="1299" height="858" /></p>
+</div>
+<h3><span>4. </span>Asegurar la instalación de Wazuh</h3>
+<p style="text-align: justify;">Una vez se han <strong>instalado y configurado todos los componentes centrales de Wazuh,</strong> es necesario <strong>cambiar las credenciales predeterminadas</strong> para proteger la infraestructura de posibles ataques. Para ello, hay que seleccionar el tipo de implementación y seguir las instrucciones para cambiar las contraseñas predeterminadas tanto para la API de Wazuh como para los usuarios del indexador de Wazuh.</p>
+<p>Para la '<strong>implementación todo en uno</strong>' (es este caso), el procedimiento es el siguiente:</p>
+<p><strong>1.</strong> Para cada nodo del indexador de Wazuh, hay que utilizar la herramienta de contraseñas de Wazuh para cambiar las contraseñas de los usuarios del indexador de Wazuh. Dado que para este caso sólo se tiene un nodo maestro, ejecutaremos el script para generar las contraseñas de los usuarios del indexador de Wazuh y las <span>de los usuarios de la API de Wazuh.</span></p>
+<p style="text-align: justify;">En primer lugar hay que descargar la herramienta de contraseñas de Wazuh (se tiene también en /usr/share/wazuh-indexer/plugins/opensearch-security/tools/) y luego utilizarla para cambiar las contraseñas.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> curl -sO https://packages.wazuh.com/4.3/wazuh-passwords-tool.sh<br /><strong>root@orion:/home/administrador# </strong>bash wazuh-passwords-tool.sh --change-all --admin-user wazuh --admin-password wazuh<br /></span><span></span></pre>
+<p style="text-align: center;"><img src="wazuh-password-tool.png" alt="" width="1121" height="242" /></p>
+<pre><span style="font-size: 12pt;">29/01/2023 15:20:26 INFO: The password for user <strong>admin</strong> is <strong>zWObcv3VIscuSw.Kgf3jiJg*ldT3t+3T</strong></span><br /><span style="font-size: 12pt;">29/01/2023 15:20:26 INFO: The password for user <strong>kibanaserver</strong> is <strong>J?5Tv?pT+WWt3udrq7oena6?E+Pva3Oe</strong></span><br /><span style="font-size: 12pt;">29/01/2023 15:20:26 INFO: The password for user kibanaro is dv0lJ7XwWKgcE9JhA+qkbS?sdeCPfsg8</span><br /><span style="font-size: 12pt;">29/01/2023 15:20:26 INFO: The password for user logstash is jymSnd+0cLMMhboZ2sIl80r4+0hCT*og</span><br /><span style="font-size: 12pt;">29/01/2023 15:20:26 INFO: The password for user readall is gc++0rkm+xtQfyunpH4xJzrHROqGvWW4</span><br /><span style="font-size: 12pt;">29/01/2023 15:20:26 INFO: The password for user snapshotrestore is yUGCfFm7MG6?Ht3J?AEXMexP*H1xnAjJ</span><br /><span style="font-size: 12pt;">29/01/2023 15:20:26 WARNING: Wazuh indexer passwords changed. Remember to update the password in the Wazuh dashboard and Filebeat nodes if necessary, and restart the services.</span><br /><span style="font-size: 12pt;">29/01/2023 15:20:28 INFO: The password for Wazuh API <strong>user wazuh</strong> is 4TXyQI63UDGrQO.0sGJQUL+Xa8NX0vIW</span><br /><span style="font-size: 12pt;">29/01/2023 15:20:29 INFO: The password for Wazuh API user <strong>wazuh-wui</strong> is <strong>gAJLQ8GsrudQVOHkiU3k8IfH?ekxI2jR</strong></span><br /><span style="font-size: 12pt;">29/01/2023 15:20:29 INFO: Updated wazuh-wui user password in wazuh dashboard. Remember to restart the service.</span></pre>
+<p><span>Después, desde el panel de wazuh, se podrá cambiar el password del usuario admin, para ello, hay que acceder al icono superior derecha del panel y pulsar '<strong>Reset password</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="reset-password.png" alt="" width="229" height="230" /></span></p>
+<p><span><strong>2.</strong> En todos los nodos del servidor Wazuh (para este caso sólo se tiene 1), hay que ejecutar el siguiente comando para actualizar la contraseña de administrador en el almacén de claves de Filebeat, reemplazando &lt;admin-password&gt; con la contraseña aleatoria generada anteriormente que para este caso es: <span style="font-size: 12pt;"><strong>zWObcv3VIscuSw.Kgf3jiJg*ldT3t+3T</strong></span></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> echo &lt;admin-password&gt; | filebeat keystore add password --stdin --force</span></pre>
+<p style="text-align: center;"><span><img src="update-keystre-filebeat.png" alt="" width="949" height="65" /></span></p>
+<p style="text-align: justify;"><span>Para que los cambios tengan efecto, hay que reiniciar el servicio filebeat.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl restart filebeat</span></pre>
+<p style="text-align: justify;"><strong>3. </strong>En el <strong>nodo dashboard de Wazuh</strong>, hay que ejecutar el siguiente comando para actualizar la contraseña del servidor kibana en el almacén de claves del dashboard de Wazuh. Hay que reemplazar &lt;kibanaserver-password&gt; con la contraseña aleatoria generada <span>anteriormente que para este caso es: <strong><span style="font-size: 12pt;">J?5Tv?pT+WWt3udrq7oena6?E+Pva3Oe</span></strong></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> echo &lt;kibanaserver-password&gt; | /usr/share/wazuh-dashboard/bin/opensearch-dashboards-keystore --allow-root add -f --stdin opensearch.password</span></pre>
+<p style="text-align: justify;"><span>Seguidamente, hay que actualizar el archivo de configuración <strong>/usr/share/wazuh-dashboard/data/wazuh/config/wazuh.yml</strong> con la nueva <strong>contraseña wazuh-wui</strong> generada anteriormente que para este caso es: <span style="font-size: 12pt;"><strong>gAJLQ8GsrudQVOHkiU3k8IfH?ekxI2jR</strong></span></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> nano /usr/share/wazuh-dashboard/data/wazuh/config/wazuh.yml </span></pre>
+<p style="text-align: center;"><span><img src="wazuh-yml.png" alt="" width="598" height="240" /></span></p>
+<p style="text-align: justify;"><span>Para que los cambios tengan efecto, hay que reiniciar el servicio wazuh-dashboard.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> systemctl restart wazuh-dashboard</span></pre>
+<h3><span>5. </span>Eliminar tar de certificados</h3>
+<p>Dado que no se van a instalar otros componentes de Wazuh en este nodo, hay que <strong>eliminar el archivo wazuh-certificates.tar</strong> para aumentar la seguridad.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/home/administrador#</strong> rm -f ./wazuh-certificates.tar</span></pre>
+<p style="text-align: center;"><img src="borrar-cert.png" alt="" width="511" height="47" /><span></span></p>
+<h3>6. Integrar agentes</h3>
+<p>En los siguientes vídeos, se describe el proceso de integración de un agente Windows y Ubuntu en el servidor HIDS Wazuh.</p>
+<table border="0" style="height: 40px; width: 100%;">
+<tbody>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/YrYdXzLBg9Y"></iframe></td>
+<td style="width: 50%; height: 20px; text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/Fg4flQplUbI"></iframe></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Vídeo 1. Integración agente Windows.</span></td>
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Vídeo 2. Integración agente Ubuntu.</span></td>
+</tr>
+</tbody>
+</table>
+<h3 style="text-align: justify;">7. Videotutorial instalación Wazuh versión 2022</h3>
+<p style="text-align: justify;"><span style="font-size: 1em;">En el siguiente vídeo, se describe el proceso de configuración del </span><strong style="font-size: 1em;">servidor HIDS Wazuh </strong><span style="font-size: 1em;">mediante un método que existía en la página oficial el año 2022.</span><br /><span></span></p>
+<p style="text-align: center;"><em><strong><iframe width="560" height="314" src="https://www.youtube.com/embed/X2n5mzbPx0g" allowfullscreen="allowfullscreen"></iframe><br /><br /></strong></em><em><strong>Vídeo 2.</strong> Instalación y configuración de Wazuh.</em></p>
+<h3 style="text-align: justify;">8. Operaciones administrativas en los servicios kibana y elasticsearch</h3>
+<p style="text-align: justify;">Si al <strong>acceder por https</strong> aparece la siguiente alerta:<span></span></p>
+<p style="text-align: center;"><span><img src="kibana-server-not-ready.png" alt="" width="412" height="137" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Alerta informativa sobre el servidor Kibana.</em></p>
+<p style="text-align: justify;">Hay que <strong>comprobar el estado de kibana</strong> para ver dónde está el problema, para este caso, se lista el estado del kibana y como se puede observar, el <strong>problema</strong> es originado con la <strong>conexión con</strong> <strong>elasticsearch</strong>.</p>
+<p><img src="status-kibana.png" alt="" width="1639" height="340" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Status de Kibana.</em></p>
+<p style="text-align: justify;">Para <strong>solucionar el problema</strong>, hay que modificar la dirección de localhost por la ip del servidor. Para este escenario, la <strong>ip del servidor es 192.168.0.30</strong>. El comando a ejecutar es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/# </strong>curl -u elastic:changeme http://192.168.0.30:9200</span></pre>
+<p style="text-align: justify;">Una vez ejecutado el comando, <strong>no es necesario hacer un restart del servicio kibana</strong>. Si se lista de nuevo el estado del kibana, se puede observar que el problema se ha solucionado.</p>
+<p><span style="color: #ef801b; font-size: 1.2em; letter-spacing: 0.5px;"><img src="statuskibana-ok.png" alt="" width="1890" height="326" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Status de Kibana.</em></p>
+<h3 style="text-align: justify;">9. Referencias</h3>
+<ul style="text-align: justify;">
+<li><a href="https://documentation.wazuh.com/current/installation-guide/open-distro/all-in-one-deployment/unattended-installation.html" target="_blank" rel="noopener">Unattended installation</a></li>
+<li><a href="https://documentation.wazuh.com/current/installation-guide/index.html">Instalación de Wazuh</a></li>
+<li><a href="https://documentation.wazuh.com/current/user-manual/registering/index.html" target="_blank" rel="noopener">Para registrar un equipo manualmenteen Wazuh</a></li>
+<li><a href="https://documentation.wazuh.com/current/user-manual/agents/remove-agents/remove.html" target="_blank" rel="noopener">Eliminar agentes</a></li>
+<li><a href="https://attack.mitre.org/" target="_blank" rel="noopener">MITRE ATT&amp;CK</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_windows_kaspersky.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="431_monitorizar_integridad_en_agente.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

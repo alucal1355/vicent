@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.1 NIDS Suricata | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-119"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="current-page-parent daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul>
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li class="current-page-parent"><a href="22_hidsnids.html" class="current-page-parent daddy">2.2 HIDS/NIDS</a>
+      <ul>
+         <li id="active"><a href="221_nids_suricata.html" class="active no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul class="other-section">
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="22_hidsnids.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="221_nids_snort.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.1 NIDS Suricata</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id161">
+<div class="iDevice emphasis0" >
+<div id="ta161_161_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Suricata</strong> está basado en un </span><b>conjunto de reglas</b><span style="font-weight: 400;"> desarrolladas externamente para supervisar el tráfico de la red y proporcionar alertas al administrador del sistema cuando se producen eventos sospechosos.</span></p>
+<h3 style="text-align: justify;"><strong>2. Modos de trabajo de Suricata</strong></h3>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se tienen <strong>dos modos de trabajo:</strong> Modo IDS o modo In-line IDS/IPS.</span></p>
+<h4 style="text-align: justify;"><strong>1. Modo IDS</strong></h4>
+<p>Con este modo:</p>
+<ul>
+<li>No hay un punto único de fallo.</li>
+<li>Rápido para desplegar.</li>
+<li>Vista limitada y acciones limitadas ante un ataque.</li>
+</ul>
+<p style="text-align: center;"><img src="Suricata-IDS.png" alt="" width="635" height="247" /></p>
+<p style="text-align: justify;">Para que empiece a trabajar hay que redireccionar el tráfico desde el MikroTik hacia Suricata. Se puede realizar con: Port Mirror (Switch),  Packet Sniffer (Tool Packet Sniffer) o Mangle (Sniff TZSP). </p>
+<p style="text-align: justify;"><strong>Ejemplo 1: </strong>Port Mirroring.</p>
+<pre><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong>interface ethernet switch set switch1 mirror-source=ether2_to-cliente <br />mirror-target=ether4-</span><span style="font-size: 12pt;">to_suricata name=switch1</span></pre>
+<p style="text-align: justify;"><strong>Ejemplo 2: Packet Sniffer</strong></p>
+<pre><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong>/ip firewall calea add chain=forward action=sniff sniff-target=192.168.1.1</span></pre>
+<p style="text-align: justify;"><strong>2. IDS / IPS - In-line mode</strong></p>
+<p style="text-align: justify;">Con este modo:</p>
+<ul>
+<li style="text-align: justify;">Capaz de tomar acciones contra el tráfico malicioso.</li>
+<li style="text-align: justify;">Puede identificar origen y destino con mayor precisión.</li>
+<li style="text-align: justify;">No necesita mucha configuración en otros equipos de la red(ejemplo: router o switch).</li>
+<li style="text-align: justify;">Punto único de fallo y configuración más compleja.</li>
+</ul>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="IDS-IPS-In-line_mode.png" alt="" width="711" height="244" /></span></p>
+<h4 style="text-align: justify;"><strong>3. Salidas de Suricata</strong></h4>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Eve JsonOutpus. </strong>Desde la versión2.0, Suricata puede producir la salida de alerts, http events, dnsevents, tlsevents a través de json.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La forma más común de utilizar esta salida es a través de <strong>EVE</strong>, donde todos los logs van a un solo fichero. Esta salida puede ser tratada por una variedad importante de herramientas ELK (elasticsearch, logstash, kibana).</span></p>
+<h3 style="text-align: justify;"><strong>3. Escenario de trabajo</strong></h3>
+<p>A continuación, se describe el escenario utilizado para los apartados:</p>
+<ul>
+<li>4. Etapas para la instalación configuración y pruebas de Suricata.</li>
+<li>5. Añadiendo de Reglas personalizadas.</li>
+<li>6. Lanzar ataque y comprobar.</li>
+</ul>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 25.3976%; vertical-align: top;">
+<p><span style="font-size: 12pt;"><strong>Ubuntu Server 20.04.4 </strong></span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Tarjeta de red: </strong>En modo promiscuo.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Ip dinámica: </strong>192.168.0.22</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>RAM</strong>: 2GB.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>CPU</strong>: 1 núcleo.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Disco</strong>: de 30 GB.</span></li>
+</ul>
+</td>
+<td style="width: 74.6024%; text-align: center;"><img src="red-suricata-MV.png" alt="" width="648" height="276" style="float: left;" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">En la siguiente figura, se muestra un esquema típico de una red a monitorizar con Suricata.</p>
+<p style="text-align: center;"><a href="Esquema-suricata.png"><strong><img src="Esquema-suricata.png" alt="" width="577" height="327" /></strong></a></p>
+<p style="text-align: center;"></p>
+<h3 style="text-align: justify;"><strong>4. Etapas para la instalación configuración y pruebas de Suricata.</strong></h3>
+<p><strong>Las etapas que se seguirán son las siguientes:</strong></p>
+<ol>
+<li id="dfcf">Instalación de Suricata — IDS/IPS.</li>
+<li>Configuración Básica de Suricata.</li>
+<li>Suricata — Update Signatures.</li>
+<li>Verificar el estado de Suricata.</li>
+<li id="a391">Prueba de Detección.</li>
+<li id="a391">Ver archivos de registro de Suricata.</li>
+<li id="a391">Rotar archivos registro (logs) de Suricata.</li>
+</ol>
+<p style="text-align: center;"><a href="Diagrama-Etapas-Suricata.jpg" target="_blank" rel="noopener"><img src="Diagrama-Etapas-Suricata.jpg" alt="" width="521" height="550" /></a></p>
+<h4 style="text-align: justify;"><strong>Etapa 1. </strong>Instalación de Suricata — IDS/IPS.</h4>
+<p style="text-align: justify;"><b>Suricata</b><span style="font-weight: 400;"> cuenta con un repositorio oficial el cual se puede agregar y poder realizar la instalación en el sistema. Los comandos son los siguientes para agregar el ppa, instalar y habilitar suricata son los siguientes:</span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#<span style="font-weight: 400;">add-apt-repository ppa:oisf/suricata-stable</span><br />root@orion:/#</strong>apt update</span><br /></span></pre>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="add-apt-suricata.png" alt="" width="1050" height="543" /></span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#<span style="font-weight: 400;">apt install suricata</span><br /></strong></span><strong><span style="font-size: 12pt;">root@orion:/#<span style="font-weight: 400;">systemctl enable suricata.service<br /></span></span></strong></span></pre>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="apt-install-suricata.png" alt="" width="917" height="282" /></span></p>
+<h4 style="text-align: justify;"><strong>Etapa 2. </strong>Configuración Básica de Suricata</h4>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una vez instalado, hay que editar el fichero de configuración <strong>/etc/suricata/suricata.yaml </strong>e incorporar los datos de la red de la organización y el nombre de la interfaz de red.</span></p>
+<p style="text-align: justify;">Para determinar el nombre de la red, se puede usar el siguiente comando:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>ip -p -j route show default</span></span></pre>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="ver-int-red.png" alt="" width="351" height="190" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los datos a incorporar al fichero <strong>/etc/suricata/suricata.yaml </strong>son los siguientes:</span></p>
+<pre><span style="font-size: 12pt;">HOME_NET: "[<strong>192.168.0.0/24</strong>]"</span><br /><span style="font-size: 12pt;">EXTERNAL_NET: "!$HOME_NET“</span><br /><span style="font-size: 12pt;">af-packet:</span><br /><span style="font-size: 12pt;">- interface: <strong>enps03</strong></span></pre>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="suricata-yml-01.png" alt="" width="704" height="483" /></span><span style="font-weight: 400;"></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="af-packet.png" alt="" width="689" height="309" /></span></p>
+<p><span style="font-weight: 400;">donde,</span></p>
+<ul>
+<li><span style="font-weight: 400;"><span><strong>HOME_NET:  </strong>Para definir cuáles son los rangos IP locales.</span></span></li>
+<li><span style="font-weight: 400;"><span><strong>- interface: enps03:</strong> Es el nombre de la interfaz de red que escuchará el tráfico</span></span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Suricata</strong> admite la <strong>recarga de reglas en vivo</strong>, lo que significa que se pueden agregar, eliminar y editar reglas sin necesidad de reiniciar el proceso de ejecución de Suricata. Para habilitar la opción de recarga en vivo, hay que desplazarse hasta la parte inferior del archivo de configuración y agregar las siguientes líneas:</span></p>
+<pre><span style="font-size: 12pt;">detect-engine:</span><br /><span style="font-size: 12pt;">  - rule-reload: true</span></pre>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="suricata-yaml-detect-engine.png" alt="" width="626" height="317" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">A continuación, hay que iniciar el servicio:</span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#<span style="font-weight: 400;">systemctl start suricata</span></strong></span></span></pre>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="start-suricata.png" alt="" width="314" height="36" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Se comprueba el estado del servicio.</span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#<span style="font-weight: 400;">systemctl status suricata</span></strong></span></span><span style="font-weight: 400;"></span></pre>
+<p style="text-align: center;"><img src="status-suricata.png" alt="" width="957" height="260" /></p>
+<h4><strong>Etapa 3. Suricata — Update Signatures (firmas/reglas)</strong><br /><span style="font-weight: 400;"></span></h4>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una vez se ha instalado y realizado la configuración básica de Suricata, se deben <strong>definir las reglas</strong> a emplear para comparar el tráfico procesado con éstas y generar alertas si ocurre una coincidencia (match) con alguna de ellas. El software base de Suricata ya integra <a href="(https://github.com/OISF/suricata/tree/master/rules" target="_blank" rel="noopener">numerosas reglas</a> para protocolos como http, dns o dhcp entre otros. Además, se incluye la funcionalidad suricata-update, permitiendo gestionar e introducir más conjuntos de reglas existentes elaboradas por diversas organizaciones para Suricata. Algunas de estas fuentes requieren suscripción de pago y otras son abiertas. La fuente gratuita más utilizada es <a href="https://rules.emergingthreats.net/" target="_blank" rel="noopener">Emerging Threats</a>, un centro de investigación de seguridad abierta dedicado a producir fuentes de datos sobre amenazas nuevas y actualizadas para plataformas IDS/IPS como Snort o Sutricata. Mediante la ejecución del comando <strong>suricata-update</strong>, se integra directamente el conjunto de relgas de la compañía Emerging Threats, y las actualiza si ya están habilitadas. Este conjunto de reglas analizan diversos protocolos, comprueban comportamientos anómalos o sospechosos en la red, y detectan numerosos elementos maliciosos como direcciones IP. Además, Suricata permite crear manualmente nuevas reglas para poder generar alertas sobre algún tipo de tráfico en concreto que pueda resultar útil en la organización (esto se verá en el apartado <strong><em>5. Añadiendo de Reglas personalizadas</em></strong>). </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Las <strong>reglas</strong> tienen un <strong>formato específico</strong>, y se componen de <strong>tres apartados</strong>:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Acción</strong>: determina lo que ocurre cuando la regla coincide. Existen cuatro tipos:</span>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong> Pass</strong>: para dejar de escanear el paquete ignorando las reglas.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Drop</strong>: para eliminar o bloquear el paquete (solo disponible cuando Suricata se ejecuta en modo IPS).</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Reject</strong>: para enviar un paquete de rechazo de la comunicación tanto al remitente como receptor (con modo IPS activado el paquete también se dropea).</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Alert:</strong> para generar un evento de tipo alerta. </span></li>
+</ul>
+</li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Cabecera</strong>: Define el protocolo, direcciones IP, puertos, y dirección de la comunicación. Permite numerosos protocolos, como por ejemplo tcp, udp, icmp, ip, http, ftp, smb, dns, modbus, nfs, ntp, smtp, krb5...</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;"><strong>Opciones de regla:</strong> Especifica los detalles de la regla. Aquí es donde se indican condiciones detalladas mediante el uso de palabras claves propias de cada protocolo. Por ejemplo, se podría definir si existe un determinado string en el cuerpo de una petición del protocolo http, o definir un ttl del paquete en el protocolo ip. Existen numerosas combinaciones y posibles atributos que permiten a los expertos en este área crear reglas muy específicas para evitar o detectar ciberataques.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Suricata</strong> utiliza las <strong>firmas</strong> para <strong>activar alertas</strong>, por lo que es necesario instalarlas y mantenerlas actualizadas. Las <strong>firmas</strong> también <strong>se denominan reglas</strong>, de ahí el nombre de archivos de reglas. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En el fichero de configuración de suricata <strong>/etc/suricata/suricata.yaml</strong>, la línea <strong>suricata.rules, </strong>indica el el fichero por defecto con las reglas que se van a aplicar y que se encuentra en el path <strong>default-rule-path</strong>. </span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="suricata-yml-rules.png" alt="" width="603" height="366" /></span></p>
+<p style="text-align: justify;"><strong style="font-size: 1em;">3.1 Actualización de reglas</strong></p>
+<p data-adtags-visited="true" style="text-align: justify;">Aunque es posible descargar e instalar las reglas manualmente accediendo al conjunto de reglas y añadirlas a un directorio (o en yaml, config, setting) desde esta ubicación: <a href="http://rules.emergingthreats.net/open/suricata/" target="_blank" rel="noopener">http://rules.emergingthreats.net/open/suricata</a>, para nuestro caso, se va a automatizar este proceso.<span><span style="font-size: 12pt;"><strong><span style="font-weight: 400;"></span></strong></span></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><span>Hay varios conjuntos de reglas. Por ejemplo están: Emerging Threats Open, Emerging Threats Pro y VRT. Para nuestro caso, se utilizará <strong>Emerging Threats Open</strong>. </span></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><span>Para <strong>descargar/actualizar </strong>el conjunto de<strong> reglas de Emerging Threats Open</strong>, el comando es el siguiente:</span></span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#<span style="font-weight: 400;">suricata-update</span></strong></span></span></pre>
+<p style="text-align: center;"><img src="suricata-update.png" alt="" width="1263" height="757" /></p>
+<p style="text-align: justify;">Esto descargará el conjunto de reglas en <strong>/var/lib/suricata/rules/ </strong>(ruta predeterminada) y combinará todas las reglas en un único archivo que se llama <strong>suricata.rules.</strong></p>
+<p style="text-align: justify;">Si se recuerda la sección de reglas del fichero de configuración de Suricata, la ruta por defecto de las reglas es <strong>/var/lib/suricata/rules/ </strong>y el fichero de reglas es <strong>suricata.rules. </strong>La sección es la siguiente:</p>
+<pre><span style="font-size: 12pt;"><span class="n">default</span><span class="o">-</span><span class="n">rule</span><span class="o">-</span><span class="n">path</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">suricata</span><span class="o">/</span><span class="n">rules</span>
+<span class="n">rule</span><span class="o">-</span><span class="n">files</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">suricata</span><span class="o">.</span><span class="n">rules</span></span></pre>
+<p><strong>3.2 Agregar una nueva fuente de reglas</strong></p>
+<p style="text-align: justify;">Para asegurar que la lista esté actualizada, el comando es el siguiente:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#<span style="font-weight: 400;">suricata-update update-sources</span></strong></span></span></pre>
+<p style="text-align: center;"><strong><img src="update-sources-suricata.png" alt="" width="833" height="162" /></strong></p>
+<p style="text-align: justify;">Para mostrar la lista, el comando es el siguiente:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#<span style="font-weight: 400;">suricata-update list-sources</span></strong></span></span></pre>
+<p style="text-align: center;"><strong><b><img src="lit-sources.png" alt="" width="743" height="513" /></b></strong></p>
+<p style="text-align: justify;">Cada uno de los <strong>conjuntos de reglas</strong> tiene un nombre que tiene un prefijo de "<strong>proveedor</strong>", seguido de un nombre de conjunto. Por ejemplo, el conjunto de reglas de identificación de tráfico de OISF se llama "oisf / trafficid". Si se desea habilitar "<strong>oisf/trafficid</strong>" el comando es:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>suricata-update enable-source oisf/trafficid<strong><br />root@orion:/#</strong>suricata-update<strong></strong></span></span></pre>
+<p style="text-align: center;"><img src="enable-oisf.png" alt="" width="992" height="341" /></p>
+<p style="text-align: justify;">Para comprobar la lista habilitada, hay que ejecutar el siguiente comando:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#<span style="font-weight: 400;">suricata-update list-enabled-sources</span></strong></span></span></pre>
+<p style="text-align: center;"><img src="enable-source-oisf.png" alt="" width="751" height="159" /></p>
+<p>Si se desea deshabilitar una regla, por ejemplo, la regla et/pro, el comando es:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>suricata-update disable-source et/pro</span></span></pre>
+<p>Si se desea eliminar una regla, por ejemplo, la regla et/pro, el comando es:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>suricata-update remove-source et/pro</span></span></pre>
+<p><strong>3.3 Gestionar las reglas de Suricata</strong></p>
+<p style="text-align: justify;">La eficacia de<strong> IDS Suricata</strong> se basa en una <b>buena gestión de las regla</b><strong>s</strong>. Con la gestión de las reglas, se pueden evitar falsos positivos así como asegurar que las reglas utilizadas estén actualizadas y permitan la <strong>detección de amenazas recientes</strong>.</p>
+<p style="text-align: justify;">Las<strong> reglas de Suricata activadas</strong> por defecto <strong>generan muchos falsos positivos</strong> (alertas que no son problemas reales). Se recomienda dejar que Suricata se ejecute durante unas horas usando el equipo normalmente y analizar cuidadosamente las alertas en el archivo<strong> fast.log</strong> y deshabilitar ciertas reglas.</p>
+<p style="text-align: justify;">Por ejemplo, si utiliza Dropbox o Skype en la red, se deberán desactivar las reglas correspondientes para no generar alertas innecesarias para la red.</p>
+<p style="text-align: justify;">Para aumentar la seguridad, es posible que también se deban agregar nuevas fuentes de reglas o crear las propias. El formato de reglas es:</p>
+<ul>
+<li>    <strong>Action</strong> (drop, alert, or pass). </li>
+<li>    <strong>Header</strong> (protocol, ip address(es), ports)</li>
+<li>    <strong>Options</strong> (additional qualification values to determine if the packet/flow/whatever match)</li>
+</ul>
+<p>donde:</p>
+<ul>
+<li style="text-align: justify;"><strong>Action</strong>: corresponde con la acción (drop, alert, pass, etc.) que realizará Suricata cuando se identifica la regla en el flujo de red. Ejemplos de acciones:
+<ul>
+<li style="text-align: justify;"><strong> Pass</strong>: Si una firma coincide y contiene pass, Suricata detiene el escaneo del paquete y salta al final de todas las reglas (solamente para el paquete actual).</li>
+<li style="text-align: justify;"><strong>Drop</strong>: Esta acción es solo para el modo IPS. Si el programa encuentra una firma que coincide, suricata para inmediatamente y el emisor del paquete no recibe un mensaje con lo que ha pasado, además, Suricata genera una alerta.</li>
+<li style="text-align: justify;"><strong>Reject</strong>: Esta acción es un rechazo activo del paquete, tanto el emisor como el receptor reciben un paquete rechazado. Si es TCP será a Rest-packet, si es otro protocolo recibirán un icmp-error packet. Además, Suricata también genera una alerta.</li>
+<li style="text-align: justify;"><strong>Alert</strong>: Si una firma coincide y contiene alert, el paquete será tratado como cualquier otro paquete que no es una amenaza, pero se generará un alerta.</li>
+</ul>
+</li>
+<li style="text-align: justify;"><strong>Header</strong>: esta sección corresponde al flujo de red en concreto que se va a analizar. De origen a destino. Con la palabra “any” se le puede indicar a Suricata que se analizarán todos los puertos. Sirve para definir el protocolo (tcp, http, ftp, dns, tls…) así como la dirección IP y el puerto de origen y destino del tráfico involucrado en la alerta. Ejemplo de cabeceras:
+<ul>
+<li style="text-align: justify;"><strong>Protocolo</strong>: Esta palabra reservada significa el protocolo que va a analizar la firma. Se puede elegir entre cuatro configuraciones: tcp, udp, icmpe ip.</li>
+<li style="text-align: justify;"><strong>Source y destination. </strong>Se pueden asignar direcciones IPv4 y IPv6 tanto combinadas como separadas. Se pueden utilizar también variables. Estas variables se pueden asignar en el fichero Yaml.</li>
+<li style="text-align: justify;"><strong>Puertos</strong>. Se pueden asignar puertos o wildcars como any.</li>
+<li style="text-align: justify;"><strong>Dirección. I</strong>ndica en que dirección debe coincidir la firma.
+<ul>
+<li style="text-align: justify;">source -&gt; destination.</li>
+<li style="text-align: justify;">source &lt;&gt; destination ambas direcciones.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><img src="cabecera.png" alt="" width="487" height="282" /></p>
+<ul>
+<li style="text-align: justify;"><strong>Options: </strong>Las <b>opciones </b>de la regla se muestran entre paréntesis y separadas por comas. Algunas opciones tienen parámetros, que se especifican mediante su palabra clave seguida de dos puntos y el valor del parámetro.</li>
+</ul>
+<p style="text-align: justify;"><span style="font-size: 1em;">Las reglas se identifican por su identificador de firma, el parámetro <strong>sid</strong>. </span>Por ejemplo, si se accede al fichero <strong>suricata.rules</strong>, la regla para usar Dropbox es:</p>
+<pre><span style="font-size: 12pt;">alert tls [108.160.162.0/20,162.125.0.0/16,192.189.200.0/23,199.47.216.0/22,205.189.0.0/24,209.99.70.0/24,45.58.64.0/20] 443 -&gt; </span><br /><span style="font-size: 12pt;">$HOME_NET any (msg:"ET POLICY Dropbox.com Offsite File Backup in Use"; flow:established,to_client; tls.cert_subject; content:"CN=*.dropbox.com"; </span><br /><span style="font-size: 12pt;">fast_pattern; threshold: type limit, count 1, seconds 300, track by_src; reference:url,www.dropbox.com; reference:url,dereknewton.com/2011/04/dropbox-authentication-static-host-ids/;</span><br /><span style="font-size: 12pt;"> classtype:policy-violation; sid:2012647; rev:7; metadata:created_at 2011_04_07, updated_at 2022_03_25;)</span></pre>
+<p style="text-align: center;"><img src="alert-tls-dropbox.png" alt="" width="1486" height="136" /></p>
+<p>Para probar la regla, se accede al contenidos del sitio <strong>https://www.dropbox.com</strong> mediante curl:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>curl https://www.dropbox.com/</span></span></pre>
+<p style="text-align: center;"><img src="curl-dropbox.png" alt="" width="1073" height="273" /></p>
+<p>Si se accede a <strong>fast.log</strong>, se puede ver el resultado de aplicar la regla anterior:</p>
+<p style="text-align: center;"><img src="log-dropbox.png" alt="" width="1430" height="140" /></p>
+<p><strong>3.4 Deshabilitar ciertas reglas</strong></p>
+<p style="text-align: justify;">Dependiendo de su uso, algunas reglas deben deshabilitarse. Por ejemplo, si permite el uso de Dropbox dentro de la red, la regla para el <strong>SID 2012647</strong> debe estar deshabilitada.</p>
+<p><img src="auth-dropbox.png" alt="" width="1130" height="47" /></p>
+<p style="text-align: justify;">Para ello, hay que editar el archivo que contiene las reglas para desactivar:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>nano /etc/suricata/disable.conf</span></span></pre>
+<p style="text-align: justify;">En el fichero, hay que agregar la lista de reglas para desactivar identificadas por su identificador de firma (SID). Ejemplo: <strong>1:2012647.</strong></p>
+<p style="text-align: center;"><img src="disable-conf-dropbox.png" alt="" width="572" height="132" /></p>
+<p style="text-align: justify;">Un ejemplo de reglas que se podría desactivar son las siguientes:</p>
+<pre><span style="font-size: 12pt;">1:2012647 # Dropbox</span><br /><span style="font-size: 12pt;">1:2013504 # APT package management</span><br /><span style="font-size: 12pt;">1:2210044 # SURICATA STREAM Packet with invalid timestamp</span><br /><span style="font-size: 12pt;">1:2029706 # COVID</span><br /><span style="font-size: 12pt;">1:2029707 # COVID</span><br /><span style="font-size: 12pt;">1:2029709 # COVID</span><br /><span style="font-size: 12pt;">1:2027865 # DNS Query to .cloud</span><br /><span style="font-size: 12pt;">1:2210054 # SURICATA STREAM excessive retransmissions</span><br /><span style="font-size: 12pt;">1:2260000 # Applayer Mismatch protocol both directions</span><br /><span style="font-size: 12pt;">1:2210020 # STREAM ESTABLISHED packet out of window</span><br /><span style="font-size: 12pt;">1:2016150 # INFO Session Traversal Utilities for NAT</span><br /><span style="font-size: 12pt;">1:2027758 # DNS Query for .cc</span></pre>
+<p style="text-align: justify;">Si es necesario, es posible <strong>desactivar todas las reglas</strong> que pertenecen al <strong>mismo tipo de clasificación de clases.</strong> Por ejemplo, la clasificación de<strong> decodificación de comandos de protocolo genérico</strong> genera demasiadas alertas y es posible deshabilitar todas las reglas en esta clasificación. Para realizar esta acción, se edita el fichero <span><span style="font-size: 12pt;"><strong>disable.conf</strong> y se añade la siguiente línea:</span></span></p>
+<pre><span style="font-size: 12pt;">re:classtype:protocol-command-decode</span></pre>
+<p style="text-align: center;"><span><span style="font-size: 12pt;"><img src="diasble-conf-02.png" alt="" width="522" height="337" /></span></span></p>
+<p style="text-align: justify;"><span><span style="font-size: 12pt;">A continuación, hay que actualizar las reglas  para consolidar los cambios:</span></span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>suricata-update</span></span></pre>
+<p style="text-align: center;"><img src="suircata-update-desh-reglas.png" alt="" width="964" height="816" /></p>
+<p style="text-align: justify;">Como se puede observar en la figura superior, hay <strong>583 reglas modificadas</strong>, que corresponden a los cambios realizados anteriormente.</p>
+<p><strong>3.5 Actualizar las reglas</strong></p>
+<p style="text-align: justify;">Para integrar la detección de las últimas amenazas, es necesario actualizar periódicamente las reglas de Suricata ejecutando el siguiente comando:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>suricata-update --disable-conf=/etc/suricata/disable.conf</span></span></pre>
+<blockquote></blockquote>
+<p>A continuación, hay que reiniciar el servicio Suricata:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>systemctl restart suricata.service</span></span></pre>
+<h4 style="text-align: justify;"><span style="text-decoration: underline;"><strong>Etapa 4. Verificar el estado de Suricata</strong></span></h4>
+<p style="text-align: left;"><span style="font-weight: 400;"><img src="status-suricata.1.png" alt="" width="1015" height="268" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: left;"><span style="text-decoration: underline;"><strong>Etapa 5. Prueba de Detección</strong></span></p>
+<p><span style="font-size: 1em;">Para probar la funcionalidad de Suricata (IDS), a continuación se realiza una prueba. Para ello, se utiliza curl para ver el contenido del sitio que se usará para la prueba.</span></p>
+<section>
+<div class="n p">
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>curl http://testmynids.org/uid/index.html</span></span></pre>
+<p style="text-align: center;"><img src="curl-http.png" alt="" width="455" height="34" /></p>
+</div>
+</section>
+<p style="text-align: justify;">En la figura inferior, se puede observar como suricata utilizando las reglas de ETOpen detecta un posible ataque y que es el que se ha provocado anteriormente.</p>
+<p style="text-align: center;"><img src="log-ataque.png" alt="" width="1115" height="105" /></p>
+<p style="text-align: justify;"><strong>Reglas</strong></p>
+<div>
+<ul>
+<li style="text-align: justify;"><a href="https://doc.emergingthreats.net/bin/view/Main/2015051" rel="nofollow noopener" target="_blank">https://doc.emergingthreats.net/bin/view/Main/2015051</a></li>
+<li style="text-align: justify;"><a href="https://doc.emergingthreats.net/bin/view/Main/2015052" rel="nofollow noopener" target="_blank">https://doc.emergingthreats.net/bin/view/Main/2015052</a></li>
+<li style="text-align: justify;"><a href="https://doc.emergingthreats.net/bin/view/Main/2015524" rel="nofollow noopener" target="_blank">https://doc.emergingthreats.net/bin/view/Main/2015524</a></li>
+</ul>
+<h4 style="text-align: justify;"><span style="text-decoration: underline;"><strong>Etapa 6. </strong>Ver archivos de registro de Suricata</span></h4>
+<p style="text-align: justify;"><strong>Suricata</strong> genera archivos de registro en el directorio<strong> /var/log/suricata</strong>. Además del tráfico de red y la actividad sospechosa que detecta, Suricata también registra información de servicio y estadísticas sobre el tráfico de red. Es necesario configurar un mecanismo de rotación para evitar que los ficheros puedan llenar el disco.</p>
+<p>Los diferentes <strong>archivos de registro</strong> <span style="font-size: 1em;">generados por Suricata son:</span></p>
+<ul>
+<li style="text-align: justify;"><strong>suricata.log:</strong> mensajes de inicio de Suricata.</li>
+<li style="text-align: justify;"><strong>stats.log:</strong> estadísticas sobre el tráfico de su red.</li>
+<li style="text-align: justify;"><strong>fast.log:</strong> actividad sospechosa descubierta por Suricata.</li>
+<li style="text-align: justify;"><strong>eve.json:</strong> tráfico de la red local, así como actividad sospechosa en formato JSON.</li>
+</ul>
+<h4 style="text-align: justify;"><span style="text-decoration: underline;"><strong>Etapa 7. </strong>Rotar archivos registro (logs) de Suricata</span></h4>
+<p style="text-align: justify;">El tamaño del archivo de registro <strong>eve.json</strong> puede volverse muy grande rápidamente y con el tiempo, podría ocupar demasiado tamaño. Usar el mecanismo logrotate integrado en Linux es muy útil para evitar esto.</p>
+<p style="text-align: justify;">Como ejemplo, se configurará para registrar registros de Suricata durante 10 días y limitar el tamaño de cada archivo a 1 GB. Así los logs no podrán ocupar más de 10 GB en el disco mientras tengan un historial de los últimos 10 días. Los historiales más antiguos se eliminan automáticamente. El proceso es el siguiente:</p>
+<p style="text-align: justify;">1. Crear un archivo "<strong>/etc/logrotate.d/suricata</strong>" con el siguiente contenido:</p>
+<pre><span style="font-size: 10pt;">/var/log/suricata/fast.log {</span><br /><span style="font-size: 10pt;">    daily</span><br /><span style="font-size: 10pt;">    maxsize 1G</span><br /><span style="font-size: 10pt;">    rotate 10</span><br /><span style="font-size: 10pt;">    missingok</span><br /><span style="font-size: 10pt;">    nocompress</span><br /><span style="font-size: 10pt;">    create</span><br /><span style="font-size: 10pt;">    sharedscripts</span><br /><span style="font-size: 10pt;">    postrotate</span><br /><span style="font-size: 10pt;">    systemctl restart suricata.service</span><br /><span style="font-size: 10pt;">    endscript</span><br /><span style="font-size: 10pt;">}</span></pre>
+</div>
+<p style="text-align: center;"><span style="font-weight: 400; font-size: 12pt;"><strong style="color: #ef801b; letter-spacing: 0.5px;"><img src="log-rotate.png" alt="" width="391" height="237" /></strong></span></p>
+<p style="text-align: justify;">Para comprobar que la rotación está correctamente configurada y que funciona, se puede forzar manualmente con el comando:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#</strong>logrotate -f /etc/logrotate.conf</span></span></pre>
+<p style="text-align: center;"><img src="exec-logrotate.png" alt="" width="381" height="42" /></p>
+<p style="text-align: justify;">Por otro lado, el tamaño del archivo de registro de tráfico de red "<strong>eve.json</strong>" puede aumentar mucho (dependerá del tráfico de la red). Si solo interesan las alertas del archivo fast.log, se pueden desactivar los registros del archivo <strong>eve.json</strong> en el archivo de configuración <strong>/etc/suricata/suricata.yaml</strong>, pero ya no se tendrán registros que permitan analizar la causa de las alertas. La sección quedaría así:</p>
+<pre><span style="font-size: 12pt;">- eve-log:</span><br /><span style="font-size: 12pt;">   enabled: no</span></pre>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong style="color: #ef801b; font-size: 1.2em; letter-spacing: 0.5px;">5. Añadiendo reglas personalizadas</strong></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Como ejemplo, se van a añadir una serie de reglas para generar diferentes alertas.</span></p>
+<h4><strong>Regla 1. ICMP</strong></h4>
+<p style="text-align: justify;"><span style="font-weight: 400;">Esta primera regla, generará alertas que detecte el tráfico ICMP de tipo "echo request" dirigido a la red interna (de cualquier IP, de cualquier puerto, a la red interna a cualquier puerto). </span><span style="font-weight: 400;">El proceso es el siguiente:</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>1.</strong> Se crea un fichero <strong>ciber.rules</strong> en la ruta donde se tienen las regla, es decir, <strong>/etc/suricata/rules.</strong></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="dir-rules.png" alt="" width="856" height="131" /></span></p>
+<p style="text-align: justify;"><strong>2</strong>. A continuación, se edita el fichero ciber.rules y se añade la regla siguiente.</p>
+<pre><span style="font-size: 12pt;">alert icmp any any -&gt; $HOME_NET any (msg: "ICMP: Ping entrante detectado";itype:8;sid:1000004;)<br /></span></pre>
+<p style="text-align: justify;">donde se alerta de conexiones tipo ICMP, de cualquier IP, de cualquier puerto, a cualquier IP de la red interna a cualquier puerto. Muestra el mensaje '<strong><span style="font-size: 12pt;">ICMP: Ping entrante detectado</span></strong>'.</p>
+<p style="text-align: justify;"><strong>3.</strong> A continuación, <span>hay que indicar en el fichero de configuración de Suricata (/etc/suricata/suricata.yaml) el nombre del fichero con las reglas que se acaba de definir, para ello, s</span>e edita el fichero <span style="font-weight: 400;"><strong>suricata.yaml</strong>, para indicarle la ruta donde se encuentran los ficheros con las reglas y el fichero de reglas a aplicar</span><span style="font-weight: 400;"><b>.</b></span></p>
+<p style="text-align: center;"><img src="ciber-rule-suircata-yaml.png" alt="" width="569" height="242" /></p>
+<p><b>4. </b>A continuación, hay que reiniciar el servicio.</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@orion:/#<span style="font-weight: 400;">systemctl restart suricata</span></strong></span></span></pre>
+<p><strong>5.</strong> Por último, se realizan las <strong>comprobaciones</strong> de funcionamiento. Ejemplo:  Si se realiza u<span>n PING a cualquier IP desde cualquier equipo, queda registrado: </span></p>
+<ul>
+<li style="text-align: justify;">tail -f /var/log/suricata/<strong>fast.log</strong></li>
+<li style="text-align: justify;">tail -f /var/log/suricata/<strong>eve.json</strong></li>
+</ul>
+<p style="text-align: center;"><img src="tail-log-fast.png" alt="" width="1267" height="221" /></p>
+<p style="text-align: center;"><img src="eve-json.png" alt="" width="985" height="128" /></p>
+<h4><strong>Regla 2. Comprobar número excesivo de paquetes TCP SYN entrantes<br /></strong><strong></strong></h4>
+<p>En esta segunda regla, se comprueban si existen más de 5000 paquetes TCP SYN entrantes en los próximos 5 segundos.</p>
+<pre><span style="font-size: 12pt;">alert tcp $EXTERNAL_NET any -&gt; $HOME_NET any (msg:"LOCAL DOS SYN packet</span><br /><span style="font-size: 12pt;">flood inbound, Potential DOS"; flow:to_server; flags: S,12; threshold: type both,</span><br /><span style="font-size: 12pt;">track by_dst, count 5000, seconds 5; classtype:misc-activity; sid:1000001;)</span><br /><br /><span style="font-size: 12pt;">alert tcp $HOME_NET any -&gt; $EXTERNAL_NET any (msg:"LOCAL DOS SYN packet</span><br /><span style="font-size: 12pt;">flood outbound, Potential DOS"; flow:to_server; flags: S,12; threshold: type both,</span><br /><span style="font-size: 12pt;">track by_dst, count 5000, seconds 5; classtype:misc-activity; sid:1000002;)</span><br /><br /></pre>
+<p style="text-align: center;"><span style="font-weight: 400;"><strong style="color: #ef801b; font-size: 1.2em; letter-spacing: 0.5px;"><img src="ciber-rules-2.png" alt="" width="970" height="111" /></strong></span></p>
+<p><span style="font-weight: 400;"><strong style="color: #ef801b; font-size: 1.2em; letter-spacing: 0.5px;">6. Lanzar ataque y comprobar</strong></span></p>
+<p><span style="font-weight: 400;">Podemos lanzar un ataque DoS mediante el comando <strong>hping3</strong> donde su sintaxis es:</span></p>
+<p><span style="font-weight: 400;"><strong>hping3</strong> -p 80 -a ip_falsa -S --flood IP_victima</span></p>
+<p>donde:</p>
+<ul>
+<li><span style="font-weight: 400;"><strong>-S:</strong> Activa el flag SYN.</span></li>
+<li><span style="font-weight: 400;"><strong> --flood:</strong> l<span>e indica a hping que envíe los paquetes a la máxima velocidad posible.</span></span></li>
+<li><span style="font-weight: 400;"><strong>IP_victima:</strong> Dirección ip o dominio de la víctima a atacar.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Como ejemplo, se realiza el ataque al servidor ubuntu donde está suricata desde un equipo de la red (Linux Mint 19).</span></p>
+<pre><span style="font-weight: 400; font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>hping3 -S --flood 192.168.0.22</span></pre>
+<p><span style="font-weight: 400;">Si se accede al log, se puede observar que <span>Suricata (IPS) hace un drop (Miss attack) indicando la ip origen del ataque y la destino. Por lo tanto, suricata está bloqueando el <strong>ataque DoS</strong> de manera efectiva.</span></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="log-DoS.png" alt="" width="1605" height="396" /></span></p>
+<p><a href="https://www.redeszone.net/gnu-linux/hping3-manual-de-utilizacion-de-esta-herramienta-para-manipular-paquetes-tcp-ip" target="_blank" rel="noopener">Link de interés</a></p>
+<p><a href="https://lamiradadelreplicante.com/2012/01/24/ataque-ddos-syn-flood-con-hping3/" target="_blank" rel="noopener">Fuente</a></p>
+<h3 style="text-align: justify;"><strong>7. Referencias</strong></h3>
+<ul>
+<li style="text-align: justify;">
+<p><a href="https://materials.rangeforce.com/tutorial/2020/02/09/Suricata-Intrusion-Prevention-System/" target="_blank" rel="noopener">Suricata as an IPS</a></p>
+</li>
+<li style="text-align: justify;">
+<p><a href="https://materials.rangeforce.com/tutorial/2020/02/09/Suricata-Intrusion-Prevention-System/" target="_blank" rel="noopener"></a><a href="https://suricata.readthedocs.io/en/suricata-6.0.0/rules/" target="_blank" rel="noopener">Suricata Rules (documentación oficial)</a></p>
+</li>
+<li style="text-align: justify;">
+<p><a href="https://suricata.readthedocs.io/en/suricata-6.0.0/rules/" target="_blank" rel="noopener"></a><a href="https://youtu.be/WbOp1S2s1ZQ" target="_blank" rel="noopener">Taller de instalación de Suricata y ELK Stack</a></p>
+</li>
+<li style="text-align: justify;">
+<p><a href="https://youtu.be/WbOp1S2s1ZQ" target="_blank" rel="noopener"></a><a href=" https://suricata.readthedocs.io/en/suricata-6.0.0/setting-up-ipsinline-for-linux.html" target="_blank" rel="noopener">Setting up IPS/inline for Linux (Oficial)</a></p>
+</li>
+<li style="text-align: justify;">
+<p><a href="https://suricata.readthedocs.io/en/suricata-6.0.0/setting-up-ipsinline-for-windows.html" target="_blank" rel="noopener">Setting up IPS/inline for Windows (Oficial)</a></p>
+</li>
+<li style="text-align: justify;">
+<p><a href="https://suricata.readthedocs.io/en/suricata-6.0.0/setting-up-ipsinline-for-windows.html" target="_blank" rel="noopener"></a><a href=" https://suricata.readthedocs.io/en/suricata-6.0.0/output/log-rotation.html?highlight=rotate" target="_blank" rel="noopener">Rotación de logs de Suricata</a>.</p>
+</li>
+<li style="text-align: justify;">
+<p><a href=" https://suricata.readthedocs.io/en/suricata-6.0.0/output/eve/eve-json-output.html?highlight=rotate#rotate-log-file" target="_blank" rel="noopener">Rotación del log eve de Suricata.</a></p>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="22_hidsnids.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="221_nids_snort.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

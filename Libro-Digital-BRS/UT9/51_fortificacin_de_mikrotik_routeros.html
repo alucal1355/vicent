@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.1 Fortificación de MikroTik RouterOS | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-130"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_fortificacin_de_una_dmz.html" class="current-page-parent daddy">5. Fortificación de una DMZ</a>
+   <ul>
+      <li id="active"><a href="51_fortificacin_de_mikrotik_routeros.html" class="active daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul>
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="5_fortificacin_de_una_dmz.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="faqs_mikrotik.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.1 Fortificación de MikroTik RouterOS</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id166">
+<div class="iDevice emphasis0" >
+<div id="ta166_166_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;">En este capítulo se va ampliar el trabajo que ya se realizó en la unidad de trabajo anterior donde se implementó un sistema de acceso de usuario suplicante a un servidor radius mediante un hotspot. Las ampliaciones que se van a realizar para aumentar la fortificación perimetral son las siguientes:</p>
+<ol>
+<li><strong>IP - Servicios:</strong> Desactivar los servicios por defecto del equipo mikrotik.</li>
+<li><strong>Securización:</strong> Cambiar el puerto 8291 winbox de mikrotik para evitar que se detecte que es un equipo mikrotik.</li>
+<li><strong>System - Packages:</strong> Actualizar el equipo mikrotik a su última versión.</li>
+<li><strong>Interfaces:</strong> Asignar nombres a las interfaces (ether1, ether2 y ether3)</li>
+<li style="text-align: justify;"><strong>Fortificación de la red interna: segmentación de red:</strong> Segmentar la LAN mediante VLANs para los departamentos de la organización.
+<ol>
+<li style="text-align: justify;">Asignar el direccionamiento de red.</li>
+</ol>
+</li>
+<li style="text-align: justify;"><strong>Asignar direccionamiento ip</strong> a las redes y vlan.</li>
+<li style="text-align: justify;"><strong>Crear servidores DHCP</strong> para cada una de las 3 redes.</li>
+<li style="text-align: justify;"><strong> Configurar la dmz</strong> para el acceso de los usuarios suplicantes al servidor radius vía el hotspot.</li>
+<li style="text-align: justify;"><strong>Crear reglas</strong> en el firewall.</li>
+</ol>
+<p>El esquema de la infraestructura de red para una empresa con 3 departamentos es el siguiente:</p>
+<p style="text-align: center;"><a href="Diagrama.png"><img src="Diagrama.png" alt="" width="650" height="592" style="display: block; margin-left: auto; margin-right: auto;" /></a><em><strong>Figura 1.</strong> Esquema de red de una organización con acceso a servidor radius mediante hotspot.</em></p>
+<h3>2. Configuraciones previas</h3>
+<h4 style="text-align: justify;">2.1 Desactivar servicios</h4>
+<p style="text-align: justify;">En primer lugar, se pone en práctica lo aprendido en la unidad de trabajo '<strong>Fortificación de equipos: Configuración de los sistemas informáticos</strong>', es decir, se van a desactivar los servicios del equipo mikrotik que no son necesarios. Habría que elegir qué servicio se deja activo dependiendo de cómo se va a gestionar el Mikrotik, es decir:</p>
+<ol>
+<li style="text-align: justify;"><span style="color: #333333; font-size: 1em;">Se deja el servicio Winbox abierto si se va a acceder al equipo mediante Windows.</span></li>
+<li style="text-align: justify;"><span style="color: #333333; font-size: 1em;">Se deja el servicio ssh si se accede en modo terminal.</span></li>
+<li style="text-align: justify;"><span style="color: #333333; font-size: 1em;">Se deja ej servicio www/puerto 80 si se accede vía http.</span></li>
+<li style="text-align: justify;"><span style="color: #333333; font-size: 1em;">Se deja el servicio www-ssl/puerto 443 si se accede por https.</span></li>
+</ol>
+<p><span style="color: #333333; font-size: 1em;">Para este caso de ejemplo y dado que el administrador del sistema es usuario de un equipo Windows, se deja activo sólo el puerto de Winbox.</span></p>
+<p style="text-align: center;"><img src="services-list.png" alt="" width="499" height="220" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Servicios activados y desactivados en mikrotik.</em></p>
+<p>Si se utiliza la consola, el comando para listar los servicios es el siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip service print</span></pre>
+<p style="text-align: center;"><img src="ip-service-print.png" alt="" width="697" height="194" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Servicios activados y desactivados en mikrotik.</em></p>
+<p>Para desactivar un servicio, ejemplo el ssh (servicio 3), el comando es:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>[admin@MikroTik] &gt;</strong> ip service disable 3</span></pre>
+<h4 style="text-align: justify;">2.2 Securización</h4>
+<p>A continuación, hay que cambiar el puerto 8291 de Winbox para evitar que se detecte que es un Mikrotik. Para este caso, se le asigna el puerto 10001.</p>
+<p style="text-align: center;"><img src="change-port-winbox.png" alt="" width="271" height="158" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Cambio del puerto winbox.</em></p>
+<p style="text-align: justify;">Si se listan de nuevo los servicios, se puede observar que winbox ya está a la escucha en el puerto 10001.</p>
+<p style="text-align: center;"><img src="ip-service-print-2.png" alt="" width="703" height="194" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Servicios activados y desactivados en mikrotik.</em></p>
+<p>También es conveniente desactivar el usuario admin y crear un nuevo usuario administrador, ejemplo:</p>
+<ul>
+<li><strong>nombre</strong>: ad_mk01 (usuario administrador del router mikrotik 01).</li>
+<li><strong>password</strong>: 8 caracteres (complejidad).</li>
+</ul>
+<p style="text-align: center;"><img src="new_user-mikrotik.png" alt="" width="363" height="240" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong> Creación de un nuevo usuario administrador.</em></p>
+<p style="text-align: justify;">Con esto se evita que se conozca el nombre del usuario por defecto de mikrotik, ya que cuando se realizan ataques al equipo, se suele utilizar como nombre admin.</p>
+<p style="text-align: justify;">Por último, se <strong>deshabilita el usuario admin</strong>.</p>
+<p style="text-align: center;"><img src="disable-admin.png" alt="" width="547" height="243" /></p>
+<p style="text-align: center;"><em><strong>Figura 7.</strong> Vista de los usuarios.</em></p>
+<h4 style="text-align: justify;">2.3 Actualizar el equipo</h4>
+<p style="text-align: justify;">El siguiente paso es comprobar la actualización del equipo, para ello, hay que acceder a <strong>System - Packages</strong> -- &gt; “<strong>Check for updates</strong>”.</p>
+<p style="text-align: center;"><img src="check-updates.png" alt="" width="660" height="272" /></p>
+<p style="text-align: center;"><em><strong>Figura 8.</strong> Actualización del equipo.</em></p>
+<h4 style="text-align: justify;">2.4 Interfaces</h4>
+<p>El nombrado de las interfaces, se realiza siguiendo el esquema de la figura 1, para este caso se nombra:</p>
+<ol>
+<li><strong>ether1</strong>: Para la red WAN.</li>
+<li><strong>ether2</strong>: Para la red DMZ.</li>
+<li><strong>ether3</strong>: Para la red LAN que es donde se tendrán los equipos y servidores de la organización.</li>
+</ol>
+<p style="text-align: center;"><img src="interfaces.png" alt="" width="802" height="140" /></p>
+<p style="text-align: center;"><em><strong>Figura 9.</strong> Nombrado de las interfaces.</em></p>
+<h4 style="text-align: justify;">2.5 VLANs</h4>
+<p style="text-align: justify;">Partiendo del esquema de la figura 1, se crean 3 VLAN en la interfaz ether3, una para cada uno de los departamentos de la organización. También, se crea un VLAN (Servicios) para la red WAN.</p>
+<p style="text-align: center;"><img src="lista-VLAN.png" alt="" width="700" height="158" /></p>
+<p style="text-align: center;"><em><strong>Figura 10.</strong> Configuración de las VLAN de cada departamento.</em></p>
+<p style="text-align: justify;">Si se accede de nuevo a las interfaces, ya aparecen las VLAN que se han creado anteriormente.</p>
+<p style="text-align: center;"><em><img src="interfaces-con-VLAN.png" alt="" width="778" height="209" /></em></p>
+<p style="text-align: center;"><em><strong>Figura 11.</strong> Lista de interfaces.</em></p>
+<h4 style="text-align: justify;">2.6 Segmentación</h4>
+<p>En este punto, se configuran las redes de cada una de las interfaces y de las 3 VLAN.</p>
+<p style="text-align: center;"><img src="lista-direcciones.png" alt="" width="576" height="177" /></p>
+<p style="text-align: center;"><em><strong>Figura 12.</strong> Ip-Address de las redes.</em></p>
+<h4 style="text-align: justify;">2.7 Crear servidores DHCP</h4>
+<p>Una vez se ha configurado el direccionamiento, hay que crear los servidores dhcp para cada una de las redes en<strong> DHCP Setup.</strong></p>
+<p style="text-align: center;"><strong><img src="dhcp-servers.png" alt="" width="635" height="208" /></strong></p>
+<p style="text-align: center;"><strong><em>Figura 13. </em></strong><em>Servidores dhcp.</em></p>
+<p>Por último, hay que ir a <strong>IP – DNS</strong> --&gt; y habilitar “<strong>Allow Remote Requests</strong>”, para que pueda resolver las direcciones externas.</p>
+<p style="text-align: center;"><img src="dns-settings.png" alt="" width="443" height="367" /></p>
+<p style="text-align: center;"><strong><em>Figura 14. </em></strong><em>Activar la resolución de nombres</em></p>
+<h4>2.8 Acceso a internet de los equipos de la DMZ</h4>
+<p style="text-align: justify;">Para que los <strong>equipos de la red DMZ</strong> puedan tener acceso a internet, hay que realizar un enmascaramiento. Para ello, hay que acceder a: IP – Firewall y seleccionar la pestaña NAT. Hay que realizar un “masquerade” en la interfaz WAN, por lo que hay que crear una nueva, el proceso es el siguiente:</p>
+<ul>
+<li>En<strong> Out Interface</strong> se elige la interfaz WAN.</li>
+<li>En el campo “<strong>Action</strong>” hay que elegir “masquerade”.</li>
+</ul>
+<p style="text-align: center;"><img src="Firewall-nat-masquerade.png" alt="" width="912" height="303" /></p>
+<p style="text-align: center;"><strong><em>Figura 15. </em></strong><em>Agregar regla para la salida a internet de los equipos de la DMZ.</em></p>
+<h3>3. Hotspot en DMZ</h3>
+<p style="text-align: justify;">En este punto, se va a <strong>establecer el hotspot en la DMZ</strong>, para ello, hay que acceder a <strong>IP – Hotspot</strong> y a continuación, en la pestaña '<strong>Servers</strong>', se establece el hotspot sobre la DMZ.</p>
+<p style="text-align: center;"><img src="hotspot-dmz.png" alt="" width="991" height="385" /></p>
+<p style="text-align: center;"><strong><em>Figura 16. </em></strong><em>Configurar hotspot en DMZ.</em></p>
+<p style="text-align: justify;">En la pestaña '<strong>Users</strong>', se pueden definir los usuarios que se necesiten donde es posible:</p>
+<ul>
+<li style="text-align: justify;">Crear <strong>perfiles</strong> para grupos de usuarios (pestaña Users Profiles).</li>
+<li style="text-align: justify;"><strong>Rate limit.</strong> Para limitar el ancho de banda (Para este caso se le establece a 100 Mbytes de RX y TX - ver figura 18).</li>
+</ul>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="users-hotspot.png"><img src="users-hotspot.png" alt="" width="776" height="269" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="users-profiles.png"><img src="users-profiles.png" alt="" width="662" height="193" /></a></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 17. </em></strong><em>Configurar usuarios para el acceso al hotspot.</em></span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 18. </em></strong><em>Configurar perfil de usuarios.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Una vez se ha creado el perfil, se accede al usuario y se le asigna el perfil creado.</p>
+<p style="text-align: center;"><img src="usuario-a-perfil.png" alt="" width="644" height="193" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 19. </em></strong><em>Usuario asignado al perfil.</em></span></p>
+<p style="text-align: justify;">Para aquellos equipos que no se pueden validar con usuario/contraseña se tiene la pestaña <strong>IP Bindings</strong>. Ejemplo: Si se desea añadir una impresora, hay que establecer la ip y máscara de la misma.</p>
+<p style="text-align: center;"><img src="add-ip-binfing.png" alt="" width="782" height="310" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 20. </em></strong><em>Añadir impresora por ip/mac.</em></span></p>
+<p style="text-align: center;"></p>
+<h3>4. Reglas del Firewall</h3>
+<p><strong>Características de las Reglas:</strong></p>
+<ul>
+<li><strong>Chain</strong>:
+<ul>
+<li><strong>Forward</strong>: tráfico que pasa a través del router.</li>
+<li><strong>Input</strong>: tráfico de entrada a nuestro Mikrotik.</li>
+<li><strong>Output</strong>: tráfico de salida desde nuestro Mikrotik.</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><img src="filter-rules.png" alt="" width="818" height="351" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 21. </em></strong><em>Lista de reglas.</em></span></p>
+<ul>
+<li>En <strong>Address List</strong> se puede crear un grupo de personas en base a la necesidad en concreto. Por ejemplo, si se pone una lista de "Bloqueados", se podría poner una IP o rango de red. Luego se podrían crear otras IPs de "Administradores", etcétera.</li>
+</ul>
+<p style="text-align: center;"><img src="lista-bloqueados.png" alt="" width="694" height="163" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 22. </em></strong><em>Lista de equipos bloqueados.</em></span></p>
+<ul>
+<li style="text-align: justify;">En<strong> Filter Rules</strong> se pueden crear los filtros personalizados para bloquear, por ejemplo, para permitir o denegar algún servicio, o una lista de equipos, etcétera.</li>
+</ul>
+<p style="text-align: center;"><img src="new-filter-rul-bloqueados.png" alt="" width="404" height="261" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 23. </em></strong><em>Uso de la lista de bloqueados en la regla.</em></span></p>
+<p><strong>Añadir nueva regla:</strong><strong></strong></p>
+<p>Generalmente, hay que rellenar los siguientes campos:</p>
+<ul>
+<li>Forward/Input/Output.</li>
+<li>Protocolo.</li>
+<li>Puerto.</li>
+<li>Si se quiere bloquear, hay que poner Drop (En la pestaña Action).</li>
+<li>En la pestaña Extra, se puede definir un rango de tiempo de cuando se quiere que se aplique la regla.</li>
+<li>Se puede aceptar el grupo de rango de IPs que se habían creado, creando una regla para permitir el tráfico a dichas IPs.</li>
+</ul>
+<p><strong><img src="ejemplo.png" alt="" width="111" height="39" /></strong></p>
+<p>Si se quiere denegar el acceso al puerto tcp 22 (ssh), la regla quedaría así:</p>
+<p style="text-align: center;"><img src="reglas-02.png" alt="" width="840" height="376" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 24. </em></strong><em>Regla creada de ejemplo.</em></span></p>
+<h3>5. Conclusiones</h3>
+<p style="text-align: justify;">No es conveniente usar Mikrotik como Firewall si se tienen muchos equipos a no ser que el equipo sea muy potente. Las opciones serían las siguientes:</p>
+<ol>
+<li style="text-align: justify;"><strong>Pequeña y Mediana empresa:</strong> PC + PfSense.</li>
+<li style="text-align: justify;"><strong>Gran empresa:</strong> Firewall privativa.</li>
+</ol>
+<h3>6. Recursos</h3>
+<ul>
+<li><a href="https://docs.google.com/document/d/1P8Al3HZnl23cJM1BHdbNtxie0ZGEoqCTuzpzEdQhGg8/edit?usp=sharing" target="_blank" rel="noopener">MikroTik - Configuración CLI</a></li>
+<li>
+<p><a href="https://help.mikrotik.com/docs/display/ROS/Command+Line+Interface">https://help.mikrotik.com/docs/display/ROS/Command+Line+Interface</a></p>
+</li>
+<li>
+<p><a href="https://wiki.mikrotik.com/wiki/Manual:Console" target="_blank" rel="noopener">Manual:Console - MikroTik Wiki</a></p>
+</li>
+<li><a href="https://mhelp.pro/es/proteccion-mikrotik-configuracion-basica-de-seguridad-del-dispositivo/">https://mhelp.pro/es/proteccion-mikrotik-configuracion-basica-de-seguridad-del-dispositivo/</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="5_fortificacin_de_una_dmz.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="faqs_mikrotik.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4. IP Versión 6 | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-53"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li id="active"><a href="4_ip_versin_6.html" class="active no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li><a href="6_redes_virtuales_vlans.html" class="daddy">6. Redes virtuales (VLANs)</a>
+   <ul class="other-section">
+      <li><a href="61_introduccin_a_gns3.html" class="daddy">6.1 Introducción a GNS3</a>
+      <ul class="other-section">
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3_segmentacin_de_redes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_subnetting_y_supernetting.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4. IP Versión 6</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id89">
+<div class="iDevice emphasis0">
+<div id="ta89_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;"><strong>IPv6</strong> es la actualización del protocolo <strong>IPv4</strong>. Su función principal es la de solucionar el problema actual con las direcciones <strong>IPv4</strong>.</p>
+<p style="text-align: justify;"><strong>IPv4</strong> utiliza direcciones de 32 bits (2^32) lo que nos da a un máximo de 4.294.967.296 direcciones IP únicas. Debido al crecimiento exponencial de dispositivos, las IPs de esta versión se <strong>agotaron oficialmente en 2011</strong>.</p>
+<p style="text-align: justify;">Para solucionar este problema se comenzó a desarrollar en 1998 la <strong>versión 6</strong>. Esta versión utiliza <strong>128 bits</strong> (2^128) en vez de 32, lo que permite utilizar aproximadamente 340 sextillones de direcciones.</p>
+<h3 style="text-align: justify;">2. Cambios respecto a IPv4</h3>
+<p style="text-align: justify;">En muchos aspectos IPv6 es similar a IPv4, ya que muchas de sus características se mantienen. Pero, también dispone de otras nuevas.</p>
+<ul>
+<li style="text-align: justify;"><strong style="color: #666666; font-size: 0.95em;">IPv6</strong><span style="color: #666666; font-size: 0.95em;"> hace uso del sistema hexadecimal, es decir, 16 símbolos (0 al 9 y A a F) en vez del decimal de su versión anterior (Del 0 al 9 únicamente).</span></li>
+<li style="text-align: justify;">Uno de los cambios, son las cabeceras. IPv6 dispone de un formato nuevo de paquete, por lo que las comunicaciones, debido a las diferencias en las cabeceras, entre IPv4 e IPv6 no son posibles.</li>
+<li style="text-align: justify;">IPv6 dispone de jerarquías, los que permite unificar rutas. Creando de este modo un enrutamiento más eficiente en internet.</li>
+<li style="text-align: justify;"><strong>Se elimina el<span> </span><a href="#t4c0196a8-6df2-12f0-350b-12cf02bdb8c1" id="link4c0196a8-6df2-12f0-350b-12cf02bdb8c1" class="exe-tooltip definition-tt" data-hasqtip="0">broadcast</a></strong>, debido al gran número de IPs posibles, esta característica ya no existe. En su lugar se hará uso de<span> </span><strong>multicast</strong><span> </span>para comunicaciones masivas.</li>
+<li style="text-align: justify;">IPv6<span> </span><strong>ya no utiliza las tablas ARP.</strong><span> </span>En su lugar hace uso del<span> </span><strong>multicasting</strong>. Esta característica permite la creación de grupos predefinidos de dispositivos. De esta forma, mediante la llamada a una única dirección, se realiza la comunicación con todo el grupo de dispositivos definido.</li>
+</ul>
+<h3 style="text-align: justify;">3. Estructura de las direcciones IPv6</h3>
+<p style="text-align: justify;">Las direcciones IPv6 tienen una longitud de 128bits (16 bytes).</p>
+<p style="text-align: justify;">Las IPs versión 6 tienen una notación hexadecimal. Se divide en 8 bloque de 16 bits, cada uno de estos bloques esta formado por 4 dígitos en hexadecimal (0-F) y cada uno de estos bloques<span> </span><strong>se separa mediante el uso del símbolo “:”</strong></p>
+<p style="text-align: justify;">También se permite abreviar estas IPs, cuando existe un bloque con varios ceros<span> </span><strong>por delante</strong>, se puede omitir, por ejemplo:<span> </span><strong>000</strong>A puede ser sustituido por A (no se puede hacer en el caso contrario: A000). Además, si existe un bloque completo de ceros, se pueden omitir directamente. Para<span> </span><strong>comprimir estos bloques se hace uso del siguiente símbolo “::”</strong></p>
+<p style="text-align: justify;"><span><strong>Ejemplo completo: </strong></span></p>
+<ul style="text-align: justify;">
+<li><span><strong>1A3F:0007:2100:932A:0000:0000:0000:0721B</strong></span><span> </span>puede ser abreviado a<span> </span><strong><span>1A3F:7:2100:932A::0721B</span></strong>.</li>
+</ul>
+<p style="text-align: justify;">Esta abreviación solo puede ser realizada una vez en la misma dirección. En caso de existir varios bloques completos de ceros, <strong>solo</strong><span> </span>se sustituirá el primer bloque por “::”.</p>
+<p style="text-align: center;"><img src="ipv6.png" alt="" width="606" height="364" /></p>
+<p style="text-align: center;"><a href="https://es.wikipedia.org/wiki/Direcci%C3%B3n_IPv6" target="_blank" class="author" rel="noopener">WiKipedia</a><span>. </span><span class="title"><em>Descripción IP versión 6.</em></span></p>
+<h3 style="text-align: justify;"><span class="title">4. </span>Direccionamiento IPv6</h3>
+<p style="text-align: justify;">En IPv6 se dispone de 3 tipos de direccionamientos:</p>
+<ul>
+<li style="text-align: justify;"><strong>Unicast</strong>: Las direcciones IPv6 unicast identifican únicamente a un dispositivo de la red, de este modo, un paquete dirigido a una dirección unicast, se entregará solamente al dispositivo identificado con esa dirección IP. Existen varios tipos y pueden hacer referencia tanto a dispositivos en internet como a direcciones locales.</li>
+<li style="text-align: justify;"><strong>Multicast</strong>: Las direcciones IPv6 multicast son parecidas a las de IPv4. Estas direcciones comienzan por FF00::/8. <strong>Nota</strong>: en IPv6 se usan prefijos para la identificación del tipo de direcciones. En nuestro caso ff00:/8 es el prefijo multicast. Las direcciones multicast identifican a un grupo de dispositivos. Un paquete dirigido a una dirección multicast se entregará a todos los dispositivos identificados con esa dirección. En IPv6 no existe el direccionamiento broadcast, por lo que se puede utilizar una dirección multicast a todos los dispositivos para realizar la misma función.</li>
+<li style="text-align: justify;"><strong>Anycast</strong>: Las direcciones IPv6 anycast identifican a un grupo de dispositivos, este tipo de direccionamiento no se encuentra en IPv4. Cuando un paquete es dirigido a una dirección anycast, este solo se entrega al dispositivo más cercano de ese grupo de dispositivos. Con cercano hacemos referencia a la métrica utilizada por el protocolo de enrutado.</li>
+</ul>
+<h3>5. Referencias</h3>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/IPv6">https://es.wikipedia.org/wiki/IPv6</a></li>
+<li><a href="https://ipv6.mineco.gob.es/Paginas/index.aspx">https://ipv6.mineco.gob.es/Paginas/index.aspx</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3_segmentacin_de_redes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_subnetting_y_supernetting.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

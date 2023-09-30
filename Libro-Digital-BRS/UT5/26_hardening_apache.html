@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.6 Hardening Apache | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-53"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li class="current-page-parent"><a href="2_hardening.html" class="current-page-parent daddy">2. Hardening</a>
+   <ul>
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="26_hardening_apache.html" class="active daddy">2.6 Hardening Apache</a>
+      <ul>
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="daddy">3. Securización de los sistemas de administración remota</a>
+   <ul class="other-section">
+      <li><a href="31_secureshell.html" class="daddy">3.1 SecureShell</a>
+      <ul class="other-section">
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul class="other-section">
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="proyecto_server_hardening_linux_apache.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.6 Hardening Apache</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id88">
+<div class="iDevice emphasis0">
+<div id="ta88_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;"><span>En este subcapítulo se trata un caso más especifico de fortificación sobre uno de los servidores web más utilizados en el mundo, el servidor web Apache.</span></p>
+<p style="text-align: justify;"><span>El escenario de trabajo es el siguiente:</span></p>
+<p style="text-align: justify;">Equipo Ubuntu Server 20.04.3.</p>
+<ul>
+<li style="text-align: justify;"><strong>Nombre:</strong> orion.</li>
+<li style="text-align: justify;"><strong>Usuario con privilegios sudo y adm:</strong> administrador</li>
+<li style="text-align: justify;"><strong>Interfaz de red </strong><span><strong>enp0s3 con ip:</strong> 192.168.0.26.</span></li>
+</ul>
+<h3><span>2. Establecer un entorno apache</span></h3>
+<p style="text-align: justify;"><span>En este apartado se describe el proceso para establecer </span> un entorno de Apache para que posteriormente se realicen ciertas pautas para configurarlo de modo seguro.</p>
+<h4 style="text-align: justify;">1. Instalación</h4>
+<p style="text-align: justify;">Antes de instalar apache, hay que actualizar los repositorios.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong>sudo apt update</span></pre>
+<p style="text-align: justify;">Una vez actualizado los repositorios, se procede a la instalación de apache.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong>sudo apt install apache2</span></pre>
+<p style="text-align: center;"><img src="install-apache2-01.png" alt="" width="766" height="279" /></p>
+<p style="text-align: center;"><em><strong>Figura 1. </strong>Instalación de apache.</em></p>
+<h4 style="text-align: justify;">2. Comprobación</h4>
+<p style="text-align: justify;">Una vez instalado apache, se comprueba que se dispone del servicio en ejecución:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong>service apache2 status</span></pre>
+<p style="text-align: center;"><img src="apache2-status.png" alt="" width="800" height="305" /></p>
+<p style="text-align: center;"><em><strong>Figura 2</strong>. Comprobar el estado de apache.</em></p>
+<h4 style="text-align: justify;">3. Acceso a apache2 por http</h4>
+<p style="text-align: justify;"><span>Si se accede mediante el navegador de un equipo cliente (Linux mint 19) conectado en la misma subred que el servidor ubuntu server 20.04, se puede visualizar la página por defecto de Apache2:</span></p>
+<p style="text-align: center;"><span><img src="acces-apache2-http.png" alt="" width="1140" height="838" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 3. </strong>Página por defecto en apache.</em></span></p>
+<h4>4. Crear index.html</h4>
+<p style="text-align: justify;">Una vez se disponga de la página web por defecto de la organización, hay que eliminar el archivo index.html como parte del proceso de Hardening ya que esta página dispone de rutas y configuraciones propias del servidor, para ello, se ejecuta el siguiente comando como root:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/#</strong>echo “WEB - Mi Empresa S.L.“ &gt; /var/www/html/index.html</span></pre>
+<p style="text-align: center;"><span><img src="index-miempresa.png" alt="" width="595" height="53" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 4. </strong>Página por defecto de la oranización.</em></span></p>
+<h4>5. Acceso a index.html</h4>
+<p style="text-align: justify;">Si se accede a la página index.html, se tiene lo siguiente</p>
+<p style="text-align: center;"><img src="index-chrome.png" alt="" width="674" height="203" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 5. </strong>Acceso por navegador a la página de la oranización.</em></span></p>
+<h4>6. Ocultar versiones</h4>
+<p style="text-align: justify;">El nombre de producto y versión del servidor Apache puede ser un punto de entrada para un atacante, preparando el terreno para utilizar un "<strong>exploit</strong>" que pueda ser funcional con la versión de la que se disponga. Desde el acceso anterior al servidor web, a través de la tecla F12 en el navegador se puede acceder al<span> </span><strong>modo inspección</strong><span> </span>del sitio web, donde se puede ver la información de la versión del servidor, para este caso de ejemplo, la versión de apache es la 2.4.41 (ubuntu) como se puede observar en la imagen inferior.</p>
+<p style="text-align: center;"><img src="version-apache2.png" alt="" width="1183" height="740" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 6. </strong>Consulta en modo inspección en Chrome.</em></span></p>
+<p style="text-align: justify;"><span style="text-align: justify; font-size: 1em;">Para evitar que se pueda acceder a la información relativa a la versión, hay que modificar 2 variables en el archivo de configuración de apache</span><span style="text-align: justify; font-size: 1em;"> </span><strong style="text-align: justify; font-size: 1em;">/etc/apache2/conf-enabled/security.conf </strong><span style="text-align: justify; font-size: 1em;">y que son las siguientes:</span><br /><span></span></p>
+<ul>
+<li>ServerTokens ProductOnly</li>
+<li>ServerSignature Off</li>
+</ul>
+<p>En la imagen inferior, se puede observar cómo quedaría el fichero tras la modificación.</p>
+<p style="text-align: center;"><img src="security-conf.png" alt="" width="799" height="600" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 7. </strong>Fichero de configuración.</em></span></p>
+<p style="text-align: justify;">Para consolidar las modificaciones, hay que reiniciar el servicio.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/# </strong>service apache2 restart</span></pre>
+<p style="text-align: center;"><img src="apache2-restart.png" alt="" width="338" height="62" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 8. </strong>Reiniciar servicio apache2.</em></span></p>
+<p style="text-align: justify;">Una vez reiniciado el servicio, si se accede a la página <strong>index.html</strong> y se entra en modo depuración y se buscan de nuevo las cabeceras, se puede observar que no aparece la versión del servicio apache2.</p>
+<p style="text-align: center;"><img src="index-depuradorChrome.png" alt="" width="1193" height="829" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 9. </strong>Consulta en modo inspección en Chrome.</em></span></p>
+<h3><span></span>3. Otras acciones</h3>
+<p><span>Además de la configuración anterior, se pueden aplicar otra serie de acciones que ayuden a mantener más seguro el servidor web, son las siguientes.</span></p>
+<h4>1. Restringiendo el acceso al contenido</h4>
+<p style="text-align: justify;">En apache se disponen de módulos para restringir el acceso a directorios mediante el uso de usuario y contraseña. A continuación, se va a restringir el acceso a un directorio, en concreto, al directorio privado que se encuentra en <span style="font-size: 12pt;"> /var/www/html.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="directorio-privado.png" alt="" width="262" height="65" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><span><em><strong>Figura 10. </strong>Listar el contenido del directorio html de apacher</em></span></span></p>
+<p style="text-align: justify;">En primer lugar, hay que crear un usuario y su contraseña, para ello, se utiliza el siguiente comando en la en la ruta<span> </span><strong>/etc/apache2</strong>:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/apache2# </strong>htpasswd -c nombre_archivo usuario</span></pre>
+<p style="text-align: justify;">De esta forma se creará una contraseña que se almacenará cifrada en el archivo que se ha definido. Como ejemplo, se crea el usuario <strong>administrador</strong> con el fichero passwords donde se almacenará la contraseña cifrada.</p>
+<p style="text-align: center;"><img src="htpasswd.png" alt="" width="544" height="92" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 12. </strong>Creación de contraseña.</em></span></p>
+<p style="text-align: justify;">Si se visualiza el fichero de passwords, se puede observar que se ha creado una línea con el nombre de usuario y el password cifrado.</p>
+<p style="text-align: center;"><img src="at-passwords.png" alt="" width="433" height="65" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 13. </strong>Consultar el fichero passwords.</em></span></p>
+<p style="text-align: justify;">A continuación, se definen las directivas <strong>Auth</strong> para el directorio, en nuestro caso<span> </span><strong>privado. </strong>Para ello, se edita el fichero <strong>000-default.conf </strong>que se encuentra en la ruta <strong>/etc/apache2/sites-enabled.</strong></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/apache2# </strong>nano sites-enabled/000-default.conf </span></pre>
+<p style="text-align: justify;"><span style="font-size: 1em;">Hay que especificar la directiva correspondiente al directorio en el archivo de la siguiente manera:</span><br /><span></span></p>
+<pre><span style="font-size: 12pt;">&lt;VirtualHost *:80&gt;<br />  </span><span style="font-size: 12pt;">  ServerName localhost</span><br /><span style="font-size: 12pt;">    ServerAdmin webmaster@localhost </span><br /><span style="font-size: 12pt;">    DocumentRoot /var/www/html</span><br /><span style="font-size: 12pt;">    &lt;Directory /var/www/html/privado&gt;</span><br /><span style="font-size: 12pt;">        Options +FollowSymLinks</span><br /><span style="font-size: 12pt;">        AllowOverride None</span><br /><span style="font-size: 12pt;">        #Directivas Auth</span><br /><span style="font-size: 12pt;">        AuthType Basic</span><br /><span style="font-size: 12pt;">        AuthName "Acceso Privado"</span><br /><span style="font-size: 12pt;">        AuthBasicProvider file</span><br /><span style="font-size: 12pt;">        AuthUserFile <strong>"/etc/apache2/passwords"</strong></span><br /><span style="font-size: 12pt;">        Require user <strong>administrador</strong></span><br /><span style="font-size: 12pt;">   &lt;/Directory&gt;</span><br /><span style="font-size: 12pt;">&lt;/VirtualHost&gt;</span><em><br /></em><span style="font-size: 12pt;"></span></pre>
+<p style="text-align: justify;">El fichero de configuración quedaría de la siguiente manera.</p>
+<p style="text-align: center;"><img src="000-default.png" alt="" width="650" height="748" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 14. </strong>Edición del fichero 000-deafult.conf.</em></span></p>
+<p>donde,</p>
+<ul>
+<li style="text-align: justify;">Con<span> </span><strong>AuthType</strong><span> se e</span>specifica el tipo de autenticación para poder acceder al recurso.</li>
+<li style="text-align: justify;">Con<span> </span><strong>AuthName</strong><span> se define </span>la cabecera en el cuadro de diálogo de autenticación.</li>
+<li style="text-align: justify;">Con<span> </span><strong>AuthBasicProvider</strong><span> se def</span>ine el archivo donde están almacenadas las claves de los usuarios. Es el archivo que se ha creado anteriormente (passwords).</li>
+<li>Con<span> </span><strong>Require user usuario</strong><span> </span>se <span>e</span>specifica  que sólo el usuario<span> </span><strong>administrador</strong><span> </span>pueda acceder al recurso.</li>
+</ul>
+<p style="text-align: justify;">Para consolidar las modificaciones, hay que reiniciar el servicio.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/# </strong>service apache2 restart</span></pre>
+<p style="text-align: justify;"> Si todo ha ido bien, si se accede al directorio privado desde un navegador web, se solicita las credenciales de acceso al mismo (ver imagen inferior).      <em>              </em></p>
+<p style="text-align: center;"><em><img src="acceso-a-privado.png" alt="" width="1189" height="410" /><span><strong>Figura 15. </strong>Acceso al directorio privado en el servidor web.</span>          </em></p>
+<p style="text-align: justify;">Una vez ingresado las credenciales, si se pulsa el botón '<strong>Iniciar sesión</strong>', se accede al directorio que se ha configurado para acceder a él.<span></span></p>
+<p style="text-align: center;"><em><img src="acceso-ok-privado.png" alt="" width="999" height="334" /></em></p>
+<p style="text-align: center;"><em><span><strong>Figura 16. </strong>Consulta del directorio privado en el servidor web.</span>          </em></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="proyecto_server_hardening_linux_apache.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

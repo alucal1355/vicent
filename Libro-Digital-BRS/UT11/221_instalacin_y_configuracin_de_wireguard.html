@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.1 Instalación y configuración de WireGuard | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-110"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul class="other-section">
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_vpn_de_acceso_remoto.html" class="current-page-parent daddy">2. VPN de acceso remoto</a>
+   <ul>
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li class="current-page-parent"><a href="22_wireguard.html" class="current-page-parent daddy">2.2 WireGuard</a>
+      <ul>
+         <li id="active"><a href="221_instalacin_y_configuracin_de_wireguard.html" class="active daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul>
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li><a href="222_escenario_1_vpn_red_interna.html" class="no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_gestin_de_accesos_sistemas_nac.html" class="daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_servidor_radius_vpn.html" class="daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul class="other-section">
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="22_wireguard.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.1 Instalación y configuración de WireGuard</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id146">
+<div class="iDevice emphasis0" >
+<div id="ta146_146_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Recursos necesarios y escenario</h3>
+<ul>
+<li>Máquina virtual con ubuntu server 20.04.</li>
+<li>Smartphone Iphone 6S.</li>
+<li>Máquina virtual con ubuntu desktop 20.04.</li>
+</ul>
+<p style="text-align: center;"><img src="VPN-red-interna.png" alt="" width="749" height="354" /></p>
+<h3>2.Instalar el servidor VPN WireGuard</h3>
+<p>Para instalar wireguard en ubuntu server 20.04 el comando es el siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>apt install wireguard</span></pre>
+<p style="text-align: center;"><img src="install-wireguard.png" alt="" width="800" height="557" /></p>
+<h3>3. Generar las claves del servidor</h3>
+<p>El servidor necesita una clave privada y otra pública para funcionar, así que hay que generarlas. En primer lugar se crea el directorio keys para guardar las claves.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>mkdir -p /etc/wireguard/keys</span></pre>
+<p></p>
+<p style="text-align: justify;">Una vez creado el directorio donde se almacenarán las claves, el siguiente paso es <strong>generar una clave pública y privada para el servidor. </strong> Para ello, se accede al<strong> /etc/wireguard/keys </strong> y se ejecuta el comando para generar las claves donde la clave privada se guardará en el fichero <span>server.key y la publica en el server.key.pub.</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>cd /etc/wireguard/keys<br /><strong>root@wireguard:/#</strong>wg genkey | tee server.key | wg pubkey &gt; server.key.pub<br /></span></pre>
+<p style="text-align: center;"><img src="gen-keys.png" alt="" width="738" height="140" /></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">En la 2ª tubería, el comando <strong>wg pubkey</strong> recibe una clave privada por la entrada estándar y genera su clave pública asociada. En este caso, genera una clave pública de la clave privada server.key que se genera previamente con <span style="font-size: 12pt;">wg genkey | tee server.key.</span></p>
+</div>
+<p style="text-align: justify;"><span>Ya se tiene las claves necesarias generadas. Se pueden ver las claves ejecutando el comando cat:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>cat server.key</span></pre>
+<p style="text-align: center;"><img src="cat-keys.png" alt="" width="451" height="96" /></p>
+<p style="text-align: justify;">A continuación, hay que cambiar los permisos lectura/escritura para el usuario root en los ficheros de claves, para asegurar que solamente el usuario root pueda acceder a las claves. </p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>chmod 600 server*</span></pre>
+<h3>4. Determinar la interfaz por la que se va a enrutar</h3>
+<p style="text-align: justify;">Es necesario conocer el nombre de la interfaz que se quiere enrutar a través del túnel, ya que se tiene que añadir en el fichero de configuración. Si el servidor se conecta a Internet a través de la misma interfaz que a su red local, el siguiente comando obtendrá la interfaz:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>ip -o -4 route show to default | awk '{print $5}'</span></pre>
+<p style="text-align: center;"><img src="interfaz.png" alt="" width="691" height="58" /></p>
+<p style="text-align: justify;">Para este caso, la interfaz es la <strong>enp0s3</strong>.</p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">En el caso que el servidor se conecte a Internet usando una interfaz distinta a la interfaz a través de la cual se conecta a la red privada a la que se quiere que acceda el cliente VPN, hay que obtener el nombre analizando todas las interfaces que aparecen ejecutando el coman<span style="font-size: 12pt;"></span>do:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>ip add</span></pre>
+<p style="text-align: justify;"><span>La interfaz de la red local será aquella que tenga configurada una IP del rango de la red privada.</span></p>
+</div>
+<h3>5. Configurar la interfaz para WireGuard</h3>
+<p style="text-align: justify;"><strong>WireGuard</strong> funciona añadiendo una interfaz de red al servidor, que es la que utilizará el túnel VPN. Para este caso, se le llamará <strong>wg0.</strong> A continuación, se crea el fichero <strong>wg0.conf </strong>con permisos lectura/escritura para el usuario root y se añade el contenido de la clave privada ya que será el valor del campo PrivateKey del fichero.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/etc/wireguard#</strong>touch wg0.conf<strong><br />root@wireguard:/etc/wireguard#</strong>chmod 600 wg0.conf<br /><strong>root@wireguard:/etc/wireguard#</strong>cat keys/server.key &gt;&gt; wg0.conf<br /></span></pre>
+<p style="text-align: center;"><img src="touch-wg0-conf.png" alt="" width="519" height="70" /></p>
+<h4>5.1 Edición del fichero de configuración</h4>
+<p>Una vez creado el fichero con los permisos y el valor de la clave privada, hay que acceder al archivo de configuración <strong>wg0.conf</strong> en modo edición para añadir el siguiente contenido:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">[Interface]</span><br /><span style="font-size: 12pt;">Address = 192.168.8.254/24</span><br /><span style="font-size: 12pt;">PrivateKey = [contenido del fichero server.key]<br />ListenPort = 15000<br />PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o <strong>Nombre_Interfaz_Internet</strong> -j MASQUERADE<br />PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o <strong>Nombre_Interfaz_Internet</strong> -j MASQUERADE</span></pre>
+<p>donde,</p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Address</strong>: dirección IP y máscara de la interfaz virtual de red del servidor VPN. La IP es la que se tendrá configurada la interfaz <strong>wg0</strong> para la conexión VPN. Los clientes VPN que se conecten posteriormente, deberán tener en la interfaz de túnel VPN que se configure, una IP de la misma red.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>ListenPort</strong>: Puerto a través del cual escuchará el servicio de WireGuard en el servidor. Por defecto es el 51820 pero por seguridad, se usa un puerto no conocido como el <strong>15000</strong>. De esta forma, no se podrá realizar una correspondencia del puerto con el servicio al que está a la escucha. Para enumerar el puerto a uno no conocido, hay que consultar el fichero services para no repetir uno ya existente, es decir, para este caso, se consulta el 26964. Como se puede observar en la salida del cat, el puerto <strong>15000</strong> no se utiliza por lo que se puede usar.</span></li>
+</ul>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="services.png" alt="" width="403" height="36" /></span><span style="font-size: 12pt;">.</span><span style="font-size: 12pt;"></span></p>
+<ul>
+<li><span style="font-size: 12pt;"><strong>PrivateKey</strong>: lo que haya insertado el comando cat server.key &gt;&gt; wg0.conf.</span></li>
+<li><span style="font-size: 12pt;"><strong>PostUp u PostDown: Nombre_Interfaz_Internet.</strong> En este caso sería <strong>enp0s3</strong>.</span></li>
+</ul>
+<p style="text-align: center;"><img src="wg0-conf.png" alt="" width="1156" height="131" /></p>
+<h3>6. Puesta en marcha</h3>
+<p style="text-align: justify;">Para poner en marcha el servicio (levantar la interfaz <strong>wg0</strong> recién creada) se tiene dos posibilidades:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/etc/wireguard#</strong>wg-quick up wg0<br />o<br /><strong>root@wireguard:/etc/wireguard#</strong>systemctl start wg-quick@wg0<br /></span></pre>
+<p style="text-align: center;"><img src="wg0-up.png" alt="" width="1092" height="144" /></p>
+<p style="text-align: justify;">Se puede comprobar el estado de la interfaz con el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/etc/wireguard#</strong>wg show wg0</span></pre>
+<p style="text-align: center;"><img src="wg-show-wg0.png" alt="" width="484" height="94" /></p>
+<h3>7. Iniciar la interfaz de WireGuard automáticamente al arrancar</h3>
+<p>Para iniciar la interfaz WireGuard cada vez que se encienda el servidor, el comando es el siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/etc/wireguard#</strong>systemctl enable wg-quick@wg0</span></pre>
+<p style="text-align: center;"><img src="enable-service.png" alt="" width="1102" height="79" /></p>
+<h3>8. Configurando el tráfico de red y el cortafuegos</h3>
+<h4>8.1 Permitir el reenvío de tráfico</h4>
+<p style="text-align: justify;">Para que <strong>WireGuard</strong> pueda <strong>reenviar los paquetes entre interfaces</strong>, es necesario habilitar la opción. Para ello, hay que abrir el archivo <strong>sysctl.conf</strong>  en modo edición:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/etc/wireguard#</strong>nano /etc/sysctl.conf</span></pre>
+<p style="text-align: justify;">Hay que buscar la línea<strong> net.ipv4.ip_forward=1 </strong>y descomentarla (borrar la almohadilla (#) que tiene delante). Después se guarda el archivo y se aplican los cambios ejecutando el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/etc/wireguard#</strong>sysctl -p</span></pre>
+<p style="text-align: center;"><img src="sysctl-conf.png" alt="" width="638" height="271" />     <img src="sysctl-p.png" alt="" width="386" height="72" /></p>
+<h3 is-upgraded="">9. Abrir el puerto de WireGuard y activar el cortafuegos (opcional)</h3>
+<p style="text-align: justify;">Si no se tiene el cortafuegos por defecto activado en el servidor, no es necesario realizar estos pasos. Sin embargo, es recomendable abrir solamente los puertos que vayan a utilizarse por seguridad. Para abrir el puerto de escucha para WireGuard que se ha configurado, hay que ejecutar el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>ufw allow 15000/udp</span></pre>
+<p>Si se está accediendo por SSH, también hay que abrir el puerto que se esté utilizando. Por defecto es el puerto 22:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>ufw allow 22/tcp</span></pre>
+<p>Una vez aplicadas las reglas, ya se puede activar el cortafuegos:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>ufw enable</span></pre>
+<p>Se puede comprobar que está funcionando con las reglas correctas ejecutando el comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>ufw status verbose</span></pre>
+<div class="cuadro-nota-centro-new">
+<p>Si en la red local del servidor hay otros cortafuegos en la ruta de acceso a Internet, también hay que abrir el puerto de escucha de WireGuard en ellos. De la misma forma, en el caso de que el servidor no tenga una IP pública, hay que configurar el reenvío de puerto necesario.</p>
+</div>
+<h3>10. Añadiendo clientes</h3>
+<p style="text-align: justify;">Una vez ya se tiene el servidor preparado para funcionar, solamente faltan <strong>añadir los clientes que se desean conectar.</strong> Si ya se tiene disponible la clave pública de un cliente al que se le quiere permitir la conexión y la IP que se le va a proporcionar, en el servidor hay que ejecutar el siguiente comando para añadir un cliente al servicio <strong>wg0</strong>:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>wg set wg0 peer [Clave_publica_cliente] allowed-ips [IP_Cliente_VPN]</span></pre>
+<p>donde,</p>
+<ul>
+<li><span style="font-size: 12pt;"><strong>Clave_publica_cliente: </strong>Es la clave pública del cliente.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>IP_Cliente_VPN:</strong> IP que se desea proporcionar al cliente en la conexión VPN. La IP debe pertenecer a la misma red que la IP que se le ha puesto al servidor en la directiva Address de la configuración, en este caso 192.168.8.111).</span></li>
+</ul>
+<h4><span style="font-size: 12pt;">10.1 Comprobaciones</span></h4>
+<p><span style="font-size: 12pt;">Para comprobar que se ha añadido correctamente:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>wg show wg0</span></pre>
+<p style="text-align: center;"><img src="wg-equipo1.png" alt="" width="498" height="140" /></p>
+<p>Para que nos muestre solo las claves públicas con las IPs de los peers:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>wg show wg0 allowed-ips</span></pre>
+<p style="text-align: center;"><img src="allowed-ips.png" alt="" width="532" height="35" /></p>
+<p style="text-align: justify;"><span>Para mostrar las conexiones TCP/UDP en escucha, el comando es el siguiente:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@wireguard:/#</strong>netstat -tulpn</span></pre>
+<p style="text-align: center;"><img src="netstat-tulpn.png" alt="" width="821" height="193" /></p>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;">t – Habilita la lista de puertos TCP.</li>
+<li style="text-align: justify;">u – Habilita la lista de puertos UDP.</li>
+<li style="text-align: justify;">l – Imprime solo tomas de escucha.</li>
+<li style="text-align: justify;">n – Muestra el número de puerto.</li>
+<li style="text-align: justify;">p – Muestra el nombre del proceso / programa.</li>
+</ul>
+<p style="text-align: justify;"><span>Como se observa en la figura, el puerto <strong>udp 15000</strong> (wireguard) está preparado aunque no tiene conexiones (por el momento).</span><span></span></p>
+<h3>11. Script WireGuard</h3>
+<ul>
+<li><span style="font-size: 12pt;"><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/VPN/script-wireguard.sh">https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/VPN/script-wireguard.sh</a></span><span style="font-size: 12pt;"></span></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="22_wireguard.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5. Subnetting y Supernetting | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-42"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li id="active"><a href="5_subnetting_y_supernetting.html" class="active daddy">5. Subnetting y Supernetting</a>
+   <ul>
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li><a href="6_redes_virtuales_vlans.html" class="daddy">6. Redes virtuales (VLANs)</a>
+   <ul class="other-section">
+      <li><a href="61_introduccin_a_gns3.html" class="daddy">6.1 Introducción a GNS3</a>
+      <ul class="other-section">
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4_ip_versin_6.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_1_subnetting_vlsm.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5. Subnetting y Supernetting</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id76">
+<div class="iDevice emphasis0">
+<div id="ta76_85" class="block iDevice_content">
+<h3>1. <span>Introducción</span></h3>
+<p style="text-align: justify;">Las <strong>IPv4 son de 32 bits</strong>, lo cual da un total de (2^32) <b>4.294.967.296<span> </span></b>diferentes IP. Aunque este número puede parecer muy grande, si lo comparamos con la población mundial y el número de dispositivos conectados sería inviable que cada dispositivo tuviese una IP única.</p>
+<p style="text-align: justify;">Como se comentó en el apartado<strong> </strong><a href="3_segmentacin_de_redes.html" target="_blank" rel="noopener"><strong>3. Segmentación de redes</strong></a>, una de las medidas que se adoptaron fue el uso de <strong>NAT</strong> para ahorrar direcciones o la distinción entre <strong>IP pública</strong> e <strong>IP privada</strong>.</p>
+<p style="text-align: justify;">Dentro de las <strong>IP privadas</strong>, como las opciones son limitadas, se crearon 2 grandes formas de gestionarla basándose en las necesidades que tuviera cada usuario.</p>
+<p style="text-align: justify;"><span>Una <em><strong>subred</strong></em> es un rango de direcciones lógicas. Cuando una red crece y se hace muy grande, es conveniente dividirla en <strong>subredes</strong>, por los siguientes motivos: </span></p>
+<ul>
+<li style="text-align: justify;"><span>Reducir el tamaño de los dominios de broadcast. </span></li>
+<li style="text-align: justify;"><span>Hacer la red más manejable, administrativamente. </span></li>
+</ul>
+<h3>2. Subnetting</h3>
+<p style="text-align: justify;">El <strong>Subnetting</strong> trata de la subdivisión de una red en otras subredes más pequeñas, las cuales serán más sencillas de gestionar y además:</p>
+<ul>
+<li style="text-align: justify;"><span>Se reduce el tamaño de los dominios de broadcast. </span></li>
+<li style="text-align: justify;"><span>Hace la red más manejable, administrativamente. </span></li>
+<li style="text-align: justify;"><span>Las conexiones entre los equipos son más rápidas, ya que solo transcurren en ese segmento de red y no en toda la red.</span></li>
+</ul>
+<h4><strong>2.1 ¿Cómo funciona?</strong></h4>
+<p>De los 32 bits que contiene una IP, se toma un bit de la parte de los hosts para destinarla a la creación de una subred.</p>
+<p style="text-align: center;"><img src="subnetting.png" alt="" width="801" height="221" /></p>
+<p style="text-align: center;"><em><strong>Figura 1</strong>. Subnetting.</em></p>
+<p style="text-align: justify;">Si se toma un bit, se genran 2 subredes, si son 2, 4 subredes, si son 3, 8 subredes y así sucesivamente. Esto también hace que el número de hosts disponibles por cada subred sea menor.</p>
+<h3 style="text-align: justify;">3. Ejemplo subnetting</h3>
+<p style="text-align: justify;">Se tiene la red 192.168.100.0/24 y nos solicitan dividir la red en dos subredes para 2 aulas de un centro educativo. Lo primero que se hará para calcular el rango de red que se tendrá es pasar la red a binario:</p>
+<ul>
+<li style="text-align: justify;">192.168.100.0 – 11000000.10101000.01100100.00000000</li>
+</ul>
+<p style="text-align: justify;">Ahora se coge la máscara de red que le pertenece y se le añade un bit. Si se añade un bit a la parte de red, la máscara 255.255.255.0 se quedaría en 255.255.255.128. Así se ve en binario:</p>
+<ul>
+<li style="text-align: justify;">255.255.255.0 - 11111111.11111111.11111111.00000000</li>
+<li style="text-align: justify;">255.255.255.128 - 11111111.11111111.11111111.10000000</li>
+</ul>
+<p>Al haber cogido un bit más de red, esto supone que la parte de host solamente podrá ir de 0 a 127 en cada subred en este caso.</p>
+<p>Por tanto, la red 192.168.100.0/24 con el Subnetting ya aplicado tendrá como hosts:</p>
+<ul>
+<li>desde 192.168.100.0 hasta 192.168.100.127 en una red, es decir, 192.168.100.0/25</li>
+<li>y desde 192.168.100.128 hasta 192.168.100.255 en la otra, es decir, 192.168.100.128/25.</li>
+</ul>
+<p style="text-align: justify;">Para calcular las nuevas direcciones IP de las subredes, se pone una IP del rango de la red en binario y justo debajo se pone la máscara de red correspondiente en binario también. Luego se tendrá que realizar una operación AND.</p>
+<p style="text-align: justify;">Como ejemplo, se eleige una IP de las 2 subredes:</p>
+<p>192.168.100.126 - 11000000.10101000.01100100.01111110</p>
+<p>255.255.255.128 - 11111111.11111111.11111111.11111110</p>
+<p><strong>Red resultante:</strong> 11000000.10101000.01100100.00000000 – 192.168.100.0/25</p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/SHbBso63X38" allowfullscreen="allowfullscreen"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 1.</strong><span> </span>Direccionamiento IP y subredes <span>- 17:41 min.</span></em></p>
+<p style="text-align: justify;"><span>En la siguiente figura, se puede observar un ejemplo de <strong>subnetting</strong> donde quedan separados los departamentos. En el caso de que un <strong>ciberdelincuente</strong> acceda a un equipo de contabilidad (quedaría comprometido), lo que podría hacer a continuación, es hacer intentar hacer un movimiento lateral hacia el otro equipo.</span></p>
+<div class="cuadro-nota-centro">
+<p style="text-align: justify;"><span>"El <strong>movimiento lateral</strong> es el conjunto de pasos que toman los atacantes que se han afianzado en un entorno confiable para expandir su nivel de acceso, moverse a activos confiables adicionales y avanzar más en la dirección de su objetivo final. Es difícil de detectar, ya que a menudo se mezcla con el gran volumen de tráfico legítimo similar de este a oeste en el medio ambiente". <a href="https://ciberseguridad.com/guias/zero-trust/microsegmentacion/" target="_blank" rel="noopener">Fuente</a>.</span></p>
+</div>
+<p style="text-align: justify;"><span>Dado que está en el mismo segmento de red, puede hacer un escaneo de la red para intentar encontrar dispositivos conectados a la misma. El <strong>ciberdelincuente</strong> se podría llevar información de los equipos de contabilidad, pero es posible que no consiga acceder al resto de equipos de los diferentes departamentos dado que están en otras subredes y si las salidas del router están suficientemente fortalecidas.</span></p>
+<p style="text-align: center;"><img src="ejemplo-subnetting.png" alt="" width="1083" height="492" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 2</strong>. Ejemplo de Subnetting.</em></span></p>
+<h3><span>4. Uso</span></h3>
+<p style="text-align: justify;"><span>Solo se usará <strong>subneting</strong> como apoyo a la segmentación física de dominios de difusión y en caso de necesidad. Si se trabaja</span><span> con direcciones IP privadas, la práctica más segura siempre que sea posible es el uso de redes diferentes en vez de usar esta técnica de subdivisión.</span></p>
+<p><span>Puedes investigar más sobre subnetting con una <a href="https://www.calculator.net/ip-subnet-calculator.html">calculadora</a>.</span></p>
+<h3><span>5. Supernetting</span></h3>
+<p style="text-align: justify;">Si el <strong>subnetting</strong> consistía en dividir redes en subredes cambiando la estructura del identificador de host, el <strong>supernetting</strong> trata de agrupar redes o subredes. Es importante tener en cuenta que deben ser redes contiguas.</p>
+<p style="text-align: justify;">Se habla entonces de <a href="https://es.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank" rel="noopener"><strong>CIDR</strong></a>. Se refiere al encaminamiento entre dominios sin clase. Es una técnica que permite resumir un conjunto de direcciones IP contiguas de una red de una clase en una misma dirección de red.</p>
+<p style="text-align: justify;"><strong>Ejemplo:</strong></p>
+<p style="text-align: justify;">Se pueden agrupar varias direcciones de tipo C en una de clase B, o varías de tipo B en una de tipo A. Con esto se consigue que las tablas de encaminamiento de los<span> </span><span lang="en">routers</span><span> </span>no crezcan demasiado y se agilicen los mecanismos de control del encaminamiento.</p>
+<p style="text-align: justify;">Comparando esta técnica con las subredes, se puede decir que son inversas, con las subredes se aumentan los dominios de difusión (direcciones de red) y con las superredes se disminuyen las direcciones de red.</p>
+<p style="text-align: justify;">En<strong> 1993</strong> se eliminó la restricción del espacio de direcciones con clase, adoptándose un esquema o notación en el que se utiliza una longitud de prefijo común arbitraria para indicar la dirección común de red de un bloque de direcciones de red contiguas que se quieren resumir en una sola dirección de red. Este esquema o notación es lo que se conoce como formato CIDR o de superred y que representa una alternativa al direccionamiento IP con clase<b>.</b><span> </span>Por consiguiente, el concepto de clases A, B y C desaparece al usar prefijos diferentes a los prefijos obligatorios de dichas clases.</p>
+<h4 style="text-align: justify;">5.1 ¿Cómo funciona?</h4>
+<p style="text-align: justify;">Una dirección IP tiene bits que definen características de red y bits que definen características de<span> </span><span lang="en">host</span>. Si se utiliza la dirección 192.168.0.0, se podrían direccionar 254<span> </span><span lang="en">hosts</span><span> </span>(2<sup>8</sup>-2=254). Si los elementos que forman la red soportan CIDR, se puede conseguir que esta dirección de red sea capaz de identificar más de 254 máquinas.</p>
+<p style="text-align: justify;">Con CIDR se puede utilizar bits del tercer octeto para generar más direcciones de<span> </span><span lang="en">host</span>.</p>
+<h4 style="text-align: justify;"><span>5.2 ¿Qué compone una ruta?</span></h4>
+<p style="text-align: justify;"><span>Una ruta se compone de un conjunto de direcciones IP entre las que se encuentran:</span></p>
+<ul>
+<li style="text-align: justify;"><span><strong>ID de red</strong>: es el valor que representa a una red (192.168.1.0/25)</span></li>
+<li style="text-align: justify;"><span><strong>ID de broadcast</strong>: última dirección de la red (192.168.1.127/25)</span></li>
+<li style="text-align: justify;"><strong>Máscara de subred y v</strong><strong>alor CIDR</strong>: es el mismo valor, pero se utiliza un sistema de notación distinto (255.255.255.128 o /25).</li>
+</ul>
+<p><strong>Ventajas:</strong> </p>
+<ul>
+<li style="text-align: justify;">Principalmente la ventaja más significativa que <span>se consigue es que las tablas de encaminamiento de los</span><span> </span><span lang="en">routers</span><span> </span><span>no crezcan demasiado y se agilicen los mecanismos de control del encaminamiento.</span></li>
+</ul>
+<p><strong>Ideas clave:</strong></p>
+<ul>
+<li style="text-align: justify;"><span>Trata de agrupar redes o subredes. Es importante tener en cuenta que deben ser redes contiguas.</span></li>
+<li style="text-align: justify;">Las rutas solo pueden resumirse en rutas más grandes, no podremos resumir una ruta con tamaño de bloque 32 en una ruta de tamaño de bloque 16. Sin embargo si que será posible resumir dos rutas de tamaño 16 en una sola ruta de tamaño 32.</li>
+</ul>
+<h4 style="text-align: justify;"><span>5.3 Ejemplo de supernetting</span></h4>
+<p style="text-align: justify;">Si se cogen 2 bits del tercer octeto, se pueden conseguir 2<sup>10</sup><span> </span>direcciones para equipos.</p>
+<p style="text-align: justify;">Para poder conseguir esto se debe especificar que la máscara de red utilizada es la 255.255.252.0 o utilizando otra notación 192.168.0.0/22.</p>
+<table class="exe-table">
+<thead>
+<tr>
+<th scope="col"><span>Dirección</span><span> </span>de red</th>
+<th scope="col">Binario</th>
+<th scope="col">Máscara de red</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="texto_centrado">
+<p><span>192.168.0.0</span></p>
+</td>
+<td class="texto_centrado"><span>11000000.10101000.00000000.00000000</span></td>
+<td class="texto_centrado"><span>255.255.252.0</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Por otra parte, con esta técnica, se pueden agrupar direcciones de red en una sola. Suponiendo que se tienen las siguientes direcciones de red:</p>
+<table class="exe-table">
+<thead>
+<tr>
+<th scope="col">Dirección de red</th>
+<th scope="col">Binario</th>
+<th scope="col">Máscara de red</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="texto_centrado"><span>192.168.0.0</span></td>
+<td class="texto_centrado"><span>11000000.10101000.000000<b>00</b>.00000000</span></td>
+<td class="texto_centrado"><span>255.255.255.0</span></td>
+</tr>
+<tr>
+<td class="texto_centrado"><span>192.168.0.1</span></td>
+<td class="texto_centrado"><span>11000000.10101000.000000<b>01</b>.00000000</span></td>
+<td class="texto_centrado"><span>255.255.255.0</span></td>
+</tr>
+<tr>
+<td class="texto_centrado"><span>192.168.0.2</span></td>
+<td class="texto_centrado"><span>11000000.10101000.000000<b>10</b>.00000000</span></td>
+<td class="texto_centrado"><span>255.255.255.0</span></td>
+</tr>
+<tr>
+<td class="texto_centrado"><span>192.168.0.3</span></td>
+<td class="texto_centrado"><span>11000000.10101000.000000<b>11</b>.00000000</span></td>
+<td class="texto_centrado"><span>255.255.255.0</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Si se observan las direcciones expresadas en modo binario se puede ver como las cuatro direcciones varían entre sí en los dos últimos dígitos del tercer octeto (resaltado en negrita). Si se utiliza CIDR, se pueden aglutinar estas cuatro direcciones de red en una sola si se utiliza la máscara de red 255.255.252.0. La dirección de red que representaría a estas cuatro sería:</p>
+<table class="exe-table">
+<thead>
+<tr>
+<th scope="col">Dirección de red</th>
+<th scope="col">Binario</th>
+<th scope="col">Máscara de red</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="texto_centrado"><span>192.168.0.0</span></td>
+<td class="texto_centrado"><span>11000000.10101000.00000000.00000000</span></td>
+<td class="texto_centrado"><span>255.255.252.0</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Utilizando otra notación: <strong>192.168.0.0/22</strong></p>
+<p style="text-align: justify;">Como se puede ver, la clave de <strong>CIDR</strong> es utilizar una máscara según necesidades, sin respetar el concepto de las máscaras asociadas a direcciones de tipo A, B o C. Para poder hacer esto, los dispositivos de encaminamiento deben soportar <strong>CIDR</strong>.</p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4_ip_versin_6.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_1_subnetting_vlsm.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

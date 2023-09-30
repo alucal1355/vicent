@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 1. Suricata en PFsense | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-133"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="current-page-parent daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul>
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li class="current-page-parent"><a href="22_hidsnids.html" class="current-page-parent daddy">2.2 HIDS/NIDS</a>
+      <ul>
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li id="active"><a href="laboratorio_1_suricata_en_pfsense.html" class="active daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul>
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul class="other-section">
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="221_nids_snort.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="hids_wazuh.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 1. Suricata en PFsense</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id176">
+<div class="iDevice emphasis0" >
+<div id="ta176_176_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;">En este laboratorio, <span>se va instalar Suricata en PFsense para que posteriormente, se envíen las alertas a <strong>Wazuh</strong> o <a href="https://www.graylog.org/" target="_blank" rel="noopener"><strong>Graylog</strong></a>.</span></p>
+<h4>Recursos necesarios y escenarios posibles</h4>
+<p><strong>1. Máquinas virtuales</strong> en VirtualBox, KVM o VMWare Player:</p>
+<ul>
+<li>Máquina virtual con pfsense y Máquina virtual ubuntu server con GrayLog o Wazuh. En el siguiente <a href="https://howtoforge.es/como-instalar-graylog-4-en-ubuntu-22-04/" target="_blank" rel="noopener" style="font-size: 1em;">enlace</a><span style="color: #333333; font-size: 1em;">, se describe el </span><strong style="color: #333333; font-size: 1em;">proceso de instalación de GrayLog en Ubuntu Server. </strong><strong style="color: #333333; font-size: 1em;">Para ubuntu 20.04: </strong><strong><a href="https://howtoforge.es/instalar-y-configurar-el-servidor-de-monitorizacion-de-graylog-ubuntu-20-04/">https://howtoforge.es/instalar-y-configurar-el-servidor-de-monitorizacion-de-graylog-ubuntu-20-04/</a></strong></li>
+</ul>
+<p><strong>2. Proyecto en Gns3 </strong>con los appliances: Pfsense, switch, firefox, Toolbox y Kali. El esquema es el siguiente:</p>
+<p style="text-align: center;"><strong><img src="red-pfsenseSuricata.png" alt="" width="713" height="421" /></strong></p>
+<p><strong>Referencias:</strong></p>
+<ul>
+<li><a href="https://tech.lobobrothers.com/implementando-pfsense-con-suricata/">https://tech.lobobrothers.com/implementando-pfsense-con-suricata/</a></li>
+<li><a href="https://tech.lobobrothers.com/configurando-suricata/">https://tech.lobobrothers.com/configurando-suricata/</a></li>
+</ul>
+<h3>2. Instalación de Suricata en pfSense</h3>
+<p style="text-align: justify;"><b>Fuente: </b><a href="https://tech.lobobrothers.com/implementando-pfsense-con-suricata/"><span style="font-weight: 400;">https://tech.lobobrothers.com/implementando-pfsense-con-suricata/</span></a></p>
+<p style="text-align: justify;">Con el comando <b>pfctl -d en PfSense, </b>d<span style="font-weight: 400;">eshabilitamos temporalmente las reglas de firewall para acceder al navegador desde la ip de la wan. </span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="pfctl-d.png" alt="" width="521" height="79" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>Otra forma</strong> de conseguir acceder a pfSense por el puerto WAN es añadir una regla que permita el acceso al firewall desde cualquier equipo en la red WAN.</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="reglas-wan.png" width="974" height="452" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Para añadir la regla, hay que pulsar en <strong>Guardar</strong> y luego en <strong>Aplicar</strong>. </span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">A continuación, hay que ejecutar de nuevo en la consola el comando <strong>pfctl -d,</strong> ya que por defecto en la Wan están denegadas las redes privadas y se colocan en primera posición sin poder ser movidas (ver figura superior), por lo tanto, tendremos que desactivar esta opción en Interfaces/WAN abajo del todo quedando ambas casillas desactivadas, para ello, </span><span style="font-weight: 400;">hay que pulsar en la rueda dentada de la sección <strong>Actions</strong> de una de las reglas y desactivar las opciones (ver imagen inferior). Otra forma de desactivarlo es desde <strong>Interfaces &gt; WAN</strong> y en la parte inferior, desactivar las 2 opciones.</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="actions.png" alt="" width="947" height="270" /></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="redes-reservadas.png" alt="" width="954" height="353" /></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una vez se pulsa en <strong>Save</strong>, ya sólo tendremos la regla que permite la conectividad desde la WAN.</span><span style="font-weight: 400;"></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="reglas-wan-final.png" alt="" width="966" height="323" /></span></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Esto es un laboratorio, no hagáis esto en Producción, utilizar VPN para acceder o permitir sólo ips fijas si disponéis desde donde os conectáis remotamente</p>
+</div>
+<h4 style="text-align: justify;"><strong>1. Instalar el paquete Suricata</strong><span style="font-weight: 400;"></span></h4>
+<p style="text-align: justify;">Lo primero es dirigirnos a<span> </span><strong><em>System &gt; Package Manager &gt; Available Packages</em></strong>. En el buscador ponemos suricata y nos aparecerá el paquete de Suricata, a la derecha le damos al botón verde de<span> </span><strong><em>Install</em></strong>.</p>
+<p style="text-align: center;"><img src="install-suricata.png" alt="" width="985" height="438" /></p>
+<p>Para confirmar la instalación le damos a<span> </span><strong><em>Confirm.</em></strong></p>
+<p style="text-align: center;"><strong><em><img src="confirm-install-suricata.png" alt="" width="983" height="268" /></em></strong></p>
+<p style="text-align: justify;"><strong></strong>Al pulsar '<strong>Confirm</strong>', comienza el proceso.</p>
+<p style="text-align: center;"><img src="proceso-instlla.png" alt="" width="985" height="640" /></p>
+<p style="text-align: justify;"><span>Tras instalarse, podremos acceder al servicio desde </span><strong><em>Services &gt; Suricata</em></strong><em>.</em></p>
+<p style="text-align: center;"><em><img src="services-suricata.png" alt="" width="1164" height="324" /></em></p>
+<h4 style="text-align: justify;">2. Configurar interfaz a proteger</h4>
+<p>En primer lugar hay que modificar el fichero<strong>/usr/local/etc/suricata/suricata.yaml </strong>para añadir la <strong>home net (LAN)</strong> que para este caso es: <strong>192.168.100.0/24</strong>.</p>
+<p style="text-align: center;"><strong><img src="home-net.1.png" alt="" width="892" height="470" /></strong></p>
+<p style="text-align: justify;">A continuación, hay que ir a <strong>Services &gt; Suricata &gt; Interfaces</strong>, para añadir la interfaz que se desea proteger y pulsar e<span style="font-size: 1.05em;">l botón verde de </span><strong style="font-size: 1.05em;">Add</strong><span style="font-size: 1.05em;">. </span>En la parte de<strong> LAN Settings</strong> es donde seleccionaremos la interfaz que vamos a usar, que para este caso es la LAN (em1).</p>
+<p style="text-align: center;"><img src="lan-interface-settings.png" alt="" width="969" height="500" /></p>
+<p style="text-align: justify;">En la sección de <strong>logs</strong> activaremos la primera opción para <strong>enviar los logs al firewall</strong>.</p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="logging-settings.png" alt="" width="950" height="620" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">La siguiente sección es muy interesante si se tiene un sistema <strong>ELK o un Wazuh</strong>, para enviar la información en formato JSON. Si no es el caso, se deja desactivada. Para nuestro caso, se activa ya que se enviarán los eventos a Wazuh.</span></p>
+<p style="text-align: center;"><img src="eve-joson-1.png" alt="" width="1028" height="728" /></p>
+<p style="text-align: center;"><img src="eve-json-2.png" alt="" width="1030" height="434" /></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Sin la siguiente sección únicamente lo que haríamos es <strong>generar logs</strong> pero lo que queremos es <strong>bloquear</strong>, por lo tanto, habilitamos la opción para que los <strong>hosts que generen una alerta en Suricata sean bloqueados</strong>.</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="alert-block-settings.png" alt="" width="948" height="501" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Continuamos con la <strong>siguiente sección</strong>, donde las opciones por defecto trabajan muy bien para la mayoría de los casos.</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="perfomrance-detebctio.png" alt="" width="1035" height="861" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">En la <strong>siguiente sección</strong>, veremos <strong>qué redes queremos proteger</strong>, la opción predeterminada puede servir perfectamente, pero si hay redes que el firewall no puede ver, se puede crear un <strong>Pass List</strong> en <strong>Services &gt; Suricata &gt; Pass Lists</strong> con esas redes y seleccionar dicha lista en cada apartado en función del tipo de red. Además, se puede crear otra lista para evitar que las IPs sean bloquedas y así no haya una interrupción en la conexión.</span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><img src="network-suricata.png" alt="" width="951" height="444" /></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"></span></p>
+<p style="text-align: justify;"><strong>Para crear un PasslList, hacemos:</strong></p>
+<p style="text-align: justify;">Acceder a: <strong>Services -&gt; Suricata -&gt; Pass List</strong> y pulsar '<strong>Add</strong>'. Rellenamos el nombre, la descripción, la dirección de red y pulsamos '<strong>Save</strong>'.</p>
+<p style="text-align: center;"><img src="pass-list.1.png" alt="" width="1133" height="587" /></p>
+<p style="text-align: justify;">Recordamos las direcciones de red de las interfaces LAN y WAN para este caso de ejemplo:</p>
+<p style="text-align: center;"><img src="redes-pfsense.png" alt="" width="731" height="71" /></p>
+<p style="text-align: justify;">A continuación, hay que añadir el Passlist en <strong>Services -&gt; Suricata -&gt; LAN - Interface Settings  &gt; Network Suricata Should Inspect and Protect &gt; Home Net.</strong></p>
+<p style="text-align: center;"><img src="network-suricata-passlist.png" alt="" width="1128" height="262" /></p>
+<p style="text-align: justify;">Creamos otro alias para la externa (WAN) del mismo modo que hemos realizado la anterior, quedando de la siguiente manera (red WAN 192.168.122.0).</p>
+<p style="text-align: center;"><img src="alias-externa.png" alt="" width="1144" height="588" /></p>
+<p style="text-align: justify;">A continuación, hay que añadir el Passlist en <strong>Services -&gt; Suricata -&gt; LAN - Interface Settings  &gt; Network Suricata Should Inspect and Protect &gt; External Net</strong>.</p>
+<p style="text-align: center;"><img src="passlist-lan-external.png" alt="" width="982" height="263" /></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><span>En esta sección crearíamos una </span><strong><em>Suppress List</em></strong><span><strong> </strong>en </span><strong><em>Service &gt; Suricata &gt; Suppress</em></strong><span> donde en lugar de poner IPs añadiríamos filtros para que no se ejecutasen.</span></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><span><img src="alert-supressin.png" alt="" width="699" height="145" /></span></span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><span>Por último, tenemos esta sección por si queremos modificar la configuración de <strong>Suricata</strong> añadiendo los parámetros línea por línea. Una vez configurado todo, pulsamos en <em><strong>Save</strong>.</em></span></span></p>
+<p style="text-align: center;"><span style="font-weight: 400;"><span><em><img src="argumentes.png" alt="" width="965" height="243" /></em></span></span></p>
+<p style="text-align: justify;"><strong>Referencia:</strong></p>
+<ul>
+<li><a href="http://server1.sharewiz.net/doku.php?id=pfsense:suricata:create_a_custom_home_net">http://server1.sharewiz.net/doku.php?id=pfsense:suricata:create_a_custom_home_net</a><strong></strong></li>
+</ul>
+<h4 style="text-align: justify;"><strong>3. Configuración Global</strong></h4>
+<p style="text-align: justify;">A continuación, hay que ir a<span> </span><strong><em>Services &gt; Suricata &gt; Global Settings.</em></strong> En este apartado lo primero que encontramos son las reglas, en este caso utilizaremos las reglas <strong>Free</strong>. Después en el paquete de reglas es muy importante no poner la versión 3 ya que no es compatible. Además, necesitamos un<span> </span><strong>Oinkode</strong><span> (claves únicas asociadas a una cuenta de usuario) </span>que se puede encontrar en<span> </span><a href="http://www.snort.org">snort.org</a><span> </span>al registrarnos. Para este caso de ejemplo, el Oinkode es: <strong><span class="form-control-static oinkcode ">c2ac21bd537e0dfc213fb6bd5d94242da9ee8c0a.</span></strong></p>
+<p style="text-align: center;"><img src="code-snort.png" alt="" width="1077" height="860" /></p>
+<p style="text-align: justify;">Configuramos las siguientes secciones:</p>
+<p style="text-align: center;"><img src="global-settings-suricata.png" alt="" width="1186" height="815" /></p>
+<p style="text-align: justify;"><span>El siguiente apartado es para seleccionar cada cuanto se actualizan las reglas. En este caso de ejemplo, se elige cada 6 horas. Después, activaremos el </span><strong>GeoLite2</strong><span> para geolocalizar las direcciones IP. Para ello tenemos que registrarnos en </span><strong>MaxMind</strong><span> (</span><a href="https://www.maxmind.com/en/geolite2/signup">https://www.maxmind.com/en/geolite2/signup</a><span>) y pegar el código que nos salga una vez registrados en el recuadro del </span><strong>pfSense</strong><span>.</span></p>
+<p style="text-align: center;"><span><iframe width="560" height="314" src="https://www.youtube.com/embed/dtAJkYBwS-Q"></iframe><br /></span></p>
+<p style="text-align: center;"><em><strong>Vídeo 1.</strong> Generar key MaxMind.</em></p>
+<p style="text-align: center;"><strong><img src="rulkes-suricata.png" alt="" width="1153" height="589" /></strong></p>
+<p style="text-align: justify;">Por último en el apartado de '<strong>General Settings</strong>', tenemos el intervalo de tiempo para borrar la lista de IP bloqueadas, dónde copiamos los logs y si preservamos los ajustes en caso de desinstalar el paquete. Por último, le damos a <strong>Save</strong>.</p>
+<p style="text-align: center;"><strong><img src="general-setiings.png" alt="" width="1151" height="409" /></strong></p>
+<p style="text-align: justify;">Una vez guardado nos vamos a<strong> Services &gt; Suricata &gt; Updates</strong>. Le daremos abajo a <strong>Update</strong> y se irán instalando los paquetes. Finalmente, deberá quedar así.</p>
+<p style="text-align: center;"><img src="services-suricata-updates.png" width="1182" height="644" /></p>
+<p style="text-align: justify;">Luego en el apartado de <strong>Alerts</strong> nos mostrará las alertas que se generan y el por qué. </p>
+<p style="text-align: center;"><img src="alerts.png" alt="" width="951" height="812" /></p>
+<p style="text-align: justify;">En <strong>Blocks</strong> se pueden consultar las IP bloqueadas.</p>
+<p style="text-align: center;"><img src="ip-bloqueadas.png" alt="" width="963" height="570" /></p>
+<p style="text-align: justify;"><strong><em>Pass Lists</em></strong> es para crear una lista de direcciones IP que no queremos que se bloqueen nunca.</p>
+<p style="text-align: center;"><img src="pass-list.png" alt="" width="972" height="354" /></p>
+<p style="text-align: justify;"> La sección de<strong> Logs View</strong> es para ver los logs que se han ido creando.</p>
+<p style="text-align: center;"><img src="log-views.png" alt="" width="958" height="672" /></p>
+<p style="text-align: justify;">La sección de<strong> Logs Mgmt </strong>es para configurar el tamaño de los logs o lo que deben durar, al final esto es a gusto de cada uno.</p>
+<p style="text-align: center;"><img src="logs-management.png" alt="" width="968" height="807" /></p>
+<p style="text-align: justify;"> Por último, el apartado de<strong> IP Lists</strong> lo dejaremos desactivado.</p>
+<p style="text-align: center;"><img src="ip-lists.png" alt="" width="968" height="516" /></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><span>Llegados a este punto, <strong>tendríamos Suricata configurado.</strong> Ahora tenemos que ver cómo <strong>enviar las alertas</strong> a <strong>Graylog</strong>.</span></span></p>
+<h3>3. Reglas personalizadas</h3>
+<p style="text-align: justify;">Hay que modificar la directiva <strong>HOME_NET</strong> que se encuentra en el fichero <strong>/usr/lib/etc/suricata/suricata.yaml </strong>con la dirección de red que se le haya asignado a la red LAN, para este caso, es la<strong> 192.168.100.0/24.</strong></p>
+<p style="text-align: center;"><img src="home-net.png" alt="" width="719" height="420" /></p>
+<p>Todas pasan de<strong> 1.000.000</strong> (números libres para reglas personalizadas).</p>
+<ul>
+<li style="text-align: justify;">alert tcp any any -&gt; any 3389 (msg:"Bastionado IES Caminàs - Remote Desktop, Potencial CVE-2019-0708"; classtype:protocol-command-decode; sid:1000001;rev:1;)</li>
+<li style="text-align: justify;">alert icmp $HOME_NET any -&gt; 192.168.1.1 any (msg:"Ping stalker detected"; icode:0; itype:8; threshold: type threshold, track by_src, count 30,seconds 180; classtype:attempted-recon; sid:9166682; rev:1;)</li>
+<li style="text-align: justify;">drop ip any any -&gt; any any (msg:"DATA LEAK Plaintext name detected"; content:"Caminas"; nocase; pcre:"/(Fulano.*|Fulanito.*|fulano.*)/i";classtype:attempted-recon; sid:9166600; rev:1;)</li>
+<li style="text-align: justify;">alert udp any any -&gt; any 53 (msg:"SURICATA DNS Query to a Suspicious *.ws Domain"; content:"|01 00 00 01 00 00 00 00 00 00|"; depth:10; offset:2;content:"|02|ws|00|"; nocase; sid:2500003; rev:1;)</li>
+<li style="text-align: justify;">alert http any any -&gt; any any (msg:"SURICATA HTTP Request to a Suspicious *.ws Domain"; flow:established,to_server; content:".ws"; http_host;isdataat:!1,relative; sid:2500004; rev:1;)</li>
+<li style="text-align: justify;">alert udp any any -&gt; any 53 (msg:"SURICATA DNS Query to a Suspicious *.to Domain"; content:"|01 00 00 01 00 00 00 00 00 00|"; depth:10; offset:2;content:"|02|to|00|"; nocase; sid:2500005; rev:1;)</li>
+<li style="text-align: justify;">alert http any any -&gt; any any (msg:"SURICATA HTTP Request to a Suspicious *.to Domain"; flow:established,to_server; content:".to"; http_host;isdataat:!1,relative; sid:2500006; rev:1;)</li>
+<li style="text-align: justify;">alert http any any -&gt; any any (msg:"SURICATA HTTP Request to a Suspicious *.onion.to Domain"; flow:established,to_server; content:".onion.to";http_host; isdataat:!1,relative; sid:2500007; rev:1;)</li>
+<li style="text-align: justify;">alert http any any -&gt; any any (msg:"SURICATA HTTP Request to a Suspicious *.onion.city Domain"; flow:established,to_server; content:".onion.city";http_host; isdataat:!1,relative; sid:2500008; rev:1;)</li>
+<li style="text-align: justify;">alert udp any any -&gt; any 53 (msg:"SURICATA DNS Query to a Suspicious *.onion Domain"; content:"|01 00 00 01 00 00 00 00 00 00|"; depth:10;offset:2; content:"|02|onion|00|"; nocase; sid:2500012; rev:1;)</li>
+<li style="text-align: justify;">alert tls any any -&gt; any any (msg:"SURICATA SSL session to suspicious *onion.to"; tls.subject:"CN=*.onion.to, OU=Domain Control Validated";sid:2500013; rev:1;)</li>
+</ul>
+<p>Otras alertas personalizadas son:</p>
+<p><strong>Regla 1. Alerta por conexiones tipo ICMP</strong><br />#Outbound<br />alert icmp $HOME_NET any -&gt; $EXTERNAL_NET any (msg: "ICMP detectado - Saliente"; itype:8; sid:9000001; rev:1; classtype:icmp-custom-event;)<br />#Inbound<br />alert icmp $EXTERNAL_NET any -&gt; $HOME_NET any (msg: "ICMP detectado - Entrante"; itype:8; sid:9000002; rev:1; classtype:icmp-custom-event;)<br />alert icmp $HOME_NET any -&gt; $HOME_NET any (msg: "ICMP detectado - LAN";itype:8; sid:9000002; rev:1; classtype:icmp-custom-event;)</p>
+<p><strong>Regla 2. Comprobar número excesivo de paquetes TCP SYN entrantes</strong></p>
+<p>alert tcp $EXTERNAL_NET any -&gt; $HOME_NET any (msg:"LOCAL DOS SYN packet flood inbound, Potencial ataque DOS"; flow:to_server; flags: S,12; threshold: type both, track by_dst, count 5000, seconds 5; classtype:misc-activity; sid:9000003)</p>
+<p>alert tcp $HOME_NET any -&gt; $EXTERNAL_NET any (msg:"LOCAL DOS SYN packet flood outbound, Potencial ataque DOS"; flow:to_server; flags: S,12; threshold: type both, track by_dst, count 5000, seconds 5; classtype:misc-activity; sid:9000004;)</p>
+<p><strong>#Solo en la LAN</strong></p>
+<p>alert tcp $HOME_NET any -&gt; $HOME_NET any (msg:"LOCAL DOS SYN packet flood inbound, Potencial ataque DOS"; flow:to_server; flags: S,12; threshold: type both, track by_dst, count 5000, seconds 5; classtype:misc-activity; sid:9000003)</p>
+<p><strong>#Detección DoS</strong><br />alert tcp any any -&gt; $HOME_NET 80 (flags: S; msg:"Posible Ataque DoS Type : SYNflood"; flow:stateless; sid:1000001; detection_filter:track by_dst, count 20,seconds 10;)</p>
+<p><strong>Explicación de la regla anterior, Las reglas se dividen en la cabecera de la regla y sus opciones.</strong></p>
+<p><strong>Cabecera de la regla:</strong></p>
+<ul>
+<li>alert – Acción de la regla. Suricata generará una alerta cuando se cumplan los requisitos.</li>
+<li>tcp – Protocolo.</li>
+<li>any – IP origen. Suricata filtrará cualquier origen.</li>
+<li>any – Puerto origen. Suricata filtrará cualquier puerto.</li>
+<li>-&gt; – Dirección. Desde el origen al destino.</li>
+<li>$HOME_NET – IP destino. Estamos usando el valor de HOME_NET de suricata.</li>
+<li>80 – Puerto de destino. suricata analizará en el puerto 80.</li>
+</ul>
+<p><strong>Opciones de la regla:</strong></p>
+<ul>
+<li>flags:S – Chequea que los bits específicos de TCP (en este caso SYN) están presentes.</li>
+<li>msg:”Possible DoS Attack – Type : SYNflood” – Snort incluirá este mensaje en la alerta.</li>
+<li>sid:9000005 –ID de la regla de Snort. Los ids &lt; 1,000,000 están reservados.</li>
+<li>rev:1 – Revisión.</li>
+<li>flow:stateless – No se tiene en cuenta la inspección de estado.</li>
+<li>detection_filter:track by_dst – Suricata trackea la IP.</li>
+<li>seconds 10 – Período de muestreo.</li>
+<li>count 20 – Si durante 10 segundos se han recibido más de 20 peticiones, Snort generará una alerta.</li>
+</ul>
+<h3 style="text-align: justify;">4, Crear Suricata Passlist</h3>
+<p><strong>Acceder</strong> a →<strong>Services -&gt; Suricata -&gt; Pass List </strong>y pulsar el botón<strong> 'Add'.</strong></p>
+<p style="text-align: center;"><strong><img src="pass-list.1.png" alt="" width="1133" height="587" /></strong></p>
+<p>A continuación, hay que añadir el pass list en<strong> Services -&gt; Suricata -&gt; LAN - Interface Settings.</strong></p>
+<p style="text-align: center;"><img src="network-suricata-passlist.png" alt="" width="1128" height="262" /></p>
+<p style="text-align: justify;">Y creamos otro alias para la externa:</p>
+<p style="text-align: center;"><img src="alias-externa.png" alt="" width="1144" height="588" /></p>
+<p style="text-align: center;"><img src="passlist-lan-external.png" alt="" width="982" height="263" /></p>
+<h3 style="text-align: justify;">5. PFSense - Suricata - WAN o LAN</h3>
+<p style="text-align: justify;">¿Existen beneficios o preocupaciones al ejecutarlo de una manera u otra que se debería considerar como usuario doméstico?</p>
+<ul>
+<li style="text-align: justify;">Configurar solo en la interfaz LAN. Por lo general, no se obtiene seguridad adicional al colocar una instancia en la WAN, ya que la WAN, de manera predeterminada en pfSense, elimina todo el tráfico entrante no solicitado de todos modos.</li>
+<li style="text-align: justify;">Si se configura en la WAN, todas las direcciones IP que se vean en las alertas serán la IP WAN del PfSense o algún host de Internet remoto. Nunca se vería ninguna dirección IP de LAN si se ejecuta solo en la interfaz WAN.</li>
+<li style="text-align: justify;">Sin las direcciones LAN, identificar un host infectado en la LAN se vuelve bastante difícil. Esto se debe a que Snort/Suricata en la WAN solo ve el tráfico después de que se hayan aplicado las reglas de NAT.</li>
+</ul>
+<h3>6. Referencias</h3>
+<ul>
+<li><a href="https://tech.lobobrothers.com/configurando-suricata/">https://tech.lobobrothers.com/configurando-suricata/</a></li>
+</ul>
+<p></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="221_nids_snort.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="hids_wazuh.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

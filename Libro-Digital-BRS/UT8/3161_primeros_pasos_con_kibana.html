@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.6.1 Primeros pasos con Kibana | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-107"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li class="current-page-parent"><a href="316_panel_kibana.html" class="current-page-parent daddy">3.1.6 Panel Kibana</a>
+         <ul>
+            <li id="active"><a href="3161_primeros_pasos_con_kibana.html" class="active no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="316_panel_kibana.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3162__visualizaciones.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.6.1 Primeros pasos con Kibana</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id150">
+<div class="iDevice emphasis0" >
+<div id="ta150_150_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Interfaz Principal</h3>
+<p>Para comenzar, se puede ver la interfaz principal que presenta Kibana y todas sus opciones.</p>
+<p style="text-align: center;"><img src="panel-home-kibana.png" alt="" width="1382" height="932" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Panel home.</em></p>
+<h3 style="text-align: justify;"><span style="font-size: 12pt;">2. Escenario </span></h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para tener disponibles diferentes eventos de log de sistema y autentificación para la explicación de los diferentes puntos de este capítulo, se han realizado las siguientes configuraciones:</span></p>
+<div class="exe-fx exe-tabs">
+<h2>Filebeat</h2>
+<p>Se ha modificado el fichero<strong> system.yml</strong>  que se encuentra en <strong>/etc/filebeat/modules.d</strong> descomentando la sección <strong>syslog</strong> y añadiendo en <strong>vars.path</strong> la ruta de los ficheros de donde se desea obtener los registros. De esta forma, filebat obtendrá registros de autenticación y de sistema.</p>
+<p style="text-align: center;"><img src="kibanaPanel-syste-yml-filebeat.png" alt="" width="781" height="346" /></p>
+<h2>Logstash</h2>
+<p style="text-align: justify;">En el servicio de <strong>logstash</strong> hay que añadir un nuevo fichero de <strong>output</strong> para que transfiera los registros que se recuperan de filebeat a elasticsearch. En este caso no se hace uso de filtros. Para realizar un ejemplo diferente a lo que se vio en el capítulo 2.1.4, se utiliza el mismo fichero para el input y output. Si se observa la imagen inferior, se creará un índice que se llamará <strong>auth-syslog-2022-03-20</strong>, ya que este proceso se realiza el 20 de marzo de 2022. Una vez se ha modificado el fichero, hay que <strong>reiniciar</strong> el <strong>servicio de filebeat y logstash</strong> para consolidar los cambios realizados.</p>
+<p style="text-align: center;"><img src="auth-syslog-filebeat.png" alt="" width="566" height="312" /></p>
+<h2>indice creado</h2>
+<p>Una vez se ha reiniciado el <strong>servicio logstash</strong>, si se hace la petición para listar los índices, ya se podrá visualizar el nuevo índice <strong>auth-syslog-2022-03-20.</strong></p>
+<p style="text-align: center;"><img src="indice-PAnel-Kibana.png" alt="" width="1146" height="152" /></p>
+<h2>Crear Dataview</h2>
+<p>El siguiente paso es crear el DataView del índice.</p>
+<p style="text-align: center;"><img src="create-Dataview-auth-syslog.png" alt="" width="707" height="314" /></p>
+</div>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si se seleccionan las <strong>3 rayitas</strong> de arriba a la izquierda, se puede ver el menú con todas las opciones disponibles.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 20%; text-align: center;"><img src="analitycs.png" alt="" width="240" height="393" /></td>
+<td style="width: 20%; text-align: center;"><img src="enterprise-search.png" alt="" width="238" height="121" /></td>
+<td style="width: 20%; text-align: center;"><img src="observability.png" alt="" width="231" height="307" /></td>
+<td style="width: 20%; text-align: center;"><img src="Security.png" alt="" width="213" height="267" /></td>
+<td style="width: 20%; text-align: center;"><img src="Management.png" alt="" width="212" height="241" /></td>
+</tr>
+</tbody>
+</table>
+<p><span>A continuación se describen las <strong><em>opciones más importantes y útiles</em></strong> de <strong>Kibana</strong>.</span></p>
+<h4><span>1. Discover</span></h4>
+<p style="text-align: justify;"><span>Apartado donde se pueden encontrar los datos de prueba, en forma de tabla de datos muy similar a como se vería en el archivo original. En esta tabla, cada fila se divide en un <strong>timestamp</strong> (hora a la que surgió), y el resto de la alerta o evento. Esta alerta o evento se divide como se puede observar en diferentes campos.</span></p>
+<p style="text-align: center;"><img src="PanelDiscover-auth-syslog.png" alt="" width="1445" height="819" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 2.</strong> Panel Discover.</em></span></p>
+<p style="text-align: justify;"><span style="text-align: justify; font-size: 1em;">También se dispone de un </span><strong style="text-align: justify; font-size: 1em;">gráfico de barra</strong><span style="text-align: justify; font-size: 1em;"><strong>s</strong> que muestra el número de alertas que han aparecido en un tiempo determinado.</span><br /><span></span></p>
+<p style="text-align: center;"><img src="grafico-last-15min.png" alt="" width="1083" height="171" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 3.</strong> Gráficos de los últimos 15 minutos.</em></span></p>
+<p style="text-align: justify;"><span>En la barra lateral izquierda (available fields) se pueden ver todos los campos que contienen las alertas. Lo interesante es que con estos campos se puede filtrar en la tabla según que información interesa mostrar. Para ello, hay que ir al campo que interesa y pulsar en el botón <strong>+</strong>.</span></p>
+<p style="text-align: center;"><img src="add-field.png" alt="" width="375" height="458" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 4.</strong> Filtrado de datos por campos.</em></span></p>
+<p style="text-align: justify;"><span>Se pueden añadir todos los campos que se deseen visualizar y en la misma barra saldrá un apartado de <strong><em>selected fields </em></strong>que se refiere a los campos que se han seleccionado. Como ejemplo, en la figura 5 se han filtrado los datos por los campos <strong>user.name</strong> y <strong>host.ip</strong>. Una vez aplicados filtros, se puede observar en la figura 6 que en la tabla/gráfico únicamente aparecen aquellas alertas filtradas por lo campos seleccionados, consiguiendo más claridad a la hora de visualizar los datos.</span></p>
+<table border="0" style="height: 439px; width: 100%;">
+<tbody>
+<tr style="height: 419px;">
+<td style="width: 50%; text-align: center; height: 419px;"><img src="add-field.png" alt="" width="375" height="458" /></td>
+<td style="width: 50%; text-align: center; height: 419px;"><img src="filtro-por-ip.png" alt="" width="1355" height="547" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;">
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 5.</strong> Filtrado por los campos ip.</em></span></p>
+</td>
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 6.</strong> Resultado del filtrado.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p>Si se desea guardar la tabla, arriba a la derecha (figura 7) se tienen todas las opciones que se pueden hacer con esta. Para guardar, hay que pulsar en '<strong><em>Save'</em></strong>.</p>
+<p style="text-align: center;"><img src="botonera-superior.png" alt="" width="440" height="44" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 7.</strong> Botonera superior.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Una vez se pulsa '<strong>Save</strong>', aparece una ventana donde hay que darle un título y descripción a los datos a guardar.</span></p>
+<p style="text-align: center;"><img src="save-filtro-ip.png" alt="" width="389" height="404" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 8.</strong> Título y descripción de los datos a guardar.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span>Si se quiere <strong>abrir cualquier tabla de datos</strong> que se haya guardado, desde la misma zona de guardar hay que pulsar en </span><strong><em>Open</em></strong><span>. Aparecerán todas las tablas que se tienen guardadas. Como ejemplo, se busca la que se acaba de crear y se hace click sobre ella.</span></span></p>
+<p style="text-align: center;"><img src="open-search.png" alt="" width="694" height="774" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><span><em><strong>Figura 9.</strong> Abrir datos guardados.</em></span></span></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="316_panel_kibana.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3162__visualizaciones.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

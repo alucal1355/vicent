@@ -1,0 +1,673 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 1. MikroTik - DMZ con dos routers | UT8. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-48"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_firewall_perimetral.html" class="current-page-parent daddy">6. Firewall perimetral</a>
+   <ul>
+      <li id="active"><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="active no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="6_firewall_perimetral.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="61_firewalls_de_prxima_generacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 1. MikroTik - DMZ con dos routers</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id116">
+<div class="iDevice emphasis0" >
+<div id="ta116_116_2" class="block iDevice_content">
+<div class="exe-text"><h3 id="2161" style="text-align: justify;"><span style="font-size: 14pt;">1. Introducción</span></h3>
+<p style="text-align: justify;">Cuando se quiere aumentar el nivel de seguridad de la DMZ, aunque sea más complejo, es aconsejable implementarla con dos firewall:</p>
+<ol>
+<li style="text-align: justify;"><strong>Firewall frontent:</strong> separa la red DMZ de la red externa, normalmente, Internet.</li>
+<li style="text-align: justify;"><strong>Firewall</strong> <strong>backend:</strong> gestiona el tráfico entre la red DMZ y la red interna.</li>
+</ol>
+<p style="text-align: justify;">Una de las recomendaciones para aumentar la seguridad es usar dos routers diferentes, ejemplo Mikrotik y PfSense. De esta forma si un atacante es capaz de explotar una vulnerabilidad de uno de ellos, es muy poco probable que encuentre la misma en el otro dispositivo. No obstante, en este capítulo se van a utilizar dos routers MikroTik para no aumentar la dificultad.</p>
+<h3 style="text-align: justify;">2. MikroTik - DMZ con dos routers</h3>
+<h4 style="text-align: justify;">2.1 Escenario</h4>
+<p>Los equipos que intervienen son los siguientes:</p>
+<ul>
+<li style="text-align: justify;"><strong>Mikrotik FrontEnd</strong> conectado a la DMZ por la parte de la </li>
+<li style="text-align: justify;"><strong>Mikrotik BackEnd</strong> que es el router frontera entre la DMZ y la red interna/corporativa.</li>
+<li style="text-align: justify;">En la <strong>1ª DMZ</strong> se tienen conectados 2 servidores (web y ftp) con ip's estáticas en la red 192.168.1.0.</li>
+<li>En la<strong> 2ª DMZ</strong> se tienen conectados 2 equipos (administrador del sistema y usuario de escritorio) con ip's estáticas en la red 192.168.2.0.</li>
+</ul>
+<p style="text-align: center;"><a href="Esquema-red.png"><img src="Esquema-red.png" alt="" width="624" height="631" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Esquema de red.</em></p>
+<p style="text-align: justify;">Como se puede observar en la figura 1, los routers tienen la siguiente configuración:</p>
+<ul>
+<li style="text-align: justify;">El <strong>router FrontEnd</strong> separa la primera DMZ de internet.
+<ul>
+<li>La interfaz WAN tendrá una ip de la red del aula/hogar (dependiendo de donde se esté) y realizará NAT para salir al exterior.</li>
+<li style="text-align: justify;">La interfaz LAN tiene la ip 192.168.1.1</li>
+</ul>
+</li>
+<li style="text-align: justify;">El <strong>router BackEnd</strong> separa la red interna de la DMZ.
+<ul>
+<li>La interfaz WAN tiene la ip 192.168.1.1.</li>
+<li style="text-align: justify;">La interfaz LAN tiene la ip 192.168.2.1, dirección dentro del rango de la red interna (intnetA).</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: justify;">En la <strong>red DMZ</strong>, se han conectado los servidores de la empresa, donde uno de ellos es el servidor web y el otro, el servidor de correo corporativo. En los dos servidores, se ha habilitado la posibilidad de conexión por ssh para la administración de los mismos.</p>
+<p style="text-align: justify;">Por otro lado, la red interna es donde se tienen los equipos de los diferentes departamentos de la empresa (cliente de escritorio), así como el equipo del administrador del sistema (servidores y routers).</p>
+<p style="text-align: justify;">La <strong>red del aula/hogar</strong> (dependiendo donde se esté realizando el trabajo será la red del aula o la de casa) es la que a través del router, estará conectada a internet.</p>
+<p style="text-align: justify;">Por último, se tiene el equipo (PC Escritorio) que accederá a la DMZ a través de internet (teletrabajo).</p>
+<h4 style="text-align: justify;">2.2 Configuración de las máquinas virtuales</h4>
+<p style="text-align: justify;">Todos los componentes de la figura 1 están virtualizados a excepción del Equipo de Escritorio (teletrabajo) que será un ordenador real de sobremesa o portátil. </p>
+<p style="text-align: center;"><img src="maquinas-virtuales.png" alt="" width="378" height="349" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Máquinas virtuales necesarias.</em></p>
+<p style="text-align: justify;">La configuración de la red de cada una de ellas es la siguiente:</p>
+<table border="1" style="width: 63.5685%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="width: 22.1823%; text-align: center;"><img src="FrontEnd.png" alt="" width="170" height="48" style="float: left;" /></td>
+<td style="width: 41.3862%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Tiene 2 adaptadores de red: La primera con adaptador puente a la interfaz wireless (wlp2s0) o cableada (eno1) aunque podría ser la eno1 dependiendo si se conecta por cable o wireless a la LAN (red del aula/hogar) del router que da acceso a internet.</span></p>
+<p style="text-align: center;"><img src="red-frontend.png" alt="" width="373" height="64" style="float: left;" /></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong></strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong></strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong>Nota:</strong> Para evitar problemas de compatibilidad con Virtual Box, el adaptador es PCnet-FAST III.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 22.1823%; text-align: center;"><img src="BAckend.png" alt="" width="172" height="51" style="float: left;" /></td>
+<td style="width: 41.3862%;">
+<p><span style="font-size: 12pt;">Tiene 2 adaptadores de red: Las dos en red interna, una para la dmz y otra para la red interna (intnetA).</span></p>
+<p style="text-align: center;"><img src="red-backend.png" alt="" width="335" height="61" style="float: left;" /></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong></strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong></strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong>Nota:</strong> Para evitar problemas de compatibilidad con Virtual Box, el adaptador es PCnet-FAST III.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 22.1823%; text-align: center;"><img src="serv-http.png" alt="" width="285" height="48" style="float: left;" /></td>
+<td style="width: 41.3862%; text-align: center;">
+<p style="text-align: left;"><span style="font-size: 12pt;">Tiene 1 adaptador de red: Red interna dmz.</span></p>
+<p><img src="red-servidor-http.png" alt="" width="396" height="51" style="float: left;" /></p>
+</td>
+</tr>
+<tr style="text-align: left;">
+<td style="width: 22.1823%; text-align: center;"><img src="serv-email.png" alt="" width="233" height="48" style="float: left;" /></td>
+<td style="width: 41.3862%; text-align: center;">
+<p style="text-align: left;"><span style="font-size: 12pt;">Tiene 1 adaptador de red: Red interna dmz.</span></p>
+<p><img src="red-servidor-http.png" alt="" width="396" height="51" style="float: left;" /></p>
+</td>
+</tr>
+<tr style="text-align: left;">
+<td style="width: 22.1823%; text-align: center;"><img src="admin-sistema.png" alt="" width="295" height="48" style="float: left;" /></td>
+<td style="width: 41.3862%; text-align: center;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Tiene 1 adaptador de red: Red interna intnetA.</span></p>
+<p><img src="equipos-escritorio.png" alt="" width="424" height="45" style="float: left;" /></p>
+</td>
+</tr>
+<tr>
+<td style="width: 22.1823%; text-align: center;"><img src="usuarios-escritorio.png" alt="" width="298" height="53" style="float: left;" /></td>
+<td style="width: 41.3862%; text-align: center;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Tiene 1 adaptador de red: Red interna intnetA.</span></p>
+<p><img src="equipos-escritorio.png" alt="" width="424" height="45" style="float: left;" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><em><strong>Tabla 1.</strong> Adaptadores de red de las máquinas virtuales.</em></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Para evitar problemas a la hora de definir las interfaces de red de los equipos MikroTik desde VirtualBox, debes indicar que son de tipo <strong>PCNet FAST III</strong>. Puedes obtener más información en este <span style="color: #000000;"><strong><a href="https://wiki.mikrotik.com/wiki/Manual:CHR#Usable_Network_and_Disk_interfaces_on_various_hypervisors:" target="_blank" rel="noopener" style="color: #000000;">enlace</a></strong></span> o en este <strong><span style="color: #000000;"><a href="https://forum.mikrotik.com/viewtopic.php?t=115288" target="_blank" rel="noopener" style="color: #000000;">otro</a></span>.</strong></p>
+</div>
+<h4 style="text-align: justify;">2.3 Configuración inicial de los servidores y equipos de escritorio</h4>
+<p>A continuación, se puede comprobar la configuración tcp/ip en cada uno de los servidores y equipos de la red.</p>
+<div class="exe-fx exe-tabs">
+<h2><strong>1. Servidor HTTP</strong></h2>
+<p style="text-align: justify;">En primer lugar, se ha instalado el paquete apache2 para tener disponible el servicio. A continuación, se configura el tcp/ip  (se utilizan los <span>Google Public DNS: 8.8.8.8 y 8.8.4.4).</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"># This is the network config written by 'subiquity'</span><br /><span style="font-size: 12pt;">network:<br />  version: 2<br />  renderer: networkd<br />  ethernets:<br />    enp0s3:<br />      dhcp4: false<br />      addresses:<br />        - 192.168.1.254/24<br />      routes:<br />        - to: default<br />          via: 192.168.1.1<br />     nameservers:<br />         addresses: [8.8.8.8,8.8.4.4]<br /></span></pre>
+<p style="text-align: center;"><img src="netplan-servhttp.png" alt="" width="572" height="261" /></p>
+<h2><strong>2. Servidor ftp</strong></h2>
+<p style="text-align: justify;">En primer lugar, se ha instalado el paquete <strong>vsftpd</strong> para tener disponible el servicio. A continuación, se configura el tcp/ip  (se utilizan los <span>Google Public DNS: 8.8.8.8 y 8.8.4.4).</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"># This is the network config written by 'subiquity'</span><br /><span style="font-size: 12pt;">network:<br />  version: 2<br />  renderer: networkd<br />  ethernets:<br />    enp0s3:<br />      dhcp4: false<br />      addresses:<br />       - 192.168.1.253/24<br />      routes:<br />       - to: default<br />         via: 192.168.1.1<br />      nameservers:<br />        addresses: [8.8.8.8,8.8.4.4]</span></pre>
+<p style="text-align: center;"><img src="netplan-serv-email.png" alt="" width="575" height="253" /></p>
+<h2>3. Equipo Usuario Escritorio</h2>
+<p>La configuración tcp/ip en el equipo es la siguiente: </p>
+<p style="text-align: center;"><img src="red-pc-escritorio.png" alt="" width="577" height="462" /></p>
+<h2>4. Equipo Usuario Administrador sistemas</h2>
+<p>La configuración tcp/ip en el equipo es la siguiente: </p>
+<p style="text-align: center;"><img src="tcp-ip-usuario-admin.png" alt="" width="396" height="452" /></p>
+</div>
+<h4 style="text-align: justify;">2.4 Configuración inicial de los routers Mikrotik</h4>
+<p>A continuación, se configuran cada uno de los routers de la red.</p>
+<p style="text-align: justify;"><strong>1. Router BackEnd.</strong> Mediante un equipo conectado a la red interna (intnetA), hay que acceder ya sea con Winbox (si no se ha establecido ip) o http (se ha establecido ip) para la configuración del router. Para este caso de ejemplo, se accede por Winbox desde el equipo del usuario administrador del sistema ya que tiene instalado el software para la administración de los routers.</p>
+<div class="exe-fx exe-tabs">
+<h2><strong>1. Router BackEnd</strong></h2>
+<p>En la configuración del <strong>Quick Set</strong>, se establece:</p>
+<ul>
+<li><strong>La ip de la interfaz WAN (ether1)</strong>: 192.168.1.2/24.</li>
+<li><strong>La ip de la interfaz LAN (ether2):</strong> 192.168.2.1/24.</li>
+<li>El <strong>gateway</strong> es la ip de la interfaz LAN (ether2) del router FrontEnd.</li>
+<li>Como <strong>servidor de nombres</strong>, se pone <a href="https://es.wikipedia.org/wiki/1.1.1.1" target="_blank" rel="noopener">1.1.1.1.</a></li>
+<li><strong>No se tiene activado el servidor DHCP ni el NAT</strong>.</li>
+</ul>
+<p>En las siguientes figuras, se puede observar cómo ha quedado la lista de direcciones, DNS, etcétera.</p>
+<table border="1" style="width: 100%; height: 598px;">
+<tbody>
+<tr style="height: 411px;">
+<td style="width: 41.6844%; text-align: center; height: 411px;"><img src="Quick-set-backend.png" alt="" width="372" height="405" /></td>
+<td style="width: 33.3156%; text-align: center; height: 411px;"> <img src="ip-address-list-Backend.png" alt="" width="431" height="104" /></td>
+<td style="width: 25%; text-align: center; height: 411px;"><img src="dns-settings-backend.png" alt="" width="344" height="362" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 41.6844%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 3.</strong> </em>Quick Set.</span></td>
+<td style="width: 33.3156%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 4.</strong> </em>Configuración Direcciones.</span></td>
+<td style="width: 25%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 5.</strong> </em>Configuración DNS.</span></td>
+</tr>
+<tr style="height: 147px;">
+<td style="width: 41.6844%; text-align: center; height: 147px;"><img src="route-list-backend.png" alt="" width="604" height="147" /></td>
+<td style="width: 33.3156%; text-align: center; height: 147px;"><img src="firewall-backend.png" alt="" width="674" height="152" /></td>
+<td style="width: 25%; text-align: center; height: 147px;"><a href="interface-list-backend.png" target="_blank" rel="noopener"><img src="interface-list-backend.png" alt="" width="665" height="144" /></a></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 41.6844%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 6.</strong> </em>Tabla de rutas. </span></td>
+<td style="width: 33.3156%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 7.</strong> </em>Firewall sin reglas en el momento actual.</span></td>
+<td style="width: 25%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 8.</strong> Listado de Interfaces.</em></span></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>2. Router FrontEnd.</strong></h2>
+<p>En la configuración del <strong>Quick Set</strong>, se establece:</p>
+<ul>
+<li style="text-align: justify;"><strong>La ip de la interfaz WAN (ether1):</strong> Es estática dentro del rango de la red del aula/hogar, donde hay que poner una que esté libre, para este caso 192.168.0.100. La máscara es /24 y el gateway es la ip del router con salida a internet.</li>
+<li><strong>La ip de la interfaz LAN (ether2)</strong>: 192.168.1.1/24.</li>
+<li>Se tiene <strong>activado el NAT</strong> para que los equipos de la red puedan salir al exterior.</li>
+<li>El servidor DHCP está desactivado.</li>
+<li style="text-align: justify;">En la <strong>Figura 12</strong> (tabla de rutas)<strong>,</strong> se ha añadido una ruta para permitir que se pueda ir a cualquier equipo de la red 192.168.2.0 a través de la direccion ip de la interfaz WAN del router BackEnd, es decir, la ip 192.168.1.2. Ver figura inferior.</li>
+</ul>
+<p style="text-align: center;"><img src="ruta-frontEnd.png" alt="" width="397" height="278" /></p>
+<p>En las siguientes figuras, se puede observar cómo ha quedado la lista de direcciones, DNS, etcétera.</p>
+<table border="1" style="width: 100%; height: 598px;">
+<tbody>
+<tr style="height: 411px;">
+<td style="width: 41.6844%; text-align: center; height: 411px;"><a href="quickset-frontend-casa.png"><img src="quickset-frontend-casa.png" alt="" width="434" height="436" /></a></td>
+<td style="width: 33.3156%; text-align: center; height: 411px;"> <a href="address-list-FrontEnd-Router-casa.png"><img src="address-list-FrontEnd-Router-casa.png" alt="" width="420" height="152" /></a></td>
+<td style="width: 25%; text-align: center; height: 411px;"><img src="dns-FrontEnd-RouterCasa.png" alt="" width="351" height="370" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 41.6844%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 9.</strong> </em>Quick Set.</span></td>
+<td style="width: 33.3156%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 10.</strong> </em>Configuración Direcciones.</span></td>
+<td style="width: 25%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 11.</strong> </em>Configuración DNS.</span></td>
+</tr>
+<tr style="height: 147px;">
+<td style="width: 41.6844%; text-align: center; height: 147px;"><a href="route-list-FrontEnd-Casa.png"><img src="route-list-FrontEnd-Casa.png" alt="" width="689" height="194" /></a></td>
+<td style="width: 33.3156%; text-align: center; height: 147px;"><a href="firewall-nat-frontend.png"><img src="firewall-nat-frontend.png" alt="" width="904" height="127" /></a></td>
+<td style="width: 25%; text-align: center; height: 147px;"><a href="interface-list-FrontEnd.png" target="_blank" rel="noopener"><img src="interface-list-FrontEnd.png" alt="" width="666" height="141" /></a></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 41.6844%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 12.</strong> </em>Tabla de rutas. </span></td>
+<td style="width: 33.3156%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><em><strong>Figura 13.</strong> </em>Firewall con la regla para hacer NAT.</span></td>
+<td style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 14.</strong> Listado de Interfaces</em>.</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 style="text-align: justify;">2.5 Comprobación de acceso a internet desde los distintos equipos</h4>
+<div class="exe-fx exe-tabs">
+<h2>1. Equipo Usuario admin del sistema - red intnetA</h2>
+<p style="text-align: justify;">Para comprobar que se tiene salida a internet, se hace un tracert a google y se accede a una página web. Si se observa el comando tracert, se pueden ver los saltos que se han realizado desde el equipo, es decir, primero pasa por el router BackEnd, luego por el FrontEnd y luego por el router con acceso a internet.</p>
+<p style="text-align: center;"><img src="acceso-web-PC-AdminSistemas.png" alt="" width="1041" height="613" /></p>
+<h2>2. Equipo Escritorio - red intnetA</h2>
+<p style="text-align: justify;">Para comprobar que se tiene salida a internet, se hace un traceroute a google y se accede a una página web. Si se observa el comando traceroute, se pueden ver los saltos que se han realizado desde el equipo, es decir, primero pasa por el router BackEnd, luego por el FrontEnd y luego por el router con acceso a internet.</p>
+<p style="text-align: center;"><img src="acceso-internet-pcEscritorio.png" alt="" width="978" height="582" /></p>
+<h2>3. Servidor HTTP - red DMZ</h2>
+<p style="text-align: justify;">Mediante el comando traceroute <a href="http://www.google.es,">www.google.es,</a> se pueden observar los saltos hasta llegar a google. Con esto, se valida el acceso de este servidor a internet.</p>
+<p style="text-align: center;"><img src="acceso-inter-serv-http.png" alt="" width="800" height="423" /></p>
+<p style="text-align: justify;">Con el comando<strong> ss -lt</strong>, se comprueban los servicios que están en marcha:</p>
+<p style="text-align: center;"><img src="servicios-serv-http.png" alt="" width="768" height="217" /></p>
+<h2>4. Servidor FTP - red DMZ</h2>
+<p style="text-align: justify;">Mediante el comando traceroute <strong>www.gva.es</strong>, se pueden observar los saltos hasta llegar al servidor de gva. Con esto, se valida el acceso de este servidor a internet.</p>
+<p style="text-align: center;"><img src="traceroute-Serv-ftp.png" alt="" width="800" height="534" /></p>
+<p style="text-align: justify;">Con el comando<strong> ss -lt</strong>, se comprueban los servicios que están en marcha:</p>
+<p style="text-align: center;"><img src="servicios-serv-ftp.png" alt="" width="800" height="124" /></p>
+</div>
+<h4 style="text-align: justify;">2.6 Configuración de los equipos Mikrotik - red DMZ e Interna</h4>
+<p style="text-align: justify;">En este apartado, se describen las configuraciones a realizar en los equipos Mikrotik para realizar el filtrado del tráfico de los servidores conectados a la DMZ. Además, para una <strong>mayor fortificación</strong> habría que:</p>
+<ol>
+<li>Configurar los firewall de los servidores.</li>
+<li>Limitar el acceso desde la DMZ hacia internet.</li>
+<li>Limitar los servicios que están ofreciendo los routers.</li>
+<li>Usar https para acceder al entorno web de configuración de los routers.</li>
+<li>Usar https en el servidor web.</li>
+<li>etcétera.</li>
+</ol>
+<p style="text-align: justify;">En la <strong>configuración de los routers</strong>, se va a utilizar una <strong>política restrictiva por defecto</strong>, es decir, primero se establecerá lo que se puede realizar en cada uno de ellos y el resto estará denegado.</p>
+<p style="text-align: justify;">Para este caso, en la definición de las reglas se va a utililzar <strong>reject</strong>, pero en un entorno real, habría que utilizar <strong>drop</strong>. El utilizar reject, permitirá obtener la información de las reglas que se deniegan y esto servirá, para entender mejor el proceso.</p>
+<p style="text-align: justify;">Los pasos a seguir son los siguientes:</p>
+<p style="text-align: justify;"><strong>1. Bloqueo del tráfico desde internet hasta nuestra red</strong></p>
+<p style="text-align: justify;">Se va a bloquear el tráfico desde internet a nuestras redes a excepción de los accesos a los servicios http/ssh y ftp/ssh que se han instalado en los servidores. Para ello, se realizará una redirección de puertos, es decir, las peticiones que lleguen al router FrontEnd al puerto 21, serán redirigidas al servidor FTP/ssh. Del mismo modo, las peticiones que lleguen al router FrontEnd al puerto 80, serán redirigidas al servidor HTTP/ssh. Esto se conseguirá añadiendo una regla NAT y una regla forward en el router FrontEnd.</p>
+<p style="text-align: justify;"><strong>2. Tráfico originado en la red interna</strong></p>
+<p style="text-align: justify;">Respecto al tráfico que se origine en la red interna, se va a permitir pasar a través del router BackEnd hacia:</p>
+<ol>
+<li style="text-align: justify;">El servidor FTP/ssh por el puerto 21.</li>
+<li style="text-align: justify;">El servidor HTTP/ssh por el puerto 80.</li>
+<li style="text-align: justify;">Internet.</li>
+</ol>
+<p style="text-align: justify;">Se <strong>denegará el tráfico</strong> desde la red interna al resto de la red DMZ, excepto del equipo de Escritorio del usuario administrador del sistema, que se le darán unos permisos extras para acceder a administrar los servidores (vía ssh) y routers Mikrotik.</p>
+<p style="text-align: justify;">Por último, se va a <strong>gestionar el tráfico que se genera en la DMZ</strong>, es decir, no se podrá acceder desde la DMZ a la red interna pero sí se permitirá el tráfico desde la DMZ a internet, aunque para más seguridad, habría que estudiar qué tipo de tráfico se permite desde la DMZ a internet.</p>
+<h4 style="text-align: justify;"><strong>2.6.1 Configuración del router BackEnd - Red Interna</strong></h4>
+<p style="text-align: justify;">A continuación, se describen las diferentes configuraciones a realizar en el router y para ello, se accede a<strong> IP --&gt; Firewall</strong> pestaña <strong>Filter Rules,</strong> donde se van a ir añadiendo las distintas reglas en el orden que se muestra en la figura inferior.</p>
+<p style="text-align: justify;"><span style="color: #0000ff;"><strong>1. Reglas Forward</strong></span></p>
+<p style="text-align: justify;">Se comienza por las reglas de forward que afecta al tráfico que pasa a través del router. En primer lugar, se crea una regla para que se acepte el tráfico de todas las conexiones relacionadas o establecidas anteriormente.</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> forward.</li>
+<li style="text-align: justify;"><strong>Connection State:</strong> established - related.</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Permitir tráfico con conexiones relacionadas o establecidas.</li>
+</ul>
+<p style="text-align: justify;">La siguiente regla, va a permitir acceder desde la red interna a internet, es decir, se va a permitir todo el tráfico que no vaya a la DMZ.</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> forward.</li>
+<li style="text-align: justify;"><strong>Src Address: </strong>La dirección de red de interna, 192.168.2.0/24.</li>
+<li style="text-align: justify;"><strong>Dst Address: </strong>Para todo el tráfico que no sea la DMZ, es decir, <strong>!</strong> 192.168.1.0/24. Por lo tanto, todo el  tráfico que no vaya a la red DMZ, será aceptado.</li>
+<li style="text-align: justify;"><strong>In. Interface:</strong> ether2 (opcional configurar la interface In).</li>
+<li><strong>Out Interface:</strong> ether1 (opcional configurar la interface Out).</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Permitir todo el tráfico que no vaya a la DMZ (salida a internet).</li>
+</ul>
+<p>Las siguientes reglas, van a permitir gestionar el acceso a los servidores.</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><span style="font-size: 12pt;">La primera regla permitirá el acceso al servidor http en el puerto 80.</span></td>
+<td style="width: 50%;"><span style="font-size: 12pt;">La segunda regla permitirá el acceso al servidor ftp en el puerto 21.</span></td>
+</tr>
+<tr>
+<td style="width: 50%;">
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Chain:</strong> forward.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Src Address: </strong>Cualquiera de la red interna, 192.168.2.0/24.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Dst Address: </strong>La del servidor web, 192.168.1.254.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Protocolo</strong>: tcp.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Dst. Port:</strong> El puerto 80.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>In. Interface:</strong> ether2.</span></li>
+<li><span style="font-size: 12pt;"><strong>Out Interface:</strong> ether1.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Action:</strong> accept.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Comment:</strong> Permitir el tráfico al puerto 80 del servidor web desde red interna.</span></li>
+</ul>
+</td>
+<td style="width: 50%;">
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Chain:</strong> forward.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Src Address: </strong>Cualquiera de la red interna, 192.168.2.0/24.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Dst Address: </strong>La del servidor FTP, 192.168.1.253.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Protocolo</strong>: tcp.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Dst. Port:</strong> El puerto 21.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>In. Interface:</strong> ether2.</span></li>
+<li><span style="font-size: 12pt;"><strong>Out Interface:</strong> ether1.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Action:</strong> accept.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Comment:</strong> Permitir el tráfico al puerto 21 del servidor FTP desde red interna.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">A continuación, se crean<strong> 2 reglas para permitir el acceso a los servidores mediante ssh</strong> desde el PC de escritorio del usuario administrador.</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><span style="font-size: 12pt;">La primera regla permitirá el acceso por ssh al servidor http.</span></td>
+<td style="width: 50%;"><span style="font-size: 12pt;">La segunda regla permitirá el acceso por ssh al servidor ftp.</span></td>
+</tr>
+<tr>
+<td style="width: 50%;">
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Chain:</strong> forward.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Src Address:</strong>La ip del equipo del usuario administrador del sistema, 192.168.2.20.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Dst Address: </strong>La del servidor web, 192.168.1.254.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Protocolo</strong>: tcp.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Dst. Port:</strong> El puerto 22.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>In. Interface:</strong> ether2.</span></li>
+<li><span style="font-size: 12pt;"><strong>Out Interface:</strong> ether1.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Action:</strong> accept.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Comment:</strong> Permitir el tráfico al puerto 22 del servidor web desde el PC del usuario administrador.</span></li>
+</ul>
+</td>
+<td style="width: 50%;">
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Chain:</strong> forward.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Src Address: </strong>La ip del equipo del usuario administrador del sistema, 192.168.2.20.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Dst Address: </strong>La del servidor FTP, 192.168.1.253.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Protocolo</strong>: tcp.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Dst. Port:</strong> El puerto 22.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>In. Interface:</strong> ether2.</span></li>
+<li><span style="font-size: 12pt;"><strong>Out Interface:</strong> ether1.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Action:</strong> accept.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Comment:</strong> Permitir el tráfico al puerto 22 del servidor FTP desde el PC del usuario administrador.</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Por último, se crea una regla para <strong>permitir configurar el router FrontEnd desde el equipo del usuario administrador, </strong>ya sea por el puerto 80 o el 22. Con esta regla, se está permitiendo que se pase por el router BackEnd para llegar al router FrontEnd, por lo que habrá que crear una regla en el router FrontEnd para permitir que el equipo se pueda conectar al puerto 80 o 22.</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> forward.</li>
+<li style="text-align: justify;"><strong>Src Address: </strong>La ip del equipo del usuario administrador del sistema, 192.168.2.20.</li>
+<li style="text-align: justify;"><strong>Dst Address: </strong>La del router FrontEnd 192.168.1.1 (interfaz ether2).</li>
+<li style="text-align: justify;"><strong>Protocolo</strong>: tcp.</li>
+<li style="text-align: justify;"><strong>Dst. Port:</strong> 22, 80 (se separan por comas los puertos que se deseen).</li>
+<li style="text-align: justify;"><strong>In. Interface:</strong> ether2.</li>
+<li><strong>Out Interface:</strong> ether1.</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Permitir el tráfico al puerto 22 y 80 del router FrontEnd desde el PC del usuario administrador.</li>
+</ul>
+<p style="text-align: justify;">Una vez se han creado todas las reglas, hay que indicar cual es la acción a realizar por defecto, en este caso se configura <strong>reject</strong>, pero en un caso real y para no dar pistas a un atacante, se debería poner drop. Por lo tanto, hay que crear una nueva regla:</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> forward.</li>
+<li style="text-align: justify;"><strong>Action:</strong> reject.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Por defecto, se deniega el resto del tráfico forward.</li>
+</ul>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">No se indican los interfaces de entrada y salida, ya que se quiere rechazar el tráfico en ambos sentidos.</p>
+</div>
+<p style="text-align: justify;"><span style="color: #0000ff;"><strong>2. Reglas Input</strong></span></p>
+<p style="text-align: justify;">Se crea una primera regla, donde se permite de la cadena input todo el tráfico relacionado o establecido ya previamente.</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> input.</li>
+<li style="text-align: justify;"><strong>Connection State:</strong> established - related.</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Aceptar tráfico de conexiones relacionadas y establecidas.</li>
+</ul>
+<p>A continuación, se crea una regla para permitir que desde el equipo del usuario administrador pueda gestionar este router ya sea por http o ssh.</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> input.</li>
+<li style="text-align: justify;"><strong>Src Address: </strong>La ip del equipo del usuario administrador del sistema, 192.168.2.20.</li>
+<li style="text-align: justify;"><strong>Protocolo</strong>: tcp.</li>
+<li style="text-align: justify;"><strong>Dst. Port:</strong> 22, 80 (se separan por comas los puertos que se deseen).</li>
+<li style="text-align: justify;"><strong>In. Interface:</strong> ether2.</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Permitir el tráfico al puerto 22 y 80 del router BackEnd desde el PC del usuario administrador.</li>
+</ul>
+<p>La siguiente regla a añadir, es la de rechazar el resto de tráfico de entrada al router:</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> input.</li>
+<li style="text-align: justify;"><strong>Action:</strong> reject.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Por defecto se rechaza el tráfico input.</li>
+</ul>
+<p style="text-align: justify;">Como se puede observar en la figura inferior, ya se tienen todas las reglas que permiten separar la red interna de la DMZ configuradas en el router BackEnd.</p>
+<p style="text-align: center;"><img src="reglas-BackEnd.png" alt="" width="1012" height="487" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 15.</strong> Reglas firewall en BackEnd</em>.</span></p>
+<h4 style="text-align: justify;"><strong>2.6.2 </strong><strong>Configuración del router FrontEnd - red DMZ</strong></h4>
+<p style="text-align: justify;">A continuación, se configura el router que separa la red DMZ de internet y para ello, se accede a <strong>IP--&gt; Firewall</strong>, donde se trabajará en la pestaña <strong>Filter Rules</strong> y <strong>NAT</strong>. </p>
+<p style="text-align: justify;"><strong>Pestaña NAT</strong></p>
+<p style="text-align: justify;">Si se accede a la pestaña NAT, se puede observar que ya está aplicado el enmascaramiento (se describe en el apartado de configuración del escenario).</p>
+<p style="text-align: center;"><img src="nat-masquerade-FrontEnd.png" alt="" width="892" height="113" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 16.</strong> Pestaña NAT en FrontEnd</em>.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">A continuación, hay que <strong>añadir 2 reglas</strong> más para implementar el <strong>redireccionamiento de puertos</strong>. </span><span style="font-size: 12pt;">En la <strong>primera regla</strong>, todo el tráfico que entre por la interfaz ether1 dirigido al puerto 80 se va a redirigir al servidor web de la DMZ (puerto 80). Para ello, hay que añadir una nueva regla con la siguiente configuración:</span></p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> dstnat.</li>
+<li style="text-align: justify;"><strong>protocol:</strong> tcp.</li>
+<li style="text-align: justify;"><strong>Dst. Port:</strong> 80.</li>
+<li style="text-align: justify;"><strong>In. Interface:</strong> ether1.</li>
+<li><strong>Action:</strong> dstnat.</li>
+<li><span><strong>To Addresses: </strong>192.168.1.254 (ip del servidor web).</span></li>
+<li style="text-align: justify;"><strong>Comment:</strong> Redirección tráfico puerto 80 desde internet al servidor web de la red DMZ.</li>
+</ul>
+<p style="text-align: justify;"><span style="font-size: 12pt;">En la siguiente regla a crear, tiene como objetivo redirigir todo el tráfico desde la WAN que recibe el router al puerto 21 del servidor FTP de la DMZ. Para ello, hay que añadir una nueva regla con la siguiente configuración:</span></p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> dstnat.</li>
+<li style="text-align: justify;"><strong>protocol:</strong> tcp.</li>
+<li style="text-align: justify;"><strong>Dst. Port:</strong> 21.</li>
+<li style="text-align: justify;"><strong>In. Interface:</strong> ether1.</li>
+<li><strong>Action:</strong> dstnat.</li>
+<li><span><strong>To Addresses: </strong>192.168.1.253 (ip del servidor ftp).</span></li>
+<li style="text-align: justify;"><strong>Comment:</strong> Redirección tráfico puerto 21 desde internet al servidor FTP de la red DMZ.</li>
+</ul>
+<p style="text-align: center;"><img src="firewall-NAt-2.png" alt="" width="1028" height="181" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 17.</strong> Pestaña NAT, reglas creadas en FrontEnd</em>.</span></p>
+<p><strong>Pestaña Filter Rules</strong></p>
+<p style="text-align: justify;"><span style="color: #0000ff;"><strong>1. Reglas Forward</strong></span></p>
+<p style="text-align: justify;">Se comienza por las <strong>reglas de forward</strong> que afecta al tráfico que pasa a través del router FrontEnd.</p>
+<p style="text-align: justify;"><strong>Regla 1.</strong> Se crea una <strong>regla para que se acepte el tráfico de todas las conexiones relacionadas o establecidas</strong> anteriormente.</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> forward.</li>
+<li style="text-align: justify;"><strong>Connection State:</strong> established - related.</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Permitir tráfico con conexiones relacionadas o establecidas.</li>
+</ul>
+<p style="text-align: justify;"><strong>Regla 2.</strong> Se crear una regla para permitir que el router reenvíe todos los paquetes que le lleguen de la DMZ hacia la red interna. </p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Aunque en el apartado donde se configuró el BackEnd se dijo que este tráfico había que denegarlo, es necesaria esta regla para permitir que todas las conexiones que salgan de la red interna hacia la DMZ puedan obtener una respuesta, de esta manera, se posibilita que los paquetes de respuesta vuelvan a la red interna.</p>
+</div>
+<p style="text-align: justify;">Observando el escenario (esquema de la red), se puede apreciar que la puerta de enlace de los servidores es el router FrontEnd y éste, tiene que poder enrutar hacia el router Backend. <span style="font-size: 12pt;">Para ello, hay que añadir una nueva regla para aceptar todo el tráfico que venga de la DMZ con destino a cualquier dirección de la red interna (el filtrado lo hará el router BackEnd).</span></p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> forward.</li>
+<li style="text-align: justify;"><strong>Src Address: </strong>La dirección de red de la red DMZ 192.168.1.0/24.</li>
+<li style="text-align: justify;"><strong>Dst Address: </strong>Con destino a cualquier dirección de la red interna 192.168.2.0/24.</li>
+<li style="text-align: justify;"><strong>In. Interface:</strong> ether2.</li>
+<li><strong>Out Interface:</strong> ether2.</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Permitir tráfico desde DMZ a red interna (el filtrado lo hará el router Backend).</li>
+</ul>
+<p><strong>Regla 3.</strong> Se crea una regla con el objetivo de permitir el tráfico desde la DMZ y red Interna hacia internet, es decir, todo el tráfico que venga de la interfaz ether2 dirigido hacia ether1 se va a permitir. <span style="font-size: 12pt;">Para ello, se añade una nueva regla con la siguiente configuración:</span></p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> forward.</li>
+<li style="text-align: justify;"><strong>In. Interface:</strong> ether2.</li>
+<li><strong>Out Interface:</strong> ether1.</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Permitir tráfico desde la red DMZ e Interna hacia internet.</li>
+</ul>
+<p style="text-align: justify;"><strong>Regla 4.</strong> Se crea una regla con el objetivo de permitir que se pueda acceder a la página web corporativa desde internet, es decir, cuando se haga una petición al puerto 80 del router, éste redigirá el tráfico al servidor web (puerto80) mediante la regla NAT que se creó anteriormente.</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> forward.</li>
+<li style="text-align: justify;"><strong>Dst.Address:</strong> 192.168.1.254.</li>
+<li><strong>Protocol</strong>: tcp.</li>
+<li><strong>Dst. Port:</strong> 80.</li>
+<li style="text-align: justify;"><strong>In. Interface:</strong> ether1.</li>
+<li><strong>Out Interface:</strong> ether2.</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Permitir tráfico desde internet al puerto 80 (HTTP) del servidor web.</li>
+</ul>
+<p style="text-align: justify;"><strong>Regla 5.</strong> Se crea una regla con el objetivo de permitir que se pueda acceder al servicio FTP desde internet, es decir, cuando se haga una petición al puerto 21 del router, éste redigirá el tráfico al servidor FTP (puerto 21) mediante la regla NAT que se creó anteriormente.</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> forward.</li>
+<li style="text-align: justify;"><strong>Dst.Address:</strong> 192.168.1.253.</li>
+<li style="text-align: justify;"><strong>Protocol</strong>: tcp.</li>
+<li style="text-align: justify;"><strong>Dst. Port:</strong> 21.</li>
+<li style="text-align: justify;"><strong>In. Interface:</strong> ether1.</li>
+<li><strong>Out Interface:</strong> ether2.</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Permitir tráfico desde internet al puerto 21 (FTP) del servidor FTP.</li>
+</ul>
+<p><strong>Regla 6. </strong>La última regla de la cadena forward, será la aplicación de reject por defecto. <span style="font-size: 12pt;">Para ello, hay que crear una nueva regla con la siguiente configuración:</span></p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> forward.</li>
+<li style="text-align: justify;"><strong>Action:</strong> reject.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> La acción por defecto del tráfico forward es rechazar.</li>
+</ul>
+<p><span style="color: #0000ff;"><strong>2. Reglas Input</strong></span></p>
+<p>El último conjunto de reglas a crear son la que atañen a input.</p>
+<p><strong>Regla 1.</strong> Se crea una primera regla, donde se permite de la cadena input todo el tráfico relacionado o establecido ya previamente.</p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> input.</li>
+<li style="text-align: justify;"><strong>Connection State:</strong> established - related.</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Aceptar tráfico de conexiones relacionadas y establecidas.</li>
+</ul>
+<p style="text-align: justify;"><strong>Regla 2.</strong> Se crea una regla para permitir que únicamente desde el equipo del usuario administrador del sistema pueda conectarse a este router para poder gestionarlo. <span style="font-size: 12pt;">Para ello, se añade una nueva regla con la siguiente configuración:</span></p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> input.</li>
+<li style="text-align: justify;"><strong>Src Address: </strong>La ip del equipo del usuario administrador del sistema, 192.168.2.20.</li>
+<li style="text-align: justify;"><strong>Protocolo</strong>: tcp.</li>
+<li style="text-align: justify;"><strong>Dst. Port:</strong> 22, 80 (se separan por comas los puertos que se deseen).</li>
+<li style="text-align: justify;"><strong>In. Interface:</strong> ether2 (cuando se conecte desde el interfaz ether2).</li>
+<li style="text-align: justify;"><strong>Action:</strong> accept.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> Permitir el tráfico al puerto 22 y 80 (gestión remota) del router FrontEnd desde el PC del usuario administrador.</li>
+</ul>
+<p style="text-align: justify;"><strong>Regla 3.</strong> La última regla de la cadena input, será la aplicación de reject por defecto, es decir, cualquier otro tráfico de entrada será rechazado. <span style="font-size: 12pt;">Para ello, hay que crear una nueva regla con la siguiente configuración:</span></p>
+<ul>
+<li style="text-align: justify;"><strong>Chain:</strong> input.</li>
+<li style="text-align: justify;"><strong>Action:</strong> reject.</li>
+<li style="text-align: justify;"><strong>Comment:</strong> La acción por defecto del tráfico input es rechazar.</li>
+</ul>
+<p>Como se puede observar en la figura inferior, ya se tienen todas las reglas en el router FrontEnd.</p>
+<p style="text-align: center;"><img src="Filter-Rules-FrontEnd.png" alt="" width="1071" height="412" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 18.</strong> Reglas firewall en FrontEnd</em>.</span></p>
+<h4 style="text-align: justify;">2.7. Comprobación del escenario</h4>
+<p style="text-align: justify;">Una vez se tienen configuradas las reglas en los 2 routers, se comprueba el funcionamiento del escenario.</p>
+<div class="exe-fx exe-tabs">
+<h2>PC del usuario administrador del Sistema - puerto 80 routers</h2>
+<p style="text-align: justify;">Se comprueba que se puede acceder a la gestión de los routers por el puerto 80 (http).</p>
+<p style="text-align: center;"><img src="acceso-puerto-80-routers.png" alt="" width="1384" height="631" /></p>
+<h2>PC del usuario administrador del Sistema - puerto 22 routers</h2>
+<p style="text-align: justify;">Desde el equipo del usuario administrador, se prueba la conexión por ssh al router FrontEnd y BackEnd.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="acceso-frontEnd-por-SSH.png" alt="" width="979" height="587" /></td>
+<td style="width: 50%; text-align: center;"><img src="acceso-backEnd-por-SSH.png" alt="" width="979" height="587" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Acceso al router FrontEnd por ssh </span></td>
+<td style="width: 50%;"></td>
+</tr>
+</tbody>
+</table>
+<h2>Acceso al servidor http y servidor ftp</h2>
+<p style="text-align: justify;">Desde el <strong>equipo del usuario administrador</strong>, se accede al servidor web (http://192.168.1.254) y al servidor FTP (192.168.1.253). Como se puede observar en las figuras inferiores, se accede a los servidores desde el equipo del usuario administrador.</p>
+<table border="1" style="width: 100%; height: 598px;">
+<tbody>
+<tr style="height: 578px;">
+<td style="width: 50%; text-align: center; height: 578px;"><a href="acceso-serv-Web-EquipoAdmin.png"><img src="acceso-serv-Web-EquipoAdmin.png" alt="" width="751" height="572" /></a></td>
+<td style="width: 50%; text-align: center; height: 578px;"><img src="conexion-servFTP.png" alt="" width="885" height="624" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Acceso al servidor web</span></td>
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Conexión al servidor FTP</span></td>
+</tr>
+</tbody>
+</table>
+<h2>Pruebas desde el PC Escritorio</h2>
+<p style="text-align: justify;">A continuación desde el PC de Escritorio situado en la red Interna, se intenta acceder al puerto 80 y 22 de los routers y no se tiene acceso (ver figura inferior izquierda). Por otro lado, sí se accede al servidor web de la dmz y al servidor FTP de la dmz (ver figura inferior derecha).</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="noacceso-routers-desde-PC-Escritorio.png" alt="" width="975" height="629" /></td>
+<td style="width: 50%; text-align: center;"><img src="acceso-PC-Escritorio-Serv-http-ftp.png" alt="" width="1102" height="764" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Sin acceso a los puerto 22 y 80 de los routers.</span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Con acceso al servidor web y ftp.</span></td>
+</tr>
+</tbody>
+</table>
+<h2>Pruebas desde los servidores</h2>
+<p style="text-align: justify;">A continuación desde los servidores de la red DMZ, se realizará un ping a un equipo de la red Interna (PC del usuario administrador del sistema 192.168.2.20) para comprobar que no se llega.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="servftp-noacceso-pc-redinterna.png" alt="" width="650" height="238" /></td>
+<td style="width: 50%; text-align: center;"><img src="ping-a-PCAdmin-Desde-Serv-Http.png" alt="" width="624" height="251" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Ping desde el servidor FTP al PC del usuario administrador del sistema</span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Ping desde el servidor HTTP al PC del usuario administrador del sistema</span></td>
+</tr>
+</tbody>
+</table>
+<h2>Pruebas PC Teletrabajo </h2>
+<p style="text-align: justify;">A continuación desde un equipo externo (PC Teletrabajo) que simula el acceso a la red desde internet, se accede al servidor web y al servidor FTP.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="acceso-Web-PC-Teletrabajo.png"><img src="acceso-Web-PC-Teletrabajo.png" alt="" width="1266" height="801" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="acceso-serv-ftp-PC-Teletrabajo.png"><img src="acceso-serv-ftp-PC-Teletrabajo.png" alt="" width="1267" height="801" /></a></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Acceso a la página web corporativa</span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Acceso al servidor FTP</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Como <strong>última prueba</strong>, en todos los equipos se debería comprobar que pueden acceder sin problemas a internet. Ejemplo: Desde el equipo del usuario administrador de la red interna, se accede a internet sin problemas.</p>
+<p style="text-align: center;"><img src="acceso-internet-PCAdmin.png" alt="" width="980" height="750" /></p>
+</div></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="6_firewall_perimetral.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="61_firewalls_de_prxima_generacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

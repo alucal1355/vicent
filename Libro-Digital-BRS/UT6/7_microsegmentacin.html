@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7. Microsegmentación | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-48"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li><a href="6_redes_virtuales_vlans.html" class="daddy">6. Redes virtuales (VLANs)</a>
+   <ul class="other-section">
+      <li><a href="61_introduccin_a_gns3.html" class="daddy">6.1 Introducción a GNS3</a>
+      <ul class="other-section">
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="7_microsegmentacin.html" class="active no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_3_vlan_con_tplink.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">7. Microsegmentación</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id92">
+<div class="iDevice emphasis0">
+<div id="ta92_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p>La <a href="https://www.redeszone.net/tutoriales/seguridad/microsegmentacion-que-es-redes-seguras/" target="_blank" rel="noopener"><strong>microsegmentación</strong></a> es una tecnología de seguridad que divide las redes físicas en cientos o miles de microsegmentos lógicos.</p>
+<p>El objetivo es reducir los riesgos de ataques mejorando el rendimiento de la red y con una arquitectura más simple.</p>
+<p>Con la <strong><em>microsegmentación</em></strong> se consigue:</p>
+<ul>
+<li>Reducir la superficie de ataque.</li>
+<li>Centralizar la gestión de las políticas de seguridad a nivel alto según las demandas de uso.</li>
+<li>Aislar el acceso y limitar el tráfico.</li>
+<li>Aplicar la seguridad a los microsegmentos que lo necesitan según sus necesidades y amenazas.</li>
+<li>Aprendizaje automático.</li>
+</ul>
+<h3>2. Caracterśticas</h3>
+<p>Tiene las siguientes características:</p>
+<ul>
+<li>Implementación rápida y sencilla.</li>
+<li>Flexibilidad ante los cambios.</li>
+<li>Razonablemente económica.</li>
+<li>Facilita el cumplimiento normativo.</li>
+<li>Reconoce: 
+<ul>
+<li>Sistemas Operativos antiguos y modernos.</li>
+<li>Servidores dedicados.</li>
+<li>Hipervisores.</li>
+<li>Cloud.</li>
+<li>Contenedores.</li>
+</ul>
+</li>
+</ul>
+<h3>3. Tipos</h3>
+<p>Los tipos de microsegmentación son:</p>
+<ul>
+<li><strong>Host - agent.</strong> Centrado en los usuarios finales y gestionado de manera centralizada.</li>
+<li style="text-align: justify;"><strong>Basado en hipervisores.</strong> Para redes virtuales (SDN). P<span>ueden utilizar firewalls ya implementados, además de migrar las actuales políticas de red a los mismos hipervisores u otros, dependiendo de cómo la actividad de la red va migrando a este modelo de gestión. No funciona del todo en entornos cloud.</span></li>
+<li><strong>Basado en redes tradicionales</strong>. S<span>egmentación basado en </span><strong>Listas de Control de Acceso<span> </span></strong><span>y otros métodos. Extiende la segmentación tradicional creando segmentos más pequeños.</span></li>
+</ul>
+<p><span>En la siguiente figura, se tiene un escenario <strong>CPD - Cloud.</strong></span></p>
+<p style="text-align: center;"><span><img src="microsegmentacion.png" alt="" width="791" height="446" /></span></p>
+<p style="text-align: center;"><em><a href="https://www.redeszone.net/app/uploads-redeszone.net/2020/04/microsegmentacion-redes-2-e1587220224228.jpg" target="_blank" rel="noopener"><strong>Figura 1.</strong> CPD-Cloud. Fuente</a></em></p>
+<h3>4. Casos de uso</h3>
+<p>Los casos de uso de la microsegmentación son los siguientes:</p>
+<ul>
+<li>Entre clientes.</li>
+<li>Movilidad de dispositivos IoT.</li>
+<li>Protección datos sensibles (PCI DSS).</li>
+<li>Usuarios invitados.</li>
+<li>Separación usuarios y datos.</li>
+</ul>
+<h3>5. Análisis previo</h3>
+<p>Para implementar la microsegmentación hay que realizar una análisis previo para:</p>
+<ul>
+<li>Conocer la red.</li>
+<li>Estructura.</li>
+<li>Flujo de información.</li>
+<li>Patrones de comunicación (-|-&gt;, &lt;-|-, |&lt;--&gt;|).</li>
+</ul>
+<p>Por otra parte hay que detectar:</p>
+<ul>
+<li>Grupos de carga de trabajo dentro de una subred física.</li>
+<li>Servicios compartidos (DNS, DHCP...).</li>
+<li>Relaciones entre aplicaciones.</li>
+<li>Áreas vulnerables.</li>
+<li>Comportamientos ineficientes como el <a href="https://en.wikipedia.org/wiki/Hairpinning" target="_blank" rel="noopener">hairpinning</a> (NAT loopback).</li>
+<li>Aplicaciones no apropiadas para la microsegmentación.</li>
+</ul>
+<h3>6. Ejemplos</h3>
+<p style="text-align: center;"><img src="ejemplo-micro.png" alt="" width="640" height="349" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Ejemplo de microsegmentación - <a href="https://fortixpert.blogspot.com/2018/04/access-vlan-funcionalidad-implementada.html?q=intra-vlan" target="_blank" rel="noopener">Fuente</a>.</em></p>
+<p style="text-align: justify;"></p>
+<p><strong><a href="https://www.vmware.com/es/products/nsx-security-microsegmentation.html" target="_blank" rel="noopener">Microsegmentación con NSX Data Center.</a> </strong>Microsegmentación para aplicaciones en entornos de cloud privada y pública.</p>
+<p style="text-align: center;"><img src="nsx.png" alt="" width="691" height="353" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Ejemplo de microsegmentación - <a href="https://www.vmware.com/es/products/nsx-security-microsegmentation.html" target="_blank" rel="noopener">Fuente</a>.</em></p>
+<p style="text-align: justify;"></p>
+<h3>7. Referencias</h3>
+<ul>
+<li><a href="https://www.redeszone.net/tutoriales/seguridad/redes-zero-trust-que-son/" target="_blank" rel="noopener">Redes Zero Trust: no confiar en nada ni nadie</a>.</li>
+<li><a href="https://ciberseguridad.com/guias/zero-trust/microsegmentacion/">https://ciberseguridad.com/guias/zero-trust/microsegmentacion/</a></li>
+<li><a href="https://www.redhat.com/es/topics/hyperconverged-infrastructure/what-is-software-defined-networking" target="_blank" rel="noopener">¿Qué son las redes definidas por software? (SDN).</a></li>
+<li><a href="https://www.redeszone.net/tutoriales/seguridad/microsegmentacion-que-es-redes-seguras/" target="_blank" rel="noopener">Microsegmentación: redes más robustas y seguras ante ataques.</a></li>
+<li><a href="https://www.computerweekly.com/es/consejo/Que-significa-una-estrategia-de-microsegmentacion-de-red?_ga=2.113248388.2022572822.1595857723-766236005.1566522150" target="_blank" rel="noopener">Qué significa una estrategia de microsegmentación de red.</a></li>
+<li><a href="https://www.computerweekly.com/es/opinion/Proteccion-de-datos-sensibles-un-enfoque-holistico-para-el-negocio" target="_blank" rel="noopener">Protección de datos sensibles, un enfoque holístico para el negocio.</a></li>
+<li><a href="https://ciberseguridad.com/guias/zero-trust/microsegmentacion/" target="_blank" rel="noopener">Guía completa sobre microsegmentación.</a></li>
+<li><a href="https://sysdig.es/use-cases/network-security/" target="_blank" rel="noopener">Poner fin al movimiento lateral con la seguridad de red de confianza cero</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_3_vlan_con_tplink.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

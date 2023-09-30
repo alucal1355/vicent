@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7.2.3 Infraestructuras de clave pública (PKI) | UT3. Sistemas de control de acceso y credenciales </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-56"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT3. Sistemas de control de acceso y credenciales</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT3. Sistemas de control de acceso y credenciales</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="recomendaciones_de_estudio__resumen.html" class="no-ch">Recomendaciones de estudio - Resumen</a></li>
+   <li><a href="1_mecanismos_de_autenticacin_tipos_de_factores.html" class="daddy">1. Mecanismos de autenticación. Tipos de factores.</a>
+   <ul class="other-section">
+      <li><a href="11_mltiples_factores_de_autenticacin.html" class="no-ch">1.1 Múltiples factores de autenticación</a></li>
+      <li><a href="tarea_1_autenticacin_de_doble_factor_por_ssh_con_google_authenticator.html" class="no-ch">Tarea 1. Autenticación de doble factor por SSH con Google Authenticator</a></li>
+      <li><a href="laboratorio_1_autenticacin_multifactor_con_yubico.html" class="no-ch">Laboratorio 1. Autenticación multifactor con Yubico</a></li>
+      <li><a href="tarea_2_ubuntu__2fa_para_login_con_yubico_security_key.html" class="no-ch">Tarea 2. Ubuntu - 2FA para login con Yubico Security Key</a></li>
+   </ul>
+   </li>
+   <li><a href="2_tcnicas_de_autenticacin.html" class="no-ch">2. Técnicas de autenticación</a></li>
+   <li><a href="3_gestin_de_credenciales.html" class="daddy">3. Gestión de credenciales</a>
+   <ul class="other-section">
+      <li><a href="31_lastpass.html" class="no-ch">3.1 LastPass</a></li>
+      <li><a href="32_keepass.html" class="no-ch">3.2 Keepass</a></li>
+      <li><a href="33_otros_gestores_de_contraseas.html" class="no-ch">3.3 Otros gestores de contraseñas</a></li>
+      <li><a href="tarea_3_instalacin_configuracin_y_puesta_en_produccin_de_un_gestor_de_credenciales.html" class="no-ch">Tarea 3. Instalación, configuración y puesta en producción de un gestor de credenciales</a></li>
+      <li><a href="34_brechas_de_seguridad_y_contraseas_inseguras.html" class="no-ch">3.4 Brechas de seguridad y contraseñas inseguras</a></li>
+   </ul>
+   </li>
+   <li><a href="4_acceso_por_medio_de_firma_electrnica.html" class="daddy">4. Acceso por medio de firma electrónica</a>
+   <ul class="other-section">
+      <li><a href="41_lectores_de_dnie.html" class="no-ch">4.1 Lectores de DNIe</a></li>
+      <li><a href="42_uso_de_nfc_con_el_dnie.html" class="no-ch">4.2 Uso de NFC con el DNIe</a></li>
+   </ul>
+   </li>
+   <li><a href="5_sistemas_de_single_sign_on_sso.html" class="daddy">5. Sistemas de Single Sign On SSO</a>
+   <ul class="other-section">
+      <li><a href="tarea_4_sistemas_sso.html" class="no-ch">Tarea 4. Sistemas SSO</a></li>
+   </ul>
+   </li>
+   <li><a href="6_criptografa.html" class="daddy">6. Criptografía</a>
+   <ul class="other-section">
+      <li><a href="61_aplicacin_de_la_criptografa_en_la_seguridad_de_la_informacin.html" class="daddy">6.1 Aplicación de la Criptografía en la seguridad de la información</a>
+      <ul class="other-section">
+         <li><a href="611_principios_bsicos_de_la_criptografa.html" class="no-ch">6.1.1 Principios básicos de la criptografía</a></li>
+         <li><a href="612_criptografa_clsica.html" class="no-ch">6.1.2 Criptografía clásica</a></li>
+         <li><a href="613_servicios_de_seguridad_de_criptografa.html" class="no-ch">6.1.3 Servicios de seguridad de criptografía</a></li>
+         <li><a href="614_criptografa_moderna.html" class="daddy">6.1.4 Criptografía Moderna</a>
+         <ul class="other-section">
+            <li><a href="6141_criptografa_de_clave_privada.html" class="daddy">6.1.4.1 Criptografía de clave privada</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_1_cifrado_simtrico_de_archivos.html" class="no-ch">Laboratorio 1. Cifrado simétrico de archivos</a></li>
+               <li><a href="prctica_1_cifrado_simtrico.html" class="no-ch">Práctica 1. Cifrado simétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6142_criptografa_de_clave_pblica.html" class="daddy">6.1.4.2 Criptografía de clave pública</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_2_cifrado_asimtrico_de_ficheros.html" class="no-ch">Laboratorio 2. Cifrado asimétrico de ficheros</a></li>
+               <li><a href="prctica_2cifrado_asimtrico.html" class="no-ch">Práctica 2.Cifrado Asimétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6143_ventas_y_desventajas_cifrado_simtrico_y_asimetrico.html" class="no-ch">6.1.4.3 Ventas y desventajas cifrado simétrico y asimetrico</a></li>
+            <li><a href="6144_criptografa_hbirida.html" class="no-ch">6.1.4.4 Criptografía híbirida</a></li>
+         </ul>
+         </li>
+         <li><a href="615_esteganografa.html" class="daddy">6.1.5 Esteganografía</a>
+         <ul class="other-section">
+            <li><a href="tarea_5_openstego.html" class="no-ch">Tarea 5. OpenStego</a></li>
+         </ul>
+         </li>
+         <li><a href="616_funciones_hash.html" class="daddy">6.1.6 Funciones hash</a>
+         <ul class="other-section">
+            <li><a href="tarea_6_funciones_hash.html" class="no-ch">Tarea 6. Funciones hash</a></li>
+            <li><a href="tarea_7_quickhash.html" class="no-ch">Tarea 7. QuickHash</a></li>
+            <li><a href="tarea_8_funciones_avanzadas_hash_de_powershell.html" class="no-ch">Tarea 8. Funciones avanzadas hash de powershell</a></li>
+            <li><a href="laboratorio_3_funciones_hash_con_kleopatra.html" class="no-ch">Laboratorio 3. Funciones hash con Kleopatra</a></li>
+         </ul>
+         </li>
+         <li><a href="617_uso_de_tcnicas_criptogrficas_en_las_pyme.html" class="no-ch">6.1.7 Uso de técnicas criptográficas en las PYME</a></li>
+         <li><a href="618_sistemas_encriptacin_hardware_tpmhsm.html" class="no-ch">6.1.8 Sistemas encriptación hardware (TPM/HSM)</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="7_sistemas_de_control_de_acceso_y_autenticacin.html" class="current-page-parent daddy">7. Sistemas de control de acceso y autenticación</a>
+   <ul>
+      <li><a href="71_creacin_de_claves_ssh.html" class="no-ch">7.1 Creación de claves SSH</a></li>
+      <li class="current-page-parent"><a href="72_certificados_digitales_gestin_de_una_pki.html" class="current-page-parent daddy">7.2. Certificados digitales, gestión de una PKI</a>
+      <ul>
+         <li><a href="721_certificados_digitales.html" class="daddy">7.2.1 Certificados digitales</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_certificado_personal.html" class="no-ch">Laboratorio 4. Certificado personal</a></li>
+            <li><a href="tarea_9_verificacin_de_certificados_digitales.html" class="no-ch">Tarea 9. Verificación de certificados digitales</a></li>
+         </ul>
+         </li>
+         <li><a href="722_firma_digital.html" class="daddy">7.2.2 Firma digital</a>
+         <ul class="other-section">
+            <li><a href="prctica_3_verificacin_de_la_autenticidad_e_integridad_de_un_mensaje.html" class="no-ch">Práctica 3: Verificación de la autenticidad e integridad de un mensaje</a></li>
+         </ul>
+         </li>
+         <li id="active"><a href="723_infraestructuras_de_clave_pblica_pki.html" class="active no-ch">7.2.3 Infraestructuras de clave pública (PKI)</a></li>
+         <li><a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="no-ch">Laboratorio 5. Infraestructura de clave pública propia con OpenSSL</a></li>
+         <li><a href="caso_prctico_uso_de_certificados_en_servicios_web.html" class="no-ch">Caso Práctico. Uso de certificados en Servicios WEB</a></li>
+         <li><a href="reto_implementacin_de_una_sistema_de_certificados_pki_en_la_organizacin_con_easyrsa.html" class="no-ch">Reto. Implementación de una sistema de certificados (PKI) en la organización con Easy-RSA</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="8_gestin_de_accesos_sistemas_nac.html" class="daddy">8. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_6_packetfence.html" class="no-ch">Laboratorio 6. PacketFence</a></li>
+      <li><a href="prctica_4_acceso_a_la_web_a_travs_de_un_nac.html" class="no-ch">Práctica 4. Acceso a la web a través de un NAC</a></li>
+   </ul>
+   </li>
+   <li><a href="9_gestin_de_cuentas_privilegiadas.html" class="daddy">9. Gestión de cuentas privilegiadas</a>
+   <ul class="other-section">
+      <li><a href="101_pam.html" class="no-ch">10.1 PAM</a></li>
+      <li><a href="tarea_10_ejecutar_como.html" class="no-ch">Tarea 10. Ejecutar como</a></li>
+   </ul>
+   </li>
+   <li><a href="10_protocolos_radius_y_tacacs_servicio_kerberos.html" class="daddy">10. Protocolos RADIUS y TACACS, servicio KERBEROS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_7_freeradius.html" class="daddy">Laboratorio 7. freeRadius</a>
+      <ul class="other-section">
+         <li><a href="1_instalacin_servidor_radius.html" class="no-ch">1. Instalación servidor Radius</a></li>
+         <li><a href="2_instalacin_cliente_radius.html" class="no-ch">2. Instalación Cliente Radius</a></li>
+      </ul>
+      </li>
+      <li><a href="laboratorio_8_radius_windows_server.html" class="no-ch">Laboratorio 8. Radius Windows Server</a></li>
+   </ul>
+   </li>
+   <li><a href="11_ldap.html" class="daddy">11. LDAP</a>
+   <ul class="other-section">
+      <li><a href="111_instalacin_y_configuracin_de_ldap.html" class="no-ch">11.1 Instalación y configuración de LDAP.</a></li>
+      <li><a href="112_configuracin_de_certificados_ssltsl_en_ldap.html" class="no-ch">11.2 Configuración de certificados SSL/TSL en LDAP.</a></li>
+      <li><a href="113_creacin_de_cuentas_ldap.html" class="no-ch">11.3 Creación de cuentas LDAP</a></li>
+      <li><a href="114_instalacin_de_sssd_en_el_cliente_ubuntu_desktop.html" class="no-ch">11.4 Instalación de SSSD en el cliente Ubuntu Desktop</a></li>
+      <li><a href="proyecto_instalar_servidor_de_autenticacin_openldap_servidor_ubuntu.html" class="no-ch">Proyecto. Instalar servidor de autenticación OpenLdap Servidor Ubuntu</a></li>
+   </ul>
+   </li>
+   <li><a href="12_referencias.html" class="no-ch">12. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="prctica_3_verificacin_de_la_autenticidad_e_integridad_de_un_mensaje.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">7.2.3 Infraestructuras de clave pública (PKI)</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id86">
+<div class="iDevice emphasis0" >
+<div id="ta86_109_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p id="yui_3_17_2_1_1635093219585_87" style="text-align: justify;">Una <strong><em>infraestructura de clave pública PKI</em></strong> es una combinación de hardware, software, políticas y procedimientos de seguridad, que permiten la ejecución con garantías de operaciones criptográficas como el cifrado, la firma digital y el no repudio de transacciones electrónicas.</p>
+<p style="text-align: justify;">La <strong><em>criptografía de clave pública</em> </strong>fue inventada en 1975 por <em><strong>Whitfield Diffie y Matin Hellman</strong></em>. Se basa en emplear un par de claves distintas, una pública y otra privada. La idea fundamental es que las claves están ligadas matemáticamente pero es computacionalmente imposible obtener una a partir de la otra.</p>
+<p style="text-align: justify;">Este tipo de algoritmos tienen dos aplicaciones fundamentales:</p>
+<ol style="text-align: justify;">
+<li><strong>Cifrado</strong>. Si un usuario A quiere mandar un mensaje a otro usuario B, lo cifra usando la clave pública de B. Cuando B lo recibe lo descifra usando su clave privada. Si alguien intercepta el mensaje no puede descifrarlo, ya que no conoce la clave privada de B (de hecho, ni tan siquiera A es capaz de descifrar el mensaje).</li>
+<li><strong>Firmas digitales</strong>. Si B cifra un mensaje usando su clave privada cualquiera que tenga su clave pública podrá obtener el texto en claro correspondiente; si alguien quiere hacerse pasar por B tendrá que cifrar el mensaje usando la misma clave privada o no se descifrará correctamente con la clave pública de B. Lo que B ha hecho es firmar digitalmente el mensaje. El proceso de descifrar con una clave pública un mensaje firmado se denomina verificación de firma.</li>
+</ol>
+<p style="text-align: justify;">El problema fundamental de este tipo de algoritmos es la <strong><em>distribución de las claves</em></strong>; aunque la clave pública se puede distribuir libremente (A la puede enviar por correo o decírsela a B por teléfono), nos queda el problema de la suplantación (C le puede dar su clave pública a B haciéndose pasar por A -<a href="https://es.wikipedia.org/wiki/Ataque_de_intermediario" target="_blank" rel="noopener">Ataque Man in the Middle</a>). Para solventar estos problemas <span>entran en juego las </span><strong>autoridades de certificación</strong><span> (AC o CA, Certification Authority), que asumen la responsabilidad de <strong>autenticar</strong> la identidad de esa <strong>clave pública </strong>(<strong>vincular las claves públicas a las entidades)</strong> y que aparecerá en un documento electrónico llamado </span><strong>certificado digital</strong><span>.</span></p>
+<p style="text-align: justify;"><span>Todo este conjunto de <strong><em>certificados</em></strong>, <strong><em>firmas digitales,</em><em> autoridades de certificación</em></strong> y los procesos que intervienen, forman parte de lo que se conoce como <strong>infraestructura de clave pública.</strong></span></p>
+<p style="text-align: center;"><img src="infraestrucutra-PKI.png" alt="" width="676" height="397" /></p>
+<p style="text-align: justify;">"Por infraestructura de clave pública o<span> </span><strong>PKI</strong><span> </span>(Public Key Infraestructure) se entiende el conjunto de herramientas hardware, software, procesos y procedimientos legales que permiten crear, gestionar, almacenar, distribuir y revocar certificados digitales".</p>
+<p style="text-align: justify;">"Este término incluye por tanto las autoridades de certificación y al resto de elementos que participan como los certificados digitales o los algoritmos de clave pública y firma digital en comunicaciones  y transacciones electrónicas".</p>
+<h3 style="text-align: justify;">2. Componentes de una PKI</h3>
+<p style="text-align: justify;">Figuran las entidades que se relacionan y la gestión de los certificados de clave pública.</p>
+<p style="text-align: justify;">Están regulados por la norma ITU. X.509.</p>
+<p style="text-align: justify;">Las entidades de una PKI:</p>
+<ul>
+<li style="text-align: justify;">Emiten certificados.</li>
+<li style="text-align: justify;">Renuevan certificados.</li>
+<li style="text-align: justify;">Verifican y emplean certificados.</li>
+<li style="text-align: justify;">Revocan certificados.</li>
+</ul>
+<p><span>Una <em>infraestructura de clave pública</em> consta de:</span></p>
+<ul>
+<li><strong>Titulares de Certificados</strong>. S<span>on las entidades finales, usuarios o suscriptores de los certificados y por tanto a quien pertenecen.</span></li>
+<li><strong>Autoridad de registro <span>(RAs). A</span></strong>utorizan la asociación entre una clave pública y el titular de un certificado.</li>
+<li><strong>Autoridad de certificación </strong><span><strong>(CAs)</strong>. Llevan la gestión de los certificados.</span></li>
+<li><strong>Autoridad de validación <span>(opcional). </span></strong>Suministra información de forma online (en tiempo real) acerca del estado de un certificado.</li>
+<li><strong>Repositorio de certificados y CRL's</strong>. A<span>lmacenan y distribuyen certificados y estados de los mismos.</span></li>
+</ul>
+<p style="text-align: center;"><img src="pki_componentes.png" alt="" width="619" height="387" /></p>
+<p style="text-align: center;"><em><strong>Figura 1. </strong> Componentes y su relación de una PKI.</em></p>
+<p style="text-align: justify;"><span>Un elemento importante en la PKI son los </span><strong>certificados digitales</strong><span>, documentos electrónicos emitidos por autoridades de certificación (AC) que garantizan la identidad de un usuario o servicio electrónico como una página web.</span></p>
+<h4 style="text-align: justify;">2.1 Norma X.509</h4>
+<p style="text-align: justify;"><a href="https://es.wikipedia.org/wiki/X.509" target="_blank" rel="noopener"><strong>X.509</strong></a> es un estándar de UIT-T para infraestructuras de clave pública. Entre otras cosas, especifica formatos estándar para certificados de claves públicas y un algoritmo de validación de la ruta de certificación.</p>
+<p style="text-align: justify;">Un certificado digital X.509 v3 tiene la siguiente estructura:</p>
+<ul style="text-align: justify;">
+<li>Certificado
+<ul>
+<li>Versión.</li>
+<li>Número de serie del certificado.</li>
+<li>ID del algoritmo utilizado por la AC para firmar.</li>
+<li>Emisor (AC).</li>
+<li>Validez:
+<ul>
+<li>No antes de.</li>
+<li>No después de.</li>
+</ul>
+</li>
+<li>Sujeto.</li>
+<li>Información de clave pública del sujeto:
+<ul>
+<li>Algoritmo de clave pública.</li>
+<li>Clave pública del sujeto.</li>
+</ul>
+</li>
+<li>Identificador único del emisor (opcional).</li>
+<li>Identificador único del sujeto (opcional).</li>
+<li>Extensiones X509v3 (opcional).</li>
+</ul>
+</li>
+<li>Algoritmo usado para firmar el certificado</li>
+<li>Firma digital del certificado</li>
+</ul>
+<p style="text-align: justify;">El campo<span> </span><em>Version</em><span> </span>indica la versión del certificado. Algunos campos no aparecen en según qué versiones:</p>
+<ul style="text-align: justify;">
+<li>Versión 1:<span> </span><a href="https://tools.ietf.org/html/rfc1422">RFC1422</a></li>
+<li>Versión 2:<span> </span><a href="https://tools.ietf.org/html/rfc2459">RFC2459</a></li>
+<li>Versión 3:<span> </span><a href="https://tools.ietf.org/html/rfc5280">RFC5280</a></li>
+</ul>
+<p style="text-align: justify;">El campo<span> </span><strong><em>Serial Number</em> </strong>contiene un número de serie que debe ser único para cada certificado emitido por una misma AC.</p>
+<p style="text-align: justify;">El campo<span> </span><strong><em>Subject</em></strong><span> </span>contiene los datos que identifican al sujeto titular en notación DN (<em>Distinguished Name</em>), compuesto a su vez de diversos campos en una sola línea separados por comas (entre los más frecuentes):</p>
+<ul style="text-align: justify;">
+<li>CN (<em>Common Name</em>, nombre común).</li>
+<li>OU (<em>Organizational Unit</em>, nombre de la unidad organizativa).</li>
+<li>O (<em>Organization</em>, nombre de la organización).</li>
+<li>L (<em>Locality</em>, nombre de localidad).</li>
+<li>ST (<em>State or Province</em>, nombre del estado o provincia).</li>
+<li>C (<em>Country</em>, nombre del país).</li>
+</ul>
+<p style="text-align: justify;"><strong>Ejemplo:</strong></p>
+<p style="text-align: left;">C=ES, ST=Castellón, L=Castellón, O=IES_EL_Caminás OU=Departamento_Informatica, CN=ieselecaminas.org/emailAddress=admin@ieselecaminas.org</p>
+<p style="text-align: justify;">El campo<span> </span><strong><em>Issuer</em></strong><span> </span>contiene los datos que identifican a la AC en notación DN.</p>
+<p style="text-align: justify;">El campo<span> </span><strong><em>Validity</em></strong><span> </span>contiene las fechas entre las cuales el certificado es válido (<em>Not before</em><span> </span>y<span> </span><em>Not after</em>).</p>
+<p style="text-align: justify;">El campo<span> </span><strong><em>X509v3 extensions</em></strong><span> </span>es exclusiva de la <strong>versión 3 de X.509</strong> y permite utilizar campos opcionales para indicar nombres alternativos al principal, usos permitidos para la clave, ubicación de la CRL y la AC, etc. Las extensiones pueden ser críticas o no críticas; las no críticas son ignoradas, mientras que las críticas se deben aplicar hasta el punto de que si el sistema no reconoce una extensión crítica, todo el certificado debe ser rechazado.</p>
+<p style="text-align: justify;">El campo<span> </span><strong><em>Subject Public Key Info</em></strong><span> </span>contiene la clave pública incluyendo también el algoritmo utilizado para crear la clave.</p>
+<p id="yui_3_17_2_1_1634204926122_94" style="text-align: justify;">Por último, la AC añade una serie de campos que identifican la firma de los campos previos. Esta secuencia contiene tres atributos: el algoritmo utilizado en la firma, el resumen (<em>hash</em>) de la firma y la propia firma digital.</p>
+<h3 style="text-align: justify;">3. Entidades participantes de una PKI.</h3>
+<p style="text-align: justify;">Las entidades participantes de una PKI se llaman Certificate Authority (CA).</p>
+<p style="text-align: justify;">Estas, emiten certificados (actúan como notarios) y acreditan e identifican a una entidad. También realizan funciones de autenticación y tienen dos atributos principales:</p>
+<ul>
+<li style="text-align: justify;">Nombre de la CA.</li>
+<li style="text-align: justify;">Clave pública de la CA.</li>
+</ul>
+<h3>4. Funciones de una PKI</h3>
+<p>Las funciones de una PKI son:</p>
+<ul>
+<li>Emitir certificados PKC (Public Key Certificate).</li>
+<li>Mantener actualizada la información sobre los certificados.</li>
+<li>Emitir y publicar listas de certificados revocados.</li>
+<li>Mantener el histórico del estado de los certificados revocados.</li>
+<li>Un PKC se puede emitir de manera:
+<ul>
+<li>Personal.</li>
+<li>Otras CA, cadena de certificación.</li>
+</ul>
+</li>
+<li>Los certificados emitidos se firman con la clave privada de la CA.</li>
+</ul>
+<h3>5. Estructura de una PKI</h3>
+<p style="text-align: justify;">La estructura de una PKI es la siguiente:</p>
+<ul>
+<li style="text-align: justify;">Modelos jerárquicos, en red y puente.</li>
+<li style="text-align: justify;">Existe una CA raíz en la que se deposita toda la confianza.</li>
+<li style="text-align: justify;">Por debajo de la CA raíz se disponen otras CA subordinadas que pueden emitir y gestionar certificados.</li>
+</ul>
+<p style="text-align: center;"><a href="https://www.securityartwork.es/2013/06/12/fundamentos-sobre-certificados-digitales-iii-cadena-de-confianza/" target="_blank" rel="noopener"><img src="jerarquia-CA.png" alt="" width="709" height="241" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Jerarquía CA.</em></p>
+<h3>6. Validación de una cadena de certificación</h3>
+<p style="text-align: justify;">Se necesita determinar si un certificado de una entidad final ha sido emitido por una CA de confianza. El primer certificado de la cadena pertenecerá a una CA de confianza o habrá sido emitido por ella (autofirmado).</p>
+<p>Para las CA intermedias:</p>
+<ul>
+<li>Una CA avala a la siguiente.</li>
+<li>Todos los certificados intermedios emitidos son válidos.</li>
+</ul>
+<p style="text-align: justify;">El último certificado de la cadena es el de la entidad final.</p>
+<h3>7. Validación en los navegadores</h3>
+<p style="text-align: justify;">Cuando se navega por sitios web empleando el protocolo https el navegador facilita los certificados ya que tiene instalados los certificados de la CA raíz de confianza.</p>
+<p style="text-align: center;"><img src="Administrador-certificados-Firefox.png" alt="" width="748" height="459" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Administrador de certificados en Firefox.</em></p>
+<p style="text-align: center;"><em><img src="certificado-jcrequena.png" alt="" width="738" height="275" /></em></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Certificado emitido por ACCV.</em></p>
+<p align="justify"><span style="color: #000000;"><span style="font-size: medium;">Cuando no se puede verificar un certificado, nos aparece la siguiente información:</span></span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><span style="font-size: medium;"><img src="no-verificacion-certificado.png" alt="" width="398" height="255" /></span></span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><span style="font-size: medium;"><em><strong>Figura 4.</strong> No se puede verificar el certificado del sitio web.</em></span></span></p>
+<h3>8. Listado de certificados revocados</h3>
+<p style="text-align: justify;">Cuando un certificado caduca o el usuario ya no lo necesita, se revoca. Las razones son las siguientes:</p>
+<ul style="text-align: justify;">
+<li>Clave privada comprometida.</li>
+<li>Clave privada de la CA emisora comprometida.</li>
+<li>Pérdida de derechos de uso del certificado.</li>
+<li>Reemplazo por otro certificado.</li>
+<li>Certificado revocado temporalmente.</li>
+</ul>
+<p style="text-align: justify;">Las CA's mantienen una lista de certificados revocados (CRL) y son responsables de mantener la lista.</p>
+<p style="text-align: justify;">Un certificado se verifica contra la lista para detectar su validez.</p>
+<p style="text-align: justify;">El p<span style="color: #000000;"><span style="font-size: medium;">rotocolo usado para la revocación o estado de un certificado es el <a href="https://es.wikipedia.org/wiki/Online_Certificate_Status_Protocol" target="_blank" rel="noopener">OCSP</a>.</span></span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">OCSP es un protocolo de x.509 para la revocación de certificados. Facilita la verificación en línea de los certificados debido a CRL desactualizadas.</span></span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">Las acciones que realiza son las siguientes:</span></span></p>
+<ol style="text-align: justify;">
+<li><span style="color: #000000;"><span style="font-size: medium;">Un cliente OCSP solicita a un servidor OCSP información sobre un certificado.</span></span></li>
+<li><span style="color: #000000;"><span style="font-size: medium;">El servidor OCSP responde al cliente sobre el estado del certificado.</span></span></li>
+</ol>
+<h3>9. ADCS Windows Server</h3>
+<p style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">En Windows Server, se tiene el rol <a href="https://docs.microsoft.com/es-es/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority" target="_blank" rel="noopener">ADCS</a></span></span><span style="color: #000000;"><span style="font-size: medium;"> (Active Directory Certificate Services ) que nos evita tener que usar un tercero para hacer la autenticación realizando esta comprobación internamente en nuestro sistema.</span></span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;"><strong>ADCS</strong> permite  realizar una infraestructura de clave pública (PKI) y proporcionar criptografía de clave pública, certificados digitales y firma electrónica para nuestra organización.</span></span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">Las <strong>ventajas</strong> de <strong>ADCS</strong> son:</span></span></p>
+<ul>
+<li style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">Permite trabajar simultáneamente con Active Directory.</span></span></li>
+<li style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">Mantiene las políticas de grupo y asistentes de Active Directory.</span></span></li>
+<li style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">Automatiza la gestión de certificados.</span></span></li>
+<li style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">Realiza la instalación automática de certificados.</span></span></li>
+</ul>
+<p style="text-align: justify;"><span style="color: #000000; font-size: 12pt;">Como <strong>desventajas</strong> se destacan las siguientes:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">La CA que se crea no será reconocida frente a otras entidades oficiales.</span></span></li>
+<li style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">El tiempo de configuración para su realización y gasto de hardware es grande.</span></span></li>
+</ul>
+<p style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">Se tendría que valorar si se quiere realizar esta función en la organización o externalizarla a un tercero.</span></span></p>
+<h3>10. Alternativas a la PKI</h3>
+<p style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;"><span>Una alternativa a la infraestructura de clave pública es el esquema de </span><a href="https://en.wikipedia.org/wiki/Web_of_trust">red de confianza</a><span>, que utiliza un modelo de confianza descentralizado frente al modelo centralizado de la PKI. En lugar de existir una AC (o una jerarquía de AC) que firme las claves públicas, los participantes de la red firman entre sí sus claves públicas con sus claves privadas, con lo que certifican que la clave pública pertenece a la persona física a la que se atribuye.</span></span></span></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="prctica_3_verificacin_de_la_autenticidad_e_integridad_de_un_mensaje.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

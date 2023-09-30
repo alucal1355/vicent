@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1. Seguridad en redes inalámbricas | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-62"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li id="active"><a href="1_seguridad_en_redes_inalmbricas.html" class="active daddy">1. Seguridad en redes inalámbricas</a>
+   <ul>
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li><a href="3_servidor_de_autenticacin_radius.html" class="daddy">3. Servidor de autenticación Radius</a>
+   <ul class="other-section">
+      <li><a href="31_freeradius.html" class="daddy">3.1 FreeRadius</a>
+      <ul class="other-section">
+         <li><a href="311_instalacin_servidor_radius.html" class="daddy">3.1.1. Instalación servidor Radius</a>
+         <ul class="other-section">
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul class="other-section">
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul class="other-section">
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objetivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11_ataques_a_redes_wifi.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1. Seguridad en redes inalámbricas</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id92">
+<div class="iDevice emphasis0" >
+<div id="ta92_108_2" class="block iDevice_content">
+<div class="exe-text"><h3><span>1. Introducción</span></h3>
+<p style="text-align: justify;">Actualmente, podemos decir que las<span> </span><em><strong>redes inalámbricas</strong></em><span> </span>se utilizan cada vez más superando ya en uso a las cableadas. Algunos de los factores determinantes para decantarse por su uso son:</p>
+<ul>
+<li style="text-align: justify;">Reducción de costes que supone no necesitar una infraestructura de cable.</li>
+<li style="text-align: justify;">La movilidad que permite a los usuarios desplazarse por una organización con sus equipos inalámbricos.</li>
+</ul>
+<p style="text-align: justify;">Algunos problemas que se pueden encontrar en el uso de este tipo de redes son:</p>
+<ul>
+<li style="text-align: justify;"><span style="color: #333333; font-size: 1em;">Falta de cobertura.</span></li>
+<li style="text-align: justify;"><span style="color: #333333; font-size: 1em;">Interferencia con puntos de acceso (AP) cercanos en el mismo canal.</span></li>
+<li style="text-align: justify;"><span style="color: #333333; font-size: 1em;">Presencia de inhibidores de frecuencia.</span></li>
+<li style="text-align: justify;"><span style="color: #333333; font-size: 1em;">Seguridad en el acceso. </span></li>
+</ul>
+<h3 style="text-align: justify;">2. Tecnología inalámbrica</h3>
+<p style="text-align: justify;">Para que funcione una red inalámbrica, ésta debe tener el hardware y el software adecuados, ejemplos:</p>
+<ul>
+<li style="text-align: justify;">Teléfonos inalámbricos.</li>
+<li style="text-align: justify;">GPS.</li>
+<li style="text-align: justify;">Equipos para la apertura de puertas de garaje.</li>
+<li style="text-align: justify;">etcétera.</li>
+</ul>
+<h4 style="text-align: justify;">Componentes de las redes inalámbricas</h4>
+<p style="text-align: justify;">Cuando un usuario se conecta a una red inalámbrica o accede a una estación wifi, ésta puede ser:</p>
+<ul>
+<li style="text-align: justify;">Un router (o enrutador, dispositivo que permite interconectar dispositivos que funcionan en el rango de una red).</li>
+<li style="text-align: justify;">Un punto de acceso, que amplía la red.</li>
+</ul>
+<p>Además, para conectarse al AP o router, el usuario ha de disponer en su equipo de una tarjeta de interfaz de red inalámbrica (WNIC).</p>
+<p style="text-align: justify;"><strong>Ejemplo</strong>: Un usuario necesita de forma urgente comprobar su correo corporativo y no dispone de una conexión de datos.</p>
+<p style="text-align: center;"><img src="nature-g2ea2fd374_640.jpg" alt="" width="481" height="321" /></p>
+<p style="text-align: center;"><a href="https://pixabay.com/es/photos/naturaleza-difuminar-wifi-logo-2564502/" target="_blank" rel="noopener"><span class="title"><em>WiFi insegura</em></span><span> </span><span class="license"><span class="sep">(</span><span class="custom-license">Pixabay License</span><span class="sep">)</span></span></a></p>
+<p>Un punto de acceso (AP) es un transceptor que se conecta a un cable Ethernet y tiene las siguientes funciones:</p>
+<ul>
+<li>Conecta la red inalámbrica con la red cableada aunque no todas las redes inalámbricas se conectan a una red cableada.</li>
+<li>La mayoría de las empresas tienen LAN inalámbricas (WLAN) que se conectan a su topología de red cableada.</li>
+</ul>
+<p>En el punto de acceso (AP) es donde se configuran los canales y sólo está disponible dentro de un área definida.</p>
+<h4>Identificadores de conjuntos de servicios (SSID)</h4>
+<p>El SSID es el nombre utilizado para identificar la red de área local inalámbrica (WLAN). Sus características son:</p>
+<ul>
+<li>El SSID está configurado en el AP.</li>
+<li>Es un nombre alfanumérico único de 1 a 32 caracteres.</li>
+<li>El nombre distingue entre mayúsculas y minúsculas.</li>
+<li>Los equipos inalámbricos necesitan configurar el SSID antes de conectarse a una red inalámbrica.</li>
+</ul>
+<p style="text-align: center;"><img src="redes-wifi.png" alt="" width="312" height="268" /></p>
+<p style="text-align: justify;">El <strong>SSID</strong> se transmite con cada paquete para identificar a qué red pertenece el mismo. Generalmente el AP transmite el SSID aunque se puede configurar el AP para que <strong>no transmita su SSID</strong> hasta después de la autenticación.</p>
+<p style="text-align: justify;">Uno de los problemas comunes que se encuentran en las <strong>auditorías de las redes inalámbricas</strong> es que los AP mantienen el SSID configurado por el proveedor dado que en la empresa al instalarlo no se ha modificado. Se tendría que cambiar el nombre en todos los AP de la red inalámbrica.</p>
+<p style="text-align: center;"><img src="beacom-frame.png" alt="" width="670" height="89" /></p>
+<h3>2. ¿Cuáles son riesgos de que alguien se conecte a una red WiFi abierta?</h3>
+<p style="text-align: justify;">Si se establece una conexión hacia una red sin contraseña, se realizará una conexión automática sin necesidad de hacer mayor esfuerzo, pero <span> </span><strong>no es una buena práctica</strong>, ya que el dispositivo puede ser infectado o atacado con la intención robar información sensible.</p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/dqfgmO2I1R8" allowfullscreen="allowfullscreen"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 1.</strong> Ejemplo de acceso a wifi sin contraseña.</em></p>
+<p style="text-align: justify;">Este tipo de redes públicas se pueden encontrar en un aeropuerto o una cafetería, pero también puede que sea un punto de acceso malicioso y alguien con malas intenciones, puede escuchar el tráfico para analizarlo e intentar extraer información de los dispositivos que se conecten a esa red pública e insegura (sin contraseña). Por ejemplo, robar credenciales de acceso de un correo electrónico.</p>
+<p style="text-align: justify;">Para añadir un poco más de control sobre las redes inalámbricas hay que asegurarse de conocer donde se está estableciendo esa conexión y si es de confianza.</p>
+<h3>3. ¿Cuáles son riesgos de que alguien se conecte al red WiFi empresarial?</h3>
+<p>Alguno de los riesgos más significativos pueden ser:</p>
+<ul>
+<li>El <strong>robo de información confidencial</strong>. Cuando un intruso se conecta a una red privada, podría acceder tanto a dispositivos como al tráfico generado (correo, web, etc).</li>
+<li style="text-align: justify;">Utilizar la red para <strong>realizar acciones ilegales</strong>, una vez dentro de la red de la organización podría usar los dispositivos que se encuentren en la misma para llevar a cabo movimientos sospechosos o ilegales, como aplicar una denegación de servicio (DoS) a una página web. Estas acciones ilegales pueden tener consecuencias, en caso de denuncia seremos nosotros como titulares de la red los perjudicados, puede suponer cortes temporales de servicio, problemas legales con los afectos, etc.</li>
+<li style="text-align: justify;"><strong>Infección de dispositivos</strong> con malware (programa malicioso), pueden que dejen de funcionar o que incluso esos dispositivos lleguen a infectar a otros alargando la vida del malware.</li>
+<li style="text-align: justify;"><strong>Reducción del ancho de banda,</strong> dependiendo del número de intrusos o del alcance de su intrusión, se puede detectar una reducción del rendimiento de la conexión.</li>
+</ul>
+<h4 style="text-align: justify;">pero... ¿Cómo lo hacen?</h4>
+<p style="text-align: justify;">Los intrusos aprovechan una incorrecta configuración de la seguridad en el router. Dependiendo del método de seguridad que se utilice, se ofrecerá más o menos resistencia para el intruso, pero conseguirán conectarse sin problemas si se presenta alguna de las siguientes debilidades.</p>
+<p style="text-align: center;"><a href="debilidades-Wifi.png"><img src="debilidades-Wifi.png" alt="" width="459" height="687" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Debilidades en el router Wifi.</em></p>
+<h3>4. ¿Cómo proteger la red?</h3>
+<p style="text-align: justify;">Si se quiere minimizar la probabilidad de ser víctimas de un ataque que pueda poner en riesgo la red WiFi hay que protegerse para evitar esos ataques al usar las redes inalámbricas.</p>
+<p>Lo más básico será aplicar estas modificaciones:</p>
+<ol>
+<li>Cambiar la contraseña de acceso al router.</li>
+<li>Modificar el nombre de la red inalámbrica (SSID).</li>
+<li>Cambiar la contraseña de acceso a la red wifi.</li>
+<li>Actualización del Firmware (software o programa informático que controla las funcionalidades de un dispositivo físico o un hardware concreto como un router).</li>
+<li>Configurar la red wifi con cifrado con protocolos de seguridad más avanzado dependiendo de que dispositivo tengamos (WPA2).</li>
+<li>Desactivar WPS.</li>
+<li>Implementar una red para invitados.</li>
+<li>Habilitar filtrado por dirección MAC.</li>
+<li>Reducir los rangos de direcciones IP permitidas.</li>
+<li>Deshabilitar la administración remota.</li>
+<li>Deshabilitar UPnP (Universal Plug and Play).</li>
+<li>Establecer horarios y desactivar la red WiFi fuera de este horario.</li>
+</ol>
+<h3>5. ¿Cómo detectar a un intruso?</h3>
+<p style="text-align: justify;">Una sencilla manera para detectar un intruso puede ser la comprobación de los equipos conectados, si se dispone de un listado de activos actualizado se puede compararlos con los dispositivos que están conectados.</p>
+<p style="text-align: justify;">Hoy en día los routers además de identificar los equipos conectados permiten etiquetarlos lo que hace que resulte más sencilla y rápida esta comprobación.</p>
+<p style="text-align: justify;">Conocer la infraestructura de red es de vital importancia, por lo que si además de un listado de activos se dispone de un mapa de la red, se podrán realizar comprobaciones periódicas de su estado.</p>
+<h3>6. Tipos de ataques en redes inalámbricas</h3>
+<p style="text-align: justify;">Dado que las comunicaciones inalámbricas viajan por el aire, un usaurio equipado con un equipo que opere en el rango de frecuencias adecuado y dentro del área de cobertura de la red<br />podría captarlas. </p>
+<p style="text-align: justify;">Los ataques de seguridad a las WLAN se pueden agrupar en dos categorías:</p>
+<ul>
+<li style="text-align: justify;"><strong>Ataques activos:</strong> el atacante accede a la red con el fin de alterar y/o modificar la información que se encuentra en ella.</li>
+<li style="text-align: justify;"><strong>Ataques pasivos:</strong> el atacante accede a la red con el fin de capturar la información intercambiada entre los extremos de la comunicación.</li>
+</ul>
+<p style="text-align: center;"><img src="tipos-ataques.png" alt="" width="717" height="327" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Tipos de ataques en una red inalámbrica.</em></p>
+<h4 style="text-align: justify;">6.1 Suplantación</h4>
+<p style="text-align: justify;">La suplantación consiste en la obtención de la identidad de un usuario autorizado por parte del atacante. El método más simple para realizar este tipo de ataque es utilizar una dirección MAC válida para suplantar la identidad e identificarse como cliente autorizado. Este tipo de ataque normalmente incluye otros tipos de ataques activos, ejemplos:</p>
+<ul>
+<li style="text-align: justify;"><strong>Honeypot</strong>: El atacante coloca un AP configurado con el mismo ESSID de la red a atacar dentro del área de cobertura de esa red y espera a que un usuario legítimo se conecte e intente validarse con su usuario y contraseña para así obtenerla.</li>
+<li style="text-align: justify;"><strong>Man in the Middle</strong>: el atacante se ubica entre el cliente y el AP consiguiendo así controlar la comunicación entre ambos. Todos los datos entre cliente y AP pasarán por manos del atacante, pudiendo guardarla, modificarla, alterarla, etcétera.</li>
+<li style="text-align: justify;"><strong>MAC Spoofing:</strong> el atacante, mediante captura de paquetes, obtiene la dirección MAC de un cliente legítimo y substituye la de su tarjeta de red por la obtenida, para así saltarse la protección por MAC de los APs.</li>
+<li style="text-align: justify;">etcétera.</li>
+</ul>
+<h4 style="text-align: justify;">6.2 Reactuación</h4>
+<p>Consiste en capturar mensajes legítimos y repetirlos para producir un efecto no deseado, como por ejemplo repetir ingresos de dinero, envío masivo de de emails, etcétera.</p>
+<h4 style="text-align: justify;">6.3 Modificación</h4>
+<p style="text-align: justify;">Consiste en capturar mensajes enviados por un usuario autorizado y modificarlos, borrarlos o reordenarlos, para producir un efecto no autorizado. Ejemplo: capturar un mensaje que diga “Realizar un ingreso en efectivo en la cuenta A”, y modificar el número de cuenta por “B”.</p>
+<h4 style="text-align: justify;">6.4 Denegación de Servicio</h4>
+<p>Consiste en evitar que los clientes legítimos consigan acceder a la red o a un servicio que esta ofrezca. Ejemplo: saturar el ambiente con ruido de RF, inyectar mucho tráfico a la red para disminuir su rendimiento o colapsarla, saturar a peticiones de autenticación a un Punto de Acceso inalámbrico, etcétera.</p>
+<h4 style="text-align: justify;">6.5 Sniffing</h4>
+<p>Consiste en capturar el tráfico de una red para posteriormente poder obtener datos de ellas como por ejemplo direcciones IP, direcciones MAC, direcciones de correo electrónico, etcétera.</p>
+<h4 style="text-align: justify;">6.6 Análisis de tráfico</h4>
+<p style="text-align: justify;">Consiste en obtener información mediante el análisis del tráfico y sus patrones. Ejemplo: conocer a que hora se encienden ciertos equipos, cuanto tráfico se envía, a que horas hay más tráfico, etcétera.</p>
+<h4 style="text-align: justify;">6.7 Ataque por fuerza bruta</h4>
+<p style="text-align: justify;">Consiste en, a partir de la captura de mensajes, probar todas las combinaciones de caracteres posibles para así obtener la clave WEP. Para realizar este ataque es indispensable conocer el texto<br />en claro y el texto cifrado del mensaje. Este proceso puede llegar a ser extremadamente lento dependiendo de la longitud de la clave y de la variedad de caracteres utilizados.</p>
+<h3 style="text-align: justify;">7. Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="http://www.wifimap.io" target="_blank" rel="noopener">WiFi Map - Web para encontrar puntos de acceso</a>
+<ul>
+<li style="text-align: justify;"><a href="https://www.wifimap.io/1032-castellon-de-la-plana-free-wifi/map" target="_blank" rel="noopener">Castellón</a></li>
+</ul>
+</li>
+<li style="text-align: justify;"><a href="http://www.wigle.net" target="_blank" title="WIGLE - Web para encontrar puntos de acceso" rel="noopener">www.wigle.net</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objetivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11_ataques_a_redes_wifi.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

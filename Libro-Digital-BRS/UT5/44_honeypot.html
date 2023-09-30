@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.4. Honeypot | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-74"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="daddy">3. Securización de los sistemas de administración remota</a>
+   <ul class="other-section">
+      <li><a href="31_secureshell.html" class="daddy">3.1 SecureShell</a>
+      <ul class="other-section">
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="current-page-parent daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul>
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="44_honeypot.html" class="active no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_windows__ids_wazuh.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.4. Honeypot</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id123">
+<div class="iDevice emphasis0">
+<div id="ta123_85" class="block iDevice_content">
+<h3 style="text-align: justify;">1. ¿Qué es un Honeypot?</h3>
+<p style="text-align: justify;">Un <strong>honeypot</strong> es, como su nombre indica, un tarro de miel, es decir, <strong>sistemas trampa</strong> o señuelo.</p>
+<p style="text-align: center;"><img src="honeypot.jpg" alt="" width="213" height="230" /></p>
+<p style="text-align: justify;">Son herramientas (software / hardware) que <strong><em>simulan ser equipos vulnerables</em></strong> con el objetivo de atraer ataques sin ningún riesgo, para registrar la actividad y analizarla, bien en tiempo real para generar alertas, o bien posteriormente para aprender que tipos de ataques se sufren en los equipos/red, para mejorar la seguridad de la organización y evitar que vuelvan a producirse ataques similares.</p>
+<p style="text-align: justify;">En sus inicios fueron desarrollados para simular entornos de red básicos (TI), poco a poco se han ido ampliando y hoy en día existen de todo tipo, incluso para redes industriales (TO). Se pueden implementar de manera individual o de forma conjunta, como una red de Honeypots que pueden llegar a simular entornos complejos y completos, estas redes reciben el nombre de <a href="https://es.wikipedia.org/wiki/Honeynet" target="_blank" rel="noopener"><strong>Honeynets</strong></a> y son una herramienta fundamental para recabar información sobre los tipos de ataques que reciben las organizaciones.</p>
+<p style="text-align: justify;">Existen una gran cantidad de ejemplos y soluciones que se pueden probar, correctamente configurados, son una herramienta más para evaluar la seguridad de nuestro entorno y recopilar información que ayude a responder ante posibles ataques, pero hay que tener en cuenta que requieren mantenimiento, por lo que habrá que introducirlos en los planes internos como parte de la infraestructura TIC para tenerlos actualizados y que sea una herramienta útil.</p>
+<p style="text-align: justify;">Los <strong>Honeypot</strong> sirven como herramienta didáctica.</p>
+<h3 style="text-align: justify;">2. Tipos de Honeypot</h3>
+<p style="text-align: justify;">Existen varios tipos de honeypot:</p>
+<ul>
+<li style="text-align: justify;"><strong>De producción:</strong> señuelo que simulan ser lugares legítimos y vulnerables.</li>
+<li style="text-align: justify;"><strong>De research:</strong> utilizada para fines educativos y para mejorar la seguridad.</li>
+<li style="text-align: justify;"><strong>Físico:</strong> integra un equipo físico exclusivo que se incluye en nuestra red con su propia IP.</li>
+<li style="text-align: justify;"><strong>Virtual:</strong> sistema virtual incluido en un equipo que mediante la virtualización consigue los recursos como si se tratase un equipo físico más.</li>
+<li style="text-align: justify;"><strong>De baja interacción:</strong> Simula una serie de servicios más comunes a la hora de ser atacados. Su función es recopilar datos de ataques pasivos como botnets.</li>
+<li style="text-align: justify;"><strong>De alta interacción:</strong> utiliza máquinas virtuales vulnerables aisladas del resto de la red para hacer creer al atacante que puede acceder a toda la red.</li>
+</ul>
+<h3>3. Honeypot SSH</h3>
+<p style="text-align: justify;">En esta apartado se describe cómo realizar la instalación de un honeypot de baja interacción de un servicio SSH como es <a href="https://github.com/cowrie/cowrie" target="_blank" rel="noopener">Cowrie</a> con la finalidad de crear listas negras contra los atacantes y contra los empleados desleales que intenten comprometer nuestro sistema.</p>
+<p style="text-align: justify;">Para ello, se hará uso de un<strong> Ubuntu Server 20.04</strong> en el cual se instalará <strong>docker</strong>. Seguidamente se descargará el <a href="https://hub.docker.com/r/cowrie/cowrie" target="_blank" rel="noopener"><strong>docker de Cowrie</strong></a> y se hará uso de él. Para la ejecución de los distintos comandos, se hace uso del usuario administrador que pertenece a los grupos sudo y adm.</p>
+<h4 style="text-align: justify;">3.1 Instalación y Uso</h4>
+<p style="text-align: justify;">En primer lugar, se aborda la instalación de docker, para ello, hay que actualizar los paquetes del equipo Ubuntu Server.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo apt update</span></pre>
+<p style="text-align: center;"><img src="apt-update.png" alt="" width="798" height="503" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Actualización de los repositorios.</em></p>
+<p>Una vez actualizado, se van a instalar las dependencias necesarias para instalar Docker.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo apt install \<br />&gt; apt-transport-https \<br />&gt; ca-certificates \<br />&gt; curl \<br />&gt; gnupg \<br />&gt; lsb-release<br /></span></pre>
+<p style="text-align: center;"><img src="sudo-install.png" alt="" width="911" height="492" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Instalación de las dependencias necesarias.</em></p>
+<p style="text-align: justify;">A continuación, hay que añadir la <strong>clave GPG de Docker.</strong></p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span></pre>
+<p style="text-align: center;"><img src="gpg-docker.png" alt="" width="914" height="38" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Añadir la clave GPG de Docker.</em></p>
+<div class="fx-carousel-content fx-C2" id="exe-carousel-0-2">
+<p style="text-align: justify;">A continuación, hay que agregar el <strong>repositorio de Docker</strong> en la lista de repositorios del equipo:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>echo \<br />&gt; "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \<br />&gt; $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span></pre>
+<p style="text-align: center;"><img src="agregar-repositorio-Docker.png" alt="" width="985" height="95" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Agregar el <strong>repositorio de Docker</strong> en la lista de repositorios del equipo:</em></p>
+<p>El siguiente paso es <span>actualizar de nuevo los paquetes para que se pueda instalar Docker y seguidamente se instala:</span></p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo apt update<br /><strong>administrador@orion:~$ </strong>sudo apt install docker-ce docker-ce-cli containerd.io<br /></span></pre>
+<p style="text-align: center;"><span><img src="update-install-docker.png" alt="" width="935" height="517" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 5.</strong> Actualización de los repositorios.</em></span></p>
+<p>Una vez instalado, se puede verificar con el comando docker ps:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo docker ps</span></pre>
+<p style="text-align: center;"><img src="docker-ps.png" alt="" width="578" height="75" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong> Verificar docker.</em></p>
+<p><strong>Instalación y uso de Cowrie</strong></p>
+<p>A continuación, hay que descargar el <strong>docker de Cowrie</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo docker pull cowrie/cowrie</span></pre>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="docker-pull-01.png" alt="" width="864" height="223" /></td>
+<td style="width: 50%; text-align: center;"><img src="docker-pull-02.png" alt="" width="661" height="427" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;" colspan="2"><span style="font-size: 12pt;"><em><strong>Figura 7.</strong> Descarga del docker de Cowrie.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Una vez descargado el docker, hay que arrancar un <strong>contenedor con Cowrie</strong> de forma desatendida (-d) y utilizando el <strong>puerto 2222</strong> (-p 2222:2222), ya que el 22 actualmente está en uso por el servidor SSH común. Evidentemente esto es un caso práctico para ver su funcionamiento, pero en una situación real, sería utilizar el puerto 22 para <strong>atraer el mayor número de atacantes</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo docker run -p 2222:2222/tcp cowrie/cowrie</span></pre>
+<p style="text-align: center;"><img src="docker-run-01.png" alt="" width="746" height="256" /></p>
+<p style="text-align: center;"><em><strong>Figura 8. </strong>Arrancar un <strong>contenedor con Cowrie.</strong></em></p>
+<p style="text-align: justify;">A continuación, con el comando <strong>docker ps</strong>, se comprueba que se ha arrancado correctamente y se obtiene el estado, imagen, nombre, etcétera.</p>
+<p style="text-align: center;"><img src="docker-ps-cowrie.png" alt="" width="801" height="102" /></p>
+<p style="text-align: center;"><em><strong>Figura 9. </strong>Verificar el contenedor que se ha puesto en marcha.</em></p>
+<p style="text-align: justify;">Ahora que ya está levantado el contenedor, se puede acceder a este supuesto servidor SSH. Para ello, hay que escribir cualquier contraseña para acceder a este servidor.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong> ssh -p 2222 root@localhost</span></pre>
+<p style="text-align: center;"><img src="ssh-p2222.png" alt="" width="681" height="227" /></p>
+<p style="text-align: center;"><em><strong>Figura 10. </strong>Acceso al honeypot (supuesto servidor ssh)<strong>.</strong></em></p>
+<p style="text-align: justify;"><span>Se puede comprobar que se puede utilizar cualquier comando que se utilizaría en Linux, incluso acceder al <b>/etc/shadow/ </b>que se mostrará información ficticia.</span></p>
+<p style="text-align: center;"><span><img src="etc-shadow-docker.png" alt="" width="800" height="421" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 10.</strong> Listar el fichero shadow ficiticio.</em></span></p>
+<h3 style="text-align: justify;"><span>4. </span>Conclusiones</h3>
+<p style="text-align: justify;">Como resumen, se destaca que el uso de un <strong>honeypot como cowrie</strong> ayuda a levantar servicios como señuelo, en este caso un servicio SSH con la intención de detectar ataques de fuerza bruta. Una vez instalado y comprobar que funciona, se puede ver la información de los ataques que se ha recibido.</p>
+<p style="text-align: justify;">Si se accede a los logs, se pueden observar todas las operaciones que se han ido realizando en el honeypot (usuario y contraseña introducido, comandos realizados). El comando es el siguiente, donde el nombre del contenedor para este caso es <span><em>goofy_hawking</em></span>.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong> sudo docker logs nombre_contenedor</span></pre>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong> sudo docker logs goofy_hawking</span></pre>
+<p style="text-align: center;"><img src="log-docker-goofy.png" alt="" width="1205" height="647" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 11.</strong> Listar el log del contenedor goofy_hawking.</em></span></p>
+<p style="text-align: justify;">Para este caso, se puede ver que ha existido un intento de conexión con el usuario y contraseña (Figura 12).</p>
+<p style="text-align: justify;">Los pasos siguientes a dar serian el análisis completo de esta información para ver desde que IP se han intentado conectar y comprobar ese equipo, bien por si puede estar infectado con algún tipo de malware o bien porque el usuario está intentando hacer "login".</p>
+<p style="text-align: justify;">Más adelante, estos logs se podrán almacenar y visualizar de una forma gráfica gracias a herramientas <a href="https://openwebinars.net/blog/que-es-elk-elasticsearch-logstash-y-kibana/" target="_blank" rel="noopener">ELK</a>, desde la que además se podrán ver cuales son las credenciales mas usadas o las IPs desde donde se han recibido los ataques.</p>
+<p style="text-align: justify;"><strong>NOTA. </strong>Para consultar el nombre de los contenedores docker que se tienen funcionando, el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong> sudo docker container ls</span></pre>
+<p style="text-align: center;"><img src="container-ls.png" alt="" width="1248" height="100" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 12.</strong> Consulta del listado de contenedores.</em></span></p>
+<h3>4. Honeypot en entorno industrial</h3>
+<p style="text-align: justify;"><span>En este apartado se describe cómo instalar un <strong>honeypot</strong> que simulará un entorno industrial y cómo usarlo. Para ello se hará uso de un Ubuntu Server con Docker, en el que se utilizará un contenedor con </span><a href="http://conpot.org/" target="_blank" rel="noopener"><strong>C</strong><b>onpot</b></a><span>, un honeypot adecuado a este caso. </span></p>
+<p style="text-align: justify;"><span>Al ser un entorno industrial, maneja protocolos como <strong>modbus</strong>, s7com, ipmi, enip o bacnet, además de los típicos http, ftp y snmp.</span></p>
+<h4 style="text-align: justify;"><span>4.1 Instalación de Conpot y uso básico</span></h4>
+<p style="text-align: justify;">Al igual que en el <strong><em>apartado 3</em></strong>, hay que tener instalado docker. Una vez instalado, hay que descargarse la imagen de <strong>conpot</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong> sudo docker pull honeynet/conpot</span></pre>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="descarga-honeypot-conpot-01.png" alt="" width="478" height="242" /></td>
+<td style="width: 50%; text-align: center;"><img src="descarga-conpot-02.png" alt="" width="650" height="292" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;" colspan="2"><em><span style="font-size: 12pt;"><strong>Figura 13.</strong> Descarga de la imagen de conpot.</span></em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Una vez descargada la imagen, hay que arrancar un contenedor de Conpot abriendo los siguientes puertos.</p>
+<ul>
+<li style="text-align: justify;">El puerto 8800 redirigiéndolo al 8080 de nuestra máquina real.</li>
+<li style="text-align: justify;">Para HTTP el puerto 5020 redirigiéndolo al puerto 502 de nuestra máquina real para MODBUS.</li>
+<li style="text-align: justify;">El puerto 2121 en ambos para FTP.</li>
+</ul>
+<p style="text-align: justify;">Accediendo al interior del contenedor mediante consola de comandos (-it para que sea interactivo el contenedor), de manera desatendida(-d) e indicándole que la red sea en modo puente(--network=bridge).</p>
+<p style="text-align: justify;">Al igual que en el ejemplo práctico del apartado 3 (cowrie) que ya se tenía el puerto correspondiente a SSH abierto y se cambió (puerto 22 por puerto 2222), en este caso se utilizará el puerto 8080 para sustituir al puerto 80, que está actualmente ocupado por el servidor apache.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong> sudo docker run -it -p 8080:8800 -p 502:5020 -p 2121:2121/udp -d --network=bridge honeynet/conpot:latest</span></pre>
+<p style="text-align: center;"><img src="docker-run-conpot.png" alt="" width="1024" height="78" /></p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 14.</strong> Run conpot.</span></em></p>
+<h4 style="text-align: justify;"><em><span style="font-size: 12pt;"></span></em>4.2 Pruebas de funcionamiento</h4>
+<p style="text-align: justify;"><strong>Equipos:</strong></p>
+<ul>
+<li style="text-align: justify;">Windows 10 Enterprise con ip 192.168.191.55.</li>
+<li style="text-align: justify;">Ubuntu Server 20.04: honeypot conpot con ip 192.168.191.96.</li>
+</ul>
+<p style="text-align: justify;">A continuación, se realizan pruebas para comprobar el correcto funcionamiento del honeypot. Para ello se utilizará un equipo Windows 10 Enterprise.</p>
+<h4 style="text-align: justify;">Servicio http</h4>
+<p style="text-align: justify;">Para realizar la prueba del servicio http, se accede mediante un navegador a la IP del servidor Ubuntu mediante el puerto 8080 habilitado.</p>
+<p style="text-align: center;"><img src="acceso-http-contop.png" alt="" width="757" height="325" /></p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 15.</strong> Acceso al servidor web conpot.</span></em></p>
+<h4 style="text-align: justify;">Servicio modbus</h4>
+<p style="text-align: justify;">Para realizar la prueba del <strong>servicio modbus</strong> se utiliza un cliente modbus llamado <strong>SimplyModbusTCPclient</strong>. Se puede descargar desde la siguiente página:</p>
+<ul>
+<li style="text-align: justify;"><a href="http://www.simplymodbus.ca/TCPclient.htm">http://www.simplymodbus.ca/TCPclient.htm</a></li>
+</ul>
+<p style="text-align: center;"><img src="download-modbus-client.png" alt="" width="998" height="626" /></p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 16.</strong> Descarga del cliente modbus.</span></em></p>
+<p style="text-align: justify;">Una vez se ha completado la descarga, hay que e<span>jecutar el instalador y seleccionar la ruta donde se desea instalar</span><span>.</span></p>
+<p style="text-align: center;"><span><img src="install-modbus-tcp.png" alt="" width="1120" height="587" /></span></p>
+<p style="text-align: center;"><span><em><span style="font-size: 12pt;"><strong>Figura 17.</strong> Instalación del cliente modbus.</span></em></span></p>
+<p style="text-align: justify;">A continuación, hay que a<span>ceptar los términos de licencia y en la siguiente pantalla, no marcar la casilla '<strong>Disable Windows fast startup to prevent problems with installing or removing hardware</strong>'. </span></p>
+<p style="text-align: justify;"><span>Una vez finaliza la instalación, si se abre el programa, se puede visualizar la siguiente interfaz, donde hay que indicarle la IP del servidor Ubuntu Server y el puerto 502 previamente habilitado y después, hay que darle al botón <strong>connect.</strong></span></p>
+<p style="text-align: center;"><span><strong><img src="simply-modbus-client.png" alt="" width="780" height="528" /></strong></span></p>
+<p style="text-align: center;"><span><strong><em><span style="font-size: 12pt;">Figura 18. </span></em></strong><em><span style="font-size: 12pt;">Panel Simply Modbus Client.</span></em></span></p>
+<p style="text-align: justify;"><span><span style="font-size: 12pt;">Si se pulsa el botón '<strong>CONNECT</strong>', se realizará la conexión satisfactoriamente a la máquina industrial ficticia con el servicio modbus.</span></span></p>
+<p style="text-align: center;"><span><em><span style="font-size: 12pt;"><img src="simply-modbus-client-Conectado.png" alt="" width="784" height="527" /></span></em></span></p>
+<p style="text-align: center;"><span><strong><em><span style="font-size: 12pt;">Figura 19. </span></em></strong><em><span style="font-size: 12pt;">Panel modbus client conectado con el servidor.</span></em></span></p>
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">Ahora si se accede a los logs del honeypot (<span style="font-size: 12pt;">exciting_visvesvaraya)</span>, se pueden observar las diferentes conexiones que se han realizado. </span><br /><span></span></p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong> sudo docker logs exciting_visvesvaraya</span></pre>
+</div>
+<p style="text-align: center;"><img src="log-docker-exciting_visvesvaraya-01.png" alt="" width="1578" height="955" /></p>
+<p style="text-align: center;"><img src="log-docker-exciting_visvesvaraya-02.png" alt="" width="1588" height="340" /></p>
+<p style="text-align: center;"><span><strong><em><span style="font-size: 12pt;">Figura 18. </span></em></strong><em><span style="font-size: 12pt;">Fichero de log del contenedor exciting_visvesvaraya.</span></em></span></p>
+<p style="text-align: justify;">En este caso de ejemplo, se puede ver que ha existido un intento de conexión.</p>
+<p style="text-align: justify;">Los pasos siguientes a dar sería el análisis completo de esta información para ver desde que IP se ha intentado conectar y comprobar ese equipo, bien por si puede estar infectado con algún tipo de malware o bien porque el usuario esta intentando hacer "login".</p>
+<p style="text-align: justify;">Más adelante estos logs se podrán almacenar y visualizar de una forma gráfica gracias a herramientas como el stack de ELK, desde la que además se podrán ver cuales son las credenciales mas usadas o las IPs desde donde se han recibido los ataques.</p>
+<h3 style="text-align: justify;">Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://hub.docker.com/r/cowrie/cowrie">https://hub.docker.com/r/cowrie/cowrie</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_windows__ids_wazuh.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

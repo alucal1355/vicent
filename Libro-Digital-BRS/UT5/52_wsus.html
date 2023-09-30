@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2 WSUS | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-90"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas_y_entorno_de_trabajo.html" class="no-ch">2.4.1 Contraseñas y entorno de trabajo</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="daddy">3. Securización de los sistemas de administración remota</a>
+   <ul class="other-section">
+      <li><a href="31_secureshell.html" class="daddy">3.1 SecureShell</a>
+      <ul class="other-section">
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul class="other-section">
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="current-page-parent daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul>
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li id="active"><a href="52_wsus.html" class="active daddy">5.2 WSUS</a>
+      <ul>
+         <li><a href="521_consulta_de_actualizaciones_en_ps.html" class="no-ch">5.2.1 Consulta de actualizaciones en PS</a></li>
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="51_unattendedupgrades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="521_consulta_de_actualizaciones_en_ps.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.2 WSUS</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id127">
+<div class="iDevice emphasis0" >
+<div id="ta127_127_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;"><span><span class="license"><span class="sep"><b>1. Introducción</b></span></span></span></h3>
+<p style="text-align: justify;">Microsoft Windows Server tiene disponible un rol denominado <strong>Windows Server Update Services (WSUS)</strong> que permite centralizar las actualizaciones de los equipos del dominio, es decir, centraliza un servidor de actualizaciones para clientes y servidores del dominio.</p>
+<p>El servidor WSUS descarga las actualizaciones desde los servidores de Microsoft Windows y éste se encargará de distribuir las actualizaciones a los equipos del dominio.</p>
+<p style="text-align: justify;"><span class="license"><span class="sep">En este capítulo, se describe el procedimiento de cómo instalar y configurar WSUS, para permitir a los administradores de sistemas gestionar actualizaciones a un conjunto de equipos en su red mediante el sistema de Microsoft Update.</span></span></p>
+<p style="text-align: center;"><a href="escenario-wsus.png" target="_blank" rel="noopener"><span class="license"><span class="sep"><img src="escenario-wsus.png" alt="" width="631" height="428" /></span></span></a></p>
+<p style="text-align: justify;"><span class="license"><span class="sep"><strong>1.1 Cosas a favor y en contra</strong></span></span></p>
+<p style="text-align: justify;"><strong><span class="license"><span class="sep">A favor:</span></span></strong></p>
+<ul>
+<li style="text-align: justify;"><span class="license"><span class="sep"><span>Al tener centralizadas las actualizaciones evita que el ancho de banda de la red quede saturado ya que solamente el servidor es el que realizará la descarga por lo que se ahorrará tiempo en las actualizaciones y mejora la seguridad de la red ya que se alcanza el nivel de privacidad SHA256. WSUS, además, da la posibilidad de que los administradores o el mismo servidor permita o no ciertas actualizaciones. </span></span></span></li>
+<li style="text-align: justify;"><span class="license"><span class="sep"><span>Control total sobre qué actualizaciones y parches de seguridad sobre cada uno de los equipos de la red.</span></span></span></li>
+<li style="text-align: justify;"><span class="license"><span class="sep"><span>Dependencia cero del usuario final para que de esta forma, se pueda tener una seguridad óptima en cuanto a brechas de seguridad o parches claves sobre vulnerabilidades recientes.</span></span></span></li>
+</ul>
+<p><span class="license"><span class="sep"><strong>Contras:</strong></span></span></p>
+<ul>
+<li style="text-align: justify;"><span class="license"><span class="sep"><span>En infraestructuras pequeñas depender de un equipo dedicado únicamente al rol de WSUS puede llegar a suponer un coste elevado (consumo de energía, mantenimiento del equipo, espacio físico, calor, ruido, etcétera).</span></span></span></li>
+<li style="text-align: justify;"><span class="license"><span class="sep"><span><span style="color: #ff0000;"><strong>No es recomendable instalar el servidor WSUS en un controlador de dominio</strong></span> ya que puede corromper la base de datos o crear problemas al actualizar o instalar WSUS.</span></span></span></li>
+</ul>
+<p><span class="license"><span class="sep"><span><strong>Si sólamente se necesita para unos pocos equipos</strong>, en estos casos se puede hacer uso de las actualizaciones </span><strong>fuera de horas activas.</strong></span></span></p>
+<ul>
+<li><span class="license"><span class="sep"><a href="https://support.microsoft.com/es-es/help/4027636/windows-10-get-updates-with-active-hours-in-windows-10" rel="noreferrer noopener">https://support.microsoft.com/es-es/help/4027636/windows-10-get-updates-with-active-hours-in-windows-10</a></span></span></li>
+</ul>
+<h3 style="text-align: justify;"><span><span class="license"><span class="sep"><b>2. Requisitos - Escenario</b></span></span></span></h3>
+<table border="1" style="width: 45.3569%;">
+<tbody>
+<tr>
+<td style="width: 13.3869%;"><span style="font-size: 12pt;">Equipo Windows Server 2019 Datacenter</span></td>
+<td style="width: 31.9706%;">
+<ul>
+<li><span style="font-size: 12pt;">Dominio ciber.local</span></li>
+<li><span style="font-size: 12pt;">Adaptador de red: Modo puente</span></li>
+<li><span style="font-size: 12pt;">Ip estática en la red puente - 192.168.0.29</span></li>
+<li><span style="font-size: 12pt;">DNS: 127.0.0.1</span></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="width: 13.3869%;"><span style="font-size: 12pt;">Equipo Windows 10 Enterprise</span></td>
+<td style="width: 31.9706%;">
+<ul>
+<li><span style="font-size: 12pt;">Integrado en el dominio ciber.local</span></li>
+<li><span style="font-size: 12pt;">AdaptadorAdaptador​ _ de red: Modo puente.</span></li>
+<li><span style="font-size: 12pt;">Ip estática en la red puente - 192.168.0.30</span></li>
+<li><span style="font-size: 12pt;">GW: - 192.168.0.29</span></li>
+<li><span style="font-size: 12pt;">DNS: 192.168.0.29</span></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A la hora de instalar el rol de WSUS el sistema debe de tener una serie de requisitos mínimos:</p>
+<ul>
+<li>Procesador x64 de 1,4GHz.</li>
+<li>Adaptador de red de al menos 100 Mbps.</li>
+<li>2 GB más de memoria RAM (si el servidor tiene 4GB, con WSUS debe tener 6GB).</li>
+<li>10 GB de espacio disponible y 40 GB recomendado.</li>
+</ul>
+<p>A continuación, se describe gráficamente la configuración de la red del servidor y el equipo cliente.</p>
+<p><strong>Servidor Windows 2019 Server Datacenter</strong></p>
+<div class="exe-fx exe-tabs">
+<h2>Configuración tcp/ip</h2>
+<p style="text-align: center;"><img src="conf-red-ciber-local-adaptador-puente.png" alt="" width="834" height="656" /></p>
+<h2>Estado de la red</h2>
+<p style="text-align: center;"><img src="conf-estado-red.png" alt="" width="1040" height="672" /></p>
+<h2>Propiedades de la red</h2>
+<p style="text-align: center;"><img src="propiedades-red-ciber-local.png" alt="" width="541" height="729" /></p>
+</div>
+<p style="text-align: justify;"><strong>Cliente Windows 10 Enterprise</strong></p>
+<div class="exe-fx exe-tabs">
+<h2>Configuración tcp/ip </h2>
+<p style="text-align: center;"><img src="ipconfig-cliW10-ciber.png" alt="" width="597" height="331" /></p>
+<h2>Estado de la red</h2>
+<p style="text-align: center;"><img src="estado-red-CliW10-Ciber.png" alt="" width="756" height="521" /></p>
+</div>
+<p style="text-align: justify;">Para la <strong>puesta en producción del servicio</strong> hay que seguir las siguientes <strong>etapas</strong>:</p>
+<ol>
+<li>Instalación del rol.</li>
+<li>Configuración de WSUS.</li>
+<li>Configurar GPOs para WSUS.</li>
+<li>Sincronizar WSUS y Microsoft Update.</li>
+<li> Aprobación e implementación de las actualizaciones en WSUS o rechazar actualizaciones con WSUS.</li>
+<li>Configuración de las directivas de grupo para las actualizaciones automáticas.</li>
+</ol>
+<h3 style="text-align: justify;">3. <span>Instalación de WSUS</span></h3>
+<p style="text-align: justify;"><span>En primer lugar, el equipo servidor tiene que disponer de 2 discos, uno de ellos con el sistema operativo de Windows y otro, bastante amplio, donde se irán almacenando las actualizaciones de Windows para repartir a los equipos del dominio. Para este caso de ejemplo, se añade un disco de<strong> 20 GiB</strong>.</span></p>
+<p style="text-align: center;"><img src="disco2-repositorio.png" alt="" width="748" height="228" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Discos en el equipo.</em></p>
+<p style="text-align: justify;">A continuación, <span>hay que acceder al Administrador del servidor y agregar un nuevo rol:</span></p>
+<p style="text-align: center;"><span><img src="agergar-rol.png" alt="" width="1354" height="589" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Agregar roles y características.</em></p>
+<p style="text-align: justify;"><span>A continuación, hay que seleccionar '<b>Instalación basada en características o en roles'.</b></span></p>
+<p style="text-align: center;"><span><b><img src="agregar-rol-02.png" alt="" width="780" height="554" /></b></span></p>
+<p style="text-align: center;"><span><b><em><strong>Figura 3. </strong></em></b><em>Seleccionar tipo de instalación.</em></span></p>
+<p style="text-align: justify;">Seguidamente, hay que marcar nuestro servidor, el lugar donde se procederá a instalar el servicio de WSUS.</p>
+<p style="text-align: center;"><span><img src="agregar-rol-03.png" alt="" width="782" height="555" /></span></p>
+<p style="text-align: center;"><span><b><em><strong>Figura 4. </strong></em></b><em>Seleccionar servidor de destino.</em></span></p>
+<p style="text-align: justify;"><span>Seleccionaremos la característica <strong>Windows Server Update Services, d</strong>onde el asistente pregunta si se desea agregar las características. Para continuar,hay que pulsar <strong>'Aceptar. </strong>Tras haber seleccionado las características, hay que pulsar<strong> 'Siguiente'.</strong></span></p>
+<p style="text-align: center;"><span><strong><img src="agregar-rol-04.png" alt="" width="781" height="554" /></strong></span></p>
+<p style="text-align: center;"><span><strong><b><em>Figura 5. </em></b></strong><em>Seleccionar el rol Windows Server Update Services.</em></span></p>
+<p style="text-align: justify;"><span>En la siguiente pantalla que aparece '<strong>Seleccionar características</strong>', hay que pulsar<strong> 'Siguiente'.</strong></span></p>
+<p style="text-align: center;"><span><strong><img src="agregar-rol-05.png" alt="" width="783" height="555" /></strong></span></p>
+<p style="text-align: center;"><span><strong><b><em>Figura 6. </em></b></strong><em>Seleccionar características.</em></span></p>
+<p style="text-align: justify;">Al seleccionar los servicios de rol a instalar, se deja por defecto.</p>
+<p style="text-align: center;"><span><strong><img src="agregar-rol-06.png" alt="" width="780" height="554" /></strong></span></p>
+<p style="text-align: center;"><span><strong><b><em>Figura 7. </em></b></strong><em>Seleccionar servicios de rol.</em></span></p>
+<p style="text-align: justify;">A continuación, hay que especificar la ubicación donde se almacenarán las actualizaciones de Windows que se instalarán en los equipos del dominio. Para este caso de ejemplo, el disco que se ha definido al inicio E:\. Para continuar, hay que pulsar '<strong>Siguiente</strong>'.</p>
+<p style="text-align: center;"><img src="agregar-rol-07.png" alt="" width="783" height="555" /></p>
+<p style="text-align: center;"><span><strong><b><em>Figura 8. </em></b></strong><em>Seleccionar de ubicación de contenido.</em></span></p>
+<p style="text-align: justify;">En la nueva pantalla, se deja todo por defecto y se pulsa '<strong>Siguiente</strong>'</p>
+<p style="text-align: center;"><img src="agrgar-rol-08.png" alt="" width="784" height="555" /></p>
+<p style="text-align: center;"><span><strong><b><em>Figura 9. </em></b></strong><em>Seleccionar servicios de rol.</em></span></p>
+<p style="text-align: justify;">Para finalizar, en la nueva pantalla, hay que pulsar 'Instalar' (opcionalmente, se activa el <strong>Reinicio automático</strong>).</p>
+<p style="text-align: center;"><img src="agreagr-rol-10.png" alt="" width="783" height="553" /></p>
+<p style="text-align: center;"><span><strong><b><em>Figura 10. </em></b></strong><em>Confirmar selecciones de instalación.</em></span></p>
+<p style="text-align: justify;">A continuación, comienza el proceso de instalación.</p>
+<p style="text-align: center;"><img src="agreagr-rol-11.png" alt="" width="782" height="558" /></p>
+<p style="text-align: center;"><span><strong><b><em>Figura 11. </em></b></strong><em>Progreso de instalación.</em></span></p>
+<h3>4. <span>Configuración de WSUS</span></h3>
+<p style="text-align: justify;">Una vez terminada la instalación se deberá realizar la configuración del servidor. Para ello, hay que pulsar el enlace '<strong>Iniciar tareas posteriores a la instalación'</strong> (ver figura inferior).</p>
+<p style="text-align: center;"><img src="conf-WSUS-01.png" alt="" width="1447" height="483" /></p>
+<p style="text-align: center;"><span><strong><b><em>Figura 12. </em></b></strong><em>Seleccionar configuración posterior a la instalación</em><em>.</em></span></p>
+<p>Las etapas son las siguientes:</p>
+<ol>
+<li style="text-align: justify;">Aparecerá un asistente cuya primera ventana son las comprobaciones que se deberán hacer antes de configurar. Se comprueban y se pulsa en siguiente.</li>
+<li style="text-align: justify;">La siguiente ventana habla de participar o no en el programa de mejora. Se pulsa siguiente.</li>
+<li style="text-align: justify;">La tercera ventana da la opción si se pretende sincronizar con las actualizaciones desde Microsoft Update o desde otro servidor WSUS. En este caso, se selecciona la primera opción.</li>
+<li style="text-align: justify;">A continuación, si se usa un servidor proxy se marcará la opción. En este caso no se marcará y se selecciona siguiente.</li>
+<li style="text-align: justify;">Llegados a este punto, se procederá a conectarse para descargar los productos Microsoft, por lo que se pulsa en “Iniciar conexión”. La descarga puede tardar unos minutos.</li>
+<li style="text-align: justify;">Una vez terminada la descarga, el botón siguiente ya estará habilitado, por lo que se pulsará y a continuación, en la siguiente ventana, se configurarán los idiomas de las actualizaciones. En este caso se ha seleccionado español y se pulsa siguiente.</li>
+<li style="text-align: justify;">Una vez elegido el idioma, se seleccionan los productos que estarán disponibles para recibir actualizaciones de manera desatendida. Hay que tener en cuenta que las actualizaciones de drivers es conveniente hacerlas manuales para evitar tener problemas de compatibilidad con otros programas. En este caso se han marcado las actualizaciones de Windows 10 y Windows 11, Microsoft Edge y Microsoft Defender Antivirus.</li>
+<li style="text-align: justify;">En la siguiente ventana, se marcarán las opciones de actualizaciones críticas y actualizaciones de seguridad.</li>
+<li style="text-align: justify;">A continuación, en la siguiente ventana, se marcará la sincronización automática con los servidores de Microsoft Update. Si se estuviera hablando de una empresa grande, sería conveniente elegir una hora en la que hay menos carga de trabajo, por ejemplo, si se pretende sincronizar todos los días, podría ser a una hora de madrugada, por ejemplo, a las 01 A.M.</li>
+<li style="text-align: justify;">Al seleccionar siguiente, el asistente da la opción de realizar una primera sincronización. Por lo que se marca la opción y se realiza. </li>
+<li style="text-align: justify;">En el último paso, el asistente sugiere algunas buenas prácticas como, por ejemplo, usar el protocolo SSL con WSUS o crear grupos de equipos, etcétera. Se marcará finalizar. Aprobaciones automáticas donde se pueden crear reglas para aprobar actualizaciones automáticas. Por ejemplo: especificar en una nueva regla si aparece una nueva actualización crítica que sea aprobada automáticamente para que se actualicen todos los equipos o solo unos equipos específicos.</li>
+<li style="text-align: justify;">Equipos: en donde se puede especificar la forma en la que se unen los equipos a los grupos de actualizaciones. Lo más recomendable es que sea a partir de una directiva de grupo.</li>
+<li style="text-align: justify;">Asistente para la limpieza del servidor. Cada cierto tiempo, es recomendable aplicar una limpieza del servidor WSUS ya que, de lo contrario, el funcionamiento no es el más óptimo presentando errores y de esta manera, la base de datos es reseteada eliminando actualizaciones que ya han sido reemplazadas, etcétera.</li>
+</ol>
+<p style="text-align: justify;">A continuación, se describe los puntos gráficamente.</p>
+<p style="text-align: justify;">Acceder a los <strong>Servicios de Actualización de Windows</strong>.</p>
+<p style="text-align: center;"><img src="acceso-WUS.png" alt="" width="375" height="142" /></p>
+<p style="text-align: center;"><span><strong><b><em>Figura 13. </em></b></strong><em>Acceder a Windows Server Update Services.</em></span></p>
+<p style="text-align: justify;">Se abrirá un Asistente donde en primer lugar hay que pulsar '<strong>Siguiente</strong>'.</p>
+<p style="text-align: center;"><img src="WSUS-01.png" alt="" width="738" height="542" /></p>
+<p style="text-align: center;"><span><strong><b><em>Figura 14. </em></b></strong><em>Asistente par la configuración de Windows Server Update Services.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, aparece una nueva ventana donde se puede seleccionar si se quiere unir al programa de mejora de Windows Update. Para este caso de ejemplo, se desactiva esta posibilidad.</span></p>
+<p style="text-align: center;"><span><em><img src="WSUS-02.png" alt="" width="738" height="542" /></em></span></p>
+<p style="text-align: center;"><span><em><strong><b>Figura 15. </b></strong>Posibilidad de unirse al programa de mejora de Windows Update.</em></span></p>
+<p style="text-align: justify;"><span><em></em></span>A continuación, hay <span>que elegir '<strong>sincronizar desde Microsoft Update</strong>' ya que será nuestro servidor principal de Actualizaciones.</span></p>
+<p style="text-align: center;"><img src="WSUS-03.png" alt="" width="738" height="541" /></p>
+<p style="text-align: center;"><em><strong>Figura 16.</strong> Elegir '<strong>sincronizar desde Microsoft Update</strong>' ya que será nuestro servidor principal de Actualizaciones.</em></p>
+<p style="text-align: justify;">En la siguiente ventana, <span>no hay que definir ningún proxy. Para continuar, hay que pulsar <strong>Siguiente</strong>.</span></p>
+<p style="text-align: center;"><img src="WSUS-04.png" alt="" width="737" height="540" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 17.</strong> Selección de proxy.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, hay que pulsar en '<strong>Iniciar conexión</strong>' y esperar a que el servidor aplique las configuraciones necesarias y descargue las actualizaciones que serán aplicadas en un futuro a los equipos del dominio.</span></p>
+<p style="text-align: center;"><img src="WSUS-05-b.png" alt="" width="737" height="540" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 18.</strong> Esperar a que se apliquen las configuraciones.</em></span></p>
+<p style="text-align: justify;"><span>En la siguiente pantalla, hay que seleccionar </span>el idioma en el que se desea que se descarguen las actualizaciones que, por defecto, se dejan en <strong>inglés</strong> y <strong>español</strong>.</p>
+<p style="text-align: center;"><span><em><strong><img src="WSUS-07.png" alt="" width="738" height="540" /></strong></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 19.</strong> Selección de idiomas.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">En la siguiente ventana hay que definir aquellos productos que se quieran que sean actualizados. Dependiendo de los equipos que se tengan en la red, hay que mantener la selección de los productos Windows necesarios y deseleccionar el resto, ejemplo: los referidos a Windows XP, 7, 8.1, etcétera.</span><br /><span></span></p>
+<p style="text-align: center;"><span><em><strong><img src="WSUS-08.png" alt="" width="738" height="539" /></strong></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 20.</strong> Definir productos a actualizar.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, hay que e</span>specificar qué actualizaciones se desean descargar. Para nuestro caso de ejemplo, se deja <strong>todo por defecto</strong>.</p>
+<p style="text-align: center;"><span><em><strong><img src="WSUS-10.png" alt="" width="736" height="541" /></strong></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 21.</strong> Especificar las actualizaciones a descargar.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">En la siguiente ventana, hay que especificar cuándo se desea que se sincronicen las actualizaciones. Para este caso de ejemplo, se realizará de manera <strong>manual</strong>.</span><br /><span></span></p>
+<p style="text-align: center;"><span><em><strong><img src="WSUS-11.png" alt="" width="737" height="540" /></strong></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 22.</strong> Especificar cuándo se desea que se sincronicen las actualizaciones.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, se selecciona '</span><strong>sincronización inicial'</strong> para descargar aquellas actualizaciones que sean necesarias actualmente. Pulsar '<strong>Siguiente</strong>' para continuar.</p>
+<p style="text-align: center;"><span><em><strong><img src="WSUS-12.png" alt="" width="737" height="542" /></strong></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 23.</strong> Seleccionar sincronización inicial.</em></span></p>
+<p style="text-align: justify;"><span>En la nueva pantalla, se muestra un listado de recomendaciones para configurar que hay que tener en cuenta para dejar completamente operativo el servicio de WSUS y que se configurará a continuación. Para realizar la <strong>sincronización inicial</strong>, hay que pulsar '<strong>Finalizar</strong>'.</span></p>
+<p style="text-align: center;"><span><em><strong><img src="WSUS-13.png" alt="" width="737" height="541" /></strong></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 24.</strong> Pasos para integrar WSUS en el entorno.</em></span></p>
+<p style="text-align: justify;"><span>Una vez finalice, se podrá ver una ventana donde mostrará el estado actual de los equipos de nuestro dominio, pudiendo observar tanto aquellos que están actualizados como aquellos que todavía les faltan actualizaciones.</span></p>
+<p style="text-align: center;"><img src="panel-principal.png" alt="" width="1358" height="585" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 25.</strong> Pantalla principal de WSUS.</em></span></p>
+<p style="text-align: justify;">Como se puede ver en la figura anterior, la consola está dividida en <strong>3 paneles</strong>.</p>
+<ol>
+<li style="text-align: justify;">En el <strong>panel central</strong> se muestra información de aquello que se selecciona.</li>
+<li style="text-align: justify;">En el panel de la izquierda y el panel de la derecha, muestra acciones que se pueden realizar.</li>
+</ol>
+<p style="text-align: justify;">En el <strong>panel superior izquierdo</strong>, se puede ver el servidor sobre el que se despliegan opciones. Si se selecciona el servidor WSUS, el panel central muestra información sobre tareas pendientes. Estas tareas son actualizaciones que están esperando para ser aprobadas y productos agregados. Se puede pulsar sobre los <strong>enlaces azules</strong> de la imagen anterior y se podrá acceder a aprobar las actualizaciones de seguridad, críticas o ver los productos y clasificaciones.</p>
+<p style="text-align: justify;">En la <strong>parte inferior del panel central</strong> se muestra información general sobre los equipos y sobre el mismo servidor con respecto a la conexión y actualizaciones.</p>
+<p style="text-align: justify;">Siguiendo con el <strong>panel de la izquierda</strong>, si se selecciona <strong>actualizaciones</strong>, el panel central muestra un resumen de las actualizaciones separadas en clasificaciones. Se mostrarán estadísticas de actualizaciones para el servidor WSUS, estadísticas de todas las actualizaciones conjuntas, y aquellas clasificaciones que se hayan elegido en la configuración del servidor WSUS.</p>
+<p style="text-align: justify;">De la opción<strong> 'todas las actualizaciones'</strong> se despliegan las actualizaciones <strong>divididas por naturaleza.</strong> Se muestran aquellas configuradas en el proceso de configuración y al seleccionarlas, el panel central muestra todas las actualizaciones disponibles donde se podrán aprobar o declinar.</p>
+<p style="text-align: justify;">En la <strong>parte superior central</strong>, se podrá filtrar la información por actualizaciones aprobadas, declinadas, no aprobadas, etcétera. Además, al seleccionar una actualización, en la parte central inferior, se mostrará información sobre la finalidad de la actualización, si requiere reinicio, si el usuario debe realizar alguna acción, si se puede desinstalar o no, etcétera.</p>
+<p><br />Para <strong>aprobar</strong> o <strong>declinar las actualizaciones</strong>, se puede realizar con el menú contextual que aparece al seleccionar una de las actualizaciones con el botón derecho del ratón o seleccionando cualquiera y hacerlo con las acciones que aparecen en el menú del panel de la derecha de la consola. Aprobar o declinar actualizaciones sirve para que estas actualizaciones se apliquen sobre los equipos o no.</p>
+<p style="text-align: center;"><img src="actualixzacion-WSUS.png" alt="" width="1358" height="797" /></p>
+<p style="text-align: center;"><em><strong>Figura 26.</strong> Información sobre las actualizac</em><em>iones.</em></p>
+<p>En este caso, el <strong>panel de la derecha</strong> también muestra la herramienta de búsqueda, de manera que se puede buscar actualizaciones por el <strong>número KB</strong>. El KB (Microsoft Knowledge Base) es un código que empieza por estas letras seguidas por un número que es la manera que tiene Microsoft de organizar las actualizaciones.</p>
+<p style="text-align: justify;">Otra de las opciones que parecen en el <strong>panel de la izquierda</strong>, es la opción de equipos donde se permiten crear grupos para aprobar o declinar actualizaciones sobre todos los equipos que pertenecen al grupo.</p>
+<p style="text-align: justify;">Una buena práctica sería clasificar equipos por versiones de sistema operativos o crear grupos con equipos en los que el impacto de alguna actualización que no funcione bien no fuera grave, de manera que se prueben actualizaciones en este grupo de equipos para posteriormente hacer el despliegue en el resto de equipos de la empresa.</p>
+<p style="text-align: justify;">La siguiente opción del <strong>panel de la izquierda</strong> es servidores que siguen en la cadena. Esta opción muestra aquellos servidores WSUS que se pueden implementar como subservidores o servidores de réplicas.</p>
+<p style="text-align: justify;">La <strong>opción sincronizaciones</strong> muestra las sincronizaciones realizadas por el servidor WSUS a los servidores de Microsoft.</p>
+<p style="text-align: justify;"><span>En el apartado <strong>Informes</strong>, se pude comprobar </span>que las actualizaciones están instaladas actualmente. Desde esta ventana se muestran también informes y el estado de los equipos uno a uno.</p>
+<p style="text-align: center;"><span><em><strong><img src="WSUS-15.png" alt="" width="1223" height="829" /></strong></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 27.</strong> Vista de informes.</em></span><span><em></em></span></p>
+<p style="text-align: justify;"><span><br /></span><span>Si se accede al ítem del árbol '<strong>Actualizaciones</strong>', se puede observar el estado de las mismas</span></p>
+<p style="text-align: center;"><img src="WSUS-16.png" alt="" width="1202" height="654" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 28.</strong> Comprobar el estado de las actualizaciones en los equipos del dominio.</em></span></p>
+<p style="text-align: justify;"><span>Y, por último, en <strong>Opciones</strong>, se pueden ver gran parte de las configuraciones realizadas después de la instalación de roles y características. De hecho, se puede volver a realizar la configuración con el asistente en la última opción dentro de este apartado.</span></p>
+<p>Algunas opciones que se pueden destacar de este apartado son:</p>
+<ul>
+<li style="text-align: justify;"><strong>Aprobaciones automáticas donde se pueden crear reglas para aprobar actualizaciones automáticas.</strong> Por ejemplo: especificar en una nueva regla si aparece una nueva actualización crítica que sea aprobada automáticamente para que se actualicen todos los equipos o solo unos equipos específicos.</li>
+<li style="text-align: justify;"><strong>Equipos:</strong> en donde se puede especificar la forma en la que se unen los equipos a los grupos de actualizaciones. Lo más recomendable es que sea a partir de una directiva de grupo.</li>
+<li style="text-align: justify;"><strong>Asistente para la limpieza del servidor.</strong> Cada cierto tiempo, es recomendable aplicar una limpieza del servidor WSUS ya que, de lo contrario, el funcionamiento no es el más óptimo presentando errores y de esta manera, la base de datos es reseteada eliminando actualizaciones que ya han sido reemplazadas, etcétera.</li>
+</ul>
+<h3 style="text-align: justify;">4. <span>Configuración de WSUS</span></h3>
+<p><span>Una  instalado WSUS hay que configurarlo a las necesidades de la organización. Para ello, hay que seguir los pasos que durante la instalación, se propusieron (figura 24), son los siguiente:</span></p>
+<ol>
+<li><a href="https://docs.microsoft.com/es-es/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#23-secure-wsus-with-the-secure-sockets-layer-protocol" target="_blank" rel="noopener">Usar SSL con WSUS.</a></li>
+<li><a href="https://docs.microsoft.com/es-es/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#24-configure-wsus-computer-groups" target="_blank" rel="noopener">Crear grupos de equipos.</a></li>
+<li><span>Asignar equipos a grupos mediante directiva de grupo.</span></li>
+<li><span>Configuración de reglas de aprobación automática.</span></li>
+</ol>
+<p style="text-align: center;"><span><img src="WSUS-17.png" alt="" width="1224" height="589" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 29.</strong> Grupo W10-ciber agregado.</em></span></p>
+<p style="text-align: justify;"><span><strong>NOTA: </strong>Mientras WSUS se esté sincronizando, no se podrán realizar configuraciones como por ejemplo, cambiar la forma en que los equipos se asignan a los grupos.</span></p>
+<p style="text-align: center;"><span><img src="equipos-conf-enWSUS.png" alt="" width="458" height="510" /><br /></span></p>
+<p style="text-align: center;"><em><strong>Figura 30. </strong>Usar directiva de grupo.</em></p>
+<h4 style="text-align: justify;">4.1 Configurar GPO en el servidor WSUS</h4>
+<div class="exe-fx exe-tabs">
+<h2>Crear UO</h2>
+<p style="text-align: justify;">En primer lugar, hay que crear una Unidad Organizativa que contenga los equipos a los que se les quiere automatizar las actualizaciones mediante el servicio. Para este caso de ejemplo, se crea la UO <strong>Equipos-WSUS</strong> que contiene un equipo Windows 10 Enterprise integrado en el dominio.</p>
+<p style="text-align: center;"><img src="UO-Clientes-WSUS.png" alt="" width="632" height="295" /></p>
+<h2>Crear GPO</h2>
+<p style="text-align: justify;">A continuación, hay que crear una GPO y vincularla a la Unidad Organizativa que se ha creado anteriormente (equipos-WSUS). </p>
+<p style="text-align: center;"><img src="GPO-WSUS.png" alt="" width="294" height="278" /></p>
+<h2>Configurar GPO</h2>
+<p style="text-align: justify;">Una vez creada la GPO, hay que editarla para configurar las siguientes entradas en: <strong>Configuración Equipo</strong> --&gt; <strong>Directivas</strong> --&gt; <strong>Plantillas administrativas</strong> --&gt; <strong>Componentes de Windows</strong> --&gt; <strong>Windows Update</strong>:</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><a href="GPO-1.png" target="_blank" rel="noopener"><img src="GPO-1.png" alt="" width="683" height="619" /></a></td>
+<td style="width: 33.3333%; text-align: center;"><a href="GPO-2.png" target="_blank" rel="noopener"><img src="GPO-2.png" alt="" width="681" height="619" /></a></td>
+<td style="width: 33.3333%; text-align: center;"><a href="GPO-3.png" target="_blank" rel="noopener"><img src="GPO-3.png" alt="" width="682" height="619" /></a></td>
+</tr>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;">Configurar Actualizaciones automáticas</span></td>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;">Especificar ubicación del servicio WSUS</span></td>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;">Habilitar destinatarios del lado cliente</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p lang="es-ES-u-co-trad" align="justify"><span style="color: #000000;">Una vez realizado todo este proceso, se deben aplicar las directivas en los equipos con el comando:</span></p>
+<pre><span style="font-size: 12pt;"><strong>C:\&gt; </strong>gpupdate /force</span></pre>
+<p lang="es-ES-u-co-trad" align="justify"><span style="color: #000000;">gpupdate /force</span></p>
+<p lang="es-ES-u-co-trad" align="justify"><span style="color: #000000;">Para verificar </span><span style="color: #000000;">que se han aplicado las directivas, el comando es el siguiente:</span></p>
+<pre><span style="font-size: 12pt;"><strong>C:\&gt; </strong><span style="color: #000000;">gpresult /r:</span></span></pre>
+<p style="text-align: center;"><img src="Salidagporesult.png" alt="" width="680" height="666" /></p>
+<h4 style="text-align: justify;">4.2 Comandos para los clientes de WSUS</h4>
+<p style="text-align: justify;">Dado que el entorno de actualizaciones automáticas pasa a estar automatizado, se puede dar el caso que convenga forzar acciones. Para hacerlo, existe una herramienta de consola de comandos que a partir de una serie de parámetros ejecuta acciones básicas. </p>
+<p style="text-align: justify;">En caso que el servidor<span> </span><strong>no haya informado</strong><span> </span>se puede forzar con el comando:</p>
+<pre><span style="font-size: 12pt;"><strong>C:\&gt;</strong>wuauclt /reportnow </span></pre>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para forzar la detección de actualizaciones pendientes (equivale a pulsar el botón del Windows Update de buscar actualizaciones).</span></p>
+<pre><span style="font-size: 12pt;"><strong>C:\&gt;</strong>wuauclt /detectnow</span></pre>
+<p style="text-align: justify;"><span>Para forzar la detección de actualizaciones pendientes y descargarlas:<br /></span></p>
+<pre><span style="font-size: 12pt;"><strong>C:\&gt;</strong>wuauclt /detectnow /downloadnow</span></pre>
+<p style="text-align: justify;">Para forzar las actualizaciones, hay que ejecutar el siguiente comando.</p>
+<pre lang="en-US"><span style="font-size: 12pt;"><strong>C:\&gt;</strong>wuauclt /resetauthorization /detectnow /reportnow</span></pre>
+<p style="text-align: justify;">Si ha habido un error de registro en el servidor WSUS o el equipo estaba registrado en otro servidor de WSUS y ahora se ha cambiado, hay que ejecutar el siguiente comando.</p>
+<pre lang="en-US"><span style="font-size: 12pt;"><strong>C:\&gt;</strong>wuauclt /ResetAuthorization</span></pre>
+<p style="text-align: justify;">El comando<span> <a href="https://docs.microsoft.com/es-es/troubleshoot/windows-server/deployment/re-register-windows-clientserver-in-wsus" target="_blank" rel="noopener">wuauclt.exe</a></span><span> (<b>W</b> indows <b>U</b> pdate <b>A</b> uto <b>U</b> pdate <b>Cl</b> ien <b>t) </b></span>no dispone de ayuda directa. Las bibliotecas de información han sido la propia ayuda. Otros parámetros que se pueden utilizar son:</p>
+<ul>
+<li style="text-align: justify;">/RunHandlerComServer</li>
+<li style="text-align: justify;">/RunStoreAsComServer</li>
+<li style="text-align: justify;">/ShowSettingsDialog</li>
+<li style="text-align: justify;">/ResetEulas</li>
+<li style="text-align: justify;">/ShowWU</li>
+<li style="text-align: justify;">/ShowWindowsUpdate</li>
+<li style="text-align: justify;">/SelfUpdateManaged</li>
+<li style="text-align: justify;">/SelfUpdateUnmanaged</li>
+<li style="text-align: justify;">/UpdateNow</li>
+<li style="text-align: justify;">/ShowWUAutoScan</li>
+<li style="text-align: justify;">/ShowFeaturedUpdates</li>
+<li style="text-align: justify;">/ShowOptions</li>
+<li style="text-align: justify;">/ShowFeaturedOptInDialog</li>
+<li style="text-align: justify;">/DemoUI</li>
+</ul>
+<h4 style="text-align: justify;">4.2 Comprobaciones en el cliente de WSUS</h4>
+<p style="text-align: justify;"><span>Una forma de comprobar si se está actualizando el equipo desde el servidor WSUS es ver en Windows Update del equipo el recuadro que dice: «La organización administra algunos valores de configuración". Si se accede al enlace 'Ver directivas de actualización configuradas', se podrá comprobar que son las mismas que las que se configuró en la GPO.</span></p>
+<p style="text-align: center;"><span><img src="Wupdate-W10-cliente-WSUS.png" alt="" width="852" height="586" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 31.</strong> Acceso a Windows update.</em></p>
+<p style="text-align: justify;"><span>Si se accede al registro, se puede observar que se tiene establecido <strong>WUServer</strong> y <strong>WUStatusServer</strong> con la url donde se ha configurado WSUS en el servidor, por lo que este equipo cliente, se descargará las actualizaciones del servidor WSUS.</span></p>
+<p style="text-align: center;"><span><img src="regedit-W10-WUpdate.png" alt="" width="882" height="400" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 32.</strong> Acceso al registro de Windows.</em></p>
+<p style="text-align: justify;"><span></span>En el siguiente vídeo se describen las acciones a realizar para la puesta en producción de WSUS.</p>
+<p style="text-align: center;"><em><strong><iframe width="560" height="314" src="https://www.youtube.com/embed/yFgQ-RgnMNw" allowfullscreen="allowfullscreen"></iframe><br /></strong></em><em><strong>Vídeo 1.</strong> Acciones a realizar para la puesta en producción de WSUS.</em></p>
+<h3 style="text-align: justify;">5. Informes WSUS</h3>
+<p style="text-align: justify;">La <strong>consola de WSUS</strong> permite crear informes siempre y cuando se instale el programa <strong>Microsoft Report Viewer 2012 redistributable, </strong>en caso contrario, aparece una ventana de error en la que se comunica la falta del este software.</p>
+<p style="text-align: center;"><img src="error-wsus-1.png" alt="" width="434" height="194" /></p>
+<p style="text-align: center;"><em><strong>Figura 33.</strong> Ventana de error al intentar generar informes.</em></p>
+<p>Para instalar los complementos, <strong>el procedimiento es el siguiente</strong>:</p>
+<div class="exe-fx exe-tabs">
+<h2>1. Descarga de MRV2012</h2>
+<p> Se accede seleccionando el enlace del cuadro que aparece al intentar crear un informe (Figura 32) o accediendo al enlace siguiente, para descargar la herramienta.</p>
+<ul>
+<li><a href="https://www.microsoft.com/es-es/download/details.aspx?id=35747">https://www.microsoft.com/es-es/download/details.aspx?id=35747</a></li>
+</ul>
+<p style="text-align: center;"><img src="enlace.png" alt="" width="354" height="42" /></p>
+<h2>2. Instalación</h2>
+<p lang="es-ES" style="text-align: justify;">Una vez se descarga la aplicación, se instala haciendo doble clic en el paquete descargado. Al realizar esto, aparece otra advertencia donde nos avisa que nos falta instalar un software complementario para Microsoft report viewer 2012 runtime. </p>
+<p lang="es-ES"><img src="advert-wsus.png" alt="" width="478" height="234" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<h2>3. Instalación Requisito</h2>
+<p style="text-align: justify;">Para descarga el requisito, hay que acceder al siguiente <a href="https://www.microsoft.com/en-us/download/details.aspx?id=56041" target="_blank" rel="noopener">enlace</a>, donde hay que <strong>seleccionar el idioma</strong> y pulsar '<strong>Descargar</strong>'. En la nueva ventana que aparece, hay que seleccionar '<span><strong>SQLSysClrTypes.msi</strong>' y pulsar '<strong>Next</strong>', para que se inicie la descarga.</span></p>
+<p style="text-align: center;"><span><img src="eleccion-descarga.png" alt="" width="1201" height="441" /></span></p>
+<h2>4. Instalación de SQLSysClrTypes.msi</h2>
+<p>Una vez descargado el software complementario, se instala <strong>SQLSysClrTypes.msi</strong> haciendo doble clic en el paquete descargado. A continuación, se instala el paquete del <strong>ReportViewer.msi</strong>, haciendo doble clic en el paquete descargado.</p>
+<h2>5. Realizar informes</h2>
+<p>Una vez instalados los paquetes, ya se podrán generar informes de la siguiente manera:</p>
+<ol>
+<li>En la consola de WSUS, se selecciona la opción Report del panel lateral izquierdo.</li>
+<li>En el panel central, aparecerán varios tipos de informes. Se selecciona el que se desea, por ejemplo: estado detallado del equipo. Y aparecerá un recuadro como este:</li>
+</ol>
+<p style="text-align: center;"><img src="computer-report.png" alt="" width="740" height="261" /></p>
+<h2>6. Opciones en los informes</h2>
+<p>En la parte superior de la ventana (figura pestaña anterior), se puede elegir sobre varias opciones para incluir o quitar en el informe. Se seleccionan las que se desean incluir en el informe y se pulsa en generar informe en el menú superior (run report) . Una vez generado, se puede exportar pulsando sobre el icono del disco y elegir el formato entre pdf, hoja de calculo o documento de texto.</p>
+<p style="text-align: center;"><img src="opciones-informe.png" alt="" width="738" height="172" /></p>
+</div>
+<p> <strong><span style="color: #ef801b; font-size: 1.2em; letter-spacing: 0.5px;"></span></strong><strong><span style="color: #ef801b; font-size: 1.2em; letter-spacing: 0.5px;"></span></strong></p>
+<p><strong><span style="color: #ef801b; font-size: 1.2em; letter-spacing: 0.5px;">6. Referencias</span></strong><br /><span></span></p>
+<ul>
+<li><a href="https://docs.microsoft.com/es-es/windows-server/administration/windows-server-update-services/deploy/deploy-windows-server-update-services" target="_blank" rel="noopener">Implementar Windows Server Update Services</a></li>
+<li><a href="https://thesolving.com/es/sala-de-servidores/como-instalar-y-configurar-windows-server-update-services-wsus/" target="_blank" rel="noopener">Cómo instalar y configurar Windows Server Update Services (WSUS)</a></li>
+<li><a href="https://blog.ragasys.es/instalacion-y-configuracion-de-wsus-en-ms-windows-server-2019" target="_blank" rel="noopener">Instalación y configuración de WSUS en MS Windows Server 2019</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="51_unattendedupgrades.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="521_consulta_de_actualizaciones_en_ps.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

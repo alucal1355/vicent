@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7. Contramedidas DDoS | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-125"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="7_contramedidas_ddos.html" class="active daddy">7. Contramedidas DDoS</a>
+   <ul>
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_1_antiddos_con_fail2ban.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">7. Contramedidas DDoS</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id161">
+<div class="iDevice emphasis0">
+<div id="ta161_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;">Los <strong>ataques DoS/DDoS</strong> son uno de los más utilizados por los ciberdelincuentes de hoy en día. Por ello, a continuación, se dscribe qué son y cómo funcionan.</p>
+<p style="text-align: justify;"><strong>DoS. </strong>Ataque de denegación de servicio DoS (Denial of Service), provoca que un servicio quede inutilizable. Ya puede ser el mismo ordenador que se quede bloqueado o que se sature la red de conexión. Esto se produce porque el atacante realiza una sobrecarga a la víctima, creando más peticiones de las que puede soportar al servicio que está utilizando.</p>
+<p style="text-align: justify;">Normalmente el atacante crea o usa bots (programa informático que efectúa automáticamente tareas reiterativas mediante Internet a través de una cadena de comandos) para efectuar el ataque.</p>
+<p style="text-align: center;"><a href="ataque-DoS.png"><img src="ataque-DoS.png" alt="" width="763" height="367" /></a></p>
+<p style="text-align: justify;"><strong>DDoS. </strong>Una mejora o ampliación del ataque DoS es el llamado ataque de denegación de servicio distribuido DDoS (Distributed Denial of Service) el cual se lleva a cabo generando un gran flujo de información desde varios puntos de conexión hacia un mismo punto de destino, el que sería la víctima. En este ataque ampliado es más común realizar el ataque a través de una red extensa de bots, llamada <strong>botnet</strong> que se ejecutan de manera autónoma y automática que pueden controlar todos los ordenadores/servidores infectados de forma remota.</p>
+<p style="text-align: justify;">Esto implementa una mejora, ya que con una red más grande de bots para atacar, puede generarse más tráfico del que sería posible con un simple DoS, que parte de un solo equipo. Por lo tanto, el ataque DDoS tiene más consecuencias drásticas y hay menos posibilidades de identificar la fuente real de donde proviene el ataque.</p>
+<h3 style="text-align: justify;">2. Consecuencias y motivos</h3>
+<p style="text-align: justify;">El objetivo de este ataque no es tratar de robar datos o infectar equipos, si no básicamente bloquear un servicio para que deje de funcionar correctamente. Para una empresa podría generar:</p>
+<ul>
+<li style="text-align: justify;"><strong>Perdidas económicas</strong>, al no poder dar cobertura a sus clientes, ya sea porque el ataque ha bloqueado durante unas horas el servicio como que tenga el servicio caído por días.</li>
+<li style="text-align: justify;"><strong>Tiempo de inactividad</strong>, esto es algo muy negativo, ya que ante la imposibilidad de dar servicio, los clientes pueden poner quejas, además de llegar a ser penalizado por el SEO (posicionamiento en buscadores) de Google.</li>
+<li style="text-align: justify;"><strong>Pérdida de información</strong>, se puede llegar a perder información que no ha sido almacenada a tiempo en el transcurso del ataque, si se llegan a perder los datos desde la última copia de seguridad ocasionaría una gran perdida para la empresa, ya que esa información no se podría, en su mayor parte, recuperar.</li>
+<li style="text-align: justify;"><strong>Daños en la reputación o la confianza del cliente</strong>, si se accede a una página que esta caída, se produce un desinterés hacia ese servicio buscando alternativas. Esto puede provocar que el cliente no vuelva a ese servicio porque ha encontrado otro más eficaz.</li>
+</ul>
+<p><img src="ejemplo.png" alt="" width="126" height="44" /></p>
+<p style="text-align: justify;">Últimamente los servicios de Facebook, los cuales ofrece también hacia WhatsApp e Instagram, han experimentado caídas durante minutos o incluso horas. Los usuarios que hacen uso de estos servicios primero se preguntan entre ellos si también tienen el servicio caído o es culpa de su dispositivo. Normalmente, van a buscar información en otro servicio en este caso Twitter, que proporciona la información necesaria para que el cliente sepa que el servicio está caído. Tal vez vean que el servicio de Twitter es más cómodo que las otras aplicaciones y tengan más interés en lo que ofrece.</p>
+<p>Por lo tanto es necesario protegerse de este ataque y disponer de medidas para ello.</p>
+<p><strong>Motivos de los atacantes</strong></p>
+<p style="text-align: justify;">No hay un único motivo, puede ser por puro aburrimiento hasta por protestas sociales. También pueden ser webs que promuevan algo que a los “hackers” o usuarios de internet no les haga gracia o bien simplemente que sea la competencia.</p>
+<p style="text-align: justify;">Pueden ser los siguientes:</p>
+<ul>
+<li style="text-align: justify;"><strong>Extorsión:</strong> como es el ejemplo de un DDoS con el cual hacer que una empresa pague dinero por la liberación de su servicio o página.</li>
+<li style="text-align: justify;"><strong>Hacktivismo:</strong> se basa en derribar páginas o sitios que no comparten la misma ideología u opinión que el atacante o que recurren a la apología de racismo.</li>
+<li style="text-align: justify;"><strong>Competencia:</strong> este caso se trata por ejemplo de una empresa que ataca a la web de otra para hacerles perder ventas. Aunque no sea lo más común, sí que es posible que ocurra en alguna empresa.</li>
+</ul>
+<h3>3. Herraminetas</h3>
+<p style="text-align: justify;">Las herramientas más comunes son:</p>
+<ul>
+<li style="text-align: justify;"><strong>Low Orbit Ion Cannon (LOIC):</strong> es una aplicación que realiza pruebas de estrés mediante ataques a la capa de protocolos TCP/UDP. Para ello utiliza una interfaz de WYSIWYG (What you see is what you get).</li>
+<li style="text-align: justify;"><strong>High Orbit Ion Cannon (HOIC):</strong> tiene la misma funcionalidad que LOIC, pero con más capacidades y personalizaciones. Utiliza el protocolo HTTP para lanzar ataques y está diseñada para realizar ataques en grupo.</li>
+<li style="text-align: justify;"><strong>Slowloris:</strong> es una aplicación usada para provocar un ataque bajo y lento en el servidor que sea atacado. Lo bueno de esta aplicación es que no necesita de una gran cantidad de recursos para hacer daño.</li>
+<li style="text-align: justify;"><strong>R-U-Dead-Yet (R.U.D.Y):</strong> es una herramienta similar a Slowloris que permite ataques sencillos mediante una interfaz en la que selecciona su objetivo. Esta herramienta trata de ir abriendo solicitudes HTTP de tipo POST poco a poco, manteniéndolas abiertas hasta que el servidor colapsa.</li>
+</ul>
+<h3>4. ¿Cómo protegerse?</h3>
+<p style="text-align: justify;">Para proteger los sistemas de sufrir un ataque DDoS, hay que incorporar distintas medidas de seguridad a distintos niveles, son las siguientes.</p>
+<p style="text-align: justify;"><strong>1. Medidas de protección en la red interna</strong></p>
+<ul style="text-align: justify;">
+<li>Ubicar el servidor web en una zona desmilitarizada<span> </span><strong>DMZ</strong><span> </span>(entre cortafuegos), evitando que el intruso pueda acceder a la red interna.</li>
+<li style="text-align: justify;">Existen sistemas de detección y prevención de intrusiones (IDS/IPS) que se pueden implementar, lo cuales monitorizan las conexiones en la capa de red y/o en la capa de aplicación y alertan si detectan intentos de acceso no autorizados o mal uso de protocolo.</li>
+<li>Limitar el número de solicitudes que un servidor aceptará en un lapso de tiempo determinado.</li>
+<li>Dispositivos o software con funcionalidad mixta de antivirus, cortafuegos y otras, que permiten gestionar de manera unificada la mayoría de ciberamenazas.</li>
+<li>Implementar listas blancas o listas negras sobre direcciones IP.</li>
+</ul>
+<p style="text-align: justify;">El uso combinado de estos métodos reducirá las posibilidades de sufrir un ataque DDoS.</p>
+<p style="text-align: justify;"><strong>2. Medidas de protección en el<span> </span><em>hosting</em></strong></p>
+<p style="text-align: justify;">Hay que informarse sobre las medidas de seguridad que ha implementado el proveedor en el que se tenga contratado el hosting, si se tiene uno. Algunos proveedores ofrecen las medidas de protección en el panel de administración del alojamiento web.</p>
+<p style="text-align: justify;"><strong>3. Medidas sobre el ancho de banda</strong></p>
+<p style="text-align: justify;">En esta medida se puede pensar que es la más básica, pero no por ello es la menos eficaz. Si es posible se ha de contratar el mayor ancho de banda posible. Será determinante también la velocidad y calidad que se contrate es decir, subida y bajada simétrica, ancho de banda garantizado, etcétera.</p>
+<p style="text-align: justify;"><strong>4. Medidas ante de la pérdida de la conexión</strong></p>
+<p style="text-align: justify;">Se presenta como medida tener redundancia en los datos, obteniendo los datos duplicados de otro servidor. También balanceando la carga de trabajo dependiendo de cuanta soporte enviándola a un servidor o a otro. Es decir, tener más de un servidor reducirá la posibilidad de que se detenga debido a la sobrecarga, aportando ventajas como la tolerancia a los fallos, ya que si un servidor cae la carga de trabajo la asume el otro.</p>
+<p style="text-align: justify;"><strong>5. Soluciones de seguridad basadas en la nube</strong></p>
+<p style="text-align: justify;">Se pueden evitar y migrar los efectos de un ataque DDoS con proveedores de seguridad web basados en la nube, es decir, los que ofrecen un cortafuegos de aplicación o WAF (Web Application Firewall). Estos servicios actúan como intermediarios entre el servicio web y los usuarios, interponiéndose también a atacantes o bots. Si se detecta cualquier tipo de ataque, el WAF lo bloqueará evitando así el ataque<span> </span><u>DDoS</u>.</p>
+<p style="text-align: justify;"><strong>6. Sistemas actualizados</strong></p>
+<p style="text-align: justify;">Ya no solo los ataques DDoS, sino cualquier tipo de ataque se puede basar en atacar lugares o equipos que tengan sistemas desactualizados, ya que si estos han sacado parches de seguridad no han llegado a aplicarse. También se deben tener el menor número de vectores de ataque potenciales posibles así como el uso de un Plan de Gestión de Incidencias para manejar este tipo de ataques.</p>
+<p style="text-align: justify;"><strong>7. Plan Director de Seguridad:</strong><span> </span>Es una planificación que indica que recursos, personas responsables y que prioridades se van a utilizar para la mejora de la seguridad de la empresa. Este plan contiene proyectos técnicos, legales y organizativos. También contiene instalación de productos y contratación de servicios. Por último contiene procedimientos para formar a los empleados y otro tipo de leyes y normas de seguridad.</p>
+<p style="text-align: justify;"><strong>8. Plan de gestión de incidentes:<span> </span></strong>es un plan que se basa en la metodología ITIL (Sistemas de Información y Tecnologías de Información). Su principal función como es<strong><span> </span>prevenir o restaurar en el menor tiempo posible cualquier tipo de interrupción o retraso</strong><span> </span>que pueda llegar a afectar a calidad de un servicio y así minimizar el impacto que esto puede provocar.</p>
+<p style="text-align: center;"><img src="ges-riesgos.png" alt="" width="562" height="565" /></p>
+<figure class="exe-figure exe-image position-center license-custom">
+<figcaption class="figcaption"><a href="https://www.freepik.es/vector-gratis/ilustracion-concepto-abstracto-gestion-riesgos-seguridad-cibernetica_11668654.htm#page=1&amp;query=plan%20de%20gestion%20de%20incidencias&amp;position=1" target="_blank" class="author" rel="noopener">vectorjuice</a>.<span> </span><span class="title"><em>Ilustración de concepto abstracto de gestión de riesgos de seguridad cibernética vector gratuito</em></span><span> </span><span class="license"><span class="sep">(</span><span class="custom-license">Freepik</span><span class="sep">)</span></span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_1_antiddos_con_fail2ban.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

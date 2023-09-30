@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3. Proxy con autenticación básica | UT10. Fortificación perimetral: proxy </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-63"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT10. Fortificación perimetral: proxy</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT10. Fortificación perimetral: proxy</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_los_proxys.html" class="no-ch">1. Introducción a los proxys</a></li>
+   <li><a href="2_proxy_webcach.html" class="daddy">2. Proxy web/caché</a>
+   <ul class="other-section">
+      <li><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="no-ch">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="3_proxy_con_autenticacin_bsica.html" class="active no-ch">3. Proxy con autenticación básica</a></li>
+   <li><a href="4_proxy_con_filtrado.html" class="no-ch">4. Proxy con filtrado</a></li>
+   <li><a href="5_proxy_transparente_para_httphttps.html" class="daddy">5. Proxy transparente para HTTP/HTTPS</a>
+   <ul class="other-section">
+      <li><a href="51_proxy_transparente_para_http.html" class="no-ch">5.1 Proxy transparente para HTTP</a></li>
+      <li><a href="52_proxy_transparente_para_https.html" class="no-ch">5.2 Proxy transparente para HTTPS</a></li>
+   </ul>
+   </li>
+   <li><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="daddy">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_proxy_squid_con_pfsense.html" class="no-ch">Práctica 1. Proxy Squid con PfSense</a></li>
+   </ul>
+   </li>
+   <li><a href="7_proxy_dns__pihole.html" class="daddy">7. Proxy DNS - PiHole</a>
+   <ul class="other-section">
+      <li><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="no-ch">Práctica 2.Implantación del proxy DNS Pi-Hole</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_proxy_con_filtrado.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3. Proxy con autenticación básica</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id93">
+<div class="iDevice emphasis0" >
+<div id="ta93_109_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">Otra de las funciones de un proxy es el control de quién puede acceder o no a sus servicios. Una de las formas de implementar esta seguridad es mediante el uso de credenciales de acceso (usuario/contraseña). </p>
+<p style="text-align: justify;">El escenario de trabajo es el esquema de red que se utilizó en el capítulo anterior. Partiendo del servidor proxy instalado y configurado el firewall, en este capítulo se añade el acceso por credenciales.</p>
+<p style="text-align: center;"><a href="Esquema-red-Proxy-Squid-2DMZ.png" target="_blank" rel="noopener"><img src="Esquema-red-Proxy-Squid-2DMZ.png" alt="" width="610" height="617" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong><span> </span>Esquema de red - Proxy Squid en ubuntu server con Mikrotik.</em></p>
+<h3>2. Configuración de Squid</h3>
+<h4>2.1 Crear la base de datos de usuarios</h4>
+<p style="text-align: justify;">En primer lugar, antes de comenzar con la configuración en squid, hay que instalar la utilidad <strong><span>htpasswd</span></strong><span>, que forma parte del paquete <strong>apache2-utils </strong>para administrar los nombres de usuarios y contraseñas con acceso a contenido restringido, es decir, crear la </span>base de datos de usuarios.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>apt install apache2-utils</span></pre>
+<p>Una vez instalada la utilidad, se procede a crear la base de datos con un usuario inicial. Al ejecutar el comando, se solicita la contraseña del usuario a crear.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>htpasswd -c /etc/squid/claves usuario01</span></pre>
+<p style="text-align: center;"><img src="crear-baseDatos-user01.png" alt="" width="458" height="97" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong><span> Creación de la base de datos de usuarios y contraseñas más el usuario 01.</span></em></p>
+<p>Para crear más usuarios, se realiza igual que antes pero sin la opción -c (crea el fichero de usuarios/contraseñas).</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>htpasswd /etc/squid/claves usuario02</span></pre>
+<p style="text-align: center;"><img src="dd-user02.png" alt="" width="427" height="93" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong><span> Creación del usuario 02.</span></em></p>
+<p>Si se lista el fichero claves, se puede observar que las contraseñas están cifradas.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>cat /etc/squid/claves</span></pre>
+<p style="text-align: center;"><img src="bd-claves.png" alt="" width="410" height="68" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong><span> Ver los usuarios creados con la clave cifrada.</span></em></p>
+<h4>2.2 Configurar squid</h4>
+<p>En primer lugar, hay que abrir el fichero squid para su edición.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>nano /etc/squid/squid.conf</span></pre>
+<p>A continuación, hay que buscar la directiva <strong>auth_param</strong> para poder definir todo el esquema de autenticación. Dado que hay ejemplos de cómo realizar la autenticación en el fichero, lo que se realizará es descomentar y modificar las líneas necesarias y que son las siguientes:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 16px;">auth_param basic program /usr/lib/squid3/basic_ncsa_auth /etc/squid/claves<br />auth_param basic children 5 startup=5 idle=1<br />auth_param basic realm Squid proxy-caching web server<br />auth_param basic credentialsttl 2 hours<b><br /></b></span></pre>
+<p>donde,</p>
+<ul>
+<li><strong><span style="font-size: 16px;">auth_param basic program </span></strong>
+<ul>
+<li><span style="font-size: 16px;">/usr/lib/squid3/basic_ncsa_auth , es el programa que se utilizará para hacer la autenticación</span></li>
+<li><span style="font-size: 16px;">/etc/squid/claves, es el fichero con las contraseñas que se creó en apartado 2.1.</span></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><img src="uth_param.png" alt="" width="619" height="150" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong><span> Directiva auth_param.</span></em></p>
+<p style="text-align: justify;"><strong>Crear acl</strong></p>
+<p>Si se observa la sección <strong>TAG: alc</strong> del fichero<span> </span><span>squid.conf</span>, se puede observar que las acl siguen el siguiente formato:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>acl</strong> <em>aclname</em> <em>acltype</em> argument ...</span><br /><span style="font-size: 12pt;"><strong>acl</strong> <em>aclname</em> <em>acltype</em> "file" ...</span></pre>
+<p>Donde,</p>
+<ul>
+<li><strong><em>aclname</em></strong><span> </span>es el nombre descriptivo que se le pondrá a la acl. </li>
+<li><strong><em>acltype</em></strong><span> </span>es el tipo de acl que se está definiendo.</li>
+<li><strong>argument</strong><span> </span>es la lista de parámetros separados por espacios. Por ejemplo, la lista de sitios web permitidos. "<strong>file</strong>" es el nombre y ruta completa de una archivo que contiene una lista de parámetros, cada uno de ellos en una línea. Por ejemplo, los dominios destino a los que no se permite acceder.</li>
+</ul>
+<p>A continuación, se puede observar la sintaxis de algunas algunos tipos de<span> </span><span>acl</span><span> </span>recogidos en el fichero <strong>/etc/squid/squid.conf</strong>: </p>
+<pre class="western"><span style="font-size: 10pt;">#
+#       <strong>acl aclname dst [-n] ip-address/mask ...</strong>        # URL host's IP address [slow]
+#       <strong>acl aclname dstdomain [-n] .foo.com ...</strong>         <br /></span></pre>
+<p style="text-align: justify;">El siguiente paso es crear una acl y para ello, hay que buscar la cadena <strong>TAG: acl </strong>y moverse al final de los ejemplos y explicación para copiar la siguiente acl:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 16px;">acl password proxy_auth REQUIRED</span></pre>
+<p style="text-align: justify;">Una vez se ha copiado, hay que pegarla al final de la declaración de acl's que se tienen.</p>
+<p style="text-align: center;"><img src="acl-password-required.png" alt="" width="585" height="248" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong><span> Creación de la directiva acl password.</span></em></p>
+<p style="text-align: justify;">Una vez se han guardado los cambios, el siguiente paso es indicar cuándo se debe utilizar la <strong>acl</strong>, para ello, hay que buscar la cadena <strong>TAG:</strong> <strong>http_access</strong>. En este caso, sí es importante el lugar donde ubicar la directiva que permita utilizar la acl que se acaba de crear.</p>
+<p style="text-align: justify;">Entonces, se comenta la directiva allow localnet debido a que ahora interesa permitir el acceso por credenciales y no por ser un equipo de la red y se añade la directiva <strong>acl password</strong> detrás de la de localhost ya que no se quiere que se pidan credenciales cuando se está accediendo a internet desde el propio servidor proxy.</p>
+<p style="text-align: center;"><img src="http_acces_aut-basica.png" alt="" width="662" height="261" /></p>
+<p style="text-align: center;"><em><strong>Figura 7.</strong><span> Añadir directiva http_access.</span></em></p>
+<p style="text-align: justify;">Para consolidar los cambios, se guarda el fichero y se reinicia el servicio <strong>squid</strong>.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>systemctl restart squid.service</span></pre>
+<p style="text-align: center;"><img src="restart-squid.png" alt="" width="395" height="44" /></p>
+<p style="text-align: center;"><em><strong>Figura 8.</strong><span> Reiniciar el servicio squid.</span></em></p>
+<h3>3. Probar el acceso con credenciales</h3>
+<p style="text-align: justify;">Desde un equipo de la red interna, se accede desde un navegador web con el proxy configurado y se observa que aparece una ventana con la petición de credenciales. Una vez se introduce un usuario de la base de datos, ya se puede navegar por internet.<span style="font-size: 12pt;"></span></p>
+<p style="text-align: center;"><a href="acceso-credenciales.png" target="_blank" rel="noopener"><img src="acceso-credenciales.png" alt="" width="788" height="448" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 9.</strong><span> Solicitud de credenciales para poder navegar a través del proxy.</span></em></p>
+<p>Si se accede al log de squid, ejemplo al fichero access.log, se pueden observar las conexiones que se han ido realizando en el proxy.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/var/spool#</strong>cat /var/log/squid/access.log</span></pre>
+<p style="text-align: center;"><img src="log-access-proxy.1.png" alt="" width="1254" height="839" /></p>
+<p style="text-align: center;"><strong><em>Figura 10.<span> </span></em></strong><em>Log de accesos al proxy.</em></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_proxy_con_filtrado.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 1. Cifrado volumen VeraCrypt | UT2. Fortificación de equipos: acceso al sistema </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-49"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT2. Fortificación de equipos: acceso al sistema</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT2. Fortificación de equipos: acceso al sistema</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_seguridad_en_el_arranque_del_sistema_informtico_configuracin_del_arranque_seguro_biosuefi.html" class="daddy">2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI)</a>
+   <ul class="other-section">
+      <li><a href="21_bloqueo_de_bios_con_contrasea.html" class="no-ch">2.1 Bloqueo de BIOS con contraseña</a></li>
+      <li><a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="no-ch">Tarea 1. Análisis y fortificación de la BIOS/UEFI</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proteccin_del_gestor_de_arranque_grub.html" class="daddy">3. Protección del gestor de arranque GRUB</a>
+   <ul class="other-section">
+      <li><a href="31_proteccin_de_grub.html" class="no-ch">3.1 Protección de GRUB</a></li>
+      <li><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="no-ch">Tarea 2. Configuración del sistema y arranque</a></li>
+      <li><a href="tarea_3_proteger_el_gestor_de_arranque_grub.html" class="no-ch">Tarea 3. Proteger el gestor de arranque GRUB</a></li>
+   </ul>
+   </li>
+   <li><a href="4_contraseas_seguras.html" class="daddy">4. Contraseñas seguras</a>
+   <ul class="other-section">
+      <li><a href="41_contraseas_seguras_en_windows.html" class="daddy">4.1 Contraseñas seguras en Windows</a>
+      <ul class="other-section">
+         <li><a href="411_inicios_de_sesin_en_windows.html" class="no-ch">4.1.1 Inicios de sesión en Windows</a></li>
+         <li><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="no-ch">Tarea 4. Política de contraseñas seguras en Windows</a></li>
+      </ul>
+      </li>
+      <li><a href="42_gestin_de_la_poltica_de_contraseas_en_ubuntu.html" class="daddy">4.2. Gestión de la política de contraseñas en Ubuntu</a>
+      <ul class="other-section">
+         <li><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="no-ch">Tarea 5. Política de contraseñas seguras en Ubuntu Server</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="current-page-parent daddy">6. Seguridad de los sistemas de ficheros, cifrado, particionado, entre otros</a>
+   <ul>
+      <li><a href="61_sistemas_de_ficheros_y_gestin_de_particionado.html" class="no-ch">6.1 Sistemas de ficheros y gestión de particionado</a></li>
+      <li class="current-page-parent"><a href="62_cifrado_de_disco.html" class="current-page-parent daddy">6.2 Cifrado de disco</a>
+      <ul>
+         <li><a href="621_bitlocker_windows_y_efs.html" class="daddy">6.2.1. Bitlocker (Windows) y EFS</a>
+         <ul class="other-section">
+            <li><a href="prctica_1_cifrado_con_bitlocker.html" class="no-ch">Práctica 1. Cifrado con Bitlocker</a></li>
+         </ul>
+         </li>
+         <li><a href="622_filevault_macos.html" class="no-ch">6.2.2 FileVault (macOS)</a></li>
+         <li><a href="623_luks_linux.html" class="daddy">6.2.3 LUKS (Linux)</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_cifrado_de_particiones_y_directorio_con_luks.html" class="no-ch">Laboratorio. Cifrado de particiones y directorio con LUKS</a></li>
+            <li><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="no-ch">Práctica 2. Instalación de Ubuntu con particiones cifradas</a></li>
+         </ul>
+         </li>
+         <li class="current-page-parent"><a href="624_veracrypt.html" class="current-page-parent daddy">6.2.4 VeraCrypt</a>
+         <ul>
+            <li id="active"><a href="laboratorio_1_cifrado_volumen_veracrypt.html" class="active no-ch">Laboratorio 1. Cifrado volumen VeraCrypt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_control_de_calidad_de_mquinas.html" class="daddy">7. Control de calidad de máquinas</a>
+   <ul class="other-section">
+      <li><a href="71_mantenimiento_seguro_de_equipos.html" class="no-ch">7.1 Mantenimiento seguro de equipos</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="624_veracrypt.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_control_de_calidad_de_mquinas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 1. Cifrado volumen VeraCrypt</h1></div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id83">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header" style="background-image:url(icon_activity.png)"><span class="iDeviceTitle">&nbsp;</span></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta83_109_2" class="block iDevice_content">
+<div class="pbl-task-description"><h3 style="text-align: justify;"><span>1. Introducción</span></h3>
+<p style="text-align: justify;"><span>En esta tarea, tienes que utilizar el programa VeraCrypt en un equipo con Windows 10 o Windows Server 2019.</span></p>
+<h3 style="text-align: justify;"><span>2. Recursos</span></h3>
+<ul>
+<li style="text-align: justify;"><span>Equipo windows 10 o Windows Server tu subsistema del proyecto.</span></li>
+<li style="text-align: justify;"><span>Crear un disco nuevo de 5Gbytes en el equipo formateado en NTFS.</span></li>
+</ul>
+<h3 style="text-align: justify;"><span>3. Trabajo a realizar</span></h3>
+<p style="text-align: justify;"><span>En primer lugar tienes que descargar la aplicación desde su <a href="https://www.veracrypt.fr/en/Downloads.html" target="_blank" rel="noopener">web oficial.</a></span></p>
+<p style="text-align: center;"><span><img src="descarga-VeraCrupt.png" alt="" width="1442" height="866" /></span></p>
+<p style="text-align: justify;"><span>Una vez descargado el instalable para Windows, hay que comenzar con el proceso de instalación.</span></p>
+<p style="text-align: center;"><span><img src="asistente-install-veracryp.png" alt="" width="320" height="144" /></span></p>
+<p style="text-align: justify;"><span>Una vez finalizado el proceso de instalación, ejecutamos el fichero "C:\Program Files\VeraCrypt\<strong>VeraCrypt.exe</strong>".</span></p>
+<p style="text-align: center;"><span><img src="Veracrypt-instalado.png" alt="" width="560" height="483" /></span></p>
+<p style="text-align: justify;"><span></span>A continuación, hay que crear un v<span>olumen encriptado, seleccionando la opción de </span><b>Crear Volumen </b>(ver figura superior). <span>Se abre un asistente para crear el volumen, donde hay que seleccionar las diferentes opciones que se deseen de cifrado de. disco, fichero virtual, etc..</span></p>
+<p style="text-align: justify;"><span>En el siguiente cuadro de pestañas, se describen los pasos en secuencia.</span></p>
+<div class="exe-fx exe-tabs">
+<h2><span><strong>1.</strong></span></h2>
+<p style="text-align: justify;">1. <span>Para este caso de ejemplo, </span><span>en esta primera ventana del asistente, seleccionamos la primera opción, '<strong>Crear un contenedor de archivos cifrado</strong>'. ya que se pretende crear un disco de cifrado virtual dentro de un archivo. El tamaño del archivo, se le proporcionará al asistente más adelante.</span></p>
+<p style="text-align: center;"><span><img src="asistente-Veracrypt-01.png" alt="" width="676" height="430" /></span></p>
+<h2>2.</h2>
+<p style="text-align: justify;">A continuación, seleccionamos el tipo de volumen 'Volumen VeraCrypt común', dado que se desea crear un volumen normal.</p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-02.png" alt="" width="674" height="429" /></p>
+<h2>3.</h2>
+<p style="text-align: justify;">A continuación, seleccionamos la ubicación del archivo encriptado. Para este caso de ejemplo, el archivo se alojará en el disco F:\ y se llamará encriptado-volumnen.</p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-03.png" alt="" width="675" height="917" /></p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-04.png" alt="" width="675" height="430" /></p>
+<h2>4.</h2>
+<p style="text-align: justify;">A continuación, hay que seleccionar el algoritmo de cifrado y hash que se utilizará. Para este ejemplo, se selecciona AES y hash SHA-512.</p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-05.png" alt="" width="675" height="430" /></p>
+<h2>5.</h2>
+<p style="text-align: justify;">A continuación, hay que seleccionar el tamaño del volumen, para este caso, lo fijaremos a 500 MBytes.</p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-06.png" alt="" width="673" height="429" /></p>
+<h2>6.</h2>
+<p style="text-align: justify;">A continuación, hay que ingresar la contraseña del volumen <span>necesaria para desencriptar y poder utilizar el volumen.</span></p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-07.png" alt="" width="673" height="428" /></p>
+<p style="text-align: justify;">Si la contraseña es corta (como es el caso) aparece una ventana informativa (warning) avisando del uso de contraseñas cortas y recomendando el uso de contraseñas de como mínimo 20 caracteres. Podemos avanzar pulsando el botón '<strong>Sí</strong>'.</p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-08.png" alt="" width="402" height="203" /></p>
+<h2>7.</h2>
+<p style="text-align: justify;"><span>A continuación, en la siguiente ventana hay que mover el ratón para generar la clave criptográfica aleatoria a partir de la posición del ratón.</span></p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-09.png" alt="" width="674" height="428" /></p>
+<p style="text-align: justify;">Una vez la línea está verde, pulsamos el botón 'Formatear'. Cuando finalice el proceso, nos avisa con una ventana emergente (ver imagen inferior). Para continuar, pulsamos 'Aceptar'.</p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-13.png" alt="" width="757" height="467" /></p>
+<p style="text-align: justify;"></p>
+<h2>8.</h2>
+<p style="text-align: justify;">La siguiente ventana del asistente nos informa que el volumen ha sido creado  y está listo para usarse.</p>
+<p style="text-align: center;"><b><img src="asistente-Veracrypt-14.png" alt="" width="675" height="431" /></b></p>
+<h2>9.</h2>
+<p style="text-align: justify;"><span>Para utilizar el volumen, hay que acceder a </span><b>Volúmenes &gt; Seleccionar Archivo</b>, y seleccionar el archivo creado anteriormente.</p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-15.png" alt="" width="561" height="484" /></p>
+<p style="text-align: center;"><img src="asistente-Veracrypt-16.png" alt="" width="665" height="471" /></p>
+<h2>10.</h2>
+<p>A continuación, hay que especificar una letra sobre la que se montará el volumen y pulsamos<span> </span><b>Montar.</b></p>
+<p style="text-align: center;"><b><img src="asistente-Veracrypt-17.png" alt="" width="563" height="485" /></b></p>
+<p style="text-align: justify;"><b></b></p>
+<h2>11.</h2>
+<p style="text-align: justify;"><span>El asistente solicita la contraseña  par poder realizar el montaje.</span></p>
+<p style="text-align: center;"><b><img src="asistente-Veracrypt-18.png" alt="" width="494" height="190" /></b></p>
+<h2>12.</h2>
+<p style="text-align: justify;"><span>Si todo va bien, montará el volumen.</span></p>
+<p style="text-align: center;"><span><img src="asistente-Veracrypt-19.png" alt="" width="559" height="484" /></span></p>
+<h2>13.</h2>
+<p style="text-align: justify;"><span>Si accedemos a </span><b>Equipo</b><span> podremos ver el volumen montado, en el cual todo lo que guardemos al desmontarlo, quedará cifrado.</span></p>
+<p style="text-align: center;"><span><img src="asistente-Veracrypt-20.png" alt="" width="563" height="203" /><br /></span></p>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="624_veracrypt.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_control_de_calidad_de_mquinas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.3  Interconectar diferentes VLAN | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-66"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_redes_virtuales_vlans.html" class="current-page-parent daddy">6. Redes virtuales (VLANs)</a>
+   <ul>
+      <li class="current-page-parent"><a href="61_introduccin_a_gns3.html" class="current-page-parent daddy">6.1 Introducción a GNS3</a>
+      <ul>
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li id="active"><a href="613__interconectar_diferentes_vlan.html" class="active no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1.3  Interconectar diferentes VLAN</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id109">
+<div class="iDevice emphasis0">
+<div id="ta109_85" class="block iDevice_content">
+<h3>1. ¿Se pueden interconectar diferentes VLAN?</h3>
+<p>La <strong>respuesta es sí</strong>, para ello, se necesita hacer uso de los enlaces troncales que se han comentado anteriormente:</p>
+<p style="text-align: center;"><img src="enlaces-vlan.png" alt="" width="207" height="362" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Enlaces troncales.</em></p>
+<p style="text-align: justify;"><span>En el gráfico se puede observar cómo se ha conectado un router como varios enlaces troncales a distintos switches.</span></p>
+<p align="justify" style="text-align: justify;">En el <strong>siguiente vídeo</strong>, se describen siguientes acciones de fortificación en una <strong>red de un aula de un centro educativo</strong>. Inicialmente se configura la conectividad del aula mediante un switch NO gestionable y a contnuación, se configura con un Switch gestionable Cisco. El esquema de red es el siguiente:</p>
+<p align="justify" style="text-align: center;"><img src="esquema-Cisco-Read-Aula.png" width="649" height="385" /></p>
+<p align="justify" style="text-align: center;"><em><strong>Figura 2.</strong> Esquema de red de un aula de un centro educativo.</em></p>
+<p align="justify" style="text-align: justify;">Las configuraciones que se describen son:</p>
+<ol>
+<li align="justify" style="text-align: justify;">Identificación/configuración de las interfaces de red del router Mikrotik.</li>
+<li align="justify" style="text-align: justify;">Identificación de las vlan de la red.</li>
+<li align="justify" style="text-align: justify;"><strong>Creación de reglas en el firewall</strong> del Mikrotik para evitar que equipos en diferentes o iguales vlan puedan verse entre ellos, es decir, puedan enviar paquetes ICMP, conexión ssh, etcétera. Ejemplo un equipo en la vlan10 no podrá hacer un ping a un equipo de la vlan 20 o vlan 10.</li>
+<li align="justify" style="text-align: justify;"><strong>Configuración</strong> <strong>de un switch gestionable Cisco</strong> en una red de Aulas con interconexión de diferentes vlan.</li>
+</ol>
+<p align="justify" style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/EKJM45wghaM" data-mce-fragment="1"></iframe></p>
+<p align="justify" style="text-align: center;"><em><strong>Vídeo 1</strong>. Switch gestionable en gns3.</em></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

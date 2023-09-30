@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.6 SSHGuard | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-70"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="current-page-parent daddy">3. Securización de los sistemas de administración remota</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_secureshell.html" class="current-page-parent daddy">3.1 SecureShell</a>
+      <ul>
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li id="active"><a href="316_sshguard.html" class="active daddy">3.1.6 SSHGuard</a>
+         <ul>
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul class="other-section">
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="proyecto_server_hardening_linux_sshguard.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.6 SSHGuard</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id106">
+<div class="iDevice emphasis0">
+<div id="ta106_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<table border="0" style="width: 1157px;">
+<tbody>
+<tr>
+<td style="width: 156.594px;"><span style="font-size: 12pt;"><img src="sshguard-logo.png" alt="" width="151" height="113" /></span></td>
+<td style="text-align: justify; width: 984.406px;">
+<p><span style="font-size: 12pt;"><a href="https://www.sshguard.net/" target="_blank" rel="noopener">SSHGuard</a> es una pequeña utilidad que se ejecuta en el servidor donde esté instalado OpenSSH y sirve para proteger el equipo contra ataques de fuerza bruta. También se puede utilizar para otros servicios (correo electrónico y FTP), aunque esta tarea sólo se trabajará en SSH.</span></p>
+<p><span style="font-size: 12pt;"><span style="font-weight: 400;">Con </span><b><i>SSHGuard</i></b><span style="font-weight: 400;"> se podrá monitorizar los logs del servidor SSH y de otros servicios,  detectar ataques y bloquear a los atacantes utilizando el cortafuegos del sistema operativo, y todo ello de manera automática.</span></span></p>
+<p class="entry-title"><span style="font-size: 12pt;"><strong>SSHGuard</strong>, es una alternativa a <a href="https://www.fail2ban.org/wiki/index.php/Main_Page" target="_blank" rel="noopener">Fail2ban</a> para proteger SSH contra ataques de fuerza bruta.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3><b>2. ¿Qué es y para qué sirve SSHGuard?</b></h3>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>SSHGuard</strong> es un software que se encargará de monitorizar los logs en diferentes formatos y también de diferentes servicios. Es capaz de reconocer los logs en diferentes formatos, entre los que se tienen los siguientes:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">macOS.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Metalog.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Multilog.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">raw log files.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Syslog.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Syslog-ng.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">systemd journal.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Los servicios compatibles con SSHGuard son los más conocidos en el mundo de la administración de sistemas. Actualmente se tienen los siguientes servicios:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">OpenSSH (Servidor SSH).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Sendmail (Servidor de correo).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Exim (Servidor de correo).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Dovecot (Servidor de correo).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Cucipop (Servidor de correo).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">UWimap (Servidor de correo).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">vsftpd (Servidor FTP/FTPES).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">proftpd (Servidor FTP/FTPES).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">pure-ftpd (Servidor FTP/FTPES).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">FreeBSD ftpd (Servidor FTP/FTPES).</span></li>
+</ul>
+<p style="text-align: justify;">Esta herramienta es capaz de leer los diferentes tipos de logs de diferentes servicios en el sistema, y de manera automática detectará y bloqueará dichos ataques utilizando el cortafuegos del sistema operativo. SSHGuard es compatible con los siguientes cortafuegos de sistemas basados en Unix y Linux:</p>
+<ul>
+<li style="text-align: justify;">FirewallD.</li>
+<li style="text-align: justify;">ipfw.</li>
+<li style="text-align: justify;">IPFILTER.</li>
+<li style="text-align: justify;">netfilter/iptables.</li>
+<li style="text-align: justify;">netfilter/ipset.</li>
+<li style="text-align: justify;">PF.</li>
+<li style="text-align: justify;">tcpd’s hosts.allow.</li>
+<li style="text-align: justify;">IBM AIX’s firewall.</li>
+</ul>
+<p><span>Como características interesantes a destacar, son:</span></p>
+<ul>
+<li><span>Permite crear una lista negra de direcciones IP automáticamente.</span></li>
+<li><span>Supervisar varios archivos de registro simultáneamente.</span></li>
+<li><span>Tiene soporte completo con el protocolo de red IPv6.</span></li>
+</ul>
+<h3><b>3. Instalación y puesta en marcha</b></h3>
+<p style="text-align: justify;">Esta herramienta está de manera predeterminada en los principales repositorios de software de Debian, Ubuntu, ArchLinux, FreeBSD, OpenSUSE y otras muchas distribuciones basadas en Unix y Linux, por lo que la instalación se debe realizar a través del gestor de paquetes de la distribución que se disponga, para nuestro caso, <strong><em>Ubuntu Server 20.04.3</em></strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo apt install sshguard</span></pre>
+<p style="text-align: center;"><img src="install-sshguard.png" alt="" width="801" height="384" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Instalación de sshGuard.</em></p>
+<p>Si se accede al fichero de configuración <strong>sshguard.conf</strong> que se encuentra en <strong>/etc/sshguard</strong>, se pueden observar las siguientes secciones:</p>
+<ul>
+<li><strong>BACKEND</strong>: Ruta del ejecutable del backend (requerido, no tiene valor por defecto).</li>
+<li style="text-align: justify;"><strong>LOGREADER: </strong>Lo que se quiere fiscalizar <strong>a través de los registros del <i>journal de systemd </i></strong>(opcional, sin valor predeterminado). Ejemplo: <span><span style="font-size: 12pt;">-t sshd.</span></span></li>
+<li><strong>THRESHOLD:</strong> Número de intentos problemáticos disparan un bloque. <span>Ejemplo de valor: 10.</span></li>
+<li style="text-align: justify;"><strong>BLOCK_TIME:</strong> Número de segundos que se mantienen los bloqueos. Por defecto, el valor de BLOCK_TIME (<span>cantidad de tiempo predeterminada que el atacante está baneado) comienza en 120 segundos, y se incrementa en un factor de 1,5 cada vez que falla en otro intento de iniciar sesión. Ejemplo de valor: 60480 segundos (durante 24 horas).</span></li>
+<li style="text-align: justify;"><strong>DETECTION_TIME:</strong> Número de segundos que se registran las direcciones IP. <span>Ejemplo de valor: 60480 segundos (durante 24 horas).</span></li>
+<li style="text-align: justify;"><strong>WHITELIST_FILE:</strong> Archivo de la lista blanca donde se puede incluir el fichero con la lista de ip's que no se bloquearán, ejemplo: WHITELIST_FILE=/var/db/sshguard/whitelist.db, se indica que todos los equipos con la ip que estén en el fichero blacklist.db no se bloquearán.</li>
+<li style="text-align: justify;"><strong>BLACKLIST_FILE:</strong> Archivo de la lista negra donde se puede incluir el fichero con la lista de ip's que se bloquearán, ejemplo: BLACKLIST_FILE=100:/var/db/sshguard/blacklist.db, se indica que todos los equipos con la ip que estén en el fichero blacklist.db quedan bloqueados una vez <span>alcancen un nivel de «peligro» de 100 (10 intentos de inicio de sesión fallidos con un costo de 10 cada uno, lo que explica el parámetro «100» en la configuración de la lista negra).</span></li>
+</ul>
+<p><img src="sshguard-conf.png" alt="" width="787" height="420" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Fichero sshguard.conf.</em></p>
+<p><span>Como ejemplo, se configura con las siguientes características:</span></p>
+<ul>
+<li><span><span class="c1">4 intentos problemáticos disparan un bloqueo.</span></span></li>
+<li style="text-align: justify;">Se quiere fiscalizar sshd a través de systemd journal.<span><span class="c1"></span></span></li>
+<li><span><span class="c1">Los bloqueos se mantienen al menos durante 24 horas (60480 segundos).</span></span></li>
+<li><span><span class="c1"> Registrar las direcciones IP durante 24 horas (60480 segundos).</span></span></li>
+<li>El fichero de la lista negra es blacklist.db y se encuentra en /var/db/sshguard/.</li>
+</ul>
+<pre><span style="font-size: 12pt;"><span class="nv">BACKEND</span><span class="o">="/usr/lib/x86_64-linux-gnu/sshg-fw-iptables"</span><br />LOGREADER="LANG=C /bin/journalctl -afb -p info -n1 -o cat -t sshd"
+<span class="nv">THRESHOLD</span><span class="o">=4</span>
+<span class="nv">BLOCKTIME</span><span class="o">=</span><span class="m">60480</span>
+<span class="nv">DETECTION_TIME</span><span class="o">=</span><span class="m">60480</span>
+BLACKLIST_FILE=100:/var/db/sshguard/blacklist.db<br /></span></pre>
+<div class="cuadro-importante-centro">
+<p style="text-align: justify;">El archivo <strong>sshguard.conf</strong> que viene con Ubuntu hará<span> </span><a href="https://bugs.launchpad.net/ubuntu/+source/sshguard/+bug/1881459" rel="nofollow noopener noreferrer" target="_blank">hará que sshguard se reactive en sus propios mensajes de registro</a>, bloqueando instantáneamente la IP tan pronto como cometa un solo error . (Este error parece haberse introducido en el paquete debian ascendente; los ejemplos proporcionados en la fuente <strong>sshguard</strong> no tienen este problema). Para solucionar esto, hay que modificar LOGREADER remplazando los <strong>SYSLOG_FACILITY</strong> por <strong>-t sshd </strong>(y posiblemente otros servicios que desea que supervise sshguard). La configuración debería quedar así:</p>
+<pre><span style="font-size: 12pt;">LOGREADER="LANG=C /bin/journalctl -afb -p info -n1 -o cat -t sshd"</span></pre>
+</div>
+<p><span>Una vez se haya modificado el fichero, hay que reiniciar el servicio (<strong>sshguard.service)</strong></span><span>.</span></p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo systemctl reload-or-restart sshguard</span></pre>
+<h4 style="text-align: justify;">3.1 Comprobaciones previas</h4>
+<p style="text-align: justify;"><span style="font-weight: 400;">Una vez instalado, se realizan una serie de comprobaciones antes de la puesta en marcha de sshGuard, son las siguientes:</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;"><strong>1.</strong> Si se desea fiscalizar el <strong><em>servicio ssh</em></strong>, hay que comprobar que el equipo ubuntu server está ejecutando el <em><strong>servicio ssh, </strong></em>para ello, se puede utilizar el siguiente comando:</span></p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>ss -lt</span></pre>
+<p style="text-align: center;"><img src="ss-lt.png" alt="" width="773" height="139" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Servicio ssh a la escucha en el servidor.</em></p>
+<p style="text-align: justify;">En la <em><strong>figura 2</strong></em>, se puede observar que el servicio ssh está a la escucha.</p>
+<p style="text-align: justify;"><strong>2</strong>. Comprobar los archivos de auditoría en busca de intentos de acceso a SSH (<span>/var/log/auth.log)</span>. En este punto, se puede utilizar la herramienta <a href="https://lnav.org/" target="_blank" rel="noopener"><strong>lnav</strong></a>.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>lnav /<span>var/log/auth.log</span></span></pre>
+<p style="text-align: center;"><img src="lnav-auth-log.png" alt="" width="1070" height="494" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Archivos de auditoría con lnav.</em></p>
+<h4 style="text-align: justify;">3.2 Puesta en marcha</h4>
+<p style="text-align: justify;">Una vez realizadas las comprobaciones, para la puesta en marcha de <strong>SSHGuard</strong> lo primero que hay que configurar es el sistema de logs en el servidor, para hacerlo, se dispone de <a href="https://web.archive.org/web/20180902011955/https://www.sshguard.net/docs/setup/" target="_blank" rel="noopener">documentación al respecto en la web oficial del software</a>.</p>
+<p style="text-align: justify;">Después hay que que configurar ciertos parámetros en el firewall, para que SSHGuard sea capaz de bloquear las direcciones IP de los posibles atacantes que se tengan.</p>
+<p style="text-align: justify;">En la <a href="https://www.sshguard.net/docs.html" target="_blank" rel="noopener">página web oficial del proyecto SSHGuard</a> se puede encontrar toda la información sobre esta herramienta.</p>
+<p style="text-align: justify;">Lo principal que requiere la configuración es crear una cadena (chain) llamada <strong>sshguard</strong>, donde <strong>sshguard</strong> inserta automáticamente reglas para descartar paquetes de red provenientes de equipos peligrosos. A continuación, hay que agregar una regla para saltar desde la cadena INPUT a la cadena sshguard. Esta regla debe añadirse antes de cualquier otra regla que procese los puertos que sshguard protege. </p>
+<p style="text-align: justify;">Por lo tanto, en <span>el fichero de configuración de <strong>iptables</strong> </span><span>se necesitan 2 cosas:</span></p>
+<ol>
+<li style="text-align: justify;"><span>Definir una nueva cadena (chain) </span><span>llamada  sshguard (iptables -N sshguard).</span></li>
+<li style="text-align: justify;"><span>Indicar que la cadena INPUT</span><span> pase por esa cadena creada  (iptables -A INPUT -j sshguard)</span><span>. </span></li>
+</ol>
+<div class="cuadro-nota-centro-new">
+<p><span>Se recomienda incluirlo en el inicio de las reglas de filtrado del fichero <strong>iptables</strong> p</span><span>ara descartar los paquetes lo antes posible.</span></p>
+</div>
+<p style="text-align: justify;">Los comandos son los siguientes:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo iptables -N sshguard<br /><strong>administrador@orion:~$ </strong>sudo <span>iptables -A INPUT -m multiport -p tcp --destination-ports 21,22 -j sshguard</span></span><b></b></pre>
+<p>Para guardar las reglas:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>iptables-save &gt; /etc/iptables/iptables.rules</span></pre>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Es recomendable desarrollar un script que contenga todas las reglas que se vayan creando en el servidor y en el inicio del sistema, arrancar el script.</p>
+<p style="text-align: justify;">Ejemplo: <strong><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/Fortificacion-Servidor/crear-iptables.sh" target="_blank" rel="noopener">script iptables</a></strong></p>
+</div>
+<h3><b>4. Funcionamiento de SSHGuard</b></h3>
+<p><span style="font-weight: 400;">El funcionamiento de la herramientas es muy sencillo:</span></p>
+<ul>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Revisa los archivos de auditoría del sistema en busca de intentos de acceso no satisfactorios reincidentes.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Bloquea las direcciones IP de los infractores utilizando alguna herramienta de <strong>firewall</strong>, entre ellas <strong>iptables</strong>. Si la dirección se encuentra en una lista blanca, no establece la regla en el firewall.</span></li>
+<li style="font-weight: 400; text-align: justify;" aria-level="1"><span style="font-weight: 400;">Transcurrido un tiempo desbloquea la dirección del atacante, a no ser que se haya definido en una lista negra en cuyo caso no lo desbloquea.</span></li>
+</ul>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">SSHGuard en Ubuntu 20.04 parece funcionar aunque en realidad no aplica los filtros. <strong><a href=" https://askubuntu.com/questions/1245543/how-do-i-configure-sshguard-in-ubuntu-20-04 " target="_blank" rel="noopener">Consulta para más información.</a></strong></p>
+</div>
+<h4><span class="mw-headline">Ejemplos de baneados mediante sshGuard</span></h4>
+<h4><span class="mw-headline" id="Ejemplo_moderado_de_baneado">1. Baneado moderado</span></h4>
+<p style="text-align: justify;">En la siguiente regla de prohibición se fiscaliza <strong><a href="https://wiki.archlinux.org/title/Sshd" class="mw-redirect" title="Sshd">sshd</a></strong><span> </span>y<span> </span><strong><a href="https://wiki.archlinux.org/title/Vsftpd" class="mw-redirect" title="Vsftpd">vsftpd</a></strong><span> </span>a través de los registros del<span> </span><i><strong>journal</strong> de <strong>systemd</strong></i>. Se bloquean a los atacantes después de 2 intentos durante 180 segundos y el tiempo de bloqueo posterior aumentará en un <strong>factor de 1,5</strong>. Esta función de retraso multiplicativo es interna y no está controlada por la configuración. Los atacantes son recordados durante 3600 segundos y permanecen en la lista negra después de 10 intentos (10 intentos con un costo de 10 cada uno, lo que explica el parámetro «100» en la configuración de la lista negra). No solo se bloquea la IP del atacante, sino también toda la subred IPv4 24 (notación<span> </span><a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" class="extiw" title="wikipedia:Classless Inter-Domain Routing">CIDR</a>).</p>
+<pre><span style="font-size: 12pt;">BACKEND="/usr/lib/x86_64-linux-gnu/sshg-fw-iptables"
+LOGREADER="LANG=C /usr/bin/journalctl -afb -p info -n1 -t sshd -t vsftpd -o cat"
+THRESHOLD=20
+BLOCK_TIME=180
+DETECTION_TIME=3600
+BLACKLIST_FILE=100:/var/db/sshguard/blacklist.db
+IPV4_SUBNET=24
+</span></pre>
+<p style="text-align: center;"><span class="mw-headline"><img src="sshguard-moderado.png" alt="" width="782" height="414" /></span></p>
+<p style="text-align: center;"><span class="mw-headline"><em><strong>Figura 5.</strong> Fichero de configuración de sshguard.</em></span></p>
+<h4 style="text-align: justify;">Test de prueba</h4>
+<p style="text-align: justify;">A continuación se pone a prueba con un simple test. Se intentan <span>una serie de logins por ssh sin éxito en el equipo protegido por sshguard y se observa lo siguiente en el </span><strong>/var/log/auth.log</strong><span> de dicho equipo:</span></p>
+<p style="text-align: center;"><img src="bloqueo-sshguard.png" alt="" width="801" height="187" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong> Bloqueo por 2 intentos por ssh.</em></p>
+<p style="text-align: justify;">Como se puede observar, se ha bloqueado a la 192.168.9.14 después de 2 intentos fallidos. </p>
+<h4><span class="mw-headline" id="Baneado_agresivo">2. Baneado agresivo</span></h4>
+<p style="text-align: justify;">Para algunos usuarios sometidos a ataques constantes, se puede adoptar una política de prohibición más agresiva. Si está seguro de que los intentos de inicios de sesión fallidos son poco probables que sean accidentales, se puede indicar a SSHGuard que prohíba permanentemente los servidores después de un solo intento de inicio de sesión fallido. Para ello, hay que modificar los parámetros en el archivo de configuración de la siguiente manera:</p>
+<pre><span style="font-size: 12pt;">THRESHOLD=10
+BLACKLIST_FILE=10:/var/db/sshguard/blacklist.db
+</span></pre>
+<p>Finalmente, para consolidar los cambios hay que reiniciar el servicio <strong>sshguard.service</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo systemctl reload-or-restart sshguard</span></pre>
+<p style="text-align: justify;">Además, para evitar múltiples intentos de autenticación durante una sola conexión, se puede modificar el fichero<strong> /etc/ssh/sshd_config</strong> definiendo:</p>
+<pre><span style="font-size: 12pt;">MaxAuthTries 1
+</span></pre>
+<p>Finalmente, para consolidar los cambios hay que reinciar el servicio <strong>sshguard.service</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo systemctl reload-or-restart sshguard</span></pre>
+<h4>Comprobar el estado</h4>
+<p>Para conocer el estado del servicio sshguard, se puede utilizar el siguiente comando que indicará los servicios que están supervisados:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo systemctl status sshguard</span></pre>
+<h4 style="text-align: center;"><img src="status-sshguard.png" alt="" width="800" height="489" /></h4>
+<p style="text-align: center;"><em><strong>Figura 7.</strong> Estado de sshguard.</em></p>
+<h4>Comprobaciones finales</h4>
+<p>Si en el servidor ya hay direcciones IP bloqueadas se deberían mostrar en el cortafuegos dentro del apartado<strong> Chain sshguard.</strong></p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo iptables -L</span></pre>
+<h3 class="footnote-line" name="dfref-footnote-1">5. Referencias</h3>
+<div class="footnote-line" name="dfref-footnote-1">
+<ul>
+<li><a href="https://www.sshguard.net/" target="_blank" class="url" rel="noopener">https://www.sshguard.net</a></li>
+<li><a href="https://www.sshguard.net/docs.html" target="_blank" class="url" rel="noopener">https://www.sshguard.net/docs.html</a></li>
+<li>Documentación<span> </span><a href="https://wiki.archlinux.org/index.php/Sshguard" target="_blank" rel="noopener">SSHGuard @ Arch Linux</a>.</li>
+<li><a href="http://manpages.ubuntu.com/manpages/focal/man8/sshguard.8.html">man sshguard</a></li>
+<li><a href="http://manpages.ubuntu.com/manpages/focal/man7/sshguard-setup.7.html" target="_blank" rel="noopener">man sshguard-setup</a></li>
+<li><a href="https://muylinux.xyz/como-bloquear-ataques-de-fuerza-bruta-ssh-con-sshguard/">Cómo bloquear ataques por fuerza bruta ssh con sshGuard.</a></li>
+<li><a href="https://wiki.archlinux.org/title/Sshguard_(Espa%C3%B1ol)" target="_blank" rel="noopener">[wiki sshguard]</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="proyecto_server_hardening_linux_sshguard.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Caso Práctico. Uso de certificados en Servicios WEB | UT3. Sistemas de control de acceso y credenciales </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-60"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT3. Sistemas de control de acceso y credenciales</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT3. Sistemas de control de acceso y credenciales</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="recomendaciones_de_estudio__resumen.html" class="no-ch">Recomendaciones de estudio - Resumen</a></li>
+   <li><a href="1_mecanismos_de_autenticacin_tipos_de_factores.html" class="daddy">1. Mecanismos de autenticación. Tipos de factores.</a>
+   <ul class="other-section">
+      <li><a href="11_mltiples_factores_de_autenticacin.html" class="no-ch">1.1 Múltiples factores de autenticación</a></li>
+      <li><a href="tarea_1_autenticacin_de_doble_factor_por_ssh_con_google_authenticator.html" class="no-ch">Tarea 1. Autenticación de doble factor por SSH con Google Authenticator</a></li>
+      <li><a href="laboratorio_1_autenticacin_multifactor_con_yubico.html" class="no-ch">Laboratorio 1. Autenticación multifactor con Yubico</a></li>
+      <li><a href="tarea_2_ubuntu__2fa_para_login_con_yubico_security_key.html" class="no-ch">Tarea 2. Ubuntu - 2FA para login con Yubico Security Key</a></li>
+   </ul>
+   </li>
+   <li><a href="2_tcnicas_de_autenticacin.html" class="no-ch">2. Técnicas de autenticación</a></li>
+   <li><a href="3_gestin_de_credenciales.html" class="daddy">3. Gestión de credenciales</a>
+   <ul class="other-section">
+      <li><a href="31_lastpass.html" class="no-ch">3.1 LastPass</a></li>
+      <li><a href="32_keepass.html" class="no-ch">3.2 Keepass</a></li>
+      <li><a href="33_otros_gestores_de_contraseas.html" class="no-ch">3.3 Otros gestores de contraseñas</a></li>
+      <li><a href="tarea_3_instalacin_configuracin_y_puesta_en_produccin_de_un_gestor_de_credenciales.html" class="no-ch">Tarea 3. Instalación, configuración y puesta en producción de un gestor de credenciales</a></li>
+      <li><a href="34_brechas_de_seguridad_y_contraseas_inseguras.html" class="no-ch">3.4 Brechas de seguridad y contraseñas inseguras</a></li>
+   </ul>
+   </li>
+   <li><a href="4_acceso_por_medio_de_firma_electrnica.html" class="daddy">4. Acceso por medio de firma electrónica</a>
+   <ul class="other-section">
+      <li><a href="41_lectores_de_dnie.html" class="no-ch">4.1 Lectores de DNIe</a></li>
+      <li><a href="42_uso_de_nfc_con_el_dnie.html" class="no-ch">4.2 Uso de NFC con el DNIe</a></li>
+   </ul>
+   </li>
+   <li><a href="5_sistemas_de_single_sign_on_sso.html" class="daddy">5. Sistemas de Single Sign On SSO</a>
+   <ul class="other-section">
+      <li><a href="tarea_4_sistemas_sso.html" class="no-ch">Tarea 4. Sistemas SSO</a></li>
+   </ul>
+   </li>
+   <li><a href="6_criptografa.html" class="daddy">6. Criptografía</a>
+   <ul class="other-section">
+      <li><a href="61_aplicacin_de_la_criptografa_en_la_seguridad_de_la_informacin.html" class="daddy">6.1 Aplicación de la Criptografía en la seguridad de la información</a>
+      <ul class="other-section">
+         <li><a href="611_principios_bsicos_de_la_criptografa.html" class="no-ch">6.1.1 Principios básicos de la criptografía</a></li>
+         <li><a href="612_criptografa_clsica.html" class="no-ch">6.1.2 Criptografía clásica</a></li>
+         <li><a href="613_servicios_de_seguridad_de_criptografa.html" class="no-ch">6.1.3 Servicios de seguridad de criptografía</a></li>
+         <li><a href="614_criptografa_moderna.html" class="daddy">6.1.4 Criptografía Moderna</a>
+         <ul class="other-section">
+            <li><a href="6141_criptografa_de_clave_privada.html" class="daddy">6.1.4.1 Criptografía de clave privada</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_1_cifrado_simtrico_de_archivos.html" class="no-ch">Laboratorio 1. Cifrado simétrico de archivos</a></li>
+               <li><a href="prctica_1_cifrado_simtrico.html" class="no-ch">Práctica 1. Cifrado simétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6142_criptografa_de_clave_pblica.html" class="daddy">6.1.4.2 Criptografía de clave pública</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_2_cifrado_asimtrico_de_ficheros.html" class="no-ch">Laboratorio 2. Cifrado asimétrico de ficheros</a></li>
+               <li><a href="prctica_2cifrado_asimtrico.html" class="no-ch">Práctica 2.Cifrado Asimétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6143_ventas_y_desventajas_cifrado_simtrico_y_asimetrico.html" class="no-ch">6.1.4.3 Ventas y desventajas cifrado simétrico y asimetrico</a></li>
+            <li><a href="6144_criptografa_hbirida.html" class="no-ch">6.1.4.4 Criptografía híbirida</a></li>
+         </ul>
+         </li>
+         <li><a href="615_esteganografa.html" class="daddy">6.1.5 Esteganografía</a>
+         <ul class="other-section">
+            <li><a href="tarea_5_openstego.html" class="no-ch">Tarea 5. OpenStego</a></li>
+         </ul>
+         </li>
+         <li><a href="616_funciones_hash.html" class="daddy">6.1.6 Funciones hash</a>
+         <ul class="other-section">
+            <li><a href="tarea_6_funciones_hash.html" class="no-ch">Tarea 6. Funciones hash</a></li>
+            <li><a href="tarea_7_quickhash.html" class="no-ch">Tarea 7. QuickHash</a></li>
+            <li><a href="tarea_8_funciones_avanzadas_hash_de_powershell.html" class="no-ch">Tarea 8. Funciones avanzadas hash de powershell</a></li>
+            <li><a href="laboratorio_3_funciones_hash_con_kleopatra.html" class="no-ch">Laboratorio 3. Funciones hash con Kleopatra</a></li>
+         </ul>
+         </li>
+         <li><a href="617_uso_de_tcnicas_criptogrficas_en_las_pyme.html" class="no-ch">6.1.7 Uso de técnicas criptográficas en las PYME</a></li>
+         <li><a href="618_sistemas_encriptacin_hardware_tpmhsm.html" class="no-ch">6.1.8 Sistemas encriptación hardware (TPM/HSM)</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="7_sistemas_de_control_de_acceso_y_autenticacin.html" class="current-page-parent daddy">7. Sistemas de control de acceso y autenticación</a>
+   <ul>
+      <li><a href="71_creacin_de_claves_ssh.html" class="no-ch">7.1 Creación de claves SSH</a></li>
+      <li class="current-page-parent"><a href="72_certificados_digitales_gestin_de_una_pki.html" class="current-page-parent daddy">7.2. Certificados digitales, gestión de una PKI</a>
+      <ul>
+         <li><a href="721_certificados_digitales.html" class="daddy">7.2.1 Certificados digitales</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_certificado_personal.html" class="no-ch">Laboratorio 4. Certificado personal</a></li>
+            <li><a href="tarea_9_verificacin_de_certificados_digitales.html" class="no-ch">Tarea 9. Verificación de certificados digitales</a></li>
+         </ul>
+         </li>
+         <li><a href="722_firma_digital.html" class="daddy">7.2.2 Firma digital</a>
+         <ul class="other-section">
+            <li><a href="prctica_3_verificacin_de_la_autenticidad_e_integridad_de_un_mensaje.html" class="no-ch">Práctica 3: Verificación de la autenticidad e integridad de un mensaje</a></li>
+         </ul>
+         </li>
+         <li><a href="723_infraestructuras_de_clave_pblica_pki.html" class="no-ch">7.2.3 Infraestructuras de clave pública (PKI)</a></li>
+         <li><a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="no-ch">Laboratorio 5. Infraestructura de clave pública propia con OpenSSL</a></li>
+         <li id="active"><a href="caso_prctico_uso_de_certificados_en_servicios_web.html" class="active no-ch">Caso Práctico. Uso de certificados en Servicios WEB</a></li>
+         <li><a href="reto_implementacin_de_una_sistema_de_certificados_pki_en_la_organizacin_con_easyrsa.html" class="no-ch">Reto. Implementación de una sistema de certificados (PKI) en la organización con Easy-RSA</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="8_gestin_de_accesos_sistemas_nac.html" class="daddy">8. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_6_packetfence.html" class="no-ch">Laboratorio 6. PacketFence</a></li>
+      <li><a href="prctica_4_acceso_a_la_web_a_travs_de_un_nac.html" class="no-ch">Práctica 4. Acceso a la web a través de un NAC</a></li>
+   </ul>
+   </li>
+   <li><a href="9_gestin_de_cuentas_privilegiadas.html" class="daddy">9. Gestión de cuentas privilegiadas</a>
+   <ul class="other-section">
+      <li><a href="101_pam.html" class="no-ch">10.1 PAM</a></li>
+      <li><a href="tarea_10_ejecutar_como.html" class="no-ch">Tarea 10. Ejecutar como</a></li>
+   </ul>
+   </li>
+   <li><a href="10_protocolos_radius_y_tacacs_servicio_kerberos.html" class="daddy">10. Protocolos RADIUS y TACACS, servicio KERBEROS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_7_freeradius.html" class="daddy">Laboratorio 7. freeRadius</a>
+      <ul class="other-section">
+         <li><a href="1_instalacin_servidor_radius.html" class="no-ch">1. Instalación servidor Radius</a></li>
+         <li><a href="2_instalacin_cliente_radius.html" class="no-ch">2. Instalación Cliente Radius</a></li>
+      </ul>
+      </li>
+      <li><a href="laboratorio_8_radius_windows_server.html" class="no-ch">Laboratorio 8. Radius Windows Server</a></li>
+   </ul>
+   </li>
+   <li><a href="11_ldap.html" class="daddy">11. LDAP</a>
+   <ul class="other-section">
+      <li><a href="111_instalacin_y_configuracin_de_ldap.html" class="no-ch">11.1 Instalación y configuración de LDAP.</a></li>
+      <li><a href="112_configuracin_de_certificados_ssltsl_en_ldap.html" class="no-ch">11.2 Configuración de certificados SSL/TSL en LDAP.</a></li>
+      <li><a href="113_creacin_de_cuentas_ldap.html" class="no-ch">11.3 Creación de cuentas LDAP</a></li>
+      <li><a href="114_instalacin_de_sssd_en_el_cliente_ubuntu_desktop.html" class="no-ch">11.4 Instalación de SSSD en el cliente Ubuntu Desktop</a></li>
+      <li><a href="proyecto_instalar_servidor_de_autenticacin_openldap_servidor_ubuntu.html" class="no-ch">Proyecto. Instalar servidor de autenticación OpenLdap Servidor Ubuntu</a></li>
+   </ul>
+   </li>
+   <li><a href="12_referencias.html" class="no-ch">12. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="reto_implementacin_de_una_sistema_de_certificados_pki_en_la_organizacin_con_easyrsa.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Caso Práctico. Uso de certificados en Servicios WEB</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id89">
+<div class="iDevice emphasis0" >
+<div id="ta89_108_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Escenario</h3>
+<p style="text-align: justify;"><span>Supongamos que tu subsistema (organización) necesita un certificado firmado para el servidor HTTPS del subsistema. Esto significa que se necesita un certificado para el dominio (o dominios) en los que el servidor estará disponible.</span></p>
+<p style="text-align: justify;">El navegador web tiene que poder verificar el certificado y decirle al usuario que está accediendo a los servidores correctos del dominio de la URL que escribió y así establecer una conexión segura y privada.</p>
+<p style="text-align: justify;">Los navegadores utilizan un almacén de certificados que tiene una lista de AC. Este almacén de certificados puede ser propio del navegador (como en el caso de Firefox y sus derivados) o estar integrado con el almacén de certificados del sistema operativo (como en el caso de Chromium y sus derivados).</p>
+<h3>2. Introducción</h3>
+<p align="justify" style="text-align: justify;"><span style="color: #000000; font-size: 12pt;">¿Qué vamos a realizar?</span></p>
+<ul>
+<li align="justify" style="text-align: justify;"><span style="font-size: 12pt;"><span style="color: #000000;"><b>Punto 1.</b></span><span style="color: #000000;"> Vamos a instalar el servidor web apache (servicio web).</span></span></li>
+<li align="justify" style="text-align: justify;"><span style="font-size: 12pt;"><span style="color: #000000;"><b>Punto 2. </b></span><span style="color: #000000;">Configurar 2 dominios con https, utilizando la </span><span style="color: #000000;">infraestructura</span><span style="color: #000000;"> creada anteriorment</span><span style="color: #000000;">e en el Laboratorio PKI en Linux o Práctica 4. Easy-RSA.</span></span></li>
+</ul>
+<p align="justify">La estructura que se montará en el sistema es la siguiente:</p>
+<p align="justify"><span>ca</span><br /><span>├── certs</span><br /><span>│   └── ca.cert.pem</span><br /><span>├── crl</span><br /><span>├── index.txt</span><br /><span>├── intermedia</span><br /><span>│   ├── certs</span><br /><span>│   │   ├── ca-cadena.cert.pem</span><br /><span>│   │   ├── dominio-1.cert.pem</span><br /><span>│   │   ├── dominio-2.cert.pem</span><br /><span>│   │   ├── intermedia.cert.pem</span><br /><span>│   │   └── midominio.cert.pem</span><br /><span>│   ├── crl</span><br /><span>│   │   └── intermedia.crl.pem</span><br /><span>│   ├── crlnumber</span><br /><span>│   ├── csr</span><br /><span>│   │   ├── dominio-1.csr.pem</span><br /><span>│   │   ├── dominio-2.csr.pem</span><br /><span>│   │   ├── intermedia.csr.pem</span><br /><span>│   │   └── midominio.csr.pem</span><br /><span>│   ├── index.txt</span><br /><span>│   ├── newcerts</span><br /><span>│   │   ├── 1000.pem</span><br /><span>│   │   ├── 1001.pem</span><br /><span>│   │   └── 1002.pem</span><br /><span>│   ├── openssl.cnf</span><br /><span>│   ├── private</span><br /><span>│   │   ├── dominio-1.key.pem</span><br /><span>│   │   ├── dominio-2.key.pem</span><br /><span>│   │   ├── intermedia.key.pem</span><br /><span>│   │   └── midominio.key.pem</span><br /><span>│   ├── serial</span><br /><span>├── newcerts</span><br /><span>│   └── 1000.pem</span><br /><span>├── openssl.cnf</span><br /><span>├── private</span><br /><span>│   └── ca.key.pem</span><br /><span>└── serial</span></p>
+<h3>3. Recursos</h3>
+<ul>
+<li align="justify" style="text-align: justify;"><span style="color: #000000; font-size: 12pt;"><strong>Servidor ubuntu server 20-04.5 LTS (servidor de tu subsistema/organización). </strong></span>
+<ul>
+<li align="justify" style="text-align: justify;"><span style="color: #000000; font-size: 12pt;">Para realizar las explicaciones durante el caso práctico, se ha utilizado un ubntu server 20.04.3 LTS con ip 192.168.1.154 y adaptador de red en modo puente. Todos las configuraciones en la terminal se realizan con el usuario root.</span></li>
+</ul>
+</li>
+<li style="text-align: justify;"><span style="color: #000000; font-size: 12pt;"><strong>Servidor Apache</strong> --&gt; Para trabajar con Certificados en un servidor web.</span></li>
+<li style="text-align: justify;"><span style="color: #000000; font-size: 12pt;">Infraestructura PKI (CA raíz y CA Intermedia) creada en el Laboratorio PKI en Linux o Práctica 4. Easy-RSA.</span></li>
+</ul>
+<h3>4. Procedimiento</h3>
+<p>A continuación, se detallan una serie de pasos que permitirán tener en producción los puntos 1 y 2.</p>
+<p><b>Paso 1.</b> Se crean los certificados de los dominios y que serán para este caso:</p>
+<ul>
+<li>dominio-1.com</li>
+<li>dominio-2.com</li>
+</ul>
+<div class="cuadro-nota-centro-new">
+<p align="justify" style="text-align: justify;">Nombra los certificados de dominio para tu subsistema, ejemplos: gandia-upv.ciber, laplana-san-gva.ciber, etcétera.</p>
+</div>
+<p style="text-align: justify;">A continuación, se necesitan los <strong>csr</strong> de</p>
+<p>Hay que crear las key’s privadas de los dos dominios con los siguientes comandos:</p>
+<pre><span><b><span style="font-size: 12pt;">#</span></b><span style="font-size: 12pt;">openssl genrsa -out intermedia/private/dominio-1.key.pem 2048</span><b><br /><span style="font-size: 12pt;">#</span></b><span style="font-size: 12pt;">openssl genrsa -out intermedia/private/dominio-2.key.pem 2048</span><b><br /></b></span></pre>
+<p style="text-align: center;"><img src="pki-linux-48.png" alt="" width="820" height="214" /></p>
+<div class="cuadro-nota-centro-new">
+<p align="justify" style="text-align: justify;">El poner como extensión <strong>.pem</strong> en la key es porque lo tenemos así en el fichero <strong>openssl.cnf,</strong> pero podría ser txt o cualquier otro tipo de extensión o simplemente no poner, es decir, sería, dominio-1.key. El <strong>.pem</strong> es lo utilizado generalmente.</p>
+</div>
+<p style="text-align: justify;">A continuación, se necesitan los <strong>csr</strong> de cada una de las <strong><em>keys privadas</em></strong> que hemos generada en los dos dominios. Para ello, ejecutamos el siguiente comando para crear el csr del dominio-1:</p>
+<pre><span><b><span style="font-size: 12pt;">#</span></b><span style="font-size: 12pt;">openssl req -config intermedia/openssl.cnf -key intermedia/private/dominio-1.key.pem -new -sha256 -out intermedia/csr/dominio-1.csr.pem</span></span></pre>
+<p><img src="pki-linux-49.png" alt="" width="919" height="404" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p>y a continuación, ejecutamos el siguiente comando para crear el csr del dominio-2.</p>
+<pre><span><b><span style="font-size: 12pt;">#</span></b><span style="font-size: 12pt;">openssl req -config intermedia/openssl.cnf -key intermedia/private/dominio-2.key.pem -new -sha256 -out intermedia/csr/dominio-2.csr.pem</span></span></pre>
+<p style="text-align: center;"><img src="pki-linux-50.png" alt="" width="921" height="376" /></p>
+<p>A continuación, se generan los certificados para los 2 dominios, para ello, ejecutamos el siguiente comando par el dominio-1:</p>
+<pre><span><b><span style="font-size: 12pt;">#</span></b><span style="font-size: 12pt;">openssl ca -config intermedia/openssl.cnf -extensions server_cert -days 365 -notext -md sha256 -in intermedia/csr/dominio-1.csr.pem -out intermedia/certs/dominio-1.cert.pem</span></span></pre>
+<p style="text-align: justify;"><img src="pki-linux-51.png" alt="" width="1115" height="647" /></p>
+<p style="text-align: justify;">El proceso nos pregunta si se quiere firmar el certificado donde responderemos que sí '<strong>y</strong>' y posteriormente, nos pregunta si se quiere hacer el commit, responderemos que sí '<strong>y</strong>' (ver figura inferior).</p>
+<p style="text-align: center;"><img src="pki-linux-52.png" alt="" width="477" height="121" /></p>
+<p style="text-align: justify;">A continuación, realizamos lo mismo para el dominio-2:</p>
+<pre><span><b><span style="font-size: 12pt;">#</span></b><span style="font-size: 12pt;">openssl ca -config intermedia/openssl.cnf -extensions server_cert -days 365 -notext -md sha256 -in intermedia/csr/dominio-2.csr.pem -out intermedia/certs/dominio-2.cert.pem</span></span></pre>
+<p style="text-align: center;"><img src="pki-linux-53.png" alt="" width="1111" height="630" /></p>
+<p style="text-align: justify;">El proceso nos pregunta si se quiere firmar el certificado donde responderemos que sí '<strong>y</strong>' y posteriormente, nos pregunta si se quiere hacer el commit, responderemos que sí '<strong>y</strong>' (ver figura inferior).</p>
+<p style="text-align: center;"><img src="pki-linux-54.png" alt="" width="494" height="122" /></p>
+<p style="text-align: justify;">A continuación, consultamos el fichero<strong> index.txt</strong> para ver si se han generado bien los certificados, para ello, ejecutamos el siguiente comando:</p>
+<pre><span><b><span style="font-size: 12pt;">#</span></b><span style="font-size: 12pt;">cat intermedia/index.txt</span></span></pre>
+<p style="text-align: center;"><img src="pki-linux-55.png" alt="" width="1105" height="118" /></p>
+<p style="text-align: justify;">Como se puede observar en la figura anterior, se tiene el certificado revocado y los 2 nuevos válidos para los 2 dominios.</p>
+<p>El siguiente paso consiste en montar en apache los certificados.</p>
+<p><b>Paso 2.</b> Instalar apache</p>
+<p>En primer lugar, se instalar apache en el servidor:</p>
+<pre><span><b><span style="font-size: 12pt;">#</span></b><span style="font-size: 12pt;">apt install apache2</span></span></pre>
+<p style="text-align: center;"><img src="pki-linux-56.png" alt="" width="1100" height="351" /></p>
+<p><b>Paso 3. Preparar el entorno de apache</b></p>
+<p>Aunque aquí el servidor donde está la CA es el mismo servidor donde se encuentra apache, en una situación real no sería así, estarían separados por seguridad y rendimiento en los sistemas.</p>
+<p>Los certificados no se van a leer desde<strong> /<i>root</i></strong><span><strong>/ca</strong>, sino que los copiaremos en los directorios correspondientes.</span></p>
+<p><span>Las claves privadas que están en /root/ca/intermedia/dominio-1.key.pem y dominio-2.key.pem las llevaremos donde están los certificados → <strong><em>/</em></strong></span><strong><em>etc/ssl/private.</em></strong></p>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~/ca/intermedia/private#</strong> cp dominio* /etc/ssl/private</span></pre>
+<p style="text-align: center;"><img src="pki-linux-57.png" alt="" width="641" height="48" /></p>
+<p>Las claves públicas, se han de copiar en el directorio <strong><em>certs</em></strong> ubicado en <strong><em>/etc/ssl/certs.</em></strong></p>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~/ca/intermedia/certs</strong><strong>#</strong> cp dominio* /etc/ssl/certs</span></pre>
+<p style="text-align: center;"><img src="pki-linux-58.png" alt="" width="818" height="93" /></p>
+<p style="text-align: justify;">Por último, también copiamos la cadena en el directorio certs:</p>
+<pre><span style="font-size: 12pt;"><strong>root@ubuntu-server-2004:~/ca/intermedia/certs</strong><strong>#</strong> cp ca-cadena.cert.pem /etc/ssl/certs</span></pre>
+<p style="text-align: center;"><img src="pki-linux-59.png" alt="" width="686" height="38" /></p>
+<p style="text-align: justify;">A continuación, hay que configurar apache para que pueda funcionar con lo que se ha realizado anteriormente. Estando en la consola, accedemos a la ruta <strong>/etc/apache2/</strong> y consultamos los sitios disponibles tanto en http (000-default.conf) como en https (default-ssl.conf).</p>
+<p style="text-align: center;"><img src="pki-linux-60.png" alt="" width="571" height="98" /></p>
+<p>Lo que haremos es copiar el fichero <strong>default-ssl.conf</strong> a <strong>dominios-ssl.conf</strong> para trabajar sobre este último.</p>
+<p>A continuación, editamos el fichero dominios-ssl.conf y modificamos los parámetros con el sufijo #JCRequena (etiqueta para conocer qué modificaciones realizar en el fichero).</p>
+<p style="text-align: center;"><img src="pki-linux-61.png" alt="" width="653" height="468" /></p>
+<p style="text-align: center;">Ejemplo de etiqueta JcRequena con los parámetros a modificar.</p>
+<p style="text-align: justify;">Hay que añadir una nueva sección <strong>VirtualHost</strong> para<strong> dominio-2</strong> que será igual a la anterior pero cambiando dominio-1 por dominio-2 (ver figura inferior).</p>
+<p style="text-align: center;"><img src="pki-linux-62.png" alt="" width="613" height="452" /></p>
+<p><b>Paso 4. </b>Activar el módulo ssl en apache</p>
+<p>A continuación, vamos a activar el módulo <strong>ssl</strong> en apache, para ello, ejecutamos el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>#</strong>a2enmod ssl</span></pre>
+<p style="text-align: center;"><img src="pki-linux-63.png" alt="" width="853" height="225" /></p>
+<p>Como resultado, nos dice que hay que <strong><em>reiniciar apache</em></strong> para que se aplique la configuración que acabamos de realizzar.</p>
+<p align="justify">Para que sea más completo, se debería modificar VirtualHost del puerto 80 del fichero <strong><em>000-default.conf</em></strong> para hacer una redirección, es decir, habría que hacer lo siguiente:</p>
+<pre><span style="font-size: 12pt;">ServerName dominio-1.com<br />Redirect permanent / https://dominio-1.com<br /></span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-64.png" alt="" width="710" height="282" /></p>
+<p align="justify">Hacemos también una redirección para el dominio-2, por lo que añadimos otro VirtualHost en el fichero<em><strong> 000-default.conf</strong></em>.</p>
+<div class="cuadro-nota-centro-new">
+<p align="justify">Si se tiene un dominio que responde a 2 nombres, se tiene la directiva ServerAlias dominio3.com, es decir, si se pone <a href="http://dominio3.com/">http://dominio3.com</a> también se redirigría a <a href="https://dominio2.com/">https://dominio2.com</a>. El fichero quedaría así:</p>
+<p align="justify">#JCRequena: redirección del dominio-2</p>
+<p align="justify">ServerName dominio-2.com</p>
+<p align="justify">ServerAlias dominio3.com</p>
+<p align="justify">Redirect permanent / <a href="https://dominio-2.com/">https://dominio-2.com</a></p>
+</div>
+<p align="justify"><b>Paso </b><b>5. Crear los directorios </b><b>donde reside la página web</b></p>
+<p align="justify">Estando en la terminal, accedemos a la ruta /var/www/html.</p>
+<p align="justify" style="text-align: center;"><b><img src="pki-linux-65.png" alt="" width="593" height="96" /></b></p>
+<p align="justify" style="text-align: justify;">Es aquí donde se crean los directorios:</p>
+<pre><span style="font-size: 12pt;">#mkdir dominio-1 dominio-2</span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-66.png" alt="" width="546" height="84" /></p>
+<p align="justify">Como ejemplo, vamos a copiar el <strong>index.html</strong> al directorio dominio-1 y dominio-2.</p>
+<pre><span style="font-size: 12pt;">#cp index.html dominio-1<br />#cp index.html dominio-2</span></pre>
+<p align="justify">A continuación, hay que cambiar la propiedad de usuario y grupo a los ficheros index.html que acabamos de copiar para que sean de apache.</p>
+<pre><span style="font-size: 12pt;">#chown -R www-data:www-data dominio-1<br />#chown -R www-data:www-data dominio-2</span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-67.png" alt="" width="495" height="108" /></p>
+<p align="justify">Con todo esto, ya se tiene el entorno preparado, ahora, hay que activar nuestro fichero de configuración de <strong>dominios-ssl.conf</strong>. Para ello, ejecutamos el siguiente comando:</p>
+<pre><span style="font-size: 12pt;">#a2ensite dominios-ssl.conf</span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-68.png" alt="" width="578" height="96" /></p>
+<p align="justify">A continuación, hay que <strong><em>reiniciar apache</em></strong> para que todas estas modificaciones surjan efecto en el servidor web.</p>
+<div class="cuadro-nota-centro-new">
+<p align="justify" style="text-align: justify;"><b>En entornos de producción NO debemos ejecutar el comando systemctl reload apache2</b> porque es muy peligroso, es decir, si hay algún error en alguna de las modificaciones realizadas, no se podrá levantar el servidor web y nos quedaremos sin servicio web. Lo que habría que realizar, es un test para que verifique que todo es correcto, es decir, apache revisa el fichero de configuración para comprobar que es correcto sintácticamente.</p>
+</div>
+<p align="justify" style="text-align: justify;">A continuación, se verifica que el fichero de apache es correcto mediante el siguiente comando:</p>
+<pre><span style="font-size: 12pt;">#apache2ctl configtest</span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-69.png" alt="" width="836" height="134" /></p>
+<p align="justify">Como resultado nos da OK, por lo que ahora sí podemos <strong><em>reiniciar apache con seguridad</em></strong>.</p>
+<pre><span style="font-size: 12pt;">#systemctl reload apache2</span></pre>
+<p align="justify"><b>Paso </b><b>6. Comprobación</b></p>
+<p align="justify">En estos momentos, ya se tienen en funcionamiento los dominios. Para comprobarlo, usaremos otra máquina virtual o nuestro anfitrión. Para este caso de estudio, la ip del servidor ubuntu server es 192.168.1.154 y se utilizará en </p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-70.png" alt="" width="864" height="277" /></p>
+<p align="justify">Dado que <strong>dominio-1.com</strong> y <strong>dominio-2.com</strong> no son dominios reales (no tienen una ip asignada), hay que incluirlo en el fichero <strong>hosts</strong> de mi equipo anfitrión.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-71.png" alt="" width="510" height="250" /></p>
+<p align="justify">Reiniciamos la interfaz de red para que se hagas efectivas las modificaciones en el fichero hosts:</p>
+<pre><span style="font-size: 12pt;">#sudo /etc/init.d/networking restart</span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-72.png" alt="" width="528" height="53" /></p>
+<div class="cuadro-nota-centro-new">
+<p align="justify">En los sistemas Windows el fichero <b>hosts</b>  está en C:\Windows\System32\drivers\etc.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-73.png" alt="" width="321" height="70" /></p>
+</div>
+<p align="justify"><b>Paso </b><b>7. Acceso a los dominos</b></p>
+<p align="justify">En primer lugar, accedemos al sitio web dominio-1.com.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-74.png" alt="" width="990" height="685" /></p>
+<p align="justify">Pulsamos configuración avanzada.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-75.png" alt="" width="698" height="233" /></p>
+<p align="justify">Pulsamos Acceder a dominio-1 (nos aparece en la parte superior un mensaje que el sitio no es seguro).</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-76.png" alt="" width="299" height="41" /></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-77.png" alt="" width="882" height="610" /></p>
+<p align="justify" style="text-align: justify;">A continuación, vamos a ver el certificado para consultar cuál es la organización del certificado, quién lo emite, etc..</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-78.png" alt="" width="545" height="625" /></p>
+<p align="justify" style="text-align: center;">Acceso mediante Chrome</p>
+<p align="justify" style="text-align: right;"><img src="pki-linux-79.png" alt="" width="815" height="573" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p align="justify" style="text-align: center;">Acceso mediante Firefox</p>
+<p align="justify" style="text-align: justify;">Como se puede observar en las imágenes, se tiene:</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr style="text-align: justify;">
+<td style="width: 33.4694%;">
+<p><span style="font-size: 12pt;">Aparece <strong>MI-CA y la intermedia</strong> (ya que le hemos pasado la cadena).</span></p>
+</td>
+<td style="width: 66.5306%; text-align: center;"><img src="pki-linux-82.png" alt="" width="389" height="50" /></td>
+</tr>
+<tr>
+<td style="width: 33.4694%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;"><b>Usos de la clave</b>: Para encriptar las comunicaciones y firmar. </span></p>
+</td>
+<td style="width: 66.5306%; text-align: center;"><img src="pki-linux-80.png" alt="" width="536" height="91" /></td>
+</tr>
+<tr>
+<td style="width: 33.4694%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Autenticación de servidor.</span></p>
+</td>
+<td style="width: 66.5306%; text-align: center;"><img src="pki-linux-81.png" alt="" width="363" height="99" /></td>
+</tr>
+</tbody>
+</table>
+<p align="justify"><b>En el navegador Internet Explorer → </b>Se ve la ruta de certificación.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-83.png" alt="" width="164" height="107" /></p>
+<p align="justify">Aparece como certificado de Servidores.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-84.png" alt="" width="750" height="455" /></p>
+<p align="justify" style="text-align: justify;">Los certificados se pueden exportar:</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-85.png" alt="" width="685" height="436" /></p>
+<p align="justify" style="text-align: justify;">Aparece el mensaje ‘<strong>No se confía en este certificado de raíz de CA</strong>’ → porque no figura en el almacén de entidades de certificación raíz de confianza. Es decir, no está aquí (ver imagen inferior).</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-86.png" alt="" width="750" height="458" /></p>
+<p align="justify"></p>
+<p align="justify">Por lo tanto, tenemos que instalarlo para que aparezca en el almacén de ‘<b>Entidades de certificación de confianza</b>’. Podemos exportar el certificado (usando firefox o chrome) o copiarlo desde <b>/root/ca/certs</b> y copiar <b>ca.cert.pem</b> en un fichero <b>ca-cert.crt</b> y este será el que instalaremos en el almacén. La idea es incluir el certificado que falta en el almacén de certificados.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-87.png" alt="" width="223" height="97" /></p>
+<p align="justify">Para hacerlo desde Chrome hacemos:</p>
+<p><strong>1.</strong> En la Pestaña ‘<strong>Entidades Emisoras</strong>’ pulsamos el Botón <strong>importar</strong>.</p>
+<p style="text-align: center;"><img src="pki-linux-88.png" alt="" width="989" height="684" /></p>
+<p><strong>2. </strong>Importamos el fichero crt exportado anteriormente o el que está en el servidor.</p>
+<p style="text-align: center;"><img src="pki-linux-89.png" alt="" width="689" height="440" /></p>
+<p style="text-align: justify;"><strong>3. </strong>Seleccionamos ‘<em>Confiar en este certificado para identificar sitios web</em>’ y pulsamos <em>Aceptar</em>.</p>
+<p style="text-align: center;"><img src="pki-linux-90.png" alt="" width="502" height="290" /></p>
+<p align="justify">Si buscamos ahora en la lista, encontramos nuestro certificado importado.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-91.png" alt="" width="668" height="97" /></p>
+<p align="justify">Y si pulsamos en los 3 puntos y seleccionamos ver:</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-92.png" alt="" width="543" height="660" /></p>
+<p align="justify"><strong>Si utilizamos Firefox</strong> → Importamos/instalamos el certificado.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-93.png" alt="" width="746" height="455" /></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-94.png" alt="" width="404" height="119" /></p>
+<p align="justify" style="text-align: justify;">En estos momentos, cuando accedamos a la página web del <strong><em>dominio-1.com</em></strong> por ejemplo, ya no sale el mensaje de no confianza.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-95.png" alt="" width="1098" height="574" /></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-96.png" alt="" width="333" height="131" /></p>
+<div class="cuadro-importante-centro {  ">
+<p style="text-align: justify;">En la práctica real, para páginas web no nos valen los certificados autofirmados. Necesitamos un proveedor de certificados como puede ser <a href="https://www.gogetssl.com/">https://www.gogetssl.com/</a></p>
+</div>
+<h3 align="justify">5. Proveedor de certificados</h3>
+<p align="justify">En la práctica real, para páginas web no nos valen los certificados autofirmados. Necesitamos un proveedor de certificados como puede ser <a href="https://www.gogetssl.com/">https://www.gogetssl.com/</a></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-97.png" alt="" width="990" height="685" /></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-98.png" alt="" width="957" height="458" /></p>
+<p align="justify">Los precios depende del tipo de certificado. Por ejemplo, necesitaríamos comprar un certificado para <a href="http://www.dominio1.com/">www.dominio-1.com</a>. Pero si tengo subdominios, ejemplo, <a href="http://www.administracion.dominio-1.com/">www.administracion.dominio-1.com</a>, no valdría con el anterior, habría que comprar otro para el subdominio.</p>
+<p align="justify">Otra opción (son más caros) son los certificados <a href="https://www.digicert.com/es/wildcard-ssl-certificates/"><span><span style="color: #48565e;"><span style="font-family: Roboto, sans-serif;"><span style="font-size: medium;">Wildcard</span></span></span></span></a>, es decir, se compran así *.dominio-1.com → acepta subdominios.</p>
+<h3 align="justify">6. Chequeo de certificados</h3>
+<p align="justify">Por último, existen páginas que nos permiten chequear un certificado para ver si es correcto.</p>
+<p align="justify"><a href="https://www.ssllabs.com/ssltest">https://www.ssllabs.com/ssltest</a></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-99.png" alt="" width="1354" height="693" /></p>
+<p align="justify">Como ejemplo práctico, vamos a verificar el certificado de <strong>areaproject.com</strong> y los posibles problemas que pueda tener.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-100.png" alt="" width="792" height="405" /></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-101.png" alt="" width="806" height="501" /></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-102.png" alt="" width="811" height="516" /></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-103.png" alt="" width="812" height="507" /></p>
+<p align="justify"><strong>Cosas que se pueden observar:</strong></p>
+<ul>
+<li align="justify">El certificado comprado es del tipo *.dominio.</li>
+<li align="justify">Muestra el rango de fechas de validez (suele ser 1 año).</li>
+<li align="justify">No está revocado.</li>
+</ul>
+<h3 align="justify">7. Referencias</h3>
+<ul>
+<li align="justify"><span style="color: #000000;"><a href="https://elnhapas.wordpress.com/tag/criptografia/">https://elnhapas.wordpress.com/tag/criptografia/</a></span></li>
+<li align="justify"><span style="color: #000000;"><a href="https://documentation.suse.com/soc/9/html/suse-openstack-cloud-crowbar-all/self-assign-certs.html">https://documentation.suse.com/soc/9/html/suse-openstack-cloud-crowbar-all/self-assign-certs.htm</a></span><span style="color: #000000;"></span></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="reto_implementacin_de_una_sistema_de_certificados_pki_en_la_organizacin_con_easyrsa.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

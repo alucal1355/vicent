@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1 Elastic Stack (Open Source) | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-105"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li id="active"><a href="31_elastic_stack_open_source.html" class="active daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="311_escenario_y_software_necesario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1 Elastic Stack (Open Source)</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id148">
+<div class="iDevice emphasis0">
+<div id="ta148_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;"><span>La pila <strong>ELK</strong>, conocida como <strong>Elastic Stack </strong>(es la evolución del ELK Stack), es una colección de 5 herramientas de código abierto: Elasticsearch, Kibana, Logstash, Beats y X-Pack.</span></p>
+<p style="text-align: justify;"><strong>Elastic 8.0</strong> está<span> </span><a href="https://cloud.elastic.co/registration?elektra=whats-new-elastic-8-0-blog">disponible en Elastic Cloud</a> y es la única oferta de Elasticsearch hospedado que incluye todas las características nuevas en esta versión más reciente.</p>
+<p style="text-align: justify;">Se puede realizar una<span> </span><a href="https://cloud.elastic.co/registration?elektra=whats-new-elastic-7-16-blog">prueba gratuita de 14 días de Elastic Cloud</a>.  En nuestro caso, se usará la <strong>v<a href="https://www.elastic.co/es/downloads/" target="_blank" rel="noopener">ersión autogestionada del Elastic Stack de forma gratuita</a></strong>.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="elastic-cloud.png"><img src="elastic-cloud.png" alt="" width="443" height="627" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="elastic-gratis.png"><img src="elastic-gratis.png" alt="" width="1049" height="628" /></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><strong><img src="ElasticStack.png" alt="" width="384" height="385" /></strong></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Pila Elastic Stack.</em></p>
+<p style="text-align: justify;">Como se puede observar en la figura superior, Elastic Stack está por varios elementos distintos:</p>
+<h4><strong>1. Elasticsearch - Corazón del Elastic Stack.</strong></h4>
+<p style="text-align: justify;"><strong>ElasticSearch</strong><span> </span>es un servicio de base de datos<span> </span><em>opensource</em><span> </span><strong>NoSQL</strong><span> </span>diseñado para realizar<span> </span><strong>búsquedas entre grandes cantidades de datos</strong>. Es altamente distribuible y fácilmente escalable. Es accesible a través de una extensa API y tiene como objetivo realizar búsquedas extremadamente rápidas que respalden las aplicaciones.</p>
+<p style="text-align: justify;">Es por eso que se utiliza mucho en entornos de<span> </span><strong>BigData</strong>, en donde se utilizan diversas fuentes de datos, aglutinando toneladas de información, y ElasticSearch es una<span> </span><strong>solución óptima de alto rendimiento </strong>para extraer rápidamente aquella información que se desea.</p>
+<p>La estructura de sus datos se basa en<span> </span><strong>ficheros de texto en formato JSON</strong>.</p>
+<p>Para comprender mejor Elasticsearch y su uso se definen a continuación los principales términos:</p>
+<ul>
+<li style="text-align: justify;"><strong>Índice :</strong><span> E</span>s una colección de documentos que tienen características similares. Por ejemplo, se pude tener un índice para un cliente específico, otro para la información de un producto y otro para una estructura de datos diferente. En un solo clúster, se pueden definir tantos índices como se quieran. El índice es similar a una base de datos en un RDBMS.</li>
+<li style="text-align: justify;"><strong style="color: #333333; font-size: 1em; text-align: left;">Documento:</strong><span style="color: #333333; font-size: 1em; text-align: left;"> </span><span style="color: #333333; font-size: 1em; text-align: left;">Un documento es una unidad básica de información que puede indexarse. Por ejemplo, se pude tener un índice sobre un producto y luego un documento para un cliente. Este documento se expresa en formato JSON (JavaScript Object Notation). Dentro de un índice, se pueden almacenar tantos documentos como se deseen.</span></li>
+</ul>
+<p>Un documento se ve así:</p>
+<pre><span style="font-size: 10pt;">{</span><br /><span style="font-size: 10pt;">    "account_number": 654,</span><br /><span style="font-size: 10pt;">    "balance": 12098,</span><br /><span style="font-size: 10pt;">    "firstname": "Juan Carlos",</span><br /><span style="font-size: 10pt;">    "lastname": "Requena",</span><br /><span style="font-size: 10pt;">    "age": 38,</span><br /><span style="font-size: 10pt;">    "gender": "M",</span><br /><span style="font-size: 10pt;">    "address": "<span>C/ Pintor Soler Blasco, 3</span>",</span><br /><span style="font-size: 10pt;">    "employer": "IES EL Caminas",</span><br /><span style="font-size: 10pt;">    "email": "jcrequena@ciber.local",</span><br /><span style="font-size: 10pt;">    "city": "Castellón",</span><br /><span style="font-size: 10pt;">    "country": "Spain",</span><br /><span style="font-size: 10pt;">}</span></pre>
+<p><strong>Query DSL:</strong><span> </span>Elasticsearch proporciona un lenguaje DSL completo basado en JSON para definir consultas.</p>
+<p>Una consulta sobre el documento anterior se vería así:</p>
+<pre><span style="font-size: 12pt;">{</span><br /><span style="font-size: 12pt;">  "query": { "match": { "firstname": "Juan Carlos" } }</span><br /><span style="font-size: 12pt;">}</span></pre>
+<p style="text-align: justify;"><strong>Nodo:</strong><span> E</span>s un servidor que forma parte de un clúster, este almacena los datos y participa en las capacidades de indexación y búsqueda del clúster. Al igual que un clúster, un nodo se identifica con un nombre.</p>
+<p style="text-align: justify;"><strong>Clúster:</strong><span> </span>Es una colección de uno o más nodos que en conjunto contiene todos los datos donde se busca Puede haber N nodos en el mismo clúster. Elasticsearch funciona como un entorno distribuido con la replicación entre nodos.</p>
+<p style="text-align: justify;"><strong>Fragmentos (Shards) y réplicas:</strong><span> </span>Elasticsearch proporciona la capacidad de subdividir el índice en varias piezas llamadas fragmentos o shards. Cuando se crea un índice, se puede definir la cantidad de fragmentos que se desea. Cada fragmento es en sí mismo un “índice” totalmente funcional e independiente que se puede almacenar en cualquier nodo del clúster. Los fragmentos son importantes porque permiten dividir horizontalmente el volumen de datos, potencialmente para realizar operaciones de paralelización aumentando así el rendimiento. Los índices se puedan dividir en fragmentos y cada uno tener cero o más réplicas.</p>
+<h4><strong>2. Kibana</strong></h4>
+<p style="text-align: justify;">Kibana es una aplicación web construida con Node.js para buscar, visualizar e interactuar con información almacenada en ElasticSearch.</p>
+<p style="text-align: justify;">El obetivo es filtrar y ver documentos, pero también ofrece análisis automáticos en tiempo real, un algoritmo de búsqueda muy flexible y diferentes tipos de vistas como histogramas, gráficos, diagramas circulares, para los datos. En el panel de control las diversas visualizaciones interactivas pueden combinarse para formar una imagen general dinámica que permita su filtrado y análisis.</p>
+<p style="text-align: justify;">Las distintas secciones que forman Kibana son:</p>
+<ul>
+<li style="text-align: justify;"><strong>Discover</strong>: Permite interactuar con la información almacenada. Se puede filtrar y buscar registros en un intervalo de tiempo determinado para visualizar documentos. Se pueden almacenar las consultas para volver a usarlas en otras ocasiones.</li>
+<li style="text-align: justify;"><strong>Visualize</strong>: Se pueden crear, modificar y ver propias visualizaciones personalizadas para usarse en un dashboard.</li>
+<li style="text-align: justify;"><strong>Dashboard</strong>: Pantalla donde se pueden crear, modificar y ver propios cuadros de mando personalizados basados en visualizaciones y búsquedas. De este forma, se tiene una vista rápida de distintas maneras de organizar la información.</li>
+<li style="text-align: justify;"><strong>Dev Tools:</strong><span> </span>UI para interactuar con la API Rest de Elastic Search.</li>
+</ul>
+<h4><strong>3. Logstash</strong></h4>
+<p style="text-align: justify;"><strong>Logstash</strong> es una <strong>pipeline</strong> de procesamiento de datos open source y que permite <a href="https://www.astera.com/es/tipo/blog/ingesti%C3%B3n-de-datos/" target="_blank" rel="noopener">ingestar datos</a> (JSON,CSV…) de múltiples fuentes simultáneamente y enriquecerlos y transformarlos antes de que se indexen en Elasticsearch. Se usa para agregar y procesar datos y enviarlos a su repositorio final, la mayoría de las veces Elasticsearch.</p>
+<p style="text-align: justify;">A medida que los datos van de la fuente al repositorio, los filtros de Logstash analizan cada evento, identifican los campos por nombre para construir una estructura y los transforman para tener en un formato común para poder realizar un análisis más poderoso.</p>
+<p></p>
+<p style="text-align: center;"><a href="Diagrama-Logstash.png"><img src="Diagrama-Logstash.png" alt="" width="709" height="158" /></a></p>
+<h4><strong>4. Beats</strong></h4>
+<p>E<span>s la plataforma para transportar datos dentro del stack. Los Beats son un conjunto de Data Shippers que entregan datos directamente a Elasticsearch y/o Logstash y que por tanto actúan como agentes. Actualmente, existen los siguientes agentes en la página oficial:</span></p>
+<ul>
+<li><strong><a href="https://www.elastic.co/guide/en/beats/filebeat/8.1/filebeat-installation-configuration.html" target="_blank" rel="noopener">Filebeat</a>:</strong><span> </span>Son agentes que transportan los datos, en este caso los archivos de logs/registro hacia logstash para su procesamiento y posterior almacenamiento.</li>
+<li><strong><a href="https://www.elastic.co/guide/en/beats/metricbeat/8.1/metricbeat-installation-configuration.html" target="_blank" rel="noopener">Metricbeat</a>:</strong><span> Obtienen métricas de sistema, como CPU, RAM, Disco y muchos modulo disponibles cómo Docker, NGINX, etc.</span></li>
+<li><strong><a href="https://www.elastic.co/guide/en/beats/heartbeat/8.1/heartbeat-installation-configuration.html" target="_blank" rel="noopener">Heartbeat</a>:</strong><span> </span>Generalmente se usa para monitorizar la disponibilidad de un recurso. Puede realizar “pings” por ICMP, TCP y HTTP.</li>
+<li><strong><a href="https://www.elastic.co/guide/en/beats/packetbeat/8.1/packetbeat-installation-configuration.html" target="_blank" rel="noopener">Packetbeat</a>:</strong><span> </span>Decodifica protocolos de red, correlaciona peticiones con respuetas. Los protocolos incluidos son ICMP, DNS HTTP, AMQP y de otras aplicaciones como MySQL, Memcached, MongoDB, RPC.</li>
+<li><strong><a href="https://www.elastic.co/guide/en/beats/winlogbeat/8.1/winlogbeat-installation-configuration.html" target="_blank" rel="noopener">Winlogbeat</a>:</strong><span> </span>Registros de eventos (logs) de Windows.</li>
+<li><span><a href="https://www.elastic.co/guide/en/beats/auditbeat/8.1/auditbeat-installation-configuration.html" target="_blank" rel="noopener"><strong>Auditbeat</strong>:</a> </span>Datos de auditoria, se integra con el modulo del kernel de<span> </span><em>Linux audit</em>. También monitoriza en tiempo real la integridad de archivos, usando hashes.</li>
+<li><strong><a href="https://www.elastic.co/guide/en/beats/functionbeat/8.1/functionbeat-installation-configuration.html" target="_blank" rel="noopener">Functionbeat</a>:</strong><span> </span>Para implementarse como función en una plataforma FaaS, con el objetivo de recopilar, monitorizar y enviar datos de servicios en la nube.</li>
+</ul>
+<h4 id="x-pack">5. X-Pack</h4>
+<p>Es un módulo premium y contiene módulos de:</p>
+<ul>
+<li><span style="color: #000000;"><strong>Seguridad</strong>: Posibilidad de manejar usuarios y roles, integración con LDAP y SAML. Cifrado de la comunicación con SSL/TSL.</span></li>
+<li><span style="color: #000000;"><strong>Alertas:</strong> alertas sobre cambios en los datos. Básicamente si lo puedes buscar, lo puedes alertar. Vía Email, Slack, Pagerduty, Hipchat y cualquier webhook.</span></li>
+<li><span style="color: #000000;"><strong>Monitorización</strong>: Monitorizar el rendimiento así como el uso de los componentes de Elastic Search,KIbana y Logstash.</span></li>
+<li style="text-align: justify;"><span style="color: #000000;"><strong style="font-size: 1em;">Informers:</strong><span style="font-size: 1em;"> </span><span style="font-size: 1em;">Generar, programar, compartir documentos, visualizaciones o dashboards enteros. Posibilidad de crear automáticamente el envío de informes basados en reglas.</span></span></li>
+<li style="text-align: justify;"><span style="color: #000000;"><strong style="font-size: 1em; text-align: left;">Graph - Análisis de gráficos:</strong><span style="font-size: 1em; text-align: left;"> </span><span style="font-size: 1em; text-align: left;">Existen posibles relaciones entre los documentos de Elastic Stack: enlaces entre personas, lugares, preferencias, productos, lo que sea. Graph ofrece un enfoque orientado a las relaciones que permite explorar las conexiones en los datos.</span></span></li>
+<li style="text-align: justify;"><span style="color: #000000;"><strong style="font-size: 1em; text-align: left;">Machine learning:</strong><span style="font-size: 1em; text-align: left;"> </span><span style="font-size: 1em; text-align: left;">Ejecutar tareas de machine learning en los datos para visualizar y prevenir anomalías.</span></span></li>
+</ul>
+<p style="text-align: justify;">Con la unión de las cinco herramientas se tiene una herramienta que <strong>ingesta logs</strong> u otros archivos de datos con <strong>Logstash</strong>, los almacena en la base de datos de <strong>Elasticsearch</strong> y <strong>Kibana</strong> accede a ellos para visualizarlos de una forma gráfica. De esta forma, se centralizan los logs de las aplicaciones y se pueden ide<span>ntificar problemas en los servidores o aplicaciones, ya que permite realizar búsquedas en todos los logs desde un solo lugar.</span></p>
+<p style="text-align: justify;">En el siguiente diagrama se puede ver el flujo que seguirán los logs de las aplicaciones para ser centralizados usando el Elastic Stack:</p>
+<p style="text-align: center;"><span><img src="ELKdataflow.png" alt="" width="500" height="500" /></span></p>
+<p style="text-align: justify;"><span>Donde la secuencia es la siguiente:</span></p>
+<ol>
+<li style="text-align: justify;"><strong>Beats</strong><span> </span>obtiene los logs de las aplicaciones y los envía a Logstash.</li>
+<li style="text-align: justify;"><strong>Logstash</strong><span> </span>recibe los datos, los transforma y los almacena en Elasticsearch.</li>
+<li style="text-align: justify;"><strong>Elasticsearch</strong><span> </span>indexa los datos, este es el repositorio donde se almacenarán los logs.</li>
+<li style="text-align: justify;"><strong>Kibana</strong><span> </span>accede a Elasticsearch para realizan consultas y análisis.</li>
+</ol>
+<p style="text-align: justify;">En los siguientes apartados, se describe el proceso de instalación de estas 5 herramientas.</p>
+<h3 style="text-align: justify;">2. ¿Porqué centralizar los logs?</h3>
+<p style="text-align: justify;">En muchas empresas se están utilizando los logs de seguridad para detectar incidentes maliciosos. Muchos de ellos están recopilando demasiados datos y a menudo miles de millones de eventos. </p>
+<p style="text-align: justify;">Una ingente cantidad de datos no proporciona información si no se pude responder adecuadamente a los mismos, es por ello que se hace necesario disponer de un sistema centralizado de gestión de logs que puede ayudar a dar respuesta.</p>
+<p style="text-align: justify;"><span>Antiguamente los logs se utilizaban en gran medida como una herramienta de solución de problemas. Con el tiempo, han ido evolucionado para desempeñar un papel mucho más amplio.</span></p>
+<p style="text-align: justify;"><span>Los logs se han convertido en una parte crucial de la <strong><em>optimización del rendimiento del sistema y de la red</em></strong>, el seguimiento de las acciones del usuario, el suministro de datos para la investigación de acciones sospechosas y la <strong>monitorización proactiva</strong>. </span></p>
+<p style="text-align: justify;"><span>Los <strong><em>logs de fácil acceso</em></strong> pueden dar advertencias y oportunidades sobre problemas antes de que causen daños irreparables.</span></p>
+<p style="text-align: center;"><a href="diagrama-ElasticStack.png"><span><img src="diagrama-ElasticStack.png" alt="" width="613" height="323" /></span></a></p>
+<h3 style="text-align: justify;">3. ¿Para qué usar Elastic Stack?</h3>
+<p style="text-align: justify;">Gracias a la velocidad y escalabilidad de Elasticsearch y su capacidad de indexar muchos tipos de contenidos hace que sea útil para una variedad de casos de uso:</p>
+<ul>
+<li>Búsqueda de aplicaciones.</li>
+<li>Búsqueda de sitio web.</li>
+<li>Búsqueda Empresarial.</li>
+<li>Logging y analíticas de log.</li>
+<li>Métricas de infraestructura y monitorización de contenedores.</li>
+<li>Monitorización de rendimiento de aplicaciones.</li>
+<li>Análisis y visualización de datos geoespaciales.</li>
+<li>Analítica de Seguridad.</li>
+<li>Analítica de Negocios.</li>
+</ul>
+<p>A se describen <strong>3 casos de ejemplo de uso</strong> de esta esta tecnología:</p>
+<h4 id="1-logs">1. Logs</h4>
+<p style="text-align: justify;">El ecosistema creado alrededor de Elasticsearch lo ha convertido en una de las soluciones de centralización de logs más fáciles de implementar y escalar. Desde Beats, hasta Logstash, Elasticsearch ofrece muchas opciones para capturar datos donde sea que estén e indexarlos. A partir de ahí, herramientas como Kibana brindan la capacidad de crear paneles y análisis completos.</p>
+<p style="text-align: center;"><img src="logs-768x523.png" alt="" width="768" height="523" /></p>
+<h4>2. Análisis de seguridad</h4>
+<p style="text-align: justify;">Si se utiliza Elasticsearch como un gestor centralizado de logs, esta misma funcionalidad permitirá trabajar sobre datos de seguridad. Así es muy común ver cómo equipos de seguridad disponen de sistemas SIEM junto a un cluster de Elasticsearch, el cual almacena gran volumen de información a poder ser analizada a lo largo del tiempo.</p>
+<p style="text-align: center;"><img src="siem-timeline.png" alt="" width="768" height="432" /></p>
+<h4 id="3-datos-y-métricas-del-eventos">3. Datos y métricas del eventos</h4>
+<p style="text-align: justify;">Elasticsearch funciona en datos de series de tiempo como métricas y eventos de aplicaciones. Esta es otra área donde el ecosistema de Beats permite capturar fácilmente datos de aplicaciones comunes. Independientemente de las tecnologías que se utilicen para construir las aplicaciones, existe una gran posibilidad de que Elasticsearch tenga los componentes para obtener métricas y eventos de forma inmediata.</p>
+<p style="text-align: center;"><img src="hero-metrics-768x527.png" alt="" width="768" height="527" /></p>
+<h3 style="text-align: justify;">4. Uso Eslastic Stack en Empresas</h3>
+<p style="text-align: justify;">Existen empresas que cuentan con técnicos certificados para implantar Elastic Stack. Estas empresas, trabajan para entidades como: rtve,  Iberia, Banco Sabadell, OSFAM Intermon, etcétera.</p>
+<table border="0" style="height: 159px; width: 40.0212%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr style="height: 149px;">
+<td style="width: 33.2532%; text-align: center; height: 149px;"><a href="https://tobeit.es/stack-de-elasticsearch/" target="_blank" rel="noopener"><img src="ToBeIT_logo_superior.png" alt="" width="200" height="143" /></a></td>
+<td style="width: 31.7669%; text-align: center; height: 149px;"><a href="https://www.isoin.es/nuestros-servicios/elastic/" target="_blank" rel="noopener"><img src="logo.png" alt="" width="196" height="50" /></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="311_escenario_y_software_necesario.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

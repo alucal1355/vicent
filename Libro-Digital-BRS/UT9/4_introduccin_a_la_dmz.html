@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4. Introducción a la DMZ | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-63"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li id="active"><a href="4_introduccin_a_la_dmz.html" class="active daddy">4. Introducción a la DMZ</a>
+   <ul>
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3_introduccin_a_los_cortafuegos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="41_instalacin_dmz__pfsense.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4. Introducción a la DMZ</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id93">
+<div class="iDevice emphasis0" >
+<div id="ta93_109_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p class="Standard" style="text-align: justify;">El término <strong>Zona Desmilitarizada o DMZ</strong> se puede definir como una <strong>zona de la red</strong> que, por estar expuesta al exterior, no se puede considerar segura, por lo que debe tratarse de manera diferente al resto de la infraestructura. Por lo tanto tiene que ver con la seguridad y gestión de acceso a la infraestructura tecnológica.<o:p></o:p></p>
+<h3 class="Standard" style="text-align: justify;">2. Zona <strong>Desmilitarizada - DMZ</strong></h3>
+<p class="Standard" style="text-align: justify;">Una organización puede necesitar ciertos servicios accesibles desde internet: una página web, un servidor de correo electrónico, servidor de archivos (FTP), servidor de impresión, etcétera. </p>
+<p class="Standard" style="text-align: justify;">Cualquier rastreo desde el exterior hacia la IP de entrada en la red, será capaz de detectar que puertos se tienen abiertos, los servicios y posibles vulnerabilidades de estos.</p>
+<p class="Standard" style="text-align: justify;"><strong><img src="ejemplo.png" alt="" width="146" height="51" /></strong></p>
+<p class="Standard" style="text-align: justify;">En la <strong>Figura 1</strong>, se tiene una configuración tradicional de una red con un servidor web que tiene los puertos del firewall 80/443 abiertos para el acceso desde/hacia internet al mismo. Por otro lado, en el firewall existen reglas para que los usuarios/clientes de la red puedan acceder a internet.</p>
+<p class="Standard" style="text-align: justify;">Si un ciberdelincuente (Figura 2), es capaz de acceder al servidor aprovechándose de alguna vulnerabilidad en los puertos abiertos, el servidor quedará comprometido y el ciberdelincuenta, podría acceder a otros servicios de la red (ficheros, equipos clientes, etcétera).</p>
+<p class="Standard" style="text-align: justify;">En resumen, si un servidor con acceso a internet se ve comprometido, al estar el servidor dentro de la red, queda comprometido toda la red, es decir, otros servidores, bases de datos con información crítica, otros equipo, etcétera.</p>
+<table border="0" style="height: 240px; width: 100%;">
+<tbody>
+<tr style="height: 215px;">
+<td style="width: 50%; text-align: center; height: 215px;"><img src="dmz-00.png" alt="" width="669" height="280" /></td>
+<td style="width: 50%; text-align: center; height: 215px;"><img src="dmz-01.png" alt="" width="766" height="312" /></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 50%; text-align: center; height: 25px;"><span style="font-size: 12pt;"><em><strong>Figura 1.</strong> Esquema de red de la organización.</em></span></td>
+<td style="width: 50%; text-align: center; height: 25px;"><span style="font-size: 12pt;"><em><strong>Figura 2.</strong> Acceso de un ciberdelincuente al servidor comprometido.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p class="Standard" style="text-align: justify;">A partir del ejemplo anterior, surgió el término DMZ o zona desmilitarizada, donde se pone un segundo firewall entre los servidores y los clientes (Figura 3). Si un ciberdelincuente (Figura 4), es capaz de acceder al servidor aprovechándose de alguna vulnerabilidad en los puertos abiertos, el servidor quedará compormietido, pero como hay un segundo firewall, ya no podrá acceder al resto de la red por l oque no se verá afectada toda la red interna.</p>
+<table border="0" style="height: 256px; width: 100%;">
+<tbody>
+<tr style="height: 236px;">
+<td style="width: 50%; text-align: center; height: 236px;"><img src="dmz-02.png" alt="" width="647" height="297" /></td>
+<td style="width: 50%; height: 236px;"><img src="dmz-03.png" alt="" width="697" height="304" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 3.</strong> Zona desmilitarizada.</em></span></td>
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 4.</strong> Zona desmilitarizada comprometida.</em></span></td>
+</tr>
+</tbody>
+</table>
+<h4 style="text-align: justify;"><span style="font-size: 12pt;">2.1 Opciones que se tienen</span></h4>
+<p><span style="font-size: 12pt;">Para resolver el problema que se ha introducido anteriormente, se tienen las siguientes opciones:</span></p>
+<ol>
+<li><span style="font-size: 12pt;"><strong>Depender de servicios de terceros.</strong> Algo habitual para servicios como páginas web, correo electrónico y gestión de ficheros.</span></li>
+<li><span style="font-size: 12pt;"><strong>Implementación propia de los servicios necesarios.</strong> Estos servicios pueden ser: accesos remotos, conexiones a servidores de archivos, etcétera.</span></li>
+</ol>
+<p style="text-align: justify;"><span style="font-size: 12pt;">En el <strong>segundo caso</strong> ocurre que en la misma red en la que se encuentran dichos servicios y/o servidores, habrá otros equipos que pueden verse afectados por ataques, si los primeros quedan vulnerados y viceversa.</span></p>
+<h4 style="text-align: justify;"><span style="font-size: 12pt;">Pero, ...¿cómo evitar que esto suceda si no se quiere prescindir de dichos servicios y/o servidores? </span></h4>
+<p class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">Aquí es donde entra en juego una zona desmilitarizada, conocida como <a href="https://es.wikipedia.org/wiki/Zona_desmilitarizada_(inform%C3%A1tica)" id="link818909a9-ee34-bb17-c3bc-c2099cd919ad" class="exe-tooltip definition-tt" data-hasqtip="0" oldtitle="DMZ | DMZ">DMZ</a>. No obstante, el elemento esencial para crear una DMZ no será otro sino el <a href="https://www.cisco.com/c/es_es/products/security/firewalls/what-is-a-firewall.html" id="link172be479-5264-2af4-23d3-3e493d6431b1" class="exe-tooltip definition-tt" data-hasqtip="1" oldtitle="Firewall | Firewall"><strong>firewall</strong></a>; es decir, se necesitará de un <strong>firewall</strong> bien configurado para poder crear la DMZ.</span><o:p></o:p></p>
+<p class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">Antes de nada se van a definir ambos conceptos y luego se verá cómo ayudan estas dos herramientas a reducir riesgos.</span><o:p></o:p><o:p> </o:p></p>
+<ul style="text-align: justify;">
+<li class="Standard"><span style="font-size: 12pt;">Un <b>firewall</b> es un dispositivo de seguridad cuya función es controlar el tráfico de red de entrada y de salida mediante una serie de reglas. Imagina que llega una petición a tu servidor de archivos, pues el firewall permitirá o no la conexión en función de las reglas que tiene creadas.<b><o:p></o:p></b></span></li>
+<li class="Standard"><span style="font-size: 12pt;">Una <b>DMZ</b> es una red aislada que se encuentra dentro de la red interna. En ella se ubican los recursos que deben ser accesibles desde internet.<b><o:p></o:p></b></span></li>
+</ul>
+<p class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">Se va a tomar como ejemplo, el diagrama de red siguiente, en el que además de equipos informáticos (PC, Impresora) se tienen servidores Web y de Correo:</span></p>
+<p class="Standard" style="text-align: center;"><span style="font-size: 12pt;"><a href="dmz.png"><img src="dmz.png" alt="" width="538" height="453" /></a></span></p>
+<p class="Standard" style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 5.</strong> Infraestructura de red con servicios.</span></em></p>
+<p class="Standard" style="text-align: justify;"><span style="font-size: 12pt;"><strong>¿Qué comunicaciones estarán permitidas?</strong></span></p>
+<p class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">Se puede tomar como ejemplo la información de la siguiente tabla, para <strong>configurar una zona desmilitarizada</strong> con estas conexiones:</span></p>
+<table border="1" style="width: 99.6763%; height: 160px;">
+<tbody>
+<tr style="height: 40px;">
+<td style="width: 33.3333%; text-align: center; height: 40px;"><span style="font-size: 12pt;"><b><strong>Origen</strong></b></span></td>
+<td style="width: 33.3333%; text-align: center; height: 40px;"><span style="font-size: 12pt;"><b><strong>Destino</strong></b></span></td>
+<td style="width: 33.0097%; height: 40px;">
+<p style="text-align: center;"><span style="font-size: 12pt;"><b><strong>¿Permitido?</strong></b></span></p>
+</td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Internet</span></td>
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">DMZ</span></td>
+<td style="width: 33.0097%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Si</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Internet</span></td>
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">LAN</span></td>
+<td style="width: 33.0097%; height: 20px; text-align: center;"><span style="font-size: 12pt;">No</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">DMZ</span></td>
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Internet</span></td>
+<td style="width: 33.0097%; height: 20px; text-align: center;"><span style="font-size: 12pt;">SI</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">DMZ</span></td>
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">LAN</span></td>
+<td style="width: 33.0097%; height: 20px; text-align: center;"><span style="font-size: 12pt;">No</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">LAN</span></td>
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">DMZ</span></td>
+<td style="width: 33.0097%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Si</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">LAN</span></td>
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Internet</span></td>
+<td style="width: 33.0097%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Si</span></td>
+</tr>
+</tbody>
+</table>
+<p class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">Dependiendo del origen y el destino, se permitirá (verde) o se denegará (rojo) el tráfico y la red quedaría así:</span></p>
+<p class="Standard" style="text-align: center;"><span style="font-size: 12pt;"><a href="DMZ.png"><img src="DMZ.png" alt="" width="482" height="563" /></a></span></p>
+<p class="Standard" style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 6.</strong> Intercomunicación en la infraestructura de red con servicios.</em></span></p>
+<p class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">En el esquema anterior se puede ver cómo quedaría la red corporativa, por una parte en una red local los equipos y por otra parte la DMZ donde están los servidores.</span></p>
+<p class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">Otra solución de segmentación de DMZ's, es la que se puede observar en la siguiente figura, donde se tienen:</span></p>
+<ul>
+<li class="Standard" style="text-align: justify;">Red interna de usuarios (DMZ interna).</li>
+<li class="Standard" style="text-align: justify;">Servidores de uso interno (DMZ interna).</li>
+<li class="Standard" style="text-align: justify;">Servidores con servicio al exterior (DMZ externa).</li>
+</ul>
+<p class="Standard" style="text-align: center;"><span style="font-size: 12pt;"><img src="dmz-interna-externa.png" alt="" width="530" height="232" /></span></p>
+<p class="Standard" style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 7.</strong> Infraestructura de red con 2 DMZ's.</em></span></p>
+<p class="Standard" style="text-align: justify;">Las reglas del Firewall serían las siguientes:</p>
+<ul>
+<li class="Standard" style="text-align: justify;">Desde exterior a DMZ EXT, permitir.</li>
+<li class="Standard" style="text-align: justify;">Desde exterior a DMZ INT, denegar.</li>
+<li class="Standard" style="text-align: justify;">Desde DMZ EXT a DMZ INT, denegar.</li>
+<li class="Standard" style="text-align: justify;">Desde DMZ EXT a exterior, denegar.</li>
+<li class="Standard" style="text-align: justify;">Desde DMZ INT a DMZ EXT, denegar.</li>
+<li class="Standard" style="text-align: justify;">Desde DMZ INT a exterior, denegar.</li>
+</ul>
+<p>Sobre las reglas:</p>
+<ul>
+<li>Desde DMZ INT a DMZ EXT, denegar.</li>
+<li>Desde DMZ EXT a DMZ INT, denegar.</li>
+</ul>
+<p style="text-align: justify;">decir que, decidir si permitir o denegar el tráfico entre varias DMZ siempre va a dependar de la infraestructura de la red de la organización, aunque para este caso, si se separan los servicios en diferentes DMZ’s es precisamente para eso, para aislarlos unos de otros.</p>
+<p style="text-align: justify;">En la práctica, se acaban haciendo excepciones (asumiendo riesgos) permitiendo conexiones entre zonas, para no añadir complejidad a la infraestructura.</p>
+<h3 class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">3. Mejoras DMZ</span></h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;">En el siguiente <strong><a href="https://infotecs.mx/blog/dmz_zona_desmilitarizada.html" target="_blank" rel="noopener">artículo 'Zona desmilitarizada'</a></strong>, en su parte final se enumeran y explican brevemente posibles mejoras a nivel de seguridad para la DMZ.</span><span style="font-size: 12pt;"></span></p>
+<h3 class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">4. Incibe DMZ empresas</span></h3>
+<p class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">Par profundizar en más opciones sobre las DMZ, el INCIBE tiene un post muy interesante sobre las <a href="https://www.incibe.es/protege-tu-empresa/blog/dmz-y-te-puede-ayudar-proteger-tu-empresa">DMZ</a> en las empresas, donde hay una sección sobre la <strong>configuración básica de un firewall con DMZ</strong>.</span><span style="font-size: 12pt;"></span></p>
+<h3 class="Standard" style="text-align: justify;"><span style="font-size: 12pt;">5. Referencias</span></h3>
+<ul>
+<li class="Standard" style="text-align: justify;"><a href="https://infotecs.mx/blog/dmz_zona_desmilitarizada.html" target="_blank" rel="noopener">DMZ: Zona Desmilitarizada.</a> Se tratan las ventajas y desventajas de cada uno de los modelos de DMZ y en la sección Seguridad en DMZ, se dan unos consejos muy útiles.<span style="font-size: 12pt;"></span></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3_introduccin_a_los_cortafuegos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="41_instalacin_dmz__pfsense.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

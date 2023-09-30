@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-102"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_servidor_de_autenticacin_radius.html" class="current-page-parent daddy">3. Servidor de autenticación Radius</a>
+   <ul>
+      <li><a href="31_freeradius.html" class="daddy">3.1 FreeRadius</a>
+      <ul class="other-section">
+         <li><a href="311_instalacin_servidor_radius.html" class="daddy">3.1.1. Instalación servidor Radius</a>
+         <ul class="other-section">
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul class="other-section">
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="active daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul>
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id138">
+<div class="iDevice emphasis0" >
+<div id="ta138_138_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">En este capítulo se describe cómo configurar un<strong> servidor RADIUS</strong> en Windows Server 2019 para proporcionar <strong>conexiones inalámbricas 802.1X</strong> <span>basada en WPA2-Enterpris </span>a través de puntos de acceso inalámbricos.</p>
+<p style="text-align: justify;"><span>Para ello, se van a seguir una serie de etapas donde se irán instalando/configurando los componentes necesarios: certificado autofirmado, despliegue del servicio de directivas de red (NPS) como servidor de autenticación remota (RADIUS), etcétera.</span></p>
+<p style="text-align: justify;">Se trata de configurar un <strong>servidor RADIUS</strong> para redes<strong> inalámbricas IEEE 802.11,</strong> que es casi lo mismo que para redes cableadas (Ethernet), excepto que el tipo de puerto <strong>NAS</strong> (tipo de medio utilizado) es IEEE 802.11 inalámbrico en lugar de Ethernet con cable.</p>
+<p style="text-align: justify;"><strong>IEEE 802.1X</strong> es un estándar IEEE para el control de acceso a la red (PNAC) basado en puertos. Es parte del grupo de protocolos de red IEEE 802.1. Proporciona un mecanismo de autenticación a los dispositivos que deseen conectarse a una LAN o WLAN.</p>
+<p style="text-align: justify;"><strong>Fuente:</strong></p>
+<ul>
+<li style="text-align: justify;"><a href="https://en.wikipedia.org/wiki/IEEE_802.1X" target="_blank" rel="noreferrer noopener">https://en.wikipedia.org/wiki/IEEE_802.1X</a></li>
+<li style="text-align: justify;"><a href="https://en.wikipedia.org/wiki/IEEE_802" target="_blank" rel="noreferrer noopener">https://en.wikipedia.org/wiki/IEEE_802</a></li>
+</ul>
+<h3><span>2. Escenario</span></h3>
+<p><span>Se parte de un equipo <strong><em>Windows Server 2019 Datacenter</em></strong> cuyo nombre es <strong>perseo</strong> al cual se le instala el rol de <strong><em>Servicios de dominio Active Directory (AD DS)</em></strong>, para configurar un dominio llamado <strong><em>ciber.local</em></strong>. La instalación de este rol, conlleva la instalación del servidor <strong><em>DNS</em></strong>. Adicionalmente, también se instala un <strong>servidor </strong><strong><em>DHCP</em></strong> para gestionar los equipos de la misma red de dominio ya que este equipo, será el que proporcione las ip's a los usuarios suplicantes.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 61.3622%;"></td>
+<td style="width: 38.6378%;"></td>
+</tr>
+<tr>
+<td style="width: 61.3622%; text-align: center;"><img src="panel-administrador-AD.png" alt="" width="1160" height="523" /></td>
+<td style="width: 38.6378%; text-align: center;"><img src="servidor-dchp-ciber-local.png" alt="" width="586" height="295" /></td>
+</tr>
+<tr>
+<td style="width: 61.3622%; text-align: center;">
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 2.</strong> Administrador del servidor.</em></span></p>
+</td>
+<td style="width: 38.6378%; text-align: center;">
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 3.</strong> Configuración del servidor DHCP.</em></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span>Respecto al equipamiento de comunicaciones, se tiene:</span></p>
+<ul>
+<li><span><strong>cliente Radius:</strong> Se utilizará un router <strong>TP-LINK</strong> en modo AP y que soporta 802.1x</span><span>.</span></li>
+<li><span><strong>Router WAN:</strong> El router que conectará la red LAN con internet es un<strong> Technicolor VFH500-T</strong>.</span></li>
+</ul>
+<table border="0" style="margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="tp-link.jpg" alt="" width="197" height="256" /></td>
+<td style="text-align: center;"><img src="Technicolor_VFH500-T.jpg" alt="" width="228" height="209" /></td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><em><strong>Figura 4.</strong> Router TP-LINK en modo AP.</em></span></td>
+<td><span style="font-size: 12pt;"><em><strong>Figura 5.</strong> Router Technicolor VFH500-T salida WAN.</em></span></td>
+</tr>
+</tbody>
+</table>
+<h3><span>3. Esquema y t</span><span>abla de equipos</span></h3>
+<p>En la siguiente tabla, se detalla las configuraciones a realizar en cada uno de los equipos que intervienen.​</p>
+<table border="1" style="margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td></td>
+<td><span style="font-size: 12pt;"><strong>Servidor RADIUS</strong></span></td>
+<td><span style="font-size: 12pt;"><strong>Cliente W10</strong></span></td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><strong>Sistema Operativo</strong></span></td>
+<td><span style="font-size: 12pt;">Windows Server 2019 DataCenter</span></td>
+<td><span style="font-size: 12pt;">Windows 10 Enterprise</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><strong>Nombre del equipo</strong></span></td>
+<td><span style="font-size: 12pt;">perseo</span></td>
+<td><span style="font-size: 12pt;">cliente01-W10</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><strong>Adaptador de Red</strong></span></td>
+<td><span style="font-size: 12pt;">Red_NAT - Red Interna</span></td>
+<td><span style="font-size: 12pt;">Red_NAT - Red Interna</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><strong>TCP/IP Adaptador de Red</strong></span></td>
+<td>
+<p><span style="font-size: 12pt;">IP: 192.0.1.254</span></p>
+<p><span style="font-size: 12pt;">mask: 255.255.255.0</span></p>
+<p><span style="font-size: 12pt;">DNS principal: 127.0.0.1</span></p>
+<p><span style="font-size: 12pt;">DNS secundario: 192.168.0.1</span></p>
+<p><span style="font-size: 12pt;">Gateway: 192.168.0.1</span></p>
+</td>
+<td>
+<p><span style="font-size: 12pt;">IP: dinámica (172.10.0.5)</span></p>
+<p><span style="font-size: 12pt;">DNS principal: dinámica</span></p>
+<p><span style="font-size: 12pt;">Gateway: Dinámica</span></p>
+</td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><strong>Dominio</strong></span></td>
+<td><span style="font-size: 12pt;">ciber.local</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><strong>Roles y Características</strong></span></td>
+<td>
+<p><span style="font-size: 12pt;">Servicios de Dominio de AD</span></p>
+<p><span style="font-size: 12pt;">DNS</span></p>
+<p><span style="font-size: 12pt;">DHCP</span></p>
+<p><span style="font-size: 12pt;">NPS</span></p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><strong>Usuarios</strong></span></td>
+<td>
+<p><span style="font-size: 12pt;">cuenta: radiustest</span></p>
+<p><span style="font-size: 12pt;">password: password123456.</span></p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><strong>Grupos</strong></span></td>
+<td>
+<p><span style="font-size: 12pt;">radius-WPA2: Seguridad y Global</span></p>
+<p><span style="font-size: 12pt;">Miembros: radiustest</span></p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p><span style="font-size: 12pt;"><strong>Secreto compartido</strong></span></p>
+<p><span style="font-size: 12pt;"><strong>con cliente RADIUS</strong></span></p>
+</td>
+<td>
+<p><span style="font-size: 12pt;">eeepsr10</span></p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><em><strong>Tabla 1.</strong><span> </span>Datos de los equipos que intervienen.</em></p>
+<p>Tabla de equipos de red: Punto de acceso y router para saliar a internet.</p>
+<table border="1" style="margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td></td>
+<td><span style="font-size: 12pt;"><strong>Router Huawei WAN</strong></span></td>
+<td><span style="font-size: 12pt;"><strong>Cliente RADIUS - AP</strong></span></td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><strong>Marca/Modelo</strong></span></td>
+<td><span style="font-size: 12pt;">Huawei</span></td>
+<td><span style="font-size: 12pt;">TP-LINK</span></td>
+</tr>
+<tr>
+<td><span style="font-size: 12pt;"><strong>Adaptador de Red LAN</strong></span></td>
+<td><span style="font-size: 12pt;">192.168.0.1</span></td>
+<td><span style="font-size: 12pt;">192.168.0.250</span></td>
+</tr>
+<tr>
+<td>
+<p><span style="font-size: 12pt;"><strong>Secreto compartido</strong></span></p>
+<p><span style="font-size: 12pt;"><strong>con servidor RADIUS</strong></span></p>
+</td>
+<td>
+<p></p>
+</td>
+<td><span style="font-size: 12pt;">eeepc20</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><em><strong>Tabla 2.</strong><span> </span>Datos de los equipos de red.</em></p>
+<p></p>
+<p style="text-align: center;"><img src="Wserver-RAdius-WPA2.png" alt="" width="688" height="256" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong>  Esquema de la red.</em></p>
+<h3><span>4. Diagrama de etapas</span></h3>
+<p><span>Las etapas ha seguir en el proceso de implantación del sistema es el siguiente:</span><a href="Diagrama-Etapas.png"><span><img src="Diagrama-Etapas.png" alt="" width="306" height="504" style="display: block; margin-left: auto; margin-right: auto;" /></span></a></p>
+<p style="text-align: center;"><span><em><strong>Figura 7.</strong>  Diagrama de etapas.</em></span></p>
+<h3 style="text-align: justify;"><span>5. Referencias</span></h3>
+<ul>
+<li id="wireless-access-deployment"><a href="https://docs.microsoft.com/es-es/windows-server/networking/core-network-guide/cncg/wireless/e-wireless-access-deployment" target="_blank" rel="noopener">Implementación de acceso inalámbrico</a></li>
+<li>
+<p id="deploy-password-based-8021x-authenticated-wireless-access"><a href="https://docs.microsoft.com/es-es/windows-server/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access" target="_blank" rel="noopener">Implementación del acceso inalámbrico autenticado mediante 802.1X basado en contraseña</a></p>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

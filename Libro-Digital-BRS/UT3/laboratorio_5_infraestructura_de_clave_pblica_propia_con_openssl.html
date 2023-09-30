@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 5. Infraestructura de clave pública propia con OpenSSL | UT3. Sistemas de control de acceso y credenciales </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-59"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT3. Sistemas de control de acceso y credenciales</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT3. Sistemas de control de acceso y credenciales</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="recomendaciones_de_estudio__resumen.html" class="no-ch">Recomendaciones de estudio - Resumen</a></li>
+   <li><a href="1_mecanismos_de_autenticacin_tipos_de_factores.html" class="daddy">1. Mecanismos de autenticación. Tipos de factores.</a>
+   <ul class="other-section">
+      <li><a href="11_mltiples_factores_de_autenticacin.html" class="no-ch">1.1 Múltiples factores de autenticación</a></li>
+      <li><a href="tarea_1_autenticacin_de_doble_factor_por_ssh_con_google_authenticator.html" class="no-ch">Tarea 1. Autenticación de doble factor por SSH con Google Authenticator</a></li>
+      <li><a href="laboratorio_1_autenticacin_multifactor_con_yubico.html" class="no-ch">Laboratorio 1. Autenticación multifactor con Yubico</a></li>
+      <li><a href="tarea_2_ubuntu__2fa_para_login_con_yubico_security_key.html" class="no-ch">Tarea 2. Ubuntu - 2FA para login con Yubico Security Key</a></li>
+   </ul>
+   </li>
+   <li><a href="2_tcnicas_de_autenticacin.html" class="no-ch">2. Técnicas de autenticación</a></li>
+   <li><a href="3_gestin_de_credenciales.html" class="daddy">3. Gestión de credenciales</a>
+   <ul class="other-section">
+      <li><a href="31_lastpass.html" class="no-ch">3.1 LastPass</a></li>
+      <li><a href="32_keepass.html" class="no-ch">3.2 Keepass</a></li>
+      <li><a href="33_otros_gestores_de_contraseas.html" class="no-ch">3.3 Otros gestores de contraseñas</a></li>
+      <li><a href="tarea_3_instalacin_configuracin_y_puesta_en_produccin_de_un_gestor_de_credenciales.html" class="no-ch">Tarea 3. Instalación, configuración y puesta en producción de un gestor de credenciales</a></li>
+      <li><a href="34_brechas_de_seguridad_y_contraseas_inseguras.html" class="no-ch">3.4 Brechas de seguridad y contraseñas inseguras</a></li>
+   </ul>
+   </li>
+   <li><a href="4_acceso_por_medio_de_firma_electrnica.html" class="daddy">4. Acceso por medio de firma electrónica</a>
+   <ul class="other-section">
+      <li><a href="41_lectores_de_dnie.html" class="no-ch">4.1 Lectores de DNIe</a></li>
+      <li><a href="42_uso_de_nfc_con_el_dnie.html" class="no-ch">4.2 Uso de NFC con el DNIe</a></li>
+   </ul>
+   </li>
+   <li><a href="5_sistemas_de_single_sign_on_sso.html" class="daddy">5. Sistemas de Single Sign On SSO</a>
+   <ul class="other-section">
+      <li><a href="tarea_4_sistemas_sso.html" class="no-ch">Tarea 4. Sistemas SSO</a></li>
+   </ul>
+   </li>
+   <li><a href="6_criptografa.html" class="daddy">6. Criptografía</a>
+   <ul class="other-section">
+      <li><a href="61_aplicacin_de_la_criptografa_en_la_seguridad_de_la_informacin.html" class="daddy">6.1 Aplicación de la Criptografía en la seguridad de la información</a>
+      <ul class="other-section">
+         <li><a href="611_principios_bsicos_de_la_criptografa.html" class="no-ch">6.1.1 Principios básicos de la criptografía</a></li>
+         <li><a href="612_criptografa_clsica.html" class="no-ch">6.1.2 Criptografía clásica</a></li>
+         <li><a href="613_servicios_de_seguridad_de_criptografa.html" class="no-ch">6.1.3 Servicios de seguridad de criptografía</a></li>
+         <li><a href="614_criptografa_moderna.html" class="daddy">6.1.4 Criptografía Moderna</a>
+         <ul class="other-section">
+            <li><a href="6141_criptografa_de_clave_privada.html" class="daddy">6.1.4.1 Criptografía de clave privada</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_1_cifrado_simtrico_de_archivos.html" class="no-ch">Laboratorio 1. Cifrado simétrico de archivos</a></li>
+               <li><a href="prctica_1_cifrado_simtrico.html" class="no-ch">Práctica 1. Cifrado simétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6142_criptografa_de_clave_pblica.html" class="daddy">6.1.4.2 Criptografía de clave pública</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_2_cifrado_asimtrico_de_ficheros.html" class="no-ch">Laboratorio 2. Cifrado asimétrico de ficheros</a></li>
+               <li><a href="prctica_2cifrado_asimtrico.html" class="no-ch">Práctica 2.Cifrado Asimétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6143_ventas_y_desventajas_cifrado_simtrico_y_asimetrico.html" class="no-ch">6.1.4.3 Ventas y desventajas cifrado simétrico y asimetrico</a></li>
+            <li><a href="6144_criptografa_hbirida.html" class="no-ch">6.1.4.4 Criptografía híbirida</a></li>
+         </ul>
+         </li>
+         <li><a href="615_esteganografa.html" class="daddy">6.1.5 Esteganografía</a>
+         <ul class="other-section">
+            <li><a href="tarea_5_openstego.html" class="no-ch">Tarea 5. OpenStego</a></li>
+         </ul>
+         </li>
+         <li><a href="616_funciones_hash.html" class="daddy">6.1.6 Funciones hash</a>
+         <ul class="other-section">
+            <li><a href="tarea_6_funciones_hash.html" class="no-ch">Tarea 6. Funciones hash</a></li>
+            <li><a href="tarea_7_quickhash.html" class="no-ch">Tarea 7. QuickHash</a></li>
+            <li><a href="tarea_8_funciones_avanzadas_hash_de_powershell.html" class="no-ch">Tarea 8. Funciones avanzadas hash de powershell</a></li>
+            <li><a href="laboratorio_3_funciones_hash_con_kleopatra.html" class="no-ch">Laboratorio 3. Funciones hash con Kleopatra</a></li>
+         </ul>
+         </li>
+         <li><a href="617_uso_de_tcnicas_criptogrficas_en_las_pyme.html" class="no-ch">6.1.7 Uso de técnicas criptográficas en las PYME</a></li>
+         <li><a href="618_sistemas_encriptacin_hardware_tpmhsm.html" class="no-ch">6.1.8 Sistemas encriptación hardware (TPM/HSM)</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="7_sistemas_de_control_de_acceso_y_autenticacin.html" class="current-page-parent daddy">7. Sistemas de control de acceso y autenticación</a>
+   <ul>
+      <li><a href="71_creacin_de_claves_ssh.html" class="no-ch">7.1 Creación de claves SSH</a></li>
+      <li class="current-page-parent"><a href="72_certificados_digitales_gestin_de_una_pki.html" class="current-page-parent daddy">7.2. Certificados digitales, gestión de una PKI</a>
+      <ul>
+         <li><a href="721_certificados_digitales.html" class="daddy">7.2.1 Certificados digitales</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_certificado_personal.html" class="no-ch">Laboratorio 4. Certificado personal</a></li>
+            <li><a href="tarea_9_verificacin_de_certificados_digitales.html" class="no-ch">Tarea 9. Verificación de certificados digitales</a></li>
+         </ul>
+         </li>
+         <li><a href="722_firma_digital.html" class="daddy">7.2.2 Firma digital</a>
+         <ul class="other-section">
+            <li><a href="prctica_3_verificacin_de_la_autenticidad_e_integridad_de_un_mensaje.html" class="no-ch">Práctica 3: Verificación de la autenticidad e integridad de un mensaje</a></li>
+         </ul>
+         </li>
+         <li><a href="723_infraestructuras_de_clave_pblica_pki.html" class="no-ch">7.2.3 Infraestructuras de clave pública (PKI)</a></li>
+         <li id="active"><a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="active no-ch">Laboratorio 5. Infraestructura de clave pública propia con OpenSSL</a></li>
+         <li><a href="caso_prctico_uso_de_certificados_en_servicios_web.html" class="no-ch">Caso Práctico. Uso de certificados en Servicios WEB</a></li>
+         <li><a href="reto_implementacin_de_una_sistema_de_certificados_pki_en_la_organizacin_con_easyrsa.html" class="no-ch">Reto. Implementación de una sistema de certificados (PKI) en la organización con Easy-RSA</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="8_gestin_de_accesos_sistemas_nac.html" class="daddy">8. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_6_packetfence.html" class="no-ch">Laboratorio 6. PacketFence</a></li>
+      <li><a href="prctica_4_acceso_a_la_web_a_travs_de_un_nac.html" class="no-ch">Práctica 4. Acceso a la web a través de un NAC</a></li>
+   </ul>
+   </li>
+   <li><a href="9_gestin_de_cuentas_privilegiadas.html" class="daddy">9. Gestión de cuentas privilegiadas</a>
+   <ul class="other-section">
+      <li><a href="101_pam.html" class="no-ch">10.1 PAM</a></li>
+      <li><a href="tarea_10_ejecutar_como.html" class="no-ch">Tarea 10. Ejecutar como</a></li>
+   </ul>
+   </li>
+   <li><a href="10_protocolos_radius_y_tacacs_servicio_kerberos.html" class="daddy">10. Protocolos RADIUS y TACACS, servicio KERBEROS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_7_freeradius.html" class="daddy">Laboratorio 7. freeRadius</a>
+      <ul class="other-section">
+         <li><a href="1_instalacin_servidor_radius.html" class="no-ch">1. Instalación servidor Radius</a></li>
+         <li><a href="2_instalacin_cliente_radius.html" class="no-ch">2. Instalación Cliente Radius</a></li>
+      </ul>
+      </li>
+      <li><a href="laboratorio_8_radius_windows_server.html" class="no-ch">Laboratorio 8. Radius Windows Server</a></li>
+   </ul>
+   </li>
+   <li><a href="11_ldap.html" class="daddy">11. LDAP</a>
+   <ul class="other-section">
+      <li><a href="111_instalacin_y_configuracin_de_ldap.html" class="no-ch">11.1 Instalación y configuración de LDAP.</a></li>
+      <li><a href="112_configuracin_de_certificados_ssltsl_en_ldap.html" class="no-ch">11.2 Configuración de certificados SSL/TSL en LDAP.</a></li>
+      <li><a href="113_creacin_de_cuentas_ldap.html" class="no-ch">11.3 Creación de cuentas LDAP</a></li>
+      <li><a href="114_instalacin_de_sssd_en_el_cliente_ubuntu_desktop.html" class="no-ch">11.4 Instalación de SSSD en el cliente Ubuntu Desktop</a></li>
+      <li><a href="proyecto_instalar_servidor_de_autenticacin_openldap_servidor_ubuntu.html" class="no-ch">Proyecto. Instalar servidor de autenticación OpenLdap Servidor Ubuntu</a></li>
+   </ul>
+   </li>
+   <li><a href="12_referencias.html" class="no-ch">12. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="723_infraestructuras_de_clave_pblica_pki.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="caso_prctico_uso_de_certificados_en_servicios_web.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 5. Infraestructura de clave pública propia con OpenSSL</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id88">
+<div class="iDevice emphasis0" >
+<div id="ta88_108_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p id="yui_3_17_2_1_1634204926122_87" style="text-align: justify;">Una infraestructura de clave pública PKI es una combinación de hardware, software y políticas y procedimientos de seguridad, que permiten la ejecución con garantías de operaciones criptográficas como el cifrado, la firma digital y el no repudio de transacciones electrónicas.</p>
+<p style="text-align: justify;">Para el caso de una <span>CA </span> en Linux, hay entidades de pago que podemos consultar (realizar compra de certificados, podemos usar certificados públicos <a href="https://letsencrypt.org/es/" target="_blank" rel="noopener">Let’s Encrypt</a>, pero lo que vamos hacer en este laboratorio, es crearnos nuestra propia PKI y ver cómo funciona una CA, una CA intermedia, como revocar certificados, etc..</p>
+<p align="left" style="text-align: justify;">Con este laboratorio, se  tendrá una infraestructura de clave pública (PKI) que aporta la figura de la autoridad certificadora (CA) que es la que, gracias a los certificados, legitima la relación entre los pares de claves y sus propietarios, pasando de unas relaciones de confianzas horizontales (usuario &lt;--&gt; usuario) a otras verticales (usuario --&gt; CA).</p>
+<h3>2. Recursos y escenario</h3>
+<h4>Recursos necesarios para el laboratorio</h4>
+<ul>
+<li align="justify"><span style="color: #000000; font-size: 12pt;"><a href="https://drive.google.com/file/d/1E-S22kT7vKdqGB2N3MVPBOJQ0RfxyAox/view?usp=sharing" target="_blank" rel="noopener"><strong>Servidor ubuntu server 20-04.3</strong>.</a> Todos los pasos se realizan con el usuario root.</span></li>
+<li align="justify"><span style="color: #000000; font-size: 12pt;">Paquete <strong><a href="https://www.openssl.org/" target="_blank" rel="noopener">openssl </a></strong>(paquete de herramientas criptográficas que implementa los protocolos SSL y TLS). <strong id="yui_3_17_2_1_1635093219585_102">OpenSSL</strong><span> </span>es un paquete de herramientas criptográficas que implementan los protocolos SSL (<em>Secure Socket Layer</em>) y su sucesor TLS (<em>Transport Layer Securtiy</em>). La gran mayoría de servidores (y sitios) web y otras aplicaciones como OpenSSH hacen uso de estas herramientas.</span></li>
+</ul>
+<div class="cuadro-nota-centro-new">
+<p><span style="font-weight: 400; color: #000000; font-size: 12pt;">Todos los comandos en el laboratorio  se realizan con el usuario root.</span></p>
+</div>
+<h4>Escenario</h4>
+<ul>
+<li style="text-align: justify;"><span style="color: #000000;"><span style="font-weight: 400; font-size: 12pt;"><span style="font-weight: 400; font-size: 12pt;"><strong>Necesidades:</strong> </span></span></span>
+<ul>
+<li style="text-align: justify;"><span style="color: #000000;"><span style="font-weight: 400; font-size: 12pt;"><span style="font-weight: 400; font-size: 12pt;">Se supone que se necesita u</span></span>n certificado firmado para un servidor HTTPS, esto significa que se necesita un certificado para el dominio (o dominios) en los que el servidor estará disponible.</span></li>
+<li style="text-align: justify;"><span style="color: #000000; font-size: 12pt;">El navegador web tiene que poder <em>verificar el certificado</em> y decirle al usuario que está accediendo a los servidores correctos del dominio de la URL que escribió y así establecer una conexión segura y privada. Los navegadores utilizan un almacén de certificados que tiene una lista de AC. Este almacén de certificados puede ser propio del navegador (como en el caso de Firefox y sus derivados) o estar integrado con el almacén de certificados del sistema operativo (como en el caso de Chromium y sus derivados).</span></li>
+<li style="text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt; color: #000000;">En estos documentos se explica por qué Mozilla decide seguir utilizando su propio almacén de certificados y cómo importar los certificados desde el almacén del sistema operativo si es necesario.</span></p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li><span style="font-size: 12pt;"><a href="https://blog.mozilla.org/security/2019/02/14/why-does-mozilla-maintain-our-own-root-certificate-store/">Why Does Mozilla Maintain Our Own Root Certificate Store?</a></span></li>
+<li><span style="font-size: 12pt;"><a href="https://support.mozilla.org/es/kb/setting-certificate-authorities-firefox">Setting Up Certificate Authorities (CAs) in Firefox</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p id="yui_3_17_2_1_1635093219585_93" style="text-align: justify;"><span style="font-size: 12pt; color: #000000;">Por lo tanto, se necesita un certificado que diga que nuestra clave pertenece a nuestro dominio emitido (firmado) por una de estas entidades. En este laboratorio, los certificados se emitirán desde una CA Intermedia, que no es más que otra entidad que fue autorizada por una de las autoridades competentes para emitir certificados. El procedimiento consiste en enviar una <strong>solicitud de firma de certificado</strong> (CSR, <em>certificate signing request</em>) a una AC u otra entidad intermedia para que devuelva un certificado que asegure nuestra identidad y que ha firmado con su clave privada.</span></p>
+</li>
+<li><span style="font-weight: 400; color: #000000; font-size: 12pt;">La CA raíz/principal a implementar no va a emitir certificados para los usuarios ni servidores, lo que va a emitir es a la CA's intermedias para que ellas sí emitan certificados a usuarios/equipos (servidores).</span></li>
+</ul>
+<div class="cuadro-nota-centro-new">
+<blockquote class="editor-indent" id="yui_3_17_2_1_1635093219585_100">
+<p id="yui_3_17_2_1_1635093219585_99" style="text-align: justify;"><span style="color: #000000;">Los certificados firmados por <a href="https://letsencrypt.org/" style="color: #000000;">Let’s Encrypt</a> son gratuitos. Hasta 2021 utiliza un <a href="https://letsencrypt.org/certificates/" style="color: #000000;">certificado raíz firmado por IdenTrust</a> para firmar los certificados.</span></p>
+</blockquote>
+</div>
+<h3>3. Procedimiento</h3>
+<h4>3.1 Introducción</h4>
+<p style="text-align: justify;"><span>Las situaciones en las que se puede necesitar una infraestructura de clave pública propia son variadas. Por ejemplo:</span></p>
+<ul>
+<li style="text-align: justify;"><span>Un desarrollador web puede querer generar sus propios certificados para sus servidores de desarrollo y prueba antes de desplegar la aplicación en Internet para que sus entornos sean lo más parecidos posible. </span></li>
+<li style="text-align: justify;"><span>Una empresa quiere mantener bajo control la infraestructura de clave pública para los servidores de su red corporativa, sin necesidad de depender de una autoridad de certificación ajena.</span></li>
+</ul>
+<p><span>En los siguientes puntos, se describen los pasos a realizar para implantar la PKI y poder emitir y revocar certificados.</span></p>
+<h4>3.2 Creando la Autoridad de Certificación: Configurar la CA</h4>
+<p align="justify" style="text-align: justify;"><span>Crear una autoridad de certificación propia es extremadamente sencillo y solo necesita de un par de pasos. </span></p>
+<p align="justify" style="text-align: justify;">Cuando se actúa como una CA, hay que manejar parejas de claves privadas y públicas. AL crear la CA raíz, esta pareja se convierte en la pareja raíz de claves. Vamos a crear la clave privada <strong>ca.key.pem</strong> y un certificado público <strong>ca.cert.pem</strong>.</p>
+<p align="justify" style="text-align: justify;">En este laboratorio, se va a montar una CA raíz en un equipo <a href="https://releases.ubuntu.com/20.04/" target="_blank" rel="noopener"><strong>Ubuntu Server 20.04.3</strong></a> que no va a emitir certificados para servidor y cliente, es decir, creará un certificado raíz<strong><em> X.509 autofirmado para la AC</em></strong>. Será la CA subordinada la encargada de emitir los certificados a los servidores, clientes, etc.. </p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">En el mismo equipo servidor, se montará la CA subordinada o intermedia. Tenerlo todo en el mismo servidor no es lo más óptimo, pero para facilitar el trabajo, en este laboratorio se hará toda toda la infraestructura en el mismo servidor.</p>
+</div>
+<p align="justify" style="text-align: justify;">La estructura a generar será la siguiente:</p>
+<p align="justify" style="text-align: justify;"><span style="font-size: 10pt;">ca</span><br /><span style="font-size: 10pt;">├── certs</span><br /><span style="font-size: 10pt;">│   └── ca.cert.pem</span><br /><span style="font-size: 10pt;">├── crl</span><br /><span style="font-size: 10pt;">├── index.txt</span><br /><span style="font-size: 10pt;">├── intermedia</span><br /><span style="font-size: 10pt;">│   ├── certs</span><br /><span style="font-size: 10pt;">│   │   ├── ca-cadena.cert.pem</span><br /><span style="font-size: 10pt;">│   │   ├── intermedia.cert.pem</span><br /><span style="font-size: 10pt;">│   │   └── midominio.cert.pem</span><br /><span style="font-size: 10pt;">│   ├── crl</span><br /><span style="font-size: 10pt;">│   │   └── intermedia.crl.pem</span><br /><span style="font-size: 10pt;">│   ├── crlnumber</span><br /><span style="font-size: 10pt;">│   ├── csr</span><br /><span style="font-size: 10pt;">│   │   ├── intermedia.csr.pem</span><br /><span style="font-size: 10pt;">│   │   └── midominio.csr.pem</span><br /><span style="font-size: 10pt;">│   ├── index.txt</span><br /><span style="font-size: 10pt;">│   ├── newcerts</span><br /><span style="font-size: 10pt;">│   │   ├── 1000.pem</span><br /><span style="font-size: 10pt;">│   │   ├── 1001.pem</span><br /><span style="font-size: 10pt;">│   │   └── 1002.pem</span><br /><span style="font-size: 10pt;">│   ├── openssl.cnf</span><br /><span style="font-size: 10pt;">│   ├── private</span><br /><span style="font-size: 10pt;">│   │   ├── intermedia.key.pem</span><br /><span style="font-size: 10pt;">│   │   └── midominio.key.pem</span><br /><span style="font-size: 10pt;">│   ├── serial</span><br /><span style="font-size: 10pt;">├── newcerts</span><br /><span style="font-size: 10pt;">│   └── 1000.pem</span><br /><span style="font-size: 10pt;">├── openssl.cnf</span><br /><span style="font-size: 10pt;">├── private</span><br /><span style="font-size: 10pt;">│   └── ca.key.pem</span><br /><span style="font-size: 10pt;">└── serial</span></p>
+<p align="justify" style="text-align: justify;">A continuación, se describen los pasos para montar la infraestructura. La estructura que se montará en el sistema es la siguiente:</p>
+<p align="justify" style="text-align: justify;"><span style="text-decoration: underline;"><b>Paso 1. Preparar los directorios y ficheros necesarios</b></span></p>
+<p align="justify" style="text-align: justify;">Entrar en el sistema <strong><em>ubuntu server</em></strong> como root y crear un directorio en <strong>/root</strong> que se llamará ca. En este directorio se montará toda la infraestructura.</p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><span style="font-size: medium;"><img src="pki-linux-01.png" alt="" width="368" height="114" /></span></span></p>
+<p align="justify">Dentro del directorio <strong>/root/ca</strong>, hay que crear los siguientes directorios: <span style="color: #666666; font-size: 12pt; text-align: left;">certs, crl, newcerts y private.</span></p>
+<pre><span style="font-size: 12pt;"><b>#mkdir </b>certs crl newcerts private</span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-02.png" alt="" width="525" height="74" /></p>
+<p align="justify">En el<b> directorio private</b> se tendrán las claves privadas, por lo que hay que modificar los permisos para darle todos a root y para el resto nada:</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-03.png" alt="" width="439" height="211" /></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">En el <b>directorio crl</b>, se guardarán los certificados revocados.</p>
+</div>
+<p align="justify">A continuación, hay que crear<span> en el directorio<strong> /root/ca </strong>el archivo de la base de datos de certificados emitidos/revocados y el archivo serial que llevará el consecutivo del último certificado firmado. L</span>os archivos son los siguientes:</p>
+<ul>
+<li align="justify">index.txt.</li>
+<li align="justify">serial (lo creamos con el valor 1000).</li>
+</ul>
+<p align="justify" style="text-align: center;"><img src="pki-linux-04.png" alt="" width="427" height="196" /></p>
+<p align="justify">A continuación, hay que crear el fichero de configuración de <strong>openssl</strong>, que es lo que se utiliza en linux para hacer una CA. Existe un fichero en el sistema alojado en <strong><em>/etc/ssl/openssl.conf</em></strong>.</p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-05.png" alt="" width="573" height="377" /></p>
+<p align="justify">Al cual, hay que realizar una serie de modificaciones/ampliaciones para contextualizarlo a nuestro laboratorio. El fichero modificado es: <a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/UT2/pki-linux/openssl-plantilla-raiz.cnf" target="_blank" rel="noopener">openssl-plantilla-raiz.cnf</a>.</p>
+<p align="justify">Luego para la <strong>CA intermedia</strong>, también hay que realizar una serie de modificaciones de este mismo fichero.</p>
+<p align="justify">La modificación del fichero se realiza atendiendo a :</p>
+<ul>
+<li align="justify">Los días del certificado serán 120.</li>
+<li align="justify">El algoritmo utilizado será sha256.</li>
+</ul>
+<div class="cuadro-nota-centro-new">
+<p align="justify" style="text-align: justify;"><span style="color: #000000;"><span>Una crl es una lista de revocación de certificados.</span></span><span style="color: #000000;"><span> Los sistemas suelen trabajar con</span></span><a href="https://es.wikipedia.org/wiki/Online_Certificate_Status_Protocol#:~:text=Protocolo%20de%20comprobaci%C3%B3n%20del%20Estado,de%20un%20certificado%20digital%20X.&amp;text=Este%20protocolo%20se%20describe%20en,OCSP%20se%20codifican%20en%20ASN."><span style="color: #000000;"><span style="font-size: medium;"><b> </b></span></span></a><span><span style="color: #1a0dab;"><span style="font-size: medium;"><b><a href="https://es.wikipedia.org/wiki/Online_Certificate_Status_Protocol#:~:text=Protocolo%20de%20comprobaci%C3%B3n%20del%20Estado,de%20un%20certificado%20digital%20X.&amp;text=Este%20protocolo%20se%20describe%20en,OCSP%20se%20codifican%20en%20ASN.">Ocsp | Certificate Status Checking</a></b></span></span><span style="color: #1a0dab;"><span style="font-size: medium;"><b><a href="https://es.wikipedia.org/wiki/Online_Certificate_Status_Protocol#:~:text=Protocolo%20de%20comprobaci%C3%B3n%20del%20Estado,de%20un%20certificado%20digital%20X.&amp;text=Este%20protocolo%20se%20describe%20en,OCSP%20se%20codifican%20en%20ASN.">,</a></b></span></span><span style="font-size: large;"><span style="color: #1a0dab;"> </span></span><span style="font-size: medium;"><span style="color: #000000;">pero en este laboratorio, se trabajará con las listas crl.</span></span></span></p>
+</div>
+<p align="justify"><span style="color: #000000;">Creamos en el directorio <strong>/root/ca</strong> el archivo <b>openssl.cnf</b> y copiamos en él el archivo plantilla <a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/pki-linux/openssl-plantilla-raiz.cnf" target="_blank" rel="noopener">openssl-plantilla-raiz.cnf</a>.</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-06.png" alt="" width="437" height="174" /></span></p>
+<p align="justify"><span style="color: #000000;"><span style="text-decoration: underline;"><b>Paso 2. Generación de claves</b></span></span></p>
+<p align="justify"><span style="color: #000000;">Una vez se tiene todo el sistema preparado para montar la CA, hay que crear la clave privada de la CA raíz.</span></p>
+<div class="cuadro-nota-centro-new">
+<p align="justify"><span style="color: #000000;">La CA raíz, es la única que tendrá un certificado autofirmado.</span></p>
+</div>
+<p align="justify"><span style="color: #000000;">En primer lugar hay que crear el par de claves de la CA, para ello, n</span><span style="color: #000000;">os situamos en el directorio <strong>/root/ca</strong> y ejecutamos el siguiente comando:</span></p>
+<pre><span style="font-size: 12pt;"><b>#</b><span style="color: #000000;">openssl genrsa -aes256 -out private/ca.key.pem 4096</span></span></pre>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><span style="font-size: medium;"><img src="pki-linux-07.png" alt="" width="696" height="143" /></span></span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">donde,</span></span></p>
+<ul>
+<li align="justify" style="text-align: justify;"><strong>openssl genrsa</strong> genera claves RSA.</li>
+<li align="justify" style="text-align: justify;">El tamaño de clave des de 4096 bits.</li>
+<li align="justify" style="text-align: justify;">La opción -aes256 indica que la clave se debe cifrar utilizando el protocolo aes.</li>
+<li align="justify" style="text-align: justify;">El fichero de salida ca.key.pem contiene la clave privada.</li>
+<li align="justify" style="text-align: justify;">Para obtener más información consultar "man openssl-genrsa".</li>
+</ul>
+<p align="justify"><span style="color: #000000;">Nos solicita que introduzcamos la contraseña de la clave privada a generar:</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-08.png" alt="" width="731" height="178" /></span></p>
+<p align="justify"><span style="color: #000000;">Con este proceso, ya se tendía la clave privada:</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-09.png" alt="" width="441" height="85" /></span></p>
+<p>Se puede inspeccionar la clave utilizando la herramienta openssl rsa (ver man openssl-rsa). Aunque no se debe usar a la ligera, para mostrar la clave privada sería:</p>
+<pre><span style="font-size: 12pt;"><b>#</b><span style="color: #000000;">openssl rsa -in ca.key.pem -out -</span></span></pre>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">Para mostrar la parte pública ejecutamos:</span></p>
+<pre><span style="font-size: 12pt;"><b>#</b><span style="color: #000000;">openssl rsa -in ca.key.pem -pubout</span></span></pre>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;"><span style="text-decoration: underline;"><b>Paso 3. Generación del certificado de la CA</b></span></span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">A continuación, hay que generar un certificado raíz X.509 autofirmado para la <strong>CA raíz</strong>. Para ello, hay que emplear la clave privada generada anteriormente, para poder generar el certificado.</span></p>
+<div class="cuadro-nota-centro-new">
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">En el fichero <strong>openssl.cnf</strong> hemos puesto el<strong> ca.cer.pem</strong> que es el que vamos a crear ahora.</span></p>
+</div>
+<pre><span style="font-size: 12pt;"><b>#</b><span style="color: #000000;">openssl req -config openssl.cnf -key private/ca.key.pem -new x509 -days 8000 -extensions v3_ca -out certs/ca.cert.pem</span></span></pre>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;"><b>Explicamos el comando:</b></span></p>
+<ul>
+<li align="justify" style="text-align: justify;"><span style="color: #000000;"><span>Hacemos una p</span></span><span style="color: #000000;"><span>etición</span></span><span style="color: #000000;"><span> (<strong>req</strong>)</span></span><span style="color: #000000;"><span> utilizando la clave privada y solicitamos un nuevo certificado del tipo x.509</span></span><span style="color: #000000;"><span> y que dure 8000 (como es una ca principal, ponemos muchos días). </span></span></li>
+<li align="justify" style="text-align: justify;"><span style="color: #000000;"><span>El parámetro <strong>-extensions</strong> es para referirnos a una sección del fichero openssl.cnf</span></span><span style="color: #000000;"><span>. </span></span></li>
+</ul>
+<p style="text-align: center;"><span style="color: #000000;"><span><img src="extensions-param.png" alt="" width="751" height="257" /></span></span></p>
+<ul>
+<li align="justify" style="text-align: justify;"><span style="color: #000000;"><span>El parámetro <strong>-out</strong> se le da una salida al comando (directorio donde se va a guardar el certificado).</span></span><span style="color: #000000;"><span> </span></span></li>
+<li align="justify" style="text-align: justify;"><span style="color: #000000;"><span>Con el parámetro <strong>-config</strong> le decimos qué fichero debe usar el comando <strong>openssl</strong> para crear el certificado, le ponemos el que hemos modificado ajustándolo a nuestro laboratorio</span></span><span style="color: #000000;"><span>, sino lo hacemos, utilizará el fichero que está en el directorio /etc/ssl.</span></span></li>
+</ul>
+<p style="text-align: center;"><span style="color: #000000;"><span><img src="pki-linux-10.png" alt="" width="580" height="288" /></span></span></p>
+<p align="justify"><span style="color: #000000;">Al ejecutar el comando, nos solicita la clave que hemos utilizado para crear la clave privada.</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-11.png" alt="" width="1033" height="51" /></span></p>
+<p align="justify"><span style="color: #000000;">Una vez introducida la contraseña, nos solicita datos del certificado a crear.</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-12.png" alt="" width="1036" height="313" /></span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">A continuación, v</span><span style="color: #000000;">isualizamos el fichero generado<strong> ca.cert.pem</strong> (en el directorio certs) para comprobar el resultado.</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-14.png" alt="" width="520" height="408" /></span></p>
+<h4 align="justify" style="text-align: justify;"><span style="color: #000000;">Verificar que el certificado es autofirmado</span></h4>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">Para verificar que el <strong><em>certificado raíz</em></strong> que se acaba de crear es <strong>autofirmado</strong> y que coincide con el campo <strong>subject</strong>, hacemos:</span></p>
+<pre><span style="font-size: 12pt;"><b>#</b><span style="color: #000000;">openssl x509 -noout -text -in /root/ca/certs/ca.cert.pem</span></span></pre>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;"><strong>Nota:</strong> Con el parámetro<strong> </strong></span><span style="color: #000000;"><strong>-noout</strong> , no hacemos ninguna salida del comando.</span></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-15.png" alt="" width="1177" height="376" /></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-16.png" alt="" width="647" height="268" /></span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">Podemos ver en <strong>Issuer</strong> que el certificado lo ha creado <strong>MI-CA</strong> para <strong>MI-CA</strong> (Autofirmado).</span></span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;">Como se dijo en el <strong><em>capítulo 2. Recursos y escenario</em></strong>, la <strong>CA raíz/principal</strong> no va a emitir certificados para los usuarios ni servidores, lo que va a emitir es a la CA's intermedias para que ellas sí emitan certificados a usuarios/equipos (servidores).</span></span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;"><span style="font-size: medium;"><b><span style="text-decoration: underline;">Paso 4. Crear la estructura de la CA intermedia</span></b></span></span></p>
+<p align="justify"><span style="color: #000000;">Creamos el directorio intermedia dentro de<strong> /root/ca</strong>.</span></p>
+<pre><span style="font-size: 12pt;"><b># </b><span style="color: #000000;">mkdir /root/ca/intermedia</span></span></pre>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-17.png" alt="" width="531" height="62" /></span></p>
+<p align="justify"><span style="color: #000000;">A continuación, dentro del directorio intermedia, hay que crear la misma estructura que ya se creó en la CA raíz.</span></p>
+<pre><span style="font-size: 12pt;"><b># </b><span style="color: #000000;">mkdir certs crl newcerts private csr</span></span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-18.png" alt="" width="609" height="191" /></p>
+<p align="justify"><span style="color: #000000;">A continuación, creamos los archivos index, serial y crlnumber con el valor inicial 1000:</span></p>
+<pre><span style="font-size: 12pt;"><b># </b><span style="color: #000000;">touch index.txt</span><b><br /># </b><span style="color: #000000;">echo 1000 &gt; serial<br /># </span><span style="color: #000000;">echo 1000 &gt; crlnumber</span><b><span style="color: #000000;"><br /></span></b></span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-19.png" alt="" width="471" height="216" /></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">Por último, hay que crear el fichero de configuración. En teoría, esto se debería hacer en otro servidor con el fichero <strong>openssl.cnf</strong> correspondiente. Para este caso, tendremos otro fichero <strong>openssl.cnf</strong> en el mismo servidor. Para ello, h</span><span style="color: #000000;">acemos una copia del fichero de la <strong><em>CA raíz</em></strong> al directorio intermedia.</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-20.png" alt="" width="665" height="104" /></span></p>
+<p align="justify"><span style="color: #000000;">A continuación, editamos el fichero <strong>openssl.cnf</strong> para ajustarlo a esta <strong>CA Intermedia</strong>. </span><span style="color: #000000;">Los cambios a realizar son:</span></p>
+<pre><span style="color: #000000;"><span style="font-size: 12pt;">[ CA_default ]</span><br /><span style="font-size: 12pt;">dir = /root/ca/intermedia --&gt; directorio de trabajo</span><br /></span></pre>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-21.png" alt="" width="777" height="126" /></span></p>
+<p align="justify"><span style="color: #000000;">Otras secciones a modificar son el certificado, la lista crl y la key.</span></p>
+<pre><span style="font-size: 12pt;"><span style="color: #000000;">certificate = $dir/certs/intermedia.cert.pem<br /></span><span style="color: #000000;">crl = $dir/intermedia.crl.pem<br />private_key = $dir/private/intermedia.key.pem</span></span></pre>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-22.png" alt="" width="823" height="335" /></span></p>
+<p align="justify"><span style="color: #000000;">Otra sección a modificar es el parámetro <strong>policy: </strong></span></p>
+<pre><span style="color: #000000; font-size: 12pt;">policy = policy_loose</span></pre>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-23.png" alt="" width="598" height="71" /></span></p>
+<p align="justify"><span style="color: #000000;">Ahora, se tiene que c</span><span style="color: #000000;">rear la clave privada intermedia, donde el asistente nos solicitará la contraseña de la clave privada, para ello, ejecutamos el siguiente comando:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#openssl genrsa -aes256 -out private/intermedia.key.pem 4096</span></pre>
+<p align="justify">donde,</p>
+<ul>
+<li align="justify"><strong>-aes256.</strong> Se cifra la clave privdada con el algoritmo AES de 256 bits. Al ejecutar el comando, nos solicitará la contraseña de cifrado.</li>
+<li align="justify"><strong>-out.</strong> El resultado lo llevamos al fichero intermedia.key.pem</li>
+<li align="justify"><strong>4096</strong>. Tamaño de la clave privada a generar en bits, en este caso, 4096.</li>
+</ul>
+<p><a href="https://www.openssl.org/docs/man1.0.2/man1/genrsa.html" target="_blank" rel="noopener">Referencia</a></p>
+<p style="text-align: center;"><img src="pki-linux-24.png" alt="" width="830" height="208" /></p>
+<p align="justify"><span style="color: #000000;">A continuación, hay que crear el certificado intermedio (desde el directorio ca), para ello, se genera el fichero<strong> intermedio.csr.pem</strong> (csr --&gt; certificate sign request --&gt; Solicitud de firmar un certificado). Ejecutamos el siguiente comando:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#<span style="color: #000000;">openssl req -config intermedia/openssl.cnf -new -sha256 -key intermedia/private/intermedia.key.pem -out intermedia/csr/intermedia.csr.pem</span></span></pre>
+<p align="justify"><span style="color: #000000;">Al ejecutar el comando, </span><span style="color: #000000;">nos solicita la contraseña de la clave privada creada anteriormente y también </span><span style="color: #000000;">Nos solicita los datos (como en la ca raíz).</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-25.png" alt="" width="1344" height="376" /></span></p>
+<p align="justify"><span style="color: #000000;"><u><b>Resumen de lo que se ha realizado hasta el momento:</b></u></span></p>
+<p style="text-align: justify;">Se ha creado una petición para crear el certificado, utilizando nuestra clave privada. Esta petición hay que enviarla a la <strong>CA raíz</strong> para que cree el certificado, ya que esta, es la que crea los certificados de las <strong>CA’s intermedias</strong>. La CA intermedia, no se va a autogenerar su certificado, lo solicita a la <strong>CAR raíz</strong>, por eso hemos realizado el csr (solicitud para firmar un certificado).</p>
+<p>Ahora vamos a generar el certificado con ese <strong>csr</strong> que hemos generado. Estando en el directorio <strong>/root/ca</strong> ejecutamos el siguiente comando:</p>
+<pre><span style="color: #000000; font-size: 12pt;">#openssl ca -config openssl.cnf -extensions v3_ca_intermediate -days 3650 -notext -md sha256 -in intermedia/csr/intermedia.csr.pem -out intermedia/certs/intermedia.cert.pem</span></pre>
+<p>donde,</p>
+<ul>
+<li><strong>intermedia.csr.pem</strong> --&gt; La que tenemos pendiente.</li>
+<li>La sección <strong>v3_ca_intermediate</strong> contiene las extensiones a aplicar en la creación de los certificados de CA intermedias.</li>
+</ul>
+<p>Al ejecutar el comando, nos solicita la contraseña de la clave privada de la CA principal/raíz.</p>
+<p style="text-align: center;"><img src="pki-linux-26.png" alt="" width="1347" height="624" /></p>
+<p align="justify"><span style="color: #000000;">Si miramos el archivo <strong>index.txt</strong>, veremos donde se ha almacenado lo que acabamos de hacer.</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-27.png" alt="" width="1259" height="86" /></span></p>
+<p align="justify"><span style="color: #000000;">En este lugar, es donde se van almacenando los certificados que se van generando. </span><span style="color: #000000;">Podemos ver los detalles del certificado creado con el siguiente comando:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#openssl <span style="color: #000000;">x509 -noout -text -in intermedia/certs/intermedia.cert.pem</span></span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-28.png" alt="" width="1150" height="417" /></p>
+<p align="justify" style="text-align: center;"><img src="pki-linux-29.png" alt="" width="667" height="251" /></p>
+<p align="justify"><span style="color: #000000;">Podemos ver que el certificado lo ha creado <strong>MI-CA</strong> (Issuer) para <strong>MI-CA Intermedia</strong>. </span><span style="color: #000000;">También podemos verificarlo contra el certificado raíz para comprobar la cadena de confianza. El comando a ejecutar es el siguiente:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#openssl <span style="color: #000000;">verify -CAfile certs/ca.cert.pem intermedia/certs/intermedia.cert.pem</span></span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-30.png" alt="" width="880" height="97" /></p>
+<p align="justify"><span style="color: #000000;">Si observamos la imagen superior, vemos que nos devuelve que es correcto (OK). Con esto tenemos la seguridad de que ese certificado lo ha creado nuestra <strong>CA root</strong>.</span></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span style="color: #000000;">Cuando una aplicación intenta verificar un certificado firmado por una CA intermedia (ejemplo ver una página web), se debe de comprobar la cadena de certificación, es decir, certificados intermedios y raíz.</span></p>
+</div>
+<p align="justify"><span style="color: #000000;"><strong><span style="font-size: medium;"><b><span style="text-decoration: underline;">Paso 5. Generar nuestra cadena de certificados intermedios</span></b></span></strong></span></p>
+<p align="justify"><span style="color: #000000;"><strong>¿Qué es lo que se hace cuando se monta un apache con certificado?</strong> --&gt; Hay que ponerle también los certificados intermedios a ese certificado o configuración de apache. </span></p>
+<p align="justify"><span style="color: #000000;">A continuación, vamos a generar nuestra cadena de certificados intermedios. Estando en el directorio ca, vamos hacer una concatenación para meterlo después en un archivo, el comando es el siguiente:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#<span style="color: #000000;">cat intermedia/certs/intermedia.cert.pem certs/ca.cert.pem &gt; intermedia/certs/ca-cadena.cert.pem</span></span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-31.png" alt="" width="518" height="263" /></p>
+<p align="justify"><span style="color: #000000;">Este fichero (concatenacion de certificados) que hemos generado es lo que le pasaríamos al servidor apache.</span></p>
+<p align="justify"><span style="color: #000000;"><strong><span style="font-size: medium;"><b><span style="text-decoration: underline;">Paso 6. Proceso de firma</span></b></span></strong></span></p>
+<p align="justify"><span style="color: #000000;">A continuación, seguimos con el proceso de firma de certificados de servidor y cliente sobra la estructura PKI que hemos montado. </span><span style="color: #000000;">Los certificados que creemos, se pueden utilizar para un servidor web, autenticar a clientes, etc..</span></p>
+<p align="justify"><span style="color: #000000;"><b>Ejemplo: </b></span><span style="color: #000000;"><b>Domino --&gt; midominio.com</b></span></p>
+<p align="justify"><span style="color: #000000;">Supongamos que un cliente solicita un certificado para un domino, llamado <strong>midominio.com</strong>. </span><span style="color: #000000;">Cuando se solicita un certificado, se necesita una clave asociada al cliente para empezar a firmar todo el proceso. La clave la puede proporcionar el cliente o a través de un intermediario. </span></p>
+<p align="justify"><span style="color: #000000;">Para simplificar el paso, vamos a generar la clave del cliente para poder iniciar el proceso (directamente en nuestro servidor), por lo tanto, vamos a generar u</span><span style="color: #000000;">na <b>petición </b><b>csr</b> que luego se firmará y se obtendrá el certificado para el usuario final para mi dominio.com. El comando a ejecutar es el siguiente:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#<span style="color: #000000;">openssl genrsa -out intermedia/private/midominio.key.pem 2048</span></span></pre>
+<ul>
+<li align="justify">Generamos la clave de 2048 bits.</li>
+</ul>
+<p style="text-align: center;"><img src="pki-linux-32.png" alt="" width="775" height="178" /></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">Con la clave privada que se ha generado, vamos a generar la petición de<strong> certificado csr. </strong></span><span style="color: #000000;">Los datos que vamos a rellenar en la solicitud son relativos al cliente, para ello ejecutamos el siguiente comando:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#<span style="color: #000000;">openssl req -config intermedia/openssl.cnf -key intermedia/private/midominio.key.pem -new -sha256 -out intermedia/csr/midominio.csr.pem</span></span></pre>
+<p><span style="color: #000000;"><span>Aclaración del comando:</span></span></p>
+<ul>
+<li align="justify"><span style="color: #000000;"><span>Creamos un nuevo certificado, donde la petición se hace sobre la ca intermedia (es la que emite los certificados para los clientes, servidores, dominios, etc..). </span></span></li>
+<li align="justify"><span style="color: #000000;"><span>El algoritmo de firma es sha256 y con salida intermedia/csr/midominio.csr.pem</span></span><span style="color: #000000;"><span>.</span></span></li>
+</ul>
+<p align="justify" style="text-align: center;"><img src="pki-linux-33.png" alt="" width="919" height="394" /></p>
+<div class="cuadro-importante-centro {  ">
+<p style="text-align: justify;">El parámetro<strong> FQDN or YOUR name (ver figura superior)</strong><b>:</b><span style="font-size: 1em; text-align: left; color: #000000;"> Cuando generamos un certificado, es importante que el nombre coincida con lo que se quiere generar para un dominio, como lo queremos generar para </span><span style="font-size: 1em; text-align: left; color: #000000;">el </span><span style="font-size: 1em; text-align: left; color: #000000;">dominio</span><span style="font-size: 1em; text-align: left; color: #000000;"> de ejemplo</span><span style="font-size: 1em; text-align: left; color: #000000;">, sería <strong>midominio.com</strong>. </span><span style="color: #000000;">Cuando se compra un certificado, hay que comprobar que el <strong>FQDN</strong> sea el nombre de nuestro dominio.</span><span style="color: #000000;"> Una vez que se genera ya no se puede cambiar, habría que comprar otro.</span></p>
+</div>
+<p align="justify"><span style="color: #000000;"><span>Ya tenemos el <strong>csr</strong> y ahora lo que haremos es enviar el <strong>csr</strong> a nuestra <strong>CA intermedia</strong> para que lo firme</span></span><span style="color: #000000;"><span> y así obtener el certificado.</span></span></p>
+<p align="justify"><span style="color: #000000;"><span>S</span></span><span style="color: #000000;"><span>i es un certificado para servidores utilizaremos una extensión para servidor, si es para usuario la extensión de usuario. Todo esto son campos</span></span><span style="color: #000000;"><span>/parámetros</span></span><span style="color: #000000;"><span> dentro del fichero<strong> openssl.cnf</strong>.</span></span></p>
+<div class="cuadro-importante-centro {  ">
+<p style="text-align: justify;"><span style="color: #000000;"><span>Cuando se hace un certificado para un dominio, el valor del tiempo suele ser generalmente de 1 año</span></span><span style="color: #000000;"><span> (consultar cual es el periodo máximo de validez que se deja para un certificado)</span></span><span style="color: #000000;"><span>.</span></span></p>
+</div>
+<p style="text-align: center;"><img src="pki-linux-34.png" alt="" width="1348" height="680" /></p>
+<p align="justify"><span style="color: #000000;">Introducimos en la consola '<strong>y</strong>' para firmar y de nuevo '<strong>y</strong>' después para hacer el commit.</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-35.png" alt="" width="1050" height="685" /></span></p>
+<p align="justify"><span style="color: #000000;"><span>Si comprobamos el contenido de la <strong>CA intermedia</strong>, veremos que se ha actualizado con lo que acabamos de realizar</span></span><span style="color: #000000;"><span>, es decir, el certificado que acabamos de generar.</span></span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#cat intermedia/index.txt</span></pre>
+<p style="text-align: center;"><img src="pki-linux-36.png" alt="" width="1044" height="104" /></p>
+<p align="justify"><span style="color: #000000;">Podemos verificar mediante el campo <strong>issuer</strong> y el <strong>subject</strong>, para ello ejecutamos el siguiente comando:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#openssl x509 -noout -text -in intermedia/certs/midominio.cert.pem</span></pre>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-37.png" alt="" width="1153" height="595" /></span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-38.png" alt="" width="1061" height="386" /></span></p>
+<p align="justify"><span style="color: #000000;"><strong>Issuer --&gt;</strong> Quien ha realizado el certificado no es <strong>CA raíz</strong> sino <strong>MI_CA Intermedia</strong> y se ha generado para <strong>midominio.com</strong>.</span></p>
+<p align="justify"><span style="color: #000000;"><span>También podemos verificar la cadena de confianza</span></span><span style="color: #ce181e;"><span>  <strong>¿Cómo lo harías?. Resuelve esta cuestión y comenta el resultado.</strong></span></span></p>
+<p><span style="color: #000000;"><strong><span style="font-size: medium;"><b><span style="text-decoration: underline;">Paso 7. Comprobaciones</span></b></span></strong></span></p>
+<p style="text-align: justify;"><span style="color: #000000;">A continuación, hay que comprobar que </span><span style="color: #000000;"><span>el certificado se corresponde o ha sido generado por la CA Intermedia y además se comprueba toda la cadena de confianza.</span></span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><span>Ejecutamos el siguiente comando:</span></span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#openssl <span style="color: #000000;"><span>verify -CAfile intermedia/certs/ca-cadena.cert.pem intermedia/certs/midominio.cert.pem</span></span></span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-39.png" alt="" width="1012" height="88" /></p>
+<p align="justify" style="text-align: justify;">Si observamos la imagen superior, vemos que nos da un OK por lo que <span style="color: #000000;"><span>el certificado se corresponde o ha sido generado por mi CA Intermedia y se comprueba toda la cadena de confianza. </span></span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">Cuando se haga uso de este certificado en un servidor web, tenemos que emplear los 3 archivos: </span></p>
+<ul>
+<li align="justify"><span style="color: #000000;">ca-cadena.cert.pem → /intermedia/certs/</span></li>
+<li align="justify"><span style="color: #000000;">midomino.key.pem → intermedia/private/</span></li>
+<li align="justify"><span style="color: #000000;">midominio.cert.pem → intermedia/certs/</span></li>
+</ul>
+<p><span style="text-decoration: underline;"><span style="color: #000000;"><strong>Paso 8. Revocación de Certificados</strong></span></span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">Ahora, vamos a probar a revocar un certificado mediante las listas de revocación de certificado. Es una lista donde se van a almacenar los certificados revocados por la CA. </span><span style="color: #000000;">Cuando un navegador intenta comprobar la autenticidad del servidor, consulta esa lista para determinar si está revocado o no.</span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">En el caso de una conexión <strong>VPN</strong>, un empleado con un certificado revocado implica la pérdida de servicio.</span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">La lista se suele publicar en una url pública y sencilla, ejemplo:</span></p>
+<ul>
+<li align="justify" style="text-align: justify;"><a href="http://mica.com/intermedia.crl.pem"><span style="color: #000000;"><b>http://mica.com/intermedia.crl.pem</b></span></a></li>
+</ul>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">E</span><span style="color: #000000;">sta url suele estar visible en los certificados (si miramos en la propiedades del certificado). </span><span style="color: #000000;">Cuando una </span><span style="color: #000000;">CA</span><span style="color: #000000;"> firma un certificado, </span><span style="color: #000000;">codifica esa url dentro del certificado, y se puede configurar con varios parámetros. Si observamos el fichero <strong>openssl.cnf</strong> podemos ver los parámetros que nos permiten configurar es url.</span></p>
+<p align="justify" style="text-align: justify;"><span style="color: #000000;">Para este laboratorio, usaremos los valores de los parámetros por defecto (no modificaremos ninguno).</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-40.png" alt="" width="564" height="127" /></span></p>
+<p align="justify"><span style="color: #000000;"><b>1. </b>En primer lugar, v</span><span style="color: #000000;">amos a crear la lista para la CA Intermedia. </span><span style="color: #000000;">El comando es el siguiente:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#openssl <span style="color: #000000;">ca -config intermedia/openssl.cnf -gencrl -out intermedia/crl/intermedia.crl.pem</span></span></pre>
+<p align="justify"><span style="color: #000000;">Usamos el fichero<strong> openssl.cnf</strong> de la <strong>CA intermedia</strong> para generar la lista de revocación que guardaremos en el directorio <strong>crl</strong> de la <strong>CA intermedia</strong>.</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-41.png" alt="" width="957" height="101" /></span></p>
+<p align="justify"><span style="color: #000000;">A continuación, vamos a comprobar la lista de certificados revocados para ver lo que contiene. El comando a ejecutar es el siguiente:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#openssl <span style="color: #000000;">crl -in intermedia/crl/intermedia.crl.pem -noout -text</span></span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-42.png" alt="" width="1064" height="374" /></p>
+<p>Si observamos la imagen superior, tenemos que:</p>
+<ul>
+<li><span style="color: #000000;"><strong>issuer</strong>→ La lista está realizada por MI-CA Intermedia.</span></li>
+<li align="justify"><span style="color: #000000;">Nos dice cuando fue la última vez que se actualizó (19 de Agosto) y la próxima vez que se actualizará (18 septiembre).</span></li>
+<li align="justify"><span style="color: #000000;">Nos dice que no tenemos ningún certificado revocado (No Revoked Certificates).</span></li>
+</ul>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span style="color: #000000;">Si se revoca un certificado </span><span style="color: #000000;">por ejemplo, </span><span style="color: #000000;">dentro de dos días (21 de Agosto), </span><span style="color: #000000;">la próxima actualización de la lista como es del 18 de Septiembre, el certificado se podría seguir utilizando ya que la revocación del mismo no está incluido en la lista hasta que se haga la actualización (18 de Septiembre). </span><span style="color: #000000;">Este problema la única forma de solucionarlo es con el </span><strong><a href="https://es.wikipedia.org/wiki/Online_Certificate_Status_Protocol">protocolo O</a><a href="https://es.wikipedia.org/wiki/Online_Certificate_Status_Protocol"><span style="color: #000000;">CSP.</span></a></strong></p>
+</div>
+<p align="justify"><span style="color: #000000;"><b>2. </b></span><span style="color: #000000;">Procedemos a revocar el certificado que se ha generado anteriormente.</span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-43.png" alt="" width="960" height="154" /></span></p>
+<p align="justify"><span style="color: #000000;">Lo que hace es, se va al fichero <strong>index.txt</strong> y revoca el certificado (1000) que corresponde a <strong>midominio.cert.pem</strong></span></p>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><strong><img src="pki-linux-44.png" alt="" width="850" height="98" /></strong></span></p>
+<p align="justify"><span style="color: #000000;">La línea sigue existiendo, no se elimina. Revocar un certificado no significa eliminar el registro del fichero, pero hay una cosa diferente respecto de su contenido antes de ejecutar el comando de revocación, </span><span style="color: #000000;">ahora al principio del registro hay una R (revoked) en lugar de una </span><span style="color: #000000;">V (valid)</span><span style="color: #000000;">. </span><span style="color: #000000;">Esa R identifica el certificado como revocado.</span></p>
+<p align="justify"><span style="color: #000000;">E</span><span style="color: #000000;">n cuanto a la lista de certificados, si ejecutamos el comando para ver la lista:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#<span style="color: #000000;">openssl crl -in intermedia/crl/intermedia.crl.pem -noout -text</span></span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-45.png" alt="" width="850" height="316" /></p>
+<p align="justify"><span style="color: #000000;">Nos dice que no hay certificados revocados, <strong>¡pero acabamos de revocar uno!</strong>. Esto es debido a lo que se ha comentado en la Nnota anterior, hasta que no se actualice la lista, el certificado que acabamos de revocar no se consolida en la lista.</span></p>
+<p align="justify"><span style="color: #000000;">Hay una forma de que sí se consolide y es regenerar la lista manualmente. Para ello, el comando a utilizar es el siguiente </span><span style="color: #000000;">(Comando utilizado anteriormente para generar la lista)</span><span style="color: #000000;">:</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#<span style="color: #000000;">openssl ca -config intermedia/openssl.cnf -gencrl -out intermedia/crl/intermedia.crl.pem</span></span></pre>
+<p align="justify" style="text-align: center;"><img src="pki-linux-46.png" alt="" width="960" height="117" /></p>
+<p align="justify"><span style="color: #000000;">A continuación, comprobamos la lista de certificados revocados.</span></p>
+<pre><span style="color: #000000; font-size: 12pt;">#<span style="color: #000000;">openssl crl -in intermedia/crl/intermedia.crl.pem -noout -text</span></span></pre>
+<p align="justify" style="text-align: center;"><span style="color: #000000;"><img src="pki-linux-47.png" alt="" width="960" height="358" /></span></p>
+<p align="justify"><span style="color: #000000;">Ahora <strong>sí se tiene consolidado la revocación del certificado</strong> → Revoked Certificates: Serial Number: 1000 </span><span style="color: #000000;">con fecha → Revocation Date: Aug 19 11:17:13 2021 GMT.</span></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span style="color: #000000;">En una página web no es muy importante que el certificado se revoque cuando se haga la actualización automática, pero si estamos hablando de un certificado de una persona que ha sido sustraído y que podrían firmar, etc.., pues en ese caso, sí que es necesario generar la lista de certificados revocados de manera manual.</span></p>
+</div>
+<h3 align="justify">4. Conclusión</h3>
+<p align="justify"><span style="font-size: medium;"><span style="color: #000000;">Hemos visto todo lo referente a la creación de una PKI con Linux con una ca raíz y una ca intermedia.</span></span></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="723_infraestructuras_de_clave_pblica_pki.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="caso_prctico_uso_de_certificados_en_servicios_web.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

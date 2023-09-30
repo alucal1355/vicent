@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.2 Instalación y configuración de FreeRADIUS como AAA Server | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-117"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_servidor_de_autenticacin_radius.html" class="current-page-parent daddy">3. Servidor de autenticación Radius</a>
+   <ul>
+      <li><a href="31_freeradius.html" class="daddy">3.1 FreeRadius</a>
+      <ul class="other-section">
+         <li><a href="311_instalacin_servidor_radius.html" class="daddy">3.1.1. Instalación servidor Radius</a>
+         <ul class="other-section">
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="current-page-parent daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul>
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li id="active"><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="active no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul class="other-section">
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="321_instalar_openldap.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323_configuracin_del_cliente_radius.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id156">
+<div class="iDevice emphasis0">
+<div id="ta156_85" class="block iDevice_content">
+<h3>1. Instalación</h3>
+<p>En primer lugar,  hay que instalar <strong>FreeRADIUS</strong> y las utilidades necesarias para la integración con <strong>LDAP</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>apt install freeradius freeradius-ldap freeradius-utils</span></pre>
+<p style="text-align: center;"><img src="ldap-06.png" alt="" width="1183" height="319" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Instalación de freeradius y paquetes para integración con LDAP.</em></p>
+<h3 style="text-align: justify;">2. Configuración</h3>
+<p style="text-align: justify;">Una vez se han instalado los paquetes, hay que comenzar con la configuración que se describe en los siguientes puntos.</p>
+<h4 style="text-align: justify;">1. Agregar los clientes radius</h4>
+<p style="text-align: justify;">En primer lugar, se agregan los clientes radius como un controlador inalámbrico o punto de acceso al archivo <strong>/etc/freeradius/3.0/clients.conf</strong>. En este escenario, el cliente radius es un <strong>router TP-LINK</strong> configurado como punto de acceso con ip estática y que es 192.168.0.250. Hay que establecer el secreto compartido que más adelante, habrá que configurar en el Punto de Acceso.</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>nano /etc/freeradius/3.0/clients.conf</span></pre>
+<p style="text-align: center;"><img src="clients-conf.png" alt="" width="780" height="274" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Cliente radius añadido en el fichero.</em></p>
+<h4 style="text-align: justify;">2. Configurar el protocolo de autenticación a utilizar</h4>
+<p style="text-align: justify;">En este punto, hay que decidir qué protocolo se va a utilizar y que sea compatible con el método que utiliza LDAP para guardar las contraseñas en entornos GNU/Linux.</p>
+<p style="text-align: justify;">Si se accede al artículo <a href="http://deployingradius.com/documents/protocols/compatibility.html" target="_blank" rel="noopener">Protocol and Password Compatibility</a> se puede observar que hay tres protocolos compatibles. Para este escenario, el protocolo <strong>EAP-GTC</strong> por su seguridad y amplia compatibilidad sería un buen candidato.</p>
+<p style="text-align: justify;">Pero para este caso de ejemplo, <span>se van a configurar diferentes mecanismos de autenticación: <strong>EAP-GTC, PEAP, TLS y LDAP</strong>, y de este manera, se abre el abanico de utilidad de este sistema.</span></p>
+<p style="text-align: justify;">Para comenzar con la configuración, hay que acceder al fichero de configuración del módulo EAP que se encuentra en <strong>/etc/freeradius/3.0/</strong><span style="font-size: 12pt;"><strong>mods-available</strong>.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>nano /etc/freeradius/3.0/mods-available/eap</span></pre>
+<table border="0">
+<tbody>
+<tr>
+<td style="text-align: justify;"><span style="font-size: 12pt;">Pincha sobre la imagen para <strong>acceder al fichero eap</strong> con los parámetros a configurar.</span></td>
+<td><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/RADIUS/ficheros_ServRadius/mods-available/eap" target="_blank" rel="noopener"><img src="github-JCRequena.png" alt="" width="218" height="88" /></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><img src="mods-available-eap.png" alt="" width="641" height="363" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Configuración del módulo eap.</em></p>
+<h4><span id="Integrate_FreeRADIUS_with_LDAP_for_Authentication">3. Integrar FreeRADIUS con LDAP (para la Authenticación)</span></h4>
+<p style="text-align: justify;">En primer lugar, hay que editar el módulo LDAP de Radius ubicado en<strong>/etc/freeradius/3.0/mods-<span>available</span>/ldap</strong> con los detalles del servidor LDAP y a continuación, hay que habilitar el módulo.</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>nano /etc/freeradius/3.0<strong>/</strong>mods-<span>available</span>/ldap</span></pre>
+<table border="0" style="width: 90.0221%;">
+<tbody>
+<tr>
+<td style="width: 57.8688%; text-align: justify;"><span style="font-size: 12pt;">Pincha sobre la imagen para <strong>acceder al fichero ldap</strong> con los parámetros a configurar.</span></td>
+<td style="width: 32.1545%; text-align: center;"><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/RADIUS/ficheros_ServRadius/mods-available/ldap" target="_blank" rel="noopener"><img src="github-JCRequena.png" alt="" width="223" height="90" /></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Una vez se ha guardado el fichero, hay que habilitar el módulo. Para ello, hay que crear un enlace simbólico al fichero en el directorio <strong>mods-enabled</strong> que es donde se encuentran los módulos habilitados (son enlaces simbólicos a ficheros). Los comandos son los siguientes:</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>cd /etc/freeradius/3.0/mods-enabled/<br /><strong>root@radius-openldap:/#</strong>ln -s ../mods-available/ldap .<br /></span></pre>
+<h4 style="text-align: justify;">4.  Comprobar el sitio default</h4>
+<p>A partir de la <strong><em>versión 2</em></strong> de <strong>freeradius</strong> es posible crear diferentes servidores virtuales, de una forma muy similar a como se crean apache. En al directorio <strong>sites-available</strong> se encuentran los archivos de configuración de cada uno de los servidores virtuales que vayan a crear, y por supuesto, cada uno de estos servidores podría tener una configuración diferente.<br />En este directorio existe un fichero que define un servidor preconfigurado: el fichero <strong>default</strong>.</p>
+<div class="cuadro-nota-centro">
+<p style="text-align: justify;">Si se quiere crear un servidor virtual específico y no utilizar el default, hay que crear un nuevo fichero en sites-available, ejemplo ciber-local, con el contenido del fichero default y hacer los cambios necesarios según necesidades. Una vez se tiene el fichero, hay que crear un enlace simbólico del fichero en<strong> /etc/freeradius/3.0./sites-enabled</strong>.</p>
+</div>
+<p style="text-align: justify;">Ahora hay que comprobar que el <strong>módulo ldap</strong><span> </span>está incluido en la sección<span> </span><strong>authorize</strong><span> </span>del<strong> sitio default </strong>que se encuentra en<strong> <span style="font-size: 12pt;">/etc/freeradius/3.0/sites-available</span></strong>. Si no está presente, hay que incluirlo, es decir, añadir<strong> -ldap</strong>. Además, hay que añadir e<span style="font-size: 1em; text-align: left;">l siguiente contenido para permitir la autenticación </span><span class="T6" style="font-size: 1em; text-align: left;">LDAP: </span></p>
+<p style="text-align: left;"><strong>Auth-Type</strong> LDAP {<br />       <strong>ldap</strong><br />}</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>nano /etc/freeradius/3.0/sites-available/default</span></pre>
+<h4 style="text-align: center;"><img src="default-sites-available.png" alt="" width="796" height="376" /></h4>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Configuración del módulo ldap en el sitio default.</em></p>
+<p style="text-align: center;"><em><img src="auth-ldap-default.png" alt="" width="799" height="441" /></em></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Configuración de la <span style="font-size: 1em; text-align: left;">la autenticación </span><span class="T6" style="font-size: 1em; text-align: left;">LDA en el</span> sitio default.</em></p>
+<p style="text-align: justify;">Por último, hay que comprobar que en la sección <b><strong>authorize </strong>de inner-tunnel </b>que se encuentra en<b><strong><span style="font-size: 12pt;">/etc/freeradius/3.0/sites-available</span></strong>. </b>Si no está presente, hay que incluirlo, es decir, añadir<strong> -ldap</strong>. </p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>nano /etc/freeradius/3.0/sites-available/inner-tunnel</span></pre>
+<p style="text-align: center;"><strong><img src="inner-tunnel.png" alt="" width="714" height="251" /></strong></p>
+<p style="text-align: center;"><strong><em>Figura 6. </em></strong><em>Configuración de inner-tunnel.</em></p>
+<p style="text-align: justify;"><strong><a href="https://networkradius.com/doc/3.0.10/raddb/sites-available/default.html" target="_blank" rel="noopener">Referencia</a></strong></p>
+<h4 style="text-align: justify;">5. Restricción del acceso a grupos LDAP específicos (para autorización)</h4>
+<p style="text-align: justify;">Una vez llegado a este punto, hay que especificar en el fichero <strong>users</strong> que está en <span style="font-size: 12pt;"><strong>/etc/freeradius/3.0/</strong> aquellos usuarios a los que interesa que se puedan autenticar por medio del punto de acceso. Para este escenario, los usuarios miembros del grupo GGProgramacion podrán autenticarse en el servidor radios por medio del punto de acceso. </span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para configurar esta política, hay que añadir al final del fichero <strong>users</strong> lo siguiente:</span></p>
+<pre><span style="font-size: 12pt;">DEFAULT Ldap-Group == "cn=<strong>GGProgramacion</strong>,ou=grupos,ou=depInformatica,dc=ciber,dc=local"</span><br /><span style="font-size: 12pt;">	Reply-Message := <strong>"Bienvenid@, %{User-Name}"</strong></span><br /><span style="font-size: 12pt;">DEFAULT Auth-Type := Reject</span><br /><span style="font-size: 12pt;">	Reply-Message = <strong>"¡No tienes permiso para acceder a la WLAN!"</strong></span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="users-freeradius.png" alt="" width="777" height="338" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 7.</strong> Configuración del fichero users.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Como se puede apreciar en la sección anterior, se ha implementado una respuesta para la autenticación con y sin éxito.</span></p>
+<h4 style="text-align: justify;"><span style="font-size: 12pt;">5. Testing de la conectvidad LDAP en local</span></h4>
+<p style="text-align: justify;">Antes de comenzar las pruebas, hay que asegurarse que todos los puertos necesarios para la comunicación entre el servidor FreeRADIUS y el servidor OpenLDAP estén abiertos.</p>
+<p style="text-align: justify;">Una vez realizadas las pruebas iniciales, se comienza con la prueba inicial en local. En primer lugar, hay que detener el servicio FreeRADIUS y después se reinicia manualmente en modo depuración:</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>systemctl stop freeradius.service<br /><strong>root@radius-openldap:/#</strong>freeradius -X</span></pre>
+<p style="text-align: center;"><img src="freeradius-x.png" alt="" width="489" height="37" /></p>
+<p style="text-align: center;"><img src="freeradius-X.png" alt="" width="630" height="148" /></p>
+<p style="text-align: center;"><em><strong>Figura 8.</strong> Ejecución de freeradius en modo debugger.</em></p>
+<p style="text-align: justify;">Una vez se ejecuta <strong>freeradius</strong> en modo <strong>debugger</strong>, se puede consultar la salida para comprobar que las configuraciones realizadas son correctas y el servicio se inicia sin errores.</p>
+<p style="text-align: justify;">A continuación, se inicia el servicio y se consulta el estado del mismo:</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>systemctl start freeradius.service<strong><br />root@radius-openldap:/#</strong>systemctl status freeradius.service<br /></span></pre>
+<p style="text-align: center;"><img src="freeradius-status.png" alt="" width="1004" height="460" /></p>
+<p style="text-align: center;"><em><strong>Figura 9.</strong> Listar el estado del servicio freeradius.</em></p>
+<p style="text-align: justify;">Una vez se ha comprobado que el servicio está ejecutándose de manera exitosa, hay que realizar una prueba inicial con el cliente local. Para ello, se tiene el comando <strong>radtest</strong> que viene en el paquete <span><strong>freeradius-utils</strong> que se instaló en un apartado anterior.</span></p>
+<p style="text-align: justify;"><span>Se van a realizar 2 pruebas, una con un usuario del grupo GGProgramacion que tiene habilitado el acceso y otra con un usuario del grupo <strong>GGRedes</strong> que no tiene habilitado el acceso.</span></p>
+<p style="text-align: justify;"><span>En primer lugar se prueba el usuario <strong>user01</strong> que es miembro del grupo <strong>GGProgramacion</strong>.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>radtest user01 Camina-100 localhost 10 testing123</span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="radtest-user01.png" alt="" width="632" height="168" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 10.</strong> Prueba de autenticación del usuario user01.</em></span><span style="font-size: 12pt;"></span></p>
+<p style="text-align: justify;"><span>A continuación, se prueba el usuario <strong>user03</strong> que es miembro del grupo <strong>GGRedes.</strong></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#</strong>radtest user03 Camina-100 localhost 10 testing123</span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><img src="radtest-user03.png" alt="" width="631" height="212" /></em></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 11.</strong> Prueba de autenticación del usuario user03.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Como se puede observar en la figura superior, el usuario no ha podido autenticarse como era de esperar.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para finalizar, se accede al fichero de log para constatar que se han resgistrado los accesos existosos y erróneos.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius-openldap:/#tail -15 /var/log/freeradius/radius.log</strong></span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="var-log-user01-Ok-user03-NotOK.png" alt="" width="799" height="346" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 12.</strong> Accounting del servicio radius.</em></span></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="321_instalar_openldap.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323_configuracin_del_cliente_radius.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

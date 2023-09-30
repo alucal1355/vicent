@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1. Introducción a los proxys | UT10. Fortificación perimetral: proxy </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-62"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT10. Fortificación perimetral: proxy</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT10. Fortificación perimetral: proxy</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li id="active"><a href="1_introduccin_a_los_proxys.html" class="active no-ch">1. Introducción a los proxys</a></li>
+   <li><a href="2_proxy_webcach.html" class="daddy">2. Proxy web/caché</a>
+   <ul class="other-section">
+      <li><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="no-ch">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proxy_con_autenticacin_bsica.html" class="no-ch">3. Proxy con autenticación básica</a></li>
+   <li><a href="4_proxy_con_filtrado.html" class="no-ch">4. Proxy con filtrado</a></li>
+   <li><a href="5_proxy_transparente_para_httphttps.html" class="daddy">5. Proxy transparente para HTTP/HTTPS</a>
+   <ul class="other-section">
+      <li><a href="51_proxy_transparente_para_http.html" class="no-ch">5.1 Proxy transparente para HTTP</a></li>
+      <li><a href="52_proxy_transparente_para_https.html" class="no-ch">5.2 Proxy transparente para HTTPS</a></li>
+   </ul>
+   </li>
+   <li><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="daddy">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_proxy_squid_con_pfsense.html" class="no-ch">Práctica 1. Proxy Squid con PfSense</a></li>
+   </ul>
+   </li>
+   <li><a href="7_proxy_dns__pihole.html" class="daddy">7. Proxy DNS - PiHole</a>
+   <ul class="other-section">
+      <li><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="no-ch">Práctica 2.Implantación del proxy DNS Pi-Hole</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objetivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_proxy_webcach.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1. Introducción a los proxys</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id92">
+<div class="iDevice emphasis0" >
+<div id="ta92_108_2" class="block iDevice_content">
+<div class="exe-text"><h3><span>1. Introducción</span></h3>
+<p style="text-align: justify;">En la unidad de trabajo anterior (UT9. Fortificación perimetral: DMZ y cortafuegos) se estudió cómo el <strong>cortafuegos añade seguridad a la red</strong> controlando los accesos desde el exterior, <strong>pero...... ¿y si se  plantea el problema desde el interior?. </strong>Muchas veces se necesitará controlar también el tráfico desde la red o intranet hacia el exterior o Internet, y en este punto entra el proxy, de ese modo, se añade seguridad a la empresa u organización, dado que se puede controlar cuál es el tráfico permitido.</p>
+<p style="text-align: justify;">El<span> <strong>servidor </strong></span><strong>proxy es un intermediario</strong><span> </span>que recibe las peticiones de recursos de la red de equipos clientes y las gestiona en la red global,<span> </span><strong>encargándose de responder</strong><span> </span>a estas<span> </span><strong>peticiones</strong>. Así, por el proxy está circulando todo el tráfico desde la red de la empresa hacia la red externa o Internet. Se pueden establecer reglas en el proxy para que no resuelva aquellas peticiones que no cumplen con los requisitos que se hayan establecido en la política de la red.</p>
+<p style="text-align: justify;">Agregan <strong>procedimientos de control y autenticación</strong> de usuarios, criterios de filtrado, historial de registro, lo que mejora la velocidad de respuesta a las peticiones o solicitudes de paquetes. Cuando diferentes usuarios solicitan el mismo recurso, el proxy las almacena temporalmente, guarda la respuesta de una petición y la entrega directamente cuando otro usuario la requiera.</p>
+<p style="text-align: justify;">Con el<strong> servidor proxy</strong> se construye un <strong>ambiente más seguro</strong> ya que es posible conocer los accesos a internet y la creación de reglas de acceso para minimizar incidentes potenciales brindando una mayor productividad ya que los riesgos son minimizados y los usuarios tendrán acceso solamente a lo que está directamente relacionado con su trabajo.</p>
+<p style="text-align: justify;">Existen mucho tipos de proxy, pero esta unidad de trabajo se centra la instalación de <strong>Squid en Ubuntu Server y PfSense</strong>. Aunque no se vayan a implementarlas todas, entre sus funcionalidades se pueden encontrar:</p>
+<ol>
+<li>Proxy cache.</li>
+<li>Control acceso por autenticación.</li>
+<li>Filtrado para el control del contenido.</li>
+<li>Proxy transparente.</li>
+<li>Proxy inverso.</li>
+</ol>
+<h3 style="text-align: justify;">2. Casos de uso</h3>
+<ul>
+<li style="text-align: justify;">Lo más habitual es el <strong>proxy web</strong>, que sirve para interceptar las conexiones con la web y puede ser<span> </span><strong>útil para incrementar la seguridad, rapidez de navegación o anonimato</strong>.</li>
+<li style="text-align: justify;"><strong>Navegación anónima.</strong> <span style="color: #333333; font-size: 1em;">Al ser el </span><strong style="color: #333333; font-size: 1em;">proxy</strong><span style="color: #333333; font-size: 1em;"> el que accede al servidor web, el </span><strong style="color: #333333; font-size: 1em;">proxy</strong><span style="color: #333333; font-size: 1em;"> sabe quién ha hecho la petición dentro, pero puede decirlo o no, es decir, el </span><strong style="color: #333333; font-size: 1em;">proxy</strong><span style="color: #333333; font-size: 1em;"> sabe quién es el usuario que lo está utilizando. El servidor web puede entonces haber recibido la petición desde la IP del </span><strong style="color: #333333; font-size: 1em;">proxy</strong><span style="color: #333333; font-size: 1em;">, y piensa que el usuario que lo accede es el propio </span><strong style="color: #333333; font-size: 1em;">proxy</strong><span style="color: #333333; font-size: 1em;">, en lugar del usuario real que hay detrás del </span><strong style="color: #333333; font-size: 1em;">proxy</strong><span style="color: #333333; font-size: 1em;">. Hay </span><strong style="color: #333333; font-size: 1em;">proxy's</strong><span style="color: #333333; font-size: 1em;"> anónimos que</span><span style="color: #333333; font-size: 1em;"> </span><strong style="color: #333333; font-size: 1em;">NO</strong><span style="color: #333333; font-size: 1em;"> </span><span style="color: #333333; font-size: 1em;">informan de quién realiza las peticiones y los hay que sí informan del usuario real que está conectado a través del él.</span></li>
+</ul>
+<p style="text-align: justify;">Antes de implementar un proxy en la red, hay que tener <strong>en cuenta sus desventajas</strong>, por ejemplo, que los usuarios reciban información no actualizada o que el proxy se sobrecargue cuando las peticiones son muy numerosas. Además, es un <strong>objetivo para los hackers</strong> que quieren atacar de forma anónima, si consiguen tomar el control del proxy, atacarán desde él, en lo que se llama un<span> </span><strong>ataque anónimo</strong>.</p>
+<h3 style="text-align: justify;">3. Funcionamiento y características</h3>
+<p style="text-align: justify;">Como se ha comentado anteriormente, un <strong>proxy</strong> permite a otros equipos conectarse a una red de forma indirecta a través de él. Cuando un equipo de la red desea acceder a una información o recurso, es realmente el <strong>proxy</strong> quien realiza la comunicación y a continuación traslada el resultado al equipo inicial. En unos casos esto se hace así porque no es posible la comunicación directa y en otros casos porque el <strong>proxy</strong> añade una funcionalidad adicional, como puede ser la de mantener los resultados obtenidos (ejemplo: una página web) en una caché que permita<span> </span><strong>acelerar sucesivas consultas coincidentes</strong>.</p>
+<p><strong>Las características</strong><span> </span>más importantes de un <strong>proxy</strong> son:</p>
+<ul>
+<li style="text-align: justify;">Permite<span> </span><strong>definir los permisos</strong><span> </span>que tienen los usuarios de la red interna sobre los servicios, dominios, IP externas.</li>
+<li style="text-align: justify;">Todos los usuarios de la red interna comparten una única dirección<span> </span><strong>IP</strong><span> </span>de forma que desde el exterior no se puede diferenciar a unos de otros.</li>
+<li style="text-align: justify;">Puesto que todo el tráfico que circula de la red interna hacia internet y viceversa pasa por el <strong>proxy</strong>, se puede auditar el uso que se hace de internet.</li>
+<li style="text-align: justify;">Permite<span> </span><strong>almacenar</strong><span> </span>las páginas<span> </span><strong>recientemente</strong><span> </span>consultadas en una caché para aumentar el rendimiento de la red. Ejemplo: La página que se almacena en la caché de un <strong>proxy</strong> para que al recibir la petición cargue más rápido.</li>
+</ul>
+<p><strong>Ventajas</strong></p>
+<ul>
+<li style="text-align: justify;"><strong>Control de usuarios</strong>: sólo el intermediario hace el trabajo real, por tanto, se pueden limitar y restringir los derechos de los usuarios, y dar permisos sólo al <strong>proxy</strong>.</li>
+<li style="text-align: justify;"><strong>Menos equipamiento</strong>. Sólo uno de los usuarios (el <strong>proxy</strong>) ha de estar equipado para hacer el trabajo real.</li>
+<li style="text-align: justify;"><strong>Mejor respuesta</strong>. Si varios clientes van a pedir el mismo recurso, el <strong>proxy</strong> puede hacer uso de la caché: guardar la respuesta de una petición para darla directamente cuando otro usuario la pida. Así no tiene que volver a contactar con el destino, y acaba más rápido.</li>
+<li style="text-align: justify;"><strong>Selección de la información</strong>. El <strong>proxy</strong> puede negarse a responder algunas peticiones si detecta que están prohibidas.</li>
+<li style="text-align: justify;"><strong>Pérdida de identidad</strong>. Si todos los usuarios se identifican como uno sólo, es difícil que el recurso accedido pueda diferenciarlos. Esto puede ser una desventaja cuando hay que hacer necesariamente la identificación.</li>
+</ul>
+<p style="text-align: justify;"><strong>Desventajas</strong></p>
+<ul style="text-align: justify;">
+<li><strong>Sobrecarga</strong>. Un <strong>proxy</strong> ha de hacer el trabajo de muchos usuarios.</li>
+<li><strong>Intromisión</strong>. Es un paso más entre origen y destino, y algunos usuarios pueden no querer pasar por el <strong>proxy </strong>(y menos si hace de caché y guarda copias de los datos).</li>
+<li style="text-align: justify;"><strong>Falta de actualidad</strong>. Si hace de caché, es posible que se equivoque y dé una respuesta antigua cuando hay una más reciente en el recurso destino. En realidad este problema no existe con los servidores <strong>proxy</strong> actuales, ya que se conectan con el servidor remoto para comprobar que la versión que tiene en caché sigue siendo la misma que la existente en el servidor remoto.</li>
+<li><strong>Problemas</strong>. El hecho de que el <strong>proxy</strong> represente a más de un usuario puede dar problemas en muchos escenarios, en concreto los que presuponen una comunicación directa entre un emisor y un receptor (como TCP/IP).</li>
+</ul>
+<h3 style="text-align: justify;">4. Referencias</h3>
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=LMC0ZOUm4kc" target="_blank" rel="noopener">[PROXY ¿QUE ES..? Debes Saber Esto...]</a></p>
+</li>
+<li><a href="https://openwebinars.net/blog/que-es-un-servidor-proxy/" target="_blank" rel="noopener">Qué es un Servidor Proxy</a></li>
+</ul>
+<h3 id="proxy-web-y-proxy-caché" style="text-align: justify;"><a name="proxy-web-y-proxy-caché" href="#proxy-web-y-proxy-caché"></a></h3></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objetivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_proxy_webcach.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Tarea 1. Autenticación de doble factor por SSH con Google Authenticator | UT3. Sistemas de control de acceso y credenciales </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-117"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT3. Sistemas de control de acceso y credenciales</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT3. Sistemas de control de acceso y credenciales</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="recomendaciones_de_estudio__resumen.html" class="no-ch">Recomendaciones de estudio - Resumen</a></li>
+   <li class="current-page-parent"><a href="1_mecanismos_de_autenticacin_tipos_de_factores.html" class="current-page-parent daddy">1. Mecanismos de autenticación. Tipos de factores.</a>
+   <ul>
+      <li><a href="11_mltiples_factores_de_autenticacin.html" class="no-ch">1.1 Múltiples factores de autenticación</a></li>
+      <li id="active"><a href="tarea_1_autenticacin_de_doble_factor_por_ssh_con_google_authenticator.html" class="active no-ch">Tarea 1. Autenticación de doble factor por SSH con Google Authenticator</a></li>
+      <li><a href="laboratorio_1_autenticacin_multifactor_con_yubico.html" class="no-ch">Laboratorio 1. Autenticación multifactor con Yubico</a></li>
+      <li><a href="tarea_2_ubuntu__2fa_para_login_con_yubico_security_key.html" class="no-ch">Tarea 2. Ubuntu - 2FA para login con Yubico Security Key</a></li>
+   </ul>
+   </li>
+   <li><a href="2_tcnicas_de_autenticacin.html" class="no-ch">2. Técnicas de autenticación</a></li>
+   <li><a href="3_gestin_de_credenciales.html" class="daddy">3. Gestión de credenciales</a>
+   <ul class="other-section">
+      <li><a href="31_lastpass.html" class="no-ch">3.1 LastPass</a></li>
+      <li><a href="32_keepass.html" class="no-ch">3.2 Keepass</a></li>
+      <li><a href="33_otros_gestores_de_contraseas.html" class="no-ch">3.3 Otros gestores de contraseñas</a></li>
+      <li><a href="tarea_3_instalacin_configuracin_y_puesta_en_produccin_de_un_gestor_de_credenciales.html" class="no-ch">Tarea 3. Instalación, configuración y puesta en producción de un gestor de credenciales</a></li>
+      <li><a href="34_brechas_de_seguridad_y_contraseas_inseguras.html" class="no-ch">3.4 Brechas de seguridad y contraseñas inseguras</a></li>
+   </ul>
+   </li>
+   <li><a href="4_acceso_por_medio_de_firma_electrnica.html" class="daddy">4. Acceso por medio de firma electrónica</a>
+   <ul class="other-section">
+      <li><a href="41_lectores_de_dnie.html" class="no-ch">4.1 Lectores de DNIe</a></li>
+      <li><a href="42_uso_de_nfc_con_el_dnie.html" class="no-ch">4.2 Uso de NFC con el DNIe</a></li>
+   </ul>
+   </li>
+   <li><a href="5_sistemas_de_single_sign_on_sso.html" class="daddy">5. Sistemas de Single Sign On SSO</a>
+   <ul class="other-section">
+      <li><a href="tarea_4_sistemas_sso.html" class="no-ch">Tarea 4. Sistemas SSO</a></li>
+   </ul>
+   </li>
+   <li><a href="6_criptografa.html" class="daddy">6. Criptografía</a>
+   <ul class="other-section">
+      <li><a href="61_aplicacin_de_la_criptografa_en_la_seguridad_de_la_informacin.html" class="daddy">6.1 Aplicación de la Criptografía en la seguridad de la información</a>
+      <ul class="other-section">
+         <li><a href="611_principios_bsicos_de_la_criptografa.html" class="no-ch">6.1.1 Principios básicos de la criptografía</a></li>
+         <li><a href="612_criptografa_clsica.html" class="no-ch">6.1.2 Criptografía clásica</a></li>
+         <li><a href="613_servicios_de_seguridad_de_criptografa.html" class="no-ch">6.1.3 Servicios de seguridad de criptografía</a></li>
+         <li><a href="614_criptografa_moderna.html" class="daddy">6.1.4 Criptografía Moderna</a>
+         <ul class="other-section">
+            <li><a href="6141_criptografa_de_clave_privada.html" class="daddy">6.1.4.1 Criptografía de clave privada</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_1_cifrado_simtrico_de_archivos.html" class="no-ch">Laboratorio 1. Cifrado simétrico de archivos</a></li>
+               <li><a href="prctica_1_cifrado_simtrico.html" class="no-ch">Práctica 1. Cifrado simétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6142_criptografa_de_clave_pblica.html" class="daddy">6.1.4.2 Criptografía de clave pública</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_2_cifrado_asimtrico_de_ficheros.html" class="no-ch">Laboratorio 2. Cifrado asimétrico de ficheros</a></li>
+               <li><a href="prctica_2cifrado_asimtrico.html" class="no-ch">Práctica 2.Cifrado Asimétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6143_ventas_y_desventajas_cifrado_simtrico_y_asimetrico.html" class="no-ch">6.1.4.3 Ventas y desventajas cifrado simétrico y asimetrico</a></li>
+            <li><a href="6144_criptografa_hbirida.html" class="no-ch">6.1.4.4 Criptografía híbirida</a></li>
+         </ul>
+         </li>
+         <li><a href="615_esteganografa.html" class="daddy">6.1.5 Esteganografía</a>
+         <ul class="other-section">
+            <li><a href="tarea_5_openstego.html" class="no-ch">Tarea 5. OpenStego</a></li>
+         </ul>
+         </li>
+         <li><a href="616_funciones_hash.html" class="daddy">6.1.6 Funciones hash</a>
+         <ul class="other-section">
+            <li><a href="tarea_6_funciones_hash.html" class="no-ch">Tarea 6. Funciones hash</a></li>
+            <li><a href="tarea_7_quickhash.html" class="no-ch">Tarea 7. QuickHash</a></li>
+            <li><a href="tarea_8_funciones_avanzadas_hash_de_powershell.html" class="no-ch">Tarea 8. Funciones avanzadas hash de powershell</a></li>
+            <li><a href="laboratorio_3_funciones_hash_con_kleopatra.html" class="no-ch">Laboratorio 3. Funciones hash con Kleopatra</a></li>
+         </ul>
+         </li>
+         <li><a href="617_uso_de_tcnicas_criptogrficas_en_las_pyme.html" class="no-ch">6.1.7 Uso de técnicas criptográficas en las PYME</a></li>
+         <li><a href="618_sistemas_encriptacin_hardware_tpmhsm.html" class="no-ch">6.1.8 Sistemas encriptación hardware (TPM/HSM)</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_sistemas_de_control_de_acceso_y_autenticacin.html" class="daddy">7. Sistemas de control de acceso y autenticación</a>
+   <ul class="other-section">
+      <li><a href="71_creacin_de_claves_ssh.html" class="no-ch">7.1 Creación de claves SSH</a></li>
+      <li><a href="72_certificados_digitales_gestin_de_una_pki.html" class="daddy">7.2. Certificados digitales, gestión de una PKI</a>
+      <ul class="other-section">
+         <li><a href="721_certificados_digitales.html" class="daddy">7.2.1 Certificados digitales</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_certificado_personal.html" class="no-ch">Laboratorio 4. Certificado personal</a></li>
+            <li><a href="tarea_9_verificacin_de_certificados_digitales.html" class="no-ch">Tarea 9. Verificación de certificados digitales</a></li>
+         </ul>
+         </li>
+         <li><a href="722_firma_digital.html" class="daddy">7.2.2 Firma digital</a>
+         <ul class="other-section">
+            <li><a href="prctica_3_verificacin_de_la_autenticidad_e_integridad_de_un_mensaje.html" class="no-ch">Práctica 3: Verificación de la autenticidad e integridad de un mensaje</a></li>
+         </ul>
+         </li>
+         <li><a href="723_infraestructuras_de_clave_pblica_pki.html" class="no-ch">7.2.3 Infraestructuras de clave pública (PKI)</a></li>
+         <li><a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="no-ch">Laboratorio 5. Infraestructura de clave pública propia con OpenSSL</a></li>
+         <li><a href="caso_prctico_uso_de_certificados_en_servicios_web.html" class="no-ch">Caso Práctico. Uso de certificados en Servicios WEB</a></li>
+         <li><a href="reto_implementacin_de_una_sistema_de_certificados_pki_en_la_organizacin_con_easyrsa.html" class="no-ch">Reto. Implementación de una sistema de certificados (PKI) en la organización con Easy-RSA</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="8_gestin_de_accesos_sistemas_nac.html" class="daddy">8. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_6_packetfence.html" class="no-ch">Laboratorio 6. PacketFence</a></li>
+      <li><a href="prctica_4_acceso_a_la_web_a_travs_de_un_nac.html" class="no-ch">Práctica 4. Acceso a la web a través de un NAC</a></li>
+   </ul>
+   </li>
+   <li><a href="9_gestin_de_cuentas_privilegiadas.html" class="daddy">9. Gestión de cuentas privilegiadas</a>
+   <ul class="other-section">
+      <li><a href="101_pam.html" class="no-ch">10.1 PAM</a></li>
+      <li><a href="tarea_10_ejecutar_como.html" class="no-ch">Tarea 10. Ejecutar como</a></li>
+   </ul>
+   </li>
+   <li><a href="10_protocolos_radius_y_tacacs_servicio_kerberos.html" class="daddy">10. Protocolos RADIUS y TACACS, servicio KERBEROS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_7_freeradius.html" class="daddy">Laboratorio 7. freeRadius</a>
+      <ul class="other-section">
+         <li><a href="1_instalacin_servidor_radius.html" class="no-ch">1. Instalación servidor Radius</a></li>
+         <li><a href="2_instalacin_cliente_radius.html" class="no-ch">2. Instalación Cliente Radius</a></li>
+      </ul>
+      </li>
+      <li><a href="laboratorio_8_radius_windows_server.html" class="no-ch">Laboratorio 8. Radius Windows Server</a></li>
+   </ul>
+   </li>
+   <li><a href="11_ldap.html" class="daddy">11. LDAP</a>
+   <ul class="other-section">
+      <li><a href="111_instalacin_y_configuracin_de_ldap.html" class="no-ch">11.1 Instalación y configuración de LDAP.</a></li>
+      <li><a href="112_configuracin_de_certificados_ssltsl_en_ldap.html" class="no-ch">11.2 Configuración de certificados SSL/TSL en LDAP.</a></li>
+      <li><a href="113_creacin_de_cuentas_ldap.html" class="no-ch">11.3 Creación de cuentas LDAP</a></li>
+      <li><a href="114_instalacin_de_sssd_en_el_cliente_ubuntu_desktop.html" class="no-ch">11.4 Instalación de SSSD en el cliente Ubuntu Desktop</a></li>
+      <li><a href="proyecto_instalar_servidor_de_autenticacin_openldap_servidor_ubuntu.html" class="no-ch">Proyecto. Instalar servidor de autenticación OpenLdap Servidor Ubuntu</a></li>
+   </ul>
+   </li>
+   <li><a href="12_referencias.html" class="no-ch">12. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="11_mltiples_factores_de_autenticacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_1_autenticacin_multifactor_con_yubico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Tarea 1. Autenticación de doble factor por SSH con Google Authenticator</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id156">
+<div class="iDevice emphasis0" >
+<div id="ta156_156_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Objetivos<strong><br /></strong></h3>
+<p style="text-align: justify;">Utilizar un <strong>sistema de autenticación de doble factor</strong> mediante<strong> Google Authenticator</strong> o apps compatibles como Microsoft Authenticator o Authy en el <strong>acceso ssh</strong> a un sistema GNU/Linux.</p>
+<h3 style="text-align: justify;">2. Introducción</h3>
+<p style="text-align: justify;"><strong>Google Authenticator</strong> es una aplicación que genera contraseñas de un solo uso (OTP, en inglés one-time passwords) para la autenticación de usuarios desarrollada por Google.</p>
+<p style="text-align: justify;">Aunque en principio está pensada como<span> </span><em><strong>segundo factor de autenticación (2FA)</strong></em><span> </span>para acceder a los servicios de Google, los códigos generados también se pueden utilizar en servicios de terceros. Uno de estos servicios de terceros es el módulo de autenticación conectable (PAM, en inglés Pluggable Authentication Modules) utilizado por los sistemas Linux.</p>
+<p style="text-align: justify;"><strong>Google Authenticator</strong><span> </span>puede generar códigos de un solo uso utilizando los algoritmos HMAC-Based One-time Password (HOTP) y Time-based One-time Password (TOTP). El <a href="https://es.wikipedia.org/wiki/Algoritmo_de_contrase%C3%B1a_de_un_solo_uso_basada_en_el_tiempo#:~:text=El%20algoritmo%20TOTP%20es%20la,de%20autenticaci%C3%B3n%20de%20doble%20factor." target="_blank" rel="noopener"><strong>algoritmo TOTP</strong></a> se considera más seguro ya que solo es válido para un cierto periodo de tiempo.</p>
+<h3 style="text-align: justify;">3. Preparación</h3>
+<p>Se necesita:</p>
+<ul>
+<li>Un móvil con la app Google Authenticator, Microsoft Authenticator o Authy instalada.</li>
+<li>Una máquina virtual con Debian/Ubuntu instalado y con el servicio ssh levantado o una máquina virtual con Windows con la app Putty o el comando ssh integrado.
+<ul>
+<li>Para este caso, se utiliza un Ubuntu Desktop 20.04 LTS con nombre goofy e ip 192.168.0.28/24.</li>
+</ul>
+</li>
+</ul>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"> La tutorización de la tarea se desarrolla para Google Authenticator. En caso de usar otra app compatible, consultar la ayuda de la app.</p>
+</div>
+<p style="text-align: center;"><img src="app-googleauth-ios.PNG" alt="" width="359" height="640" /></p>
+<p style="text-align: center;"><strong><em>Google Authenticator App Store.</em></strong></p>
+<h3>4. Enunciado</h3>
+<p style="text-align: justify;"><strong>Paso 1.</strong> En primer lugar, hay que asegurase que la máquina virtual Linux tiene el servicio sshd levantado, que ningún firewall esté cortando el puerto 22/tcp (sshd) y que haya visibilidad entre la máquina anfitrión y la máquina virtual. Se puede <strong><em>configurar la máquina virtual</em></strong> en <strong><em>modo puente con la tarjeta de red del anfitrión</em></strong> o bien en modo red solo-anfitrión pero en ambos casos hay que asegurarse que ambas máquinas puedan verse por red mediante un ping y un ssh. <strong>Para el caso de Windows</strong>: desde la línea de comandos de Windows 10 existe un cliente ssh integrado pero en caso de no tenerlo habilitado se puede habilitar como característica de Windows o bien se puede descargar un cliente ssh para Windows como <strong>Putty</strong>.</p>
+<p><strong>Paso 2.</strong> En una shell de Linux, instala el paquete <span><strong>libpam-google-authenticator</strong> </span>en el sistema mediante el comando (como root o usando sudo):</p>
+<pre><span style="font-size: 12pt;"><strong>root@goofy:/home/jcrequena# </strong>apt-get install libpam-google-authenticator</span></pre>
+<p style="text-align: center;"><strong><img src="install-app-auth.png" alt="" width="735" height="276" /></strong></p>
+<p style="text-align: justify;"><strong>Paso 3.</strong> Una vez instalado <strong>google authenticator en Linux</strong>, desde la línea de comandos y con el usuario que se desee, se va a utilizar la <strong>autenticación 2FA</strong> y para ello, hay que ejecutar la utilidad <strong>google-authenticator</strong>:</p>
+<pre><span style="font-size: 12pt;"><span><strong>jcrequena@goofy:~$ # </strong>google-authenticator</span></span></pre>
+<p><strong> Paso 4.</strong> La aplicación hace una serie de preguntas que se describen a continuación.</p>
+<p style="text-align: justify;"><strong>Google Authenticator</strong> soporta <strong>dos tipos de algoritmos para generar códigos</strong>:</p>
+<ul>
+<li style="text-align: justify;"><strong>HMAC-based One-time Password (HOTP):</strong> cuyo algoritmo genera un código válido hasta que el usuario lo ingrese.</li>
+<li style="text-align: justify;"><strong>Time-based One-time Password (TOTP):</strong> este algoritmo basado en el tiempo genera un código normalmente cada treinta segundos, de esta manera es más seguro ya que pasado este tiempo preestablecido el código<br />quedará caducado generando uno nuevo.</li>
+</ul>
+<p><span>Para este caso, se elige la opción que se genere un QR con el algoritmo TOTP o basado en el tiempo, por lo que a la pregunta: Do you want authentication tokens to be time-based (y/n): respondemos <strong>y</strong>.</span></p>
+<p style="text-align: center;"><img src="pregunta1.png" alt="" width="569" height="81" /></p>
+<p style="text-align: justify;">La aplicación genera un <strong>secret key</strong> (clave secreta) y un <strong>QR</strong>.</p>
+<p style="text-align: center;"><a href="qr-codigo.png" target="_blank" rel="noopener"><img src="qr-codigo.png" alt="" width="800" height="507" /></a></p>
+<p style="text-align: justify;">Abre la app Google Authenticator, y si es la 1ª vez, te aparece una pantalla para configurar la primera cuenta y sino, pulsa el botón + para añadir una cuenta y escanea el QR (o también puedes meter a mano la clave secreta). Automáticamente te aparecerá en la APP el usuario y equipo para el que has activado la autenticación TOTP y con la clave cambiando cada 30 segundos:</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="new-account.PNG" target="_blank" rel="noopener"><img src="new-account.PNG" alt="" width="312" height="555" /></a></td>
+<td style="width: 50%; text-align: center;"><img src="new-cod.PNG" alt="" width="413" height="282" /></td>
+</tr>
+</tbody>
+</table>
+<div class="cuadro-nota-centro-new">
+<p><br />Alternativamente, se podría utilizar un software de terceros que nos permita leer la configuración de Google Authenticator. De esta manera podemos prescindir de un dispositivo móvil para cargar dicha  configuración. Un ejemplo de estos softwares son: <a href="https://winauth.github.io/winauth/download.html" target="_blank" rel="noopener"><strong>WinAuth</strong></a> y <a href="https://authy.com/" target="_blank" rel="noopener"><strong>Authy</strong></a>.</p>
+</div>
+<p><strong>Paso 5.</strong> A partir de aquí hay que seguir respondiendo a más preguntas que realiza el asistente desde la consola de Linux:</p>
+<ul>
+<li>Enter code from app (-1 to skip): -1</li>
+<li>Do you want me to update your "/home/jcrequena/.google_authenticator" file? (y/n) y</li>
+<li>Do you want to disallow multiple uses of the same authentication token? This restricts you to one login about every 30s, but it increases your chances to notice or even prevent man-in-the-middle attacks (y/n): y</li>
+<li>By default, a new token is generated every 30 seconds by the mobile app ... (texto omitido)… Do you want to do so? (y/n): n</li>
+<li>If the computer that you are logging into isn't hardened against brute-force login attempts, you can enable rate-limiting for the authentication module. By default, this limits attackers to no more than 3 login attempts every 30s. Do you want to enable rate-limiting? (y/n):  y</li>
+</ul>
+<p style="text-align: center;"><img src="pregunta2.png" alt="" width="769" height="39" /></p>
+<p style="text-align: center;"><img src="pregunta3.png" alt="" width="667" height="65" /></p>
+<p style="text-align: center;"><img src="pregunta4.png" width="727" height="191" /></p>
+<p style="text-align: center;"><img src="pregunta5.png" alt="" width="706" height="85" /></p>
+<p style="text-align: justify;"><span style="font-size: 1em;">A partir de aquí ya se habrá creado en el home el fichero </span><strong style="font-size: 1em;">.google_authenticator</strong><span style="font-size: 1em;"> que se puede visualizar con un editor de textos o con cat.</span></p>
+<p style="text-align: center;"><span style="font-size: 1em;"><img src="cat-google-auth.png" alt="" width="412" height="211" /></span></p>
+<p style="text-align: justify;"><span></span></p>
+<p style="text-align: justify;"><strong>Paso 6.</strong> A continuación hay que configurar la autenticación<span> </span><strong>PAM</strong><span> </span>(Pluggable Authentication Module) en <strong>ssh</strong> para que use<strong> google_authenticator.</strong></p>
+<p style="text-align: justify;"><strong>PAM</strong> es un <strong>mecanismo de autenticación flexible</strong> que permite independizar las aplicaciones y servicios de un sistema GNU/Linux del proceso de identificación. Permite configurar distintos sistemas de autenticación, sesión y cambio de contraseñas y conectarlos a los servicios que queramos, como por ejemplo el servicio login (que permite acceder al sistema desde una consola), el servicio sshd (que permite acceder via red mediante SSH) o el servicio web de apache, por citar sólo unos pocos ejemplos. </p>
+<p style="text-align: justify;">Como root, hay que editar el fichero<span> </span><strong>/etc/pam.d/sshd</strong><span> </span>y comentar la linea<span> </span><strong>@include common-auth</strong><span> </span>y añadir dos líneas más, quedaría de la siguiente manera:</p>
+<pre><span style="font-size: 12pt;">#@include common-auth<strong><br /></strong>auth requisite pam_unix.so nullok_secure<strong><br /></strong>auth requisite pam_google_authenticator.so</span></pre>
+<p style="text-align: center;"><img src="pamd-sshd.png" alt="" width="813" height="193" /></p>
+<p style="text-align: justify;">En la ayuda (man pam_unix) se puede ver el significado del parámetro<strong> <a href="https://manpages.ubuntu.com/manpages/trusty/man8/pam_unix.8.html" target="_blank" rel="noopener">nullok_secure</a></strong> que se le pasa al módulo pam_unix.</p>
+<p style="text-align: justify;"><strong>Paso 7.</strong> A continuación, hay que editar el fichero<span> </span><strong>/etc/ssh/sshd_config</strong><span> </span>y cambiar esta línea y poner yes en lugar de n:</p>
+<pre><span style="font-size: 12pt;">ChallengeResponseAuthentication yes</span></pre>
+<p style="text-align: center;"><img src="pamd-sshdconfig.png" alt="" width="815" height="186" /></p>
+<p style="text-align: justify;">Una vez guardado los cambios del fichero, hay que reiniciar el servicio como root (o con sudo) con:</p>
+<pre><span style="font-size: 12pt;"><strong>jcrequena@goofy:/$</strong> sudo <span>systemctl restart sshd</span></span></pre>
+<p style="text-align: center;"><strong><img src="restart-sshd.png" alt="" width="791" height="348" /></strong></p>
+<p style="text-align: justify;"><strong>Paso 8.</strong> Ahora toca comprobar que desde un terminal desde otro equipo (por ejemplo desde el propio anfitrión) se puede hacer ssh al usuario y máquina Linux (compruebar su ip primero). En primer lugar solicitará el password de la cuenta y después el código temporal de Google Authenticator:</p>
+<p style="text-align: justify;"></p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$ </strong>ssh jcrequena@192.168.0.28<br /><span>Password: ***** </span><br /><span>Verification code:******</span><br /></span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><img src="acceso-ssh.png" alt="" width="667" height="479" /></strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong>Paso 9. </strong><span style="text-align: justify; color: #666666;">Con el modulo</span><span style="text-align: justify; color: #666666;"> </span><strong style="text-align: justify; color: #666666;">pam_succeed_if</strong><span style="text-align: justify; color: #666666;"> </span><span style="text-align: justify; color: #666666;">se pueden aplicar<strong> expresiones condicionales</strong> (consultar man pam_succeed_if) como por ejemplo que <strong>ha determinados grupos de usuarios no les aplique el 2FA</strong>, como en el siguiente ejemplo en el <strong>/etc/pam.d/sshd</strong>, donde a los usuarios del grupo invitados no les pide el código de Google Authenticator:</span></span></p>
+<pre><span style="font-size: 12pt;">auth requisite pam_unix.so nullok_secure</span><br /><span style="font-size: 12pt;">auth [success=done default=ignore] pam_succeed_if.so user ingroup invitados</span><br /><span style="font-size: 12pt;">auth requisite pam_google_authenticator.so</span></pre>
+<p style="text-align: justify;">En este paso, tienes que<strong> proponer una expresión condicional a aplicar para el contexto de tu proyecto,</strong> para ello, puedes crear un usuario que pertenezca a un grupo que tendrás que crear primero y que haga referencia a un departamento de tu subsistema. Los comandos para crear usuarios y grupo son:</p>
+<pre><span style="font-size: 12pt;"><strong>Crear grupo:</strong> sudo <span>groupadd &lt;Nombre_grupo&gt;<br /><strong>Crear usuario: </strong>sudo adduser &lt;Nombre_usuario&gt;<br /><strong>Añadir usuario a grupo:</strong> sudo usermod -aG &lt;Nombre_grupo&gt; &lt;Nombre_usuario&gt;<br /><strong>Nota:</strong> La opción -a tiene que ser utilizada siempre junto con la opción -G, y lo que indica es que añades al usuario a grupos suplementarios.<br /></span></span></pre>
+<h3>5. Entrega</h3>
+<p>Documento pdf que contenga:</p>
+<ul>
+<li style="text-align: justify;"><strong>Portada:</strong> Título de la tarea y nombre y apellidos.</li>
+<li style="text-align: justify;"><strong>Capítulo 1.</strong> Descripción gráfica y textual del proceso realizado. En el paso 9, tienes que proponer una expresión condicional a aplicar para el contexto de tu proyecto a un usuario que pertenezca a un grupo (departamento).</li>
+</ul>
+<h3 style="text-align: justify;">6. Recursos</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" target="_blank" rel="noopener">Google Authenticator @ Google Play. App para dispositivos Android.</a></li>
+<li style="text-align: justify;"><a href="https://apps.apple.com/es/app/google-authenticator/id388497605" target="_blank" rel="noopener">Google Authenticator @ App Store. App para dispositivos iPhone y iPad.</a></li>
+<li style="text-align: justify;"><a href="https://github.com/google/google-authenticator-libpam" target="_blank" rel="noopener">Google Authenticator PAM module @ GitHub</a></li>
+<li style="text-align: justify;"><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-multi-factor-authentication-for-ssh-on-ubuntu-20-04" target="_blank" rel="noopener">How To Set Up Multi-Factor Authentication for SSH on Ubuntu 20.04</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="11_mltiples_factores_de_autenticacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_1_autenticacin_multifactor_con_yubico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

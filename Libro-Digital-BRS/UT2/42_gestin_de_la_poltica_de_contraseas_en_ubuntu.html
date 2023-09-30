@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2. Gestión de la política de contraseñas en Ubuntu | UT2. Fortificación de equipos: acceso al sistema </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT2. Fortificación de equipos: acceso al sistema</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT2. Fortificación de equipos: acceso al sistema</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_seguridad_en_el_arranque_del_sistema_informtico_configuracin_del_arranque_seguro_biosuefi.html" class="daddy">2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI)</a>
+   <ul class="other-section">
+      <li><a href="21_bloqueo_de_bios_con_contrasea.html" class="no-ch">2.1 Bloqueo de BIOS con contraseña</a></li>
+      <li><a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="no-ch">Tarea 1. Análisis y fortificación de la BIOS/UEFI</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proteccin_del_gestor_de_arranque_grub.html" class="daddy">3. Protección del gestor de arranque GRUB</a>
+   <ul class="other-section">
+      <li><a href="31_proteccin_de_grub.html" class="no-ch">3.1 Protección de GRUB</a></li>
+      <li><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="no-ch">Tarea 2. Configuración del sistema y arranque</a></li>
+      <li><a href="tarea_3_proteger_el_gestor_de_arranque_grub.html" class="no-ch">Tarea 3. Proteger el gestor de arranque GRUB</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_contraseas_seguras.html" class="current-page-parent daddy">4. Contraseñas seguras</a>
+   <ul>
+      <li><a href="41_contraseas_seguras_en_windows.html" class="daddy">4.1 Contraseñas seguras en Windows</a>
+      <ul class="other-section">
+         <li><a href="411_inicios_de_sesin_en_windows.html" class="no-ch">4.1.1 Inicios de sesión en Windows</a></li>
+         <li><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="no-ch">Tarea 4. Política de contraseñas seguras en Windows</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="42_gestin_de_la_poltica_de_contraseas_en_ubuntu.html" class="active daddy">4.2. Gestión de la política de contraseñas en Ubuntu</a>
+      <ul>
+         <li><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="no-ch">Tarea 5. Política de contraseñas seguras en Ubuntu Server</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="daddy">6. Seguridad de los sistemas de ficheros, cifrado, particionado, entre otros</a>
+   <ul class="other-section">
+      <li><a href="61_sistemas_de_ficheros_y_gestin_de_particionado.html" class="no-ch">6.1 Sistemas de ficheros y gestión de particionado</a></li>
+      <li><a href="62_cifrado_de_disco.html" class="daddy">6.2 Cifrado de disco</a>
+      <ul class="other-section">
+         <li><a href="621_bitlocker_windows_y_efs.html" class="daddy">6.2.1. Bitlocker (Windows) y EFS</a>
+         <ul class="other-section">
+            <li><a href="prctica_1_cifrado_con_bitlocker.html" class="no-ch">Práctica 1. Cifrado con Bitlocker</a></li>
+         </ul>
+         </li>
+         <li><a href="622_filevault_macos.html" class="no-ch">6.2.2 FileVault (macOS)</a></li>
+         <li><a href="623_luks_linux.html" class="daddy">6.2.3 LUKS (Linux)</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_cifrado_de_particiones_y_directorio_con_luks.html" class="no-ch">Laboratorio. Cifrado de particiones y directorio con LUKS</a></li>
+            <li><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="no-ch">Práctica 2. Instalación de Ubuntu con particiones cifradas</a></li>
+         </ul>
+         </li>
+         <li><a href="624_veracrypt.html" class="daddy">6.2.4 VeraCrypt</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_cifrado_volumen_veracrypt.html" class="no-ch">Laboratorio 1. Cifrado volumen VeraCrypt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_control_de_calidad_de_mquinas.html" class="daddy">7. Control de calidad de máquinas</a>
+   <ul class="other-section">
+      <li><a href="71_mantenimiento_seguro_de_equipos.html" class="no-ch">7.1 Mantenimiento seguro de equipos</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2. Gestión de la política de contraseñas en Ubuntu</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id26">
+<div class="iDevice emphasis0">
+<div id="ta26_85" class="block iDevice_content">
+<h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">En los sistemas Linux, igual que en los sistemas Windows, es necesario implementar un mínimo cumplimiento de seguridad para la fortificación de las contraseñas que tengan en cuenta aspectos como el tiempo de vida de la contraseña, la longitud mínima, su complejidad, que no estén basadas en diccionario, que no se repitan respecto a las anteriores, etc. Según el escenario en el que nos encontramos, estas políticas de contraseñas se establecerán a nivel de dominio o a nivel de equipo.</p>
+<ul>
+<li style="text-align: justify;">Las contraseñas en un sistema Ubuntu se almacenan en el fichero <strong>/etc/shadow</strong> (ver figura inferior), donde:
+<ol>
+<li style="text-align: justify;">Nombre de usuario.</li>
+<li style="text-align: justify;">Contraseña cifrada. Se establece con la estructura $id$salt$hashed. El tipo de algoritmo utilizado se define en el inicio en números entre los símbolos $.
+<ul>
+<li style="text-align: justify;">$1$ - MD5.</li>
+<li style="text-align: justify;">$2a$ - Blowfish.</li>
+<li style="text-align: justify;">$2y$ - Blowfish.</li>
+<li style="text-align: justify;">$5$ - SHA-256.</li>
+<li style="text-align: justify;"><strong>$6$ - SHA-512.</strong></li>
+</ul>
+</li>
+<li style="text-align: justify;">Último cambio de contraseña desde el 1/Enero/1970 (<a href="https://en.wikipedia.org/wiki/Epoch_(computing)" target="_blank" rel="noopener">epoch</a>).</li>
+<li style="text-align: justify;">Cantidad de días restantes para que el usuario cambie su contraseña. -1 significa que nunca expira.</li>
+<li style="text-align: justify;">Número máximo de días que la contraseña es válida después del cambio de contraseña por parte del usuario.</li>
+<li style="text-align: justify;">Días antes de que caduque la contraseña, advierte al usuario para que la cambie.</li>
+<li style="text-align: justify;">Días después de que caduque la contraseña, esa cuenta estará deshabilitada.</li>
+<li style="text-align: justify;">Días desde el 1/Enero/1970. Fecha absoluta que especifica cuando ya no se pueda usar el inicio de sesión para esa cuenta.</li>
+</ol>
+</li>
+</ul>
+<p style="text-align: center;"><img src="shadow.png" alt="" width="996" height="258" /></p>
+<ul>
+<li style="text-align: justify;">En el fichero <strong>/etc/login.defs</strong> se establecen, entre otras cosas, las políticas de gestión de contraseñas para nuevos usuarios.</li>
+<li style="text-align: justify;">Los módulos PAM (Pluggable Authentication Modules) <a href="https://linux.die.net/man/8/pam_cracklib" target="_blank" rel="noopener"><strong>pam_cracklib</strong></a> y <a href="https://linux.die.net/man/8/pam_pwquality" target="_blank" rel="noopener"><strong>pam_pwquality</strong></a> (versión mejorada del primero) permiten definir con más detalle directivas de contraseñas para las cuentas de usuarios.</li>
+</ul>
+<h3 style="text-align: justify;">2. Comando chage</h3>
+<p style="text-align: justify;"><span>Con el comando <a href="https://linux.die.net/man/1/chage" target="_blank" rel="noopener">chage</a></span><span> se puede establecer la caducidad de contraseñas y cuentas de usuario. Esto no afecta a los nuevos usuarios, se establece de forma nominal a usuarios existentes.</span></p>
+<p style="text-align: justify;"><span>Para aplicar estas opciones a nuevos usuarios y así generar estas directivas por defecto habría que hacer uso de<strong> </strong></span><strong><i>login.defs.</i></strong><br /><br /><span>Opciones del comando chage:</span></p>
+<ul style="text-align: justify;">
+<li>-<b>d</b>,<b> </b>--lastday: Establece el día del último cambio de la contraseña.</li>
+<li>-<b>E</b>,<b> </b>--expiredate: Establece la fecha de caducidad.</li>
+<li><b>-I</b>,<b> </b>--inactive: Deshabilita la cuenta después de la inactividad de días de la fecha de caducidad.</li>
+<li><b>-l</b>,<b> </b>--list: Muestra la información de la edad de la cuenta.</li>
+<li><b>-m</b>, --mindays: Establece el número mínimo de días antes de cambiar la contraseña.</li>
+<li><b>-M</b>, --maxdays: Establece el número máximo de días antes de cambiar la contraseña.</li>
+<li><b>-R</b>,<b> </b>--root: Directorio en el que hacer chroot.</li>
+<li><b>-W</b>, --warndays: Establece los días de aviso de expiración.</li>
+</ul>
+<p style="text-align: justify;"><span>Con el parámetro <strong>-l</strong> se puede consultar la información sobre las cuentas.</span></p>
+<p style="text-align: center;"><span><img src="chage-jc.png" alt="" width="740" height="223" /></span></p>
+<h3>3. Cumplimiento de directivas de seguridad sobre contraseñas seguras de usuarios</h3>
+<div style="text-align: justify;">Es necesario implementar un mínimo de cumplimiento de seguridad en el <a href="https://securityhacklabs.net/articulo/linux-hardening-1-contrasenas" target="_blank" rel="noopener"><strong><em>hardening de contraseñas</em></strong></a> estableciendo directivas para definir la complejidad de contraseña, longitud mínima, días de expiración, contraseñas no repetidas respecto a las anteriores, etcétera.</div>
+<div></div>
+<div style="text-align: justify;">En <strong>sistemas Linux</strong>, aplicaciones de terceros o servicios que utilizan los usuarios Linux, es necesario establecer políticas de seguridad estrictas al tratarse de cuentas que pueden tener el mismo riesgo de ser vulneradas.</div>
+<div style="text-align: justify;"></div>
+<div style="text-align: justify;">Todo esto dependerá de la infraestructura y el contexto del sistema. En entornos de producción, no es conveniente provocar la desactivación o bloqueo de una cuenta de usuario y dejar inoperativo un servicio crítico que dependa de dicha cuenta. Pero con independencia de estos casos,  es necesario establecer este tipo de criterios para garantizar y elevar más las medidas de seguridad de los sistemas de la organización.</div>
+<div></div>
+<div style="text-align: justify;">Se pueden establecer políticas por defecto en el momento de creación de nuevas cuentas en el sistema, de esta forma, ya no sería necesario usar el comando chage a cada usuario.</div>
+<div style="text-align: justify;">Como ejemplo, u<span style="font-size: 1em;">na contraseña segura debe contener:</span></div>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 1em;">Letras mayúsculas.</span></li>
+<li style="text-align: justify;">Letras minusculas.</li>
+<li style="text-align: justify;">Dígitos.</li>
+<li style="text-align: justify;">Simbolos.</li>
+</ul>
+<div style="text-align: justify;">
+<div class="cuadro-nota-centro-new">
+<p>Para hacer cumplir una política de contraseña segura en Ubuntu, usaremos el módulo <strong>pwquality</strong> de <strong>PAM</strong>. </p>
+</div>
+</div>
+<div>
+<h3 style="text-align: justify;">4. login.defs (periodo de caducidad de la contraseña)</h3>
+<div style="text-align: justify;">El fichero <strong>login.defs</strong> se encuentra en<b><span> </span><span id="goog_2137465419"></span><i>/etc/login.defs</i><span id="goog_2137465420"></span><span> </span></b>de forma nativa en cualquier entorno Linux. En este fichero se definen las políticas de gestión de contraseñas para la <strong><em>creación de nuevos usuarios</em></strong>. También se pueden establecer otras directivas como el valor <a href="https://es.wikipedia.org/wiki/Umask" target="_blank" rel="noopener"><strong>umask</strong> </a>por defecto, si el usuario tendrá un home si no se le especifica en su creación (useradd -m), cambiar la secuencia de ID (por defecto suelen ser  a partir de 1000 para usuarios normales), mensaje de bienvenida del inicio de sesión del usuario (motd_file), etc.</div>
+<div style="text-align: center;"><img src="login-defs.png" alt="" width="806" height="496" /></div>
+<div style="text-align: justify;"></div>
+<div style="text-align: justify;">Algunas de las directivas más comunes que se pueden establecer son las siguientes:</div>
+<ul style="text-align: justify;">
+<li><b>PASS_MAX_DAYS</b>: Número máximo de días que se puede usar una contraseña.</li>
+<li><b>PASS_MIN_DAYS</b>: Número mínimo de días permitido entre cambios de contraseña</li>
+<li><b>PASS_WARN_AGE</b>: Número de días de advertencia antes de que caduque una contraseña.</li>
+<li><b>PASS_MIN_LEN </b>y <b>PASS_MAX_LEN</b>: Número mínimo y máximo de caracteres que debe tener la contraseña.</li>
+<li><b>PASS_ALWAYS_WARN</b>: Advierte sobre contraseñas débiles.</li>
+<li><b>PASS_CHANGE_TRIES</b>: Número máximo de intentos de cambiar la contraseña si se rechaza por que es demasiado "fácil".</li>
+<li><b>ENCRYPT_METHOD</b>: Tipo de cifrado que tendrá la contraseña (SHA256 $5$ o SHA512 $6$).</li>
+<li><b>LOGIN_RETRIES</b>: Número máximo de reintentos de inicio de sesión en el caso de que la contraseña sea incorrecta.</li>
+<li><b>LOGIN_TIMEOUT</b>: Tiempo máximo en segundos para iniciar sesión</li>
+</ul>
+<div style="text-align: justify;">Más información sobre login.defs en el siguiente enlace: </div>
+<ul>
+<li style="text-align: justify;"><a href="https://linux.die.net/man/5/login.defs">https://linux.die.net/man/5/login.defs</a></li>
+</ul>
+<h3 style="text-align: justify;">5. pam_cracklib y pam_pwquality</h3>
+<div style="text-align: justify;">E<span>n un <strong>servidor</strong> es importante <strong>configurar que nuestros usuarios dispongan de contraseñas robustas</strong> para evitar ser <strong>vulnerados</strong> por <strong>fuerza bruta</strong>.</span></div>
+<div style="text-align: justify;"><span></span></div>
+<div style="text-align: justify;">Si se desea tener una <em><strong>mayor nivel de detalle en la personalización de las directivas en la complejidad de contraseñas</strong></em> para las cuentas de usuarios, es más interesante hacer uso de los módulos<span> </span><a href="https://es.wikipedia.org/wiki/Pluggable_Authentication_Module" target="_blank" rel="noopener">PAM</a> <i>(Pluggable Authentication Modules)</i> <a href="https://linux.die.net/man/8/pam_cracklib" target="_blank" rel="noopener">pam_cracklib</a> y<span> </span><a href="https://linux.die.net/man/8/pam_pwquality" target="_blank" rel="noopener">pam_pwquality</a>.</div>
+<div></div>
+<div style="text-align: justify;">Respecto a<b> pwquality:</b></div>
+<ul>
+<li style="text-align: justify;">Es una <strong>versión más actual</strong> y <strong>mejorada de cracklib</strong>, por lo que es esta la librería que utilizaremos. </li>
+<li style="text-align: justify;"><span style="font-size: 1em;">Llama a una rutina cracklib para verificar si la contraseña es parte de un diccionario si este se especifica en la directiva</span><span style="font-size: 1em;"> </span><i style="font-size: 1em;">dictpath.</i></li>
+</ul>
+<div style="text-align: justify;">En entornos <strong><em>Red Hat/Centos</em></strong> se incorpora de forma nativa y es compatible con sistemas basados en Debian pero será necesario instalarla. El comando es el siguiente:</div>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/#</strong> apt install libpam-cracklib libpam-pwquality libpwquality-tools</span></pre>
+</div>
+<p style="text-align: center;"><img src="install-libpam.png" alt="" width="646" height="239" /></p>
+<div style="text-align: justify;">Una vez instalado el módulo de <em><strong>libpwquality, </strong></em>se pueden editar sus opciones en el fichero "<b>/etc/security/pwquality.conf</b>".</div>
+<div><span> </span></div>
+<div style="text-align: justify;">Las opciones para definir las políticas son las siguientes:</div>
+<ul>
+<li style="text-align: justify;"><i><b>difok</b></i>: N<span>úmero de caracteres en su nueva contraseña que NO debe estar presente en su contraseña anterior. (El valor predeterminado es 5).</span></li>
+<li style="text-align: justify;"><i><b>minlen</b></i>: L<span>ongitud mínima de la contraseña. (El valor predeterminado es 9).</span></li>
+<li style="text-align: justify;"><i><b>dcredit</b></i>: N<span>úmero máximo de créditos por usar dígitos (si parámetro&gt; 0), o el número mínimo requerido de dígitos (si parámetro &lt;0). El valor predeterminado es 1.</span></li>
+<li style="text-align: justify;"><i><b>ucredit</b></i>:  N<span>úmero máximo de créditos por usar caracteres en mayúscula (si parámetro&gt; 0), o el número mínimo requerido de caracteres en mayúscula (si parámetro &lt;0). El valor predeterminado es 1.</span></li>
+<li style="text-align: justify;"><i><b>lcredit</b></i>: N<span>úmero máximo de créditos por usar caracteres en minúscula (si parámetro&gt; 0), o el número mínimo requerido de caracteres en minúscula (si parámetro &lt;0). El valor predeterminado es 1.</span></li>
+<li style="text-align: justify;"><i><b>ocredit</b></i>: N<span>úmero máximo de créditos por usar otros símbolos (si el parámetro&gt; 0), o el número mínimo requerido de otros símbolos (si el parámetro &lt;0). El valor predeterminado es 1.</span></li>
+<li style="text-align: justify;"><i><b>minclass</b></i>: Número mínimo de clases de caracteres requeridas para la nueva contraseña. <span>El valor predeterminado es 0. Como ejemplo, si se pone 4, se obliga el uso de números, letras mayúsculas, minúsculas y símbolos.</span></li>
+<li style="text-align: justify;"><i><b>maxrepeat</b></i>: C<span>antidad máxima de </span><b>veces que</b><span> se repite </span><b>un carácter</b><span> en una contraseña. El valor predeterminado es 0.</span></li>
+<li style="text-align: justify;"><i><b>maxclassrepeat</b></i>: N<span>úmero máximo de caracteres consecutivos en una sola clase. El valor predeterminado es 0.</span></li>
+<li style="text-align: justify;"><i><b>gecoscheck</b></i>: Verifica si las palabras individuales de más de 3 caracteres del campo passwd GECOS (campo de comentarios) del usuario están contenidas en la nueva contraseña.<span> Predeterminado 0 (desactivado).</span></li>
+<li style="text-align: justify;"><i><b>dictpath</b></i>: Ruta a los diccionarios de clacklib.</li>
+<li style="text-align: justify;"><i><b>badwords</b></i>: Lista de palabras separadas por espacios que no deben incluirse en la contraseña<span> </span>(nombre de la empresa, palabra "contraseña", etcétera).</li>
+</ul>
+<p style="text-align: justify;">Para establecer políticas para evitar la<strong> reutilización de contraseñas</strong> y <strong>establecer el cifrado de las mismas</strong>, hay que editar el archivo <strong>/etc/pam.d/common-password</strong>. </p>
+<p style="text-align: justify;">Como ejemplo, si se quiere que recuerde 5 contraseñas, el texto a añadir al final del fichero sería el siguiente:</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;">password required pam_pwhistory.so remember=5</span></pre>
+<p style="text-align: center;"><img src="pass-remember.png" alt="" width="697" height="312" /></p>
+<p style="text-align: justify;">A su vez, tendremos definida la función <strong>SHA-512</strong> como función criptográfica para el hash de la contraseña. Ahora estableceremos la caducidad e intervalo de las contraseñas para su cambio en los usuarios. Para ello, editaremos el archivo<span> </span><strong>/etc/login.defs</strong></p>
+<p style="text-align: justify;"><span>En este archivo hay que moverse hasta la sección de contraseñas y establecer los parámetros </span><strong>PASS_MAX_DAYS<span> </span></strong><span>a 90 días y </span><strong>PASS_MAX_DAYS<span> </span></strong><span>a 1 (suponiendo que se desean estos intervalos). De esta manera obligamos a utilizar una contraseña un mínimo de un día y un máximo de 90, evitando que cambien las contraseñas varias veces en un solo momento para saltarse el histórico de contraseñas. Quedando de la siguiente forma.</span></p>
+<p style="text-align: center;"><span><img src="login-defs.1.png" alt="" width="645" height="224" /></span></p>
+<h4>5.1 Sistema de créditos, valores negativos y clases en pwquality</h4>
+<h4>Créditos</h4>
+<div style="text-align: justify;">Para definir la <strong>calidad y complejidad de las contraseñas</strong> se utiliza un <strong>sistema de créditos</strong>. Si la configuración de los créditos es mayor que cero, se obtienen un número de datos de “créditos de caracteres” en referencia con la longitud de la contraseña. Por ejemplo, si todas las líneas de crédito (ucredit, lcredit, dcredit y ocredit) se establecieron en 1, y el requisito de longitud de contraseña se estableció en 6, necesitaremos 6 caracteres para cumplir con el requisito de longitud, porque cada mayúscula, minúscula, dígito y símbolo le darían un crédito. Una contraseña con una longitud corta podría ser aceptable si es más compleja en otras formas o características.</div>
+<div></div>
+<div style="text-align: justify;"><strong>Ejemplo</strong>: La contraseña "<strong>eelpdmctrp</strong>" podría pasar una prueba minlen = 10. Si <strong>dcredit</strong> se establece en 2, una contraseña "<strong>eelpdmct22</strong>" pasaría la prueba por que se obtendrían 2 créditos por cada dígito, entonces 8 caracteres más 2 créditos se valoran como 10 caracteres. Esto dependerá de como se establezcan los parámetros ucredit, lcredit, dcredit y ocredit.</div>
+<h4>Valores negativos</h4>
+<div style="text-align: justify;">Establecer valores de créditos negativos significa que debe tener al menos ese tipo de carácter. Por ejemplo, establecer <strong>dcredit a -1</strong> significaría que debe incluir al menos un dígito para que se acepte una contraseña. Es decir, no se trata de una suma de créditos sino de un requerimiento obligatorio.</div>
+<h4>Clases (minclass)</h4>
+<div style="text-align: justify;">Determina cuántas clases diferentes de caracteres se deben usar para que una contraseña sea aceptable. Hay 4 tipos de clases: minúsculas, mayúsculas, dígitos, caracteres especiales (símbolos o signos).</div>
+<div></div>
+<div style="text-align: justify;"><strong>Ejemplo</strong>: Si se establece minclass = 2, esto exige que una contraseña contenga la combinación de dos tipos de clases. Ya sean mayúsculas o minúsculas, mayúsculas y caracteres especiales, minúsculas y dígitos, etc. </div>
+<div></div>
+<div style="text-align: justify;">También se puede establecer un límite al número máximo de caracteres de cualquier tipo de clase. Por ejemplo, con el parámetro<span> </span><strong><i>maxclassrepeat</i> = 4</strong> se indica que las contraseñas no pueden contener más de 4 minúsculas, mayúsculas, dígitos y otros caracteres especiales. </div>
+<div style="text-align: justify;">Un ejemplo de <span>política de contraseña básica utilizaría las siguientes reglas de complejidad:</span></div>
+<div style="text-align: justify;">
+<ul>
+<li>La contraseña debe tener una longitud mínima de 15 caracteres.</li>
+<li>En la contraseña, el mismo carácter no debe repetirse más de dos veces.</li>
+<li>En una contraseña, las clases de caracteres se pueden repetir hasta cuatro veces.</li>
+<li>La contraseña debe contener caracteres de cada clase.</li>
+<li>La nueva contraseña debe tener 5 caracteres nuevos en comparación con la anterior.</li>
+<li>Habilitar la validación de GECOS.</li>
+<li>Prohibir las cadenas "password" "pass" "word" "123456".</li>
+</ul>
+<p><span>Una vez se tienen las reglas de complejidad, hay que editar el archivo <strong><em>/etc/security/pwquality.conf</em></strong> </span><span>para fortalecer los requisitos de complejidad de la contraseña. A continuación se muestra un archivo de comentarios de ejemplo para una mejor comprensión.</span></p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"># Make sure 5 characters in new password are new compared to old password </span><br /><span style="font-size: 12pt;">difok = 5 </span><br /><span style="font-size: 12pt;"># Set the minimum length acceptable for new passwords <span style="color: #0000ff;">(Longitud mínima de la contraseña, para este caso 15)</span></span><br /><span style="font-size: 12pt;">minlen = 15 </span><br /><span style="font-size: 12pt;"># Require at least 2 digits <span style="color: #0000ff;">(Número mínimo de dígitos, para este caso 2)</span></span><br /><span style="font-size: 12pt;">dcredit = -2 </span><br /><span style="font-size: 12pt;"># Require at least 2 upper case letters  <span style="color: #0000ff;">(Número mínimo de letras mayúsculas, para este caso 2)</span></span><br /><span style="font-size: 12pt;">ucredit = -2 </span><br /><span style="font-size: 12pt;"># Require at least 2 lower case letters  <span style="color: #0000ff;">(Número mínimo de letras minúsculas, para este caso 2)</span></span><br /><span style="font-size: 12pt;">lcredit = -2 </span><br /><span style="font-size: 12pt;"># Require at least 2 special characters (non-alphanumeric)  <span style="color: #0000ff;">(Número mínimo de símbolos No alfanuméricos, para este caso 2)</span></span><br /><span style="font-size: 12pt;">ocredit = -2 </span><br /><span style="font-size: 12pt;"># Require a character from every class (upper, lower, digit, other) <span style="color: #0000ff;">(Requiere caracteres en al menos 4 clases diferentes)</span></span><br /><span style="font-size: 12pt;">minclass = 4 </span><br /><span style="font-size: 12pt;"># Only allow each character to be repeated twice, avoid things like LLL <span style="color: #0000ff;">(Permite en este caso que cada carácter se repita dos veces, evitar LLL, por ejemplo)</span></span><br /><span style="font-size: 12pt;">maxrepeat = 2 </span><br /><span style="font-size: 12pt;"># Only allow a class to be repeated 4 times </span><br /><span style="font-size: 12pt;">maxclassrepeat = 4 </span><br /><span style="font-size: 12pt;"># Check user information (Real name, etc) to ensure it is not used in password </span><br /><span style="font-size: 12pt;">gecoscheck = 1 </span><br /><span style="font-size: 12pt;"># Leave default dictionary path <span style="color: #0000ff;">(indicar el path del diccionario)</span><br />dictpath = /path/to/dict <span style="color: #0000ff;">(Ruta a los diccionarios de cracklib. Si se pone en blanco, se usa por defecto el de cracklib).</span><br /># Forbid the following words in passwords <span style="color: #0000ff;">(palabras no permitidas en el password)</span></span><br /><span style="font-size: 12pt;">badwords = password pass word 123456 <span style="color: #0000ff;">(Lista separada por espacios de palabras que están prohibidas en las contraseña (nombre de la empresa u organización, la palabra «password», etcétera)</span></span> </pre>
+<p style="text-align: justify;"><strong>Diccionarios</strong></p>
+<p style="text-align: justify;">En los sistemas basados en Debian, normalmente los <strong>diccionarios de cracklib</strong> están en la ruta <strong>/var/cache/cracklib</strong>.</p>
+<p style="text-align: center;"><img src="src-crack-lib.png" alt="" width="509" height="170" /></p>
+<p style="text-align: justify;">En este directorio existe un fichero "src-dicts" con la ruta donde se encuentran los diccionarios disponibles.</p>
+<p style="text-align: center;"><img src="dicts.png" alt="" width="528" height="71" /></p>
+<p style="text-align: justify;">Como se puede <strong>observar en la imagen superior</strong>, se tiene <strong>dos diccionarios</strong> con palabras inglesas donde uno de ellos es reducido (small). Si accedemos a uno de ellos para ver su estructura, simplemente hay una palabra por línea, por lo que si se quiere crear uno personalizado, simplemente habrá que ir añadiendo una cadena de texto por línea. </p>
+<p style="text-align: center;"><img src="nano-dic-small.png" alt="" width="462" height="221" /></p>
+<ul></ul>
+<p style="text-align: justify;">Por otro lado, si se muestra el fichero <strong><span style="font-size: 12pt;">pwquality.conf </span></strong>sin comentarios, podemos observar cómo queda.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/#</strong> grep ^[^#] /etc/security/pwquality.conf<br /></span></pre>
+<p style="text-align: center;"><span style="font-size: 1em; text-align: left;"><span><img src="pwquality-cat.png" alt="" width="455" height="238" /></span></span></p>
+<p><span style="font-size: 1em; text-align: left;"><span>Como se puede observar, algunos parámetros que se han configurado en el archivo son redundantes. Por ejemplo:</span></span></p>
+<ul>
+<li><span style="font-size: 1em; text-align: left;"><span>El parámetro <strong>minclass</strong> es redundante dado que </span></span><span style="font-size: 1em; text-align: left;"><span>ya usamos al menos dos caracteres de la clase usando los campos de <strong>[u,l,d,o]credit</strong>.</span></span></li>
+<li><span style="font-size: 1em; text-align: left;"><span>La lista de palabras que no se pueden usar también es redundante, ya que hemos prohibido la repetición de cualquier clase 4 veces (todas las palabras en nuestra lista están escritas en minúsculas). </span></span></li>
+</ul>
+<p><span style="font-size: 1em; text-align: left;"><span>Por último, los campos <strong>[u,l,d,o]credit </strong>contienen un número negativo. Esto se debe a que los números mayores o iguales a 0 darán crédito por usar el carácter en su contraseña. Si el campo contiene un número negativo, significa que se requiere una cierta cantidad.</span></span><span style="font-size: 1em; text-align: left;"></span></p>
+<p><span style="font-size: 1em; text-align: left;"><span>Como ejemplo, se ha creado un usuario test y a continuación, se le intenta cambiar la contraseña. En el primer caso se introduce <strong>123456</strong> y nos devuelve un error que informa que se ha establecido más de 4 caraecteres seguidos de la misma clase. En el segundo intento, se introduce <strong>C1amina-100</strong> y nos devuleve un error informando que se tienen menos de 2 letras en mayúsculas. Como se puede observar, el sistema está negando la posibilidad de establecer una contraseña que no cumpla con la política que se ha configurado anteriormente.</span></span></p>
+<div style="text-align: justify;">
+<p style="text-align: center;"><span style="font-size: 1em; text-align: left;"><img src="passwd-test.png" alt="" width="743" height="233" /></span><span style="font-size: 1em; text-align: left;"></span></p>
+<p><span style="font-size: 1em; text-align: left;">Más información sobre el uso de directivas del fichero de </span><strong style="font-size: 1em; text-align: left;">pwquality</strong><span style="font-size: 1em; text-align: left;"> en el siguiente enlace: </span><br /><span></span></p>
+</div>
+<ul>
+<li><a href="https://linux.die.net/man/8/pam_pwquality">https://linux.die.net/man/8/pam_pwquality</a></li>
+</ul>
+<h4>5.2 Probando las contraseñas (pwscore)</h4>
+<p>Junto con la herramienta ‘<strong>libpwquality</strong>‘ (libpwquality-tools), se tiene también disponible otra llamada ‘<strong>pwscore</strong>‘, que proporciona un método para verificar la complejidad de una contraseña en base a los criterios establecidos en <strong>pwquality</strong>.</p>
+<p style="text-align: justify;">La herramienta ‘<strong>pwscore</strong>‘ lee desde la salida estándar stdin. Para utilizarla simplemente hay que añadir a continuación una contraseña que se quiera probar, esta mostrará un error o un valor de puntuación del 0 al 100.</p>
+<p style="text-align: justify;">La<strong> puntuación de calidad de la contraseña</strong> es relativa a la configuración que se tenga definida. Todos los valores por debajo de 50 se consideran de calidad moderada y por encima de calidad fuerte o muy fuerte. Cualquier contraseña que pase los controles de calidad, debería soportar sin problemas los ataques de diccionario o de fuerza bruta.</p>
+<p>A continuación se realiza una prueba, utilizando una contraseña simple:</p>
+</div>
+<div>
+<div style="text-align: center;"><img src="pwscore.png" alt="" width="454" height="165" /></div>
+<div style="text-align: justify;">Como se puede apreciar en la imagen superior, la contraseña <strong>Eelp-$56=90B-2Vqn32VM</strong>, tiene un<strong> puntuación de 59</strong> sobre un máximo de 100.</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

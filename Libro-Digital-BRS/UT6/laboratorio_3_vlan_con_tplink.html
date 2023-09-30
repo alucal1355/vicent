@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 3. VLAN con tp-link | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-55"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_redes_virtuales_vlans.html" class="current-page-parent daddy">6. Redes virtuales (VLANs)</a>
+   <ul>
+      <li><a href="61_introduccin_a_gns3.html" class="daddy">6.1 Introducción a GNS3</a>
+      <ul class="other-section">
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li id="active"><a href="laboratorio_3_vlan_con_tplink.html" class="active no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="prctica_4_vlan_con_open_vswitch.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_microsegmentacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 3. VLAN con tp-link</h1></div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id91">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header" style="background-image:url(icon_activity.png)"><span class="iDeviceTitle">&nbsp;</span></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta91_108_2" class="block iDevice_content">
+<div class="pbl-task-description"><h3>1. Introducción</h3>
+<p style="text-align: justify;">En este laboratorio se describen las acciones a realizar para configurar un <a href="https://www.tp-link.com/es/business-networking/smart-switch/t1600g-28ts/" target="_blank" rel="noopener"><strong>switch tp-link Modelo T1600G-28TS</strong> </a>compartido por los diferentes departamentos de la organización para segmentar la red de los mismos mediante VLANs.</p>
+<p style="text-align: justify;">El trabaja a realizar se realizará mediante el <a href="https://emulator.tp-link.com/T1600G-28TS(UN)_3.0_Emulator/index.html" target="_blank" rel="noopener">emulador del switch</a>.</p>
+<p style="text-align: center;"><a href="emulator-VLAN.png"><img src="emulator-VLAN.png" alt="" width="478" height="241" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Emulator tp-link.</em></p>
+<h3>2. Escenario</h3>
+<p style="text-align: justify;">La organización está compuesta de <strong>3 departamentos</strong> con equipos conectados a la red en un edificio de <strong>3 plantas</strong> con un switch en cada una de las mismas. La subred de la organización es la 192.168.0.0/24.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="red-Laboratorio-2-UT7.png" alt="" width="1160" height="594" /></td>
+<td style="width: 50%; text-align: center;">
+<table border="1" style="width: 100%; height: 64px;">
+<tbody>
+<tr style="height: 16px;">
+<td style="width: 50%; height: 16px;"><strong><span style="font-size: 12pt;">Departamento</span></strong></td>
+<td style="width: 50%; height: 16px;"><strong><span style="font-size: 12pt;">id VALN</span></strong></td>
+</tr>
+<tr style="height: 16px;">
+<td style="width: 50%; height: 16px;"><span style="font-size: 12pt;">Contabilidad</span></td>
+<td style="width: 50%; height: 16px;"><span style="font-size: 12pt;">100</span></td>
+</tr>
+<tr style="height: 16px;">
+<td style="width: 50%; height: 16px;"><span style="font-size: 12pt;">Logística</span></td>
+<td style="width: 50%; height: 16px;"><span style="font-size: 12pt;">200</span></td>
+</tr>
+<tr style="height: 16px;">
+<td style="width: 50%; height: 16px;"><span style="font-size: 12pt;">Administración</span></td>
+<td style="width: 50%; height: 16px;"><span style="font-size: 12pt;">300</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 2.</strong> Esquema de conexionado al switch por departamentos.</em></span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;"><em><strong>Tabla 1.</strong> Configuración de los id de las VLAN.</em></span></td>
+</tr>
+</tbody>
+</table>
+<h3>3. Conectar switch VLAN</h3>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 14.1553%; text-align: center;">
+<p><a href="https://emulator.tp-link.com/T1600G-28TS(UN)_3.0_Emulator/index.html" target="_blank" rel="noopener"><img src="tplink.png" alt="" width="113" height="52" /></a></p>
+<p><img src="T1600G-28TS(UN)-2.0-01_1499759536399a.jpg" alt="" width="590" height="443" /></p>
+</td>
+<td style="width: 85.8447%;"><span style="font-size: 12pt;">Modelo T1600G-28TS</span></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size: 12pt;">Para comenzar con la configuración de las VLANs, en la página principal del emulador, hay que pulsar la pestaña '<strong>L2 FEATURES</strong>'. <img src="vlan-config-0.png" alt="" width="132" height="64" /></span></p>
+<p><span style="font-size: 12pt;">A continuación, hay que pulsar en el panel lateral izquierdo sobre '<strong>VLAN</strong>'.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="vlanconfig-0B.png" alt="" width="241" height="372" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 3.</strong> Panel lateral izquierdo del Emulator tp-link.</em></span></p>
+<p style="text-align: justify;">A continuación, hay que pulsar sobre <img src="add.png" alt="" width="63" height="27" /> para crear una nueva configuración. En la ventana que aparece, hay que poner el id y el nombre de la VLAN. Para este caso, se va a configurar la VLAN del <strong>departamento de Contabilidad</strong> con id 100. Después, en la parte inferior, se configuran los 8 primeros puertos para el departamento de Contabilidad (etiqueta 100).</p>
+<p style="text-align: justify;">Cuando se conecta un equipo al puerto <strong>Untagged</strong>, ese equipo no entiende del etiquetado de los paquetes, por lo que envía los mismos a ese puerto sin etiquetar. Si el switch tiene que enviar el paquete a otro switch, cogerá el paquete y lo etiquetará con el id del puerto por el que ha entrado el paquete (donde está conectado el equipo) y lo enviará mediante el <strong>puerto trunk</strong> o  puerto etiquetado (tagged ports), por lo que todo el tráfico que va por este puerto, va etiquetado.</p>
+<p style="text-align: justify;">Si el<strong> switch recibe un paquete</strong> por el <strong>puerto etiquetado,</strong> consulta el id y lo reenvía a los puertos con ese id. De esta forma, todo el tráfico broadcast no interfiere de una red con las otras.</p>
+<p style="text-align: center;"><img src="conf-depContabilidad.png" alt="" width="802" height="427" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Puertos Untagged del  tp-link.</em></p>
+<p style="text-align: justify;">El <strong>puerto 25</strong> (tagged ports – puerto trunk) es el utilizado para conectar switches que funcionan con vlans.</p>
+<p style="text-align: justify;"><strong>Ejemplo</strong>, si se recibe un paquete identificado con el id 100, entonces el switch lo reenvía a los puertos 1-8 que son los que se han etiquetado con el id 100 (Contabilidad).</p>
+<p style="text-align: center;"><img src="puerto-trunk.png" alt="" width="812" height="242" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Puertos Tagged del  tp-link.</em></p>
+<p style="text-align: justify;"><strong>En resumen:</strong></p>
+<ul>
+<li style="text-align: justify;"><strong>Puertos Untagged:</strong> Puertos que no entienden de etiquetado. Estos puertos son así ya que el tráfico que llega a él no está etiquetado, es decir, los puertos seleccionados como untagged reenviarán paquetes sin etiquetar en la VLAN de destino.</li>
+<li style="text-align: justify;"><strong>Puertos Tagged:</strong> Puertos para interconectar entre switches gestionables o contra un router que es el que gestionará toda la red, ejemplo: En un router microtik, se configuraría un puerto trunk con el etiquetado de las vlans creadas y se conectaría al puerto trunk del switch. Los puertos seleccionados como tagged reenviarán los paquetes etiquetados en la VLAN de destino.</li>
+</ul>
+<p style="text-align: justify;">A continuación, hay que establecer las ID's de VLAN predeterminada de los puertos, es decir, el <strong>PVID</strong> (id por defecto de los puertos del switch) para que todo el tráfico que llegue a los puertos del switch, cuando salgan por el puerto 25 salgan etiquetados con el id que se ponga.</p>
+<p style="text-align: justify;">El <strong>PVID</strong> se utiliza principalmente para que cuando un puerto reciba un paquete sin etiquetar, el switch inserta una etiqueta VLAN en el paquete según el PVID de ese puerto.</p>
+<p style="text-align: justify;"><strong>Ejemplo</strong>: Para el caso del departamento de contabilidad, los puertos del 1 al 8 su PVID sería igual a 100. Con esto lo que se consigue es que, todo el tráfico que llegue a esos 8 puertos, se le va a asignar el PVID 100 y lo enviará al exterior a través del puerto trunk etiquetado como 100.</p>
+<p style="text-align: center;"><img src="conf-pvid.png" alt="" width="928" height="579" /></p>
+<p style="text-align: center;"><em><strong>Figura 6. </strong>Configuración de los puertos por defecto<strong> PVID</strong>.</em></p>
+<p style="text-align: justify;">Un puerto puede pertenecer a varias redes, es decir, suponiendo que un equipo que estaba conectado al puerto 8 (red de contabilidad), ahora se conecta al puerto 10 que es de otra red, hay que configurar el valor del PVID a 100 ya que ese es el id del departamento de contabilidad. </p>
+<p style="text-align: justify;">Lo normal es que un puerto solo pertenezca a una red, pero podría pasar que un puerto esté disponible para más de una red.</p>
+<p style="text-align: justify;">En el caso del <strong>puerto trunk</strong>, se puede establecer un PVID para que en el caso de que llegue algún paquete sin etiquetar, lo etiquete con el id que se ha configurado en el PVID del puerto, por ejemplo la 500 que no pertenece a ninguna red. De esa forma, se aísla el tráfico que llega sin etiquetar.</p>
+<h3 style="text-align: justify;">Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://www.tp-link.com/us/configuration-guides/configuring_802_1q_vlan/?configurationId=18026#using_the_gui_2_1" target="_blank" rel="noopener">Configuring 802.1Q VLAN</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="prctica_4_vlan_con_open_vswitch.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_microsegmentacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.2 Monitorización con Centreon | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-127"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li class="current-page-parent"><a href="1_herramientas_de_monitorizacin.html" class="current-page-parent daddy">1. Herramientas de monitorización</a>
+   <ul>
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li id="active"><a href="12_monitorizacin_con_centreon.html" class="active daddy">1.2 Monitorización con Centreon</a>
+      <ul>
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul class="other-section">
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="11_monitorizacin_en_windows_con_sysmon.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1.2 Monitorización con Centreon</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id167">
+<div class="iDevice emphasis0" >
+<div id="ta167_167_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;">En este capítulo, se procederá a la instalación de una de las <strong>soluciones de monitorización</strong> que se describían en el capítulo anterior, en concreto, se describirá el proceso de instalación y configuración e Centreon.</p>
+<p style="text-align: justify;"><strong>Centreon</strong> es un software de <strong>monitorización “open source”</strong>, cuyo uso está muy extendido debido a su usabilidad y las capacidades de configuración que permite. Ofrece la posibilidad de utilizar gráficos en la presentación de los resultados, poder comparar diversos dispositivos monitorizados o simplemente ver el estado a lo largo del tiempo y tener un control. También cuenta con una opción de reporting de alertas vía telegram o por correo entre otros y una interfaz gráfica para administrar los dispositivos bastante intuitiva.</p>
+<p class="defaut">En su versión básica, <strong>Centreon</strong> se compone de una interfaz web bajo Apache (Centreon Web), de un servidor de base de datos relacional MySQL, de una base de datos gráfica RRD, de un programador (Centreon Engine), de un broker (Centreon Broker), de sondas de monitorización (Centreon Plugins) y de un conjunto de servicios y tareas planficadas. Todo se instala en un sistema operativo: GNU/Linux o Solaris.</p>
+<p class="defaut" style="text-align: center;"><img src="pila-Centreon.png" alt="" width="480" height="327" /></p>
+<p class="defaut" style="text-align: center;"><em><strong>Figura 1.</strong> <span>Pila de software de un servidor central Centreon</span>.</em></p>
+<p>Hay que saber que<strong> Centreon se instala sobre CentOS</strong> y existen diferentes alternativas para su instalación, tal y como muestra la documentación oficial:</p>
+<ul>
+<li><a href="https://docs.centreon.com/docs/getting-started/which-install/">https://docs.centreon.com/docs/getting-started/which-install/</a></li>
+</ul>
+<h4>Empresas que utilizan Centreon</h4>
+<table border="0" style="height: 106px; width: 100%;">
+<tbody>
+<tr style="height: 81px;">
+<td style="width: 33.3333%; text-align: center; height: 81px;"><a href="https://www.isoin.es/nuestros-servicios/monitorizacion-con-centreon/" target="_blank" rel="noopener"><img src="logo.png" alt="" width="196" height="50" /></a></td>
+<td style="width: 33.3333%; text-align: center; height: 81px;"><a href="https://www.mkzsoluciones.com/" target="_blank" rel="noopener"><img src="LogoNuevoGrande.png" alt="" width="300" height="57" /></a></td>
+<td style="width: 33.3333%; text-align: center; height: 81px;"><a href="https://www.ithinkupc.com/es" target="_blank" rel="noopener"><img src="ithink-upc.png" alt="" width="253" height="75" /></a></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 33.3333%; text-align: center; height: 25px;"></td>
+<td style="width: 33.3333%; text-align: center; height: 25px;"></td>
+<td style="width: 33.3333%; text-align: center; height: 25px;"><span style="font-size: 12pt;">Partner de Centreon en España</span></td>
+</tr>
+</tbody>
+</table>
+<h3>2. Requisitos</h3>
+<p>Una máquina virtual el siguiente Hardware:</p>
+<ul>
+<li>Disco de 30GB de capacidad mínimo.</li>
+<li>4 GB de RAM.</li>
+<li>2 núcleos de la CPU.</li>
+<li>Adaptadar de red Modo Puente. Se configurará el tcp/ip de la siguiente manera:
+<ul>
+<li><strong>red</strong>: 192.168.0.0/24.</li>
+<li><strong>Dirección ip:</strong> 192.168.0.253/24.</li>
+<li><strong>Gateway</strong>: 192.168.0.1 (interfaz LAN del router con acceso a internet).</li>
+<li><strong>DNS</strong>: 192.168.0.1 (interfaz LAN del router con acceso a internet).</li>
+</ul>
+</li>
+</ul>
+<p>Respecto al software, se tienen diferentes opciones:</p>
+<ul>
+<li>
+<p>Hay que descargar la iso disponible en el sitio oficial de Centreon: <a href="https://download.centreon.com/">https://download.centreon.com/</a>. (versión 21.10 año 2022)</p>
+</li>
+<li>
+<p>Descargar la ova para virtualbox o vmware (versión 22.10 año 2023).</p>
+</li>
+</ul>
+<p>Para este caso, <strong>se ha descargado la iso 21.10</strong> para describir el proceso de instalación de Centreon (marzo 2022). </p>
+<p style="text-align: justify;">Por otro lado, <strong>se descarga la ova 22.10</strong> (a fecha 27 de marzo de 2023), aunque puede que exista una versión más reciente que sea estable por lo que se podría utilizar esa, en cualquier caso, la instalación preparada debería ser bastante intuitiva de seguir.</p>
+<h3>3. Instalación</h3>
+<h4><strong>3.1 Instalación a partir de la ISO 21.10</strong></h4>
+<p>Se procede a la descarga del <strong>fichero ISO.</strong></p>
+<p style="text-align: center;"><a href="download-centreeon.png" target="_blank" rel="noopener"><img src="download-centreeon.png" width="693" height="354" /></a></p>
+<p style="text-align: center;"></p>
+<p style="text-align: justify;">Una vez se pulsa en <strong>Download</strong>, se redirige a una página donde hay que rellenar los datos “personales” para la descarga.<o:p></o:p></p>
+<p style="text-align: center;"><a href="descarga-iso.png" target="_blank" rel="noopener"><img src="descarga-iso.png" alt="" width="803" height="479" /></a></p>
+<p>A continuación, hay que <strong>crear una máquina virtual</strong> con los requisitos para preparar el inicio de la instalación.</p>
+<p style="text-align: center;"><img src="datos-MV-Centreon.png" alt="" width="1167" height="364" /></p>
+<p style="text-align: justify;">A continuación, se describen los pasos del proceso de instalación de CentOS.</p>
+<div class="exe-fx exe-tabs">
+<h2>Paso 1</h2>
+<p>Una vez se arranca la máquina virtual, aparece un menú donde hay que seleccionar '<strong>Install CentOS 7</strong>'.</p>
+<p style="text-align: center;"><img src="install-centreon-01.png" alt="" width="534" height="379" /></p>
+<h2>Paso 2</h2>
+<p>A continuación, hay que seleccionar el idioma y luego pulsar <strong>Continuar</strong>.<o:p></o:p></p>
+<p style="text-align: center;"><img src="sel-idioma.png" alt="" width="796" height="596" /></p>
+<h2>Paso 3</h2>
+<p style="text-align: justify;">El siguiente paso es <span>elegir el tipo de instalación que será <strong>Central con Base de datos</strong> (Central with database). En la primera pantalla, se pueden ver varias advertencias para la Instalación, ejemplo: Tipo de instalación. Para seleccionar el tipo de instalación, hay que pulsar sobre '<strong>Installation Type</strong>', aparecerá una nueva ventana donde se pueden ver varias opciones para definir el tipo de instalación (en este caso se instala Centreon with database que consta de: la interfaz web, la base de datos, el motor de monitorización y el Broker. </span></p>
+<p style="text-align: justify;"><span>Las posibles opciones son:</span><span> </span></p>
+<ul>
+<li><span><strong>Central with database:</strong> Instala Centreon (la interfaz web y la base de datos), el motor de monitorización y el Broker.</span></li>
+<li><span><strong>Central without database:</strong> Instala Centreon (solo la interfaz web), el motor de monitorización y el Broker.</span></li>
+<li><span><strong>Poller:</strong> Instala el recolector (el motor de monitorización y solo Broker).</span></li>
+<li><span><strong>Database:</strong> Instala el servidor de base de datos (si se tiene instalado un servidor Central sin base de datos).</span></li>
+</ul>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 41.5875%; text-align: center;"><a href="slecc-install-type.png"><img src="slecc-install-type.png" alt="" width="502" height="249" /></a></td>
+<td style="width: 34.6561%; text-align: center;"><a href="central-with-bd.png"><img src="central-with-bd.png" alt="" width="798" height="191" /></a></td>
+<td style="width: 23.7564%; text-align: center;"><a href="type-central-bd.png"><img src="type-central-bd.png" alt="" width="305" height="102" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 4</h2>
+<p style="text-align: justify;">A continuación, se selecciona el destino de la instalación. En la nueva ventana, hay que a<span>segurarse de que está marcada la opción “</span><b>Con el particionado automático</b><span>” y pulsar en <strong>Listo</strong>. También es posible configurar diferentes particiones para el disco, pero en nuestro caso de ejemplo, se dejará automático</span>.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="selecc-destino.png" alt="" width="678" height="261" /></td>
+<td style="width: 50%; text-align: center;"><img src="configurar-destino.png" alt="" width="795" height="594" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 5</h2>
+<p style="text-align: justify;">Una vez configurado el destino, se va a configurar la red. Para la configuración de red, se necesita conocer bien la IP que se le va a asignar al equipo (servidor de la red) o bien la que proporcione el servidor DHCP. Para este caso, se configura la red de manera manual, para ello, se pulsa sobre '<strong>RED &amp; NOMBRE DE EQUIPO</strong>'. </p>
+<p style="text-align: center;"><img src="conf-red.png" alt="" width="787" height="589" /></p>
+<h2>Paso 6</h2>
+<p style="text-align: justify;"><span>Una vez se selecciona la opción de <strong>Red &amp; Nombre de Equipo,</strong> hay que introducir la configuración manualmente en la opción que pone “<strong>Configurar…</strong>” --&gt; <strong>Ajustes IPv4</strong> y añadir dirección, máscara de red y puerta de enlace, incluido los servidores DNS. Una vez se añade la configuración de tcp/ip, hay que pulsar Guardar, y en la nueva ventana, (figura derecha), deben aparecer los datos que se han configurado. El <strong>nombre del host</strong>, dependerá del contexto de la organización, es decir, para este caso donde el dominio es <strong>ciber.local</strong>, el nombre podría ser orion.ciber.local. Para este caso de ejemplo, <strong>se deja como localhost.domainlocal.</strong> Para continuar, hay que pulsar <strong>Listo</strong>.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="configurar-tcp-ip.png"><img src="configurar-tcp-ip.png" alt="" width="794" height="566" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="conf-red-creada.png"><img src="conf-red-creada.png" alt="" width="789" height="556" /></a></td>
+</tr>
+</tbody>
+</table>
+<p><span></span></p>
+<h2>Paso 7</h2>
+<p><span>Una vez completado el destino de la instalación y haber configurado correctamente la red, ya se puede comenzar la instalación pulsando el botón '<strong>Empezar instalación</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="empezar-install.png" alt="" width="795" height="593" /></span></p>
+<h2>Paso 8</h2>
+<p class="Standard" style="text-align: justify;">El siguiente paso es configurar la <strong>autenticación del sistema</strong>, bien mediante el <strong>usuario root</strong> o la creación de uno nuevo. En este caso, se configura una contraseña para el usuario root (recomendado).<o:p></o:p></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="establecer-Contrasena.png" alt="" width="795" height="476" /></td>
+<td style="width: 50%; text-align: center;">
+<p><img src="Contrasena-root.png" alt="" width="800" height="244" /></p>
+<p><span style="font-size: 12pt;">Pulsar '<strong>Listo'</strong> para continuar</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 9</h2>
+<p><span>Al finalizar todos los pasos, el asistente ofrece la opción de reiniciar cuando termine de hacer las configuraciones oportunas. Para continuar, hay que pulsar '<strong>Reiniciar</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="reiniciar.png" alt="" width="800" height="597" /></span></p>
+<h2>Paso 10</h2>
+<p style="text-align: justify;"><span>Una vez reiniciado, hay que actualizar el sistema y para ello, se tiene el comando “<strong>yum update</strong>” que actualiza todos los paquetes actualmente instalados a sus últimas versiones disponibles en los repositorios. Por otro lado, se tiene el comando “<strong>yum upgrade</strong>” que realiza la misma acción que “<strong>yum update</strong>”, pero una vez finalizado también elimina todos los paquetes obsoletos del sistema.</span></p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>yum update</span></pre>
+<p style="text-align: center;"><span> <img src="yum-update.png" alt="" width="701" height="394" /></span></p>
+<h2>Paso 11</h2>
+<p style="text-align: justify;"><span>Una vez reiniciado, ya se puede hacer login. </span><span>Para acceder a la administración de Centreon, se debe introducir en el navegador la IP configurada en el paso 6 (para este  caso es 192.168.0.253) y debe salir una imagen como la que se puede observar en la figura de la izquierda. Tanto en la figura de la izquierda como la la derecha, hay que pulsar en <strong>Next</strong>, ya que solo son informativas.</span></p>
+<table border="0" style="height: 10px; width: 100%;">
+<tbody>
+<tr style="height: 10px;">
+<td style="width: 50%; height: 10px; text-align: center;"><img src="centreon-http-01.png" alt="" width="879" height="580" /></td>
+<td style="width: 50%; height: 10px; text-align: center;"><img src="centreon-http-02.png" alt="" width="875" height="576" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 12</h2>
+<p style="text-align: justify;"><span>Una vez pulsado <strong>Next</strong>, aparece una nueva </span><span>ventana donde se pueden modificar las rutas de configuración para los diferentes directorios de acceso, pero se recomienda dejarlas por defecto. Para continuar, hay que pulsar '<strong>Next</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="centreon-http-03.png" alt="" width="875" height="578" /></span></p>
+<h2>Paso 13</h2>
+<p style="text-align: justify;"><span>A continuación, más rutas que se han optado por dejar también por defecto (se aconseja dejarlas así salvo tener un conocimiento de la herramienta y configuración personal). Para continuar, hay que pulsar '<strong>Next</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="centreon-http-04.png" alt="" width="873" height="571" /></span></p>
+<p style="text-align: justify;"></p>
+<h2>Paso 14</h2>
+<p style="text-align: justify;"><span>A continuación, hay que Introducir las <strong>credenciales de acceso a la aplicación Centreon</strong>. Rellenar los datos para el usuario por defecto “</span><b>admin</b><span>”. Para continuar, hay que pulsar '<strong>Next</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="centreon-http-05.png" alt="" width="876" height="554" /></span><span></span></p>
+<h2>Paso 15</h2>
+<p class="Standard" style="text-align: justify;">El siguiente paso (Figura derecha) es configurar la conexión con la base de datos. En caso de haber modificar algún parámetro en los pasos previos, hay que dejarlos patentes en este apartado (puerto, nombre de la base de datos, etcétera.). Para este caso, hay que añadir la contraseña de la base de datos específica para <strong>Centreon</strong> y la de root, pero antes de realizar esto, hay que acceder al equipo CentOS y realizar un <strong>ALTER USER 'root'@'localhost'</strong> (figura izquierda)  debido a que, en SQL (ya sea mysql o postgresql), los perfiles están definidos por el par (usuario, host). En <strong>mysql~MariaDB</strong> (nuestro caso), se definen con mayor precisión en la base de datos mysql, en la tabla de usuarios (que se escribe mysql.user). El usuario <strong>root@localhost</strong> (o root@127.0.0.1) está reservado para el administrador del servidor, para conectarse al servidor SQL. Este perfil no está destinado a ser utilizado por nadie más, es por eso que hay que ejecutar los siguientes comandos en el servidor CentOS para dar permisos a root en la base de datos y estableciéndole una contraseña. Los comandos son los siguientes:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong> mysql -u root -p</span><br /><span style="font-size: 12pt;"><strong>MariaDB [(none)]&gt;</strong> ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('Camina-100');</span><br /><span style="font-size: 12pt;"><strong>MariaDB [(none)]&gt;</strong> exit</span></pre>
+<table border="0" style="height: 10px; width: 100%;">
+<tbody>
+<tr style="height: 10px;">
+<td style="width: 50%; height: 10px; text-align: center;"><a href="alter-user-mariadb.png"><img src="alter-user-mariadb.png" alt="" width="964" height="274" /></a></td>
+<td style="width: 50%; height: 10px; text-align: center;"><a href="centreon-http-06.png"><img src="centreon-http-06.png" alt="" width="923" height="657" /></a></td>
+</tr>
+</tbody>
+</table>
+<p class="Standard" style="text-align: right;"><span>Para continuar con el proceso, hay que pulsar '<strong>Next</strong>'.</span></p>
+<h2>Paso 16</h2>
+<p style="text-align: justify;">Una vez pulsado Next, el asistente comienza a realizar unas comprobaciones/configuraciones. Una vez finaliza, si está todo OK, hay que pulsar '<strong>Next</strong>'.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="paso7.png" alt="" width="892" height="643" /></td>
+<td style="width: 50%; text-align: center;"><img src="paso7-ok.png" alt="" width="923" height="530" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 17</h2>
+<p style="text-align: justify;">Aparece una nueva ventana donde se pueden seleccionar los <strong>módulos que se desean instalar</strong>, para este caso, se dejan <strong>TODOS</strong> seleccionados. <span>Para proceder con la instalación de los módulos, hay que pulsar '<strong>Install</strong>'.</span></p>
+<p><img src="http-centron-08.png" alt="" width="819" height="646" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<h2>Paso 18</h2>
+<p style="text-align: justify;">Una vez se han instalado, hay que pulsar en '<strong>Next</strong>' y aparece una nueva ventana (figura derecha) donde hay que pulsar en '<strong>Finish</strong>'.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="http-centreon-9.png" alt="" width="821" height="650" /></td>
+<td style="width: 50%; text-align: center;"><img src="http-centreon-10.png" alt="" width="857" height="711" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 19</h2>
+<p class="Standard" style="text-align: justify;">Una vez finalizado el proceso, aparece una nueva ventana que es la <strong>página inicial de Centreon</strong> mediante la IP configurada en el <strong>paso 6</strong> y donde , debe ya se pueden ingresar las credenciales de acceso al panel y empezar a configurar los equipos y los servicios que se quieran monitorizar.<o:p></o:p></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="http-centreon-11.png"><img src="http-centreon-11.png" alt="" width="798" height="585" /></a></td>
+<td style="width: 50%; text-align: center;"><img src="http-centreon-12.png" alt="" width="1272" height="879" /></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+</div>
+<h4>3.2 Instalación a partir de la OVA 22.10</h4>
+<p>Se procede a la descarga del fichero OVA.</p>
+<p style="text-align: center;"><a href="download-centreeon-ova.png" target="_blank" rel="noopener"><img src="download-centreeon-ova.png" alt="" width="787" height="547" /></a></p>
+<p> </p>
+<p>Una vez se pulsa en Download, se redirige a una página donde hay que rellenar los datos “personales” para la descarga.</p>
+<p style="text-align: center;"><a href="descarga-ova.png" target="_blank" rel="noopener"><img src="descarga-ova.png" alt="" width="770" height="572" /></a></p>
+<p style="text-align: justify;">Una vez descargada la OVA, se abre para ver su configuración e importarla.</p>
+<p style="text-align: center;"><img src="ova-1.png" alt="" width="895" height="663" /></p>
+<p style="text-align: justify;">En el siguiente <strong><a href="https://docs.centreon.com/docs/installation/installation-of-a-central-server/using-virtual-machines/" target="_blank" rel="noopener">enlace</a></strong>, tienes los pasos para la importación e instalación de la OVA.</p>
+<h3>4. Configuración inicial</h3>
+<p style="text-align: justify;">Tras la <strong>instalación de Centreon</strong> se dispone de un servidor de monitorización que utiliza el protocolo SNMP para dicha labor. El siguiente paso es configurar dicho protocolo para que se puedan añadir futuros dispositivos.</p>
+<p style="text-align: justify;">Esta configuración inicial permitirá controlar otros dispositivos de la red de nuestra organización.</p>
+<p style="text-align: justify;">A continuación se describen los pasos en las siguientes pestañas.</p>
+<div class="exe-fx exe-tabs">
+<h2>Paso 1</h2>
+<p style="text-align: justify;">En primer lugar hay que comprobar que efectivamente se tiene el servicio SNMP en funcionamiento en el servidor CentOS. El comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>service snmpd status</span></pre>
+<p style="text-align: justify;"><span>Como se puede observar en la figura, el servicio se encuentra funcionando correctamente.</span></p>
+<p style="text-align: center;"><img src="status-snmpd.png" alt="" width="906" height="226" /></p>
+<h2>Paso 2</h2>
+<p style="text-align: justify;">A continuación, hay que modificar la comunidad SNMP para usar una con un nombre identificativo y no la que viene por defecto, para ello se edita el fichero /etc/snmp/<strong>snmpd.conf con vi </strong>(nano no existe en CentOS) y donde hay que cambiar <strong>comunity public</strong> por <strong>comunity</strong> <strong>guia</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>vi /etc/snmp/snmpd.conf</span></pre>
+<p style="text-align: center;"><img src="snmpb-conf.png" alt="" width="646" height="576" /></p>
+<p style="text-align: justify;">Una vez configurado, hay que reiniciar el servicio SNMP para aplicar cambios:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>service snmpd restart</span></pre>
+<p style="text-align: center;"><img src="restart-snmpd.png" alt="" width="419" height="64" /></p>
+<h2>Paso 3</h2>
+<p style="text-align: justify;">A continuación, se configuran otra serie de servicios de tal modo que se levanten con el inicio del sistema y para ello, primero se inician:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>systemctl start centreontrapd<br /><strong>[root@localhost ~]#</strong>systemctl start centengine<br /><strong>[root@localhost ~]#</strong>systemctl start cbd<br /><br /></span></pre>
+<p style="text-align: center;"><img src="init-services.png" alt="" width="434" height="77" /></p>
+<p style="text-align: justify;">Los servicios son:</p>
+<ul>
+<li style="text-align: justify;"><strong>Centreon Broker:</strong> cbd.</li>
+<li style="text-align: justify;"><strong>Motor de Centreon</strong>: centengine.</li>
+</ul>
+<p style="text-align: justify;">A continuación, se ejecuta el comando para configurar que se inicien con el sistema:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>systemctl enable centreontrapd<br /><strong>[root@localhost ~]#</strong>systemctl enable centengine<br /><strong>[root@localhost ~]#</strong>systemctl enable cbd<br /><strong>[root@localhost ~]#</strong>systemctl enable centreon<br /></span></pre>
+<p style="text-align: center;"><img src="enable-services.png" alt="" width="1042" height="144" /></p>
+<h2>Paso 4</h2>
+<p style="text-align: justify;"><span>Para <strong>monitorizar el propio servidor</strong> y comprobar que se han realizado correctamente las configuraciones iniciales, se debe iniciar sesión en el panel de Centreon:</span></p>
+<p style="text-align: center;"><span><img src="http-centreon-11.png" alt="" width="798" height="585" /></span></p>
+<h2>Paso 5</h2>
+<p style="text-align: justify;"><span> Una vez dentro, primero se procede a instalar unos plugins para futuras monitorizaciones. Para ello, hay que ir a “</span><b>Configuracion/Plugin Packs</b><span>”:</span></p>
+<p style="text-align: center;"><span><img src="plugins-access.png" alt="" width="451" height="695" /></span></p>
+<h2>Paso 6</h2>
+<p style="text-align: justify;"><span>Una vez ahí, hay que instalar todos los <strong>pluggins</strong> posibles (el check verde de la esquina superior derecha es que se han instalado). Como se puede observar en la figura inferior, así quedarían instalados. Se puede observar que hay algunos que aparecen sobre un fondo apagado, eso quiere decir que son de pago. Con instalar los que aparecen en las capturas es suficiente para lo que se pretene hacer (gratuitos).</span></p>
+<p style="text-align: center;"><a href="install-plugins.png"><span><img src="install-plugins.png" alt="" width="874" height="615" /></span></a></p>
+<h2>Paso 7</h2>
+<p style="text-align: justify;">A continuación, se añade el host del servidor y para ello, hay que ir <span>a “</span><b>Configuration/Hosts/Hosts</b><span>”. En la nueva venta, ha que pulsar sobre Add (ver figura derecha).</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="accesos-hosts.png" alt="" width="373" height="623" /></td>
+<td style="width: 50%; text-align: center;"><img src="add-host.png" alt="" width="855" height="480" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 8</h2>
+<p style="text-align: justify;">Una vez pulsado Add, ya se puede añadir <span>el host rellenando su información personal como la que se puede observar en la siguiente figura. </span></p>
+<table border="0" style="width: 100%; height: 666px;">
+<tbody>
+<tr style="height: 666px;">
+<td style="width: 50%; height: 666px; text-align: center; vertical-align: top;"><a href="add-host-relleno.png"><img src="add-host-relleno.png" alt="" width="1048" height="1020" /></a></td>
+<td style="width: 50%; height: 666px;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Se añade el host con la información tal y como se muestra en la figura de la pestaña anterior. Una explicación de los campos:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Name</strong>: nombre que se quiera que tenga, en este caso un nombre descriptivo, Centreon porque es nuestro servidor.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Alias</strong>: un alias significativo (Centreon por lo mismo que antes).</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>IP Address</strong>: como la monitorización se realiza desde el servidor de Centreon, se le indica que se monitorice a si mismo, por ello se emplea la ip 127.0.0.1.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>SNMP community &amp; version:</strong> la comunidad snmp que se ha configurado antes y versión en nuestro caso la 2c.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Timezone/Location:</strong> en nuestro caso Europe/Madrid.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Templates:</strong> se van explicar el motivo de las 4 plantillas escogidas.</span>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Centreon-Central</strong> porque se va a monitorizar nuestro servidor central de Centreon.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Centreon-Database</strong> debido a que se tiene Centreon con base de datos y para que la controle.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Centreon-Poller</strong> debido a que es el poller central. Luego se pueden tener otros pollers remotos (terminales remotos).</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>Linux-SNMP</strong> debido a que CentOS es una distribución Linux y por tanto para monitorizar sus recursos es necesario elegir esta plantilla.</span></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 9</h2>
+<p class="Standard" style="text-align: justify;">Por último, hay que rellenar la información con las rutas que se configuraron en la instalación y la contraseña de la base de datos que se puso en su momento. También el intervalo en que se comprobará este host. Una vez rellenada la información, hay que pulsar el botón '<strong>Save</strong>'.<o:p></o:p></p>
+<p class="Standard" style="text-align: center;"><img src="datos-host-finales.png" alt="" width="1012" height="663" /></p>
+<h2>Paso 10</h2>
+<p style="text-align: justify;">A continuación, aparece el <strong>panel de Hosts</strong> con el host recién configurado. <span>Para que detecte el host y comiencen a mostrar datos, hay que actualizar el poller y para ello hay que ir a su apartado de configuración personal:</span></p>
+<p style="text-align: center;"><img src="host-anadido-ok.png" alt="" width="1102" height="892" /></p>
+<h2>Paso 11</h2>
+<p style="text-align: justify;"><span>Seleccionar el <strong>poller</strong> y exportar su configuración como se muestra a continuación (añadiendo Central en  figura derecha) pulsando en '<strong>Export</strong>'.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="export-poller.png"><img src="export-poller.png" alt="" width="1155" height="531" /></a></td>
+<td style="width: 50%; text-align: center;"><img src="export-poller-start.png" alt="" width="1078" height="531" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 12</h2>
+<p style="text-align: justify;"><span>Una vez exportado, se comprueba la consola de las acciones realizadas.</span></p>
+<p><o:p></o:p><span><img src="consola-start-expor-poller.png" alt="" width="625" height="514" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<h2>Paso 13</h2>
+<p style="text-align: justify;"><span>Si se accede al <strong>panel de Pollers</strong>, se puede comprobar que ya se encuentra activo. </span>Puede ser que con la opción <strong>reload</strong> que se seleccionó en el paso 11, salga que no está corriendo el poller, no obstante, al ejecutar un reinicio del equipo Centreon una vez finalizada la instalación, ya debería funcionar todo correctamente. </p>
+<p style="text-align: center;"><img src="poller-running.png" alt="" width="1076" height="477" /></p>
+<h2>Paso 14</h2>
+<p style="text-align: justify;">Con esto, ya se tiene <span>monitorizado el servidor Centreon y con ello la primera monitorización realizada con éxito. En la Figura inferior, se puede observar  que ya se tiene el proceso con PID 1162 activo y monitorizando el sistema.</span></p>
+<p style="text-align: center;"><img src="poller-running.1.png" alt="" width="1076" height="477" /></p>
+</div>
+<h3>5. Instalación plugins Nagios Centreon</h3>
+<p class="Standard" style="text-align: justify;">Con el <strong>objetivo de monitorizar los servicios activos</strong> por determinados puertos y hacer un poco más completo el <strong>servidor de monitorización Centreon</strong>, se van a instalar una serie de plugins y para ello, se necesita instalar el core de <a href="https://www.nagios.org/" target="_blank" rel="noopener">Nagios</a>.<o:p></o:p><o:p> Respecto a <strong>Nagios</strong>, decir que su utilidad es controlar que un <strong>determinado servicio está activo por un puerto</strong>, entre muchas otras.</o:p></p>
+<p class="Standard" style="text-align: justify;">En este apartado se describe cómo <strong>configurar Centreon</strong> de modo que se pueda <strong>exprimir la monitorización al máximo</strong>. Este proceso se realizará desde la línea de comandos en su totalidad (o casi), así que hay que prestar especial cuidado a los comandos que se verán veremos a continuación en la siguiente sección de pestañas.</p>
+<div class="exe-fx exe-tabs">
+<h2>Paso 1</h2>
+<p style="text-align: justify;">En primer lugar se comienza con la instalación de las “<strong>Herramientas de Desarrollo</strong>”, el comando es el siguiente:<span style="font-size: 12pt;"></span></p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>yum group install “Development Tools”</span></pre>
+<p style="text-align: justify;">Si aparece el error de la figura siguiente, q<span>uizás se tengan repositorios configurados que entren en conflicto con este grupo de paquetes.</span></p>
+<p style="text-align: center;"><img src="groupinstallDevTools-Error.png" alt="" width="828" height="206" /></p>
+<p style="text-align: justify;">Si el comando anterior da un error, hay que ejecutar el comando es el siguiente:<span style="font-size: 12pt;"></span></p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>yum clean all<strong><br /></strong><strong>[root@localhost ~]#</strong>yum groupinstall --disablerepo=\* --enablerepo=base,updates,cr "Development Tools"</span></pre>
+<p style="text-align: center;"><img src="groupinstall-DEvTools.png" alt="" width="915" height="261" /></p>
+<p style="text-align: justify;">Se pueden consultar los grupos disponibles e instalados con el siguiente comando. Como se puede observar en la figura, después de ejecutar el anterior comando ya se tiene el grupo de "<strong>Herramientas de Desarrollo instalado</strong>".</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>yum grouplist<br /></span></pre>
+<p style="text-align: center;"><img src="gropulist.png" alt="" width="392" height="567" /></p>
+<h2>Paso 2</h2>
+<p style="text-align: justify;">A continuación, hay que descargar el <a href="https://www.nagios.org/downloads/nagios-core/thanks/" target="_blank" rel="noopener"><strong>core de nagios</strong></a> (a fecha 25/02/20022 la versión es la 4.4.6) e instalarlo, pero antes, hay que instalar la herramienta wget:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>yum install wget<strong><br /></strong><strong>[root@localhost ~]#</strong>wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.6.tar.gz</span></pre>
+<p style="text-align: center;"><img src="wget-nagios.png" alt="" width="926" height="237" /></p>
+<h2>Paso 3</h2>
+<p style="text-align: justify;">A continuación, hay que descomprimir el fichero descargado:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>tar xvzf nagios-4.4.6.tar.gz</span></pre>
+<p style="text-align: center;"><img src="descomprimir-nagios.png" alt="" width="527" height="256" /></p>
+<h2>Paso 4</h2>
+<p style="text-align: justify;">Una vez descomprimido el fichero, hay que cambiar al directorio llamado nagios-4.4.6 y ejecutar el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>cd nagios-4.4.6 <br /><strong>[root@localhost nagios-4.4.6]#</strong>./configure --prefix=/usr/local/nagios --with-cgiurl=/nagios/cgi-bin --with-htmurl=/nagios/ \<br />--with-nagios-user=nagios --with-nagios-group=nagios<br /></span></pre>
+<p style="text-align: center;"><img src="configure-nagios.png" alt="" width="997" height="241" /></p>
+<p style="text-align: justify;">A continuación, hay que ejecutar una secuencia de comandos para completar la instalación de nagios y luego descargar e instalar los plugins. Se usar el comando make ya que ayuda a compilar los programas.</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost nagios-4.4.6]#</strong>make all<br /><strong>[root@localhost nagios-4.4.6]#</strong>make install<br /><strong>[root@localhost nagios-4.4.6]#</strong>make install-init<br /><strong>[root@localhost nagios-4.4.6]#</strong>make install-commandmode<br /></span></pre>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 25%; text-align: center;"><a href="rsultado-configure-nagios.png"><img src="rsultado-configure-nagios.png" alt="" width="555" height="548" /></a></td>
+<td style="width: 25%; text-align: center;"><a href="resultado-make-install.png"><img src="resultado-make-install.png" alt="" width="601" height="469" /></a></td>
+<td style="width: 25%; text-align: center;"><a href="make-install-init.png"><img src="make-install-init.png" alt="" width="834" height="82" /></a></td>
+<td style="width: 25%; text-align: center;"><a href="make-install-commanmode.png"><img src="make-install-commanmode.png" alt="" width="621" height="127" /></a></td>
+</tr>
+<tr>
+<td style="width: 25%; text-align: center;"><span style="font-size: 12pt;">Resultado configure</span></td>
+<td style="width: 25%; text-align: center;"><span style="font-size: 12pt;">Resultado make install</span></td>
+<td style="width: 25%; text-align: center;"><span style="font-size: 12pt;">Resultado make install-init</span></td>
+<td style="width: 25%; text-align: center;"><span style="font-size: 12pt;">Resultado make install-commandmode</span></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 5</h2>
+<p style="text-align: justify;">A continuación, hay que descargar los plugins:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>wget http://nagios-plugins.org/download/nagios-plugins-2.3.3.tar.gz</span></pre>
+<p style="text-align: center;"><img src="descarga-plugins-nagios.png" alt="" width="847" height="257" /><span style="font-size: 12pt;"><strong></strong></span></p>
+<p style="text-align: justify;">Una vez se ha descargado el fichero, hay que descomprimirlo:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>tar xvzf nagios-plugins-2.3.3.tar.gz</span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="descomprimir-plugins.png" alt="" width="568" height="245" /></span><span style="font-size: 12pt;"></span></p>
+<h2>Paso 6</h2>
+<p style="text-align: justify;">Una vez descomprimido el fichero, hay que cambiar al directorio llamado <strong>nagios-plugins-2.3.3</strong> y ejecutar el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>[root@localhost ~]#</strong>cd nagios-plugins-2.3.3<br /><strong>[root@localhost nagios-plugins-2.3.3]#</strong>./configure <br /><strong>[root@localhost nagios-plugins-2.3.3]#</strong>make &amp;&amp; make install<br /><br /></span></pre>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="resultado-configure-plugins.png" alt="" width="454" height="425" /></td>
+<td style="width: 50%; text-align: center;"><img src="resultado-make-install-plugins.png" alt="" width="687" height="428" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Resultado comando ./configure</span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Resultado comando make &amp;&amp; make install</span></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 7</h2>
+<p style="text-align: justify;"><span>Si se ejecuta el comando “<strong>ls /usr/local/nagios/libexec</strong>”, la respuesta al comando debe ser el siguiente:</span></p>
+<p style="text-align: center;"><span><img src="ls-libexec.png" alt="" width="837" height="230" /></span></p>
+<p style="text-align: justify;">Con este último paso, ya quedarían instalados los plugins de Nagios y listos para usarse.</p>
+</div>
+<h4><strong>Referencias </strong><strong>Nagios</strong></h4>
+<ul>
+<li><a title="Installation Documentation" href="https://library.nagios.com/library/products/nagios-core/documentation/installing-nagios-core-from-source/?__hstc=118811158.a74a40fb6f09d35bfb9970fe1ab2e495.1648121926442.1648190535875.1648193718880.3&amp;__hssc=118811158.2.1648193718880&amp;__hsfp=494567032" target="_blank" rel="noopener noreferrer">Installation Documentation</a></li>
+<li><a title="Nagios Core Documentation" href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/index.html?__hstc=118811158.a74a40fb6f09d35bfb9970fe1ab2e495.1648121926442.1648190535875.1648193718880.3&amp;__hssc=118811158.2.1648193718880&amp;__hsfp=494567032" target="_blank" rel="noopener noreferrer">Nagios Core Documentation</a></li>
+<li><a href="https://github.com/NagiosEnterprises/nagioscore/blob/master/Changelog">Changelog (version history)</a></li>
+<li><a href="https://github.com/NagiosEnterprises/nagioscore">Git repository</a></li>
+</ul>
+<h3>6. Monitorización Windows</h3>
+<p style="text-align: justify;"><span>En este apartado, se describe el <strong>proceso para monitorizar un equipo Windows con Centreon</strong>, para ello, se utiliza un equipo<strong> Windows Server 2019 Datacenter</strong> configurado en la misma red que el servidor CentOS. A continuación se describen los pasos en las siguientes pestañas.</span></p>
+<p style="text-align: justify;"><span>Configuración del Equipo Windows Server 2019:</span></p>
+<ul>
+<li style="text-align: justify;"><span><strong>dominio:</strong> ciber.local.</span></li>
+<li style="text-align: justify;"><span><strong>Adaptador de red</strong> en modo puente.</span></li>
+<li><strong>Dirección ip:</strong> 192.168.0.200/24.</li>
+<li><strong>Gateway</strong>: 192.168.0.1 (interfaz LAN del router con acceso a internet).</li>
+<li><strong>DNS</strong>: 192.168.0.1 (interfaz LAN del router con acceso a internet).<span></span></li>
+</ul>
+<div class="exe-fx exe-tabs" style="text-align: justify;">
+<h2>Paso 1</h2>
+<p class="Standard" style="text-align: justify;">Para empezar, hay que <strong>instalar el servicio SNMP</strong> que va a permitir monitorizar el equipo. Aunque se pueden '<strong>Activar o desactivar las características de Windows</strong>' desde la interfaz gráfica, en este caso se realiza mediante un cmdlet de Powershell, pero antes, se comprueba si está instalada con el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Windows\system32\&gt;</strong> Get-WindowsFeature -Name "SNMP*"</span></pre>
+<p class="Standard" style="text-align: center;"><img src="get-windows-featrure.png" alt="" width="708" height="150" /></p>
+<p class="Standard" style="text-align: justify;">Como se puede observar, no está instalado el servicio SNMP por lo que se procede a instalarlo:</p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Windows\system32\&gt;</strong> Install-WindowsFeature SNMP-Service -IncludeAllSubFeature -IncludeManagementTools</span></pre>
+<p class="Standard" style="text-align: center;"><img src="install-snmp.png" alt="" width="812" height="144" /></p>
+<p class="Standard" style="text-align: justify;"><span>A continuación, hay que reiniciar el equipo.</span></p>
+<p class="Standard" style="text-align: justify;"><span>Una vez se inicia sesión, </span><span>se verifica que si el servicio SNMP está instalado ya.</span></p>
+<pre><span style="font-size: 12pt;"><strong>PS C:\Windows\system32\&gt;</strong> Get-WindowsFeature -Name "SNMP*"</span></pre>
+<p class="Standard" style="text-align: center;"><img src="servicio-snmp-instalado.png" alt="" width="688" height="132" /></p>
+<p class="Standard" style="text-align: justify;">En el siguiente <strong><a href="https://techexpert.tips/es/powershell-es/powershell-instalacion-de-snmp-en-windows/" target="_blank" rel="noopener">enlace</a></strong>, se puede consultar cómo realizar este proceso en Windows 10.</p>
+<h2>Paso 2</h2>
+<p style="text-align: justify;"><span>Una vez se tiene el servicio instalado, hay que configurar la comunidad y <strong>añadir el equipo al servidor Centreon</strong>. Para añadir el equipo a la comunidad, se deben seguir los siguientes pasos que quedan reflejados en las siguientes figuras, donde se accede </span><span>a services para buscar el <strong>servicio snmp</strong> y <strong>agregar el mismo a la comunidad SNMP</strong> del servidor Centreon, que para este caso es <b>guia_sshteam</b> (ver apartado 4. Configuración de Centreon)<b>.</b></span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 40.8136%; text-align: center;"><a href="servicios-SNMP.png"><img src="servicios-SNMP.png" alt="" width="829" height="399" /></a></td>
+<td style="width: 28.3464%; text-align: center;"><a href="agreagar-comunidad.png"><img src="agreagar-comunidad.png" alt="" width="452" height="502" /></a></td>
+<td style="width: 30.8399%; text-align: center;"><img src="agregar-ip-poller.png" alt="" width="454" height="502" /></td>
+</tr>
+<tr>
+<td style="width: 40.8136%; text-align: center;"><span style="font-size: 12pt;">Acceso a servicios.</span></td>
+<td style="width: 28.3464%; text-align: justify;"><span style="font-size: 12pt;">Dentro de la configuración del servicio (acceder a Propiedades), hay que acceder al apartado “<b>seguridad</b>” y otorgar derechos a la comunidad de “<b>SOLO LECTURA</b>”.</span></td>
+<td style="width: 30.8399%; text-align: center;"><span style="font-size: 12pt;">Hay que añadir la id del poller o server de centreon.</span></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 3</h2>
+<p style="text-align: justify;">A continuación, hay que <strong>añadir el equipo en Centreon</strong> con su<strong> plantilla de Windows correspondiente</strong>, para ello, hay que ir al <strong>navegador en el panel web de Centreon</strong> y añadir un host con la IP del equipo Windows Server, la plantilla de Windows y en este caso monitorizado desde el servidor central y la comunidad correspondiente. Una vez se introducen los datos, hay que pulsar el botón 'Save', y a continuación, si todo ha ido bien, aparece el host creado (figura derecha).<o:p></o:p><o:p> </o:p></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="add-host-server.png"><img src="add-host-server.png" alt="" width="1028" height="989" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="host-serv-anadido.png"><img src="host-serv-anadido.png" alt="" width="1028" height="385" /></a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<h2>Paso 4</h2>
+<p style="text-align: justify;">A continuación, hay que acceder a Pollers para <span>exportar la configuración, aplicar las acciones y revisar que se ha creado correctamente. No hay que olvidar hacer chek en el Poller Central antes de realizar la exportación. En la figura del centro, se ha seleccionando: Generate Configuration Files, Run monitoring engine debug (-v), Move Export Files y Restart Monitoring Engine y seleccionado en <strong>Method --&gt; Restart</strong> (ver figura inferior derecha).</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><a href="export-poller-serv.png"><img src="export-poller-serv.png" alt="" width="955" height="286" /></a></td>
+<td style="width: 33.3333%; text-align: center;"><a href="restart-poller.png"><img src="restart-poller.png" alt="" width="690" height="327" /></a></td>
+<td style="width: 33.3333%; text-align: center;"><a href="resultado-export-conf-poller.png"><img src="resultado-export-conf-poller.png" alt="" width="598" height="536" /></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span></span>Si se accede al panel de <strong>Monitoring --&gt; Resources Status</strong> y no está el nuevo host, reiniciar el servidor Centreon. </p>
+<p style="text-align: center;"><img src="monitoring-2-hosts.png" alt="" width="1117" height="216" /></p>
+<h2>Paso 5</h2>
+<p class="Standard" style="text-align: justify;">Una vez que ya están los paquetes ICMP (ping) monitorizados, se pueden monitorizar también más servicios o características, como por ejemplo: CPU, disco, RAM, etc. Como ejemplo, se realiza un ping al servidor Windows Server 2019.<o:p></o:p></p>
+<p style="text-align: center;"><img src="view-moniotor-ping.png" alt="" width="1117" height="237" /></p>
+<h2>Paso 6</h2>
+A continuación, se van a <span style="font-size: 1em;"><strong>añadir servicios</strong> para monitorizarlos y para ello, hay que acceder a <strong>Configuración --&gt; Services --&gt; Services by host. </strong>En la ventana que aparece (figura de la derecha), hay que pulsar en <strong>'Add'.</strong></span>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 37.1065%; text-align: center;"><a href="acceso-add-services.png"><img src="acceso-add-services.png" alt="" width="414" height="601" /></a></td>
+<td style="width: 62.8935%; text-align: center;"><a href="add-service.png"><img src="add-service.png" alt="" width="948" height="342" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 7</h2>
+<p style="text-align: justify;">A continuación, hay que <strong>rellenar los valores del </strong><span><strong>servicio,</strong> que como ejemplo, se va a realizar la monitorización de la RAM en el host creado anteriormente. Para guardar el servicio, hay que pulsar el botón '<strong>Save</strong>'.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="conf-service-RAM.png" alt="" width="836" height="788" /></td>
+<td style="width: 50%; vertical-align: top;">
+<p><span style="font-size: 12pt;">A continuación, se describen los valores que se han establecido:</span></p>
+<ul>
+<li><span style="font-size: 12pt;"><strong>Description</strong>: Se pone RAM ya que es lo que se va a monitorizar.</span></li>
+<li><span style="font-size: 12pt;"><strong>Linked with Hosts *</strong>: Campo requerido y que en este caso es el servidor Windows</span></li>
+<li><span style="font-size: 12pt;"><strong>Server</strong>: Se selecciona el host Windows Server 2019-ciber que se ha añadido anteriormente y sobre el que se quiere monitorizar..</span></li>
+<li><strong><span style="font-size: 12pt;">Template: </span></strong><span style="font-size: 12pt;">Se selecciona la plantilla para Windows Memory.</span></li>
+<li><span style="font-size: 12pt;"><strong>Custom macros</strong>: Se añaden los umbrales para los valores de critical y warning.</span></li>
+<li><span style="font-size: 12pt;">Respecto al '<strong>Service Scheduling Options</strong>', los valor son:</span>
+<ul>
+<li><span style="font-size: 12pt;"><strong>Check Period:</strong> 24x7.</span></li>
+<li><span style="font-size: 12pt;"><strong>Max Check Attempts:</strong> 3.</span></li>
+<li><span style="font-size: 12pt;"><strong>Normal Check Interval:</strong> 15.</span></li>
+<li><span style="font-size: 12pt;"><strong>Retry Check Interval:</strong> 2.</span></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 8</h2>
+<p style="text-align: justify;"><span>Del mismo modo visto, se podrían añadir otros servicios, ejemplo, se añaden el de CPU y SWAP:</span></p>
+<p style="text-align: center;"><span><img src="services-windows.png" alt="" width="1148" height="145" /></span></p>
+<h2>Paso 9</h2>
+<p style="text-align: justify;"><span> Por último, sólo queda volver a actualizar el poller correspondiente (que en este caso es el Central) y corroborar los resultados. Si se observar la figura de la derecha, se tiene '<strong>Conf Changed</strong>' a <span style="color: #ff0000;"><strong>YES</strong></span>, por lo que es un indicativo que hay que actualizar el poller pulsando en '<strong>Export configuration</strong>' como ya se ha realizado en anteriores ocasiones, es decir, seleccionando: Generate Configuration Files, Run monitoring engine debug (-v), Move Export Files y Restart Monitoring Engine y seleccionar en <strong>Method --&gt; Restart</strong> (ver figura inferior derecha).</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 35.1574%; text-align: center;"><img src="acceder-a-apollers.png" alt="" width="435" height="625" /></td>
+<td style="width: 64.8426%; text-align: center;">
+<p><img src="pollers-view.png" alt="" width="1108" height="417" /></p>
+<p><a href="restart-poller.png"><img src="restart-poller.png" alt="" width="481" height="228" /></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 10</h2>
+<p style="text-align: justify;">Si se accede a la Monitorización (<strong>Monitoring --&gt; Resources Status</strong>), se pueden ver los servicios con su información de estado, descripción del último dato obtenido, etcétera.</p>
+<p style="text-align: center;"><img src="monitoring-services-Windows.png" alt="" width="1474" height="268" /></p>
+<h2>Paso 11</h2>
+<p style="text-align: justify;"><span>Como comprobación, se ha realizado una prueba para observar que, efectivamente existe un "</span><strong>warning</strong><span>" cuando se supera el 70% de uso del SWAP y un critical cuando se supera el 90% de uso de la RAM. Para obtener estos datos, se han ejecutado procesos intensivos de memoria y cpu en el servidor Windows Server 2019. En la figura inferior, se muestra la barra de estados donde se indica 1 rojo (crítico), 1 naranja (1 warning) y 10 verdes (correctos).</span></p>
+<p style="text-align: center;"><span><img src="lectura-estados.png" alt="" width="462" height="54" /></span></p>
+<p style="text-align: center;"><span><img src="warning-swap.png" alt="" width="1511" height="185" /></span></p>
+<p style="text-align: center;"><span><img src="Critical-RAM.png" alt="" width="1515" height="189" /></span></p>
+</div>
+<h3>7. Crear vistas de datos</h3>
+<p style="text-align: justify;"><span>En este apartado, se presentan los datos de un servicio o un host en un gráfico en Centreon, de forma que sea algo más visual y se tenga constancia de los consumos a lo largo del tiempo.</span></p>
+<div class="exe-fx exe-tabs">
+<h2>Paso 1</h2>
+<p style="text-align: justify;"><span>Para comenzar, hay que al panel web de Centreon e instalar los módulos de vistas. Para ello, ir al apartado “</span><b>Administration/Extensions/Manager</b><span>”</span><b>:</b></p>
+<p style="text-align: center;"><b><img src="Extensions-manager.png" alt="" width="596" height="492" /></b></p>
+<h2>Paso 2</h2>
+<p style="text-align: justify;">Una vez en el <strong>panel de Extensiones</strong>, hay <span>que añadir los widgets que aparecen en la siguiente figura. Para <strong>añadir un widget</strong>, hay que pulsar en: <img src="add-widget.png" alt="" width="25" height="22" />. Una vez añadidos los widgets, ya se pueden añadir y personalizar gráficos.</span></p>
+<p style="text-align: center;"><span><img src="modules-extensions.png" alt="" width="1214" height="521" /></span><span></span></p>
+<h2>Paso 2</h2>
+<p style="text-align: justify;"><span>Desde el apartado “</span><b>Home/Custom Views</b><span>”, </span><span>hay que pulsar en el icono del '<strong>pencil</strong>', y a continuación, en añadir una nueva vista “<strong>+ </strong><b>Add view</b>”. Al añadir una vista, esta se puede personalizar mediante columnas de gráficos, para este caso, se selecciona 1 columna y como nombre, '<strong>Host-Prueba</strong>'. Para añadir la vista, hay que pulsar en el botón '<strong>Submit</strong>'.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 26.23%; text-align: left;"><img src="home-custom-views.png" alt="" width="376" height="122" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 32.3803%; text-align: center;"><img src="pulsar-pencil.png" alt="" width="517" height="207" /></td>
+<td style="width: 16.3817%; text-align: center;"><img src="add-view.png" alt="" width="208" height="115" /></td>
+<td style="width: 25.008%; text-align: center;"><img src="add-view-panel.png" alt="" width="308" height="241" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 4</h2>
+<p style="text-align: justify;"><span>Una vez añadida la vista, hay que seleccionar una plantilla desde el apartado “</span><b>Add widget</b><span>”. En él ya hay ejemplos definidos, por ejemplo, ver el estado de los hosts que hay monitorizados “</span><b>Host Monitoring. </b>A continuación, se le da un título y se pulsa el botón <b>'Submit'.</b></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 68.9137%; text-align: center;"><a href="add-widget-view.png"><img src="add-widget-view.png" alt="" width="974" height="402" /></a></td>
+<td style="width: 31.0863%; text-align: center;"><img src="add-widget-nombre.png" alt="" width="282" height="173" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 5</h2>
+<p style="text-align: justify;"><span>Al pulsar '<strong>Submit</strong>', aparece una nueva ventana con la <strong>vista creada</strong>.</span></p>
+<p style="text-align: center;"><span><img src="vistas-creadas.png" alt="" width="1074" height="303" /></span></p>
+<h2>Paso 6</h2>
+<p style="text-align: justify;"><span>En cada vista creada, se pueden personalizar aquellas columnas de datos que se quieran que aparezcan. Para ello, hay que pulsar sobre el icono de la llave inglesa. <img src="panel-herraminetas.png" alt="" width="109" height="36" />. En la ventana que aparece, se pueden seleccionar opciones como por ejemplo: las columnas que se quieren ver, el orden, cada cuanto se quiere que se actualice la información, etcétera. </span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="filters.png" alt="" width="590" height="409" /></td>
+<td style="width: 50%; text-align: center;"><img src="columns.png" alt="" width="429" height="514" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 7</h2>
+<p style="text-align: justify;"><span>Con esto ya se tendría cubierto la parte de gráficos. Si se pulsa sobre el icono del gráfico del host correspondiente, se accede al panel de gráficos.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 42.5287%; text-align: center;"><a href="ver-grafico-vista.png"><img src="ver-grafico-vista.png" alt="" width="886" height="280" /></a></td>
+<td style="width: 57.4713%; text-align: center;"><a href="grafico-ciber.png"><img src="grafico-ciber.png" alt="" width="1246" height="721" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>8. Monitarización de certificados web en Centreon</h3>
+<p style="text-align: justify;">En este apartado, se describe el proceso para <span>monitorizar una página web, en este caso de ejemplo, comprobar los certificados de una web.</span></p>
+<div class="exe-fx exe-tabs">
+<h2>Paso 1</h2>
+<p style="text-align: justify;">En primer lugar,hay que empezar creando el host correspondiente. En la siguiente figura, los primeros 3 campos hacen referencia a la página que se va a monitorizar. La plantilla que hay que seleccionar es '<strong>generic-active-host</strong>'. <span>Como se puede observar, no hace falta saber la IP del dominio de la web, simplemente con poner el dominio es suficiente, para este caso de ejemplo es <strong>jcrequena.github.io.</strong></span></p>
+<p style="text-align: center;"><img src="add-host-certificados.png" alt="" width="872" height="358" /></p>
+<h2>Paso 2</h2>
+<p style="text-align: justify;"><span> A continuación, hay que guardar. Como se puede observar en la figura, ya se tiene el host.</span></p>
+<p style="text-align: center;"><span><img src="panel-hosts.png" alt="" width="1003" height="354" /></span></p>
+<p><span></span></p>
+<h2>Paso 3</h2>
+<p style="text-align: justify;"><span>A continuación, hay que exportar la configuración (poller Central) para aplicar las acciones de inicio.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="export-poller.1.png"><img src="export-poller.1.png" alt="" width="991" height="315" /></a></td>
+<td style="width: 50%; text-align: center;"><img src="restart-poller.1.png" alt="" width="704" height="322" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 4</h2>
+<p class="Standard" style="text-align: justify;">A continuación, para comprobar el certificado, se debe crear un comando llamado “<b>check</b>”. Para ello, hay que acceder a '<strong>Commands</strong>' --&gt; '<strong>Checks</strong>' y configurar el comando según la figura Central. La figura de la derecha, aparece cuando se pulsa el botón '<strong>Describe argumentes</strong>'. En esta venta, se pueden definir valores de argumentos que se pueden utilizar en el comando, ejemplo: $ARG1$: jcrequena.github.io. PAra este caso, se configura el comando con los parámetros del mismo sin el uso de la asignación de variables para los argumentos.</p>
+<table border="0" style="width: 100%; height: 524px;">
+<tbody>
+<tr style="height: 524px;">
+<td style="width: 34.4251%; text-align: center; height: 524px;"><img src="acceso-comands.png" alt="" width="618" height="509" /></td>
+<td style="width: 37.0713%; text-align: center; height: 524px;"><a href="comand-check.png"><img src="configuration-check.png" alt="" width="1029" height="788" /></a></td>
+<td style="width: 28.5036%; text-align: center;"><a href="describe-argumentes.png"><img src="describe-argumentes.png" alt="" width="647" height="207" /></a></td>
+</tr>
+<tr>
+<td style="text-align: justify; width: 71.4964%;" colspan="2">
+<p class="Standard"><span style="font-size: 12pt;">El comando (plugin) <strong>check_http</strong> de nagios que se ha añadido, comprueba cuando caduca el certificado del host, donde:</span></p>
+<ul>
+<li class="Standard"><span style="font-size: 12pt;"><strong>-H:</strong> Identifica el host al que se le va a realizar la petición. Para este caso, jcrequena.github.io.</span></li>
+<li class="Standard"><span style="font-size: 12pt;"><strong>-C:</strong> Se indica si el certificado caduca en los próximo n días, para este caso, se pone 365.</span></li>
+<li class="Standard"><span style="font-size: 12pt;"><strong>-p:</strong> El puerto https (443)</span></li>
+</ul>
+<p class="Standard"><span style="font-size: 12pt;"><a href="https://nagios-plugins.org/doc/man/check_http.html" target="_blank" rel="noopener">Fuente comando check_http</a></span></p>
+</td>
+<td style="width: 28.5036%; text-align: justify;">
+<p class="Standard"><span style="font-size: 12pt;"> </span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 5</h2>
+<p style="text-align: justify;"><span>Ahora hay que <strong>asociar el comando</strong> que se acaba de crear al host. Para ello, hay que añadir un nuevo servicio al host que consistirá en asociarle el comando <strong>Certificados</strong> que se acaba de crear. Para este caso, se añade al host el campo '<strong>Check Comman</strong>' con el valor de <strong>Certificados</strong> que es el comando creado anteriormente.</span></p>
+<p style="text-align: center;"><img src="add-Certificados-HostWeb.png" alt="" width="966" height="648" /></p>
+<h2>Paso 6</h2>
+<p style="text-align: justify;">A continuación, hay que e<span>xportar la configuración:</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="exportar-host-command.png"><img src="exportar-host-command.png" alt="" width="1108" height="308" /></a></td>
+<td style="width: 50%; text-align: center;"><img src="export-ok.png" alt="" width="722" height="685" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 7</h2>
+<p style="text-align: justify;">Si se accede a '<strong>Custom Views</strong>', se puede observar que el host está levantado y ha recuperado el periodo de validez del sitio web. En la información aparece un Warning, ya que el certificado expira en pocos días, en concreto, 17 días. </p>
+<p><strong>Nota:</strong> Puede que haya que reiniciar el servidor centreon.</p>
+<p style="text-align: center;"><img src="custom-views-certificado.png" alt="" width="1309" height="219" /></p>
+<h2>Paso 8</h2>
+<p style="text-align: justify;">Otra forma de ver el resultado es accediendo a '<strong>Resource Status</strong>', se puede observar que el host está levantado y ha recuperado el periodo de validez del sitio web.</p>
+<p style="text-align: center;"><img src="monitoring-Web-Cert.png" alt="" width="1646" height="714" /></p>
+<h2>Paso 9</h2>
+<p style="text-align: justify;">Si se accede al detalle haciendo click sobre Web_JCRequena, se obtiene mucha más información.</p>
+<p style="text-align: center;"><img src="detalle-WebJCRequena.png" alt="" width="485" height="769" /></p>
+</div>
+<h3><span>9. Monitorización GNU/Linux</span></h3>
+<p><span>En el siguiente <a href="https://docs.centreon.com/docs/getting-started/monitor-linux-server-with-snmp/" target="_blank" rel="noopener">enlace</a>, tienes la documentación oficial de Centreon para monitorizar un equipo GNU/Linux con SNMP.</span><span></span></p>
+<p style="text-align: center;"><span><img src="monitor-centreon-lnux.png" alt="" width="953" height="301" /></span></p>
+<h3><span></span>10. Referencias</h3>
+<ul>
+<li><a href="https://docs.centreon.com/docs/20.10/monitoring/basic-objects/commands/" target="_blank" rel="noopener">Commands-Centreon</a></li>
+<li><a href="https://web.archive.org/web/20170613161102/https://github.com/centreon/" target="_blank" rel="noopener">Github - Centreon</a></li>
+<li><a href="https://www.bujarra.com/nagios-monitorizando-servidor-centreon/">https://www.bujarra.com/nagios-monitorizando-servidor-centreon/</a></li>
+<li><a href="https://ciberseguridadtotal.com/centreon-herramienta-de-monitorizacion-open-source/">https://ciberseguridadtotal.com/centreon-herramienta-de-monitorizacion-open-source/</a></li>
+<li><a href="https://www.incibe.es/en/protege-tu-empresa/catalogo-de-ciberseguridad/listado-soluciones/monitorizacion-sistemas-nagios" target="_blank" rel="noopener">Monitorización de Sistemas Nagios - Centreon</a></li>
+<li><a href="https://docs.centreon.com/docs/getting-started/monitor-linux-server-with-snmp/">https://docs.centreon.com/docs/getting-started/monitor-linux-server-with-snmp/</a></li>
+<li><a href="https://www.bujarra.com/monitorizando-un-equipo-linux-con-centreon-ejemplo-con-una-raspberry-pi-temperatura-de-su-cpu/">https://www.bujarra.com/monitorizando-un-equipo-linux-con-centreon-ejemplo-con-una-raspberry-pi-temperatura-de-su-cpu/</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="11_monitorizacin_en_windows_con_sysmon.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

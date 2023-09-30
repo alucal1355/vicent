@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6. Sistemas de copias de seguridad | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="daddy">3. Securización de los sistemas de administración remota</a>
+   <ul class="other-section">
+      <li><a href="31_secureshell.html" class="daddy">3.1 SecureShell</a>
+      <ul class="other-section">
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul class="other-section">
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li id="active"><a href="6_sistemas_de_copias_de_seguridad.html" class="active daddy">6. Sistemas de copias de seguridad</a>
+   <ul>
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_windows_wsus.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="61_herramientas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6. Sistemas de copias de seguridad</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id26">
+<div class="iDevice emphasis0">
+<div id="ta26_85" class="block iDevice_content">
+<h3>1. ¿Qué es una copia de seguridad?</h3>
+<p>Una copia de seguridad es una copia de archivos físicos o virtuales a un lugar secundario para su conservación en caso de que haya un fallo de seguridad en un sistema o cualquier otro tipo de problema.</p>
+<table border="0" style="height: 403px; width: 81.1802%; margin-left: auto; margin-right: auto;" class="block">
+<tbody>
+<tr style="height: 391px;">
+<td style="width: 33.3333%; text-align: center; height: 391px;"><a href="https://pixabay.com/es/vectors/nube-almacenamiento-datos-descargar-6107375/" target="_blank" rel="noopener"><img src="cloud-gd98431b47_640.png" alt="" width="640" height="397" /></a></td>
+<td style="width: 33.3333%; text-align: center; height: 391px;"><a href="https://pixabay.com/es/vectors/base-de-datos-apoyo-actualizaci%c3%b3n-4941302/" target="_blank" rel="noopener"><img src="database-ga5e499feb_640.png" alt="" width="249" height="249" /></a></td>
+</tr>
+<tr style="height: 12px;">
+<td style="width: 66.6666%; text-align: center; height: 12px;" colspan="2"><strong><em><span style="font-size: 12pt;">Pixabay license</span></em></strong></td>
+</tr>
+</tbody>
+</table>
+<h3 style="text-align: justify;">2. La regla 3-2-1 de las copias de seguridad</h3>
+<p style="text-align: justify;">Esta regla de las copias de seguridad se hace para tener una mayor seguridad en caso de que se puedan perder datos. Significa realizar 3 copias de seguridad, usar 2 dispositivos distintos de almacenamiento y dejar 1 copia de seguridad fuera del trabajo o del hogar.</p>
+<p style="text-align: center;"><img src="reglas-copias-seg.png" alt="" width="435" height="211" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> <span class="title">Regla 3-2-1</span>  <a href="https://www.incibe.es/protege-tu-empresa/guias/copias-seguridad-guia-aproximacion-el-empresario" target="_blank" class="author" rel="noopener">INCIBE</a>. </em></p>
+<p style="text-align: justify;"><strong>Realizar 3 copias de seguridad:</strong> por probabilidad es más seguro realizar 3 copias de seguridad en vez de 1 o 2. Además, como veremos al final, la tercera copia es conveniente que esté guardada fuera de nuestro puesto de trabajo.</p>
+<p style="text-align: justify;"><strong>Usar 2 dispositivos distintos de almacenamiento:</strong> para que haya más seguridad, es muy recomendado no usar 2 dispositivos del mismo tipo, es decir, si se ha realizado una copia de seguridad en un USB, habría que realizar la otra en un portátil por ejemplo y no en otro USB. Ya que, si falla una memoria USB, es probable que la otra también falle, y eligiendo otro dispositivo esta posibilidad disminuye.</p>
+<p style="text-align: justify;"><strong>Almacenar 1 copia de seguridad fuera del lugar de trabajo u hogar:</strong> aparte de realizar las dos copias de seguridad anteriores, es conveniente realizar una tercera en otro lugar por si hay algún problema externo. El mejor lugar para alojar esta tercera copia de seguridad sería en la nube.</p>
+<p style="text-align: justify;"></p>
+<header class="iDevice_header">
+<h1 class="iDeviceTitle"><span style="font-size: 18pt;">Para saber más</span></h1>
+</header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta92_128" class="block iDevice_content">
+<p style="text-align: justify;"><strong>INCIBE. Política de copias de seguridad</strong>. <a href="https://www.incibe.es/sites/default/files/contenidos/guias/guia-copias-de-seguridad.pdf">https://www.incibe.es/sites/default/files/contenidos/guias/guia-copias-de-seguridad.pdf</a></p>
+</div>
+</div>
+</div>
+<h3>3. Copias de seguridad en Cloud</h3>
+<p style="text-align: justify;">Las copias de seguridad en la nube son muy recomendables ya que traen muchas ventajas consigo. Por ejemplo, se puede acceder a los datos respaldados desde cualquier parte del mundo que tenga conexión a internet. No hay que realizar ningún gasto monetario en ningún dispositivo hardware para almacenar los datos. Además, si se guardan en sitios oficiales, están en servidores seguros contra amenazas y mayoritariamente cifradas.</p>
+<p style="text-align: justify;">Realizar las copias en la nube no suelen ser afectadas por catástrofes físicas. Por ejemplo, en un incendio o si simplemente si se pierde el disco duro esto con el servicio en la nube no pasaría.</p>
+<p></p>
+<header class="iDevice_header">
+<h1 class="iDeviceTitle"><span style="font-size: 18pt;">Para saber más</span></h1>
+</header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta57_128" class="block iDevice_content">
+<p><strong>Si quieres conocer cómo hacer copias de seguridad de Máquinas Virtuales</strong>: <a href="https://www.nakivo.com/es/vm-backup/">https://www.nakivo.com/es/vm-backup/</a></p>
+</div>
+</div>
+</div>
+<h3><span><span class="instancename">4. Referencias</span></span></h3>
+<ul>
+<li><span><a href="https://www.incibe.es/protege-tu-empresa/guias/decalogo-ciberseguridad-empresas-guia-aproximacion-el-empresario" target="_blank" rel="noopener"><span class="instancename">Decálogo ciberseguridad empresas: una guía de aproximación para el empresario (INCIBE)</span></a></span><span class="instancename"></span>
+<ul>
+<li><span>Sección "2.3 Copias de seguridad".</span></li>
+</ul>
+</li>
+<li><span><a href="http://www.cetem.es/recursos/publicaciones-cetem/i/898/325/guia-para-la-implantacion-de-medidas-de-seguridad-informatica-en-la-pyme" onclick="browseURL(this); return false" target="_blank" rel="noopener">Guía para la implantación de medidas de seguridad informática en la PYME</a></span>
+<ul>
+<li><span>Sección "3.10 Copias de respaldo y recuperación".</span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_windows_wsus.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="61_herramientas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

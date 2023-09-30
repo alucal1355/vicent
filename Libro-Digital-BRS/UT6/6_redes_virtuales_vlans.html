@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6. Redes virtuales (VLANs) | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-47"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="6_redes_virtuales_vlans.html" class="active daddy">6. Redes virtuales (VLANs)</a>
+   <ul>
+      <li><a href="61_introduccin_a_gns3.html" class="daddy">6.1 Introducción a GNS3</a>
+      <ul class="other-section">
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="prctica_1_subnetting_vlsm.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="61_introduccin_a_gns3.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6. Redes virtuales (VLANs)</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id85">
+<div class="iDevice emphasis0">
+<div id="ta85_85" class="block iDevice_content">
+<h3>1. ¿Qué es una VLAN?</h3>
+<p style="text-align: justify;"><span><strong>VLANs</strong> acrónimo de virtual LAN, «red de área local virtual», es un método para crear redes lógicas independientes dentro de una misma red física. Dentro de un <strong>switch</strong> pueden coexistir varias redes virtuales.</span></p>
+<p>Esto permite crear redes (lógicas) independientes dentro de una red (física) más grande. Tienen las siguientes características:</p>
+<ul>
+<li style="text-align: justify;"><span style="color: #666666; font-size: 0.95em;">Las modificaciones y la configuración es sencilla, en función del dispositivo hardware será más o menos escalable (características de gestión de tráfico, número de bocas, velocidades TX/RX) y ampliable a equipos similares.</span></li>
+<li>Aportan gran fiabilidad y confianza, ya que ni la seguridad, ni la disponibilidad se ven comprometidas.</li>
+</ul>
+<h4>1.1 Características de las VLAN</h4>
+<ul>
+<li>Crean una topología virtual independiente de la física.</li>
+<li>Permiten agrupar a los usuarios en grupos de trabajo flexibles.</li>
+<li>Funcionan en los niveles <strong><em>2 y 3 de OSI</em></strong>.</li>
+<li>La comunicación entre VLANs requiere <strong><em>enrutamiento de capa 3</em> </strong>(routers).</li>
+<li>Permiten controlar el <strong><em>tamaño de los dominios de broadcast</em></strong>.</li>
+<li>Necesitan <strong><em>administración</em></strong>.</li>
+<li>Pueden ayudar a <strong><em>aumentar la seguridad de la red</em></strong>.</li>
+</ul>
+<h4>1.2 Segmentación con VLAN</h4>
+<ul>
+<li>Cada usuario se conecta al switch VLAN más próximo físicamente.</li>
+<li>Se definen varias VLANs en los switches.</li>
+<li>Los usuarios se agrupan en las VLANs, según criterio del administrador.</li>
+<li>La pertenencia de un usuario a una VLAN no depende del cableado físico.</li>
+<li>Cada VLAN es un dominio de broadcast.</li>
+<li>El router permite la comunicación entre VLANs.</li>
+</ul>
+<h3>2. ¿Cómo funciona?</h3>
+<p style="text-align: justify;">Para las <strong>VLAN</strong> se emplea la gestión del software para conectar ordenadores y servidores a través de una red. Por lo tanto no se necesita cambiar el hardware ya que las modificaciones se hacen a través del software.</p>
+<p style="text-align: center;"><img src="vlan.png" alt="" width="701" height="411" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Vlan.</em></p>
+<p style="text-align: justify;"><span>Para <strong>crear una VLAN</strong> se necesita un <strong>Switch</strong> de <strong>nivel 2</strong> o <strong>nivel 3</strong>, diseñados para trabajar con VLAN. Estos switches, a diferencia de los utilizados comercialmente para redes básicas como las redes domésticas, son <strong>gestionables,</strong> ofrecen opciones de configuración avanzada y están más orientados al mundo profesional.</span></p>
+<p style="text-align: justify;">Además, dentro de los switches se pueden encontrar una gran variedad, de diferentes marcas, funcionalidades y precios, por lo que hay que quedarse con la idea general que a través de un <strong>switch gestionable</strong> se podrán configurar distintos tipos de VLAN, que en la práctica son tres:</p>
+<ul style="text-align: justify;">
+<li style="text-align: justify;"><strong>VLAN basada en puerto</strong>: Se configuran las "bocas" necesarias del switch para que se enruten a través de un puerto. Esto se puede hacer con 1 o más dispositivos finales (portátiles, periféricos, etc.). Por este tipo de enlaces solo pasa el tráfico de una VLAN.</li>
+<li style="text-align: justify;"><strong>VLAN basada en etiquetas</strong>:  Configuración dinámica de la información, a través de <strong>TAGs</strong> (etiquetas), por lo que cada<span> </span><strong>trama</strong><span> </span>esta identificada (tag) y corresponde con una VLAN.</li>
+<li style="text-align: justify;"><strong>VLAN hibrida</strong>: Puerto más etiqueta, en la práctica si el dispositivo lo permite se usa esta solución mixta que combina ambas técnicas, la comunicación dentro del switch se realiza a través de puertos asignados, mientras que la comunicación entre más dispositivos se basa en etiquetas.</li>
+</ul>
+<h4 style="text-align: justify;">2.1 ¿Cómo se envía la información a través de una VLAN etiquetada?</h4>
+<p style="text-align: justify;">Cuando un switch recibe una trama, lee el campo de la etiqueta de VLAN y lo compara con los identificadores de VLAN que tiene asociados a cada uno de sus puertos, distribuyendo la trama por el puerto correspondiente (nunca por el resto de puertos).</p>
+<p style="text-align: justify;"><strong>Enlaces entre dispositivos</strong></p>
+<ul style="text-align: justify;">
+<li style="text-align: justify;"><strong>Troncales:</strong><span> </span>son las conexiones entre dispositivos para llevar tramas de más de una VLAN, bien entre un switch y otro switch, bien de un switch a un router o incluso directamente con un servidor (es necesario que su interfaz de red soporte "trunking"). Se configura en uno o más puertos de los dispositivos con la finalidad de conectar distintas VLANs.</li>
+</ul>
+<p style="text-align: justify;">Estas conexiones se basan en estándares de protocolos como <a href="https://es.wikipedia.org/wiki/IEEE_802.1Q" target="_blank" rel="noopener">IEEE 802.1Q</a> que permite a varias VLAN compartir una misma red física. Para diferenciar el tráfico de cada VLAN se utiliza el etiquetado dentro de cada trama (<strong>802.1Q Tag</strong>).</p>
+<p style="text-align: justify;">Aunque se ha comentado que es un estándar (IEEE 802.1Q), su configuración puede variar en función del dispositivo, por lo que es importante entenderlo conceptualmente, para poder aplicarlo a los dispositivos comerciales (CISCO, D-Link, etc.).</p>
+<h3 style="text-align: justify;">3. Ventajas y configuraciones VLAN</h3>
+<p style="text-align: justify;">La ventaja de una VLAN frente a una red tradicional es que se puede dividir una LAN en varias VLAN más pequeñas, flexibles y seguras. Tiene las siguientes características:</p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 1em; text-align: left;">Permite configuraciones más flexibles, normalmente basadas en el software de gestión del dispositivo en cuestión.</span></li>
+<li style="text-align: justify;">Permite el control de la red a un grupo determinado de usuarios o equipos e impide la visibilidad entre redes de distinto propósito (gestión y administración de una empresa, producción, sistemas IT, etc).</li>
+<li style="text-align: justify;">Permite mejorar el rendimiento para cada red, el tráfico interno no circula a través de toda la red sino que se dirige a la VLAN correspondiente reduciendo el tráfico y el consumo de ancho de banda.</li>
+</ul>
+<h4>3.1 Configuraciones VLAN</h4>
+<p style="text-align: center;"><a href="esquema-vlan.png"><img src="esquema-vlan.png" alt="" width="476" height="356" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Esquema Vlan.</em></p>
+<h4>3.2 Tipos de VLAN</h4>
+<ul>
+<li style="text-align: justify;"><strong>VLAN predeterminada</strong>. Todos los puertos del switch están asociados a la misma. No se puede eliminar ni modificar. Se recomienda desasociar los puertos que se utilicen de la misma, para evitar brechas de seguridad.</li>
+<li style="text-align: justify;"><strong>VLAN estáticas basadas en agrupación por puertos</strong>. <span>Se asocian los nodos empleando los puertos del switch. Cada VLAN incluye los equipos que están conectados a los puertos concretos de cada switch. Es de fácil implementación pero difícil de administrar. Cambiar un equipo de puerto o de switch implica la reconfiguración de la VLAN.</span></li>
+<li style="text-align: justify;"><strong>VLAN dinámicas basadas en agrupación por MAC</strong>. Los nodos se agrupan de forma lógica (especificando la dirección MAC). Cada VLAN engloba los equipos que entran en un conjunto de direcciones MAC, con independencia del puerto al que estén conectados del switch.</li>
+<li style="text-align: justify;">Mejora la seguridad y además, como se trabaja con direcciones MAC, si se cambia un equipo de lugar, no hace falta reconfigurar la VLAN. No obstante si se usa otro equipo, hay que añadir su MAC a la configuración.</li>
+<li style="text-align: justify;"><strong>VLAN dinámicas basadas en agrupación por tipo de protocolo</strong>. Consiste en segmentar las VLAN por tipo de tráfico que transmiten, por ejemplo si hablamos de tráfico IP una VLAN dedicada al tráfico del mismo y otra al de IPX.</li>
+<li style="text-align: justify;"><strong>VLAN dinámicas basadas en agrupación por direcciones IP</strong>. Los nodos se agrupan según la dirección IP. Con un funcionamiento similar al de agrupación por MAC, pero es un poco más flexible, ya que las IP no son exclusivas de cada equipo. No obstante, para crear este tipo de VLAN se necesita un tipo de switch que trabaja en el nivel 3 de red.</li>
+</ul>
+<h3 style="text-align: justify;"><span>4. ¿Cómo se configura una VLAN?</span></h3>
+<p><span>En la siguiente esquema, se identifican las etapas que intervienen en la configuración de una VLAN.</span></p>
+<p style="text-align: center;"><a href="Configurar-VLAN.png"><span><img src="Configurar-VLAN.png" alt="" width="480" height="665" /></span></a></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Etapas de configuración VLAN.</em></p>
+<h3 style="text-align: justify;"><span>5. Referencias</span></h3>
+<ul>
+<li style="text-align: justify;"><span><a href="https://sites.google.com/site/redeslocalesyglobales/4-configuracion-de-red/4-redes-de-area-local-virtuales-vlans/6-interconexiones-de-vlans">Recopilatorio de temas de redes locales y VLAN</a></span></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="prctica_1_subnetting_vlsm.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="61_introduccin_a_gns3.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

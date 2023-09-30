@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.5 Instalar y configurar Filebeat | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-114"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li id="active"><a href="315_instalar_y_configurar_filebeat.html" class="active no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3141_output_genrico_logstash.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.5 Instalar y configurar Filebeat</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id156">
+<div class="iDevice emphasis0">
+<div id="ta156_85" class="block iDevice_content">
+<h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;"><strong>Filebeat</strong> es un complemento ligero que se utiliza para <strong>recopilar, reenviar y centralizar datos de registro de eventos</strong>. Es el <strong>módulo Beats</strong> más utilizado. Una de las principales ventajas de Filebeat es que ralentiza su ritmo si el servicio Logstash está sobrecargado de datos.</p>
+<p style="text-align: justify;"><strong>Filebeat </strong>se instala como un agente en los servidores de los que recopila registros. Puede reenviar los registros que recopila a <strong>Elasticsearch</strong> o <strong>Logstash</strong> para su indexación.</p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Hay que <strong>asegurarse</strong> que el<strong> servicio Kibana esté activo y funcionando</strong> durante el procedimiento de instalación y configuración de Filebeat.</p>
+</div>
+<p style="text-align: justify;">En el siguiente diagrama, se describen las etapas que hay que seguir para la instalación/configuración  y puesta en marcha de filebeat.</p>
+<p style="text-align: center;"><a href="Diagrama-filebeats.jpg" target="_blank" rel="noopener"><img src="Diagrama-filebeats.jpg" alt="" width="609" height="385" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 0.</strong> Diagrama de etapas de la instalación/configuración y puesta en marcha de filebeat.</em></p>
+<h3 style="text-align: justify;">2. Instalación</h3>
+<p style="text-align: justify;">Para instalar <strong>Filebeat</strong> el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>apt install filebeat<strong><br /></strong></span></pre>
+<p style="text-align: center;"><img src="install-filebeat.png" alt="" width="827" height="316" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Instalación de filebeat.</em></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Una vez finalizada la instalación, se puede verificar la versión ejecutando:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>apt-cache policy filebeat</span></pre>
+<p style="text-align: center;"><img src="apt-cache-filebear.png" alt="" width="688" height="246" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Comprobar la versión de filebeat.</em></p>
+<h3 id="configurefilebeatonubuntu" style="text-align: justify;">3. Configurar Filebeat 8.1</h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;">De forma predeterminada, <strong>Filebeat</strong> está configurado para enviar datos a <strong>Elasticsearch</strong>. En el capítulo anterior, se ha configurado Logstash para recibir datos de eventos de Filebeat, por lo que hay que configurar </span><span style="font-size: 12pt;"><strong>Filebeat</strong> para que se conecte a <strong>Logstash. </strong>Para ello, hay que editar el fichero <strong>/etc/filebeat/filebeat.yml </strong>y en las secciones <strong>output</strong>, hay que <strong>comentar el output de Elasticsearch</strong> y <strong>habilitar el output de Logstash</strong> como se muestra a continuación:</span></p>
+<pre><span style="font-size: 12pt;">#output.elasticsearch:
+  # Array of hosts to connect to.
+#  hosts: ["localhost:9200"]<br />output.logstash: <br />  # The Logstash hosts <br />  hosts: ["localhost:5044"]</span><span style="font-size: 12pt;">
+</span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="filebeat-yml.png" alt="" width="657" height="317" /><br /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 3.</strong> Fichero de configuración de filebeat.</em></span></p>
+<h3 style="text-align: justify;"><span style="font-size: 14pt;">4. Verificar la conexión de salida de Filebeat y su configuración</span></h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;">A continuación para verificar la salida de Filebeat, hay que parar el servicio y luego, hacer el test.</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>systemctl stop filebeat</span></pre>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>filebeat -e test output</span></pre>
+<p style="text-align: center;"><img src="filebeat-test.png" alt="" width="953" height="327" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Verificar la conexión de salida de filebeat.</em></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">A continuación, se verifica la configuración de Filebeat, el comando es el siguiente:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>filebeat -e test config</span></pre>
+<p style="text-align: center;"><img src="filebeat-test-config.png" alt="" width="953" height="222" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Verificar el fichero de configuración de filebeat.</em></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si todo está correcto, la salida del comando será '<strong>Config OK</strong>'.</span></p>
+<h3 style="text-align: justify;">5. Habilitar el módulo de sistema de Filebeat</h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;">En el <strong>capítulo anterior</strong>, el <strong>filtro Logstash</strong> se configuró para analizar los <strong>eventos de autenticación del sistema</strong>. El módulo del sistema recopila y analiza los registros creados por el servicio de registro del sistema de las distribuciones comunes basadas en Unix/Linux. Este módulo está deshabilitado por defecto. Para enumerar los módulos disponibles, el comando es el siguiente: </span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>filebeat modules list</span></pre>
+<p style="text-align: center;"><img src="filbeat-modules-list.png" alt="" width="453" height="361" /><span style="font-size: 12pt;"></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 6.</strong> Listar los módulos de filebeat.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span>A continuación, se <strong>habilita</strong> el <strong>módulo system</strong> para capturar los logs del sistema operativo, el comando es el siguiente: </span></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>filebeat modules enable system</span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="enable-modulo-system.png" alt="" width="523" height="80" /><br /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 7.</strong> Habilitar el módulo de sistema (system).</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span>Para verificar que el módulo del sistema ha sido habilitado, el comando es:</span></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>filebeat modules list</span></pre>
+<p style="text-align: center;"><img src="modules-list-02.png" alt="" width="452" height="380" /></p>
+<p style="text-align: center;"><em><strong>Figura 8.</strong> Verificar el módulo system.</em></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Esta operación también se puede realizar consultando el directorio de configuración de módulos. Como se puede observar en la figura inferior, todos los módulos están deshabilitados excepto el system que es el que se acaba de habilitar.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>ls /etc/filebeat/modules.d/</span></pre>
+<p style="text-align: center;"><span><img src="modules-filebeat-ls.png" alt="" width="695" height="435" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 9.</strong> Listar los módulos de filebeat.</em></span></p>
+<p style="text-align: justify;"><span></span></p>
+<p style="text-align: justify;"><span>Una vez se habilita el módulo system, se consigue activar una <strong>plantilla</strong> por defecto para la <strong>recogida de logs</strong> del <strong>sistema. </strong>Si se abre el fichero en edición, se puede observar que por defecto, se tiene deshabilitado la recogida de<strong> syslog </strong>y<strong> auth.</strong></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/filebeat/modules.d/system.yml</span></pre>
+<p><img src="system-yml-filebeat-porDefecto.png" alt="" width="696" height="337" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 10.</strong> Fichero de configuración por defecto del módulo system.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span>Si lo que queremos es personalizar la recogida de logs del sistema en vez de utilizar una plantilla predefinida, editaremos el fichero </span><em>/etc/filebeat/filebeat.yml</em><span> indicando el path absoluto de los logs que queremos recoger. Por ejemplo, el </span><em>boot.log</em><span>.</span></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Dado que en este escenario se quieren recoger los eventos de autenticación por ssh, hay que modificar el <strong>módulo del sistema</strong> para <span>personalizar la recogida de logs del sistema en vez de utilizar una plantilla predefinida y </span>permitir la lectura de registros de autenticación. Para ello, hay que establecer la sección <strong>syslog</strong> como false y en <strong>var.paths </strong>de la sección<strong> auth</strong>, la ruta del fichero de log, ejemplo: <strong>var.paths: ["/var/log/auth.log"]. </strong>En caso de dejar vacío el valor de <strong>var.paths</strong>, filebeat se encargará de elegir la ruta de los ficheros de log para autenticación dependiendo del sistema operativo donde se esté ejecutando.</span></p>
+<p style="text-align: center;"><img src="module-system-yml-filebeat.png" alt="" width="746" height="361" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 11.</strong> Fichero de configuración modificado del módulo system.</em></span></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span style="font-size: 12pt; color: #000000;">Se puede obtener más información sobre el<strong> módulo system</strong> <span style="color: #0000ff;"><strong><a href="https://www.elastic.co/guide/en/beats/filebeat/master/filebeat-module-system.html" target="_blank" rel="noopener" style="color: #0000ff;">aquí</a></strong></span>.</span></p>
+</div>
+<h3><span>6. Cargar la plantilla de índice en Elasticsearch</span></h3>
+<p style="text-align: justify;"><span>Un <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html#_index"><em>índice de Elasticsearch</em></a> es un <strong>conjunto de documentos</strong> con características similares. Los índices se identifican con un nombre, que se utiliza para referirse al índice cuando se realizan varias operaciones dentro de este. La plantilla de índice se aplicará de forma automática al crear un nuevo índice.</span></p>
+<p style="text-align: justify;"><span>Para cargar la plantilla de índice en <strong>Elasticsearch</strong>, debe haber una conexión a Elasticsearch. Dado que en este escenario se usa<strong> Logstash como salida</strong>, hay que cargar la <strong>plantilla en Elasticsearch</strong> manualmente. En primer lugar se exporta la plantilla de índice a un fichero al que se le nombra como <span style="font-size: 12pt;"><strong>filebeat.template.json</strong>.</span></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/filebeat/#</strong>filebeat export template &gt; filebeat.template.json</span></pre>
+<p style="text-align: center;"><span style="font-size: 14pt;"><img src="filebeat-export-template.png" alt="" width="718" height="47" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 12.</strong> Exportar la plantilla de filebeat.</em></span></p>
+<p style="text-align: justify;"><span>A continuación, para instalar la plantilla que se acaba de exportar, es decir, el fichero <strong> <span style="font-size: 12pt;">filebeat.template.json</span></strong>, hay que ejecutar el siguiente comando:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/filebeat/#</strong>curl -XPUT -H 'Content-Type: application/json' --cacert /etc/elasticsearch/certs/http_ca.crt -u \<br />elastic 'https://elastics-master01:9200/_index_template/filebeat-8.1.0' -d@filebeat.template.json</span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><img src="cargar-plantilla-elasticSerach-filebeat.png" alt="" width="1133" height="82" /></em></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 13.</strong> Cargar la plantilla en elasticsearch.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong><a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-template.html#load-template-manually" target="_blank" rel="noopener">Fuente</a></strong></span></p>
+<h3 style="text-align: justify;"><span style="font-size: 14pt;">7. Dashboards en Kibana para FileBeat</span></h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Por defecto, <strong>Filebeat</strong> viene empaquetado con dashboards (paneles) de muestra de Kibana que permiten visualizar los <strong>datos de Filebeat en Kibana</strong>. Para cargar los paneles (dashboards) en kibana, hay que establecer la configuración de kibana para poder hacer la transferencia. Para realizar todo esto, hay que realizar una modificación en el fichero <strong>filebeat.yml</strong> y ejecutar el comando de carga. </span><span style="font-size: 12pt;">En primer lugar, se abre el fichero <strong>filebeat.yml </strong> en modo edición.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/filebeat/filebat.yml</span></pre>
+<p style="text-align: justify;">En la sección de Kibana, se añade la información del host y puerto a la escucha, es decir, kibana está a la escucha en el puerto 5601 en el servidor elastics-master01. Para establecer la conexión, hay que añadir las credenciales del <strong>usuario elastic</strong> de elasticsearch y para ello, añaden los <strong>parámetros</strong> <strong>username</strong> y <strong>password</strong> con los valores de las claves que hay que generar previamente en el keystorage de filebeat, de esta manera y por seguridad, no se pondrá el nombre del usuario y la contraseña en claro en el fichero. Por último, se establece el parámetro <strong>protocol</strong> a http.<span style="color: #666666;"><span style="font-size: 15.2px;"></span></span></p>
+<p style="text-align: center;"><img src="filebeat-yml-kibana.png" alt="" width="753" height="296" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 14.</strong> Sección Kibana del archivo filebeat.yml.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para <strong>crear el keystore de filebeat</strong> y las claves, los comandos son los siguientes:</span><span style="font-size: 12pt;"></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/# </strong>filebeat --strict.perms=false keystore create --force<br /><strong>root@elastics-master01:/#</strong> filebeat keystore add E_PASS <br /><strong>root@elastics-master01:/#</strong> filebeat keystore add E_USER<br /><strong>root@elastics-master01:/#</strong> filebeat --strict.perms=false keystore list<br /></span></pre>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="crear-keystorage-claves.png" alt="" width="644" height="220" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 15.</strong> Creación del almacén de claves de filebeat y claves para kibana.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">A continuación, hay que ejecutar el comando de carga de los paneles para kibana. De forma predeterminada, el comando importa los dashboards del directorio kibana, que está disponible en el paquete Beat.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>filebeat setup --dashboards</span></pre>
+<p style="text-align: center;"><span style="font-size: 14pt;"><img src="carga-dashboards.png" alt="" width="567" height="51" /></span></p>
+<p style="text-align: center;"><span style="font-size: 14pt;"><span style="font-size: 12pt;"><em><strong>Figura 16.</strong> Carga de dashboards en kibana.</em></span></span></p>
+<p><span style="font-size: 12pt;">Como se puede observar en la figura superior, la carga se ha realizado correctamente.</span></p>
+<p><strong>Referencias:</strong></p>
+<ul>
+<li><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/ELK/filebeat/keystore.sh" target="_blank" rel="noopener">Github - JCRequena - Keystore filebeat y carga de dashboards</a></li>
+<li><a href="https://www.elastic.co/guide/en/beats/filebeat/current/load-kibana-dashboards.html#load-dashboards-logstash">https://www.elastic.co/guide/en/beats/filebeat/current/load-kibana-dashboards.html#load-dashboards-logstash</a></li>
+<li><a href="https://www.elastic.co/guide/en/beats/devguide/8.1/import-dashboards.html">https://www.elastic.co/guide/en/beats/devguide/8.1/import-dashboards.html</a></li>
+</ul>
+<h3 style="text-align: justify;"><span style="font-size: 14pt;">8. Iniciar y habilitar FileBeat</span></h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Por último, hay que<strong> iniciar y habilitar Filebeat</strong> para que se ejecute en el arranque del sistema.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>systemctl enable --now filebeat<br /></span></pre>
+<p style="text-align: center;"><img src="init-enable-filebeat.png" alt="" width="935" height="99" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 17.</strong> Habilitar e iniciar el servicio filebeat.</em></span></p>
+<p style="text-align: justify;">Se comprueba el estado de <strong>filebeat</strong>, donde tiene que aparecer la conexión al<strong> puerto 5044</strong> y el <strong>path</strong> para recoger los logs de autenticación, es decir:</p>
+<ul>
+<li style="text-align: justify;"><strong>"message":"Connection to backoff(async(tcp://localhost:5044)) established".</strong></li>
+<li style="text-align: justify;"><strong>Configured paths: [/var/log/auth.log]</strong></li>
+</ul>
+<p style="text-align: center;"><a href="status-filebeat-22-03.png"><img src="status-filebeat-22-03.png" alt="" width="1212" height="776" /></a></p>
+<p style="text-align: center;"><span><em><strong>Figura 18.</strong> Comprobar el estado del servicio filebeat.</em></span></p>
+<h3 style="text-align: justify;"><span>9. Verificar la recepción de datos de Elasticsearch y visualización del índice en Kibana</span></h3>
+<p style="text-align: justify;">A continuación, hay  que realizar un inicio de sesión exitoso y fallido en el sistema con <strong>Filebeat</strong> instalado. Después de eso, hay que iniciar sesión en el servidor de <strong>Elastic Stack</strong> y verificar si <strong>Filebeat</strong> está enviando archivos de registro a <strong>Logstash</strong> para su procesamiento. Una vez procesados, los datos se envían a <strong>Elasticsearch</strong>. El comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>curl -X GET --cacert /etc/elasticsearch/certs/http_ca.crt \<br />-u elastic 'https://elastics-master01:9200/_cat/indices?v'</span></pre>
+<p style="text-align: center;"><img src="indice-20-21.png" alt="" width="1097" height="121" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 19.</strong> Verificar la recepción de datos de Elasticsearch.</em></span></p>
+<p style="text-align: justify;">Como se puede ver en la figura superior, el estado de <strong>salud del índice</strong> <span><strong><span style="font-size: 12pt;">ssh_auth-2022.03.21 </span></strong></span>es <strong>amarillo</strong>. Esto significa que todos los datos están disponibles, pero algunas réplicas aún no están asignadas; en este escenario, se trata de una implementación de un solo nodo. Se puede observar también en la siguiente sección:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">health status index               uuid                   pri rep docs.count docs.deleted store.size pri.store.size<br />yellow   open ssh_auth-2022.03.21 DEUzZCNzRXWVDxA9UwdXbg  1   1    139            0         712.5kb      712.5kb<br /></span></pre>
+<p style="text-align: justify;">A continuación, se comprueba el <span>índice <strong><span style="font-size: 12pt;">ssh_auth-2022.03.20</span></strong>:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>curl -X GET --cacert /etc/elasticsearch/certs/http_ca.crt \<br />-u elastic 'https://elastics-master01:9200/<span><strong>ssh_auth-2022.03.21</strong></span>/_search?pretty'</span></pre>
+<p style="text-align: center;"><img src="index-auth-ssh-21.png" alt="" width="713" height="543" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 20.</strong> Comprobación del índice ssh creado.</em></span></p>
+<p style="text-align: justify;"><span>Si en en el resultado no se muestran aciertos (<strong>successful</strong>), significa que no está cargando ningún registro bajo el índice que se buscó y se deberá verificar la configuración en busca de errores. </span></p>
+<p style="text-align: justify;"><span>En <strong>Kibana</strong> también se puede ver el índice accediendo a la url: </span></p>
+<ul style="text-align: center;">
+<li style="text-align: justify;"><span><strong>http://192.168.0.254:5601/app/management/data/index_management/indices</strong></span></li>
+</ul>
+<p style="text-align: center;"><img src="index-management-http-21.png" alt="" width="1136" height="446" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 21.</strong> Comprobación del índice ssh creado en Kibana.</em></span></p>
+<div class="cuadro-nota-centro-new" style="text-align: center;">
+<p style="text-align: justify;">Para obtener más detalles sobre los indicadores de estado de salud, se puede consultar la <strong><span style="color: #000000;"><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html" target="_blank" rel="noopener" style="color: #000000;">documentación de salud del clúster de Elastic</a>.</span></strong></p>
+</div>
+<p style="text-align: justify;"><span>El siguiente paso sería la creación de un <strong>DataView</strong> <strong>en Kibana</strong> par poder consultar los datos del índice de manera gráfica y tabular. En la siguiente Figura, se puede observar el <strong>DataView</strong> creado del índice <span style="font-size: 12pt;"><strong>ssh_auth-2022.03.21.</strong></span></span></p>
+<p style="text-align: center;"><img src="data-view-index-21.png" alt="" width="1017" height="629" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 22.</strong> Dataview del índice <span style="font-size: 12pt;"><strong>ssh_auth-2022.03.21</strong></span>.</em></span><span></span></p>
+<p style="text-align: justify;"><span>En el siguiente vídeo, se describe el proceso de creación del <strong>DataView </strong>para el índice <em><span style="font-size: 12pt;"><strong>ssh_auth-2022.03.21</strong></span></em>.</span><span></span></p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/JcLXkXx-zVA" allowfullscreen="allowfullscreen"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 1.</strong> Crear DataView del índice <span style="font-size: 12pt;"><strong>ssh_auth-2022.03.21 </strong>en<strong> Kibana.</strong></span></em></p>
+<h3 style="text-align: justify;">10. Referencias</h3>
+<ul style="text-align: center;">
+<li style="text-align: justify;"><a href="https://www.elastic.co/guide/en/beats/filebeat/8.1/configuring-howto-filebeat.html">https://www.elastic.co/guide/en/beats/filebeat/8.1/configuring-howto-filebeat.html</a></li>
+<li style="text-align: justify;"><a href="https://kifarunix.com/install-and-configure-filebeat-7-on-ubuntu-18-04-debian-9-8/">https://kifarunix.com/install-and-configure-filebeat-7-on-ubuntu-18-04-debian-9-8/</a></li>
+<li style="text-align: justify;"><span><a href="https://www.elastic.co/guide/en/elasticsearch/reference/8.1/index-mgmt.html">https://www.elastic.co/guide/en/elasticsearch/reference/8.1/index-mgmt.html</a></span><span></span><span></span></li>
+<li style="text-align: justify;"><span><a href="https://www.elastic.co/guide/en/kibana/current/data-views.html">https://www.elastic.co/guide/en/kibana/current/data-views.html</a></span><span></span></li>
+<li style="text-align: justify;"><span><a href="https://www.elastic.co/guide/en/beats/filebeat/current/configuration-template.html">https://www.elastic.co/guide/en/beats/filebeat/current/configuration-template.html</a></span><span></span></li>
+<li style="text-align: justify;"><span><a href="https://qbox.io/blog/logstash-grok-filter-tutorial-patterns">https://qbox.io/blog/logstash-grok-filter-tutorial-patterns</a></span><span></span><span></span></li>
+<li style="text-align: justify;"><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/ELK/gestion-ElasticStack" target="_blank" rel="noopener">Gestión de Elastic Stack - Github JC Requena</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3141_output_genrico_logstash.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

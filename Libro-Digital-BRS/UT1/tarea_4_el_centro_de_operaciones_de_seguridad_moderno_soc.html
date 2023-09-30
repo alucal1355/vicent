@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Tarea 4. El centro de operaciones de seguridad moderno (SOC) | UT1. Introducción al bastionado </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-33"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">UT1. Introducción al bastionado</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD1. Introducción al bastionado: Diseño del plan de seguridad</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_diseo_de_planes_de_securizacin.html" class="daddy">2. Diseño de Planes de Securización</a>
+   <ul class="other-section">
+      <li><a href="21_sistemas_de_gestin_de_seguridad_de_la_informacin.html" class="no-ch">2.1 Sistemas de Gestión de Seguridad de la información</a></li>
+      <li><a href="22_diseo_y_elaboracin_de_planes_de_seguridad.html" class="no-ch">2.2 Diseño y elaboración de planes de seguridad</a></li>
+      <li><a href="23_resumen.html" class="no-ch">2.3 Resumen</a></li>
+   </ul>
+   </li>
+   <li><a href="3_anlisis_de_riesgos.html" class="daddy">3. Análisis de riesgos</a>
+   <ul class="other-section">
+      <li><a href="31_incibe.html" class="daddy">3.1 INCIBE</a>
+      <ul class="other-section">
+         <li><a href="tarea_1_conoce_tus_riesgos.html" class="no-ch">Tarea 1. Conoce tus riesgos</a></li>
+      </ul>
+      </li>
+      <li><a href="32_metodologas_para_el_anlisis_de_riesgos.html" class="no-ch">3.2 Metodologías para el análisis de riesgos</a></li>
+      <li><a href="33_confidencialidad_integridad_y_disponibilidad.html" class="no-ch">3.3 Confidencialidad, Integridad y Disponibilidad</a></li>
+   </ul>
+   </li>
+   <li><a href="4_economa_circular_e_industria_40.html" class="daddy">4. Economía circular e Industria 4.0</a>
+   <ul class="other-section">
+      <li><a href="41_la_ec_aplicada_a_las_tic.html" class="no-ch">4.1 La EC aplicada a las TIC</a></li>
+      <li><a href="tarea_2_economa_circular_e_industria_40.html" class="no-ch">Tarea 2. Economía circular e Industria 4.0.</a></li>
+   </ul>
+   </li>
+   <li><a href="5_defensa_en_profundidad_en_entornos_industriales.html" class="daddy">5. Defensa en profundidad en entornos industriales</a>
+   <ul class="other-section">
+      <li><a href="tarea_3_seguridad_en_profundidad_de_en_entornos_industriales.html" class="no-ch">Tarea 3. Seguridad en profundidad de en entornos industriales</a></li>
+   </ul>
+   </li>
+   <li><a href="6_superficie_de_ataque_en_una_infraestructura_tecnolgica.html" class="no-ch">6. Superficie de ataque en una infraestructura tecnológica</a></li>
+   <li><a href="7_plan_de_medidas_tcnicas_de_seguridad.html" class="daddy">7. Plan de medidas técnicas de seguridad</a>
+   <ul class="other-section">
+      <li><a href="71_clasificacin_de_medidas_de_seguridad.html" class="daddy">7.1. Clasificación de medidas de seguridad</a>
+      <ul class="other-section">
+         <li><a href="711_seguridad_fsica.html" class="no-ch">7.1.1 Seguridad física</a></li>
+         <li><a href="712_seguridad_lgica.html" class="no-ch">7.1.2 Seguridad lógica</a></li>
+         <li><a href="713_seguridad_activa.html" class="no-ch">7.1.3 Seguridad activa</a></li>
+         <li><a href="714_seguridad_pasiva.html" class="no-ch">7.1.4 Seguridad pasiva</a></li>
+      </ul>
+      </li>
+      <li><a href="72_medidas_tcnicas_de_seguridad.html" class="no-ch">7.2 Medidas Técnicas de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="8_polticas_de_securizacin_ms_habituales.html" class="no-ch">8. Políticas de securización más habituales</a></li>
+   <li><a href="9_guas_de_buenas_prcticas_para_la_securizacin_de_sistemas_y_redes.html" class="no-ch">9. Guías de buenas prácticas para la securización de sistemas y redes</a></li>
+   <li><a href="10_estndares_de_securizacin_de_sistemas_y_redes.html" class="no-ch">10. Estándares de securización de sistemas y redes</a></li>
+   <li><a href="11_caracterizacin_de_procedimientos_instrucciones_y_recomendaciones.html" class="no-ch">11. Caracterización de procedimientos, instrucciones y recomendaciones</a></li>
+   <li><a href="12_niveles_escalados_y_protocolos_de_atencin_a_incidencias.html" class="daddy">12. Niveles, escalados y protocolos de atención a incidencias</a>
+   <ul class="other-section">
+      <li><a href="121_respuesta_a_los_incidentes_de_seguridad.html" class="no-ch">12.1 Respuesta a los incidentes de Seguridad</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="13_soluciones_de_centros_de_operacin_de_red_y_centros_de_seguridad_de_red_nocs.html" class="current-page-parent daddy">13. Soluciones de Centros de Operación de Red, y Centros de Seguridad de Red: NOCs</a>
+   <ul>
+      <li id="active"><a href="tarea_4_el_centro_de_operaciones_de_seguridad_moderno_soc.html" class="active no-ch">Tarea 4. El centro de operaciones de seguridad moderno (SOC)</a></li>
+   </ul>
+   </li>
+   <li><a href="caso_prctico_prcticas_correctas_en_los_planes_de_securizacin_y_bastionado.html" class="no-ch">Caso práctico. Prácticas correctas en los planes de securización y bastionado</a></li>
+   <li><a href="14_referencias.html" class="no-ch">14. Referencias</a></li>
+   <li><a href="15_glosario.html" class="no-ch">15. Glosario</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="13_soluciones_de_centros_de_operacin_de_red_y_centros_de_seguridad_de_red_nocs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="caso_prctico_prcticas_correctas_en_los_planes_de_securizacin_y_bastionado.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Tarea 4. El centro de operaciones de seguridad moderno (SOC)</h1></div>
+<div class="iDevice_wrapper pblIdevice em_iDevice em_iDevice_activity" id="id65">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header" style="background-image:url(icon_activity.png)"><span class="iDeviceTitle">&nbsp;</span></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta65_112_2" class="block iDevice_content">
+<div class="pbl-task-description"><h3>1. El centro de operaciones de seguridad moderno (SOC)</h3>
+<p style="text-align: justify;">Un <strong>centro de operaciones de seguridad (SOC)</strong>, a veces denominado centro de operaciones de seguridad de la información o ISOC, es un <strong>equipo interno o externo de profesionales de seguridad de TI</strong> que supervisa toda la infraestructura tecnológica de una organización, las 24 horas del día, los 7 días de la semana, para detectar eventos de ciberseguridad en tiempo real y abordarlos de la forma más rápida y eficaz posible.</p>
+<p style="text-align: center;"><img src="plano-monitor.png" alt="" width="1090" height="522" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Monitorización 24x7 - Dude Mikrotik.</em></p>
+<p style="text-align: justify;">Como ejemplo, en el siguiente vídeo podemos observar el proceso de monitorización y envío de alarmas en una red de un centro educativo.</p>
+<p style="text-align: center;"><em><iframe width="560" height="314" src="https://www.youtube.com/embed/Gtl4VaTa-FE"></iframe><br /></em></p>
+<p style="text-align: center;"><em><strong>Vídeo 1.</strong> Ejemplo de monitorización de equipos y envío de alarmas.</em></p>
+<p style="text-align: justify;">Un <strong>SOC</strong> también <strong><em>selecciona, opera y mantiene la tecnología de seguridad cibernética y analiza continuamente los datos de las amenazas</em></strong> para encontrar formas de mejorar la seguridad de la organización.</p>
+<p style="text-align: justify;">El principal <strong>beneficio de operar o subcontratar un SOC</strong> es que <strong>unifica y coordina las herramientas, las prácticas y la respuesta de seguridad de una organización a los incidentes de seguridad</strong>. Esto generalmente da como resultado mejores medidas preventivas y políticas de seguridad, una detección de amenazas más rápida y una respuesta más rápida, más efectiva y más rentable a las amenazas de seguridad. Un SOC también puede mejorar la confianza del cliente y simplificar y fortalecer el cumplimiento de una organización con las regulaciones de privacidad de la industria, nacionales y globales. <a href="https://www.ibm.com/es-es/topics/security-operations-center" target="_blank" rel="noopener">Fuente</a>.</p>
+<h3 style="text-align: justify;">2. Elementos de un SOC</h3>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 35.5505%; text-align: justify;"><img src="elementos-soc.png" alt="" width="508" height="417" /></td>
+<td style="width: 64.4495%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">La defensa contra las amenazas actuales requiere un enfoque formalizado, estructurado y disciplinado a cargo de profesionales de centros de operaciones de seguridad. Los SOC proporcionan una amplia gama de servicios, que abarcan desde el seguimiento y la gestión hasta soluciones completas contra amenazas y seguridad alojada que se pueden personalizar para satisfacer las necesidades del cliente. Los SOC pueden ser totalmente internos (una empresa puede ser propietaria e implementarlos) o es posible tercerizar los elementos de un SOC a proveedores de seguridad, como los <a href="http://www.cisco.com/c/en/us/products/security/managed-services.html" onclick="browseURL(this); return false" target="_blank" rel="noopener">Servicios de seguridad administrados</a> de Cisco.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Los elementos principales de un SOC (que aparecen en la figura) son las personas, los procesos y la tecnología.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="exe-fx exe-tabs">
+<h2><br />1. Las personas en el SOC</h2>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 45.3806%; text-align: center;"><img src="personas-soc.png" alt="" width="668" height="460" /></td>
+<td style="width: 54.6194%;">
+<p style="text-align: justify;" tabindex="0"><span style="font-size: 12pt;"><strong>SANS Institute</strong> (<a href="http://www.sans.org/" onclick="browseURL(this); return false" target="_blank" rel="noopener">www.sans.org</a>) divide en cuatro los roles de la gente en los SOC:</span></p>
+<div tabindex="0">
+<ul style="text-align: justify;">
+<li>
+<p><span style="font-size: 12pt;"><b>Analista de alertas de categoría 1</b>: estos profesionales monitorean alertas entrantes, verifican que realmente haya ocurrido un incidente y reenvían los informes a la categoría 2 si es necesario.</span></p>
+</li>
+<li>
+<p><span style="font-size: 12pt;"><b>Personal de respuesta ante los incidentes de categoría 2</b>: estos profesionales son responsables de investigar los incidentes en detalle y sugerir soluciones o medidas que deben adoptarse.</span></p>
+</li>
+<li>
+<p><span style="font-size: 12pt;"><b>Experto en la materia (SME)/buscador de categoría 3</b>: estos profesionales son expertos en redes, terminales, inteligencia de amenazas e ingeniería inversa de malware. Son especialistas en seguir los procesos del malware para determinar su impacto y cómo eliminarlo. También están profundamente involucrados en la búsqueda de posibles amenazas y la implementación de herramientas de detección de amenazas.</span></p>
+</li>
+<li>
+<p><span style="font-size: 12pt;"><b>Administrador del SOC</b>: este profesional administra todos los recursos del SOC y sirve como punto de contacto para el cliente o la organización en su totalidad.</span></p>
+</li>
+</ul>
+<p style="text-align: justify;"><span style="font-size: 12pt;">En este curso, se ofrece la preparación para una certificación adecuada para el puesto de analista de alertas de categoría 1, también conocido como analista de ciberseguridad.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">La figura del SANS Institute representa gráficamente cómo interactúan entre sí estos roles.</span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Los procesos en el SOC</h2>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 38.7443%; text-align: center;"><img src="proc-soc.png" alt="" width="550" height="425" /></td>
+<td style="width: 61.2557%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">El día de un <strong>analista de categoría 1</strong> comienza con la monitorización de colas de alertas de seguridad. Con frecuencia, se utiliza un sistema de informes que les permite a los analistas seleccionar alertas de una cola para investigar. Dado que el software que genera alertas puede activar falsas alarmas, una de las tareas del analista de categoría 1 puede ser verificar que una alerta sea realmente un incidente de seguridad. Cuando se establece la verificación, es posible reenviar el incidente a investigadores u otro personal de seguridad para que tomen medidas, o categorizarlo como resuelto si es una falsa alarma.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si un informe no se puede resolver, el analista de categoría 1 reenviará el informe a un analista de categoría 2 para que lo investigue en detalle e implemente una solución. Si el analista de categoría 2 no puede resolver el informe, se lo reenviará a un analista de categoría 3 con conocimiento experto y habilidades de búsqueda de amenazas.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Las tecnologías en el SOC</h2>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 44.2745%; text-align: center;"><img src="tec-soc.png" alt="" width="628" height="482" /></td>
+<td style="width: 55.7255%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Como se muestra en la figura, un SOC necesita un sistema de administración de información y eventos de seguridad (SIEM) o equivalente. Este sistema combina datos de varias tecnologías. Los sistemas SIEM se usan para recopilar y filtrar datos; detectar, clasificar, analizar e investigar amenazas; y administrar recursos a fin de implementar medidas preventivas y afrontar futuras amenazas. Las tecnologías del SOC incluyen una o más de las siguientes:</span></p>
+<ul>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Recopilación, correlación y análisis de eventos.</span></p>
+</li>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Monitorización de la seguridad.</span></p>
+</li>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Control de la seguridad.</span></p>
+</li>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Administración de registros.</span></p>
+</li>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Evaluación de vulnerabilidades.</span></p>
+</li>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Seguimiento de vulnerabilidades.</span></p>
+</li>
+<li>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Inteligencia de amenazas.</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+</div>
+<h3 style="text-align: justify;">3. Seguridad empresarial y administrada</h3>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 34.6594%; text-align: center;"><img src="seguridad.png" alt="" width="497" height="428" /></td>
+<td style="width: 65.3406%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para redes medianas y grandes, la organización se beneficiará de implementar un SOC de nivel empresarial. El SOC puede ser una solución interna completa. Sin embargo, muchas organizaciones importantes tercerizan, al menos en parte, las operaciones del SOC a un proveedor de soluciones de seguridad.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Cisco cuenta con un equipo de expertos que ayudan a garantizar la resolución oportuna y precisa de incidentes. Cisco ofrece una amplia gama de capacidades de respuesta, preparación y administración de incidentes:</span></p>
+<ul>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Servicio Cisco Smart Net Total Care para la resolución rápida de problemas.</span></p>
+</li>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Equipo de respuesta ante los incidentes de seguridad de los productos (PSIRT) de Cisco.</span></p>
+</li>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Equipo de respuesta ante los incidentes de seguridad de las computadoras (CSIRT) de Cisco.</span></p>
+</li>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Servicios administrados de Cisco.</span></p>
+</li>
+<li style="text-align: justify;">
+<p><span style="font-size: 12pt;">Operaciones tácticas de Cisco (TacOps).</span></p>
+</li>
+<li>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Programa de seguridad física y seguridad de Cisco.</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 style="text-align: justify;">3.1 Comparación entre seguridad y disponibilidad</h4>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 40.8975%; text-align: center;"><img src="seg-disp.png" alt="" width="622" height="235" /></td>
+<td style="width: 59.1025%; text-align: justify;"><span style="font-size: 12pt;">La mayoría de las <strong>redes empresariales</strong> tienen que estar funcionando en todo momento. El <strong>personal de seguridad</strong> entiende que, para que la organización logre sus prioridades, debe mantenerse la disponibilidad de la red.</span><br /><span style="font-size: 12pt;">Cada empresa o industria tiene una<strong> tolerancia limitada al tiempo de inactividad de la red</strong>. Esa tolerancia suele basarse en una comparación entre el costo del tiempo de inactividad y el costo de protección contra el tiempo de inactividad. Por ejemplo, en un comercio minorista pequeño con una sola ubicación, puede resultar suficiente que un router sea el único punto de falla. Sin embargo, si gran parte de las ventas de ese comercio proviene de compradores en línea, el propietario puede decidir brindar determinado nivel de redundancia para asegurar que siempre haya disponible una conexión.</span><br /><span style="font-size: 12pt;">El <strong>tiempo de actividad</strong> preferido suele medirse según la cantidad de minutos de inactividad en un año, como se ve en la figura. Entre los ejemplos, un tiempo de actividad de “cinco nueves” indica que la red está activa el 99,999 % del tiempo, es decir, permanece inactiva menos de 5 minutos por año. “Cuatro nueves” equivale a un tiempo de inactividad de 53 minutos por año.</span><br /><span style="font-size: 12pt;">Sin embargo, el nivel de seguridad no debe ser tan alto como para interferir en las necesidades de los empleados o las funciones empresariales. El secreto es lograr siempre un equilibrio entre un buen nivel de seguridad y la posibilidad de que la empresa funcione con eficacia.</span></td>
+</tr>
+</tbody>
+</table>
+<h3 style="text-align: justify;">4. Trabajo a realizar</h3>
+<p style="text-align: justify;"><span>Une cada término del SOC con su descripción correspondiente.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="tarea1-01.png" alt="" width="650" height="408" /></td>
+<td style="width: 50%; text-align: center;"><img src="Tarea1-02.png" alt="" width="286" height="165" /></td>
+</tr>
+</tbody>
+</table>
+<p>Para tu subsistema del proyecto asignado, realiza un diseño breve del SOC que implementarías.</p>
+<h3>5. Entregar</h3>
+<p style="text-align: justify;">Sube al aula virtual <span style="font-size: 1em;">un documento pdf con la solución que propones.</span></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="13_soluciones_de_centros_de_operacin_de_red_y_centros_de_seguridad_de_red_nocs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="caso_prctico_prcticas_correctas_en_los_planes_de_securizacin_y_bastionado.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.8 Sistemas encriptación hardware (TPM/HSM) | UT3. Sistemas de control de acceso y credenciales </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-121"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT3. Sistemas de control de acceso y credenciales</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT3. Sistemas de control de acceso y credenciales</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="recomendaciones_de_estudio__resumen.html" class="no-ch">Recomendaciones de estudio - Resumen</a></li>
+   <li><a href="1_mecanismos_de_autenticacin_tipos_de_factores.html" class="daddy">1. Mecanismos de autenticación. Tipos de factores.</a>
+   <ul class="other-section">
+      <li><a href="11_mltiples_factores_de_autenticacin.html" class="no-ch">1.1 Múltiples factores de autenticación</a></li>
+      <li><a href="tarea_1_autenticacin_de_doble_factor_por_ssh_con_google_authenticator.html" class="no-ch">Tarea 1. Autenticación de doble factor por SSH con Google Authenticator</a></li>
+      <li><a href="laboratorio_1_autenticacin_multifactor_con_yubico.html" class="no-ch">Laboratorio 1. Autenticación multifactor con Yubico</a></li>
+      <li><a href="tarea_2_ubuntu__2fa_para_login_con_yubico_security_key.html" class="no-ch">Tarea 2. Ubuntu - 2FA para login con Yubico Security Key</a></li>
+   </ul>
+   </li>
+   <li><a href="2_tcnicas_de_autenticacin.html" class="no-ch">2. Técnicas de autenticación</a></li>
+   <li><a href="3_gestin_de_credenciales.html" class="daddy">3. Gestión de credenciales</a>
+   <ul class="other-section">
+      <li><a href="31_lastpass.html" class="no-ch">3.1 LastPass</a></li>
+      <li><a href="32_keepass.html" class="no-ch">3.2 Keepass</a></li>
+      <li><a href="33_otros_gestores_de_contraseas.html" class="no-ch">3.3 Otros gestores de contraseñas</a></li>
+      <li><a href="tarea_3_instalacin_configuracin_y_puesta_en_produccin_de_un_gestor_de_credenciales.html" class="no-ch">Tarea 3. Instalación, configuración y puesta en producción de un gestor de credenciales</a></li>
+      <li><a href="34_brechas_de_seguridad_y_contraseas_inseguras.html" class="no-ch">3.4 Brechas de seguridad y contraseñas inseguras</a></li>
+   </ul>
+   </li>
+   <li><a href="4_acceso_por_medio_de_firma_electrnica.html" class="daddy">4. Acceso por medio de firma electrónica</a>
+   <ul class="other-section">
+      <li><a href="41_lectores_de_dnie.html" class="no-ch">4.1 Lectores de DNIe</a></li>
+      <li><a href="42_uso_de_nfc_con_el_dnie.html" class="no-ch">4.2 Uso de NFC con el DNIe</a></li>
+   </ul>
+   </li>
+   <li><a href="5_sistemas_de_single_sign_on_sso.html" class="daddy">5. Sistemas de Single Sign On SSO</a>
+   <ul class="other-section">
+      <li><a href="tarea_4_sistemas_sso.html" class="no-ch">Tarea 4. Sistemas SSO</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_criptografa.html" class="current-page-parent daddy">6. Criptografía</a>
+   <ul>
+      <li class="current-page-parent"><a href="61_aplicacin_de_la_criptografa_en_la_seguridad_de_la_informacin.html" class="current-page-parent daddy">6.1 Aplicación de la Criptografía en la seguridad de la información</a>
+      <ul>
+         <li><a href="611_principios_bsicos_de_la_criptografa.html" class="no-ch">6.1.1 Principios básicos de la criptografía</a></li>
+         <li><a href="612_criptografa_clsica.html" class="no-ch">6.1.2 Criptografía clásica</a></li>
+         <li><a href="613_servicios_de_seguridad_de_criptografa.html" class="no-ch">6.1.3 Servicios de seguridad de criptografía</a></li>
+         <li><a href="614_criptografa_moderna.html" class="daddy">6.1.4 Criptografía Moderna</a>
+         <ul class="other-section">
+            <li><a href="6141_criptografa_de_clave_privada.html" class="daddy">6.1.4.1 Criptografía de clave privada</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_1_cifrado_simtrico_de_archivos.html" class="no-ch">Laboratorio 1. Cifrado simétrico de archivos</a></li>
+               <li><a href="prctica_1_cifrado_simtrico.html" class="no-ch">Práctica 1. Cifrado simétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6142_criptografa_de_clave_pblica.html" class="daddy">6.1.4.2 Criptografía de clave pública</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_2_cifrado_asimtrico_de_ficheros.html" class="no-ch">Laboratorio 2. Cifrado asimétrico de ficheros</a></li>
+               <li><a href="prctica_2cifrado_asimtrico.html" class="no-ch">Práctica 2.Cifrado Asimétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6143_ventas_y_desventajas_cifrado_simtrico_y_asimetrico.html" class="no-ch">6.1.4.3 Ventas y desventajas cifrado simétrico y asimetrico</a></li>
+            <li><a href="6144_criptografa_hbirida.html" class="no-ch">6.1.4.4 Criptografía híbirida</a></li>
+         </ul>
+         </li>
+         <li><a href="615_esteganografa.html" class="daddy">6.1.5 Esteganografía</a>
+         <ul class="other-section">
+            <li><a href="tarea_5_openstego.html" class="no-ch">Tarea 5. OpenStego</a></li>
+         </ul>
+         </li>
+         <li><a href="616_funciones_hash.html" class="daddy">6.1.6 Funciones hash</a>
+         <ul class="other-section">
+            <li><a href="tarea_6_funciones_hash.html" class="no-ch">Tarea 6. Funciones hash</a></li>
+            <li><a href="tarea_7_quickhash.html" class="no-ch">Tarea 7. QuickHash</a></li>
+            <li><a href="tarea_8_funciones_avanzadas_hash_de_powershell.html" class="no-ch">Tarea 8. Funciones avanzadas hash de powershell</a></li>
+            <li><a href="laboratorio_3_funciones_hash_con_kleopatra.html" class="no-ch">Laboratorio 3. Funciones hash con Kleopatra</a></li>
+         </ul>
+         </li>
+         <li><a href="617_uso_de_tcnicas_criptogrficas_en_las_pyme.html" class="no-ch">6.1.7 Uso de técnicas criptográficas en las PYME</a></li>
+         <li id="active"><a href="618_sistemas_encriptacin_hardware_tpmhsm.html" class="active no-ch">6.1.8 Sistemas encriptación hardware (TPM/HSM)</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_sistemas_de_control_de_acceso_y_autenticacin.html" class="daddy">7. Sistemas de control de acceso y autenticación</a>
+   <ul class="other-section">
+      <li><a href="71_creacin_de_claves_ssh.html" class="no-ch">7.1 Creación de claves SSH</a></li>
+      <li><a href="72_certificados_digitales_gestin_de_una_pki.html" class="daddy">7.2. Certificados digitales, gestión de una PKI</a>
+      <ul class="other-section">
+         <li><a href="721_certificados_digitales.html" class="daddy">7.2.1 Certificados digitales</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_certificado_personal.html" class="no-ch">Laboratorio 4. Certificado personal</a></li>
+            <li><a href="tarea_9_verificacin_de_certificados_digitales.html" class="no-ch">Tarea 9. Verificación de certificados digitales</a></li>
+         </ul>
+         </li>
+         <li><a href="722_firma_digital.html" class="daddy">7.2.2 Firma digital</a>
+         <ul class="other-section">
+            <li><a href="prctica_3_verificacin_de_la_autenticidad_e_integridad_de_un_mensaje.html" class="no-ch">Práctica 3: Verificación de la autenticidad e integridad de un mensaje</a></li>
+         </ul>
+         </li>
+         <li><a href="723_infraestructuras_de_clave_pblica_pki.html" class="no-ch">7.2.3 Infraestructuras de clave pública (PKI)</a></li>
+         <li><a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="no-ch">Laboratorio 5. Infraestructura de clave pública propia con OpenSSL</a></li>
+         <li><a href="caso_prctico_uso_de_certificados_en_servicios_web.html" class="no-ch">Caso Práctico. Uso de certificados en Servicios WEB</a></li>
+         <li><a href="reto_implementacin_de_una_sistema_de_certificados_pki_en_la_organizacin_con_easyrsa.html" class="no-ch">Reto. Implementación de una sistema de certificados (PKI) en la organización con Easy-RSA</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="8_gestin_de_accesos_sistemas_nac.html" class="daddy">8. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_6_packetfence.html" class="no-ch">Laboratorio 6. PacketFence</a></li>
+      <li><a href="prctica_4_acceso_a_la_web_a_travs_de_un_nac.html" class="no-ch">Práctica 4. Acceso a la web a través de un NAC</a></li>
+   </ul>
+   </li>
+   <li><a href="9_gestin_de_cuentas_privilegiadas.html" class="daddy">9. Gestión de cuentas privilegiadas</a>
+   <ul class="other-section">
+      <li><a href="101_pam.html" class="no-ch">10.1 PAM</a></li>
+      <li><a href="tarea_10_ejecutar_como.html" class="no-ch">Tarea 10. Ejecutar como</a></li>
+   </ul>
+   </li>
+   <li><a href="10_protocolos_radius_y_tacacs_servicio_kerberos.html" class="daddy">10. Protocolos RADIUS y TACACS, servicio KERBEROS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_7_freeradius.html" class="daddy">Laboratorio 7. freeRadius</a>
+      <ul class="other-section">
+         <li><a href="1_instalacin_servidor_radius.html" class="no-ch">1. Instalación servidor Radius</a></li>
+         <li><a href="2_instalacin_cliente_radius.html" class="no-ch">2. Instalación Cliente Radius</a></li>
+      </ul>
+      </li>
+      <li><a href="laboratorio_8_radius_windows_server.html" class="no-ch">Laboratorio 8. Radius Windows Server</a></li>
+   </ul>
+   </li>
+   <li><a href="11_ldap.html" class="daddy">11. LDAP</a>
+   <ul class="other-section">
+      <li><a href="111_instalacin_y_configuracin_de_ldap.html" class="no-ch">11.1 Instalación y configuración de LDAP.</a></li>
+      <li><a href="112_configuracin_de_certificados_ssltsl_en_ldap.html" class="no-ch">11.2 Configuración de certificados SSL/TSL en LDAP.</a></li>
+      <li><a href="113_creacin_de_cuentas_ldap.html" class="no-ch">11.3 Creación de cuentas LDAP</a></li>
+      <li><a href="114_instalacin_de_sssd_en_el_cliente_ubuntu_desktop.html" class="no-ch">11.4 Instalación de SSSD en el cliente Ubuntu Desktop</a></li>
+      <li><a href="proyecto_instalar_servidor_de_autenticacin_openldap_servidor_ubuntu.html" class="no-ch">Proyecto. Instalar servidor de autenticación OpenLdap Servidor Ubuntu</a></li>
+   </ul>
+   </li>
+   <li><a href="12_referencias.html" class="no-ch">12. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="617_uso_de_tcnicas_criptogrficas_en_las_pyme.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_sistemas_de_control_de_acceso_y_autenticacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1.8 Sistemas encriptación hardware (TPM/HSM)</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id163">
+<div class="iDevice emphasis0" >
+<div id="ta163_163_2" class="block iDevice_content">
+<div class="exe-text"><h3><strong>1. TPM</strong></h3>
+<p><strong>TPM</strong> (Trusted Platform Module) es un criptoprocesador seguro para para almacenar y verificar datos biométricos. </p>
+<p>Este chip es obligatorio para equipos con Windows 11.</p>
+<h4>1.1. Características</h4>
+<p>Sus principales características son:</p>
+<ul>
+<li>Es un chip con memoria volátil y no volátil.</li>
+<li>Contiene un algoritmo para la generación de claves y cadenas aleatorias de códigos cifrados.</li>
+<li>Implementa funciones criptográficas para autenticación mediante firmas digitales o datos biométricos del usuario.</li>
+</ul>
+<h4>1.2 Funciones</h4>
+<p>Entre sus funciones se destacan las siguientes:</p>
+<ul>
+<li>Almacenado de contraseñas de administrador y control remoto.</li>
+<li>Cifrado de unidades de almacenamiento de datos.</li>
+<li>Certificados digitales y firmas digitales. </li>
+<li>Cifrado individual de carpetas.</li>
+<li>Claves de servidores de correo y sitios web seguros.</li>
+<li>Datos biométricos para el acceso.</li>
+</ul>
+<h4>1.3 Componentes</h4>
+<p>Los componentes internos de un módulo de plataforma de confianza son:</p>
+<p style="text-align: center;"><img src="tpm.png" alt="" width="544" height="367" /></p>
+<p style="text-align: justify;">Lo que <strong>se almacena en el chip</strong> es:</p>
+<ul>
+<li style="text-align: justify;">Clave RSA Endorsemente Key (EK).</li>
+<li style="text-align: justify;">Clave RSA Storage Root Key (SRK).</li>
+<li style="text-align: justify;">Clave RSA Attestation Identity Key (AIK).</li>
+<li style="text-align: justify;">Una AIK es similar a la EK excepto que:
+<ul>
+<li style="text-align: justify;">Un TPM puede tener un número ilimitado de ellas.</li>
+<li style="text-align: justify;">Son creadas por el propietario del TPM.</li>
+</ul>
+</li>
+</ul>
+<p>El par EK se usa para identificar el ordenador a su fabricante:</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<ul>
+<li><span style="font-size: 12pt;">El ordenador firma un mensaje con la clave privada almacenada en el TPM.</span></li>
+<li><span style="font-size: 12pt;">El fabricante lo coteja con la llave pública registrada</span></li>
+</ul>
+</td>
+<td style="width: 50%; text-align: center;"><img src="par-EK.png" alt="" width="1240" height="754" /></td>
+</tr>
+</tbody>
+</table>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Para el SRK, cada usuario </span><span style="font-size: 12pt;">crea sus propias llaves, y cada </span><span style="font-size: 12pt;">nuevo usuario tendrá un par </span><span style="font-size: 12pt;">de llaves único. </span></p>
+<p><span style="font-size: 12pt;">Este par de claves se utiliza </span><span style="font-size: 12pt;">típicamente para proteger la </span><span style="font-size: 12pt;">clave de cifrado que se utiliza </span><span style="font-size: 12pt;">para cifrar la unidad de disco.</span></p>
+</td>
+<td style="width: 50%; text-align: center;"><img src="srk.png" alt="" width="1305" height="779" /></td>
+</tr>
+</tbody>
+</table>
+<h4>1.4 ¿Exento de problemas?</h4>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2018-6622" target="_blank" rel="noopener">CVE-2018-6622</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2017-16837" target="_blank" rel="noopener">CVE-2017-16837</a>
+<ul>
+<li>Utilidad para comprobar ambas: <a href="https://ethhack.com/2019/02/napper-a-trusted-platform-module-tpm-vulnerability-checker/" target="_blank" rel="noopener">Napper</a></li>
+</ul>
+</li>
+<li><a href="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00241.html" target="_blank" rel="noopener">CVE-2019-11090</a></li>
+<li><a href="https://www.st.com/content/st_com/en/campaigns/tpm-update.html" target="_blank" rel="noopener">CVE-2019-16863</a></li>
+</ul>
+<p><strong>Fuentes:</strong></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/researchers-detail-two-new-attacks-on-tpm-chips/">https://www.bleepingcomputer.com/news/security/researchers-detail-two-new-attacks-on-tpm-chips/</a></li>
+<li><a href="https://thehackernews.com/2019/11/tpm-encryption-keys-hacking.html">https://thehackernews.com/2019/11/tpm-encryption-keys-hacking.html</a></li>
+</ul>
+<p>Vulnerabilidad de ROCA (Return of the Coppersmith Attack):</p>
+<ul>
+<li>Identificó que la clave privada podía derivarse de la clave pública, ya que los números primos de RSA se generaron con un método débil.</li>
+<li>Casi hizo caer el sistema de identificación electrónica de Estonia, que obligó a cambiar e implementó un sistema basado en dispositivos móviles, y superó los problemas de ROCA.</li>
+</ul>
+<h4>1.5 TPM 1.2 vs TPM 2.0</h4>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;">
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;">TPM 2.0 aborda muchos de los </span><span style="font-size: 12pt;">mismos casos de uso y tiene </span><span style="font-size: 12pt;">características similares.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">La implementación final difiere.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;">TPM 2.0 no es compatible con el </span><span style="font-size: 12pt;">TPM 1.2.</span></li>
+</ul>
+</td>
+<td style="width: 50%; text-align: center;"><img src="tpm1.2-2.png" alt="" width="1222" height="749" /></td>
+</tr>
+</tbody>
+</table>
+<h4>1.6 Apple T2</h4>
+<p style="text-align: justify;"><strong>Apple</strong> usa el chip <strong>T2 64-bit ARMv8</strong> chip que corre un Sistema Operativo llamado<strong> bridgeOS 2.0</strong>. </p>
+<p style="text-align: justify;">T2 proporciona un enclave seguro para la claves cifradas y datos biométricos, dando la posibilidad de bloquear el proceso de arranque del ordenador.</p>
+<p style="text-align: justify;">Maneja las funciones del sistema de cámara, el control de audio y se encarga del cifrado-descifrado sobre la marcha para la unidad SSD. También procesamiento de imágenes mejorado.</p>
+<h4 style="text-align: justify;">1.7 IoT</h4>
+<ul>
+<li style="text-align: justify;">Hacen que la integridad del dispositivo sea verificable y sostenible.</li>
+<li style="text-align: justify;">Ayuda a proteger la cadena de suministro. </li>
+<li style="text-align: justify;">Facilita el mantenimiento del dispositivo.</li>
+<li style="text-align: justify;">Permite que el sistema funcione en un "modo protegido”. </li>
+<li style="text-align: justify;">Admite solo tres raíces de confianza, pero puede cooperar con otras raíces de confianza para lograr muchas funciones clave.</li>
+</ul>
+<p>Implementar TPM para IoT es diferente a TPM para PC, y será mejor, más rápido y más fácil.</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="tpm-iot.png" alt="" width="676" height="568" /></td>
+<td style="width: 50%; text-align: center;"><img src="tpmiot-2.png" alt="" width="674" height="630" /></td>
+</tr>
+</tbody>
+</table>
+<h3>2. HSM</h3>
+<p style="text-align: justify;">Los Hardware Security Modules o HSM son dispositivos de computación física que protege y gestiona <strong>claves digitales</strong> para la autenticación y proporciona <strong>cryptoprocessing</strong>.</p>
+<p style="text-align: justify;">Estos módulos tradicionalmente vienen en la forma de una tarjeta enchufable o un dispositivo externo que se conecta directamente a un <strong>ordenador</strong> o <strong>servidor de red.</strong></p>
+<p style="text-align: center;"><strong><img src="diagramahsm.png" alt="" width="396" height="200" /></strong></p>
+<p style="text-align: center;"><strong>Diagrama esquemático de un HSM</strong></p>
+<h4 style="text-align: justify;">2.1 Funciones de los HMS</h4>
+<ul>
+<li style="text-align: justify;">Generación de claves de cifrado seguro.</li>
+<li style="text-align: justify;">Almacenamiento seguro de claves criptográficas, al menos para el nivel superior y la mayoría de las teclas sensibles, que a menudo son llamadas llaves maestras.</li>
+<li style="text-align: justify;">Gestión de claves.</li>
+<li style="text-align: justify;">El uso del material de datos de cifrado y sensible, por ejemplo, la realización de cifrado o digitales funciones de firma.</li>
+<li style="text-align: justify;">Servidores de aplicaciones de descargue de completado asimétrica y el cifrado simétrico.</li>
+</ul>
+<h4>2.3 Ejemplos</h4>
+<p>Los <strong>HSM</strong> pueden encontrarse en tarjeta criptográfica, appliance, HSM USB (nano) y tarjeta inteligente (smart card).</p>
+<table border="0" style="height: 137px; width: 100%;">
+<tbody>
+<tr style="height: 117px;">
+<td style="width: 25%; height: 117px; text-align: center;"><span style="font-size: 12pt;">Tarjeta</span><br /><span style="font-size: 12pt;">Criptográfica</span></td>
+<td style="width: 25%; height: 117px; text-align: center;"><span style="font-size: 12pt;"><img src="tarjetacriptografica.png" alt="" width="265" height="144" /></span></td>
+<td style="width: 25%; height: 117px; text-align: center;"><span style="font-size: 12pt;"><img src="appliance.png" alt="" width="301" height="102" /></span></td>
+<td style="width: 25%; height: 117px; text-align: center;"><span style="font-size: 12pt;">Appliance</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 25%; height: 20px; text-align: center;"><span style="font-size: 12pt;">USB (nano)</span></td>
+<td style="width: 25%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><img src="yubiconano.png.png" alt="" width="161" height="101" /></span></td>
+<td style="width: 25%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><img src="samrt-card.png" alt="" width="145" height="102" /></span></td>
+<td style="width: 25%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Smart Card</span></td>
+</tr>
+</tbody>
+</table>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><strong><span style="font-size: 12pt;">Appliance</span></strong><br /><span style="font-size: 12pt;">Dispositivos de seguridad de hardware </span><span style="font-size: 12pt;">certificados que ofrecen servicios criptográficos </span><span style="font-size: 12pt;">a una variedad de aplicaciones en la red.</span><br /><span style="font-size: 12pt;">Los dispositivos <strong>HSMs</strong> de nShield son </span><span style="font-size: 12pt;">plataformas protegidas y resistentes a fraudes </span><span style="font-size: 12pt;">que realizan funciones como cifrado, firma</span><br /><span style="font-size: 12pt;">digital y generación y protección de claves.</span></p>
+<p><span style="font-size: 12pt;">Con sus capacidades integrales, estos <strong>HSMs</strong> </span><span style="font-size: 12pt;">pueden apoyar un amplio abanico de </span><span style="font-size: 12pt;">aplicaciones, </span><span style="font-size: 12pt;">incluyendo </span><span style="font-size: 12pt;">autoridades</span><br /><span style="font-size: 12pt;">certificadas, firma de códigos y mucho más.</span></p>
+</td>
+<td style="width: 50%; text-align: center;"><img src="appliance-Grande.png" alt="" width="365" height="200" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><strong><span style="font-size: 12pt;">USB (nano)</span></strong></p>
+<ul>
+<li><span style="font-size: 12pt;">Portabilidad.</span></li>
+<li><span style="font-size: 12pt;">Almacenamiento seguro de claves y </span><span style="font-size: 12pt;">operaciones en hardware resistente a </span><span style="font-size: 12pt;">manipulaciones, con registro de auditoría.</span></li>
+<li><span style="font-size: 12pt;">Amplias capacidades criptográficas que </span><span style="font-size: 12pt;">incluyen hash, ajuste de clave, firma </span><span style="font-size: 12pt;">asimétrica, descifrado, certificación y más.</span></li>
+</ul>
+</td>
+<td style="width: 50%; text-align: center;"><img src="usb-nano.png" alt="" width="377" height="220" /></td>
+</tr>
+</tbody>
+</table>
+<h4>2.3 Tipos HSM</h4>
+<h4>Uso general</h4>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Incluyen una gran variedad de algoritmos de </span><span style="font-size: 12pt;">encriptación estándar (simétricos, asimétricos y </span><span style="font-size: 12pt;">funciones de hash) con soporte para </span><span style="font-size: 12pt;">interconectividad vía API empleando Public-Key </span><span style="font-size: 12pt;">Cryptography Standard (PKCS) y otros.</span></p>
+<p><span style="font-size: 12pt;">Estos dispositivos suelen ser usados en </span><span style="font-size: 12pt;">entornos de PKI, canales de HTTPS, DNSSEC, </span><span style="font-size: 12pt;">protección de datos sensibles genéricos o </span><span style="font-size: 12pt;">carteras de criptomonedas.</span></p>
+</td>
+<td style="width: 50%; text-align: center;"><img src="uso-hsm.png" alt="" width="433" height="260" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Transaccional y para pagos</strong></p>
+<p style="text-align: justify;">Utilizados para la <strong>protección de transacciones de pago que incluyen el uso de PIN</strong> (generación, gestión, validación del bloque de PIN en transacciones realizadas en cajeros automáticos), la protección de transferencias electrónicas, la generación de datos para bandas magnéticas y chips EMV en procesos de producción y personalización de tarjetas, el procesamiento de transacciones de pago con tarjetas débito y crédito y la validación de tarjetas, usuarios y criptogramas.</p>
+<p style="text-align: justify;">Estos dispositivos normalmente proveen <em><strong>soporte criptográfico para las aplicaciones de pago</strong></em> de la mayoría de las marcas de tarjetas y sus interfaces de interconexión suelen ser más limitadas que los HSM de uso genérico.</p>
+<h4>Smart Cards</h4>
+<ul>
+<li style="text-align: justify;">Verificar el PIN introducido por el usuario coincide con el PIN de referencia conocido con el emisor de la tarjeta.</li>
+<li style="text-align: justify;">Verificar las transacciones de crédito / tarjetas de débito mediante la comprobación de los códigos de seguridad tarjeta o mediante la realización de componentes de procesamiento principal de un EMV transacción basada en conjunción con un controlador de ATM o terminal POS.</li>
+<li style="text-align: justify;">Apoyar un cripto-API con una tarjeta inteligente (tal como un EMV).</li>
+<li style="text-align: justify;">Volver a cifrar un bloque de PIN para enviarlo a otro host autorización.</li>
+<li style="text-align: justify;">Realizar segura gestión de claves.</li>
+<li style="text-align: justify;">Soportar un protocolo de gestión de red POS ATM.</li>
+<li style="text-align: justify;">Soportar los estándares de facto de clave de host en host | API de intercambio de datos.</li>
+<li style="text-align: justify;">Generar e imprimir un "envío de PIN".</li>
+<li style="text-align: justify;">Generar datos para una tarjeta de banda magnética (PVV, CVV).</li>
+<li style="text-align: justify;">Generar un conjunto de claves de tarjetas y apoyar el proceso de personalización de tarjeta inteligente.</li>
+</ul>
+<h4>2.4 HSM-as-a-Service</h4>
+<ul>
+<li>Microsoft Azure: Azure Dedicated HSM y Azure Key Vault.</li>
+<li>Google Cloud Platform: Cloud HSM y Cloud Key Management Service.</li>
+<li>Amazon Web Services: AWS Key Management Service (KMS) y AWS.</li>
+<li>CloudHSM.</li>
+<li>IBM: Cloud Hardware Security Module.</li>
+<li>Utimaco: HSM-as-a-Service.</li>
+<li>nCipher: nShield-as-a-Service.</li>
+<li>Thales: CipherTrust Cloud Key Manager.</li>
+</ul>
+<p></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="617_uso_de_tcnicas_criptogrficas_en_las_pyme.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="7_sistemas_de_control_de_acceso_y_autenticacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

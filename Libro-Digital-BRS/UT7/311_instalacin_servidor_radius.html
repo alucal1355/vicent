@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.1. Instalación servidor Radius | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-79"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_servidor_de_autenticacin_radius.html" class="current-page-parent daddy">3. Servidor de autenticación Radius</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_freeradius.html" class="current-page-parent daddy">3.1 FreeRadius</a>
+      <ul>
+         <li id="active"><a href="311_instalacin_servidor_radius.html" class="active daddy">3.1.1. Instalación servidor Radius</a>
+         <ul>
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul class="other-section">
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul class="other-section">
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="31_freeradius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.1. Instalación servidor Radius</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id110">
+<div class="iDevice emphasis0" >
+<div id="ta110_111_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;"><span>1. Introducción</span></h3>
+<p style="text-align: justify;"><strong>RADIUS</strong><span> es un servicio que integra toda la política AAA (Authentication, Authorization and Accounting) en la gestión del acceso a una red y a sus servicios. En este capítulo, se describe el proceso de instalación y configuración de un servidor </span><strong>FreeRADIUS</strong><span> como centro de un entorno IEEE 802.1X / Wi-Fi permitiendo el acceso a la red mediante usuario y contraseña.</span></p>
+<h3 style="text-align: justify;"><span>2. Recursos necesarios</span></h3>
+<ul style="text-align: justify;">
+<li style="text-align: justify;"><strong>Máquina virtual Ubuntu Server</strong><span> 20.04 LTS </span>en el que se instalará <strong>FreeRADIUS</strong>. Para poder montar esta máquina se puede crear una máquina virtual a partir de una ISO o descargar una OVA ya creada de<span> </span><a>linuxvmimages</a>.</li>
+<li style="text-align: justify;">Instalar la utilidad<strong><span> </span>openssh-server</strong><span> </span>para probar posteriormente la conectividad de clientes Linux y Windows mediante ssh con el servidor Radius.</li>
+</ul>
+<h3 style="text-align: justify;">3. Requisitos del sistema</h3>
+<p style="text-align: justify;">Si se tiene configurado el cortafuegos, hay que añadir unas reglas para permitir el tráfico en los puertos 1812/UDP (para autenticación) y 1813/UDP (para administración de cuentas). Se necesita abrir dichos puertos en el firewall perimetral de la organización en sentido Entrada-Salida.</p>
+<pre><span style="font-size: 12pt;">LAN=eno01<br />WAN=eno02<br />iptables -A FORWARD -s $LAN -d $WAN -p udp --dport 1812 -j ACCEPT</span><br /><span style="font-size: 12pt;">iptables -A FORWARD -s $WAN -d $LAN -p udp --sport 1812 -j ACCEPT</span><br /><span style="font-size: 12pt;">iptables -A FORWARD -s $LAN -d $WAN -p udp --dport 1813 -j ACCEPT</span><br /><span style="font-size: 12pt;">iptables -A FORWARD -s $WAN -d $LAN -p udp --sport 1813 -j ACCEPT</span></pre>
+<h3 style="text-align: justify;"><span>4. Instalación y configuración de FreeRADIUS</span></h3>
+<h4 style="text-align: justify;"><span>4.1 Instalación</span></h4>
+<p style="text-align: justify;"><span>Para instalar la utilidad <strong>freeRadius</strong>, estando en el servidor ubuntu con credenciales de root, ejecutamos los siguientes comandos:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>apt update -y<strong><br /></strong><strong>root@radius:<span>~</span>#</strong>apt install freeradius</span></pre>
+<p style="text-align: center;"><img src="install-freeRadius-01.png" alt="" width="793" height="423" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 1.</strong> Instalación de paquetes.</span></em></p>
+<h4 style="text-align: justify;"><span>4.2 Certificados</span></h4>
+<p style="text-align: justify;"><span>El método de <strong>autenticación EAP-TTLS</strong> no obliga a crear una autoridad de certificación, aunque sí que ese necesario tener un certificado de servidor. Para disponer de dicho certificado se tienen varias opciones:</span></p>
+<ol>
+<li style="text-align: justify;"><span>Usar el certificado que se crea automáticamente al instalar freeradius.</span></li>
+<li style="text-align: justify;"><span>Crear un certificado autofirmado.</span></li>
+<li style="text-align: justify;"><span>Crear una propia autoridad de certificación, con la que se genere dicho certificado (se estudió en la Unidad de Trabajo 2).</span></li>
+</ol>
+<p><span>Para este caso de ejemplo, se ha decidido <strong>utilizar los certificados de freeradius</strong>, ya que a efectos finales, todas las opciones son iguales.</span></p>
+<p style="text-align: justify;">Para usar los certificados en otras aplicaciones, la instalación de<strong> FreeRadius en Ubuntu Server</strong> almacena los certificados en <strong>/etc/ssl</strong> y en el directorio <strong>/etc/freeradius/3.0/certs</strong>. <span style="font-size: 12pt;"><br /></span></p>
+<p style="text-align: center;"><img src="ls-certs.png" alt="" width="541" height="250" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 2.</strong> Directorio certs de freeradius.</span></em></p>
+<p>A continuación, por seguridad se va a restringir los permisos en sólo lectura para el propietario y grupo de una serie de ficheros. En primer lugar se cambia la propiedad de los ficheros siguientes:</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>chown root:freerad /etc/freeradius/3.0/certs/dh<br /><strong>root@radius:~#</strong>chown root:freerad /etc/ssl/private/ssl-cert-snakeoil.key<br /><strong>root@radius:~#</strong>chown root:freerad /etc/ssl/certs/ssl-cert-snakeoil.pem<br /><strong>root@radius:~#</strong>chown root:freerad /etc/ssl/certs/ca-certificates.crt<br /></span></pre>
+<p style="text-align: center;"><img src="chown-certs.png" alt="" width="686" height="231" /></p>
+<p style="text-align: center;"><em><span><strong>Figura 3.</strong> Cambios de propietarios a los ficheros.</span></em></p>
+<p>A continuación, se restringen los permisos:</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>chmod 440 /etc/freeradius/3.0/certs/dh<br /><strong>root@radius:~#</strong>chmod 440 /etc/ssl/certs/ca-certificates.crt<br /><strong>root@radius:~#</strong>chmod 440 /etc/ssl/certs/ssl-cert-snakeoil.pem<br /><strong>root@radius:~#</strong>chmod 440 /etc/ssl/private/ssl-cert-snakeoil.key<br /></span></pre>
+<p style="text-align: center;"><em><span><strong><img src="chmod-certs.png" alt="" width="702" height="237" /></strong></span></em></p>
+<p style="text-align: center;"><em><span><strong>Figura 4.</strong> Cambios de permisos a los ficheros.</span></em></p>
+<h4 style="text-align: justify;"><span>4.3 Configuración</span></h4>
+<p style="text-align: justify;"><span>Para la configuración del servidor radius, hay que seguir una serie de etapas que se describen a continuación.</span></p>
+<p style="text-align: justify;"><span><strong>1. Dar de alta un cliente (punto de acceso wifi) al que los usuarios se conectarán a la red wifi.</strong> </span></p>
+<p style="text-align: justify;"><span>En el contexto de FreeRadius, un cliente significa los <strong>autenticadores</strong>, como los puntos de acceso o los controladores WLAN (router). Los <strong>autenticadores</strong> y el <strong>servidor de autenticación</strong> utilizan <strong>secretos compartidos</strong> para verificarse entre sí. </span></p>
+<p style="text-align: justify;"><span>Para incluir en la lista blanca un punto de accesos hay que editar el archivo <strong>clients.conf</strong> y <strong>agregar el cliente</strong> como se muestra en la Figura 3. </span><span>Este cliente proporcionará al servidor <strong>freeRadius</strong> las credenciales protegidas con una contraseña que se deberán escribir tanto en el archivo <strong>clients.conf</strong> como, más tarde, en la interfaz del punto de acceso o router wifi. Si se observa la Figura 3, hay que indicar la dirección IP del cliente (punto de acceso o router).</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>nano /etc/freeradius/3.0/clients.conf</span></pre>
+<p style="text-align: center;"><img src="clients-Conf.png" alt="" width="685" height="410" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 2.</strong> Edición del fichero de configuración clients.conf.</em></span></p>
+<p><span>Se ha añadido esta sección:</span></p>
+<pre><span style="font-size: 12pt;">client AP-D-Link {<br />ipaddr = 192.168.1.162/24<br />secret = eeepsr10<br />}</span></pre>
+<p style="text-align: justify;"><span>donde,</span></p>
+<ul style="text-align: justify;">
+<li><span><strong>AP-D-Link</strong>: Es el nombre que se le opuesto al cliente radius, que para este caso de ejemplo, será un punto de acceso D-Link.</span></li>
+<li><span><strong><span style="font-size: 12pt;">ipaddr</span></strong>: </span><span>192.168.1.162/24 es la dirección ip del cliente radius (punto de acceso).</span></li>
+<li><span><strong><span style="font-size: 12pt;">secret</span></strong>: Es la clave del cliente radius (secreto compartido). Usada para cifrar la comunicación entre el servidor Radius y el cliente Radius (AP).</span></li>
+</ul>
+<p style="text-align: justify;"><span><strong>2. Crear un usuario (suplicante) y su contraseña.</strong> </span></p>
+<p style="text-align: justify;"><span>Una vez que el AP o router se ha incluido en la lista blanca, hay que agregar usuarios autorizados para autenticarse. Para ello hay que editar el archivo de usuarios <strong>users</strong> que se encuentra en <strong>/etc/freeradius/3.0/ </strong>donde se especificarán las reglas de control de acceso, similar a los ficheros ACL de Cisco. El formato debe ser: nombre de usuario Cleartext-Password: = "Contraseña". </span></p>
+<p style="text-align: justify;"><span>Donde,</span></p>
+<ul>
+<li style="text-align: justify;"><span>La entrada DEFAULT representa cualquier usuario.</span></li>
+<li style="text-align: justify;"><span>Las entradas del fichero users son procesadas en orden desde el principio hasta el final del archivo.</span></li>
+<li style="text-align: justify;"><span>Si una entrada contiene el item Fall-Through = No, el procesamiento del fichero se detiene y no se procesarán más entradas.</span></li>
+<li style="text-align: justify;"><span>Si una entrada contiene el item Fall-Through = Yes, se continúa el procesamiento de la siguiente entrada en orden.</span></li>
+<li style="text-align: justify;"><span>Si la solicitud de acceso no coincide con ninguna de las entradas, la solicitud será rechazada.</span></li>
+</ul>
+<p><span>Además se pueden definir un control de horarios para que el servidor sólo permita conexiones dentro de esos rangos.<br /></span><span> Si se observa la <strong>Figura 3</strong>, se está  almacenando la contraseña en claro, por lo que no será un método recomendable para un sistema en explotación. No hay un lugar determinado dentro del archivo para añadir la información del usuario, por lo que se añade junto a los ejemplos.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>nano /etc/freeradius/3.0/users</span></pre>
+<p style="text-align: center;"><img src="fichero-users-freeradius.png" alt="" width="800" height="497" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 3.</strong> Edición del fichero de configuración user.</em></span></p>
+<p style="text-align: justify;"><span>Se ha añadido esta sección:</span></p>
+<pre><span style="font-size: 12pt;">uradius Cleartext-Password := "eeepuc20"</span><span></span></pre>
+<p style="text-align: justify;"><span>donde,</span></p>
+<ul style="text-align: justify;">
+<li><span><strong>uradius</strong>: Es el nombre del usuario del cliente que se autenticará en el servidor.</span></li>
+<li><span><span style="font-size: 12pt;"><strong>eeepuc20</strong></span>: Es la contraseña que usará para la autenticación.</span></li>
+</ul>
+<p style="text-align: justify;"><strong>3. Mecanismo de autenticación</strong></p>
+<p style="text-align: justify;">En<strong> <span>/etc/freeradius/3.0/mods-available </span></strong>está el fichero <strong>eap</strong> que es uno de los ficheros más importantes, donde se define el tipo de autenticación, para este caso de ejemplo, <strong>EAP-TTLS</strong>. Se indicarán los certificados de servidor que se usarán para establecer la comunicación radius.</p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>nano /etc/freeradius/3.0/mods-available/eap</span></pre>
+<p style="text-align: justify;">El fichero quedaría de esta forma <a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/RADIUS/ficheros_ServRadius/mods-available/eap" target="_blank" rel="noopener">(fichero en github)</a>:</p>
+<p style="text-align: justify;"><strong>4. Accounting</strong></p>
+<p style="text-align: justify;">A continuación, hay que configurar el servidor para que registre en el archivo <strong>/var/log/freeradius/radius.log</strong> los accesos correctos y los intentos de acceso fallidos. Para ello, h<span>ay que editar el fichero <strong><span style="font-size: 12pt;">radiusd.conf</span></strong> que se encuentra en <strong>/etc/freeradius/3.0/ </strong>y modificar los parámetros: <strong>auth, auth_accept y auth_reject.</strong></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>nano /etc/freeradius/3.0/radiusd.conf</span></pre>
+<p style="text-align: center;"><img src="radiusd-conf.png" alt="" width="801" height="538" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 4.</strong> Edición del fichero de configuración radiusd.conf.</em></span></p>
+<p><span>Se han modificado estos parámetros esta sección:</span></p>
+<pre><span style="font-size: 16px;">auth = yes<br />auth_accept = yes<br />auth_reject = yes</span></pre>
+<p style="text-align: justify;"><span>Hay dos parámetros y que son<strong> </strong></span><strong></strong><span><strong>auth_badpass = no</strong> y <strong>auth_goodpass = no</strong>, que están configurados para  que no se almacenen en los log las peticiones de autenticación. Puede ser útil activarlos mientras se están realizando pruebas, es decir:</span></p>
+<pre><span style="font-size: 16px;"><span>auth_badpass </span>= yes<br /><span>auth_goodpass</span> = ye</span><span></span></pre>
+<p style="text-align: justify;"><span></span><strong>5. Reiniciar el servicio y comprobar. </strong></p>
+<p style="text-align: justify;"><span>A continuación, hay que reiniciar el servicio <strong><em>FreeRadius</em></strong> para aplicar todos los cambios realizados y probar la configuración del servidor Radius con el comando <b>freeradius -CX</b>. </span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>systemctl restart freeradius.service<strong><br />root@radius:<span>~</span>#</strong>freeradius -CX</span></pre>
+<p style="text-align: center;"><span><img src="freeradius-CX.png" alt="" width="801" height="46" /><br /></span></p>
+<p style="text-align: center;"><span><img src="freeradius-cx-02.png" alt="" width="800" height="384" /><br /></span></p>
+<p style="text-align: center;"><span><img src="ok-freeradus.png" alt="" width="354" height="43" /><br /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 5. </strong>Prueba de configuración de Radius.</em></span></p>
+<p style="text-align: justify;"><span>Como se puede observar en la imagen superior, el resultado del comando de testing es '<strong>Ok</strong>', por lo que la configuración que se ha realizado es correcta.</span></p>
+<p style="text-align: justify;"><span>También, se puede comprobar el estado del servicio:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>systemctl status freeradius.service</span></pre>
+<p style="text-align: center;"><span><img src="status-freeradius.png" alt="" width="801" height="439" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 6. </strong>Estado del servicio freeRadius.</em></span></p>
+<p style="text-align: justify;"><span>También se puede arrancar freeradius en modo debug en lugar de arrancarlo en modo daemon. Esto se puede realizar si se desea comprobar si se están aplicando las configuraciones que se pretenden o para ver si reciben y procesan bien las peticiones de los clientes. Para ello, hay que parar el daemon y luego ejecutar el comando freeradius -X:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>systemctl stop freeradius.service<br /><strong>root@radius:<span>~</span>#</strong>freeradius -X<br /></span><span></span></pre>
+<p style="text-align: justify;"><span>El proceso de instalación y configuración del <strong><em>servidor radius</em></strong> finaliza con esta comprobación. </span></p>
+<h3 style="text-align: justify;"><span>5. Pruebas de autenticación </span></h3>
+<p style="text-align: justify;"><span><strong>FreeRADIUS</strong> tiene la funcionalidad de probar el nombre de usuario y la contraseña recién creados ejecutando el siguiente comando:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>radtest uradius eeepuc20 127.0.0.1 0 testing123</span></pre>
+<p style="text-align: justify;"><span>Ejecutar el comando localmente significa que el servidor para el que se tendrá que proporcionar la clave secreta es el <strong>localhost</strong>. Se puede verificar la contraseña de <strong>localhost</strong> desde el archivo <strong>/etc/freeradius/3.0/</strong>clients.conf. </span></p>
+<p style="text-align: justify;"><span>Si todo va bien, verá un Access-Accept. si se </span><span>observa la <em><strong>Figura 7</strong></em>, la autenticación se realiza de manera satisfactoria.</span></p>
+<p style="text-align: center;"><img src="radtest-uradius-testing123.png" alt="" width="636" height="164" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 7. </strong>Pruebas de autenticación del usuario radius.</em></span></p>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>127.0.0.1 0 testing123:</strong> Es el cliente predeterminado radius localhost, donde el secreto compartido es testing123.</span></li>
+</ul>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="clients-testting123.png" alt="" width="693" height="538" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><span><em><strong>Figura 8. </strong>Cliente radius localhost.</em></span></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span>Por último, si se accede al</span></span><span style="font-size: 12pt;"><span> fichero de log, se puede comprobar el registro de la autenticación del usuario <strong>uradius</strong> en el cliente radius <strong>localhost</strong>.</span></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>tail -5 /var/log/freeradius/radius.log</span></pre>
+<p style="text-align: center;"><img src="var-log-auth.png" alt="" width="711" height="136" style="display: block; margin-left: auto; margin-right: auto;" /><span style="font-size: 12pt;"><span><em><strong>Figura 9. </strong>Fichero de log del servidor radius.</em></span></span></p>
+<h3 style="text-align: justify;"><span style="font-size: 14pt;">6. Puesta en marcha</span></h3>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span>Una vez se han completado las pruebas, se puede iniciar el servicio FreeRADIUS con el siguiente comando:</span></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>service freeradius start</span></pre>
+<p style="text-align: center;"><img src="start-status-freeradius.png" alt="" width="800" height="445" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><span><em><strong>Figura 10</strong>. Inicio y consulta del estado de freeradius.</em></span></span><span style="font-size: 12pt;"><span></span></span><span style="font-size: 12pt;"></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span>Mediante la herramienta <strong>Netcat</strong> se puede probar que el servicio está escuchando. <br /></span></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@radius:<span>~</span>#</strong>nc -vu 192.168.0.150 1812</span></pre>
+<p style="text-align: justify;"><span style="font-size: 12pt;">donde,</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>-u:</strong> Para que netcat trabaje con protocolo UDP en lugar de TCP.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>-v(verbose):</strong> Muestra informacion sobre la conexión.</span><span style="font-size: 12pt;"></span></li>
+</ul>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="netcad-freeradius.png" alt="" width="504" height="50" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><span><em><strong>Figura 11</strong>. Prueba del puerto listen del servicio freeradius.</em></span></span><span style="font-size: 12pt;"><span><em></em></span></span></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="31_freeradius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7.2.1 Certificados digitales | UT3. Sistemas de control de acceso y credenciales </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-57"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT3. Sistemas de control de acceso y credenciales</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT3. Sistemas de control de acceso y credenciales</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="recomendaciones_de_estudio__resumen.html" class="no-ch">Recomendaciones de estudio - Resumen</a></li>
+   <li><a href="1_mecanismos_de_autenticacin_tipos_de_factores.html" class="daddy">1. Mecanismos de autenticación. Tipos de factores.</a>
+   <ul class="other-section">
+      <li><a href="11_mltiples_factores_de_autenticacin.html" class="no-ch">1.1 Múltiples factores de autenticación</a></li>
+      <li><a href="tarea_1_autenticacin_de_doble_factor_por_ssh_con_google_authenticator.html" class="no-ch">Tarea 1. Autenticación de doble factor por SSH con Google Authenticator</a></li>
+      <li><a href="laboratorio_1_autenticacin_multifactor_con_yubico.html" class="no-ch">Laboratorio 1. Autenticación multifactor con Yubico</a></li>
+      <li><a href="tarea_2_ubuntu__2fa_para_login_con_yubico_security_key.html" class="no-ch">Tarea 2. Ubuntu - 2FA para login con Yubico Security Key</a></li>
+   </ul>
+   </li>
+   <li><a href="2_tcnicas_de_autenticacin.html" class="no-ch">2. Técnicas de autenticación</a></li>
+   <li><a href="3_gestin_de_credenciales.html" class="daddy">3. Gestión de credenciales</a>
+   <ul class="other-section">
+      <li><a href="31_lastpass.html" class="no-ch">3.1 LastPass</a></li>
+      <li><a href="32_keepass.html" class="no-ch">3.2 Keepass</a></li>
+      <li><a href="33_otros_gestores_de_contraseas.html" class="no-ch">3.3 Otros gestores de contraseñas</a></li>
+      <li><a href="tarea_3_instalacin_configuracin_y_puesta_en_produccin_de_un_gestor_de_credenciales.html" class="no-ch">Tarea 3. Instalación, configuración y puesta en producción de un gestor de credenciales</a></li>
+      <li><a href="34_brechas_de_seguridad_y_contraseas_inseguras.html" class="no-ch">3.4 Brechas de seguridad y contraseñas inseguras</a></li>
+   </ul>
+   </li>
+   <li><a href="4_acceso_por_medio_de_firma_electrnica.html" class="daddy">4. Acceso por medio de firma electrónica</a>
+   <ul class="other-section">
+      <li><a href="41_lectores_de_dnie.html" class="no-ch">4.1 Lectores de DNIe</a></li>
+      <li><a href="42_uso_de_nfc_con_el_dnie.html" class="no-ch">4.2 Uso de NFC con el DNIe</a></li>
+   </ul>
+   </li>
+   <li><a href="5_sistemas_de_single_sign_on_sso.html" class="daddy">5. Sistemas de Single Sign On SSO</a>
+   <ul class="other-section">
+      <li><a href="tarea_4_sistemas_sso.html" class="no-ch">Tarea 4. Sistemas SSO</a></li>
+   </ul>
+   </li>
+   <li><a href="6_criptografa.html" class="daddy">6. Criptografía</a>
+   <ul class="other-section">
+      <li><a href="61_aplicacin_de_la_criptografa_en_la_seguridad_de_la_informacin.html" class="daddy">6.1 Aplicación de la Criptografía en la seguridad de la información</a>
+      <ul class="other-section">
+         <li><a href="611_principios_bsicos_de_la_criptografa.html" class="no-ch">6.1.1 Principios básicos de la criptografía</a></li>
+         <li><a href="612_criptografa_clsica.html" class="no-ch">6.1.2 Criptografía clásica</a></li>
+         <li><a href="613_servicios_de_seguridad_de_criptografa.html" class="no-ch">6.1.3 Servicios de seguridad de criptografía</a></li>
+         <li><a href="614_criptografa_moderna.html" class="daddy">6.1.4 Criptografía Moderna</a>
+         <ul class="other-section">
+            <li><a href="6141_criptografa_de_clave_privada.html" class="daddy">6.1.4.1 Criptografía de clave privada</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_1_cifrado_simtrico_de_archivos.html" class="no-ch">Laboratorio 1. Cifrado simétrico de archivos</a></li>
+               <li><a href="prctica_1_cifrado_simtrico.html" class="no-ch">Práctica 1. Cifrado simétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6142_criptografa_de_clave_pblica.html" class="daddy">6.1.4.2 Criptografía de clave pública</a>
+            <ul class="other-section">
+               <li><a href="laboratorio_2_cifrado_asimtrico_de_ficheros.html" class="no-ch">Laboratorio 2. Cifrado asimétrico de ficheros</a></li>
+               <li><a href="prctica_2cifrado_asimtrico.html" class="no-ch">Práctica 2.Cifrado Asimétrico</a></li>
+            </ul>
+            </li>
+            <li><a href="6143_ventas_y_desventajas_cifrado_simtrico_y_asimetrico.html" class="no-ch">6.1.4.3 Ventas y desventajas cifrado simétrico y asimetrico</a></li>
+            <li><a href="6144_criptografa_hbirida.html" class="no-ch">6.1.4.4 Criptografía híbirida</a></li>
+         </ul>
+         </li>
+         <li><a href="615_esteganografa.html" class="daddy">6.1.5 Esteganografía</a>
+         <ul class="other-section">
+            <li><a href="tarea_5_openstego.html" class="no-ch">Tarea 5. OpenStego</a></li>
+         </ul>
+         </li>
+         <li><a href="616_funciones_hash.html" class="daddy">6.1.6 Funciones hash</a>
+         <ul class="other-section">
+            <li><a href="tarea_6_funciones_hash.html" class="no-ch">Tarea 6. Funciones hash</a></li>
+            <li><a href="tarea_7_quickhash.html" class="no-ch">Tarea 7. QuickHash</a></li>
+            <li><a href="tarea_8_funciones_avanzadas_hash_de_powershell.html" class="no-ch">Tarea 8. Funciones avanzadas hash de powershell</a></li>
+            <li><a href="laboratorio_3_funciones_hash_con_kleopatra.html" class="no-ch">Laboratorio 3. Funciones hash con Kleopatra</a></li>
+         </ul>
+         </li>
+         <li><a href="617_uso_de_tcnicas_criptogrficas_en_las_pyme.html" class="no-ch">6.1.7 Uso de técnicas criptográficas en las PYME</a></li>
+         <li><a href="618_sistemas_encriptacin_hardware_tpmhsm.html" class="no-ch">6.1.8 Sistemas encriptación hardware (TPM/HSM)</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="7_sistemas_de_control_de_acceso_y_autenticacin.html" class="current-page-parent daddy">7. Sistemas de control de acceso y autenticación</a>
+   <ul>
+      <li><a href="71_creacin_de_claves_ssh.html" class="no-ch">7.1 Creación de claves SSH</a></li>
+      <li class="current-page-parent"><a href="72_certificados_digitales_gestin_de_una_pki.html" class="current-page-parent daddy">7.2. Certificados digitales, gestión de una PKI</a>
+      <ul>
+         <li id="active"><a href="721_certificados_digitales.html" class="active daddy">7.2.1 Certificados digitales</a>
+         <ul>
+            <li><a href="laboratorio_4_certificado_personal.html" class="no-ch">Laboratorio 4. Certificado personal</a></li>
+            <li><a href="tarea_9_verificacin_de_certificados_digitales.html" class="no-ch">Tarea 9. Verificación de certificados digitales</a></li>
+         </ul>
+         </li>
+         <li><a href="722_firma_digital.html" class="daddy">7.2.2 Firma digital</a>
+         <ul class="other-section">
+            <li><a href="prctica_3_verificacin_de_la_autenticidad_e_integridad_de_un_mensaje.html" class="no-ch">Práctica 3: Verificación de la autenticidad e integridad de un mensaje</a></li>
+         </ul>
+         </li>
+         <li><a href="723_infraestructuras_de_clave_pblica_pki.html" class="no-ch">7.2.3 Infraestructuras de clave pública (PKI)</a></li>
+         <li><a href="laboratorio_5_infraestructura_de_clave_pblica_propia_con_openssl.html" class="no-ch">Laboratorio 5. Infraestructura de clave pública propia con OpenSSL</a></li>
+         <li><a href="caso_prctico_uso_de_certificados_en_servicios_web.html" class="no-ch">Caso Práctico. Uso de certificados en Servicios WEB</a></li>
+         <li><a href="reto_implementacin_de_una_sistema_de_certificados_pki_en_la_organizacin_con_easyrsa.html" class="no-ch">Reto. Implementación de una sistema de certificados (PKI) en la organización con Easy-RSA</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="8_gestin_de_accesos_sistemas_nac.html" class="daddy">8. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_6_packetfence.html" class="no-ch">Laboratorio 6. PacketFence</a></li>
+      <li><a href="prctica_4_acceso_a_la_web_a_travs_de_un_nac.html" class="no-ch">Práctica 4. Acceso a la web a través de un NAC</a></li>
+   </ul>
+   </li>
+   <li><a href="9_gestin_de_cuentas_privilegiadas.html" class="daddy">9. Gestión de cuentas privilegiadas</a>
+   <ul class="other-section">
+      <li><a href="101_pam.html" class="no-ch">10.1 PAM</a></li>
+      <li><a href="tarea_10_ejecutar_como.html" class="no-ch">Tarea 10. Ejecutar como</a></li>
+   </ul>
+   </li>
+   <li><a href="10_protocolos_radius_y_tacacs_servicio_kerberos.html" class="daddy">10. Protocolos RADIUS y TACACS, servicio KERBEROS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_7_freeradius.html" class="daddy">Laboratorio 7. freeRadius</a>
+      <ul class="other-section">
+         <li><a href="1_instalacin_servidor_radius.html" class="no-ch">1. Instalación servidor Radius</a></li>
+         <li><a href="2_instalacin_cliente_radius.html" class="no-ch">2. Instalación Cliente Radius</a></li>
+      </ul>
+      </li>
+      <li><a href="laboratorio_8_radius_windows_server.html" class="no-ch">Laboratorio 8. Radius Windows Server</a></li>
+   </ul>
+   </li>
+   <li><a href="11_ldap.html" class="daddy">11. LDAP</a>
+   <ul class="other-section">
+      <li><a href="111_instalacin_y_configuracin_de_ldap.html" class="no-ch">11.1 Instalación y configuración de LDAP.</a></li>
+      <li><a href="112_configuracin_de_certificados_ssltsl_en_ldap.html" class="no-ch">11.2 Configuración de certificados SSL/TSL en LDAP.</a></li>
+      <li><a href="113_creacin_de_cuentas_ldap.html" class="no-ch">11.3 Creación de cuentas LDAP</a></li>
+      <li><a href="114_instalacin_de_sssd_en_el_cliente_ubuntu_desktop.html" class="no-ch">11.4 Instalación de SSSD en el cliente Ubuntu Desktop</a></li>
+      <li><a href="proyecto_instalar_servidor_de_autenticacin_openldap_servidor_ubuntu.html" class="no-ch">Proyecto. Instalar servidor de autenticación OpenLdap Servidor Ubuntu</a></li>
+   </ul>
+   </li>
+   <li><a href="12_referencias.html" class="no-ch">12. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="72_certificados_digitales_gestin_de_una_pki.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_4_certificado_personal.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">7.2.1 Certificados digitales</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id85">
+<div class="iDevice emphasis0" >
+<div id="ta85_108_2" class="block iDevice_content">
+<div class="exe-text"><h3><span>1. Introducción</span></h3>
+<p><span>El <strong><em>certificado digital</em></strong> de un usuario es un documento digital que contiene  nuestros datos identificativos autenticados por una entidad ya sea un organismo oficial o alguien que acredite que somos quien decimos ser (confirma nuestra identidad de manera digital).</span></p>
+<p><span>Los <strong>certificados digitales</strong> son documentos electrónicos emitidos por autoridades de certificación (en adelante AC) que garantizan la identidad de un usuario o servicio electrónico como una página web.</span></p>
+<p style="text-align: justify;"><span>Básicamente un <strong><em>certificado digital</em></strong> es una clave pública de un usuario o servicio, firmada digitalmente con la clave privada de una AC en la que se confía, garantizando que esa clave pública es de quien dice ser.</span></p>
+<p style="text-align: justify;"><span><strong>Ejemplo:</strong> En el caso del DNI electrónico, la AC de la Policía Nacional firma digitalmente la clave pública del certificado ciudadano que está introducido en el chip de su DNI.</span></p>
+<p style="text-align: justify;"><span>Por tanto, un <strong><em>certificado digital</em></strong> es un <strong>documento digital</strong> mediante el cual un tercero confiable (una autoridad de certificación) garantiza la vinculación entre la identidad de un sujeto o entidad y su clave pública. Existen variados formatos para certificados digitales, los más comúnmente empleados se rigen por el estándar <strong>UIT-T X.509.</strong></span></p>
+<p><span>Con el <strong><em>certificado digital</em> </strong>se pueden realizar gestiones como por ejemplo con: ayuntamientos, seguridad social, agencia tributaria, registros mercantiles.</span></p>
+<p style="text-align: center;"><img src="certificado-digital-01.png" alt="" width="1338" height="1023" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong><span> </span>Acceso al ayuntamiento de Burriana con certificado digital.</em></p>
+<p><span></span>También, los <strong><em>certificados digitales</em></strong> se pueden emplear para:</p>
+<ul>
+<li>Firma digital de software o documentos.</li>
+<li>Cifrar un mensaje.</li>
+</ul>
+<p>Los certificados pueden ser de<span> </span><strong>varios tipos</strong><span> </span>según su uso:</p>
+<ul>
+<li>Personales.</li>
+<li>Servidor.</li>
+<li>Software.</li>
+<li>Entidad de certificación.</li>
+</ul>
+<p><span>Los certificados también pueden clasificarse en función del </span><strong>nivel de verificación</strong><span> que se hace al concederlos por parte de la AC:</span></p>
+<ul>
+<li><strong>Clase 1</strong>. Para usuarios y destinado al correo electrónico.</li>
+<li style="text-align: justify;"><strong>Clase 2.</strong><span> Se emiten para personas y para servidores o dispositivos y se realiza una mayor verificación de la identidad que en clase 1</span>. <span>Los certificados para personas de clase 2 resultan adecuados para las firmas digitales, el cifrado y el control de acceso electrónico en transacciones en las que la prueba de identidad basada en información de la base de datos de validación es suficiente. Los certificados de dispositivo o servidor de clase 2 resultan adecuados para la autenticación de servidores, la integridad de mensajes, software y el cifrado.</span></li>
+<li style="text-align: justify;"><strong>Clase 3.</strong><span> Se emiten a personas, organizaciones, servidores, dispositivos y administradores de AC y autoridades de certificados raíz. Los certificados individuales de clase 3 resultan adecuados para las firmas digitales, el cifrado y el control de acceso en transacciones donde se asegura la prueba de identidad. Los certificados de servidor de clase 3 resultan adecuados para la autenticación de servidor; la integridad de mensajes, software y cifrado. Dan un mayor nivel de confianza debido a que exigen un proceso de verificación presencial.</span></li>
+<li><strong>Clase 4</strong>. Para trámites on-line entre empresas.</li>
+<li><strong>Clase 5</strong>. Para empresas privadas y de seguridad del gobierno.</li>
+</ul>
+<p style="text-align: justify;">Otro tipo de clasificación de los certificados en función de la<span> </span><strong>validación</strong><span> </span>que se hace para la organización que lo solicita es:</p>
+<ul>
+<li style="text-align: justify;"><strong>Domain Validated</strong><span> </span>(DV): tienen el nivel más bajo de verificación porque sólo se comprueba que el dominio pertenece al solicitante. La confirmación por parte de la AC se hace enviando un email al correo que figura en la información de la <em>base de datos whois</em> del dominio registrado o bien enviando un archivo de verificación que el solicitante coloca en el sitio web para que la AC compruebe que le pertenece dicho dominio.</li>
+<li style="text-align: justify;"><strong>Organization Validated</strong><span> </span>(OV): tienen un nivel más alto de confianza porque además de comprobar el dominio, verifican la identidad de la organización a la que pertenece el dominio. El nombre de la organización también aparecerá en el certificado, dando confianza añadida de que tanto el sitio web como la compañía son de confianza. Suelen ser utilizados por empresas, gobiernos y otras entidades que desean proporcionar una capa adicional de confianza para sus visitantes.</li>
+<li style="text-align: justify;"><strong>Extended Validation</strong><span> </span>(EV): son los más seguros y confiables y a la vez los más caros porque requieren un proceso de validación mucho más complejo por parte de la AC y la solicitud de mucha documentación a la organización solicitante. Además de mostrar el nombre de la organización en el certificado, también aparecerá en<span> </span><strong>color verde</strong><span> </span>en la barra de direcciones, al lado del candado. Lamentablemente, algunos navegadores como Firefox o Chrome han decido<span> </span><a href="https://olhardigital.com.br/es/2019/08/15/seguranca/chrome-e-firefox-vao-retirar-icone-de-seguranca-da-barra-de-enderecos/" target="_blank" rel="noopener">eliminar la barra verde</a><span> </span>debido a que consideran que los usuarios no aprecian esta función. </li>
+</ul>
+<h3><span>2. Elementos de los Certificados digitales</span></h3>
+<p><span>Principalmente hay dos tipos de certificados:</span></p>
+<ul>
+<li><span>Certificados X.509 emitidos por <a href="https://es.wikipedia.org/wiki/Autoridad_de_certificaci%C3%B3n" target="_blank" rel="noopener">Autoridad de Certificación (CA)</a>.</span></li>
+<li><span><a href="https://hardzone.es/reportajes/que-es/pgp-pretty-good-privacy/" target="_blank" rel="noopener">Certificados PGP</a> (Pretty Good Privacy). Se generan por nosotros en una empresa.</span></li>
+</ul>
+<p><span>Un certificado digital contiene </span><strong>información</strong><span> como:</span></p>
+<ul>
+<li>Número de versión.</li>
+<li>Número de serie.</li>
+<li>Nombre del emisor (AC).</li>
+<li>Nombre del sujeto.</li>
+<li>Periodo de validez.</li>
+<li>Clave pública del sujeto.</li>
+<li>Método de verificación de la firma.</li>
+<li>Firma digital del certificado por parte de la AC.</li>
+<li>Extensiones de certificado.</li>
+</ul>
+<p><span>En la siguiente figura se pueden comprobar la información que contiene un certificado digital de un servidor web seguro (HTTPS) de un banco:</span></p>
+<p style="text-align: center;"><span><img src="certificado-bbva.png" alt="" width="540" height="664" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 2.</strong> Certificado del banco BBVA.</em></span></p>
+<p style="text-align: justify;"><span>Esta información puede obtenerse usando cualquier navegador. Por ejemplo en <strong>Firefox</strong>, pulsando<strong> Control + i</strong> (o bien Herramientas, Información de la página), pestaña Seguridad, botón ver certificado. También puede hacerse en el candado de la barra de direcciones. Desde <strong>Chrome</strong> puede hacerse haciendo clic en el candado de la barra de direcciones y después seleccionar Conexión, Datos del certificado. La siguiente imagen muestra la misma información desde Firefox:</span></p>
+<p style="text-align: center;"><span><img src="cert-Bankia.png" alt="" width="609" height="575" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 2.</strong> Acceso al certificado del banco Bankia desde Forefox</em></span></p>
+<p>Los certificados digitales pueden encontrase en varios<span> </span><strong>estados</strong>:</p>
+<ul>
+<li><strong>Emitido</strong>: se encuentra en vigencia y por tanto es válido.</li>
+<li><strong>Expirado</strong>: ha finalizado su periodo de validez y es necesario renovarlo (en la imagen superior la fecha de expiración es 16 de febrero de 2022).</li>
+<li><strong>Revocado</strong>: es un certificado que no es válido y ha sido incluido en una lista de revocación (CRL) debido a que la clave privada se ha visto comprometida o ha habido cambios en los datos asociados al certificado</li>
+<li><strong>Suspendido</strong>: es una revocación temporal por las mismas razones que el revocado, pero es una situación reversible.</li>
+</ul>
+<h3><span>3. Soportes de los certificados</span></h3>
+<p>Los certificados pueden ir en varios<span> </span><strong>soportes</strong><span> </span>como por ejemplo:</p>
+<ul>
+<li>Fichero en disco duro o USB.</li>
+<li>Tarjetas smartcard (como el DNI-e).</li>
+<li>tarjetas criptográficas.</li>
+<li>token USB.</li>
+</ul>
+<h3><span>4. Pasos para obtener un certificado</span></h3>
+<p style="text-align: justify;">Ya sea como persona física o bien, para montar un servidor web seguro, se puede solicitar un certificado a una AC siguiendo los siguientes pasos:</p>
+<ol>
+<li style="text-align: justify;">El solicitante (persona física o una empresa) realiza una<span> </span><strong>solicitud</strong><span> </span>(<a href="https://www.digicert.com/es/crear-csr.htm" target="_blank" rel="noopener">CSR</a>, Certificate Signing Request) enviando sus datos a la autoridad certificadora.</li>
+<li style="text-align: justify;">La Autoridad de Certificación verifica la identidad del solicitante de un certificado antes de su expedición, de forma presencial habitualmente.</li>
+<li style="text-align: justify;">Al expedir el certificado, la AC lo firma con su clave privada, garantizando su validez.</li>
+<li style="text-align: justify;">La AC envía al solicitante el certificado.</li>
+<li style="text-align: justify;">Los certificados suelen ser para personas físicas o para servidores (ejemplo: https).</li>
+</ol>
+<p>En algún momento del proceso, es necesario generar el par de claves (privada y pública) asociadas al solicitante. Hay dos opciones, siendo la segunda la más recomendable y usada:</p>
+<p><strong>Método 1</strong>: La autoridad al crear el certificado crea un par de claves:</p>
+<ul>
+<li><strong>Clave privada:</strong> contenida en el propio certificado digital.
+<ul>
+<li style="text-align: justify;">Ni el usuario ni la CA deben proporcionar el certificado a otros.</li>
+<li style="text-align: justify;">La CA no se queda con copia del certificado.</li>
+<li style="text-align: justify;">Si se pierde, se debe pedir uno nuevo.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li style="text-align: justify;"><strong>Clave pública:</strong> guardada por la CA y proporcionada a todo el que la solicite</li>
+</ul>
+<p><strong>Método 2</strong>: para evitar que la CA pueda tener la clave privada el solicitante puede generar una petición de certificado (CSR) desde su ordenador, que enviará a la autoridad certificadora, y así no le envía su clave privada, que siempre la tendrá él en su ordenador.</p>
+<h3><span>5. Proceso de validación y verificación de un certificado</span></h3>
+<p style="text-align: justify;">Los pasos que se siguen cuando un parte quiere validar el certificado que le envía la otra parte, como por ejemplo un navegador web cuando se conecta a una página web segura:</p>
+<ol>
+<li style="text-align: justify;"><span style="color: #666666; font-size: 0.95em;">Conseguir el certificado de la otra parte.</span></li>
+<li style="text-align: justify;">Verificar la validez del certificado:
+<ul>
+<li style="text-align: justify;">Dentro del período de validez.</li>
+<li style="text-align: justify;">Certificado no revocado.</li>
+<li style="text-align: justify;">Firma electrónica de la AC correcta.</li>
+</ul>
+</li>
+<li style="text-align: justify;">Verificar la firma digital del resumen o hash del mensaje con la clave pública del emisor.</li>
+<li style="text-align: justify;">El receptor debe estar en posesión de la clave pública de la AC (instalada en su navegador, por ejemplo), con lo que podrá comprobar la firma electrónica de la AC del certificado.</li>
+</ol>
+<h3><span>6. Autoridad de certificación</span></h3>
+<p style="text-align: justify;">La Autoridad de Certificación es  una entidad<span> </span><strong>fiable</strong><span> </span>y<span> </span><strong>reconocida</strong><span> </span>regional o mundialmente, encargada de garantizar de forma unívoca y segura la identidad asociada a una clave pública. Realiza las siguientes tareas:</p>
+<ul style="text-align: justify;">
+<li>Recibe y procesa peticiones de certificados (CSR) de los usuarios finales. </li>
+<li>Consulta con una Autoridad de Registro para determinar si acepta o rehúsa la petición de certificado</li>
+<li>Emite el certificado</li>
+<li>Gestiona Listas de Revocación de Certificados (CRLs)</li>
+<li>Renueva certificados</li>
+<li>Proporciona:
+<ul>
+<li>Servicios de backup y archivo seguro de claves de cifrado.</li>
+<li>Infraestructura de seguridad para la confianza, políticas de operación segura e información de auditoría.</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: justify;">Algunas de las principales autoridades certificadoras son:</p>
+<ul style="text-align: justify;">
+<li><strong>Internacionales</strong>: Verisign, GlobalSign, Thawte Certification, Comodo, etc</li>
+<li>En<span> </span><strong>España</strong>: FNMT, ACCV (GVA), Edicom, etc.</li>
+</ul>
+<p style="text-align: justify;">Cualquiera puede crear su propia AC con el software adecuado (por ejemplo Openssl). El problema es generar reputación y confianza por el resto para ser incluido en los repositorios de AC, como las que vienen de serie en nuestro navegador.</p>
+<p style="text-align: justify;">Se pueden consultar las AC de nuestro ordenador, dependiendo del software que utilicemos. Por ejemplo en el navegador<span> </span><strong>Firefox</strong><span> </span>se pueden consultar desde menú Ajustes, Privacidad &amp; Seguridad, Certificados, botón Ver certificados, pestaña Autoridades:</p>
+<p style="text-align: center;"><img src="autoridades-Cert-Firefox.png" alt="" width="745" height="456" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 3.</strong> Acceso a las autoridades desde Firefox.</em></span></p>
+<p style="text-align: center;"></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="72_certificados_digitales_gestin_de_una_pki.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_4_certificado_personal.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

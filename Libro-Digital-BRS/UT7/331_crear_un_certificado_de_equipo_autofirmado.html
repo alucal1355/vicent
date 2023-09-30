@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3.1 Crear un certificado de equipo autofirmado | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-82"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_servidor_de_autenticacin_radius.html" class="current-page-parent daddy">3. Servidor de autenticación Radius</a>
+   <ul>
+      <li><a href="31_freeradius.html" class="daddy">3.1 FreeRadius</a>
+      <ul class="other-section">
+         <li><a href="311_instalacin_servidor_radius.html" class="daddy">3.1.1. Instalación servidor Radius</a>
+         <ul class="other-section">
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul class="other-section">
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="current-page-parent daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul>
+         <li id="active"><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="active no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3.1 Crear un certificado de equipo autofirmado</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id113">
+<div class="iDevice emphasis0" >
+<div id="ta113_113_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;"><span>1. Introducción</span></h3>
+<p style="text-align: justify;"><span>Para este escenario no se va a implementar una infraestructura PKI/CA o adquirir un certificado de un proveedor externo. Lo que se va a realizar es, </span><span>utilizar certificados autofirmados con fines de prueba aunque también serían válidos para proporcionar certificados para servicios de Intranet internos (IIS, Exchange, Proxy de aplicación web, LDAPS, ADRMS, DirectAccess, etc.).</span><span></span></p>
+<div class="cuadro-importante-centro-new">
+<p><span>Se  puede obtener fácilmente un certificado SSL gratuito de <a href="https://letsencrypt.org/es/" target="_blank" rel="noopener">Let's Encrypt</a>. </span></p>
+</div>
+<h3 style="text-align: justify;">2. Proceso</h3>
+<p id="8190" style="text-align: justify;">Para crear el <strong><em>certificado de equipo autofirmado</em></strong>, se puede realizar desde la interfaz gráfica o powershell. Para este caso, se hará uso de powershell donde se ha desarrollado un script <a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/RadiusWServer/crearCertificado.ps1" target="_blank" rel="noopener">crearCertificado.ps1</a> para la creación del certificado autofirmado para este escenario. </p>
+<p style="text-align: justify;"><span>Para crear un certificado, hay que especificar los valores de </span><strong>–DnsName</strong><span> (nombre de un servidor, el nombre puede cualquiera) y </span><strong>-CertStoreLocation</strong><span> (un almacén de certificados local en el que se colocará el certificado generado).  Para este caso, los datos son los siguientes:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>–DnsName.</strong> Es el FQDN del servidor - perseo.ciber.local.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>-CertStoreLocation: </strong>almacén de certificados local - Cert:LocalMachine\My.</span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>-FriendlyName</strong></span></li>
+<li style="text-align: justify;"><span><strong><span style="font-size: 12pt;">-NotAfter: </span></strong><span style="font-size: 12pt;">La vigencia del certificado será de 10 años.</span></span></li>
+</ul>
+<p><span><span style="font-size: 12pt;">El código del script es el siguiente:</span></span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">$date = (Get-Date).ToString('MMM-yyyy')</span><br /><span style="font-size: 12pt;">$certificateExpiringYears = (Get-Date).AddYears(10)</span><br /><span style="font-size: 12pt;">$FQND = "perseo.ciber.local"</span><br /><span style="font-size: 12pt;">$friendlyname = "wificontroller"</span><br /><span style="font-size: 12pt;">New-SelfSignedCertificate -DnsName $FQND -KeyLength 2048 -CertStoreLocation "Cert:LocalMachine\My" `</span><br /><span style="font-size: 12pt;">-FriendlyName $friendlyname -NotAfter $certificateExpiringYears</span></pre>
+<p style="text-align: center;"><img src="crear-Certificado-Autofirmado.png" alt="" width="736" height="289" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 1.</strong> Ejecución del script para crear el certificado.</em></span></p>
+<p style="text-align: justify;"><span>Este script crea un nuevo certificado y lo importa en el almacén de certificados personales de la computadora. </span>De forma predeterminada, se genera un certificado autofirmado con la siguiente configuración:</p>
+<ul>
+<li>Algoritmo criptográfico:<span> </span><strong>RSA</strong>;</li>
+<li>Longitud de la clave:<span> </span><strong>2048 bits</strong>;</li>
+<li>Uso aceptable de claves:<span> </span><strong>Autenticación del cliente</strong><span> </span>y<span> </span><strong>Autenticación del servidor</strong>;</li>
+<li>El certificado se puede utilizar para:<span> </span><strong>Firma digital</strong>,<span> </span><strong>Cifrado de claves</strong>;</li>
+<li>Período de validez del certificado:<span> </span><strong>1 año</strong>. Para este caso, mediante el parámetro <span style="font-size: 12pt;">-NotAfter se ha establecido la validez para 10 años.</span></li>
+</ul>
+<p style="text-align: justify;"><span>Para consultar el </span><span>certificado creado se puede ejecutar en la consola el complemento MMC <strong>certlm.msc </strong>o acceder a <strong>Herramientas administrativas</strong> y luego <strong>'Administrar certificados de equipo</strong>' (Figura 2). A continuación, en la nueva ventana que aparece, hay que posicionarse en el nodo del árbol Certificados y seleccionar '<strong>Inscribir y recuperar certificados automáticamente</strong>' (Figura 3).</span><span></span></p>
+<table border="0">
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="radius-WAP2-12.png" alt="" width="466" height="321" /></td>
+<td style="text-align: center;"><img src="certificados-Equipo.png" alt="" width="1094" height="490" /></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 2.</strong> Acceso a la administración de certificados.</em></span></td>
+<td style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 3.</strong> Comprobar el certificado creado.</em></span></td>
+</tr>
+</tbody>
+</table>
+<table border="0" style="height: 537px; width: 100%;">
+<tbody>
+<tr style="height: 517px;">
+<td style="width: 50%; text-align: center; height: 517px;"><img src="certificado-general.png" alt="" width="401" height="510" /></td>
+<td style="width: 50%; text-align: center; height: 517px;"><img src="certificado-detalles.png" alt="" width="401" height="511" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 4.</strong> Fatos generales del certificado.</em></span></td>
+<td style="width: 50%; height: 20px; text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 5.</strong> Detalles del certificado.</em></span></td>
+</tr>
+</tbody>
+</table>
+<h4>Exportar el certificado para distribuir a los clientes</h4>
+<p>La clave pública del certificado se puede exportar de la siguiente manera donde hay que <span>especificar la huella digital del mismo:</span></p>
+<p style="text-align: center;"><span><img src="huella-digital.png" alt="" width="404" height="511" /></span></p>
+<p style="text-align: center;"><span><span style="font-size: 12pt;"><em><strong>Figura 6.</strong> Consulta de la huella digital.</em></span></span></p>
+<p style="text-align: justify;"><span><span style="font-size: 12pt;">El comando para exportar el certificado es el siguiente:</span></span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>PS C:\</strong> Export-Certificate -Cert cert:\LocalMachine\My\f55753b4e4f79690cce9fbd3be2c86cafcfdb119 -FilePath C:\certs\radius-WAP2.cer</span></pre>
+<p style="text-align: center;"><img src="export-cert.png" alt="" width="956" height="204" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 7.</strong> Exportación del certificado.</em></span></p>
+<h3 style="text-align: justify;"><span style="font-size: 12pt;">3. Referencias</span></h3>
+<ul>
+<li id="certificate-requirements-when-you-use-eap-tls-or-peap-with-eap-tls"><a href="https://docs.microsoft.com/es-es/troubleshoot/windows-server/networking/certificate-requirements-eap-tls-peap" target="_blank" rel="noopener">Requisitos de certificado al usar EAP-TLS o PEAP con EAP-TLS</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

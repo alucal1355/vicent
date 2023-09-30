@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2 Proxy transparente para HTTPS | UT10. Fortificación perimetral: proxy </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-147"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT10. Fortificación perimetral: proxy</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT10. Fortificación perimetral: proxy</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_los_proxys.html" class="no-ch">1. Introducción a los proxys</a></li>
+   <li><a href="2_proxy_webcach.html" class="daddy">2. Proxy web/caché</a>
+   <ul class="other-section">
+      <li><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="no-ch">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proxy_con_autenticacin_bsica.html" class="no-ch">3. Proxy con autenticación básica</a></li>
+   <li><a href="4_proxy_con_filtrado.html" class="no-ch">4. Proxy con filtrado</a></li>
+   <li class="current-page-parent"><a href="5_proxy_transparente_para_httphttps.html" class="current-page-parent daddy">5. Proxy transparente para HTTP/HTTPS</a>
+   <ul>
+      <li><a href="51_proxy_transparente_para_http.html" class="no-ch">5.1 Proxy transparente para HTTP</a></li>
+      <li id="active"><a href="52_proxy_transparente_para_https.html" class="active no-ch">5.2 Proxy transparente para HTTPS</a></li>
+   </ul>
+   </li>
+   <li><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="daddy">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_proxy_squid_con_pfsense.html" class="no-ch">Práctica 1. Proxy Squid con PfSense</a></li>
+   </ul>
+   </li>
+   <li><a href="7_proxy_dns__pihole.html" class="daddy">7. Proxy DNS - PiHole</a>
+   <ul class="other-section">
+      <li><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="no-ch">Práctica 2.Implantación del proxy DNS Pi-Hole</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="51_proxy_transparente_para_http.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.2 Proxy transparente para HTTPS</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id189">
+<div class="iDevice emphasis0">
+<div id="ta189_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;">En este capítulo se va a implementar un proxy transparente pero esta vez para conexiones <strong>https</strong>. Para simplificar el proceso, se utilizarán certificados autofirmados en vez de unos <strong>firmados por una CA</strong>, pero es importante entender que esto no se debería hacer en un sistema en explotación, es decir, se tendría que tener una CA propia y trabajar con ella.</p>
+<h3>2. Escenario</h3>
+<p>Se parte del escenario final del<span> </span><em><strong>capítulo 5.1 Proxy transparente para HTTP</strong></em>, donde el esquema es el siguiente:</p>
+<p></p>
+<p style="text-align: center;"><a href="Esquema-red-Proxy-Squid-2DMZ.png" target="_blank" rel="noopener"><img src="Esquema-red-Proxy-Squid-2DMZ.png" alt="" width="606" height="614" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong><span> </span>Esquema de red - Proxy Squid en ubuntu server con Mikrotik.</em></p>
+<h3>3. Configuración del firewall de MikroTiK</h3>
+<p style="text-align: justify;">En primer lugar, se configura el<span> </span><strong>firewall</strong><span> </span>del<span> </span><strong>router MikroTik Back-End</strong><span> </span>para que marque todos los paquetes que quieran atravesarlo y cuyo puerto destino sea el puerto 443 (https). Hay que tener en cuenta que no hay que marcar los paquetes que vengan del propio servidor proxy (<strong>!</strong>192.168.2.254). A continuación se describe el proceso a seguir.</p>
+<h4>1. Firewall - Mangle</h4>
+<p style="text-align: justify;">En primer lugar hay que acceder a<span> </span><strong>IP --&gt; Firewall --&gt; Mangle</strong><span> </span>para añadir una regla que marque con la etiqueta "<strong>to-proxy</strong>" todos los paquetes HTTPS (se dejan los HTTP del apartado anterior) de la red interna que no vengan del servidor proxy antes que que sean enrutados. Más tarde, esta etiqueta será usada para determinar la entrada de la tabla de enrutamiento a aplicar. Los parámetros a configurar son:</p>
+<ul>
+<li><span><strong>Chain</strong>: prerouting</span></li>
+<li><span><strong>Src. Address</strong>: !192.168.2.254 (que no provengan del servidor proxy).</span></li>
+<li><span><strong>Protocol</strong>: tcp.</span></li>
+<li><span><strong>Dst. Port</strong>: 80,443.</span></li>
+<li><span><strong>In. Interface</strong>: ether2 (interfaz de la red interna).</span></li>
+<li><span><strong>Action</strong>: mark routing.</span></li>
+<li><span><strong>New Packet Mark</strong>: to-proxy<strong>.</strong></span></li>
+<li><span><strong>Comment: </strong>Marcado proxy http y https.</span><span><strong></strong></span></li>
+</ul>
+<p style="text-align: center;"><img src="mangle-https.png" alt="" width="1285" height="261" /></p>
+<h4>2. Configuración del enrutado de MikroTik</h4>
+<p style="text-align: justify;">Cada paquete marcado con la etiqueta "<strong>to-proxy</strong>" deberá ser enrutado hacia el servidor proxy. Para ello, hay que <strong>añadir una nueva entrada en la tabla de encaminamiento</strong> de manera que envíe al servidor proxy squid todos los paquetes marcados con la etiqueta "<strong>to-proxy</strong>". Las acciones a realizar son las siguientes:</p>
+<p><strong>1. Acceder a IP &gt; Routes &gt; Routes y a</strong><strong>ñadir una nueva entrada en la tabla de encaminamiento,</strong><span> </span>donde los parámetros a configurar son:</p>
+<ul>
+<li><strong><span>Dst. Address:</span></strong> 0.0.0.0/0</li>
+<li><span><strong>Gateway</strong>: 192.168.2.254 (ip servidor proxy).</span></li>
+<li><span><strong>Routing Mark</strong>: to-proxy.</span><span></span></li>
+<li><span><strong>Comment: </strong>Enrutado paquetes marcados con la etiqueta to-proxy.</span></li>
+</ul>
+<p style="text-align: center;"><img src="routes-to-proxy.png" alt="" width="1023" height="308" /></p>
+<h3>4. Configuración de Squid/iptables en Ubuntu Server</h3>
+<p>En este apartado, hay que trabajar en el servidor proxy Squid.</p>
+<p style="text-align: justify;"><span style="font-size: 1em;">En primer lugar, hay que localizar el </span><strong><span style="font-size: 1em;">certificado autofirmado </span></strong><span style="font-size: 1em;">y la</span><strong><span style="font-size: 1em;"> clave privada. </span></strong>Cuando se instala openSSL en el servidor, se genera una clave privada y un certificado autofirmado con esta clave. Para localizarlos, se pueden ejecutar los siguientes comandos:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>find / -name *snakeoil* 2&gt; /dev/null</span></pre>
+<p style="text-align: center;"><img src="buscar-certs.png" alt="" width="472" height="87" /></p>
+<p style="text-align: justify;">Como se puede observar en la figura superior, los ficheros se encuentran en:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;">/etc/ssl/private/ssl-cert-snakeoil.key<br />/etc/ssl/certs/ssl-cert-snakeoil.pem</span></pre>
+<div class="cuadro-nota-centro-new">
+<p>En el caso de que no se tenga, se pueden generar mediante la herramienta make-ssl-cert.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>make-ssl-cert generate-default-snakeoil</span></pre>
+</div>
+<p>A continuación, hay que realizar los siguientes pasos:</p>
+<p><strong>1. Editar el fichero squid.conf</strong></p>
+<p style="text-align: justify;">El primer paso es añadir un puerto extra para que gestione el tráfico interceptado de manera transparente (etiqueta proxy-https), pero antes, es interesante buscar la ayuda de la directiva<strong> TAG: https_port</strong>, donde se tiene una descripción de los distintos modos de funcionamiento que se tienen. Es importante conocer los distintos modos para aplicar el necesario en el escenario actual.</p>
+<p><strong>2. Añadir directiva https_port (interceptar tráfico etiquetado)</strong></p>
+<p>A continuación, hay que localizar la directiva<strong><span> </span>https_port</strong><span> </span>para añadir en la parte final una nueva donde:</p>
+<ul>
+<li>El <strong>puerto</strong> será el 3127 (por ejemplo).</li>
+<li><strong>Modo de trabajo:</strong> intercept.</li>
+<li>La ruta<strong> tls-cert y tls-key</strong> es la que se ha obtenido en la búsqueda: </li>
+</ul>
+<p style="text-align: center;"><img src="squid-https-port.png" alt="" width="1081" height="449" /></p>
+<p style="text-align: center;"></p>
+<h4>3. Configuración del cortafuegos de Ubuntu Server</h4>
+<p style="text-align: justify;">En estos momentos, Squid esté escuchando el puerto <strong>3127</strong> a la espera de paquetes interceptados, pero los paquetes que el router Back-End está enviando tienen como puerto destino el 443, así que es necesario añadir una regla en iptables en la tabla nat para que un paquete HTTPS que venga por el interfaz físico del servidor antes de que sea enrutado se reenvíe al puerto <strong>3127</strong> del mismo.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>iptables -t nat -A PREROUTING -i enp0s3 -p tcp --dport 443 -j REDIRECT --to-port 3127</span></pre>
+<p style="text-align: center;"><img src="iptables-443.png" alt="" width="926" height="92" /></p>
+<p>Si se<span> </span><strong>comprueba iptables</strong>, se observa que se ha añadido la regla correctamente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@perseo:/#</strong>iptables -t nat -L</span></pre>
+<p style="text-align: center;"><img src="iptablrs-t-nat.png" alt="" width="851" height="276" /></p>
+<h3>5. Configuración de los clientes y pruebas</h3>
+<p>Una vez configurado el proxy transparente https, ya no será necesario configurar el proxy en los navegadores de los equipos de la red, sino que simplemente, se dejará la configuración por defecto en el apartado del Proxy del navegador.</p>
+<p><img src="sin-proxy.png" width="884" height="226" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;"><strong>Prueba en Cliente Windows</strong></p>
+<p style="text-align: justify;">Cuando se accede al navegador web, aparece un mensaje informativo indicando que el certificado que se está utilizando en el navegador no es de confianza (certificado del servidor proxy). Para coninuar, hay que pulsar en <strong>Sí</strong>, aunque la navegación para el protocolo https se realizará en modo no seguro en aquellas páginas que no dispongan de <span><a href="https://www.redeszone.net/tutoriales/internet/hsts-seguridad-https/" target="_blank" rel="noopener">HSTS</a> (por ejemplo: google y github sí utilizan HSTS).</span></p>
+<p style="text-align: center;"><img src="aviso-certificado-W10-https.png" alt="" width="1189" height="777" /></p>
+<p style="text-align: justify;">Si se accede a una página web mediante https, se avisa de que no se dispone de un certificado de autoridad válido. Para este caso, dado que github <span>usa <a href="https://www.redeszone.net/tutoriales/internet/hsts-seguridad-https/" target="_blank" rel="noopener">HSTS</a>, n</span><span>o se puede visitar<strong> github.com</strong> en este momento.</span></p>
+<p style="text-align: center;"><img src="certificado.png" alt="" width="862" height="470" /></p>
+<p style="text-align: center;"><img src="aviso-github.png" alt="" width="633" height="266" /></p>
+<p style="text-align: justify;">Si se accede a la página <a href="https://www.uji.es">https://www.upv.es,</a> aparece una advertencia dado que el certificado que se está utilizando es el del servidor proxy y no es de una autoridad válida. Si se pulsa en <strong>Continuar</strong>, se accede a la web pero en modo no seguro. Este es el motivo por el que no se debería utilizar un certificado autofirmado por la CA del servidor ubuntu.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="upv-01.png" target="_blank" rel="noopener"><img src="upv-01.png" alt="" width="990" height="285" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="upv-02.png" target="_blank" rel="noopener"><img src="upv-02.png" alt="" width="990" height="589" /></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Si se accede a<span> </span><strong>IP &gt; Firewall &gt; Mangle</strong>, se observar que se tiene tráfico (Bytes/Paquetes) por lo que se están etiquetando los paquetes que provienen de los equipos de la red interna a excepción del servidor proxy, en este caso, del equipo U<strong>buntu Desktop 20.04</strong> que es el utilizado para realizar las pruebas.</p>
+<p style="text-align: center;"><img src="paquetes-mangle.png" alt="" width="1286" height="252" /></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="51_proxy_transparente_para_http.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

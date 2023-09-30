@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.6.4 SIEM | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-110"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li class="current-page-parent"><a href="316_panel_kibana.html" class="current-page-parent daddy">3.1.6 Panel Kibana</a>
+         <ul>
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li id="active"><a href="3164_siem.html" class="active no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3163__machine_learning.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3165_suricata_en_kibana.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.6.4 SIEM</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id153">
+<div class="iDevice emphasis0">
+<div id="ta153_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p>La sección Security es el centro de gestión de eventos de seguridad e información. Desde esta sección se pueden gestionar y comparar los eventos que hayan ocurrido.</p>
+<h3>2. Security</h3>
+<p>Para acceder a esta sección, hay que pulsar sobre cualquier opción de la sección<span> </span><strong><em>Security </em></strong>del panel lateral izquierdo.</p>
+<p style="text-align: center;"><img src="security.png" alt="" width="234" height="277" /></p>
+<h4 style="text-align: justify;">1. Overview</h4>
+<p style="text-align: justify;"><span>Si se pulsa en <strong>Overview</strong> se puede realizar una consulta general a todos los eventos que han ido ocurriendo, así como ver los diferentes <strong>timelines</strong> y casos creados (Mas adelante se verá qué es esto). Para este ejemplo, se ha seleccionado en '<strong>Data view</strong>' (esquina superior derecha) el índice </span><span style="font-size: 12pt;"><strong>filebeat-8.1.0-2022.03.22</strong>, que se ha creado con el módulo system de filebeat configurando los <strong>eventos de autenticación ssh</strong> y <strong>accesos al servicio apache</strong>.</span></p>
+<p style="text-align: center;"><span><img src="overview-apache-ssh.png" alt="" width="1558" height="731" /><br /></span></p>
+<h4 style="text-align: justify;"><span>1. Sección Explore</span></h4>
+<h4 style="text-align: justify;"><span></span>Opción Hosts</h4>
+<p style="text-align: justify;">Si se selecciona <strong>Hosts</strong> en la sección <strong>Explore</strong>, se pueden <span>gestionar los eventos que hayan sucedido, divididos y realizados por y hacia los hosts.</span></p>
+<p style="text-align: center;"><span><img src="security-Explore-Hosts.png" alt="" width="1558" height="830" /><br /></span></p>
+<p style="text-align: justify;"><span>Para <strong>acceder a un host</strong>, hay que hacer click sobre el nombre del mismo, en este caso, sólo se tiene disponible <strong>orion</strong> (ver figura superior).</span></p>
+<p style="text-align: center;"><span><img src="panel-hosts-elastic.png" alt="" width="1370" height="630" /><br /></span></p>
+<h4 style="text-align: justify;">Opción Network</h4>
+<p style="text-align: justify;">Si se selecciona <strong>Network</strong> en la sección <strong>Explore</strong>, se pueden gestionar los eventos de red sucedidos. Se puede consultar los lugares de conexiones en un mapa mundial, numero de eventos de red, IPs de origen, IPs de destino, etcétera.</p>
+<table style="width: 100%;" border="0">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="network-security.png" alt="" width="1162" height="853" /></td>
+<td style="width: 50%; text-align: center;"><img src="datos-ip.1.png" alt="" width="1080" height="295" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span>Si se selecciona cualquiera de estas IPs se puede ver en profundidad toda su información, como otras IPs de su red o a que ubicación geográfica pertenece entre otros datos.</span></p>
+<p style="text-align: center;"><span><img src="datos-ip.png" alt="" width="1080" height="295" /></span></p>
+<h4>2. Sección Investigate</h4>
+<h4>Timelines</h4>
+<p style="text-align: justify;"><span>Dentro de la sección <strong>Investigate</strong>, si se pulsa en <strong>Timelines</strong>, se puede <strong>analizar el tráfico</strong> que pueda parecer <strong>sospechoso</strong> o simplemente no sea común y guardarlo en un línea del tiempo. La primera vez que se accede no exiten timelines por lo que hay pulsar el botón <strong><em>Create new timeline </em></strong>para crear una. </span></p>
+<p style="text-align: center;"><img src="create-new-timeline.png" alt="" width="1213" height="711" /></p>
+<p style="text-align: justify;"><span>A partir del índice <strong>ssh_auth-2022.03.21 </strong>que se construyó en el <strong>capítulo 3.1.5</strong> se va a realizar el siguiente ejemplo.</span></p>
+<p style="text-align: justify;"><span>Se suponen que en el tráfico del equipo, un equipo extraño se ha<strong> conectado mediante SSH</strong>. Para ello, el <strong>timeline</strong> ofrece múltiples opciones para filtrar. Se supone que la IP extraña desde la que han realizado el intento de conexión es la <strong>192.168.0.99</strong>. </span></p>
+<p style="text-align: justify;"><span>Dado que en el índice <strong>ssh_auth-2022.03.21 </strong>se filtran los eventos de autenticación y se añaden fields y tags, se aprovecha también para buscar por el tag <strong>ssh_brute_force_attack, </strong>de este modo, se da sentido a añadir información sobre los eventos que se recogen en los filtros de logstash.  Para filtrar hay que buscar por la IP de origen y por el tag, para ello, hay que pulsar el botón <strong><em>Add field </em></strong>y seleccionar en el campo <strong><em>Field, </em>src_host</strong> y en el campo <strong><em>Value</em></strong> escribir la IP que para este caso es <strong>192.168.0.99 </strong>y pulsar en '<strong>Save</strong>'. A continuación, en la sección AND, se realiza lo mismo para filtrar por el tag, pero en este caso, el campo <strong><em>Field </em></strong>es<em></em><strong><em> tags </em></strong>y el valor del campo es <em></em><strong><em>ssh_brute_force_attack.</em></strong></span><span><strong><em></em></strong></span></p>
+<table style="height: 522px; width: 100%;" border="0">
+<tbody>
+<tr style="height: 502px;">
+<td style="width: 50%; text-align: center; height: 502px;"><a href="aff-field-tag.png"><img src="aff-field-tag.png" alt="" width="1125" height="727" /></a></td>
+<td style="width: 50%; text-align: center; height: 502px;"><a href="and-filter-tag.png"><img src="and-filter-tag.png" alt="" width="1146" height="833" /></a></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura</strong> . Filtro por tag.</span></em></td>
+<td style="width: 50%; height: 20px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura .</strong> Filtro por ip origen.</span></em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span></span>Una vez se ha pulsado se han guardado los filtros, <span>aparecen todas las conexiones de esta IP como origen y que contengan el tag <strong><em>ssh_brute_force_attac.</em></strong></span></p>
+<p style="text-align: center;"><img src="fileds-TimeLine.png" alt="" width="1147" height="834" /></p>
+<p style="text-align: center;"></p>
+<p style="text-align: justify;"><span>En estos momentos, ya se puede guardar el <strong>Timeline</strong> para poder analizarlo más en profundidad más adelante ya sea por el usuario que lo originó o cualquier otro usuario . Para ello, hay que hacer clic en el lápiz<strong><em><img src="save-lapiz.png" alt="" width="271" height="41" /></em></strong>y escribir el <strong>título</strong> y la <strong>descripción </strong>(opcional) del <strong>timeline</strong>.</span></p>
+<p style="text-align: center;"><span><img src="save-timeline.png" alt="" width="389" height="379" /></span></p>
+<p style="text-align: justify;"><span>Si se accede a la sección <strong>Timelines</strong>, se pude observar el timeline que se acaba de guardar.</span></p>
+<p style="text-align: center;"><img src="seccin-Timelines-Anadida.png" alt="" width="1298" height="733" /></p>
+<h4 style="text-align: justify;"><span>Cases</span></h4>
+<p><span>Esta sección es básicamente un <strong>gestor de tareas y actividades</strong> referente a los <strong>eventos de seguridad</strong> sucedidos. Su interfaz es la siguiente.</span></p>
+<p style="text-align: center;"><span><img src="cases-01.png" width="1298" height="609" /></span></p>
+<p style="text-align: justify;"><span></span>Como <strong>ejemplo práctic</strong>o, <span>se va a crear un caso respecto al <strong>timeline (Cliente-a4)</strong> que se ha creado anteriormente para hacer una prueba.</span></p>
+<p style="text-align: justify;"><span>Para comenzar, hay que hacer clic en el botón <img src="btn-create-case.png" alt="" width="134" height="47" />. </span></p>
+<p style="text-align: justify;"><span>A continuación, hay que describir lo que ocurre y más adelante asignarle un timeline. Se crea el caso para informar la incidencia de la conexión SSH extraña.</span></p>
+<p style="text-align: center;"><a href="create-new-case-2.png"><span><img src="create-new-case-2.png" alt="" width="739" height="613" /></span></a></p>
+<p style="text-align: justify;"><span>A continuación, hay que guardar el caso mediante el botón <img src="create-case-button.png" alt="" width="113" height="41" />.</span></p>
+<p style="text-align: justify;"><span>Una vez se ha pulsado el botón de '<strong>Create case</strong>', aparece una nueva ventana con el caso creado.</span></p>
+<p style="text-align: center;"><span><img src="caso-Creado.png" alt="" width="1314" height="719" /></span></p>
+<p style="text-align: justify;"><span>Ahora ya se puede acceder a <strong><em>Timelines</em></strong>, y seleccionar el timeline previamente creado y asignárselo al caso desde el botón <strong><em>Attach to case</em></strong> -&gt; <strong><em>Attach to existing case...</em></strong></span></p>
+<p style="text-align: center;"><span><strong><em><img src="attach-case-timeline.png" alt="" width="1080" height="749" /></em></strong></span></p>
+<p style="text-align: justify;">Aparece una nueva ventana donde hay que seleccionar el caso a asignar al TimeLine. Para este ejemplo, el caso es el '<strong>Caso de conexiones sospechosas</strong>', que es el credo anteriormente. Para continuar, hay que pulsar en '<strong>Select</strong>'.</p>
+<p style="text-align: center;"><img src="select-case-attach.png" alt="" width="972" height="403" /></p>
+<p style="text-align: justify;">Aparece una nueva ventana con <span>el caso creado con el timeline asignado.</span></p>
+<p style="text-align: center;"></p>
+<p style="text-align: center;"><a href="caso-asignado-timeline.png"><span><img src="caso-asignado-timeline.png" alt="" width="964" height="546" /></span></a></p>
+<p style="text-align: justify;"><span>Para finalizar, hay que pulsar en el botón '<strong><em>Mark in progress' </em></strong>para indicar que el caso se está llevando a cabo. Una vez se haya finalizado la investigación, para indicar que el caso ya ha finalizado hay que pulsar el botón '<strong>Close case</strong>' <img src="closeCase.png" alt="" width="103" height="28" />.</span></p>
+<p style="text-align: justify;"></p>
+<p style="text-align: center;"><span></span></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3163__machine_learning.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3165_suricata_en_kibana.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

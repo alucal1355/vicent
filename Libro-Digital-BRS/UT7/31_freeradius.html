@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1 FreeRadius | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-78"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_servidor_de_autenticacin_radius.html" class="current-page-parent daddy">3. Servidor de autenticación Radius</a>
+   <ul>
+      <li id="active"><a href="31_freeradius.html" class="active daddy">3.1 FreeRadius</a>
+      <ul>
+         <li><a href="311_instalacin_servidor_radius.html" class="daddy">3.1.1. Instalación servidor Radius</a>
+         <ul class="other-section">
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li><a href="313_acceso_del_usuario_o_suplicante.html" class="no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul class="other-section">
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul class="other-section">
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3_servidor_de_autenticacin_radius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="311_instalacin_servidor_radius.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1 FreeRadius</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id109">
+<div class="iDevice emphasis0" >
+<div id="ta109_110_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;"><span>Generalmente las redes WiFi utilizan un tipo de cifrado <strong>WPA2 o WPA3 Personal</strong>, o también conocido como <strong>PSK (Pre-Shared Key)</strong>, donde se tiene una contraseña para acceder a la red inalámbrica, y todos los clientes WiFi deberán usar esta clave para acceder y para cifrar/descifrar la información que viaja a través del aire. </span></p>
+<p style="text-align: justify;"><span><strong>FreeRADIUS</strong> es un servidor RADIUS de <strong>código abierto</strong> utilizado por muchas organizaciones. </span></p>
+<p style="text-align: justify;"><span></span><span>Con <strong>FreeRADIUS </strong>se puede montar un servidor RADIUS y <strong>autenticar a los clientes</strong> con <strong>nombre de usuario</strong>, <strong>contraseña</strong> y un <strong>certificado digital</strong>, con el objetivo de configurar redes WiFi con <strong>WPA2 o WPA3-Enterprise</strong>, haciendo uso de diferentes protocolos como PEAP, TLS, TTLS y MSCHAPv2 entre otros. </span></p>
+<p style="text-align: justify;"><span>En este capítulo, se describe cómo configurar un <strong>servidor RADIUS</strong> con <strong>FreeRADIUS</strong> en <strong>Ubuntu Server 20.04.3</strong> para autenticar a los clientes inalámbricos.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="freeradius.png" alt="" width="292" height="79" /></td>
+<td style="width: 50%; text-align: center;"><img src="ubuntu-server-logo.png" alt="" width="129" height="174" /></td>
+</tr>
+</tbody>
+</table>
+<h3 style="text-align: justify;">2. ¿Qué es RADIUS?</h3>
+<p style="text-align: justify;"><strong>RADIUS</strong> (Remote Authentication Dial-In User Service), es un <strong>protocolo de autenticación</strong> y <strong>autorización</strong> para el acceso a la red, por defecto, hace uso del <strong>puerto 1812 UDP</strong> para establecer las conexiones entre los equipos para autenticarse.</p>
+<p style="text-align: justify;">Los <strong>servidores RADIUS</strong> permiten tanto autenticar a usuarios de conexiones a Internet, haciendo uso del PPPoE, pero también permite autenticar a usuarios cableados, a usuarios que se quieren autenticar contra un servidor NAS o un servicio, e incluso permite autenticar a los clientes inalámbricos WiFi, haciendo uso de <strong>WPA2/WPA3 Enterprise</strong>.</p>
+<p style="text-align: justify;">Los <strong>servidores RADIUS</strong> generalmente hacen uso de diferentes <strong>protocolos de autenticación</strong>, a saber:<strong> PAP, CHAP y EAP, </strong>entre otros. Una de las características más interesantes, es que permite controlar las sesiones, cuándo comienza la autenticación, cuando acaba la conexión y muchos otros parámetros. </p>
+<h3 style="text-align: justify;">3. ¿Qué es FreeRADIUS?</h3>
+<p style="text-align: justify;"><strong>FreeRADIUS</strong> es un software para montar un servidor RADIUS, es modular, gratuito y proporciona un alto rendimiento y una gran seguridad. <strong>FreeRADIUS</strong> es compatible con todos los protocolos de autenticación habituales, de hecho, es la base de muchos productos y servicios comerciales de RADIUS, además, se tienen una gran cantidad de módulos incluidos y otros que se pueden incorporar. Por ejemplo, los módulos incluidos permiten <strong>LDAP, MySQL, PostgreSQL e incluso Oracle</strong> y otras bases de datos, respecto a los<strong> tipos de autenticación</strong>, soporta <strong>EAP</strong>, incluyendo <strong>PEAP, EAP-TTLS</strong> y también <strong>EAP-TLS</strong>.</p>
+<p style="text-align: justify;"><strong>FreeRADIUS</strong> permite ser administrado a través de herramientas adicionales, para no tener que configurarlo de manera manual a través de editar complejos archivos de texto y posteriormente cargar la configuración. Como ejemplo, el sistema <strong>pfSense</strong> dispone de una completa interfaz gráfica de usuario que permite configurar todos los parámetros en detalle, además, tiene la posibilidad de ver los archivos de texto de configuración en bruto, por si se quiere realizar alguna modificación.</p>
+<p style="text-align: center;"><img src="pfsense-01.png" alt="" width="1020" height="714" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Acceso a la instalación de freeradius en pfsense.</em></p>
+<p style="text-align: justify;"><strong>Referencia:</strong> <a href="https://www.redeszone.net/tutoriales/redes-wifi/configurar-servidor-freeradius-pfsense-wpa2-wpa3-enterprise/" target="_blank" rel="noopener">Instalación de FreeRadius en PfSense.</a></p>
+<h3 style="text-align: justify;">4. Métodos de autenticación</h3>
+<p style="text-align: justify;">Existen diferentes tipos de autenticación en un servidor Radius, algunos son utilizados con mayor frecuencia principalmente por su suporte en plataformas Windows. En concreto los mecanismos de autenticación más conocidos y con los que normalmente se suele trabajar cuando se configura un servidor Radius son:</p>
+<ul>
+<li style="text-align: justify;"><strong>EAP-TTLS</strong>. Es un mecanismo que mantiene un compromiso entre seguridad y coste de implementación. Permite que las comunicaciones se realicen en un túnel cifrado de comunicaciones y obliga a que el servidor se autentique con un certificado y opcionalmente permite el uso de certificados en el lado del cliente. Se trata de una solución que no se encuentra tan extendida como PEAP con EAP-MSCHAP-V2 debido a que no cuenta con soporte nativo para plataformas Windows.</li>
+<li style="text-align: justify;"><strong>EAP-TTLS/PAP.  </strong>Es un protocolo basado en credenciales que se creó para una configuración más sencilla porque solo requiere que el servidor esté autenticado, mientras que la autenticación del usuario es opcional. TTLS crea un "túnel" entre el cliente y el servidor y le brinda múltiples opciones de autenticación, pero TTLS incluye muchas vulnerabilidades. El protocolo permite que las credenciales se envíen por aire en texto claro (Cleartext), que puede ser vulnerable a ataques cibernéticos como Man-In-The-Middle y se puede reutilizar fácilmente para lograr los objetivos del ciberdelincuente. Si desea obtener más información sobre las vulnerabilidades de TTLS-PAP, puedes leer este <a href="https://www.securew2.com/blog/pitfalls-of-eap-ttls-pap" target="_blank" rel="noopener">artículo</a>.</li>
+<li style="text-align: justify;"><strong>EAP-TLS. </strong>Es un mecanismo de autenticación muy similar al EAP-TTLS. Tiene una diferencia que le hace ser, probablemente el mecanismos de seguridad más fuerte de todos los EAP que se encuentran disponibles. Esta diferencia es que EAP-TLS tiene como requerimiento <strong>OBLIGATORIO</strong> que tanto el cliente como el servidor utilicen certificados para realizar el proceso de establecimiento del túnel cifrado y posterior autenticación, por lo que requiere la necesidad de<strong><em> implementar una infraestructura de clave pública PKI</em> </strong>(Public Key Infrastructure) para la gestión de certificados. Se trata del <strong><em>mecanismo más robusto</em></strong> que actualmente puede establecerse sobre un servidor Radius. Como dificultad decir que en entornos con un número de clientes medio, la distribución de los certificados personales puede ser un proceso bastante delicado.</li>
+<li style="text-align: justify;"><strong>PEAP (Protected EAP).</strong> Es uno de los más extendidos, probablemente a causa de que se encuentra soportado de forma nativa en plataformas Windows, especialmente la versión PEAP 0 la cual funciona con <strong>EAP-MSCHAP-V2</strong>, la versión 1 no se encuentra soportada de forma nativa en máquinas Windows por lo que no se ha vuelto tan popular. Para que este mecanismo sea “<strong>seguro</strong>” es necesario que el servidor tenga instalados <strong>certificados</strong> que puedan ser validados por el cliente. Utiliza TLS para crear un canal cifrado entre un cliente y un servidor de autenticación (RADIUS o IAS). No especifica un método de autenticación, sino que proporciona seguridad adicional para otros protocolos de autenticación de EAP que pueden operar a través del canal cifrado de TLS que proporciona PEAP. Se utiliza como método de autenticación para los equipos cliente inalámbricos 802.11, pero no se admite en clientes de red privada virtual (VPN) u otros clientes de acceso remoto. Para redes WLAN, puede elegir entre dos tipos de EAP para usar con PEAP:
+<ul>
+<li style="text-align: justify;">EAP-MS-CHAPV2: usa credenciales (nombre de usuario y contraseña) para la autenticación de usuarios, y un certificado del almacén de certificados del equipo servidor para la autenticación del servidor.</li>
+<li style="text-align: justify;">EAP-TLS: Se ha visto anteriormente.<strong></strong></li>
+</ul>
+</li>
+<li style="text-align: justify;"><strong>LEAP</strong>. Es un método de autenticación WLAN propietario de Cisco Systems. Se utilizan también las contraseñas como método de autenticación en el servidor. Cuando se emplea LEAP las credenciales de usuario (nombre de usuario y contraseña) se envían sin cifrar, además requiere de una infraestructura Cisco para poder ser utilizado. Esta autenticación aunque ligera, previene de ataques <strong>Man In The Middle</strong> y de secuestro de sesión, pero sigue manteniendo riesgos de exposición de la identidad y de ataque de diccionarios. Sólo soporta conexiones con LDAP si sus clientes se autentican usando el protocolo MS-CHAP y las contraseñas deberán ser almacenadas en LDAP en texto plano debido a que las credenciales de usuario se envían sin cifrar.</li>
+<li style="text-align: justify;"><strong>EAP-FAST.</strong> Es una propuesta de protocolo de Cisco System como reemplazo de LEAP. Fue diseñado para hacer frente a las debilidades de LEAP preservando al mismo tiempo la aplicación “ligera”. El uso de certificados es opcional en la parte del servidor y no soportado en el cliente. EAP-FAST utiliza unas credenciales de acceso protegidas (PAC) para establecer un túnel autenticado entre cliente-servidor.</li>
+</ul>
+<table border="1" style="width: 100%; height: 120px;">
+<tbody>
+<tr style="height: 20px;">
+<td style="width: 20%; height: 20px;"></td>
+<td style="width: 20%; height: 20px;"><strong><span style="font-size: 12pt;">Certificados en Servidor</span></strong></td>
+<td style="width: 20%; height: 20px;"><strong><span style="font-size: 12pt;">Certificados en Clientes</span></strong></td>
+<td style="width: 20%; height: 20px;"><strong><span style="font-size: 12pt;">Soporta LDAP</span></strong></td>
+<td style="width: 20%; height: 20px;"><strong><span style="font-size: 12pt;">Compatibilidad Windows</span></strong></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 20%; height: 20px;"><strong><span style="font-size: 12pt;">PEAP</span></strong></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="color: #0000ff; font-size: 12pt;">Obligatorio</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt; color: #ff0000;">Opcional</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">SI</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">SI</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 20%; height: 20px;"><strong><span style="font-size: 12pt;">EAP-TTLS</span></strong></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="color: #0000ff; font-size: 12pt;">Obligatorio</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt; color: #ff0000;">Opcional</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">SI</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">-</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 20%; height: 20px;"><strong><span style="font-size: 12pt;">EAP-TLS</span></strong></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="color: #0000ff; font-size: 12pt;">Obligatorio</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="color: #0000ff; font-size: 12pt;">Obligatorio</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">SI</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">-</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 20%; height: 20px;"><strong><span style="font-size: 12pt;">LEAP</span></strong></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">-</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Sólo con MS-CHAP *</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">-</span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 20%; height: 20px;"><strong><span style="font-size: 12pt;">EAP-FAST</span></strong></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt; color: #ff0000;">Opcional</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">SI</span></td>
+<td style="width: 20%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Sólo en arquitecturas Intel</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><em><strong>Tabla 1.</strong> Comparativa de los mecanismos de autenticación.</em></p>
+<p>De los citados anteriormente quizás el más utilizado es <strong>PEAP</strong>, probablemente porque se encuentra soportado de forma nativa en sistemas Windows, aunque no es el más seguro.</p>
+<p style="text-align: center;"><img src="protocolo-EAP.png" alt="" width="353" height="230" /></p>
+<p style="text-align: justify;">El protocolo<strong> 802.1X</strong> precisa del protocolo EAP, ya que éste es un protocolo de transporte, no de autenticación, tal y como se puede ver en la figura superior En ella se muestran los diferentes tipos de protocolos de autenticación a un nivel superior y por debajo (nivel 2 del modelo OSI) utiliza el protocolo 802.1X. Con esto se puede llegar a conseguir que <strong>no asigne dirección IP</strong> a un <strong>equipo solicitante</strong> hasta que éste realmente no se <strong>autentique</strong>.</p>
+<p>Otro tipo de autenticación del protocolo de autenticación ampliable (EAP) no aconsejable es:</p>
+<ul>
+<li style="text-align: justify;"><strong>EAP-MD-5. </strong>Es un tipo de autenticación EAP que proporciona compatibilidad EAP de nivel básico. Normalmente, EAP-MD-5 no se recomienda para implementaciones de LAN Wi-Fi, ya que puede permitir la derivación de la contraseña del usuario.  Solo realiza una autenticación unidireccional y  no admite la distribución y rotación automáticas de claves WEP,</li>
+</ul>
+<p style="text-align: justify;"><strong>Después de un análisis de lo comentado anteriormente, suele dar lugar a las siguientes conclusiones:</strong></p>
+<ul>
+<li style="text-align: justify;">No se suele utilizar MD5, ya que solo realiza una autenticación unidireccional y no admite la distribución y rotación automáticas de claves WEP, por lo que no alivia la carga administrativa del mantenimiento manual de claves WEP.</li>
+<li style="text-align: justify;">Aunque TLS es muy seguro, requiere la instalación de certificados de cliente en cada estación de trabajo Wi-Fi. El mantenimiento de una infraestructura PKI requiere tiempo y experiencia administrativa.</li>
+<li style="text-align: justify;">TTLS resuelve el problema de los certificados mediante la tunelización de TLS y, por tanto, elimina la necesidad de contar con un certificado de cliente. Esta suele ser la opción preferida. </li>
+<li style="text-align: justify;">LEAP aunque anteriormente era un código patentado de Cisco (funciona solo con adaptadores Wi-Fi de Cisco), Cisco ha licenciado LEAP a muchos otros fabricantes a través del programa Cisco Compatible Extensions. Se debe aplicar una política de contraseñas seguras cuando se utiliza LEAP para la autenticación.</li>
+<li style="text-align: justify;">EAP-FAST ya está disponible para las empresas que no pueden aplicar una política de contraseñas seguras y no desean implementar certificados para la autenticación.</li>
+<li style="text-align: justify;">El PEAP más reciente funciona de forma similar a EAP-TTLS, ya que no requiere un certificado del cliente. PEAP cuenta con el respaldo de Cisco y Microsoft, y está disponible desde Microsoft sin costo adicional. Si desea realizar una transición de LEAP a PEAP, el servidor de autenticación ACS de Cisco ejecutará ambas.</li>
+</ul>
+<p>Teniendo en cuenta los métodos de autenticación con los que trabaja FreeRadius, el <strong>método que se debería elegir</strong> es<strong> EAP-TTLS</strong> por los siguientes motivos:</p>
+<ul>
+<li>EAP-TTLS es un método de<strong> autenticación tunelado</strong> que implementa un sistema de dos túneles de seguridad: Uno se crea para el intercambio de credenciales y otro para el traspaso de la clave de cifrado de sesión con la que los puntos de acceso cifran el tráfico con el cliente que se conecta. </li>
+<li>Todo el tráfico <strong>circula totalmente cifrado</strong>, de manera que proporciona un <strong>sistema seguro de acceso a la red</strong>.</li>
+<li>La autenticación se realiza solo con <strong>certificados de servido</strong>r y no es necesario generar certificados para cada cliente nuevo que desee conectarse a la red. Esto facilita el acceso de nuevas máquinas a la red.  Este método está preparado para futuras necesidades, si se decide la implantación de certificados en el lado del cliente.</li>
+<li>A diferencia de otros tipos de EAP, tiene la capacidad de soportar una amplia variedad de métodos de autenticación interna. PEAP sólo puede autenticar a los clientes que utilizan el  protocolo de autenticación por desafío mutuo de Microsoft conocida como MS-CHAPv2.</li>
+<li>No es vulnerable actualmente a ataques MITM ni de diccionarios.</li>
+</ul>
+<h3 style="text-align: justify;">5. Protocolos de autenticación</h3>
+<p>Independientemente de los métodos de autenticación que se han visto en el apartado anterior, para la comunicación interna de los servicios se puede utilizar diferentes protocolos de autenticación. A continuación se describen los protocolos soportados por EAP-TTLS:</p>
+<ul>
+<li style="text-align: justify;"><strong>PAP</strong>. Protocolo simple de autenticación para autenticar un usuario contra un servidor de acceso remoto o contra un proveedor de servicios de internet. PAP es un subprotocolo usado por la autenticación del protocolo PPP (Point to Point Protocol), validando a un usuario que accede a ciertos recursos. PAP transmite contraseñas o passwords en <strong>texto plano</strong>.</li>
+<li style="text-align: justify;"><strong>CHAP</strong>. Utiliza un algoritmo (MD5) para calcular un valor que sólo conocen el sistema de autenticación y el dispositivo remoto, conocido como <strong>secreto compartido</strong>. Con CHAP, el nombre de usuario y la contraseña siempre se envían cifrados. Aunque la comunicación esté cifrada, actualmente el algoritmo <strong>MD5 es vulnerable</strong>.</li>
+<li style="text-align: justify;"><strong>MSCHAP/</strong><strong>MSCHAPv2 ((Microsoft Challenge Handshake Authentication Protocol.).  </strong>Es un protocolo de autenticación de contraseñas de cifrado por desafío mutuo, de Microsoft, el cual es irreversible. Básicamente la diferencia entre ambos protocolos es que la versión 2 de MSCHAP, Microsoft realizó mejoras importantes de seguridad. Proporciona autenticación mutua, claves de cifrado de datos iniciales más fuertes. Actualmente, ambos protocolos son vulnerables.</li>
+<li style="text-align: justify;"><strong>PEAP-MSCHAPv2.</strong> Es un protocolo basado en credenciales diseñado por Microsoft para entornos de Active Directory. Aunque es uno de los métodos más populares para la autenticación WPA2-Enterprise, PEAP-MSCHAPv2 no requiere la configuración de la validación del certificado del servidor, lo que deja a los dispositivos vulnerables al robo de credenciales por el aire. <a href="https://www.securew2.com/customers/education-customer-stories/implementing-eduroam-top-university" target="_blank" rel="noopener">Aquí puedes leer </a>cómo esta importante universidad pasó de la autenticación PEAP-MSCHAPv2 a la autenticación EAP-TLS para proporcionar una autenticación más estable a los usuarios de la red. Para obtener más información sobre PEAP MSCHAPv2, <a href="https://www.securew2.com/blog/peap-mschapv2-vulnerability/" target="_blank" rel="noopener">puedes leer este artículo</a>.</li>
+</ul>
+<p style="text-align: justify;">Dependiendo la infraestructura, se puede decantar por un protocolo u otro.</p>
+<p style="text-align: justify;"><strong>Ejemplo</strong>: Si se tiene una infraestructura LDAP, no queda más remedio que usar PAP debido a la compatibilidad con los algoritmos de cifrado de las contraseñas de LDAP. PAP no es recomendable usarlo independiente, pero no hay ningún problema al usarlo junto a EAP-TTLS ya que éste cifra toda la comunicación cliente-servidor haciendo uso de túneles. Por lo que mediante el uso de <strong>certificados digitales EAP-TTLS</strong> es capaz de autenticar a los usuarios a través del protocolo PAP de una manera <strong>segura</strong>.</p>
+<h3 style="text-align: justify;">6. ¿Para qué me sirve montar un servidor RADIUS para una red WiFi?</h3>
+<p style="text-align: justify;">Cuando se habla de redes WiFi, de manera habitual se hace uso de<strong> WPA2 o WPA3-Personal</strong>, donde se utiliza una misma contraseña para todos y cada uno de los dispositivos. Esta <strong>clave es precompartida</strong>, es decir, todos los clientes WiFi que se quieran conectar, deben conocerla.</p>
+<p style="text-align: justify;">Este tipo de redes se suelen <strong>atacar por fuerza bruta o por diccionario</strong>, aunque lógicamente las redes WPA3 son más seguras y resisten mejor los diferentes ataques.</p>
+<p style="text-align: justify;">Si se monta un servidor RADIUS, se puede configurar el router WiFi o punto de acceso WiFi para usar autenticación WPA2/WPA3-Enterprise, donde no se tendrá una clave precompartida para todos los usuarios, sino que cada usuario tendrá su propio nombre de usuario y contraseña para acceder a la red WiFi.</p>
+<p style="text-align: justify;">Un <strong>servidor RADIUS</strong> hace uso de una <strong>autoridad de certificación (CA)</strong>, porque hay algunos protocolos de autenticación que hacen uso de una infraestructura de clave pública para la autenticación de los clientes, además, esto es muy importante porque todos los clientes deberían tener siempre el certificado de la CA para comprobar que efectivamente se están conectando a la red WiFi legítima. Algunos<strong> ataques a las redes WiFi</strong> consisten en hacerse pasar por el punto de acceso legítimo (Man in the Middle), de esta forma, la víctima podría estar enviando sus credenciales a un ciberdelincuente. Por este motivo, es muy recomendable que no solo se tenga el usuario y clave de la red WiFi, sino que se debería usar este certificado de la CA para comprobar que la red WiFi a la que el usuario se conectado es legítima.</p>
+<p style="text-align: justify;">El esquema de funcionamiento de un <strong>servidor RADIUS</strong> en un servidor <strong>Ubuntu Server 20.04.3</strong> con un<strong> Punto de Acceso</strong> como <strong>cliente Radiu</strong>s:</p>
+<p style="text-align: center;"><img src="freeRadius-AccessPoint.1.png" alt="" width="559" height="411" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Esquema de red.</em></p>
+<p style="text-align: justify;">En este caso, se tiene instalado <strong>FreeRADIUS</strong> en un <strong>Ubuntu Server 20.04.3 LTS</strong> , y se autenticarán a los clientes inalámbricos que se conecten al Punto de Acceso directamente desde aquí. La configuración de los puntos de acceso es diferente con cada fabricante, pero lo único que hay que tener en cuenta son tres parámetros:</p>
+<ul style="text-align: justify;">
+<li>IP del servidor RADIUS, en este caso, el equipo ubuntu server 20.04.3 LTS.</li>
+<li>Puerto de escucha del servidor RADIUS, configurable, pero por defecto es el 1812.</li>
+<li>Clave de autenticación del punto de acceso con el servidor RADIUS (secreto compartido).</li>
+</ul>
+<p style="text-align: justify;">El proceso de autenticación de un cliente WiFi con WPA2 o WPA3-Enterprise es el siguiente:</p>
+<ol style="text-align: justify;">
+<li>Un cliente WiFi se conecta a la red WiFi a través de un punto de acceso. Se le pedirá que introduzca unas credenciales de usuario (usuario y clave), y también que cargue el certificado de la CA, para proteger frente a posibles ataques MitM. Si no se tiene el certificado, se puede desactivar la opción.</li>
+<li>El punto de acceso WiFi enviará las credenciales al servidor RADIUS en ubuntu server, el cual se ha configurado previamente. Si las credenciales son válidas, se le permite el acceso y si las credenciales no son válidas, la autenticación fallará y se mostrará un error en el cliente WiFi, ejemplo:</li>
+</ol>
+<p style="text-align: center;"><img src="mensaje-error.png" alt="" width="199" height="111" /></p>
+<p style="text-align: justify;">En cuanto se le permita entrar a la red porque las credenciales son válidas, se le proporcionará una dirección IP, gateway y DNS por DHCP y accederá a todos los recursos de la red WiFi. Esto se podrá configurar en el Punto de Aceso, es decir, el rango de direcciones IP, etcétera. Ejemplo:</p>
+<p style="text-align: center;"><img src="dir-ip-clientes-freeradius.png" alt="" width="724" height="402" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Configuración del servidor dhcp en el AP.</em></p>
+<h3 style="text-align: justify;">7. Rogue AP</h3>
+<p style="text-align: justify;">Una de las formas de robo de información en redes WiFi es la técnica conocida como <a href="https://naps.com.mx/blog/que-es-un-rogue-ap-y-como-protegernos/" target="_blank" rel="noopener">Rogue AP</a> o suplantación del punto de acceso. La idea de esta técnica de ataque es conseguir que la víctima se conecte al equipo del atacante (hace la función de un punto de acceso legítimo), para que sea éste el que redirija el tráfico.</p>
+<p style="text-align: justify;">Es una forma sencilla de realizar un ataque de<strong> Man In The Middle</strong> ya que al estar el atacante realizando funciones de Punto de Acceso va a poder interceptar absolutamente todas las comunicaciones.</p>
+<p style="text-align: justify;">Para que el ataque tenga éxito, es necesario que la suplantación de un Punto de Acceso legítimo sea lo más real posible, por lo que se debe recrear un entorno de red con las mismas características en el Rogue AP a las del Punto de acceso legítimo, copiando para ello el BSSID, ESSID y las configuraciones de seguridad de la red.</p>
+<p style="text-align: center;"><img src="rogue-AP.png" alt="" width="568" height="418" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Esquema Rogue AP.</em></p>
+<h3 style="text-align: justify;"><strong>9. Referencias:</strong></h3>
+<ul>
+<li style="text-align: justify;"><a href="https://freeradius.org/">https://freeradius.org/</a></li>
+<li style="text-align: justify;"><a href="https://techexpert.tips/es/ubuntu-es/autenticacion-radius-de-ubuntu-usando-freeradius/" target="_blank" rel="noopener">[Autenticación radius usando freeradius]</a></li>
+<li style="text-align: justify;"><a href="https://www.incibe-cert.es/blog/protocolos-aaa-radius">https://www.incibe-cert.es/blog/protocolos-aaa-radius</a></li>
+<li style="text-align: justify;"><a href="https://docs.microsoft.com/es-es/windows-server/networking/technologies/extensible-authentication-protocol/network-access">https://docs.microsoft.com/es-es/windows-server/networking/technologies/extensible-authentication-protocol/network-access</a></li>
+<li style="text-align: justify;"><a href="https://www.intel.es/content/www/es/es/support/articles/000006999/wireless/legacy-intel-wireless-products.html">https://www.intel.es/content/www/es/es/support/articles/000006999/wireless/legacy-intel-wireless-products.html</a></li>
+<li style="text-align: justify;"><a href="https://wiki.freeradius.org/guide/WPA-HOWTO">https://wiki.freeradius.org/guide/WPA-HOWTO</a></li>
+<li style="text-align: justify;"><a href="https://www.cert.fnmt.es/home?p_p_id=101&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;_101_struts_action=%2Fasset_publisher%2Fview_content&amp;_101_returnToFullPageURL=%2F&amp;_101_assetEntryId=10510329&amp;_101_type=content&amp;_101_urlTitle=certificado-de-servidor-radius&amp;inheritRedirect=true">CERES - Certificado de servidor Radius</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper CasestudyIdevice em_iDevice em_iDevice_casestudy" id="id163">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header"><h2 class="iDeviceTitle">Red Wi-Fi en un Centro Educativo</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta163_106" class="block iDevice_content">
+
+</div>
+<div id="taquesQuestion0b163" class="block iDevice_content">
+<p style="text-align: justify;">En un Centro Educativo se suele usar una red wifi con WPA/WPA2 Enterprise con un servidor freeradius y una base de datos de usuarios en Samba 4, compatible con Active Directory con Windows Server. De esta forma, se usa un sistema compatible con Microsoft sin pagar licencias al ser software libre.</p>
+<p style="text-align: justify;">Los usuarios (profesorado, alumnado y PAS) acceden a la red wifi con su usuario y contraseña de Active Directory (Samba 4), que es el mismo con el que acceden a Aules. De esta forma, con las mismas credenciales acceden a todos los servicios a los que les autoriza el RADIUS a través de Samba 4.</p>
+<p style="text-align: justify;">Hay dos wifis separadas, una para profesorado y otra para alumnado, por razones obvias de seguridad. Ambas redes están conectadas a la red cableada del centro a través de un cortafuegos, que además aplica reglas de seguridad para todas las subredes del centro, como aulas, departamentos, biblioteca, salón de actos, etcétera.</p>
+<p style="text-align: justify;">Esta combinación de RADIUS + Samba 4 garantiza el funcionamiento para todas las plataformas (GNU/Linux, Windows, Android, Mac, iPhone, Windows Phone, etcétera) al usar el protocolo de autenticación EAP-PEAP, ampliamente soportado por todos los fabricantes de dispositivos. No se recomienda usar otros sistemas como EAP-TTLS con servidor LDAP, debido al mal soporte que dan algunas plataformas como Windows Phone o Mac a dicho protocolo.</p>
+<p style="text-align: justify;">Además, se utiliza una wifi unificada con puntos de acceso de la marca Ubiquity, que utiliza un software controlador de los puntos de acceso que se puede instalar en Windows o en GNU/Linux. Este software centraliza la gestión de los AP y genera estadísticas de uso, rendimiento y cobertura e incluso detección de puntos de acceso falsos. Los puntos de acceso se alimentan a través del cable de datos mediante Power Over Ethernet (PoE):</p>
+<p style="text-align: center;"><img src="red_unificada_1.png" alt="" width="314" height="357" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Esquema del controlador wifi con los AP ligeros.</em></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3_servidor_de_autenticacin_radius.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="311_instalacin_servidor_radius.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

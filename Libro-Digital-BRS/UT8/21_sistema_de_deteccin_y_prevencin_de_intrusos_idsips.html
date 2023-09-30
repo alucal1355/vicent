@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.1 Sistema de detección y prevención de intrusos (IDS/IPS) | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-100"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="current-page-parent daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul>
+      <li id="active"><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="active no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul class="other-section">
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="22_hidsnids.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id144">
+<div class="iDevice emphasis0" >
+<div id="ta144_143_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. IDS (Host Intrusion Detections System)</h3>
+<p style="text-align: justify;">Un <strong>IDS</strong> es un dispositivo o aplicación que <strong>analiza paquetes completos</strong>, tanto <strong>cabeceras</strong> como la<strong> carga últil</strong> (payload), en busca de eventos conocidos. Cuando se detecta un evento se<strong> genera un mensaje de log</strong>.</p>
+<p style="text-align: center;"><img src="clasificacion-sistemas-deteccionintrusos.png" width="749" height="445" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Clasificación de los sistemas de detección de intrusos.</em><em></em></p>
+<p style="text-align: justify;">Los <strong>IDS</strong> no llegan a detener el ataque por su propio sistema, para ello necesitan herramientas adicionales que colaboren en la labor de parar el ataque una vez identificado.</p>
+<p style="text-align: justify;">Se pueden encontrar dos<span> </span><strong>tipos</strong><span> </span>de módulos auxiliares:</p>
+<ul style="text-align: justify;">
+<li><strong>HIDS</strong>: son sistemas de detección de intrusos basados en host, enfocados a una sola máquina. Pueden aplicar medidas para la protección. <em style="color: #333333; font-size: 1em;">Ejemplos</em><span style="color: #333333; font-size: 1em;">: Ossec, Wazuh, Samhain.</span></li>
+</ul>
+<ul>
+<li style="text-align: justify;"><strong>NIDS</strong>: son sistemas de detección de intrusos de red automáticos a tiempo real, se centra en la monitorización de los datos que circulan a través de la red a la que están en contacto con los hosts. <em style="color: #333333; font-size: 1em;">Ejemplos</em><span style="color: #333333; font-size: 1em;">: Snort, Suricata, Bro, Kismet.</span></li>
+</ul>
+<h3 style="text-align: justify;">2. IPS (Intrusion Prevention System)</h3>
+<p style="text-align: justify;"><strong>IPS</strong> (Intrusion Prevention System) es una herramienta que permite la prevención de los ataques, normalmente ejerce el control de acceso a una red. Los IPS están muy relacionados con los IDS y se consideran como una extensión de estos.</p>
+<p style="text-align: justify;">El <strong>IPS analiza paquetes completos</strong>, tanto cabeceras como payload en busca de eventos conocidos. Cuando se detecta un evento conocido se trata con una acción (drop, reject, alert, pass).</p>
+<p style="text-align: justify;">Dentro de los IPS existen categorías:</p>
+<p><strong>1. NIPS</strong></p>
+<p>Basados en red, buscan tráfico de red sospechoso. Los NIPS se fabrican utilizando circuitos integrados de alta velocidad específicos de la aplicación (ASIC) y procesadores de red, que se utilizan para el tráfico de red de alta velocidad.</p>
+<p>Los NIPS detectan intrusos bajo los siguientes métodos:</p>
+<ul>
+<li>Detección basada en firmas.</li>
+<li>Detección basada en anomalías.</li>
+<li>Detección de análisis de estado de protocolo.</li>
+</ul>
+<p><strong>2. WIPS</strong></p>
+<p style="text-align: justify;">Basados en Wireless, buscan en la red inalámbrica tráfico sospechoso. Un WIPS compara las direcciones MAC de todos los puntos de acceso inalámbrico en una red con las firmas conocidas de puntos de acceso inalámbrico previamente autorizados y conocidos y alerta a un administrador cuando se encuentra una discrepancia.</p>
+<p style="text-align: justify;"><strong>3. NBA</strong></p>
+<p style="text-align: justify;">Basados en el comportamiento de la red, examinan el tráfico inusual como ciertas formas de malware, ataques de denegación de servicios o violaciones de las políticas de seguridad.</p>
+<p style="text-align: justify;"><strong>4. HIPS</strong></p>
+<p style="text-align: justify;">Por definición, HIPS es un paquete de software instalado que monitoriza un solo host en busca de actividad sospechosa mediante el análisis de eventos que ocurren dentro de ese host. En otras palabras, un Sistema de prevención de intrusiones de host (HIPS) tiene como objetivo detener el malware al monitorizar el comportamiento del código.</p>
+<p style="text-align: justify;">En la siguiente figura, se describe cómo un IPS maneja el tráfico denegado.</p>
+<ol>
+<li style="text-align: justify;">El actor de la amenaza envía un paquete destinado al equipo objetivo.</li>
+<li style="text-align: justify;">El IPS intercepta el tráfico y lo evalúa contra amenazas reconocidas y con las políticas configuradas.</li>
+<li style="text-align: justify;">El IPS envía un mensaje de registro a la consola de administración.</li>
+<li style="text-align: justify;">El IPS descarta el paquete.</li>
+</ol>
+<p style="text-align: center;"><img src="funcionamiento-IPS.png" width="585" height="524" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Funcionamiento de IPS.</em></p>
+<h3>3. IPS de nueva generación</h3>
+<p style="text-align: justify;">A medida que avanzan las tecnologías, dispositivos y sistemas, se desarrollan nuevas herramientas para hacer frente a las demandas.</p>
+<p style="text-align: justify;">La nueva generación de IPS obtiene una visibilidad del comportamiento de la red, de los equipos, de los usuarios y las aplicaciones. Con esta información almacenada, sirve de prevención para realizar una evaluación y llegar a tener un proceso automático.</p>
+<p style="text-align: justify;">Los <strong>NGIPS</strong> (IPS de nueva generación) tienen las siguientes características:</p>
+<ul>
+<li style="text-align: justify;">Permanecen continuamente en línea, sin interrumpir el funcionamiento de una red.</li>
+<li style="text-align: justify;">Tienen la capacidad de identificar aplicaciones e implementar políticas de seguridad, a nivel de la capa de aplicación, en la red.</li>
+<li style="text-align: justify;">Conciencia sobre los tipos de archivos en los paquetes de datos, debe inspeccionar y clasificarlos.</li>
+<li style="text-align: justify;">Cuenta con una mejor agilidad al ser capaz de integrar nuevos mecanismos para hacer cara a futuras amenazas.</li>
+<li style="text-align: justify;">Las herramientas de monitorización más conocidas que nos podemos encontrar son las siguientes, nos ofrecen distintos modos y enfoques.</li>
+</ul>
+<p>Las herramientas de monitorización más conocidas que nos podemos encontrar son las siguientes, nos ofrecen distintos modos y enfoques.</p>
+<p>os y enfoques.</p>
+<p></p>
+<div class="exe-fx exe-accordion">
+<div id="exe-accordion-0">
+<div class="fx-accordion-section">
+<h2 style="text-align: justify;">Descubrimientos de<span> </span><strong>activos</strong></h2>
+<span><span> </span></span><strong style="font-size: 1em;">Prads, </strong><span style="font-size: 1em;">es un sistema pasivo de detección de activos en tiempo real de cogido abierto. Escucha pasivamente el tráfico de la red y recopila información sobre los hosts y los servicios que envían tráfico. Trazar un mapa de su red sin realizar un escaneo activo (nunca se envían paquetes), lo que le permite enumerar los servicios y hosts activos, también monitoriza los cambios.</span>
+<p style="text-align: justify;"><strong>Nmap,</strong><span> </span>es un programa gratuito de código abierto. Originalmente creado para el escaneo de puertos, pero actualmente identifica redes, hosts disponibles en la red, servicios (nombre y versión) los hosts, versión de los sistemas operativos, filtro de paquetes/firewalls en uso y permite guardar el escaneo en texto. Nmap se puede emplear en cualquier plataforma, Prads está enfocado para sistemas FreeBSD y GNU/Linux. Nmap aparte de tener más funcionalidades, ofrece una interfaz gráfica para mejorar la experiencia.</p>
+<h2>Detección de<span> </span><strong>amenazas</strong></h2>
+<p style="text-align: justify;"><strong>OSSEC,</strong><span> </span>es un sistema HIDS de código abierto y gratuito para el uso, que funciona como un gestor de incidentes de seguridad. Brinda una gestión centralizada para la gestión de políticas, detección de rootkits, alertas en tiempo real y respuesta activa. Monitoriza y analiza los eventos del sistema operativo, y hace comprobaciones de integridad sobre los ficheros.</p>
+<p style="text-align: justify;"><strong>Snort,<span> </span></strong>es un sistema de detección de intrusos basado en red, libre y gratuito. Usa una serie de reglas que ayudan a inspeccionar la actividad de red malintencionada y usa esas reglas para encontrar paquetes que coincidan con ellas, después genera alertas para los usuarios.</p>
+<p style="text-align: justify;"><strong>Suricata,<span> </span></strong>es un sistema de detección de intrusos basado en red, gratuito y de código abierto. Detecta las intrusiones a tiempo real previene estas intrusiones también en línea y monitoriza la seguridad en la red. También hace uso de reglas para supervisar el tráfico de red.</p>
+<p style="text-align: justify;">OSSEC, Snort y Suricata cuentan con multiplataforma, Snort proporciona una interfaz gráfica, permite guardar los logs para un análisis sin red.<span style="font-size: 1em; text-align: left;"> </span></p>
+<h2><strong>Monitorización</strong></h2>
+<span><span> </span></span><strong style="text-align: justify; font-size: 1em;">Fprobe, </strong><span style="text-align: justify; font-size: 1em;">herramienta basada en Libpcap que recopila datos de tráfico de red y los emite como flujos del protocolo de red NetFlow hacia el colector especificado. Los dispositivos que tengan compatibilidad con el protocolo NetFlow recopilarán el tráfico y reenviarán los datos hacia un servidor para hacer un análisis detallado.</span>
+<p style="text-align: justify;"><strong>Tcpdump,<span> </span></strong>es un sniffer (programa que se ocupa de capturar y analizar paquetes en movimiento) del tráfico de red. Esta herramienta nos proporciona información de dónde provienen los paquetes entrantes y hacia dónde van los salientes en tiempo real.</p>
+<p style="text-align: justify;"><strong>Nagios,<span> </span></strong>herramienta de monitorización de código abierto, que permite el análisis tanto de los equipos como de los servicios, alertando de un mal comportamiento si lo encontrara. Cuenta con monitorización de los servicios de red, de los recursos del hardware y con posibilidad de una administración remota.</p>
+<p style="text-align: justify;">Fprobe está enfocado para sistemas Debian, Ubuntu y otras distribuciones Linux. Tcpdump trabaja en la mayoría de distribuciones Linux mediante Libpcap y tiene la posibilidad de usarse en Windows con el nombre de Windump, permite guardar el análisis para analizarlos sin red. En cambio, Negios se aplica en GNU/Linux, y en algunas variantes de Unix, cuenta con la posibilidad de una interfaz web.</p>
+<h2><strong>Evaluación de vulnerabilidad</strong></h2>
+<p style="text-align: justify;"><strong>OpenVas,<span> </span></strong>es un escáner de vulnerabilidades de la red, de código abierto, que permite la evaluación de aquellas que se encuentren y el control de accesos e intrusiones y tanto su gestión.</p>
+<p style="text-align: justify;"><strong>Nikto,<span> </span></strong>es un escáner de vulnerabilidades de servidores web, de código abierto, donde se encarga de la detección de configuraciones incorrectas y sus vulnerabilidades, detectando ficheros de instalación por defecto, listando la estructura del servidor, su versión y fechas de las actualizaciones mediante test XSS, ataques de fuerza bruta por diccionario.</p>
+<p style="text-align: justify;">OpenVas cuenta con un portal web para su administración y es multiplataforma. Nikto nos da la posibilidad de guardar los reportes y se puede usar en dockers y en Kali.</p>
+</div>
+</div>
+</div>
+<h3><a class="fx-accordion-title fx-accordion-title-1 fx-C1" href="#exe-accordion-0-1" id="exe_accordion_0-1-trigger"></a><span> 4</span>. Errores en IDS/IPS</h3>
+<p style="text-align: justify;">Los errores que se pueden producir son los siguientes:</p>
+<ul>
+<li style="text-align: justify;"><strong>Verdaderos positivos (TP): I</strong>ntrusión existente y correctamente detectada.</li>
+<li style="text-align: justify;"><strong>Falsos positivos (FP):</strong> Intrusión no existente e incorrectamente detectada.</li>
+<li style="text-align: justify;"><strong>Falsos negativos (FN):</strong> Intrusión existente y no detectada.</li>
+<li style="text-align: justify;"><strong>Verdaderos negativos (TN):</strong> Intrusión no existente y no detectada.</li>
+</ul>
+<h3 style="text-align: justify;">4. Captura de tráfico</h3>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-family: Quicksand, Open Sans, ​Arial, Helvetica, ​sans-serif;"><span style="font-size: 16px;"><img src="captura-Trafico-01.png" width="547" height="789" /></span></span></td>
+<td style="width: 50%; text-align: center;"><span style="font-family: Quicksand, Open Sans, ​Arial, Helvetica, ​sans-serif;"><span style="font-size: 16px;"><img src="captura-Trafico-02.png" width="587" height="763" /></span></span></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><em><span style="font-size: 12pt;"><span style="font-family: Quicksand, Open Sans, ​Arial, Helvetica, ​sans-serif;"><strong>Figura 3.</strong> Captura de tráfico.</span></span></em></td>
+<td style="width: 50%; text-align: center;"><em><span style="font-size: 12pt;"><span style="font-family: Quicksand, Open Sans, ​Arial, Helvetica, ​sans-serif;"><strong>Figura 4.</strong> Captura de tráfico.</span></span></em></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="22_hidsnids.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

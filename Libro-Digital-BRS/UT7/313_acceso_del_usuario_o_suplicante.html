@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.3 Acceso del usuario o suplicante | UT7. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-115"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT7. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT7. Fortificación de la red interna: redes inalámbricas</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_en_redes_inalmbricas.html" class="daddy">1. Seguridad en redes inalámbricas</a>
+   <ul class="other-section">
+      <li><a href="11_ataques_a_redes_wifi.html" class="no-ch">1.1 Ataques a redes wifi</a></li>
+      <li><a href="12_averiguar_contrasea_wifi_con_diccionario_utilizando_fuerza_bruta.html" class="no-ch">1.2 Averiguar contraseña Wifi con diccionario utilizando Fuerza bruta</a></li>
+      <li><a href="13_mecanismos_de_proteccin.html" class="no-ch">1.3 Mecanismos de protección</a></li>
+   </ul>
+   </li>
+   <li><a href="2_protocolos_de_seguridad_inalmbrica.html" class="daddy">2. Protocolos de seguridad inalámbrica</a>
+   <ul class="other-section">
+      <li><a href="21_wep.html" class="no-ch">2.1 WEP</a></li>
+      <li><a href="22_wpa.html" class="no-ch">2.2 WPA</a></li>
+      <li><a href="23_wpa2.html" class="no-ch">2.3 WPA2</a></li>
+      <li><a href="24_wpa3.html" class="no-ch">2.4 WPA3</a></li>
+      <li><a href="25_wps.html" class="no-ch">2.5 WPS</a></li>
+      <li><a href="26_radius.html" class="no-ch">2.6 Radius</a></li>
+      <li><a href="laboratorio_1_configurar_un_dispositivo_tplink.html" class="no-ch">Laboratorio 1. Configurar un dispositivo TP-Link</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_servidor_de_autenticacin_radius.html" class="current-page-parent daddy">3. Servidor de autenticación Radius</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_freeradius.html" class="current-page-parent daddy">3.1 FreeRadius</a>
+      <ul>
+         <li><a href="311_instalacin_servidor_radius.html" class="daddy">3.1.1. Instalación servidor Radius</a>
+         <ul class="other-section">
+            <li><a href="3111_instalacin_cliente_radius_para_pruebas.html" class="no-ch">3.1.1.1. Instalación Cliente Radius para pruebas</a></li>
+         </ul>
+         </li>
+         <li><a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="no-ch">3.1.2 Configuración del punto de acceso o router inalámbrico</a></li>
+         <li id="active"><a href="313_acceso_del_usuario_o_suplicante.html" class="active no-ch">3.1.3 Acceso del usuario o suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="daddy">3.2. FreeRadius - Validación con usuarios LDAP</a>
+      <ul class="other-section">
+         <li><a href="321_instalar_openldap.html" class="no-ch">3.2.1 Instalar openLDAP</a></li>
+         <li><a href="322_instalacin_y_configuracin_de_freeradius_como_aaa_server.html" class="no-ch">3.2.2 Instalación y configuración de FreeRADIUS como AAA Server</a></li>
+         <li><a href="323_configuracin_del_cliente_radius.html" class="no-ch">3.2.3 Configuración del cliente Radius</a></li>
+         <li><a href="324_acceso_del_usuario_o_suplicante.html" class="no-ch">3.2.4 Acceso del usuario o suplicante</a></li>
+         <li><a href="proyecto_red_wpa2enterprise_con_servidor_radius_y_usuarios_openldap.html" class="no-ch">Proyecto. Red WPA2/Enterprise con servidor Radius y usuarios OpenLDAP</a></li>
+      </ul>
+      </li>
+      <li><a href="33_servidor_radius_en_windows_server_2019_para_conexiones_inalmbricas_8021x.html" class="daddy">3.3. Servidor RADIUS en Windows Server 2019 para conexiones inalámbricas 802.1X</a>
+      <ul class="other-section">
+         <li><a href="331_crear_un_certificado_de_equipo_autofirmado.html" class="no-ch">3.3.1 Crear un certificado de equipo autofirmado</a></li>
+         <li><a href="332_instalar_y_configurar_npsradius_en_windows_server.html" class="no-ch">3.3.2 Instalar y configurar NPS/Radius en Windows Server</a></li>
+         <li><a href="333_configurar_el_routerap.html" class="no-ch">3.3.3 Configurar el router-AP</a></li>
+         <li><a href="334_acceso_a_la_infraestructura_por_usuario_suplicante.html" class="no-ch">3.3.4 Acceso a la infraestructura por usuario suplicante</a></li>
+      </ul>
+      </li>
+      <li><a href="34_servidor_aaa_en_gns3.html" class="no-ch">3.4 Servidor AAA en gns3</a></li>
+   </ul>
+   </li>
+   <li><a href="4_hotspot.html" class="daddy">4. Hotspot</a>
+   <ul class="other-section">
+      <li><a href="41_hotspot_con_mikrotik.html" class="no-ch">4.1 HotSpot con MikroTik</a></li>
+      <li><a href="prctica_2_hotspot_radius.html" class="no-ch">Práctica 2. Hotspot Radius</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.3 Acceso del usuario o suplicante</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id153">
+<div class="iDevice emphasis0">
+<div id="ta153_85" class="block iDevice_content">
+<h3><span>1. Recursos necesarios</span></h3>
+<ul>
+<li><strong>Equipo ubuntu server<span> </span></strong>con el servidor freeradius instalado y configurado según el punto 3.1.1.</li>
+<li style="text-align: justify;"><strong>Punto de acceso o router wifi </strong>configurado como cliente radius según el punto 3.1.2. Para este caso de ejemplo, se ha utilizado un Punto de Acceso D-link 900AP+.</li>
+<li><strong>Dispositivo inalámbrico,</strong><span> </span>a saber: móvil, tablet y un equipo portátil con tarjeta wifi.</li>
+</ul>
+<h3><span>2. Acceso del usuario o suplicante al AP</span></h3>
+<p style="text-align: justify;">Una vez se ha configurado el servidor y el cliente radius (punto de acceso), es el momento de conectarse desde un dispositivo móvil o desde un equipo portátil/sobremesa por medio de la interfaz inalámbrica y poder obtener los recursos de la red, para esta caso, la posibilidad de navegar por internet.</p>
+<p style="text-align: justify;">En la figura inferior, se describe el esquema utilizado en las pruebas de acceso de los dispositivos.</p>
+<p style="text-align: center;"><a href="Conexion-Clientes-AP.png"><img src="Conexion-Clientes-AP.png" alt="" width="696" height="398" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Esquema de red.</em></p>
+<p style="text-align: justify;">La operativa es la siguiente:</p>
+<ol>
+<li style="text-align: justify;">Buscar la red (SSID).</li>
+<li style="text-align: justify;">Acceder mediante el usuario y contraseña que se ha configurado en el servidor freeRadius, para este caso de ejemplo:
+<ul>
+<li style="text-align: justify;">usuario: uradius.</li>
+<li style="text-align: justify;">password: eeepuc20.</li>
+</ul>
+</li>
+<li style="text-align: justify;">Navegar por internet.</li>
+</ol>
+<h4>1. Acceso desde un smartphone</h4>
+<div class="exe-fx exe-tabs">
+<h2>Selección de la red</h2>
+<p style="text-align: justify;">En primer lugar, se accede al menú Wifi para ver las redes disponibles. Como se observa en la figura inferior izquierda, se tiene disponible la red <strong>ciber-freeRadius</strong> que es la que se ha configurado en el punto 3.1.2. Una vez se selecciona la red <strong>ciber-freeRadius</strong>, aparece una nueva ventana donde introducir las credenciales (imagen inferior derecha).</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="redes-Wifi-visibles.PNG" alt="" width="341" height="446" /></td>
+<td style="width: 50%; text-align: center;"><img src="user-pass.PNG" alt="" width="351" height="417" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Detección de protocolo de autenticación no seguro</h2>
+<p style="text-align: justify;">Dado que el AP utiliza WAP, el dispositivo avisa de que se va a acceder a una red no fiable. Si se accede a más detalles, se informa del nivel de seguridad bajo. También se puede acceder al Certificado que se ha generado en el servidor Radius para esta conexión. Para continuar, se regresa a la anterior ventana y se pulsa '<strong>Continuar</strong>'.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="no-fiable.PNG" alt="" width="348" height="367" /></td>
+<td style="width: 50%; text-align: center;"><img src="masDetalles.PNG" alt="" width="296" height="527" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Navegación por internet</h2>
+<p>Una vez se ha autenticado, ya se tiene la red disponible por lo que se puede navegar en internet.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="conexion-Red-Ok.PNG" alt="" width="362" height="644" /></td>
+<td style="width: 50%; text-align: center;"><img src="navegacion.PNG" alt="" width="355" height="632" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4>2. Acceso desde un equipo portátil</h4>
+<div class="exe-fx exe-tabs">
+<h2>Selección de la red</h2>
+<p style="text-align: justify;">En primer lugar, se accede al menú Wifi para ver las redes disponibles. Como se observa en la figura inferior izquierda, se tiene disponible la red <strong>ciber-freeRadius</strong> que es la que se ha configurado en el punto 3.1.2. Una vez se selecciona la red <strong>ciber-freeRadius</strong>, aparece una nueva ventana donde hay que introducir la seguridad, en este caso WAP, el protocolo de autenticación, en este caso EAP, chequear 'No se necesita ningún certificado CA', ya que el cliente no dispone del certificado. Por último se introducen las credenciales y se deja la autenticación interna como MSCHAPV2. Para iniciar la autenticación, se pulsa <strong>Conectar</strong>.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="seleccion-REd.png" alt="" width="317" height="436" /></td>
+<td style="width: 50%; text-align: center;"><img src="autenticacin-Wifi-PC-Uradius.png" alt="" width="517" height="593" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Navegar por internet</h2>
+<p>Una vez se ha autenticado, ya se tiene la red disponible por lo que se puede navegar en internet.</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="red-seleccionada.png" alt="" width="317" height="426" /></td>
+<td style="width: 50%; text-align: center;"><img src="navegar-aules.png" alt="" width="911" height="706" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Ip recibida</h2>
+<p style="text-align: justify;">Si se accede a la consola y se consulta la ip, se puede observar que se ha obtenido una ip del router con salida a internet dentro del rango dhcp configurado en el mismo. También se puede observar que se hace un ping a google y contesta.</p>
+<p style="text-align: center;"><img src="ip-ping.png" alt="" width="857" height="279" /></p>
+</div>
+<p>Si se accede al log del servidor freeradius, se pueden observar las conexiones que se han realizado así como otras que se han provocado para no tener éxito. Como se puede observar, las autenticaciones descritas anteriormente, están reflejadas en las horas 13:43 y 13:50 .</p>
+<p style="text-align: center;"><img src="log-servidor-Radius.png" alt="" width="1105" height="360" /></p>
+<h3><span>2. Acceso del usuario o suplicante al router en modo AP</span></h3>
+<p style="text-align: justify;">Una vez se ha configurado el servidor y el cliente radius (router linksys en modo AP), es el momento de conectarse desde un dispositivo móvil o desde un equipo portátil/sobremesa por medio de la interfaz inalámbrica y poder obtener los recursos de la red, para esta caso, la posibilidad de navegar por internet.</p>
+<p style="text-align: justify;">En la figura inferior, se describe el esquema utilizado en las pruebas de acceso de los dispositivos.</p>
+<p style="text-align: center;"><a href="Esquema-Router-AP.png"><img src="Esquema-Router-AP.png" alt="" width="579" height="462" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Esquema de red.</em></p>
+<p style="text-align: justify;">La operativa es la siguiente:</p>
+<ol>
+<li style="text-align: justify;">Buscar la red (SSID).</li>
+<li style="text-align: justify;">Acceder mediante el usuario y contraseña que se ha configurado en el servidor freeRadius, para este caso de ejemplo:
+<ul>
+<li style="text-align: justify;">usuario: uradius.</li>
+<li style="text-align: justify;">password: eeepuc20.</li>
+</ul>
+</li>
+<li style="text-align: justify;">Navegar por internet.</li>
+</ol>
+<h4>1. Acceso desde un smartphone</h4>
+<div class="exe-fx exe-tabs">
+<h2>Selección de red</h2>
+<p style="text-align: justify;"><span>En primer lugar, se accede al menú Wifi para ver las redes disponibles. Como se observa en la figura inferior izquierda, se tiene disponible la red </span><strong>linksys-freeRadius</strong><span> que es la que se ha configurado en el punto 3.1.2. Una vez se selecciona la red <strong>linksys</strong></span><strong>-freeRadius</strong><span>, aparece una nueva ventana donde introducir las credenciales (imagen inferior derecha).</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="redes-wifi.PNG" alt="" width="323" height="538" /></td>
+<td style="width: 50%; text-align: center;"><img src="acceso-Wifi-linksys.PNG" alt="" width="296" height="527" /></td>
+</tr>
+</tbody>
+</table>
+<p><span></span></p>
+<h2>Certificado</h2>
+<p style="text-align: justify;"><span>El dispositivo avisa de que el certificado no es fiable ya que no se tiene almacenado el mismo en el dispositivo. Si se accede a más detalles, se puede ver la información del certificado del servidor freeradius. Para continuar, se regresa a la anterior ventana y se pulsa '</span><strong>Continuar</strong><span>'.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><img src="certificado-servdidor.PNG" alt="" width="750" height="1334" /></td>
+<td style="width: 33.3333%; text-align: center;"><img src="detalles-certificado.PNG" alt="" width="750" height="1334" /></td>
+<td style="width: 33.3333%; text-align: center;"><img src="detalles-certificado-2.PNG" alt="" width="750" height="1334" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Acceso a la red</h2>
+<p><span>Una vez se ha autenticado, ya se tiene la red disponible por lo que se puede navegar en internet.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="wifi-linksys-coenctada.PNG" alt="" width="377" height="670" /></td>
+<td style="width: 50%; text-align: center;"><img src="navegacion.1.PNG" alt="" width="362" height="644" /></td>
+</tr>
+</tbody>
+</table>
+<span style="background-color: #222222; color: #ffffff; font-size: 1.2em; letter-spacing: 0.5px;"></span></div>
+<h4>2. Acceso desde un equipo portátil</h4>
+<div class="exe-fx exe-tabs">
+<h2>Selección de la red</h2>
+<p style="text-align: justify;"><span>En primer lugar, se accede al menú Wifi para ver las redes disponibles. Como se observa en la figura inferior izquierda, se tiene disponible la red </span><strong>linksys-freeRadius</strong><span> que es la que se ha configurado en el punto 3.1.2. Una vez se selecciona la red <strong>linksys</strong></span><strong>-freeRadius</strong><span>, aparece una nueva ventana donde hay que introducir la seguridad, en este caso WAP y WAP2 enterprise, el protocolo de autenticación, en este caso EAP, chequear 'No se necesita ningún certificado CA', ya que el cliente no dispone del certificado. Por último, se introducen las credenciales y se deja la autenticación interna como MSCHAPV2. Para iniciar la autenticación, se pulsa <strong>Conectar</strong>.</span></p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="Acceso-Mint-linksys-.png" alt="" width="317" height="399" /></td>
+<td style="width: 50%; text-align: center;"><img src="autenticacin-Wifi-PC-Uradius.png" alt="" width="403" height="462" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Acceso a la red</h2>
+<p>Una vez se ha autenticado, ya se tiene la red disponible por lo que se puede navegar en internet.</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="wifi-seleccionda.png" alt="" width="244" height="164" /></td>
+<td style="width: 50%; text-align: center;"><img src="navegar-aules.png" alt="" width="400" height="310" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Encabezado 2</h2>
+<p>Si se accede a la consola y se consulta la ip, se puede observar que se ha obtenido una ip del router con salida a internet dentro del rango dhcp configurado en el mismo. También se puede observar que se hace un ping a google y contesta.</p>
+<p style="text-align: center;"><img src="ip-a-Mint-ping-google.png" alt="" width="855" height="463" /></p>
+</div>
+<p style="text-align: justify;"><span>Si se accede al log del servidor freeradius, se pueden observar las conexiones que se han realizado así como otra que se ha provocado para no tener éxito. Como se puede observar, las autenticaciones descritas anteriormente, están reflejadas en las horas 07:17 y 07:21 .</span></p>
+<p style="text-align: center;"><span><img src="var-log-2Clientes-OK-1-NoOK.png" alt="" width="1232" height="306" /></span></p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="312_configuracin_del_punto_de_acceso_o_router_inalmbrico.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_freeradius__validacin_con_usuarios_ldap.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

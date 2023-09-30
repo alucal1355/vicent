@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4. Prevención de fugas de información (DLP, Data Loss Prevention) | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-136"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul class="other-section">
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="active daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul>
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="33_splunk.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4. Prevención de fugas de información (DLP, Data Loss Prevention)</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id180">
+<div class="iDevice emphasis0" >
+<div id="ta180_180_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. introducción</h3>
+<p style="text-align: justify;"><strong>INCIBE:</strong>  "Para entender en qué consiste una <strong>fuga de información</strong> debemos saber que<span> </span><strong>la protección de la información se basa en tres principios básicos: confidencialidad</strong><span> </span>(accesible solo para aquellas personas autorizadas),<span> </span><strong>integridad</strong><span> </span>(libre de errores y modificaciones no autorizadas)<span> </span><strong>y disponibilidad</strong><span> </span>(accesible cuando sea necesario para las personas o sistemas autorizados)". Entendemos por fuga de información la pérdida de confidencialidad ocasionada como consecuencia de un incidente de seguridad interno o externo (intencional o no), que le ocurre al responsable de su custodia, pudiendo, por tanto, perderse la integridad de la misma y su disponibilidad".</p>
+<p style="text-align: justify;">La <strong>fuga de información privilegiada</strong> es un hecho que se viene evidenciando desde años atrás. <span>La fuga de información (d</span><em>ata breaches)</em><span> que han sufrido diferentes empresas y organizaciones, tanto si ocurren desde dentro (los llamados </span><em>inside jobs</em><span>) o desde fuera (ejecutada por atacantes externos), ha ido creciendo en número con el paso del tiempo. Estos ataques suelen tener como objetivo agencias del gobierno, páginas sociales, páginas de citas, venta online, bancos y sitios que gestionan temas relacionados con la salud (ver figura inferior).</span><span></span></p>
+<p style="text-align: center;"><span><img src="esquema-DLP.png" alt="" width="758" height="573" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Esquema DLP.</em></p>
+<p><span>Si se pulsa la imagen inferior, se pude acceder a la versión interactiva<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/" target="_blank"> (aquí)</a>, donde se puede filtrar según el tipo de organización y el tipo de ataque.</span></p>
+<p style="text-align: center;"></p>
+<p style="text-align: center;"><a href="https://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/" target="_blank" rel="noopener"><img src="fuga-info.png" alt="" width="1013" height="696" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Fuga de información en diferentes organizaciones/espacios.</em></p>
+<h3>2. Soluciones DLP</h3>
+<p style="text-align: justify;"><span><strong>DLP</strong> (Data Loss Prevention o Prevención de pérdida de datos) es una herramienta que previene fugas de información cuyo origen está dentro de la organización, de una manera activa y sin perder productividad.</span></p>
+<p style="text-align: justify;"><span><strong>DLP</strong> es una solución para encontrar, monitorizar y proteger la información confidencial que está almacenada a través de la red y los discos de almacenamiento de los equipos. Las soluciones DLP se utilizan para prevenir el problema de perder los datos confidenciales.</span></p>
+<p style="text-align: justify;"><span>Los componentes de la solución están diseñados de la siguiente manera:</span></p>
+<ul>
+<li style="text-align: justify;"><span>Detección de los datos confidenciales almacenados.</span></li>
+<li style="text-align: justify;"><span>Monitorizar para que se utilizan los datos.</span></li>
+<li style="text-align: justify;"><span>Proteger los datos para evitar su pérdida.</span></li>
+</ul>
+<p style="text-align: center;"><span><img src="arquitectura-DLP.png" width="817" height="305" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 3.</strong> Arquitectura DLP - Fuente: Radwan (2015).</em></span></p>
+<h3>3. Características de los DLP</h3>
+<p>Las características de los DLP son las siguientes:</p>
+<ul>
+<li style="text-align: justify;"><strong><span>Precisión: </span></strong>l<span>os DLP tienen mecanismos para evitar generar falsos positivos e ignorar datos que no debería. Para ello, suelen incorporar inteligencia artificial la cual les permite aprender qué documentos se utilizan y qué acciones se suelen realizar sobre dichos documentos.</span></li>
+<li style="text-align: justify;"><span></span><strong><span>Centralización: </span></strong>l<span>a administración de los DLP se encuentra centralizada, permitiendo así una gestión mucho más sencilla.</span></li>
+<li style="text-align: justify;"><span></span><strong><span>Monitorización: </span></strong>e<span>l sistema está constantemente analizando múltiples tipos de ficheros y protocolos independientemente de la información que se esté manejando.</span></li>
+<li style="text-align: justify;"><span></span><strong><span>Identificación: </span></strong>a<span>ñaden marcas de agua a los documentos permitiendo identificar al responsable de dicha fuga.</span></li>
+</ul>
+<p style="text-align: center;"><span><img src="datos-movimiento.png" width="514" height="376" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> <a href="https://www.freepik.es/vector-gratis/cuadro-grafico-aspecto-hombre-concepto-analisis-negocios-icono-procesamiento-datos-grandes_3629600.htm#page=1&amp;query=data%20prevention&amp;position=0" target="_blank" class="author" rel="noopener">Fullvector</a>- <span class="title">DLP</span> <span class="license"><span class="sep">(</span><span class="custom-license">Freepik</span><span class="sep">).</span></span></em></p>
+<h3 style="text-align: justify;"><span class="license"><span class="sep">4. Funciones de los DLP</span></span></h3>
+<p style="text-align: justify;">La principal función de un DLP es la protección de la información, la herramienta se basa en un catálogo de los procesos para examinar los datos sensibles:</p>
+<ul>
+<li style="text-align: justify;"><strong>Datos en uso:</strong> Son los datos usados en tiempo real por los usuarios, estos son monitorizados revisando cada acción que realizan los usuarios finales en sus equipo para protegerlos por medio de agentes instalados en los equipos. Estas aplicaciones bloquean el traslado de información.</li>
+<li style="text-align: justify;"><strong>Datos en movimiento:</strong> Estos se trasmiten a través de una red y su protección se da en la red, analizando fragmentos en busca de patrones que verifiquen que los datos tengan autorización de su movimiento. La herramienta DLP debe ser capaz de monitorizar el tráfico de forma pasiva y así determinar si los paquetes que están en la red no infringen alguna regla que esté debidamente configurada en el DLP.</li>
+</ul>
+<p style="text-align: center;"><img src="datos-reposo.png" width="588" height="345" /></p>
+<p style="text-align: center;"><em><strong>Figura 5. </strong>Datos en movimiento.</em></p>
+<ul>
+<li style="text-align: justify;"><strong>Datos almacenados:</strong> Una funcionalidad de la herramienta DLP es la de rastrear tipos de información y localizar en dónde se almacenan en la organización. Estos se encuentran en algún medio de almacenamiento en el organismo.  Una vez encontrados los datos, la herramienta DLP debe escanear su contenido en busca de datos sensibles para su protección.</li>
+</ul>
+<p><img src="datos-reposo.png" width="588" height="345" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><strong>Figura 6. </strong>Datos en reposo.</em></p>
+<h3 style="text-align: justify;"><span class="license"><span class="sep">5. Funcionamiento de los DLP</span></span></h3>
+<p style="text-align: justify;"><span>Hay 3 tipos diferentes de DLP:</span></p>
+<ul>
+<li style="text-align: justify;"><span></span><strong><span>Network DLP: </span></strong><span>e</span><span>ste DLP se integra en los puntos de salida de datos (es decir, en un router). Una vez instalado, esta solución monitoriza, rastrea y genera informes del tráfico que hay en la red. Dichos informes muestran qué datos están siendo utilizados, quiénes están utilizando estos datos, el origen y el destino de dichos datos. Este tipo de DLP es idóneo para rastrear todo el contenido que pasa por la red.</span></li>
+<li style="text-align: justify;"><span></span><strong><span>Storage DLP: </span></strong><span>e</span><span>ste DLP permite mostrar los archivos que circulan por la red de la empresa. De este modo se pueden identificar los puntos sensibles y prevenir que se filtre información. Este tipo de DLP es idóneo para controlar los datos que están almacenados en la nube.</span></li>
+<li style="text-align: justify;"><span></span><strong><span>Endpoint DLP: </span></strong><span>e</span><span>ste DLP se instala en todos los dispositivos utilizados por los empleados permitiendo supervisar e impedir la fuga de datos a través de dispositivos externos (USB's, DVDs, etcétera), LAN o Internet.</span></li>
+</ul>
+<h3><span>6. Plataformas DLP en el mercado</span></h3>
+<p style="text-align: justify;">De acuerdo a la <strong>información publicada por Gartner</strong>, las principales empresas líderes fabricantes de soluciones de DLP para el año 2016 son: GTB Tecnologies, McAfee, Intel Security, Symantec, Digital Guardian, ForcePoint y Fidelis Security.</p>
+<p style="text-align: justify;">El estudio identifica las empresas más importantes, utilizando parámetros de categorización basados en el posicionamiento, la estrategia de mercado y la eficacia en el desempeño de los objetivos. Los productos de prevención de fuga de información (Data Loss Prevention) más destacados son:</p>
+<p style="text-align: center;"><strong><img src="gartner-2016-magic-quadrant-data-loss-prevention-dlp.png" width="917" height="900" /></strong></p>
+<p style="text-align: center;"><em><strong>Figura 7. </strong>Gráfico de las empresas líderes en Data Loss</em><br /><em>Prevention, según Gartner, tomado de:</em><br /><em>http://www.gartner.com.</em></p>
+<p><strong><a href="https://www.gartner.com/reviews/market/enterprise-data-loss-prevention" target="_blank" rel="noopener">Referencia Gartner</a></strong></p>
+<h4><strong>1. Symantec Data Loss Prevention</strong></h4>
+<p style="text-align: justify;">Utilizado por grandes empresas como; entidades financieras, sanitarias, manufactureras, energéticas e incluso gubernamentales. Proporcionan al dispositivo, terminal, redes, centro de datos, nube, etcétera., la capacidad de detectar, monitorizar y proteger datos confidenciales de virus maliciosos. Esta protección y seguridad se realiza durante y sobre los datos confidenciales que se mueven tanto físicamente como en la nube. </p>
+<h4><strong>2. Nightfall</strong></h4>
+<p style="text-align: justify;">Tiene acceso a los servicios albergados en la nube a través de las API de dichos servicios, de esta manera puede supervisar los datos y aplicaciones sin necesidad de agentes. Es la primera plataforma DLP nativa en la nube.</p>
+<p style="text-align: justify;">Se destacan las siguientes características:</p>
+<ul>
+<li style="text-align: justify;">Incluye <strong>técnicas de Machine Learning</strong> clasificando los archivos con gran precisión.</li>
+<li style="text-align: justify;">Permite automatizar cuarentenas, alertas, ahorrando tiempo y manteniendo la seguridad de la empresa.</li>
+<li style="text-align: justify;">Incluye gestión de incidentes, identifica datos confidenciales, reducción de falsos positivos. Analiza archivos de diferentes tipos, incluyendo archivos con datos no estructurados, cómo puede ser JSON, hojas de cálculo, etcétera. Para solucionar los problemas emplea soluciones como notificar a los administradores, borrado de archivos maliciosos, etcétera. De esta manera permite a los usuarios reducir el borrado archivos confidenciales y garantizar el cumplimiento de las normativas reguladoras.</li>
+<li style="text-align: justify;">Está alojado en Amazon AWS y en Google Cloud.</li>
+<li style="text-align: justify;">Cuenta con una plataforma para desarrolladores.</li>
+</ul>
+<h4>3. Avanan</h4>
+<p style="text-align: justify;">Es una plataforma albergada en la nube que permite gestionar la seguridad de correos electrónicos. Utiliza API para escanear phishing, malware y fugas de datos.</p>
+<p style="text-align: justify;">Se destacan las siguientes características:</p>
+<ul>
+<li style="text-align: justify;">Incluye<strong> técnicas de Machine Learning</strong> para capturar ataques independientemente del nivel de sofisticación de los mismos.</li>
+<li style="text-align: justify;">Se despliega directamente en la nube, ofreciendo un alto nivel de defensa contra las amenazas internas y el correo electrónico. No hay que modificar los registros MX para utilizar Avanan. Dicha ausencia de cambios sobre los registros MX significa que es imposible que los atacantes vean si se está utilizando Avanan o no.</li>
+<li style="text-align: justify;">Dispone de una interfaz intuitiva.</li>
+</ul>
+<h4>4. Bettercloud</h4>
+<p style="text-align: justify;">Es una plataforma que permite administrar y securizar los servicios albergados en la nube. Para ello cuenta con varias soluciones, entre ellas un DLP.</p>
+<p>Se destacan las siguientes características:</p>
+<ul>
+<li style="text-align: justify;">Proporciona la habilidad de <strong>auditar, buscar, informar</strong> y ver todos los archivos guardados en Google Workspace, DropBox, Slack, Office 365, Namely, Zendsek, Salesforce, Okta y Box.</li>
+<li style="text-align: justify;">Permite administrar, notificar excepciones y gestionar los privilegios de los usuarios que pertenecen al sistema.</li>
+</ul>
+<h4>5. McAfee Data Loss Prevention</h4>
+<p style="text-align: justify;">Ayuda a evitar la pérdida de datos monitorizando todo el tiempo el equipo, también da la posibilidad de administrar agentes y actualizaciones además de poder obtener un resumen de todos los equipos donde está instalado el agente.</p>
+<h4>6. OpenDLP</h4>
+<p style="text-align: justify;"><a href=" https://trantoriano.net/2016/05/29/un-acercamiento-a-opendlp-i/" target="_blank" rel="noopener">OpenDLP</a> <span>solo está disponible para las <strong>plataforma Linux y Windows</strong>. </span>Se destacan las siguientes características:</p>
+<ul>
+<li>Permite realizar búsquedas masivas de la información en varios equipos al mismo tiempo sin consumir una gran cantidad de recursos.</li>
+<li>Brinda la opción inspeccionar los contenidos de cada uno de los ficheros.</li>
+<li>Consta de una interfaz GUI Web.</li>
+</ul>
+<p><strong>OpenDLP</strong> realiza básicamente 3 tipos de búsquedas:</p>
+<ol>
+<li style="text-align: justify;">Búsquedas sin despliegue de un agente de ficheros en la máquina objetivo.</li>
+<li style="text-align: justify;">Búsquedas mediante el despliegue de agente en la máquina remota.</li>
+<li style="text-align: justify;">Búsqueda sin despliegue de agente en bases de datos Mysql y MSSQL.</li>
+</ol>
+<h3 style="text-align: justify;"><span>7. DLP para test de pruebas</span></h3>
+<p>Para<strong> iniciarse en DLP</strong>, existe uno para test de prueba, el enlace es el siguiente:</p>
+<ul>
+<li><a href="https://www.forcepoint.com/es/product/dlp-data-loss-prevention">https://www.forcepoint.com/es/product/dlp-data-loss-prevention</a></li>
+</ul>
+<p style="text-align: justify;">El <strong>problema de los DLP de prueba</strong> es que, una cosa es el software que monitorice red, correo, portapapeles, screenshots, etcétera, y otra cosa son las reglas. Por lo general, cuando se usan versiones "free" van sin reglas, y lo<strong> costoso e interesante de los DLP son las reglas</strong>.</p>
+<p style="text-align: justify;">Para estudiar las reglas, <strong>naidlp</strong> es un DLP en entorno gráfico.</p>
+<h3 style="text-align: justify;">8. Ejemplos prácticos</h3>
+<p><strong>Prevención de pérdida de datos y Microsoft Teams</strong></p>
+<p>Si se desea que una organización tenga Prevención de pérdida de datos de Microsoft Purview (DLP), se pueden definir directivas que impidan que los usuarios compartan información confidencial en un canal de <strong>Microsoft Teams</strong> o una sesión de chat. Estos son algunos ejemplos de cómo funciona esta protección:</p>
+<ul>
+<li>Ejemplo 1: Protección de la información confidencial en los mensajes.</li>
+<li>Ejemplo 2: Protección de información confidencial en documentos.</li>
+<li>Ejemplo 3: Protección de las comunicaciones en canales compartidos de Teams.</li>
+</ul>
+<p><strong>Licencias DLP para Microsoft Teams</strong>. Las funcionalidades de prevención de pérdida de datos incluyen mensajes de canal y chat de Microsoft Teams, incluidos los mensajes de canal privado para:</p>
+<ul>
+<li>Office 365 E5/A5/G5</li>
+<li>Microsoft 365 E5/A5/G5</li>
+<li>Microsoft 365 E5/A5/G5 Information Protection y gobernanza</li>
+<li>Microsoft 365 E5/A5/G5/F5 Cumplimiento y seguridad &amp; de F5 Cumplimiento</li>
+<li style="text-align: justify;">Office 365 y Microsoft 365 E3 incluyen protección DLP para SharePoint Online, OneDrive y Exchange Online. Esto también incluye los archivos que se comparten a través de Teams porque Teams usa SharePoint Online y OneDrive para compartir archivos.</li>
+</ul>
+<p><a href="https://learn.microsoft.com/es-es/microsoft-365/compliance/dlp-microsoft-teams?view=o365-worldwide" target="_blank" rel="noopener">Fuente</a></p>
+<h3 style="text-align: justify;">9. Referencias</h3>
+<ul>
+<li style="text-align: justify;"><a href="https://www.incibe.es/protege-tu-empresa/blog/dlp-protege-tus-datos-fugas-informacion">https://www.incibe.es/protege-tu-empresa/blog/dlp-protege-tus-datos-fugas-informacion</a></li>
+<li style="text-align: justify;">
+<p class="LC20lb MBeuO DKV0Md"><a href="https://www.incibe.es/extfrontinteco/img/File/intecocert/Formacion/EstudiosInformes/guia_gestion_fuga_informacion.pdf" target="_blank" rel="noopener">Guía gestión de fuga de información - INCIBE</a></p>
+</li>
+<li style="text-align: justify;"><a href="https://www.smythsys.es/12069/data-loss-prevention-dlp-en-office-365-introduccion/" target="_blank" rel="noopener">Data Loss Prevention (DLP) en Office 365</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="33_splunk.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

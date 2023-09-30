@@ -1,0 +1,279 @@
+
+#numero {
+  font-size: 3em;
+  color: #0000FF;
+  font-weight:bold;
+  font-family: Arial;
+  
+  #text-shadow: 1px 1px 2px black;
+  margin: 0px;
+  margin-top: -0.2em;
+}
+#figura-contenedor {  
+  display: table;  
+  width: 60%;  
+  margin-top: 1em;  
+  margin-right: 0px;  
+  margin-bottom: 1em;  
+  margin-left: 20%;  -webkit-border-radius: 10px 3em 10px 10px;
+  border-radius: 10px 3em 10px 10px;  -webkit-box-shadow: 5px 5px 5px #bbbbbb;
+  box-shadow: 5px 5px 5px #bbbbbb;  
+  background-color: #E0F2F7;  
+  padding-top: 15px;  
+  padding-right: 15px;  
+  padding-bottom: 15px;  
+  padding-left: 15px;
+}
+
+#figura-contenido {  
+  display: table-row;
+}
+#figura-texto {  
+  margin-left: 3.5em;
+}
+#figura-texto p {  
+  margin-top: 0px;  
+  padding-left: 0.5em;  
+  border-left-width: thick;  
+  border-left-style: solid;  
+  border-left-color: #0000FF;  
+  min-height: 2.5em;
+}
+#figura-numero {  
+  margin-top: 0px;  
+  margin-right: 0px;  
+  margin-bottom: 0px;  
+  margin-left: 0px;  
+  vertical-align: middle;  
+  padding-top: 0px;  
+  text-align: center;  
+  float: left;
+}
+#figura-imagen {  
+  display: table-row;  
+  margin-top: 1em;  
+  margin-right: 0em;  
+  margin-bottom: 0em;  
+  margin-left: 0em;
+}
+
+#figura-imagen img {  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+* html #figura-contenido {  
+  top: 50%;  
+  left: 0px;  
+  height: 1px;
+}
+
+* html #figura-contenido #figura-texto {  
+  position: relative;  
+  top: -50%;
+}
+
+cuadro-recuerda {  
+  clear: right;  
+  padding-top: 60px;  
+  padding-right: 20px;  
+  padding-bottom: 20px;  
+  padding-left: 20px;  
+  width: 200px;  
+  float: right;  
+  color: #114477;  
+  border-top-style: solid;  
+  border-right-style: solid;  
+  border-bottom-style: solid;  
+  border-left-style: solid;  
+  border-top-color: #496d8c;  
+  border-right-color: #496d8c;  
+  border-bottom-color: #496d8c;  
+  border-left-color: #496d8c;  
+  border-top-width: 1px;  
+  border-right-width: 1px;  
+  border-bottom-width: 1px;  
+  border-left-width: 1px;  
+  background-color: #d5d5ff;  
+  background-image: url("../../uploads/2014/08/recuerda.png");  
+  background-repeat: no-repeat;  
+  background-attachment: scroll;  
+  background-position: 20px 20px;  
+  position: relative;  
+  margin-top: 0.5em;  
+  margin-right: 0.5em;  
+  margin-bottom: 0.5em;  
+  margin-left: 0.5em;  -ms-word-wrap: break-word;
+  word-wrap: break-word;  
+  right: 0px;  -webkit-border-radius: 10px 3em 10px 3em;
+  border-radius: 10px 3em 10px 3em;  -webkit-box-shadow: 5px 5px 5px #bbbbbb;
+  box-shadow: 5px 5px 5px #bbbbbb;
+}
+
+.cuadro-importante {  
+  clear: right;  
+  padding-top: 60px;  
+  padding-right: 20px;  
+  padding-bottom: 20px;  
+  padding-left: 20px;  
+  width: 200px;  
+  float: right;  
+  color: maroon;  
+  border-top-style: solid;  
+  border-right-style: solid;  
+  border-bottom-style: solid;  
+  border-left-style: solid;  
+  border-top-color: maroon;  
+  border-right-color: maroon;  
+  border-bottom-color: maroon;  
+  border-left-color: maroon;  
+  border-top-width: 1px;  
+  border-right-width: 1px;  
+  border-bottom-width: 1px;  
+  border-left-width: 1px;  
+  background-color: #ffefef;  
+  background-image: url("icon_importante.png");  
+  background-repeat: no-repeat;  
+  background-attachment: scroll;  
+  background-position: 20px 20px;  
+  position: relative;  
+  margin-top: 0.5em;  
+  margin-right: 0.5em;  
+  margin-bottom: 0.5em;  
+  margin-left: 0.5em;  -ms-word-wrap: break-word;
+  word-wrap: break-word;  
+  right: 0px;  -webkit-border-radius: 10px 3em 10px 3em;
+  border-radius: 10px 3em 10px 3em;  -webkit-box-shadow: 5px 5px 5px #bbbbbb;
+  box-shadow: 5px 5px 5px #bbbbbb;
+}
+
+.cuadro-importante-centro {  
+  display: block;  
+  margin-top: auto;  
+  margin-right: auto;  
+  margin-bottom: auto;  
+  margin-left: auto;  
+  max-width: 80%;  
+  padding-top: 60px;  
+  padding-right: 20px;  
+  padding-bottom: 20px;  
+  padding-left: 20px;  
+  border-top-style: solid;  
+  border-right-style: solid;  
+  border-bottom-style: solid;  
+  border-left-style: solid;  
+  border-top-color: maroon;  
+  border-right-color: maroon;  
+  border-bottom-color: maroon;  
+  border-left-color: maroon;  
+  color: maroon;  
+  border-top-width: 1px;  
+  border-right-width: 1px;  
+  border-bottom-width: 1px;  
+  border-left-width: 1px;  
+  background-color: #ffefef;  
+  background-image: url("icon_importante.png");  
+  background-repeat: no-repeat;  
+  background-attachment: scroll;  
+  background-position: 20px 20px;  
+  right: 0px;  -webkit-border-radius: 10px 3em 10px 3em;
+  border-radius: 10px 3em 10px 3em;  -webkit-box-shadow: 5px 5px 5px #bbbbbb;
+  box-shadow: 5px 5px 5px #bbbbbb;
+}
+
+.cuadro-nota-centro {  
+  display: block;  
+  margin-top: auto;  
+  margin-right: auto;  
+  margin-bottom: auto;  
+  margin-left: auto;  
+  max-width: 80%;  
+  padding-top: 60px;  
+  padding-right: 20px;  
+  padding-bottom: 20px;  
+  padding-left: 20px;  
+  color: black;  
+  border-top-width: 1px;  
+  border-right-width: 1px;  
+  border-bottom-width: 1px;  
+  border-left-width: 1px;  
+  background-color: #E0F2F7;  
+  background-image: url("icon_nota.png");  
+  background-repeat: no-repeat;  
+  background-attachment: scroll;  
+  background-position: 20px 20px;  
+  right: 0px;  -webkit-border-radius: 10px 3em 10px 3em;
+  border-radius: 10px 3em 10px 3em;  -webkit-box-shadow: 5px 5px 5px #bbbbbb;
+  box-shadow: 5px 5px 5px #bbbbbb;
+  }
+  
+  
+  
+
+.codigo {  
+  counter-reset: linea;  
+  display: block;  
+  margin-top: auto;  
+  margin-right: auto;  
+  margin-bottom: auto;  
+  margin-left: auto;  
+  max-width: 80%;  
+  padding-top: 1em;  
+  padding-right: 1em;  
+  padding-bottom: 1em;  
+  padding-left: 1em;  -ms-word-wrap: break-word;
+  word-wrap: break-word;  
+  background-color: #E0F2F7;  
+  background-image: none;  
+  background-repeat: repeat;  
+  background-attachment: scroll;  
+  background-position: 0% 0%;  
+  right: 0px;  -webkit-border-radius: 1em 1em 1em 1em;
+  border-radius: 1em 1em 1em 1em;
+}
+
+.codigo > p {  
+  color: 0000FF;  
+  font-size: 120%;
+  }
+  pre {  -ms-overflow-y: auto;
+  overflow-y: auto;  -ms-overflow-x: scroll;
+  overflow-x: scroll;  
+  padding-top: 0px;  
+  padding-right: 1em;  
+  padding-bottom: 1em;  
+  padding-left: 1em;  
+  background-color: #d1e29c;  
+  background-image: none;  
+  background-repeat: repeat;  
+  background-attachment: scroll;  
+  background-position: 0% 0%;  
+  color: black;
+}
+
+code:before {  
+  counter-increment: linea;  
+  content: counter(linea, decimal) ") ";
+}
+
+code {  
+  font-size: 120%;
+}
+
+.codigo .titulo {  
+  color: white;  
+  padding-top: 0px;  
+  padding-right: 0.5em;  
+  padding-bottom: 0px;  
+  padding-left: 0.5em;  
+  font-size: 120%;
+}
+
+.codigo .contenido {  
+  background-color: #E0F2F7;  
+  padding-top: 0px;  
+  padding-right: 0.5em;  
+  padding-bottom: 0px;  
+  padding-left: 0.5em;  
+  text-align: center;  
+  width: 90%;
+}

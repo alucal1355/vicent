@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2. Elementos de arquitectura segura | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-152"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li id="active"><a href="2_elementos_de_arquitectura_segura.html" class="active no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="1_seguridad_perimetral.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_introduccin_a_los_cortafuegos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2. Elementos de arquitectura segura</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id190">
+<div class="iDevice emphasis0" >
+<div id="ta190_190_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: center;"><img src="firewall-router.png" alt="" width="911" height="287" /></p>
+<h3 style="text-align: justify;"><strong>1. Elementos de arquitectura segura</strong></h3>
+<h4 style="text-align: justify;"><strong>1.1 Firewall</strong></h4>
+<ul>
+<li style="text-align: justify;"><strong>Tipos</strong>: Stateless, statefull, DPI, NGFW.</li>
+<li style="text-align: justify;"><strong>Reglas</strong>: Basados en TCP/IP de los datos recogidos en capa 3 y 4 del modelo OSI: IP, protocolo, puerto, flags.</li>
+<li style="text-align: justify;">Complementar la seguridad con el firewall local de los equipos.</li>
+<li style="text-align: justify;">Segmentación de las tareas de administración.</li>
+<li style="text-align: justify;">Mantener el software actualizado. Equipos prioritarios.</li>
+<li style="text-align: justify;">Segmentación de acceso para los administradores.</li>
+<li style="text-align: justify;">Activación del doble factor de autenticación.</li>
+<li style="text-align: justify;">Realización de auditorías de seguridad sobre el firewall.</li>
+</ul>
+<h4>1.2 Router</h4>
+<p>Los routers son dispositivos de capa 3 (red) del modelo OSI y el uso fundamental es para interconectar redes con posibilidad de aplicar ACL.</p>
+<p>Como buenas prácticas habría que:</p>
+<ul>
+<li>Deshabilitar servicios no utilizados: BOOTP, CDP, FTP, TFTP, HTTP, DNS, ...</li>
+<li>Utilizar las versiones seguras de los protocolos como por ejemplo SNMP v3 o HTTPS.</li>
+<li>El acceso remoto a los sistema debe ser con mínimo privilegio.</li>
+<li>Sólo permitir protocolos seguros de conexión remota como SSH2</li>
+<li>Restringir el acceso de administración para determinados IP/equipos.</li>
+<li>Activar la auditoría (loggin).</li>
+<li>Establecer un tiempo de inactividad y de sesión.</li>
+<li>Habilitar los protocolos de enrutamiento utilizados.</li>
+</ul>
+<h4>1.3 Router/proxy</h4>
+<p style="text-align: center;"><img src="router-proxy.png" alt="" width="920" height="304" /></p>
+<p style="text-align: justify;">Un <strong>proxy</strong> es un dispositivo intermedio que permite analizar el tráfico que atraviesa el dispositivo. </p>
+<p style="text-align: justify;">El servicio de proxy permite tener una política de conexiones y activar la vigilancia del dispositivo para enviar al SOC.</p>
+<p style="text-align: justify;">Proporcionan control, anonimización y vigilancia de las conexiones además de posibilitar la actualización de las reglas en base a las listas de IOCs.</p>
+<h4 style="text-align: justify;">1.4 Proxy-Router-Firewall</h4>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="proxy-router-firewall.png"><img src="proxy-router-firewall.png" alt="" width="926" height="307" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="proxy-firewall2.png"><img src="proxy-firewall2.png" alt="" width="942" height="345" /></a></td>
+</tr>
+</tbody>
+</table>
+<h4 style="text-align: justify;">1.5 DMZ</h4>
+<p style="text-align: justify;">La <strong>DMZ</strong> es la capa red con los servicios expuestos al exterior. Está separada del resto de red corporativa porque es la parte de nuestra red más expuesta a Internet.</p>
+<p style="text-align: justify;">Es necesario establecer reglas que controlen los flujos de información de la DMZ a la red interna.</p>
+<p style="text-align: justify;">Se<strong> implementa con 2 firewall</strong> con limitación en la comunicación entre los dos firewalls.</p>
+<p style="text-align: justify;">Hay que establecer medidas de seguridad implementadas en la DMZ.</p>
+<p style="text-align: justify;">Existen Firewalls de diferente fabricante, software, configuración, administradores de seguridad, etc.</p>
+<p style="text-align: justify;">Los servicios comunes son: proxy, IDS, VPN, DNS, web, ficheros (SFTP, SSH,...).</p>
+<p style="text-align: center;"><img src="dmz.1.png" alt="" width="915" height="369" /></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="1_seguridad_perimetral.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3_introduccin_a_los_cortafuegos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

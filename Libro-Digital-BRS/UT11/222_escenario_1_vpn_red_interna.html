@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.2 Escenario 1. VPN Red Interna | UT11. Fortificación perimetral: VPN </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-108"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo.png); background-repeat: no-repeat;"><div id="headerContent">UT11. Fortificación perimetral: VPN</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT11. Fortificación perimetral: VPN</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin_a_las_redes_privadas_virtuales_vpns.html" class="daddy">1. Introducción a las Redes privadas virtuales (VPNs)</a>
+   <ul class="other-section">
+      <li><a href="11_tneles_protocolo_vpn_ipsec.html" class="no-ch">1.1 Túneles (protocolo VPN IPSec)</a></li>
+      <li><a href="12_tneles_protocolo_vpn_wireguard.html" class="no-ch">1.2 Túneles (protocolo VPN WireGuard)</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_vpn_de_acceso_remoto.html" class="current-page-parent daddy">2. VPN de acceso remoto</a>
+   <ul>
+      <li><a href="21_openvpn.html" class="no-ch">2.1 OpenVPN</a></li>
+      <li class="current-page-parent"><a href="22_wireguard.html" class="current-page-parent daddy">2.2 WireGuard</a>
+      <ul>
+         <li><a href="221_instalacin_y_configuracin_de_wireguard.html" class="daddy">2.2.1 Instalación y configuración de WireGuard</a>
+         <ul class="other-section">
+            <li><a href="2211_configurar_un_cliente_mvil__red_externa.html" class="no-ch">2.2.1.1 Configurar un cliente móvil - Red Externa</a></li>
+            <li><a href="2212_configurar_un_cliente_de_escritorio_red_interna.html" class="no-ch">2.2.1.2 Configurar un cliente de escritorio -Red Interna</a></li>
+            <li><a href="2123_probando_la_conexin.html" class="no-ch">2.1.2.3 Probando la conexión</a></li>
+         </ul>
+         </li>
+         <li id="active"><a href="222_escenario_1_vpn_red_interna.html" class="active no-ch">2.2.2 Escenario 1. VPN Red Interna</a></li>
+         <li><a href="223_escenario_2_vpn_red_externa.html" class="no-ch">2.2.3 Escenario 2. VPN Red Externa</a></li>
+         <li><a href="tarea_1_wireguardmikroticvlans.html" class="no-ch">Tarea 1. WireGuard-Mikrotic-VLANs</a></li>
+         <li><a href="tarea_2_wireguard__pfsensemikrotik.html" class="no-ch">Tarea 2. WireGuard - PfSense-Mikrotik</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_gestin_de_accesos_sistemas_nac.html" class="daddy">3. Gestión de accesos. Sistemas NAC</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_servidor_radius_vpn.html" class="daddy">Laboratorio 1. Servidor Radius VPN</a>
+      <ul class="other-section">
+         <li><a href="1_esquema_de_instalacin.html" class="no-ch">1. Esquema de Instalación</a></li>
+         <li><a href="2_instalacinconfiguracin_servidorcliente_radius_en_windows_server_2019.html" class="no-ch">2. Instalación/Configuración Servidor/Cliente RADIUS en Windows Server 2019</a></li>
+         <li><a href="3_pruebas_de_aaa_va_vpn.html" class="no-ch">3. Pruebas de AAA vía VPN</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="2123_probando_la_conexin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="223_escenario_2_vpn_red_externa.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">2.2.2 Escenario 1. VPN Red Interna</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id144">
+<div class="iDevice emphasis0" >
+<div id="ta144_144_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;">En este escenario, se pone en producción el servidor <strong>VPN WireGuard en ubuntu server </strong>para<strong> permitir conexiones VPN en la red interna</strong>.</p>
+<p style="text-align: justify;">Los equipos que se conectarán a la VPN serán un Windows 10 y un dispositivo smartphone Iphone 6S. Una vez conectados los equipos, tendrán la capacidad de aprovechar los recursos disponibles en la red como cualquier otro equipo.</p>
+<h3>2. Recursos necesarios y escenario</h3>
+<ul>
+<li>Servidor ubuntu server con Wireguard instalado.</li>
+<li>Router con acceso a internet.</li>
+<li>Smartphone Iphone 6s con WireGuard instalado.</li>
+<li>Windows 10 con WireGuard instalado y configurado.</li>
+</ul>
+<p>El esquema de red es el siguiente</p>
+<p style="text-align: center;"><img src="Escenario1-RedInterna-W10.png" alt="" width="766" height="378" /></p>
+<h3>3. Conexión con Windows 10</h3>
+<div class="exe-fx exe-tabs">
+<h2>1. Conexión</h2>
+<p style="text-align: justify;">Una vez se crea un nuevo túnel configurando los parámetros del servidor y cliente, se realiza la conexión y como se puede observar en el Registro de WireGuard, se ha creado la conexión con el túnel y el equipo recibe en el adaptador del túnel la ip 192.168.8.112 y los DNS por lo que ya tiene acceso a la red interna VPN.</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="registro-tunelW10.png" target="_blank" rel="noopener"><img src="registro-tunelW10.png" alt="" width="743" height="521" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="ipconfig-all-W10-Tunel.png"><img src="ipconfig-all-W10-Tunel.png" alt="" width="594" height="567" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>2. Túnel activo</h2>
+<p style="text-align: justify;">Si se observa la pestaña de Túneles de la aplicación <strong>WireGuard</strong>, ya se tiene el túnel activo transfiriendo datos y se puede acceder a internet. </p>
+<p style="text-align: center;"><a href="navegacionW10-Interna-VPN.png" target="_blank" rel="noopener"><img src="navegacionW10-Interna-VPN.png" alt="" width="1534" height="774" /></a></p>
+<h2>3. Comprobar en servidor</h2>
+<p style="text-align: justify;">Si se consulta la<strong> interfaz wg0</strong> del servidor, se observa la conexión establecida entre el equipo Windows 10 ( 192.168.8.112) y el servidor VPN.</p>
+<p style="text-align: center;"><img src="conexion-Interna-W10.png" alt="" width="547" height="256" /></p>
+</div>
+<h3>4. Conexión con Iphone 6S</h3>
+<div class="exe-fx exe-tabs">
+<h2>1. Conexión</h2>
+<p style="text-align: justify;">Una vez se ha creado el túnel a partir del código QR generado, se activa el mismo y se conecta el dispositivo a la red VPN interna.</p>
+<p style="text-align: justify;">El equipo se conecta internamente ya que ha obtenido una ip dentro de la subred 192.168.0.0 de la red LAN del router. La ip que obtiene de la VPN es la configurada previamente y que es: 192.168.8.111.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="Detalle-VPN-Interna-Smartphone-1.PNG" target="_blank" rel="noopener"><img src="Detalle-VPN-Interna-Smartphone-1.PNG" alt="" width="318" height="414" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="Detalle-VPN-Interna-Smartphone-2.png" target="_blank" rel="noopener"><img src="Detalle-VPN-Interna-Smartphone-2.png" alt="" width="328" height="380" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>2. Túnel activo y navegación</h2>
+<p>Una vez se ha establecido la conexión VPN, ya se puede navegar desde la red interna.</p>
+<p style="text-align: center;"><a href="navegar-VPN-interna-Smartphone.PNG"><img src="navegar-VPN-interna-Smartphone.PNG" alt="" width="308" height="548" /></a></p>
+<h2>3. Comprobar en servidor</h2>
+<p style="text-align: justify;">Si se consulta la interfaz wg0 del servidor, se observa la conexión establecida entre el dispositivo smartphone 6S ( 192.168.8.111) y el servidor VPN.</p>
+<p style="text-align: center;"><img src="conexion-movil-Interna.png" alt="" width="542" height="301" /></p>
+</div></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="2123_probando_la_conexin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="223_escenario_2_vpn_red_externa.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

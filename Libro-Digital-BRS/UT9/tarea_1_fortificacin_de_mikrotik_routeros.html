@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Tarea 1. Fortificación de MikroTik RouterOS | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-133"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_fortificacin_de_una_dmz.html" class="current-page-parent daddy">5. Fortificación de una DMZ</a>
+   <ul>
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="active no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="faqs_mikrotik.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Tarea 1. Fortificación de MikroTik RouterOS</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id171">
+<div class="iDevice emphasis0">
+<div id="ta171_85" class="block iDevice_content">
+<h3 style="text-align: justify;"><span>1. Fortificación Mikrotik I</span></h3>
+<p style="text-align: justify;"><span>Consulta los documentos <em><strong><a href="https://www.cisecurity.org/controls" target="_blank" rel="noopener">CIS Controls</a></strong></em></span><span> y evalúa las medidas de control necesarias para fortificar un dispositivo MikroTik RouterOS. Céntrate en los siguientes documentos:</span></p>
+<ul style="text-align: justify;">
+<li><span>CIS Control 8: Defensas contra malware.</span></li>
+<li><span>CIS Control 9: Limitación y control de puertos de red.</span></li>
+<li><span>CIS Control 11: Configuraciones seguras para dispositivos de red.</span></li>
+<li><span>CIS Control 12: Defensa del perímetro.</span></li>
+<li><span>CIS Control 13: Protección de datos.</span></li>
+<li><span>CIS Control 15: Control de acceso inalámbrico.</span></li>
+</ul>
+<p style="text-align: justify;"><span>Consulta los documentos </span><strong><em>NIST SP 800-53</em></strong><span> y evalúa las medidas de control necesarias para fortificar un dispositivo MikroTik RouterOS. Céntrate en los siguientes documentos:</span></p>
+<ul>
+<li><span>[AC-4] Information Flow Enforcement.</span></li>
+<li><span>[CA-3] System Interconnections.</span></li>
+<li><span>[SC-7] Boundary Protection.</span></li>
+</ul>
+<h4 style="text-align: justify;"><span>1.1 Trabajo a realizar</span></h4>
+<p style="text-align: justify;"><span>Una vez estudiado los puntos anteriores, elabora </span><span>un listado de acciones a llevar a cabo en el dispositivo MikroTik dentro del contexto de tu proyecto (centro educativo u hospital).</span></p>
+<h3 style="text-align: justify;"><span>2. Fortificación Mikrotik II</span></h3>
+<p style="text-align: justify;"><span>A partir de los documentos <strong>CIS Controls</strong> y <strong>NIST SP 800-53</strong>, entre otros, se suelen elaborar las listas con acciones específicas para aplicar medidas que incrementen la seguridad y reduzcan la superficie de ataque de los sistemas.</span></p>
+<p style="text-align: justify;"><span>Los <strong>dispositivos MikroTik</strong> no suelen aplicar por defecto ninguna medida de seguridad. No es difícil encontrar, a partir de una simple búsqueda, listados con medidas de seguridad a aplicar para fortificarlos. Muchas de estas medidas siguen las recomendaciones de los diferentes estándares internacionales.</span></p>
+<p style="text-align: justify;"><strong>Recursos</strong></p>
+<ul style="text-align: justify;">
+<li><a href="https://wiki.mikrotik.com/wiki/Manual:Securing_Your_Router"><span>Manual: Securing Your Router @ MikroTik Wiki Documentation</span></a></li>
+<li><a href="https://help.mikrotik.com/docs/display/ROS/Securing+your+router"><span>Securing your router @ MikroTik RouterOS Documentation</span></a></li>
+<li><a href="https://mum.mikrotik.com/presentations/KH17/presentation_4162_1493374113.pdf"><span>Hardening MikroTik RouterOS</span></a></li>
+<li><a href="https://www.manitonetworks.com/networking/2017/7/25/mikrotik-router-hardening"><span>MikroTik Router Hardening</span></a></li>
+</ul>
+<h4 style="text-align: justify;"><span>2.1 Trabajo a realizar</span></h4>
+<ol style="text-align: justify; list-style-type: lower-alpha;">
+<li style="text-align: justify;"><span>Consulta los recursos propuestos. Elabora una lista que contenga las diferentes propuestas de cada uno de los recursos. ¿Con qué apartados de los documentos CIS Controls y NIST SP 800-53 se corresponden?</span></li>
+<li style="text-align: justify;"><span>Si en el apartado 1 has considerado alguna acción que no se encuentre en estos recursos, inclúyela también. Indícalo en el documento de memoria de la práctica que entregarás.</span></li>
+<li style="text-align: justify;"><span>A partir de un dispositivo MikroTik RouterOS con valores de configuración por defecto, aplica las medidas necesarias para securizarlo.</span></li>
+</ol>
+<h3 style="text-align: justify;"><span>3. Entregar</span></h3>
+<p style="text-align: justify;"><span>Documento pdf que contenga:</span></p>
+<ul>
+<li style="text-align: justify;"><span>Portada: Nombre y apellidos - título de la tarea.</span></li>
+<li style="text-align: justify;"><span>Capítulo 1. Listado de acciones a llevar a cabo en el dispositivo MikroTik  dentro del contexto de tu proyecto.</span></li>
+<li style="text-align: justify;"><span>Capítulo 2. Trabajo realizado en el apartado 2, contestando a las preguntas realizadas. Descripción gráfica donde:</span>
+<ul>
+<li style="text-align: justify;"><span>Si has utilizado WinBox para la configuración, incluye capturas de pantalla.</span></li>
+<li style="text-align: justify;"><span>Si has utilizado la línea de comandos, incluye los comandos utilizados.</span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="faqs_mikrotik.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

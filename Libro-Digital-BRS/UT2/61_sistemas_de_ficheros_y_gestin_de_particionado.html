@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1 Sistemas de ficheros y gestión de particionado | UT2. Fortificación de equipos: acceso al sistema </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-40"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT2. Fortificación de equipos: acceso al sistema</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT2. Fortificación de equipos: acceso al sistema</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_seguridad_en_el_arranque_del_sistema_informtico_configuracin_del_arranque_seguro_biosuefi.html" class="daddy">2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI)</a>
+   <ul class="other-section">
+      <li><a href="21_bloqueo_de_bios_con_contrasea.html" class="no-ch">2.1 Bloqueo de BIOS con contraseña</a></li>
+      <li><a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="no-ch">Tarea 1. Análisis y fortificación de la BIOS/UEFI</a></li>
+   </ul>
+   </li>
+   <li><a href="3_proteccin_del_gestor_de_arranque_grub.html" class="daddy">3. Protección del gestor de arranque GRUB</a>
+   <ul class="other-section">
+      <li><a href="31_proteccin_de_grub.html" class="no-ch">3.1 Protección de GRUB</a></li>
+      <li><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="no-ch">Tarea 2. Configuración del sistema y arranque</a></li>
+      <li><a href="tarea_3_proteger_el_gestor_de_arranque_grub.html" class="no-ch">Tarea 3. Proteger el gestor de arranque GRUB</a></li>
+   </ul>
+   </li>
+   <li><a href="4_contraseas_seguras.html" class="daddy">4. Contraseñas seguras</a>
+   <ul class="other-section">
+      <li><a href="41_contraseas_seguras_en_windows.html" class="daddy">4.1 Contraseñas seguras en Windows</a>
+      <ul class="other-section">
+         <li><a href="411_inicios_de_sesin_en_windows.html" class="no-ch">4.1.1 Inicios de sesión en Windows</a></li>
+         <li><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="no-ch">Tarea 4. Política de contraseñas seguras en Windows</a></li>
+      </ul>
+      </li>
+      <li><a href="42_gestin_de_la_poltica_de_contraseas_en_ubuntu.html" class="daddy">4.2. Gestión de la política de contraseñas en Ubuntu</a>
+      <ul class="other-section">
+         <li><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="no-ch">Tarea 5. Política de contraseñas seguras en Ubuntu Server</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="current-page-parent daddy">6. Seguridad de los sistemas de ficheros, cifrado, particionado, entre otros</a>
+   <ul>
+      <li id="active"><a href="61_sistemas_de_ficheros_y_gestin_de_particionado.html" class="active no-ch">6.1 Sistemas de ficheros y gestión de particionado</a></li>
+      <li><a href="62_cifrado_de_disco.html" class="daddy">6.2 Cifrado de disco</a>
+      <ul class="other-section">
+         <li><a href="621_bitlocker_windows_y_efs.html" class="daddy">6.2.1. Bitlocker (Windows) y EFS</a>
+         <ul class="other-section">
+            <li><a href="prctica_1_cifrado_con_bitlocker.html" class="no-ch">Práctica 1. Cifrado con Bitlocker</a></li>
+         </ul>
+         </li>
+         <li><a href="622_filevault_macos.html" class="no-ch">6.2.2 FileVault (macOS)</a></li>
+         <li><a href="623_luks_linux.html" class="daddy">6.2.3 LUKS (Linux)</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_cifrado_de_particiones_y_directorio_con_luks.html" class="no-ch">Laboratorio. Cifrado de particiones y directorio con LUKS</a></li>
+            <li><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="no-ch">Práctica 2. Instalación de Ubuntu con particiones cifradas</a></li>
+         </ul>
+         </li>
+         <li><a href="624_veracrypt.html" class="daddy">6.2.4 VeraCrypt</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_cifrado_volumen_veracrypt.html" class="no-ch">Laboratorio 1. Cifrado volumen VeraCrypt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_control_de_calidad_de_mquinas.html" class="daddy">7. Control de calidad de máquinas</a>
+   <ul class="other-section">
+      <li><a href="71_mantenimiento_seguro_de_equipos.html" class="no-ch">7.1 Mantenimiento seguro de equipos</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62_cifrado_de_disco.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1 Sistemas de ficheros y gestión de particionado</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id74">
+<div class="iDevice emphasis0" >
+<div id="ta74_108_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;">1. Sistemas de ficheros</h3>
+<p style="text-align: justify;">Los ficheros que podemos encontrar en un sistema operativo cualquiera contienen todo tipo de información, a saber: credenciales de acceso, datos bancarios, datos personales, etc. El carácter sensible de toda esta información, hace que nos decantemos por que el sistema de ficheros sea seguro.</p>
+<p style="text-align: justify;">Actualmente, se tienen muchos sistemas de ficheros relacionados directamente o no al sistema operativo, ejemplo:</p>
+<ul>
+<li style="text-align: justify;"><strong>NTFS</strong>: Sistemas basados en Windows de 64 bits.</li>
+<li style="text-align: justify;"><strong>Ext4</strong>: Sistema de ficheros nativo de Linux.</li>
+<li style="text-align: justify;"><strong>APFS</strong>: Para sistemas macOS.</li>
+</ul>
+<p>A continuación, se describen los sistemas de ficheros más relevantes/importantes:</p>
+<ul>
+<li style="text-align: justify;"><strong>FAT32 (FILE ALLOCATION TABLE).</strong> Es un sistema de archivos que fue desarrollado por Microsoft sucediendo a FAT16. Este sistema de ficheros limita a 4GBytes el tamaño máximo de un fichero. Es utilizado principalmente para el intercambio de información (inferior a 4GBytes) entre distintos equipos, ya que es compatible con prácticamente todos los dispositivos. Este sistema se puede ver en pendrives y tarjetas de memoria.</li>
+<li style="text-align: justify;"><strong>ExFAT (EXTENDED FILE ALLOCATION TABLE).</strong> Actualización de FAT32. Dispone de todas las ventajas de FAT32 y no tiene la limitación de 4 GB. Es compatible con Linux y Mac y puede ser utilizado en Windows desde XP Service Pack 3.</li>
+<li style="text-align: justify;"><strong>NTFS (NEW TECHNOLOGY FILE SYSTEM).</strong> Alternativa a FAT32 desarrollada por Microsoft. No tiene límite de tamaño máximo de 4 GB y es muy recomendado su uso en discos duros y unidades externas. Además, distingue entre mayúsculas y minúsculas. En cuanto al acceso a archivos, es más rápido que una partición en FAT, ya que hace uso de un árbol binario de alto rendimiento y cifra los archivos, al contrario que FAT. Es un sistema transaccional, es decir, con journlaling.</li>
+<li style="text-align: justify;"><strong>EXT4 (FOURTH EXTENDED FILESYSTEM).</strong> Sucesor de EXT3 con mejores características, como por ejemplo: mayor velocidad de lectura y escritura y un menor uso de CPU. Además, soporta volúmenes de hasta 1024 PiB o PebiByte (1 PebiByte equivale a 2 a la 50 Bytes). Mejora la velocidad de lectura y escritura, pero es más lento al borrar archivos. Es un sistema transaccional, es decir, con journlaling.</li>
+<li style="text-align: justify;"><strong>BTRFS (B-TREE FS).</strong> Es una nueva tecnología para Linux desarrollada por Oracle que permite escalar el almacenamiento a configuraciones de gran capacidad. Se supone que en un futuro reemplazará a EXT4. Soporta volúmenes de hasta 16 EiB (ExbiByte) (1 EiB = 1024 PiB). Su uso es recomendable en discos muy grandes y SSD. Mejora la velocidad de lectura, escritura y borrado.</li>
+<li style="text-align: justify;"><span><strong>APFS</strong>: </span></li>
+</ul>
+<h3>2. Gestión de Particiones en Powershell</h3>
+<p><strong>Mostrar información del disco</strong></p>
+<p>Para mostrar la información del disco, podemos utilizar el cmdLet <strong>Get-Disk</strong>.</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>PS C:\</strong>Get-Disk</span></pre>
+<p style="text-align: center;"><strong><img src="get-disk.png" alt="" width="675" height="318" /></strong></p>
+<p>Para conocer el tipo de tabla de partiones podemos utilizar el cmdLet <strong><span class="crayon-sy">(</span><span class="crayon-r ">Get-Disk</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-i">PartitionStyle</span></strong>.</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><span class="crayon-sy"><strong>Ps C:\</strong>(</span><span class="crayon-r ">Get-Disk</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-i">PartitionStyle</span></span></pre>
+<p style="text-align: center;"><strong><img src="tabla-part.png" alt="" width="540" height="172" /></strong></p>
+<p><strong>Crear particiones y formato</strong></p>
+<p><span></span>Para crear una partición podemos utilizar el cmdLet <strong>New-Partition</strong>.</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>PS C:\</strong>New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter</span></pre>
+<p style="text-align: justify;"><span></span>Para dar formato a un volumen, se tiene el cmdLet <strong>Format-Volume</strong>. Ejemplo, para dar formato a la unidad F:, hacemos:</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>PS C:\</strong>Format-Volume <span class="crayon-cn">-DriveLetter</span><span class="crayon-h"> F:</span></span></pre>
+<p style="text-align: justify;"><strong>Discos virtuales</strong></p>
+<p style="text-align: justify;"><span></span>Para crear discos virtuales, se tiene el cmdLet <strong>New-VHD.</strong> Ejemplo, para crear un disco virtual de 1Gbyte en F:, hacemos:</p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>PS C:\</strong>New-VHD -Path F:\disco.vhdx -SizeBytes 1GB</span></pre>
+<p style="text-align: justify;"><span>Para montar un disco virtual, se tiene el cmdLet <strong>Mount-VHD.</strong> Ejemplo, para montar el disco virtual creado anteriormente, hacemos:</span></p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>PS C:\</strong>Mount-VHD -Path F:\disco.vhdx</span></pre>
+<p><strong>Listar Particiones</strong></p>
+<p style="text-align: justify;"><span>Para listar las particiones del sistema, se tiene el cmdLet <strong>Get-Partition.</strong> </span></p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>PS C:\</strong>Get-Partition</span></pre>
+<p style="text-align: center;"><span><img src="list-Partition.png" alt="" width="865" height="408" /></span><span></span></p>
+<p><span>Para listar el nombre de las unidades de las particiones, usamos el siguiente cmdLet:</span></p>
+<blockquote class="tr_bq"></blockquote>
+<pre><span style="font-size: 12pt;"><strong>PS C:\</strong><span class="crayon-sy">(</span><span class="crayon-r ">Get-Partition</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-i">DriveLetter</span></span></pre>
+<p style="text-align: center;"><span><img src="list-letter-part.png" alt="" width="585" height="191" /></span></p>
+<h3>3. Confidencialidad de los ficheros</h3>
+<div class="crayon-line" id="urvanov-syntax-highlighter-6181667a0c79f950970573-1"><span class="crayon-c">Para obtener la confidencialidad de los ficheros en un equipo, se tiene que habilitar BitLocker:</span></div>
+<div class="crayon-line">
+<pre><span style="font-size: 12pt;"><b>PS C:\</b><span class="crayon-r ">Enable-BitLocker</span><span class="crayon-cn">-MountPoint</span><span class="crayon-s">"C:"</span><span class="crayon-cn">-RecoveryPasswordProtector</span><span class="crayon-cn">-UsedSpaceOnly</span><span class="crayon-cn">-Verbose</span></span></pre>
+</div>
+<div class="crayon-line crayon-striped-line" id="urvanov-syntax-highlighter-6181667a0c79f950970573-2">Para deshabilitar <span class="crayon-c">BitLocker, hacemos:</span></div>
+<div class="crayon-line crayon-striped-line">
+<div class="crayon-line">
+<pre><span style="font-size: 12pt;"><b>PS C:\</b><span class="crayon-r ">Disable-BitLocker</span><span class="crayon-cn">-MountPoint</span><span class="crayon-s">"C:"</span></span></pre>
+</div>
+</div>
+<h3>4. Integridad de los ficheros</h3>
+<p><span>Para calcular el hash de un archivo en Windows, podemos realizar el mismo desde powershell mediante el cmd-let Get-FileHash, donde como parámetro, podremos indicarle el algoritmo utilizado, a saber: md5, sha-1, etc..</span></p>
+<p><span>Ejemplo, para calcular el md5 del fichero JCRequena.pdf hacemos:</span></p>
+<pre><span style="font-size: 12pt;"><b>PS C:\</b>Get-FileHash <b>JCRequena.pdf -Algorithm MD5</b></span></pre>
+<p style="text-align: center;"><span><img src="md5-powershell.png" alt="" width="956" height="175" /></span></p>
+<p style="text-align: justify;"><span></span>El parámetro <strong>Algortitm</strong> puede tener los siguientes valores dependiendo del algoritmo que se desee utilizar:</p>
+<ul>
+<li><span>MD5</span></li>
+<li><span>SHA1</span></li>
+<li><span>SHA256</span></li>
+<li><span>SHA384</span></li>
+<li><span>SHA512</span></li>
+<li><span>RIPEMD160</span></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="62_cifrado_de_disco.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

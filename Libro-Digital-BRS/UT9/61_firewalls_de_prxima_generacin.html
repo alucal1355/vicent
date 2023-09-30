@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1 Firewalls de Próxima Generación | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-134"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="6_firewall_perimetral.html" class="current-page-parent daddy">6. Firewall perimetral</a>
+   <ul>
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li id="active"><a href="61_firewalls_de_prxima_generacin.html" class="active daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul>
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">6.1 Firewalls de Próxima Generación</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id173">
+<div class="iDevice emphasis0" >
+<div id="ta173_173_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;"><span>1. Introducción</span></h3>
+<p style="text-align: justify;"><span>Mientras los <strong>firewalls típicos</strong>, controlan el tráfico de red a través de distintos tipos de reglas que impiden o permiten distintos tipos de tráfico de red (protocolos, puertos, etcétera), los <strong>firewalls de nueva generación</strong> son capaces incluso de supervisar los argumentos que comprenden los mensajes para analizarlos y detectar si hay intentos de intrusión o malware, y todo esto, en tiempo real para detener las amenazas.</span></p>
+<h3 style="text-align: justify;"><span>2. Características</span></h3>
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">Esta nueva generación incluye las <strong>características típicas</strong> de los<strong> cortafuegos tradicionales</strong>, integrando la prevención de intrusiones, fortaleciendo políticas de seguridad en el ámbito de aplicación, inspección de SSL (Seguridad de la capa de transporte) y SSH (Secure Shell), inspección de paquetes en línea y detección de malware basado en comportamiento anómalo.</span></p>
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">Un <strong>firewall de nueva generación</strong> además permite <strong>añadir nuevas características</strong>, las principales son:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 1em; text-align: left;">Sistema de prevención de intrusos.</span></li>
+<li style="text-align: justify;">Control en las aplicaciones.</li>
+<li style="text-align: justify;">Adaptación a la nube.</li>
+</ul>
+<p style="text-align: justify;">La<strong> evolución diaria de las amenazas</strong> conlleva a una mejora constante en los sistemas de protección, los cortafuegos añaden un extra en las funcionalidades. Se incorpora los denominados <strong>UTM</strong> (Unified Threat Management) o gestión unificada de amenazas.</p>
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">Los <strong>UTM</strong> gestionan la mayoría de amenazas e incorporan <strong>funcionalidades</strong> como:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="color: #666666; font-size: 0.95em; text-align: left;">Propios firewalls de red.</span></li>
+<li style="text-align: justify;">Antivirus, antispyware.</li>
+<li style="text-align: justify;">IDS/IPS sistemas de detección y prevención de intrusos.</li>
+<li style="text-align: justify;">VPN, redes privadas virtuales.</li>
+<li style="text-align: justify;">Filtrado de contenido.</li>
+<li style="text-align: justify;">Pasarelas antivirus, antispam y antiphising.</li>
+<li style="text-align: justify;">Prevención de fugas de datos.</li>
+</ul>
+<p style="text-align: justify;">Al ser un <strong>elemento de seguridad perimetral</strong> se deben ubicar en un punto entre internet y los dispositivos de la red interna de la organización.</p>
+<p style="text-align: justify;"><span style="font-size: 1em; text-align: left;">Se pueden encontrar distribuciones de este tipo de firewalls tales como: pfSense, OPNsense, Sophos UTM, etcétera.</span><span style="font-size: 1em; text-align: left;"></span></p>
+<h3>3. PfSense</h3>
+<p style="text-align: justify;">Como ya se ha estudiado en el <strong>capítulo 4.1</strong> de esta unidad,<strong> PfSense</strong><span> está </span>basado en <strong>FreeBSD</strong> y se adapta para el uso como cortafuegos y enrutador. Se puede gestionar a través de una interfaz web sencilla. Incluye funcionalidades predefinidas como:</p>
+<ul>
+<li style="text-align: justify;"><span style="color: #666666; font-size: 0.95em; text-align: left;">Firewall.</span></li>
+<li>Tabla de estado.</li>
+<li>NAT.</li>
+<li>Redundancia y alta disponibilidad.</li>
+<li>Balanceo de carga.</li>
+<li>VPN</li>
+<li>Multi-WAN.</li>
+<li>Servidor PPPoE, DNS y DHCP.</li>
+<li>Monitorización y gráficos a tiempo real.</li>
+</ul>
+<h3>4. OPNSense</h3>
+<p style="text-align: justify;"><b>OPNsense </b>es un software de código abierto, orientado para usarse como router y firewall. Incluye las características de un firewall comercial, con actualizaciones constantes en seguridad. Entre las características se puede encontrar las siguientes:</p>
+<ul>
+<li style="text-align: justify;"><strong>Traffic Shaper</strong>.</li>
+<li style="text-align: justify;"><strong>Portal cautivo,<span> </span></strong>que vigila el tráfico HTTP.</li>
+<li style="text-align: justify;"><strong>Proxy caché<span> </span></strong>con listas negras.</li>
+<li style="text-align: justify;"><strong>Uso de VPN</strong>, con compatibilidad con IPSEC y OpenVPN.</li>
+<li style="text-align: justify;"><strong>Sistemas de detección IDS/IPS<span> </span></strong>y prevención de intrusos.</li>
+<li style="text-align: justify;">Posee una opción de<span> </span><strong>alta disponibilidad</strong><span> </span>la cual permite que cuando caiga un firewall otro lo respalde.</li>
+<li style="text-align: justify;"><strong>Servidores DNS y DHCP.</strong></li>
+<li style="text-align: justify;">Herramientas integradas de<span> </span><strong>generación de informes y monitorización con gráficos RRD a tiempo real</strong>.</li>
+<li style="text-align: justify;"><strong>Copia de seguridad cifrada guardada en la nube</strong>.</li>
+<li style="text-align: justify;"><strong>Soporte con VLAN 802.1Q</strong><span> </span>para dividir la red.</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

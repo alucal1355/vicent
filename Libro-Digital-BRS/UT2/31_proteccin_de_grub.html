@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1 Protección de GRUB | UT2. Fortificación de equipos: acceso al sistema </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-54"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT2. Fortificación de equipos: acceso al sistema</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT2. Fortificación de equipos: acceso al sistema</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_seguridad_en_el_arranque_del_sistema_informtico_configuracin_del_arranque_seguro_biosuefi.html" class="daddy">2. Seguridad en el arranque del sistema informático, configuración del arranque seguro (BIOS/UEFI)</a>
+   <ul class="other-section">
+      <li><a href="21_bloqueo_de_bios_con_contrasea.html" class="no-ch">2.1 Bloqueo de BIOS con contraseña</a></li>
+      <li><a href="tarea_1_anlisis_y_fortificacin_de_la_biosuefi.html" class="no-ch">Tarea 1. Análisis y fortificación de la BIOS/UEFI</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_proteccin_del_gestor_de_arranque_grub.html" class="current-page-parent daddy">3. Protección del gestor de arranque GRUB</a>
+   <ul>
+      <li id="active"><a href="31_proteccin_de_grub.html" class="active no-ch">3.1 Protección de GRUB</a></li>
+      <li><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="no-ch">Tarea 2. Configuración del sistema y arranque</a></li>
+      <li><a href="tarea_3_proteger_el_gestor_de_arranque_grub.html" class="no-ch">Tarea 3. Proteger el gestor de arranque GRUB</a></li>
+   </ul>
+   </li>
+   <li><a href="4_contraseas_seguras.html" class="daddy">4. Contraseñas seguras</a>
+   <ul class="other-section">
+      <li><a href="41_contraseas_seguras_en_windows.html" class="daddy">4.1 Contraseñas seguras en Windows</a>
+      <ul class="other-section">
+         <li><a href="411_inicios_de_sesin_en_windows.html" class="no-ch">4.1.1 Inicios de sesión en Windows</a></li>
+         <li><a href="tarea_4_poltica_de_contraseas_seguras_en_windows.html" class="no-ch">Tarea 4. Política de contraseñas seguras en Windows</a></li>
+      </ul>
+      </li>
+      <li><a href="42_gestin_de_la_poltica_de_contraseas_en_ubuntu.html" class="daddy">4.2. Gestión de la política de contraseñas en Ubuntu</a>
+      <ul class="other-section">
+         <li><a href="tarea_5_poltica_de_contraseas_seguras_en_ubuntu_server.html" class="no-ch">Tarea 5. Política de contraseñas seguras en Ubuntu Server</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_seguridad_de_los_sistemas_de_ficheros_cifrado_particionado_entre_otros.html" class="daddy">6. Seguridad de los sistemas de ficheros, cifrado, particionado, entre otros</a>
+   <ul class="other-section">
+      <li><a href="61_sistemas_de_ficheros_y_gestin_de_particionado.html" class="no-ch">6.1 Sistemas de ficheros y gestión de particionado</a></li>
+      <li><a href="62_cifrado_de_disco.html" class="daddy">6.2 Cifrado de disco</a>
+      <ul class="other-section">
+         <li><a href="621_bitlocker_windows_y_efs.html" class="daddy">6.2.1. Bitlocker (Windows) y EFS</a>
+         <ul class="other-section">
+            <li><a href="prctica_1_cifrado_con_bitlocker.html" class="no-ch">Práctica 1. Cifrado con Bitlocker</a></li>
+         </ul>
+         </li>
+         <li><a href="622_filevault_macos.html" class="no-ch">6.2.2 FileVault (macOS)</a></li>
+         <li><a href="623_luks_linux.html" class="daddy">6.2.3 LUKS (Linux)</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_cifrado_de_particiones_y_directorio_con_luks.html" class="no-ch">Laboratorio. Cifrado de particiones y directorio con LUKS</a></li>
+            <li><a href="prctica_2_instalacin_de_ubuntu_con_particiones_cifradas.html" class="no-ch">Práctica 2. Instalación de Ubuntu con particiones cifradas</a></li>
+         </ul>
+         </li>
+         <li><a href="624_veracrypt.html" class="daddy">6.2.4 VeraCrypt</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_cifrado_volumen_veracrypt.html" class="no-ch">Laboratorio 1. Cifrado volumen VeraCrypt</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="7_control_de_calidad_de_mquinas.html" class="daddy">7. Control de calidad de máquinas</a>
+   <ul class="other-section">
+      <li><a href="71_mantenimiento_seguro_de_equipos.html" class="no-ch">7.1 Mantenimiento seguro de equipos</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="3_proteccin_del_gestor_de_arranque_grub.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1 Protección de GRUB</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id94">
+<div class="iDevice emphasis0" >
+<div id="ta94_114_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;">Algunas de las operaciones básicas para securizar nuestro sistema estarán relacionadas con la protección del arranque de cualquier sistema instalado en el equipo, de la ejecución del "modo recuperación" y de la edición de las entradas del grub para, entre otras cosas, evitar que arranquen con permisos de superusuario.</p>
+<p style="text-align: justify;">En este capítulo, se describe cómo <strong>proteger el gestor de arranque GRUB</strong> de un equipo con una contraseña cifrada con la finalidad de proteger el gestor de arranque.</p>
+<p style="text-align: justify;">El motivo principal por el que hay que <strong>proteger el gestor de arranque</strong> es que sería posible iniciar sesión por ejemplo editando la configuración de arranque y añadiendo algunas líneas que nos permitan iniciar una terminal: </p>
+<p style="text-align: center;"><img src="grub.png" alt="" width="629" height="427" /></p>
+<p style="text-align: justify;">Como se puede observar en la imagen superior, si se entra en el modo edición y se añade en la línea marcada en color rojo lo siguiente:<strong> init=/bin/bash</strong>, se podría iniciar una terminal.</p>
+<p style="text-align: justify;">Puedes encontrar más información <a href="https://www.redeszone.net/2014/07/06/como-eliminar-la-contrasena-de-root-en-ubuntu-desde-grub/amp/" target="_blank" rel="noopener">aquí.</a></p>
+<h3>2. Proteger el grub con contraseña</h3>
+<p>Antes de empezar con el proceso, es importante realizar una <strong>copia de seguridad de los siguientes ficheros</strong> que se van a modificar:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong>cp /boot/grub/grub.cfg ~/grub.cfg.old</span><br /><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong>cp /etc/grub.d/00_header ~/00_header.old</span><br /><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong>cp /etc/grub.d/10_linux ~/10_linux.old</span><br /><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong>cp /etc/grub.d/30_os-prober ~/30_os-prober.old</span></pre>
+<p style="text-align: justify;"><span style="font-size: 1em;">El siguiente paso será añadir al final del archivo la lista de usuarios con sus contraseñas, es decir, de aquellos que tendrán acceso. Para ello, se edita el fichero </span><strong style="font-size: 1em;">00_header</strong><span style="font-size: 1em;">.</span></p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$</strong>sudo nano /etc/grub.d/00_header</span></pre>
+<p>Añadiendo las siguientes líneas al final, donde el usuario sería <strong>usuario_grub</strong> y su password <strong>P@ssw0rd</strong>.</p>
+<pre><span style="font-size: 12pt;">cat &lt;&lt; EOF</span><br /><span style="font-size: 12pt;">set superusers="usuario_grub"</span><br /><span style="font-size: 12pt;">password usuario_grub P@ssw0rd</span><br /><span style="font-size: 12pt;">EOF</span></pre>
+<p style="text-align: justify;">Estas <strong>contraseñas</strong> se encuentran en <strong>texto plano</strong> y obviamente se deben proteger. Para esto, hay que generar un hash <span>de una contraseña dada y, así, evitar que se puedan obtener fácilmente. El comando es el </span>siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>grub-mkpasswd-pbkdf2</span></pre>
+<p style="text-align: justify;">Al ejecutar el comando, n<span>os pedirá una <strong>contraseña (2 veces)</strong>. Debemos tener en cuenta que la <strong>contraseña debe ser robusta</strong> para <strong>evitar ataques de fuerza bruta</strong>. Una vez escrita, nos mostrará una salida como la siguiente.</span></p>
+<p style="text-align: center;"><img src="grub-mkpasswd.png" width="748" height="143" /></p>
+<p style="text-align: justify;">Después de <strong>introducir la contraseña dos veces</strong> se obtiene el <strong>hash</strong> de la contraseña para el usuario "<strong>usuario_grub</strong>", por lo que la tenemos que copiar para utilizarla posteriormente.</p>
+<pre><span style="font-size: 10pt;">grub.pbkdf2.sha512.10000.E3D23C6892BA3602761C7ACBDDEC1AF704659D4DF13D6DD2C67A03692F8492B778<br />53D2CE6713488EA1BF9</span><span style="font-size: 10pt;">0ED43E7C549A76908A72A21D804CBE55475F137E462.E5906C938C97737FEB0FC3140B565013D6D135020865AF549CB3CEDF15C8<br />FC842F4C442DDC3ECBA4EA76365ED94C422561</span><span style="font-size: 10pt;">107717B538DB10DC93FFAC7E8A1116</span></pre>
+<p style="text-align: justify;">Ahora hay que reemplazar la contraseña que teníamos en texto plano en el archivo <strong>/etc/grub.d/00_header</strong>, para ello, lo editamos y escribimos <span>los siguientes datos (en negrita los cambios).</span></p>
+<pre><span style="font-size: 12pt;">cat &lt;&lt; EOF</span><br /><span style="font-size: 12pt;">set superusers="usuario_grub"</span><br /><span style="font-size: 12pt;"><strong><em>password_pbkdf2</em></strong> usuario_grub <em><strong>&lt;salida que hemos copiado anteriormente&gt;</strong></em></span><br /><span style="font-size: 12pt;">EOF</span></pre>
+<p style="text-align: justify;"><span>Quedando de esta manera.</span></p>
+<p style="text-align: center;"><img src="hash-00-header.png" alt="" width="744" height="310" /></p>
+<p>Una vez se han guardado los cambios, hay que actualizar grub para que aplique las modificaciones que hemos realizado.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/# </strong>update-grub</span></pre>
+<p style="text-align: center;"><img src="update-grub.png" alt="" width="467" height="174" /></p>
+<p style="text-align: justify;">Una vez realizado esto, el menú del gestor GRUB <strong>no permitirá el acceso al edito</strong>r sin escribir antes el usuario y contraseña que hemos definido en el archivo header.</p>
+<p style="text-align: justify;">A continuación, hay que <strong>reiniciar el equipo</strong> para comprobar que todo se ha realizado correctamente.  Como se puede observar en la imagen inferior, al escribir el usuarios y la contraseña podremos acceder al equipo.</p>
+<p style="text-align: center;"><img src="user-grub.png" alt="" width="275" height="91" /></p>
+<p style="text-align: justify;">Finalmente, para evitar que nos pida también el usuario y contraseña al <strong>acceder</strong> al <strong>Sistema Operativo</strong> editamos el archivo<strong> /etc/grub.d/10_linux</strong>:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/# </strong>nano /etc/grub.d/10_linux</span></pre>
+<p>Hay que buscar las siguientes líneas:</p>
+<pre><span style="font-size: 12pt;">echo "menuentry '$(echo "$title" | grub_quote)' ${CLASS} \$menuentry_id_option 'gnulinux-$version-$type-$boot_device_id' {" | sed "s/^/$submenu_indentation/"</span><br /><span style="font-size: 12pt;">else</span><br /><span style="font-size: 12pt;">echo "menuentry '$(echo "$os" | grub_quote)' ${CLASS} \$menuentry_id_option 'gnulinux-simple-$boot_device_id' {" | sed "s/^/$submenu_indentation/"</span></pre>
+<p style="text-align: center;"><img src="10-linux.png" alt="" width="1335" height="359" /></p>
+<p>A dichas líneas hay que añadir <strong>–unrestricted</strong>, quedando de la siguiente manera:</p>
+<pre><span style="font-size: 12pt;">echo "menuentry '$(echo "$title" | grub_quote)' ${CLASS} <strong><span style="color: #ff0000;">--unrestricted</span></strong> \$menuentry_id_option 'gnulinux-$version-$type-$boot_device_id' {" | sed "s/^/$submenu_indentation/"</span><br /><span style="font-size: 12pt;">else</span><br /><span style="font-size: 12pt;">echo "menuentry '$(echo "$os" | grub_quote)' ${CLASS} <strong><span style="color: #ff0000;">--unrestricted</span></strong> \$menuentry_id_option 'gnulinux-simple-$boot_device_id' {" | sed "s/^/$submenu_indentation/"</span></pre>
+<p style="text-align: center;"><img src="10-linux-unrestricted.png" alt="" width="1450" height="356" /></p>
+<p>Una vez se han guardado los cambios, hay que actualizar grub para que aplique las modificaciones que hemos realizado.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/# </strong>update-grub</span></pre>
+<p><span>Si reiniciamos el equipo se puede observar que si se intenta acceder a las opciones avanzadas nos pedirá usuario y contraseña:</span></p>
+<table border="0" style="height: 377px; width: 100%;">
+<tbody>
+<tr style="height: 357px;">
+<td style="width: 33.3333%; text-align: center; height: 357px;"><img src="advanced-option.png" alt="" width="628" height="425" /></td>
+<td style="width: 33.3333%; text-align: center; height: 357px;"><img src="enter-usuario_grub.png" alt="" width="297" height="106" /></td>
+<td style="width: 33.3333%; text-align: center; height: 357px;"><img src="adavanced-2.png" alt="" width="611" height="412" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 33.3333%; text-align: center; height: 20px;"><span style="font-size: 12pt;">Pulsamos las opciones Avanzadas</span></td>
+<td style="width: 33.3333%; height: 20px; text-align: center;"><span style="font-size: 12pt;">Nos solicita las credenciales</span></td>
+<td style="width: 33.3333%; height: 20px; text-align: justify;"><span style="font-size: 12pt;">Si la validación es correcta, ya se puede arrancar el sistema con la opción deseada</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span></span></p>
+<h3>3. Uso obligatorio de contraseña en modo Single User</h3>
+<p style="text-align: justify;">El modo <strong>Single User</strong> permite acceder al modo de recuperación del sistema. Si no establecemos una contraseña es posible que un atacante pueda acceder con los permisos de root al mismo.</p>
+<p style="text-align: justify;">Para evitarlo, como root, escribiremos el siguiente comando para establecer una nueva contraseña:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/# </strong>passwd</span></pre>
+<p style="text-align: center;"><img src="passwd.png" alt="" width="314" height="98" /></p>
+<h3>4. Permisos mínimos en archivo de arranque</h3>
+<p style="text-align: justify;">Para evitar accesos o modificaciones del archivo de arranque, es importante establecer unos permisos mínimos de lectura en el mismo. Para ello, haremos que solo tenga permisos de lectura<span> </span><strong>root:</strong></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/# </strong>chmod 400 /boot/grub/grub.cfg</span></pre>
+<p style="text-align: center;"><img src="chmod-grub.png" alt="" width="362" height="46" /></p>
+<p style="text-align: justify;">Comprobamos el estado mediante el siguiente comando donde podemos verificar si se ha modificado el fichero o no en el tiempo.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/# </strong>stat /boot/grub/grub.cfg</span></pre>
+<p style="text-align: center;"><img src="stat-grub.png" alt="" width="599" height="181" /></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="3_proteccin_del_gestor_de_arranque_grub.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tarea_2_configuracin_del_sistema_y_arranque.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

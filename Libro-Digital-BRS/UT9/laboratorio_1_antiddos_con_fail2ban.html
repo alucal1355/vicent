@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 1. Anti-DDoS con fail2ban | UT8. Fortificación de la red interna: redes inalámbricas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-135"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red interna: redes inalámbricas</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li><a href="4_introduccin_a_la_dmz.html" class="daddy">4. Introducción a la DMZ</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="7_contramedidas_ddos.html" class="current-page-parent daddy">7. Contramedidas DDoS</a>
+   <ul>
+      <li id="active"><a href="laboratorio_1_antiddos_con_fail2ban.html" class="active no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="7_contramedidas_ddos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 1. Anti-DDoS con fail2ban</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id174">
+<div class="iDevice emphasis0" >
+<div id="ta174_174_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;"><span>En este laboratorio, se van a mitigar los ataques de denegación de servicio (DoS) utilizando <strong>Fail2Ban.</strong></span></p>
+<p style="text-align: justify;">Los recursos necesarios para realizar el laboratorio son:</p>
+<ol>
+<li style="text-align: justify;"><span>Máquina Ubuntu Server con Apache que hará las veces de equipo objetivo - ip: 192.168.0.250/24.</span><span></span></li>
+<li style="text-align: justify;"><span>Máquina GNU/Linux (kali, ubuntu, etcétera) que hará las veces de atacante- ip: 192.168.0.15/24.</span></li>
+</ol>
+<table border="0" style="height: 217px; width: 100%;">
+<tbody>
+<tr style="height: 197px;">
+<td style="width: 50%; text-align: center; height: 197px;"><a href="apache2.png"><img src="apache2.png" alt="" width="799" height="307" /></a></td>
+<td style="width: 50%; height: 197px; text-align: center;"><a href="kali-atacante.png"><img src="kali-atacante.png" alt="" width="758" height="403" /></a></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 1.</strong> Ubuntu Server 20.04.3 con apache instalado (objetivo).</span></em></td>
+<td style="width: 50%; height: 20px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 2.</strong> Equipo Kali Linux (atacante).</span></em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">En la siguiente figura se puede observar el esquema de red.</p>
+<p style="text-align: center;"><a href="esquema-laboratorio-anti-DoS.png"><span><img src="esquema-laboratorio-anti-DoS.png" alt="" width="435" height="278" /></span></a></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Esquema de red.</em></p>
+<h3 style="text-align: justify;">2. Instalación y configuración de fail2ban</h3>
+<p>Para instalar <strong>fail2ban</strong>, el comando es el siguiente:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>apt install fail2ban</span></pre>
+<p style="text-align: center;"><span><em><strong><img src="install-fail2ban.png" alt="" width="710" height="288" /></strong></em></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 4.</strong> Instalación de fail2ban.</em></span></p>
+<p style="text-align: justify;"><span></span>Una vez instalado <strong>fail2ban</strong>, se habrán creado los archivos de configuración en la ruta /etc/fail2ban. En este directorio hay que crear ciertos archivos.</p>
+<p style="text-align: justify;"><strong>1. Crear fichero de configuración jail.conf</strong></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>nano /etc/fail2ban/jail.local</span></pre>
+<p>Hay que añadir las siguientes líneas:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 10pt;">[http-get-dos]</span><br /><span style="font-size: 10pt;">enabled = true</span><br /><span style="font-size: 10pt;">port = http,https</span><br /><span style="font-size: 10pt;">filter = http-get-dos</span><br /><span style="font-size: 10pt;">logpath = /var/log/apache*/*access.log</span><br /><span style="font-size: 10pt;">maxretry = 300</span><br /><span style="font-size: 10pt;">findtime = 5m</span><br /><span style="font-size: 10pt;">bantime = 10m</span><br /><span style="font-size: 10pt;">action = iptables[name=HTTP, port=http, protocol=tcp]</span></pre>
+<p style="text-align: center;"><img src="jail-local.png" alt="" width="459" height="195" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 5.</strong> Fichero jail.conf.</em></span></p>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;"><strong>enabled</strong> es donde se indica que la regla esté activada.</li>
+<li style="text-align: justify;"><strong>port</strong> es donde se define el tipo de puertos a los que afectará, para este caso, en  aquellos puertos que usen tráfico http o https.</li>
+<li style="text-align: justify;"><strong>filter</strong> se indica el filtro que se utilizará para detectar las peticiones incorrectas.</li>
+<li style="text-align: justify;"><strong>logpath</strong> se define el archivo de logs que se observará y filtrará por peticiones.</li>
+<li style="text-align: justify;"><strong>bantime</strong> es el tiempo que un host será bloqueado del servidor en caso de baneo. En este caso 10 minutos.</li>
+<li style="text-align: justify;"><strong>maxretry</strong> es el número de intentos fallidos realizados por una IP para que sea baneada. En este caso 5 intentos.</li>
+<li style="text-align: justify;"><strong>findtime</strong> es el tiempo en el que deben ocurrir las peticiones especificadas en maxretry para que la IP sea baneada. En este caso 5 minutos.</li>
+<li style="text-align: justify;"><strong>action</strong> son las acciones que se van a realizar una vez se cumplan el resto de las pautas. En este caso, se bloqueará el acceso a la IP por iptables.</li>
+</ul>
+<p><strong>2. Crear fichero de filtro</strong></p>
+<p style="text-align: justify;">A continuación, hay que crear el archivo al que hace referencia el filtro que se acaba de crear. Los filtros se encuentran en la siguiente ruta<span> </span><strong>/etc/fail2ban/filter.d/</strong></p>
+<p>Para proceder a crear un nuevo filtro, se abre un archivo con un editor de texto en la ruta<strong> filter.d.</strong></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>nano /etc/fail2ban/filter.d/http-get-dos.conf</span></pre>
+<p>Hay que añadir las siguientes líneas:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 10pt;">[Definition]</span><br /><span style="font-size: 10pt;">failregex = ^&lt;HOST&gt; -.*"(GET|POST).*</span></pre>
+<p style="text-align: justify;">donde con la opción <strong>failregex</strong>, se filtran todas las peticiones GET y POST que se realicen, es decir, se contabilizarán todas.</p>
+<p style="text-align: center;"><img src="http-get-dos.png" alt="" width="515" height="89" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 6.</strong> Fichero <span style="font-size: 12pt;">http-get-dos.conf</span>.</em></span></p>
+<p><span>Una vez guardado el archivo, hay que <strong>reiniciar fail2ban</strong>.</span></p>
+<h3><span>3. Testeo del servicio web</span></h3>
+<p style="text-align: justify;"><span>Con lo realizado en el apartado 2, ya se tendrá el <strong>servicio web protegido</strong>. </span><span>A continuación, se va a </span> <strong>testear</strong> y la mejor manera es utilizar apache benchmark.</p>
+<p style="text-align: justify;">Para ello, desde otra máquina a Linux (donde se tenga instalado el paquete apache2-utils) hay que escribir el siguiente comando, el cual, realizará 500 peticiones desde 10 conexiones distintas:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>┌──(kali㉿kali)-[~]<br />└─$</strong>ab -n 500 -c 10 http://192.168.0.250:80/</span></pre>
+<p>donde la ip 192.168.0.250 es la ip del ubuntu server con el servidor web y fail2ban.</p>
+<p style="text-align: center;"><img src="ab-n500.png" alt="" width="628" height="860" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 7.</strong> Ataque desde una máquina externa.</em></span></p>
+<p style="text-align: justify;"><strong>Comprobación de los logs</strong></p>
+<p>Ahora, se podría comprobar desde el<strong> log de fail2ban</strong>, encontrado en <strong>/var/log/fail2ban.log</strong> que la IP desde la que se han realizado las pruebas ha sido baneada, impidiendo de esta forma los ataques.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>cat /var/log/fail2ban.log</span></pre>
+<p style="text-align: center;"><img src="ban-ip-atacante.png" alt="" width="963" height="188" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 8.</strong> Consulta del log de fail2ban.</em></span></p>
+<p style="text-align: justify;">También, se puede <strong>comprobar la regla</strong> configurada en<span> </span><strong>iptables</strong><span> </span>con el siguiente comando, donde se verá que la <strong>IP ha sido bloqueada</strong>.</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>iptables -L</span></pre>
+<p style="text-align: center;"><img src="iptables-L.png" alt="" width="603" height="253" /></p>
+<p style="text-align: center;"><strong><span><em>Figura 9. </em></span></strong><em>Consulta de iptables.</em></p>
+<p><strong>Falsos positivos</strong></p>
+<p style="text-align: justify;">Si por alguna razón, <strong>fail2ban</strong> ha detectado un <strong>falso positivo</strong> y banea una dirección IP legítima, se puede desbanear la misma, para ello, hay que usar el siguiente comando:</p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>fail2ban-client unban 192.168.0.15</span></pre>
+<p>donde<b> 192.168.0.15 </b>es la ip del equipo baneado.</p>
+<p>Para consultar que se ha desbaneado la ip, se consulta <span>el log:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>cat /var/log/fail2ban.log</span></pre>
+<p style="text-align: center;"><img src="unban.png" alt="" width="974" height="174" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 10.</strong> Desbanear ip y consulta del log de fail2ban.</em></span></p>
+<p>Si se vuelve a consultar la configuración de iptables se puede observar que la regla anterior ya no existe:<span>:</span></p>
+<pre class="wp-block-preformatted"><span style="font-size: 12pt;"><strong>root@orion:/#</strong>iptables -L</span></pre>
+<p style="text-align: center;"><img src="iptables-Sin-Baneo.png" alt="" width="604" height="262" /></p>
+<p style="text-align: center;"><span><strong><em>Figura 11. </em></strong><em>Consulta de iptables.</em></span></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="7_contramedidas_ddos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

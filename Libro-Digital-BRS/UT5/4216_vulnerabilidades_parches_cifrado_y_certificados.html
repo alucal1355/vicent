@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2.1.6 Vulnerabilidades, parches, cifrado y certificados | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-82"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="daddy">3. Securización de los sistemas de administración remota</a>
+   <ul class="other-section">
+      <li><a href="31_secureshell.html" class="daddy">3.1 SecureShell</a>
+      <ul class="other-section">
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li><a href="33_fail2ban.html" class="daddy">3.3 Fail2Ban</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="current-page-parent daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul>
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="42_antivirus_endpoint_detection__response_edr.html" class="current-page-parent daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul>
+         <li class="current-page-parent"><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="current-page-parent daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul>
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li id="active"><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="active no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4215_administrador_de_seguridad.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4217_nuevas_funcionalidades.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id120">
+<div class="iDevice emphasis0">
+<div id="ta120_85" class="block iDevice_content">
+<h3 style="text-align: justify;">1. Vulnerabilidades de Software</h3>
+<p style="text-align: justify;">Este apartado del entorno, permite detectar vulnerabilidades del software en dispositivos administrados que ejecutan Windows. Las Vulnerabilidades se detectan en el sistema operativo y en las aplicaciones que desarrollaron Microsoft y otros proveedores.</p>
+<p style="text-align: justify;">Las características son:</p>
+<ul>
+<li style="text-align: justify;">Se puede configurar con qué frecuencia ejecutar la detección de vulnerabilidades en dispositivos administrados.</li>
+<li style="text-align: justify;">La lista de vulnerabilidades contiene solo aquellas vulnerabilidades que se detectan y que están activas en al menos un dispositivo administrado.</li>
+<li style="text-align: justify;">Se puede filtrar la lista de vulnerabilidades según los siguientes parámetros:
+<ul>
+<li style="text-align: justify;">El proveedor de la aplicación en la cual se detecta una vulnerabilidad (Microsoft, otros proveedores o todos los proveedores).</li>
+<li style="text-align: justify;">Nivel de gravedad de una vulnerabilidad (Crítico, Alto, Advertencia o todos los niveles de gravedad).</li>
+<li style="text-align: justify;">Si se piensa solucionar una vulnerabilidad en todos los dispositivos donde se detecta, en algunos dispositivos, o no se piensa solucionarla en absoluto.</li>
+</ul>
+</li>
+<li style="text-align: justify;">Para cada vulnerabilidad, <strong>Kaspersky Endpoint Security Cloud</strong> muestra una lista de dispositivos en los cuales se detecta la vulnerabilidad. Si la lista de dispositivos contiene registros idénticos (registros con el mismo nombre del dispositivo y con la misma hora de detección de la vulnerabilidad), significa que hay varias revisiones que pueden solucionar esta vulnerabilidad del dispositivo.</li>
+<li style="text-align: justify;">También se puede ver el informe sobre vulnerabilidades detectadas o directamente se puede configurar la instalación de las revisiones que solucionan las vulnerabilidades detectadas.</li>
+</ul>
+<p style="text-align: center;"><img src="eval-vulnerabilidades-lista.png" alt="" width="1257" height="752" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Panel de evaluación de vulnerabilidades.</em></p>
+<h3 style="text-align: justify;">2. Parches de Software</h3>
+<p style="text-align: justify;">Esta sección permite instalar revisiones de software que solucionan vulnerabilidades detectadas en dispositivos administrados que ejecutan Windows.</p>
+<h4 style="text-align: justify;">2.1 Configurar la instalación de parches</h4>
+<p style="text-align: justify;">La lista de revisiones contiene solo aquellas revisiones que solucionan las vulnerabilidades que figuran en la lista de vulnerabilidades activas.</p>
+<p style="text-align: justify;">Se puede filtrar la lista de revisiones según los siguientes parámetros:</p>
+<ul>
+<li style="text-align: justify;">El proveedor de la aplicación para la cual se emite el parche (Microsoft, otros proveedores o todos los proveedores).</li>
+<li style="text-align: justify;">Nivel de importancia de una revisión (Crítico, Alto, Medio o todos los niveles de importancia).</li>
+<li style="text-align: justify;">El estado de la instalación de una revisión (si el parche se prevé instalarse, y si usted debe aprobarlo o aceptar los Contratos de licencia de usuario final).</li>
+</ul>
+<p>Desde las propiedades de una revisión, puede aprobarlo y aceptar los Contratos de licencia de usuario final (si se exigen para la instalación del parche).</p>
+<p style="text-align: justify;">Para cada revisión, <strong>KES Cloud</strong> muestra la lista de dispositivos en los cuales se detectan las vulnerabilidades que solucionó el parche. Se puede filtrar la lista de dispositivos según el estado de instalación del parche.</p>
+<p style="text-align: justify;">Si no se puede instalar un parche para una aplicación porque se está ejecutando en ese momento, se le solicita al usuario del dispositivo que cierre el software. Las acciones adicionales dependen de la respuesta del usuario:</p>
+<ul>
+<li style="text-align: justify;">Si el usuario cierra la aplicación, la instalación del parche continúa.</li>
+<li style="text-align: justify;">En cambio, si omite la acción, la instalación del parche también continúa, pero puede que se deba reiniciar el dispositivo.</li>
+<li style="text-align: justify;">Si el usuario cancela la solicitud, la instalación del parche no se completará y se volverá a intentar durante el próximo inicio programado.</li>
+</ul>
+<p>Para configurar la instalación de un parche, hay que abrir la Consola de administración de <strong>Kaspersky Endpoint Security Cloud </strong>y seguir los siguientes pasos.</p>
+<p><strong>1.</strong> Seleccionar la sección <strong>Administración de seguridad</strong> → <strong>Administración de parches</strong> y hacer clic en  el enlace<strong> 'Configuración de instalación de parches'.</strong></p>
+<p style="text-align: center;"><img src="conf-inst-parches.png" alt="" width="1016" height="668" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Acceder a la configuración de instalación de parches.</em></p>
+<p style="text-align: justify;"><strong>2</strong>. A continuación, se abrirá la ventana 'C<strong>onfiguración de instalación de parches</strong>'. En la lista <strong>Modo de instalación</strong>, hay que seleccionar el valor requerido:</p>
+<ul>
+<li style="text-align: justify;"><strong>Instalar solo los parches aprobados</strong> (de forma predeterminada). Se puede aprobar las revisiones que se deben instalar y no aprobar las que no se deben instalar. Por ejemplo, comprobar la instalación de revisiones en un entorno de prueba y asegurarse de que no interfieran con el funcionamiento de los dispositivos, y a continuación permitir la instalación de estas revisiones en dispositivos administrados.</li>
+<li style="text-align: justify;"><strong>Instalar todos los parches.</strong></li>
+</ul>
+<p><strong>3.</strong> En la lista <strong>Área de instalación</strong>, hay que seleccionar si las revisiones se deben instalar en algún tipo del dispositivo o instalarse por separado en servidores o estaciones de trabajo.</p>
+<p><strong>4.</strong> En la lista Programación de la instalación, hay que seleccionar el valor requerido:</p>
+<ul>
+<li>Desactivada (de forma predeterminada): la instalación del parche nunca se ejecuta.</li>
+<li>Cada semana: determine el día de la semana y la hora en que la instalación del parche se deba ejecutar.</li>
+<li>Cada día: determine el tiempo en que la instalación del parche se deba ejecutar.</li>
+</ul>
+<p style="text-align: justify;"><strong>5.</strong> Si la opción '<strong>Iniciar la instalación al reiniciar o apagar el dispositivo</strong>' está activada, las revisiones se instalan cuando el dispositivo se reinicia o se apaga. De lo contrario, las revisiones se instalan según lo programado. Hay que utilizar esta opción si la instalación de las revisiones pudiera afectar el rendimiento del dispositivo.</p>
+<p><strong>6.</strong> En Opción de reinicio del sistema operativo, hay que seleccionar qué hacer si la instalación del parche requiere el reinicio del sistema operativo del dispositivo:</p>
+<ul>
+<li style="text-align: justify;"><strong>No reiniciar el dispositivo.</strong> Los dispositivos administrados no se reinician automáticamente después de la operación. Para completar la operación, los usuarios deben reiniciar sus dispositivos. Esta opción es conveniente para servidores y otros dispositivos donde la operación continua es crítica.</li>
+<li style="text-align: justify;"><strong>Reiniciar el dispositivo. </strong>Los dispositivos administrados siempre se reinician automáticamente si se requiere para la finalización de la operación. Esta opción es útil para dispositivos que presentan pausas habituales en su operación (apagado o reinicio).</li>
+<li style="text-align: justify;"><strong>Solicitar acción del usuario. </strong>El recordatorio de reinicio aparece en la pantalla del dispositivo administrado solicitándole que reinicie el dispositivo manualmente. Puede cambiar el texto del mensaje para el usuario. Esta opción es la más conveniente para las estaciones de trabajo donde los usuarios deben poder seleccionar el tiempo más oportuno para un reinicio.</li>
+</ul>
+<p style="text-align: justify;">Si se activa la opción <strong>Reiniciar el dispositivo después de que esté inactivo durante más de 30 minutos</strong>, luego de preguntarle al usuario, la aplicación obliga a reiniciar el sistema operativo al vencer el intervalo especificado. De lo contrario, los usuarios deben reiniciar sus dispositivos manualmente.</p>
+<p>Para consolidar los cambios hay que pulsar el botón <strong>Aceptar</strong>.</p>
+<p><img src="conf-install-parches.png" alt="" width="477" height="828" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Configuración de instalación de parches.</em></p>
+<h3>3. Cifrado</h3>
+<p style="text-align: justify;"><strong>KES Cloud</strong> permite configurar el cifrado de dispositivos administrados que ejecuten sistemas operativos Windows o macOS. El cifrado es una medida adicional de seguridad que evita que otros usuarios accedan a datos almacenados en los discos duros sin la autorización necesaria.</p>
+<p style="text-align: justify;">Los <strong>dispositivos Windows</strong> se cifran con el cifrado nativo de Windows: <strong>BitLocker</strong> y pueden cifrar todas las particiones de los discos duros. Las claves de recuperación se almacenan en la infraestructura de Cloud. El cifrado es compatible para Windows a partir de la versión 10 con Service Pack 2.</p>
+<p style="text-align: justify;">Los <strong>dispositivos que ejecutan macOS</strong> se cifran con la función de cifrado del disco de <strong>FileVault</strong>.</p>
+<p style="text-align: justify;">Cuando un administrador inicia el cifrado de FileVault de un dispositivo desde <strong>KES Cloud</strong>, le solicita al usuario de este dispositivo que ingrese sus credenciales. El cifrado del disco solo comienza después de que el usuario proporciona las credenciales y que el dispositivo se reinicia. Las claves de recuperación se almacenan en la infraestructura Cloud. El cifrado es compatible con Mac a partir de la versión 11.</p>
+<p style="text-align: justify;">Para usar el cifrado en un dispositivo, se debe activar y configurar el cifrado en el perfil de seguridad que protege el dispositivo. El informe sobre el cifrado está disponible en la sección Informes.</p>
+<p style="text-align: center;"><img src="cifrado-Windows.png" alt="" width="1334" height="686" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Configuración de cifrado Windows.</em></p>
+<h3>4. <strong>Creación, renovación y envío de un certificado de APNs</strong></h3>
+<p style="text-align: justify;">Uno de los pasos más interesantes es generar un certificado de APN para poder administrar dispositivos iOS.</p>
+<p style="text-align: center;"><img src="crear-certif-APNs.png" alt="" width="422" height="191" /></p>
+<p style="text-align: justify;">Para administrar <strong><em>dispositivos móviles iOS</em></strong> (mediante el envío de comandos a los dispositivos o la modificación de los ajustes del dispositivo), se debe crear un certificado del servicio de notificaciones<a href="https://identity.apple.com/pushcert/" target="_blank" rel="noopener"><strong> push de Apple</strong> </a>(certificado de APNs) y cargarlo en la Consola de gestión de <strong>Kaspersky Endpoint Security Cloud</strong>. Las actividades de creación y carga de un certificado se realizan una vez por espacio de trabajo.</p>
+<p style="text-align: justify;"><strong>NOTA:</strong> Sin un certificado de APNs, no es posible administrar dispositivos iOS.</p>
+<p style="text-align: justify;">La creación, renovación o carga de un certificado de APNs se desarrolla en etapas:</p>
+<p><strong></strong><strong>Etapa 1.</strong> En la <strong>Consola de administración de Kaspersky Endpoint Security Cloud, </strong>hay que crear una <strong>solicitud de firma de certificado (CSR). </strong><strong></strong></p>
+<p style="text-align: justify;"><strong>Etapa </strong><strong>2. </strong>En el <strong>portal de Apple Inc., se recibirá un certificado de APNs </strong>mediante el<strong> CSR </strong>que se firmó y se podrá guardar en el equipo<strong>.</strong> </p>
+<table border="0" style="height: 602px; width: 100%;">
+<tbody>
+<tr style="height: 582px;">
+<td style="width: 50%; text-align: center; height: 582px;"><img src="apple-push.png" alt="" width="1046" height="536" /></td>
+<td style="width: 50%; text-align: center; height: 582px;"><img src="manage-certificates.png" alt="" width="1028" height="753" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; text-align: center; height: 20px;"><span style="font-size: 12pt;">Generación de certificado</span></td>
+<td style="width: 50%; text-align: center; height: 20px;"><span style="font-size: 12pt;">Gestión de certificados</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Etapa </strong><strong>3. </strong>A continuación, hay que cargar el <strong>certificado de APNs </strong>que se haya recibido en la <strong>Consola de gestión de Kaspersky Endpoint Security Cloud.</strong></p>
+<h4 style="text-align: center;"><strong><img src="crear-certif-APN-02.png" alt="" width="748" height="457" /></strong></h4>
+<h4><strong>Requisito previo</strong></h4>
+<p style="text-align: justify;">Para crear un certificado de APNs, se debe obtener una<a href="https://appleid.apple.com/account" target="_blank" rel="noopener"> <strong>ID de Apple</strong></a>. Si no se tiene ID de Apple, hay que registrarse en el portal de certificados push de Apple. Se recomienda evitar usar el ID personal de Apple.</p>
+<h4>Creación o renovación de un certificado de APNs</h4>
+<p style="text-align: justify;">Los procedimientos para crear un nuevo certificado de APNs y renovar uno existente que haya caducado son similares. Si se tiene un <strong>certificado APNs</strong> activo, se puede enviar a la Consola de administración de <strong>Kaspersky Endpoint Security Cloud</strong> sin necesidad de crearlo o renovarlo. Ver el segundo procedimiento de esta sección.</p>
+<p style="text-align: justify;">El <strong>certificado de APNs</strong> se crea en una ejecución. Se deben seguir los pasos para su creación sin interrupción porque el proceso de firma tiene una marca de tiempo, que caducará si el proceso de creación tarda demasiado.</p>
+<p style="text-align: justify;">Para crear o renovar un <strong>certificado de APN</strong>s, hay que seguir los siguientes pasos:</p>
+<ol style="text-align: justify;"></ol>
+<p>1. En la sección<span> </span><span><strong>Panel de información</strong></span>, en la pestaña<span> </span><span><strong>Primeros pasos</strong></span>, en<span> </span><span><strong>Recomendados</strong></span>, hay que hacer clic en el enlace<span> </span><span><strong>Crear o actualizar un certificado de APNs</strong></span>.</p>
+<p>2. El Asistente '<strong>Crear, renovar o cargar un certificado de servicio de notificación push de Apple (certificado de APNs)</strong>' comienza con una página que indica las posibles acciones.</p>
+<p style="text-align: center;"><img src="apn-01.png" alt="" width="940" height="259" /></p>
+<p style="text-align: justify;"><span style="color: #000000;"><strong>3.</strong> Hay que seleccionar la opción</span><span style="font-size: 12pt;"><span style="color: #000000;"><span style="text-align: left;"> '<strong>Crear un certificado de APNs</strong></span><span style="text-align: left;"> </span><span style="text-align: left;">o</span><span style="text-align: left;"> </span><span style="text-align: left;"><strong>Renovar un certificado de APNs</strong></span></span><span style="color: #666666; text-align: left;"><span style="color: #000000;"> '</span> <span style="color: #000000;">(dependiendo si es creación o renovación) </span></span><span style="color: #000000;"><span style="text-align: left;">y hacer clic en</span><span style="text-align: left;"> </span><span style="text-align: left;"><strong>Siguiente</strong></span><span style="text-align: left;">. </span></span></span><span style="color: #000000;">Esto abre una página que contiene una lista de los pasos que se deben seguir para obtener un certificado de APNs. Si solo quiere cargar un certificado de APNs preparado a la Consola de gestión de <strong>Kaspersky Endpoint Security Cloud,</strong> hay que seguir el procedimiento aparte que se verá más abajo '<strong>Carga de un certificado de APNs previamente preparado'</strong><em>.</em></span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><strong>4.</strong> Para este caso de ejemplo, se selecciona el enlace <strong>'Cree una Solicitud de firma de certificado (CSR)</strong>', ya que aún no se tiene ninguno y desde lo servidores de Kaspersky, se generará un archivo <strong>CSRfile.plist</strong> que habrá que guardar en el equipo.</span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><strong>5.</strong> A continuación, se abre la página <strong>Crear CSR, </strong>donde hay que rellenar los siguientes campos de entrada: Nombre, Empresa, Departamento, Ciudad, Comunidad autónoma y País y región. <span>De forma predeterminada, el campo </span><span><strong>Empresa</strong></span><span> especifica el nombre de nuestra empresa y el campo </span><span><strong>País y región</strong></span><span> especifica el nombre del país y la región donde se encuentra la empresa. Todos estos campos de entrada son obligatorios.</span></span></p>
+<p style="text-align: center;"><img src="crear-CSR.png" alt="" width="766" height="547" /></p>
+<p style="text-align: justify;"><span style="color: #000000;">6. A continuación, hay que pulsar '<strong>Crear</strong>'. Se creará un archivo del CSR. El archivo del CSR que haya creado se guarda en una carpeta del equipo (de forma predeterminada, todos los archivos descargados se guardan en la carpeta <strong>Descargas)</strong>. <strong>Ejemplo: </strong>Se genera el fichero <strong>CSRfile.plist.</strong></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><span style="color: #666666; text-align: left;"><img src="pn-03.png" alt="" width="708" height="184" /></span></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt; color: #000000;"><span style="text-align: left;"><strong>7.</strong> Una vez descargado el fichero, aparece la siguiente página, donde se informa de los pasos a seguir. Si se tiene el id de Apple, hay que ir al paso 2.</span></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><span style="color: #666666; text-align: left;"><img src="apn-04.png" alt="" width="926" height="485" /></span></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><span style="color: #666666; text-align: left;"><span style="font-size: 12pt; color: #000000;"><span style="text-align: left;"><strong>8. </strong>Hacer clic en el enlace indicado para iniciar sesión en el portal de <strong>certificados push de Apple. <span>L</span></strong>a nueva pestaña del navegador muestra la ventana '<strong>Iniciar sesión</strong>' con los campos de entrada '<strong>ID de Apple</strong>' y 'Contraseña'.</span></span></span></span></p>
+<p style="text-align: center;"><img src="apn-06.png" alt="" width="844" height="672" /></p>
+<p style="text-align: justify;"><strong>9.</strong> Una vez introducidas las credenciales, se abrirá la ventana <strong>Crear un nuevo certificado push</strong>. Hay que hacer clic en Examinar para seleccionar el archivo del CSR firmado en el equipo.</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="apn-07.png" alt="" width="1013" height="761" /></td>
+<td style="width: 50%; text-align: center;"><img src="apn-08.png" alt="" width="1025" height="705" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong>10.</strong> A continuación, hay que pulsar <strong>Upload</strong>, <span>comienza el proceso de verificación del archivo.  Si todo va bien, se genera el certificado y a continuación </span>s<span>e abrirá la ventana </span><span><strong>Certificados de servidores de terceros</strong></span><span>, mostrando el certificado para poder descargarlo con una validez para 1 año. Si se pulsa 'Download' el certificado de APNs se guarda en el equipo. </span><span>Ejemplo: Al pulsar '<strong>Download</strong>', se descarga en el equipo el fichero <strong>MDM_ Laboratoriya Kasperskogo ZAO_Certificate.pem, </strong>certificado que expira el <strong>17 de Enero de 2023</strong>. Si se pulsa en 'Manage Certificates', se podrá realizar la renovación, descarga o revocación del mismo.  </span></p>
+<p style="text-align: center;"><img src="apple-push.png" alt="" width="1046" height="536" /></p>
+<p style="text-align: justify;">11. En la <strong>Consola de gestión de Kaspersky Endpoint Security Cloud</strong>, en la página del Asistente 'Solicite la clave pública del certificado de APNs en el portal de Apple Inc', hay que hacer clic en <strong>Siguiente</strong>.</p>
+<table border="0" style="width: 100%; height: 538px;">
+<tbody>
+<tr style="height: 510px;">
+<td style="width: 50%; text-align: center; height: 510px;"><img src="apn-09.png" alt="" width="805" height="440" /></td>
+<td style="width: 50%; text-align: center; height: 510px;"><img src="apn-10.png" alt="" width="814" height="522" /></td>
+</tr>
+<tr style="height: 28px;">
+<td style="width: 50%; height: 28px; text-align: center;"><span style="font-size: 12pt;">Pulsar Siguiente</span></td>
+<td style="width: 50%; height: 28px; text-align: center;"><span style="font-size: 12pt;">Pulsar Siguiente</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong>12. </strong><span>En la página '</span><span><strong>Subir un certificado de APNs preparado a la Consola de administración</strong></span><span> 'que se abre, hay que hacer clic en el botón </span><span><strong>Examinar</strong></span><span> y seleccionar el archivo de un certificado de APNs desde la lista de archivos del equipo. A continuación, hay que pulsar '<strong>Siguiente</strong>'.</span></p>
+<p style="text-align: center;"><span><img src="apn-11.png" alt="" width="817" height="525" /></span></p>
+<p style="text-align: justify;"><span><strong>13. </strong>Se abre la página <strong>Detalles del certificado de servicio de Apple Push Notification</strong> que contiene el nombre del archivo descargado, el nombre del centro de la certificación y las fechas de inicio y fin de la validez del certificado.</span></p>
+<p style="text-align: center;"><span><img src="apn-14.png" alt="" width="993" height="420" /></span></p>
+<p style="text-align: justify;"><span><strong>14.</strong> A continuación, hay que pulsar 'Siguiente', y se </span>abrirá una página que solicita crear una copia de seguridad del certificado de APNs protegida por contraseña en el disco duro del equipo.</p>
+<p style="text-align: justify;"><strong>15.</strong> <span>A continuación, hay que s</span>eleccionar la acción quese  desea realizar con el certificado de APNs:</p>
+<ul>
+<li style="text-align: justify;">Finalizar la creación o renovación del certificado de APNs sin crear una copia de seguridad.</li>
+<li style="text-align: justify;">Crear una copia del certificado de APNs protegida por contraseña en el disco duro de su equipo (opción predeterminada).</li>
+</ul>
+<p style="text-align: justify;">Si se elige la opción que incluye crear una copia del certificado de APNs, hay que introducir la contraseña para proteger este certificado. A continuación, hay que confirmarla y hacer clic en el botón<span> </span><span><strong>Guardar copia protegida del certificado de APNs</strong></span>.</p>
+<p style="text-align: justify;"><strong>16</strong>. A continuación, hay que pulsar el botón 'Aceptar'. Si elige la opción que incluye la creación de una copia del <strong>certificado de APNs</strong>, se guarda una copia protegida por contraseña de dicho certificado en el disco duro del equipo. Se cierra el Asistente para preparar el certificado de APNs.</p>
+<p>Una vez se ha completado la creación o renovación del certificado de APNs, el certificado de APNs se carga a la Consola de gestión de Kaspersky Endpoint Security Cloud.</p>
+<p><strong>Nota:</strong> En cada paso del procedimiento de creación o renovación de un certificado de APNs, se puede volver al paso anterior haciendo clic en el botón Atrás.</p>
+<p style="text-align: justify;">Tras crear y renovar correctamente un certificado de APNs, se pueden conectar dispositivos iOS a Kaspersky Endpoint Security Cloud, enviar comandos a dispositivos iOS, instalar aplicaciones en dispositivos iOS y configurar esos dispositivos utilizando un perfil de seguridad.</p>
+<h4>Carga de un certificado de APNs preparado previamente</h4>
+<p>Para enviar un <strong>certificado APNs</strong> preparado previamente a la Consola de administración de Kaspersky Endpoint Security Cloud, hay que seguir los siguientes pasos:</p>
+<p style="text-align: justify;"><strong>1.</strong> En la sección <strong>Panel de información</strong>, en la pestaña<strong> Primeros pasos</strong>, en <strong>Recomendados</strong>, hay que hacer clic en el enlace <strong>Crear o actualizar un certificado de APNs</strong>. El Asistente '<strong>Crear, renovar o cargar un certificado de servicio de notificación push de Apple (certificado de APNs)</strong>' comienza con una página que indica las posibles acciones. Hay que seleccionar la opción 'S<strong>ubir un certificado de APNs</strong>' preparado y hacer clic en '<strong>Siguiente</strong>'.</p>
+<p>Esto abre la página Subir un certificado de APNs previamente preparado</p>
+<p style="text-align: center;"><img src="apn-15.png" alt="" width="858" height="390" /></p>
+<p style="text-align: justify;"><strong>2.</strong> A continuación, se abre la página '<strong>Subir un certificado de APNs previamente preparado</strong>'. Hay que hacer click <span>en el botón <strong>Examinar</strong> y seleccionar un archivo de certificado de APNs de la lista de archivos del equipo. Para continuar, hay que pulsar '<strong>Siguiente</strong>'.</span></p>
+<p style="text-align: center;"><img src="apn-16.png" alt="" width="647" height="330" /></p>
+<p style="text-align: justify;"><strong>3. </strong><span>Si el archivo del <strong>certificado de APNs</strong> está protegido por contraseña, se abrirá una página donde se solicita la contraseña. A continuación, hay que introducir la contraseña que protege el archivo del certificado de APNs y hacer clic en <strong>Siguiente</strong>.</span></p>
+<p style="text-align: center;"><span><img src="apn-17.png" alt="" width="661" height="326" /></span></p>
+<p style="text-align: justify;"><span><strong>4.</strong> Si todo ha ido bien, se abre</span> la página Datos del archivo de certificado descargado que indica el nombre del archivo descargado, el nombre del centro de la certificación y las fechas de inicio y fin de la validez del certificado. Si el archivo del certificado de APNs no se corresponde con el espacio de trabajo con el que está trabajando en esos momentos, se muestra un mensaje de error.</p>
+<p style="text-align: center;"><img src="apn-18.png" alt="" width="648" height="326" /></p>
+<p style="text-align: justify;"><strong>5.</strong> A continuación, hay que hacer clic en <strong>Aceptar</strong>. El certificado de APNs se carga a la Consola de gestión de Kaspersky Endpoint Security Cloud. </p>
+<p style="text-align: justify;"><strong>Nota:</strong> En cada paso del procedimiento de carga de un certificado de APNs, puede volver al paso anterior haciendo clic en el botón Atrás.</p>
+<p style="text-align: justify;">Tras enviar correctamente un certificado de APNs, se puede conectar dispositivos iOS a Kaspersky Endpoint Security Cloud, enviar comandos a dispositivos iOS, instalar aplicaciones en dispositivos iOS y configurar esos dispositivos utilizando un perfil de seguridad.</p>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4215_administrador_de_seguridad.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4217_nuevas_funcionalidades.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

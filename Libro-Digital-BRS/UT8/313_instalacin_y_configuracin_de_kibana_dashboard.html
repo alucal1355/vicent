@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.3 Instalación y configuración de Kibana Dashboard | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-112"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li id="active"><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="active no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="314_instalar_y_configurar_logstash.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.3 Instalación y configuración de Kibana Dashboard</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id155">
+<div class="iDevice emphasis0" >
+<div id="ta155_155_2" class="block iDevice_content">
+<div class="exe-text"><h3 style="text-align: justify;"><span><strong>1. Introducción</strong></span></h3>
+<p style="text-align: justify;"><span><strong>Kibana</strong> permite analizar los datos almacenados en Elasticsearch. </span>Según la <a href="https://www.elastic.co/guide/en/elastic-stack/current/installing-elastic-stack.html" target="_blank" rel="noopener">documentación oficial</a>, hay que instalar <strong>Kibana</strong> después de instalar <strong>Elasticsearch</strong>. La instalación en este orden, garantiza que los componentes de los que depende cada producto estén correctamente ubicados.</p>
+<h3 style="text-align: justify;">2. Instalación</h3>
+<p style="text-align: justify;">Como ya se configuraron anteriormente los <strong>repositorios de Elastic</strong>, simplemente para instalar<strong> Kibana 8.1.0</strong> hay que ejecutar el comando siguiente<strong>.</strong></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>apt install kibana</span></pre>
+<p style="text-align: center;"><img src="install-kibana.png" alt="" width="789" height="349" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Instalación de kibana.</em><span style="font-size: 12pt;"></span></p>
+<h3 style="text-align: justify;">3. Configuración</h3>
+<p style="text-align: justify;"><strong>Kibana</strong> está configurado para ejecutarse en <strong>localhost:5601</strong> de forma predeterminada. Para permitir el acceso externo, hay que editar el archivo de configuración y reemplazar el valor de <strong>server.host</strong> con una IP de interfaz, para este escenario, la ip es<strong> 192.168.0.254</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/kibana/kibana.yml</span></pre>
+<p style="text-align: justify;">Los parámetros a agregar (descomentar y modifciar) son:</p>
+<ul>
+<li style="text-align: justify;"><strong>server.port: 5601.</strong> Puerto a la escucha.</li>
+<li style="text-align: justify;"><strong>server.host: "192.168.0.254".</strong> Dirección ip del servidor.</li>
+<li style="text-align: justify;"><strong>server.publicBaseUrl: "http://elastics-master01:80".</strong> Se compone del nombre del host servidor y puerto 80.</li>
+</ul>
+<p style="text-align: center;"><img src="kibana-yml-publicbaseurl.png" alt="" width="883" height="466" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Fichero de configuración de kibana.</em><span style="font-size: 12pt;"></span></p>
+<p style="text-align: justify;">A continuación, hay que generar un <strong>token de inscripción para Kibana</strong> usando el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana</span></pre>
+<p style="text-align: center;"><img src="token-kibana.png" alt="" width="1011" height="94" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Generación del token.</em></p>
+<p style="text-align: justify;">El <strong>token</strong> generado es:</p>
+<pre><span style="font-size: 10pt;">eyJ2ZXIiOiI4LjEuMCIsImFkciI6WyIxOTIuMTY4LjAuMjU0OjkyMDAiXSwiZmdyIjoiNmIzMTYzMTQ1N2JiNjBlNmZmYWEwZGZhMzExYTVhNjJjNjE5MGNk<br />OGE1ZmZiZDJhOWI4Ym</span><span style="font-size: 10pt;">RiMDFiMTU0YjRmMyIsImtleSI6ImJnbkRxSDhCS0ZicVluMmttWXd5OlAxMGRQemloUzZ5WEY2Q2l2U243N1EifQ==</span></pre>
+<p style="text-align: justify;">También hay que generar <strong>claves de cifrado de Kibana</strong>:</p>
+<ul style="text-align: justify;">
+<li><strong>xpack.encryptedSavedObjects.encryptionKey:</strong> se utiliza para cifrar objetos almacenados, como paneles y visualizaciones.</li>
+<li><strong>xpack.reporting.encryptionKey: s</strong>e utiliza para cifrar informes guardados.</li>
+<li><strong>xpack.security.encryptionKey:</strong> se utiliza para cifrar la información de la sesión.</li>
+</ul>
+<p style="text-align: justify;"><span>Estos se pueden generar usando el siguiente comando:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>/usr/share/kibana/bin/kibana-encryption-keys generate</span></pre>
+<p style="text-align: center;"><img src="keys-generated-kibana.png" alt="" width="914" height="523" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Generación de claves.</em></p>
+<p style="text-align: justify;">Las claves generadas son:</p>
+<pre><span style="font-size: 12pt;"><strong>xpack.encryptedSavedObjects.encryptionKey:</strong> 529313eca6a8a07064fd400cc0b8a1ee</span><br /><span style="font-size: 12pt;"><strong>xpack.reporting.encryptionKey:</strong> ca205e846342e870aafd5aac4a16a016</span><br /><span style="font-size: 12pt;"><strong>xpack.security.encryptionKey:</strong> 1f1d7e19ed0d1ebc36ae17605b239909</span></pre>
+<p style="text-align: justify;">A continuación, hay que insertar las claves en el archivo de configuración de Kibana, <strong>kibana.yml.</strong> Hay que editar el archivo e insertar las claves al final del fichero.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/kibana/kibana.yml</span></pre>
+<p style="text-align: center;"><img src="agregar-keys-kibana-yml.png" alt="" width="818" height="336" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Añadir claves al fichero de configuración.</em><em></em></p>
+<p style="text-align: justify;">Para visualizar el archivo sin líneas de comentarios, el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>grep -Ev '^#|^$' /etc/kibana/kibana.yml</span></pre>
+<p style="text-align: center;"><img src="kibana-yml-Sincoment.png" alt="" width="608" height="351" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong> Listar el fichero de configuración sin comentarios.</em></p>
+<p style="text-align: justify;">Una vez finalizada la instalación y configuración, hay que <strong>iniciar y habilitar Kibana 8.1</strong> para que se ejecute en el arranque del sistema.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>systemctl enable --now kibana</span><span style="font-size: 12pt;"></span></pre>
+<p style="text-align: center;"><img src="enable-init-kibana.png" alt="" width="902" height="72" /></p>
+<p style="text-align: center;"><em><strong>Figura 7.</strong> Inicio del servicio kibana.</em></p>
+<p style="text-align: justify;">A continuación, se confirma el estado de Kibana:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>systemctl status kibana</span></pre>
+<p style="text-align: center;"><em><strong><img src="status-kibana-code.png" alt="" width="914" height="338" /><br /></strong></em></p>
+<p style="text-align: center;"><em><strong>Figura 8.</strong> Estado del servicio kibana.</em></p>
+<p style="text-align: justify;">Desde la salida de estado, se verán estas líneas:</p>
+<ul style="text-align: justify;">
+<li>i Kibana has not been configured.</li>
+<li>Go to http://192.168.0.254:5601/?code=644684 to get started (para cada instalación el código puede ser diferente).</li>
+</ul>
+<p>A continuación, se verifica el puerto 5601 si está a la escucha:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>lsof -i:5601</span></pre>
+<p style="text-align: center;"><img src="kibana-lsof.png" alt="" width="699" height="86" /></p>
+<h3 style="text-align: justify;">4. Acceso a Kibana 8.0 Dashboard</h3>
+<p style="text-align: justify;">Ahora se puede acceder a <strong>Kibana 8.1</strong> desde un navegador utilizando la URL proporcionada anteriormente, <strong>http://192.168.0.254:5601/?code=644684</strong> (para cada instalación el código puede ser diferente). </p>
+<p style="text-align: justify;">Si se tiene configurado el firewall, para permitir conexiones a Kibana hay que abrir <span>el <strong>puerto Kibana 8.1</strong>, es decir, </span>ajustar las reglas escribiendo:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>ufw allow 5601/tcp</span></pre>
+<p style="text-align: justify;">A continuación, hay que abrir un navegador web  mediante la URL<strong> http://192.168.0.254:5601/?code=644684</strong>, donde,</p>
+<ul style="text-align: justify;">
+<li style="text-align: justify;"><strong>192.168.0.254 y 5601 son </strong>la <strong style="color: #333333; font-size: 1em;">IP:Puerto</strong><span style="color: #333333; font-size: 1em;"> del servidor </span><strong style="color: #333333; font-size: 1em;">Elastic Stack</strong></li>
+</ul>
+<pre><span style="font-size: 12pt;">http://192.168.0.254:5601/?code=644684</span></pre>
+<div class="exe-fx exe-tabs" style="text-align: justify;">
+<h2><strong>Interfaz de Kibana 8.1</strong></h2>
+<p style="text-align: justify;">Al acceder a la <strong>interfaz de Kibana 8.1</strong>, en la página de bienvenida, se pide que se configure Elastic para comenzar. Simplemente hay que copiar el <strong>token de Kibana</strong> generado anteriormente con el comando <strong>/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana</strong> y pegarlo en el cuadro. Para continuar, hay que pulsar en '<strong>Configure Elastic</strong>'.</p>
+<p style="text-align: center;"><img src="configure-elastic-code.png" alt="" width="835" height="678" /></p>
+<h2>Verificación de código - Opcional</h2>
+<p style="text-align: justify;">Una vez se ha pulsado en '<strong>Configure Elastic</strong>', el sistema solicita un código de verificación que hay que crear en el servidor, para ello, hay que situarse en el directorio /usr/share/kibana/bin y ejecutar el script kibana-verification-code. La salida del script hay que copiarla en la página donde se solicita el código. Para continuar, hay que pulsar '<strong>Verify'.</strong></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastics-master01:/usr/share/kibana/bin#</strong>./kibana-verification-code</span> </pre>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="verification-required.png"><img src="verification-required.png" alt="" width="774" height="686" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="code-kibana.png"><img src="code-kibana.png" alt="" width="589" height="59" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>Guardar, iniciar y completar la instalación</h2>
+<p style="text-align: justify;">Una vez se ha pulsado en '<strong>Verify</strong>'., comenzará un proceso de guardado de la configuración, inicio de <strong>Elastic</strong> y por último completado de la instalación.</p>
+<p style="text-align: center;"><img src="configurando-kibana-code.png" alt="" width="828" height="675" /></p>
+<h2>Inicio de sesión</h2>
+<p>A continuación, aparece la página de inicio de sesión donde hay que ingresar las credenciales de usuario de Elastic generadas.</p>
+<p style="text-align: center;"><img src="login-elastic.png" alt="" width="724" height="647" /></p>
+<h2>Welcome Elastic</h2>
+<p><span>Una vez se han validado las credenciales, aparece una nueva página de bienvenida donde hay que pulsar en '</span><strong>explore on my own</strong><span>' para pasar al panel de control de Kibana.</span></p>
+<p style="text-align: center;"><img src="welcome-elastic.png" alt="" width="934" height="725" /></p>
+<h2>Welcome home</h2>
+<p><span>Una vez pulsado en explorar por mi cuenta, aparece la página principal donde se tiene acceso a todas las <strong>herramientas de kibana</strong>.</span></p>
+<p style="text-align: center;"><img src="welcome-host.png" alt="" width="932" height="715" /></p>
+<h2>Estado de Kibana</h2>
+<p><span>Para ver el<strong> estado de Kibana</strong> y consultar la <strong>versión</strong>, memoria utilizada, etcétera, hay que abrir un navegador y poner la url <strong>http://192.168.0.254:5601/status</strong>.</span></p>
+<p style="text-align: center;"><img src="status-hhtp-kibana.png" alt="" width="843" height="677" /></p>
+</div>
+<h3>5. Referencias</h3>
+<ul>
+<li>https://www.elastic.co/guide/en/kibana/master/settings.html</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="314_instalar_y_configurar_logstash.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

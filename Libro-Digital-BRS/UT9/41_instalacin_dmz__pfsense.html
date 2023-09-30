@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1 Instalación DMZ - Pfsense | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-126"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li class="current-page-parent"><a href="4_introduccin_a_la_dmz.html" class="current-page-parent daddy">4. Introducción a la DMZ</a>
+   <ul>
+      <li id="active"><a href="41_instalacin_dmz__pfsense.html" class="active no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li><a href="42_configuracin_dmz__pfsense.html" class="no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="4_introduccin_a_la_dmz.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="42_configuracin_dmz__pfsense.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.1 Instalación DMZ - Pfsense</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id163">
+<div class="iDevice emphasis0">
+<div id="ta163_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;">En este capítulo se verá cómo crear un tipo de DMZ en la cual se pueden alojar servicios Web que no se quieren que sean accesibles desde la red interna de la organización.</p>
+<p style="text-align: justify;"><strong>Ejemplo:</strong> Esto se utiliza cuando se alojan webs de clientes y se quieren tenerlas aisladas o cuando se tiene algún servicio vulnerable que se necesitas aislar. De esta se tendrán unos servicios que no se podrían acceder desde la red IT.</p>
+<p style="text-align: justify;">En el ejemplo que se muestra, también se realiza una configuración para permitir a una sola IP acceder a un equipo de esa red DMZ mediante el protocolo ssh para administrarlo. También se podría mejorar este aislamiento si en la red DMZ se niega la salida del tráfico por cualquier red que no sea la WAN.</p>
+<h3 style="text-align: justify;">2. Recursos necesarios</h3>
+<ul>
+<li>ISO Pfsense <span>2.6.0 --&gt;<a href="https://www.pfsense.org/download/" target="_blank" rel="noopener"> <strong>pfSense-CE-2.6.0-RELEASE-amd64.iso</strong></a></span></li>
+<li class="p1" style="text-align: justify;">VirtualBox para configurar una máquina virtual con:
+<ul>
+<li class="p1" style="text-align: justify;">3 adaptadores de red:
+<ul>
+<li class="p1" style="text-align: justify;">Modo puente: Interfaz WAN.</li>
+<li class="p1" style="text-align: justify;">Red interna: dmz.</li>
+<li class="p1" style="text-align: justify;">Red interna: Red it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="p1" style="text-align: justify;">Máquina virtual Servidor Web apache2 en la red interna dmz y configurado el tcp/ip como automático.</li>
+</ul>
+<p>El <strong>esquema de red</strong> que se va a implementar en este capítulo y posteriormente en el <strong>capítulo 4.2</strong> es el siguiente.</p>
+<p style="text-align: center;"><a href="Esquema-red-PfSense.jpg"><img src="Esquema-red-PfSense.jpg" alt="" width="725" height="541" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Esquema de red a implementar.</em></p>
+<h3>3. Instalación del router firewall Pfsense</h3>
+<p>En este apartado, se describe el proceso de instalación de un router firewall pfsense open source. </p>
+<div class="exe-fx exe-tabs">
+<h2>Paso 1</h2>
+<p style="text-align: justify;">En primer lugar, hay que acceder a la url <a href="https://www.pfsense.org/download/,">https://www.pfsense.org/download/,</a> para descargar la iso con la última versión disponible. Par este caso, la 2.6 (a fecha 04/05/2023) para AMD 64 bits.</p>
+<p style="text-align: center;"><img src="download-pfsense.png" alt="" width="1012" height="648" /></p>
+<h2>Paso 2</h2>
+<p style="text-align: justify;">Una vez se tiene la iso, hay que crear una nueva máquina virtual para instalar pfsense con la siguiente configuración:</p>
+<ul>
+<li style="text-align: justify;">RAM 2048 MBytes y 1 núcleo.</li>
+<li style="text-align: justify;">Disco de 30 Gbytes.</li>
+<li style="text-align: justify;">Adaptador de red 1: Modo puente Puente.</li>
+<li>Adaptador de red 2: Red Interna, a la que se le nombra como dmz.</li>
+<li>Adaptador de red 3: Red Interna, a la que se le nombra como it (departamento de informática).</li>
+</ul>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="MV-Pfsense-01.png"><img src="MV-Pfsense-01.png" alt="" width="829" height="218" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="VM-pfsense-03.png"><img src="VM-pfsense-03.png" alt="" width="830" height="220" /></a></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 3</h2>
+<p>Pulsar <strong>OK</strong> con la Install seleccionado.</p>
+<p style="text-align: center;"><img src="install-pfsense.png" alt="" width="716" height="399" /></p>
+<h2>Paso 4</h2>
+<p>Hay que seleccionar el mapa del teclado, para este caso, el <strong>Spanish</strong> (accent keys).</p>
+<p style="text-align: center;"><img src="selecc-teclado.png" alt="" width="720" height="398" /></p>
+<h2>Paso 5</h2>
+<p>A continuación, hay que seleccionar el tipo de particionado, para este caso se elige El <strong>guiado para BIOS</strong> y se pulsa <strong>OK</strong>.</p>
+<p style="text-align: center;"><img src="lecc-tipo-particionado.png" alt="" width="716" height="324" /></p>
+<h2>Paso 6</h2>
+<p style="text-align: justify;">Comienza el proceso de instalación donde irá copiando todo lo que tiene en RAM al disco duro. Una vez finalice, aparece una ventana preguntando si se desea realizar alguna interacción manual (figura centra). Para continuar, se pulsa que No y aparece una nueva ventana donde se pregunta si se quiere reiniciar o acceder a la shell. Para continuar, hay que pulsar en '<strong>Reboot</strong>' y a continuación, hay que quitar la iso del DVD para que no vuelva a iniciar el proceso de instalación.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="proceso-install.png" alt="" width="717" height="399" /></td>
+<td style="width: 25%; text-align: center;"><img src="interaccion-man_ual.png" alt="" width="393" height="178" /></td>
+<td style="width: 25%; text-align: center;"><img src="install-complete.png" alt="" width="291" height="145" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 7</h2>
+<p style="text-align: justify;">Una vez se reinicia el sistema, comenzará con la carga del sistema operativo y con la configuración automática de la WAN y LAN. La red WAN corresponde al adaptador puente por lo que la ip es dinámica y es asignada por el router (bridge). Por otro lado, la LAN corresponde con el adaptador red interna dmz con una ip dentro del rango de red 192.168.1.0.</p>
+<p style="text-align: center;"><img src="conf-lan-wan.png" alt="" width="640" height="399" /></p>
+<p style="text-align: justify;">Hay que tener en cuenta, que es necesario <strong>saber las MAC's de los adaptadores de red</strong>, y para ello, hay que acceder a la configuración de la máquina virtual y anotar las MAC de cada uno de los adaptadores de red. También, hay que anotar el orden de creación de los adaptadores, es decir: El adaptador 1 tiene la mac 08002774A2B0, la red interna dmz la mac 0800278A840 y por último, la red interna con mac 080027D14FB3.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><img src="adaptador-red-1.png" alt="" width="374" height="219" /></td>
+<td style="width: 33.3333%; text-align: center;"><img src="adaptador-red-2.png" alt="" width="396" height="207" /></td>
+<td style="width: 33.3333%; text-align: center;"><img src="adaptador-red-3.png" alt="" width="404" height="219" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Pqso 7</h2>
+<p style="text-align: justify;">A continuación, hay que seleccionar la <strong>opción 1</strong> del menú '<strong>Assign Interfaces</strong>', para acceder a la sección de asignación de interfaces, donde se podrá cambiar cada una de las 3 interfaces que se han establecido. Como se puede observar en la figura inferior, al seleccionar la <strong>opción 1</strong>, se listan las <strong>3 interfaces de red con su mac</strong>, y es ahora donde se puede hacer la correspondencia de cada una de ellas con el adaptador que se ha configurado en la máquina virtual a partir de la dirección mac, es decir, la <strong>interfaz em0</strong> corresponde con el adaptador puente, la<strong> em1</strong> con el adaptador red interna dmz y la <strong>em2</strong> con el adaptador red interna it. Se puede observar también, que corresponden con el orden de creación de los adaptadores de red, es decir, em0 adaptador 1, em1 adaptador 2 y em2 adaptador 3.</p>
+<p style="text-align: justify;">Lo que se realiza a continuación, es configurar la <strong>em1</strong> como DMZ, pero antes, el sistema pregunta si se quiere habilitar el uso de VLAN's, para este caso se contesta con '<strong>n</strong>' ya que no es el caso.</p>
+<p style="text-align: center;"><img src="opcin1-menu-assign-int.png" alt="" width="706" height="234" /></p>
+<h2>Paso 8</h2>
+<p style="text-align: justify;">Una vez pulsado '<strong>n</strong>', hay que indicar cuál es la <strong>interfaz WAN</strong>, para este caso, corresponde con la em0 que es el adaptador puente. Una vez se introduce la interfaz WAN, el sistema pregunta cuál será la interfaz LAN. Esta interfaz es importante ya que es la que permitirá el acceso a este firewall mediante web. Para este caso, se selecciona la em1 aunque ésta corresponde a la DMZ. Posteriormente se realizará la conversión de esta interfaz LAN en la DMZ de la red. </p>
+<p style="text-align: justify;">Por último, el sistema pregunta si la <strong>em2</strong> se quiere utilizar como una interfaz opcional, para este caso, se introduce <strong>em2</strong> para que la utilice como opcional. Para consolidar los cambios (reiniciar el servicio), hay que introducir '<strong>y</strong>' a la pregunta '<strong>Do you want to proceed [y|n] ?</strong>'. </p>
+<p style="text-align: center;"><img src="assign-interfaces.png" alt="" width="634" height="401" /></p>
+<h2>Paso 9</h2>
+<p>Una vez reiniciado el servicio, aparece de nuevo el menú y en la parte superior, las interfaces que se han configurado con las ip's que se han asignado por pfsense, donde la em0 se ha asignado por dhcp.</p>
+<p style="text-align: center;"><img src="servicio-reiniciado.png" alt="" width="635" height="275" /></p>
+<h2>Paso 10</h2>
+<p style="text-align: justify;">A continuación, se configura en una máquina virtual con kali linux, ubuntu, etcétera, el adaptador de red conectado a la red interna dmz, de este modo, se podrá acceder mediante el navegador a la configuración del pfsense. Una vez configurado el adaptador, hay que iniciar la máquina virtual y como se puede observar en la figura de la derecha, el equipo ha obtenido una ip de la red interna de la dmz.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="adaptador-red-kali.png" alt="" width="348" height="150" /></td>
+<td style="width: 50%; text-align: center;"><img src="ip-kali.png" alt="" width="822" height="357" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 11</h2>
+<p style="text-align: justify;">A continuación, desde el equipo kali se accede a la url <a href="http://192.168.1.1,">http://192.168.1.1,</a> que es la ip de la interfaz dmz (LAN) del pfsense. Aparece un warning dado que no se tiene un certificado. Para continuar, hay que pulsar sobre '<strong>Accept the Risk</strong>'. A continuación, aparece la pantalla de login donde las credenciales por defecto son <strong>admin - pfsense</strong>.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="warning-certificdo.png" alt="" width="1051" height="725" /></td>
+<td style="width: 50%; text-align: center;"><img src="login.png" alt="" width="769" height="577" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 12</h2>
+<p style="text-align: justify;">Al pulsar en '<strong>Sign In</strong>', si se observa la consola del pfsense, aparece un <strong>mensaje notificando el login del usuario admin</strong> (figura izquierda). Una vez de vuelta al entorno web, aparece una nueva página donde aparece un <strong>Warning</strong> recordando que se está utilizando el usuario por defecto y que se debería cambiar su contraseña (figura derecha), además, en la zona central, aparece un asistente para realizar la configuración inicial de pfSense. </p>
+<table border="0" style="width: 100%; height: 534px;">
+<tbody>
+<tr style="height: 534px;">
+<td style="width: 50%; text-align: center; height: 534px;"><img src="mensaje-pfsense-login.png" alt="" width="723" height="65" /></td>
+<td style="width: 50%; text-align: center; height: 534px;"><img src="pfsense-setup-01.png" alt="" width="987" height="691" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="text-align: justify;">Una vez que se ha accedido por primera vez al <strong>pfsense</strong> por el entorno web, lo primero que hay que realizar es la configuración inicial del mismo. Para ello, hay que pulsar el botón '<strong>Next</strong>' de la figura derecha del Paso 12 o acceder al menú <strong>System</strong> --&gt; <strong>Setup Wizard</strong>. Se describe el proceso a continuación.</p>
+<div class="exe-fx exe-tabs">
+<h2>Paso 1</h2>
+<p style="text-align: justify;">El primer paso del asistente informa del <strong>servicio Netgate</strong> por si se desea contratar, hay que pulsar '<strong>Next</strong>', para continuar.</p>
+<p style="text-align: center;"><img src="setup-01.png" alt="" width="742" height="487" /></p>
+<h2>Paso 2</h2>
+<p style="text-align: justify;">A continuación, hay que establecer los datos generales, es decir: El nombre del Hostname que para este caso será utm-1, el dominio que para este caso será ciber y el servidor de dns primario y secundario, que para este caso serán: 1.1.1.1 y 8.8.8.8. Para continuar hay que pulsar '<strong>Next</strong>'.</p>
+<p style="text-align: center;"><img src="setup-02.png" alt="" width="743" height="612" /></p>
+<h2>Paso 3</h2>
+<p style="text-align: justify;">En este paso aparece la sección para configurar el servidor de hora que para este caso, será <strong>GMT+2</strong> ya que actualmente (mes de mayo) España se encuentra en el horario de verano. Para continuar hay que pulsar '<strong>Next</strong>'.</p>
+<p style="text-align: center;"><img src="setup-03.png" alt="" width="754" height="355" /></p>
+<h2>Paso 4</h2>
+<p style="text-align: justify;">En este paso hay que configurar la interfaz WAN. Dado que en nuestro escenario, esta interfaz se tiene por dhcp, se deja tal y como aparece. Dependiendo del escenario, esta ip puede ser estática, PPTP o PPPoE, todo esto dependerá del proveedor contratado para el acceso a internet. Si se observa la figura de la derecha, son reglas que hay que tener en cuenta, es decir, si este router está apuntando directamente a internet, se deben seleccionar las 2 reglas (se bloquean las ip's privadas y loopback para que no salgan hacia la WAN). Para este caso se desactivan las reglas, ya que la interfaz WAN se encuentra en un espacio de direcciones privado. Para continuar hay que pulsar '<strong>Next</strong>'.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="setup-04.png" alt="" width="727" height="593" /></td>
+<td style="width: 50%; text-align: center;"><img src="reglas-setup-04.png" alt="" width="731" height="367" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Paso 5</h2>
+<p style="text-align: justify;">En este paso se configura la<strong> ip y máscara para la dmz</strong> (LAN). Para este caso, se deja la propuesta ya que es la que se configuró anteriormente. Como norma general y buenas prácticas, esta dirección debe ser una ip baja o alta dependiendo cómo se quieran configurar las ip's para routers y servidores, es decir, se podría poner 192.168.1.1 (baja) o 192.168.1.254 (alta). Para continuar hay que pulsar '<strong>Next</strong>'.</p>
+<p style="text-align: center;"><img src="setup-05.png" alt="" width="737" height="353" /></p>
+<h2>Paso 6</h2>
+<p style="text-align: justify;">En este paso, hay que establecer una <strong>contraseña para el usuario admin</strong>, es decir, cambiar la contraseña por defecto. Para continuar hay que pulsar '<strong>Next</strong>'.</p>
+<p style="text-align: center;"><img src="setup-06.png" alt="" width="737" height="398" /></p>
+<h2>Paso 7</h2>
+<p style="text-align: justify;">A continuación, el asistente pregunta si se desea hacer una carga de la configuración que se acaba de establecer. Para consolidar los cambios, hay que pulsar '<strong>Reload</strong>'.</p>
+<p style="text-align: center;"><img src="setup-07.png" alt="" width="749" height="241" /></p>
+<h2>Paso 8</h2>
+<p style="text-align: justify;">Una vez finaliza la carga, aparece una nueva página informando del éxito de la misma. Para finalizar el asistente, hay que pulsar '<strong>Finish</strong>'.</p>
+<p style="text-align: center;"><img src="setup-08.png" alt="" width="740" height="703" /></p>
+<h2>Paso 9</h2>
+<p style="text-align: justify;">En este punto, ya se tiene el <strong>pfsense</strong> con la configuración básica. En la nueva página que aparece, se pueden ver todas las configuraciones, el estado del equipo, etcétera.</p>
+<p style="text-align: center;"><a href="setup-09.png"><img src="setup-09.png" alt="" width="920" height="746" /></a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="4_introduccin_a_la_dmz.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="42_configuracin_dmz__pfsense.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

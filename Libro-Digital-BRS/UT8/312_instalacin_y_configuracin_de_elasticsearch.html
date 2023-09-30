@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.2 Instalación y configuración de Elasticsearch | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-111"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li id="active"><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="active no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="311_escenario_y_software_necesario.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.2 Instalación y configuración de Elasticsearch</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id154">
+<div class="iDevice emphasis0" >
+<div id="ta154_154_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Nombrado del host y DNS</h3>
+<p style="text-align: justify;">Antes de comenzar con el proceso de instalación y configuración de<span> </span><strong>elasticsearch </strong>en el servidor, hay que definir el <span> archivo <strong>/etc/hosts</strong> para resolución de nombres de dominio local, de esta manera, no se depende de un servidor de DNS. Los <strong>hostnames</strong> son importantes porque la configuración de elasticsearch solicita hostnames y de esta manera se podrá resolver la IP de cada host.</span></p>
+<p style="text-align: justify;"><span>Para este escenario, el hostname es<strong> elastics-master01</strong>.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>hostnamectl set-hostname elastics-master01</span></pre>
+<p>Como no se tiene un servidor DNS, hay que actualizar los registros DNS localmente en el archivo de hosts. Para ello, se añade la siguiente línea:</p>
+<pre><span style="font-size: 12pt;">192.168.0.254 elastics-master01</span></pre>
+<p style="text-align: center;"><img src="hosts-master01.png" alt="" width="532" height="194" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Fichero hosts.</em></p>
+<h3 style="text-align: justify;">2. Instalación</h3>
+<p style="text-align: justify;">Una vez se ha establecido el nombre de host, ya se puede comenzar con el proceso y  para ello, en primer lugar hay que realizar una actualización de los paquetes locales del equipo ubuntu server.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>apt update -y &amp;&amp; apt upgrade -y</span></pre>
+<p style="text-align: justify;">Los componentes de<span> </span><strong>Elastic Stack</strong><span> </span>no están disponibles en los repositorios predeterminados de Ubuntu, por lo que hay que agregarlos a la lista de fuentes de paquetes de Elastic. </p>
+<p style="text-align: justify;">Todos los paquetes de<strong><span> </span>Elastic Stack</strong><span> </span>están firmados con la clave de firma de<span> </span><strong>Elasticsearch</strong><span> </span>para proteger su sistema contra la suplantación de paquetes. Su administrador de paquetes considerará confiables los paquetes autenticados con la clave. Por lo tanto, en este punto, hay que importar la<strong><span> </span>clave GPG pública</strong><span> </span>de<span> </span><strong>Elasticsearch</strong><span> </span>y agregar la lista de fuentes de paquetes de<span> </span><strong>Elastic</strong><span> </span>para instalar<span> </span><strong>Elasticsearch</strong>.</p>
+<p style="text-align: justify;">A continuación, se utiliza la herramienta <span>cURL (transferir datos con URL) para importar la clave GPG pública de Elasticsearch a APT. Se utilizan los argumentos -fsSL para silenciar todos los progresos y posibles errores (excepto los de errores del servidor) y para permitir a cURL hacer una solicitud en una ubicación nueva si se redirige.  El resultado del comando cURL se canaliza al programa apt-key, que añade la <strong>clave GPG pública</strong> a APT.</span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch \<br />| apt-key add -</span><br /></span></pre>
+<p style="text-align: center;"><img src="GPG-KEY.png" alt="" width="734" height="74" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Importación de la clave pública.</em></p>
+<p>A continuación, hay que agregar la lista de<span> </span><strong>fuentes de Elastic</strong><span> </span>al directorio<strong><span> </span>sources.list.d</strong>, donde apt buscará nuevas fuentes:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | tee \<br />-a /etc/apt/sources.list.d/elastic-8.x.list</span></pre>
+<p style="text-align: center;"><img src="sources-list.png" alt="" width="826" height="61" /></p>
+<p style="text-align: center;"><strong><em>Figura 3. </em></strong><em>Actualización del soruce.list.</em></p>
+<p style="text-align: justify;"><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html" target="_blank" rel="noopener">Fuente</a></strong></p>
+<p style="text-align: justify;">A continuación, hay que actualizar los paquetes y después instalar el paquete<span> </span><strong>Elasticsearch</strong>:</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>apt update -y</span> <br /></span></pre>
+<p style="text-align: center;"><img src="apt-update-y.png" alt="" width="722" height="229" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong><span> </span>Actualización de repositorios.</em></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>apt install elasticsearch</span></pre>
+<p style="text-align: justify;">Durante la instalación:</p>
+<ul>
+<li style="text-align: justify;">Las funciones de seguridad estarán habilitadas de manera predeterminada.</li>
+<li style="text-align: justify;">La autenticación y la autorización están habilitadas.</li>
+<li style="text-align: justify;">TLS para las capas de transporte y HTTP está habilitado y configurado.</li>
+<li style="text-align: justify;">Se crea la cuenta de superusuario de Elastic (elastic) y su contraseña.</li>
+</ul>
+<p style="text-align: center;"><img src="install-elasticsearch.png" alt="" width="1169" height="806" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Instalación de elasticsearch.</em><span></span></p>
+<p style="text-align: justify;">Los información relacionado a la seguridad son los siguientes:</p>
+<pre><span style="font-size: 10pt;">--------------------------- Security autoconfiguration information ------------------------------</span><br /><span style="font-size: 10pt;"><br />Authentication and authorization are enabled.</span><br /><span style="font-size: 10pt;">TLS for the transport and HTTP layers is enabled and configured.</span><br /><br /><span style="font-size: 10pt;">The generated password for the elastic built-in superuser is : <strong>y--*yB=tZXd5-GaAM8PC</strong></span><br /><br /><span style="font-size: 10pt;">If this node should join an existing cluster, you can reconfigure this with</span><br /><span style="font-size: 10pt;">'/usr/share/elasticsearch/bin/elasticsearch-reconfigure-node --enrollment-token &lt;token-here&gt;'</span><br /><span style="font-size: 10pt;">after creating an enrollment token on your existing cluster.</span><br /><br /><span style="font-size: 10pt;">You can complete the following actions at any time:</span><br /><span style="font-size: 10pt;">Reset the password of the elastic built-in superuser with </span><br /><span style="font-size: 10pt;">'/usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic'.</span><br /><br /><span style="font-size: 10pt;">Generate an enrollment token for Kibana instances with </span><br /><span style="font-size: 10pt;"> '/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana'.</span><br /><br /><span style="font-size: 10pt;">Generate an enrollment token for Elasticsearch nodes with </span><br /><span style="font-size: 10pt;">'/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s node'.</span><br /><span style="font-size: 10pt;">-------------------------------------------------------------------------------------------------</span></pre>
+<h3>3. Configuración</h3>
+<p style="text-align: justify;"><strong>Elasticsearch</strong> por <strong>seguridad</strong>, restringe el acceso externo a la instancia de Elasticsearch para evitar que terceros lean los datos o cierren el clúster de Elasticsearch a través de su <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="noopener">[API REST]</a>. Esto se puede ver en la siguiente figura donde la sección <strong>network.host</strong> está comentada y de esta manera se especifica que sólo se puede acceder por localhost. Si se quiere acceder desde otras redes, hay que configurar la sección  <strong>network.host</strong>, descomentando la línea y estableciendo el valor correspondiente.</p>
+<p style="text-align: justify;">Lo mismo pasa con la sección <strong>http.port</strong>, que es el puerto donde se habilita Elasticsearch, y que por defecto es 9200. Elasticsearch escucha el tráfico HTTP en el primer puerto libre que encuentra a partir de 9200. Si se desea modificar este comportamiento, hay que descomentar y modificar la sección<strong> http.port</strong> por el valor correspondiente .</p>
+<p style="text-align: center;"><img src="network-host-port.png" alt="" width="647" height="196" /></p>
+<p style="text-align: justify;">Dado que en este escenario <strong>eslasticsearch</strong> se está ejecutando un clúster de un solo nodo de configuración básica, se utilizará la configuración predeterminada a excepción de los siguientes valores:</p>
+<ul>
+<li style="text-align: justify;"><strong>cluster.name:</strong> Nombre del clúster, para este caso cluster-ciber.</li>
+<li style="text-align: justify;"><strong>node.name</strong>: Nombre del nodo del clúster, para este caso, el nombre del equipo y que es elastics-master01.</li>
+</ul>
+<p style="text-align: justify;">Si se revisa el archivo de configuración de Elasticsearch,<span> </span><strong>/etc/elasticsearch/elasticsearch.yml</strong>, se puede ver la configuración de seguridad habilitada:</p>
+<p style="text-align: center;"><img src="elasticsearch-yml.png" alt="" width="753" height="736" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong> Fichero de configuración de elasticsearch.</em></p>
+<p>donde:</p>
+<ul>
+<li><strong>cluster.initial_master_nodes:</strong><span> </span>Lista de hostnames de los nodos máster del clúster. Para este escenario es elastics-master01.<strong></strong></li>
+</ul>
+<pre class="scroll-box"><span style="font-size: 12pt;">cluster.name: cluster-ciber<br />node.name: elastics-master01<br /><br />path.data: /var/lib/elasticsearch<br />path.logs: /var/log/elasticsearch<br /><br />xpack.security.enabled: true
+xpack.security.enrollment.enabled: true
+xpack.security.http.ssl:
+  enabled: true
+  keystore.path: certs/http.p12
+xpack.security.transport.ssl:
+  enabled: true
+  verification_mode: certificate
+  keystore.path: certs/transport.p12
+  truststore.path: certs/transport.p12
+cluster.initial_master_nodes: ["elastics-master01"]
+http.host: [_local_, _site_]</span></pre>
+<p>Para visualizar el archivo sin líneas de comentarios, el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>grep -Ev '^#|^$' /etc/elasticsearch/elasticsearch.yml</span></pre>
+<p style="text-align: center;"><span><img src="elasticsearch-yml-sinComent.png" alt="" width="636" height="311" /><br /></span></p>
+<p style="text-align: center;"><em><strong>Figura 7.</strong> Fichero de configuración de elasticsearch sin comentarios.</em></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">El archivo de configuración de<span> </span><strong>Elasticsearch</strong><span> </span>tiene<span> </span><strong>formato YAML</strong>; por lo que la indentación es muy importante. Hay que asegurarse de no añadir espacios adicionales al editar este archivo.</p>
+</div>
+<h3>4. Ajustar la configuración de JVM de Elasticsearch</h3>
+<p style="text-align: justify;">A continuación, hay que configurar el tamaño de almacenamiento dinámico de JVM. Para este escenario, el servidor tiene 4 GB de RAM y el tamaño del almacenamiento dinámico se establece a 4G para los tamaños máximo y mínimo durante la instalación de elasticsearch.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/elasticsearch/jvm.options</span></pre>
+<p><img src="jvm-options.png" width="659" height="405" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><em><strong>Figura 8.</strong> Fichero de configuración de jvm.</em></p>
+<p>Se deja la configuración establecida por<span> </span><strong>elasticsearch</strong><span> </span>durante la instalación.</p>
+<h3>5. Iniciar Elasticsearch</h3>
+<p style="text-align: justify;">El siguiente paso es iniciar y habilitar<span> </span><strong>Elasticsearch</strong><span> </span>para que se ejecute en el arranque del sistema.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>systemctl daemon-reload</span><br /><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>systemctl enable --now elasticsearch</span></pre>
+<p style="text-align: center;"><img src="eanble-init-elasticsearch.png" alt="" width="1016" height="85" /></p>
+<p style="text-align: center;"><em><strong>Figura 9.</strong> Habilitación e inicio del servicio de elasticsearch.</em></p>
+<h3>6. Cambiar contraseña del usuario elastic</h3>
+<p style="text-align: justify;">Una vez finalizada la instalación/configuración de elasticsearch, hay que comprobar el estado del mismo antes de continuar con el proceso, para ello, se ejecuta el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>systemctl status elasticsearch</span></pre>
+<p style="text-align: center;"><img src="status-elasticsearch.png" alt="" width="1058" height="264" /></p>
+<p style="text-align: justify;">Si aparece al final la cadena de texto: <strong>systemd[1]: Started Elasticsearch,</strong> se puede continuar con el procesp.</p>
+<p style="text-align: justify;">A continuación, se realiza el cambio de contraseña del <strong>usuario elastic</strong>, para ello, hay que ejecutar el comando <strong>elasticsearch-reset-password</strong><span> </span>que se encuentra en <strong>/usr/share/elasticsearch/bin</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>/usr/share/elasticsearch/bin/elasticsearch-reset-password --url "https://localhost:9200" --username elastic -i</span></pre>
+<p style="text-align: justify;">El comando informa que se va a realizar el<span> </span><strong>reseteo del password</strong><span> </span>y se solicita que se<span> </span><strong>confirme la operación</strong>. Para continuar hay que pulsar '<strong>y</strong>'. A continuación, se solicita la nueva contraseña dos veces.</p>
+<p style="text-align: center;"><img src="new-pass-elastic.png" alt="" width="1012" height="194" /></p>
+<p style="text-align: center;"><em><strong>Figura 10.</strong> Cambio de contraseña del usuario elastic.</em></p>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/reset-password.html" target="_blank" rel="noopener">Fuente</a></p>
+<h3>7. Configurar  el tiempo de espera predeterminado para la operación de inicio</h3>
+<p>En este punto, hay que consultar cuál es el tiempo de espera predeterminado para el inicio de elasticsearch durante el arranque del sistema. El comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>sudo systemctl show elasticsearch | grep ^Timeout</span></pre>
+<p style="text-align: center;"><img src="timeout-elasticsarch.png" alt="" width="613" height="107" /></p>
+<p style="text-align: center;"><em><strong>Figura 11.</strong> Comprobar el timeout de inicio elasticsearch.</em></p>
+<p>Como se puede observar en la Figura 11, el tiempo establecido es de 1 minuto y 15 segundos, por lo que el servicio de Elasticsearch finalizará si no puede iniciarse en 90 segundos (de manera predeterminada). Este tiempo es insuficiente, es decir, en el inicio del sistema, el servicio elasticsearch no se inicia indicando el siguiente error en la salida del estado del servicio:</p>
+<pre><span style="font-size: 10pt;"><strong>systemd[1]: Starting Elasticsearch...</strong></span><br /><span style="font-size: 10pt;"><strong>systemd[1]: elasticsearch.service: start operation timed out. Terminating.</strong></span><br /><span style="font-size: 10pt;"><strong>systemd[1]: elasticsearch.service: Failed with result 'timeout'.</strong></span><br /><span style="font-size: 10pt;"><strong>systemd[1]: Failed to start Elasticsearch.</strong></span></pre>
+<p>Para solucionar este problema, hay que editar el fichero del servicio de elasticsearch y modificar la sección TimeoutStartSec a 3 minutos, es decir, 180 segundos:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>nano /etc/systemd/system/multi-user.target.wants/elasticsearch.service</span></pre>
+<p style="text-align: center;"><img src="timeout-elasticsearch-3minutos.png" alt="" width="729" height="293" /></p>
+<p style="text-align: center;"><em><strong>Figura 12.</strong> Establecer el timeout de inicio de elasticsearch a 3 minutos.</em></p>
+<p>A continuación, hay que recargar la configuración del administrador de systemd con el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>systemctl daemon-reload</span></pre>
+<p>Si se comprueba de nuevo el timeout, se puede ver que ahora ya tiene establecido los 3 minutos.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>systemctl show elasticsearch | grep ^Timeout</span></pre>
+<p style="text-align: center;"><img src="new-timeout.png" alt="" width="627" height="140" /></p>
+<p style="text-align: center;"><em><strong>Figura 13.</strong> Nuevo timeout de inicio de elasticsearch.</em></p>
+<h3>8. Verificaciones</h3>
+<p>Se verifica el estado a continuación:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>systemctl status elasticsearch</span></pre>
+<p style="text-align: center;"><img src="status-elasticsearch.png" alt="" width="1058" height="264" /></p>
+<p style="text-align: center;"><em><strong>Figura 11.</strong> Estado del servicio de elasticsearch.</em></p>
+<p style="text-align: justify;">También se puede verificar el estado usando el comando<span> </span><strong>curl</strong>. Cuando se solicite la<span> </span><strong>contraseña</strong>, hay que introducir la que se ha cambiado anteriormente del<span> </span><strong>usuario elastic</strong>. </p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic 'https://localhost:9200'</span></pre>
+<p style="text-align: justify;">Una vez ejecutado el comando, si todo ha ido bien, en la salida se obtendrá la información de la figura inferior.</p>
+<p style="text-align: center;"><img src="curl-status-elasticsearch.png" alt="" width="896" height="343" /></p>
+<p style="text-align: center;"><em><strong>Figura 12.</strong> Verificación de elasticsearch.</em></p>
+<p style="text-align: justify;">En la figura superior se puede observar lo siguiente:</p>
+<ul style="text-align: justify;">
+<li><strong>nombre</strong>: elastics-master01.</li>
+<li><strong>nombre del cluster:</strong> cluster-ciber.</li>
+<li><strong>versión de elasticsearch:</strong><span> </span>8.1.0.</li>
+<li><strong>Compatibilidad</strong><span> </span>con versiones 7.17 (versión anterior de elastisearch).</li>
+</ul>
+<p style="text-align: justify;">Otra opción es abrir el navegador en un equipo que esté en la misma subred que el servidor y poner:<span> </span><strong>https://192.168.0.254:9200/. </strong>Si todo ha ido bien, en la salida se obtendrá una información similar a la de la siguiente figura.</p>
+<p style="text-align: center;"><img src="status-elsticsearch-https.png" alt="" width="714" height="487" /></p>
+<p style="text-align: center;"><em><strong>Figura 13.</strong> Verificación de elasticsearch por https.</em></p>
+<p style="text-align: justify;">También se puede realizar una consulta sobre el consumo y carga del<span> </span><strong>nodo de ElasticSearch</strong>, el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic 'https://elastics-master01:9200/_cat/nodes?v'</span></pre>
+<p style="text-align: justify;">Si todo ha ido bien, en la salida se obtendrá la información de consumos/carga de elastic.</p>
+<p style="text-align: center;"><img src="carga-estado-elastic.png" alt="" width="1079" height="104" /></p>
+<p style="text-align: center;"><em><strong>Figura 14.</strong> Verificación del consumo y carga de elasticsearch.</em></p>
+<p><a href="https://www.elastic.co/es/blog/configuring-ssl-tls-and-https-to-secure-elasticsearch-kibana-beats-and-logstash" target="_blank" rel="noopener">Fuente</a></p>
+<p style="text-align: justify;">A continuación, se verifica el puerto 9200 si está a la escucha:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>lsof -i:9200</span></pre>
+<p style="text-align: center;"><img src="lsof-elasticsearch.png" alt="" width="745" height="118" /></p>
+<p style="text-align: center;"><em><strong>Figura 15.</strong><span> </span>Comprobación de puertos elasticsearch.</em></p>
+<p style="text-align: justify;">Por último, se lista la información del clúster mediante una llamada <span>a la </span><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.16/cluster-health.html">API de cluster health.</a><span> Si se obseva la figura inferior, el <strong>estado del clúster es </strong></span><strong>green;</strong> esto indica que el <strong>estado del clúster es bueno</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>curl -XGET --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic \<br />'https://elastics-master01:9200/_cluster/health?pretty'</span></pre>
+<p style="text-align: center;"><img src="health-elastic.png" alt="" width="764" height="361" /></p>
+<p style="text-align: center;"><em><strong>Figura 16.</strong><span> </span>Consultar la información del clúster.</em></p>
+<p>El significado de los diferentes <strong>estados del clúster</strong> de elasticsearch son:</p>
+<ul>
+<li style="text-align: justify;"><span style="color: #339966;"><strong>Green</strong></span>: Cluster 100% operacional con todos los shards, tanto primarios como réplicas asignados.</li>
+<li style="text-align: justify;"><span style="color: #ffcc00;"><strong>Yellow</strong></span>: Todos los shards primarios asignados, pero al menos hay problemas con una réplica. El funcionamiento de las búsquedas no se ve afectado, pero la alta disponibilidad del clúster podría estar comprometida.</li>
+<li style="text-align: justify;"><span style="color: #ff0000;"><strong>Red</strong></span>: Al menos un shard primario tiene problemas. Las búsquedas devolverán resultados incompletos y el indexado podría devolver alguna excepción.</li>
+</ul>
+<p><span>Es importante <strong>mantener el clúster en verde</strong>. Las <a href="https://www.elastic.co/guide/en/kibana/7.16/kibana-alerts.html#kibana-alerts-cluster-alerts">alertas de Kibana</a> pueden ayudar notificándo cuando el clúster se vuelve amarillo (falta al menos una replica de un shard) o rojo (falta al menos un shard primario).</span><span style="font-size: 12pt;"><strong></strong></span></p>
+<div class="cuadro-nota-centro-new" style="text-align: justify;">
+<p style="text-align: justify;"><span>Muchas veces se puede encontrar un clúster con <strong>unassigned shards</strong>  (red) por <strong>falta de espacio en disco</strong>, ya sea porque el clúster en sí se está quedando sin espacio, o porque ha caído alguno de los data nodes. Así pues, hay que verificar que no haya problemas de espacio y que el clúster tenga el número y tipo de nodos esperados.</span></p>
+<p><strong>Asignación automática de shards fallidos. </strong>El comando para decirle al <span>clúster</span> que vuelva a intentar asignar los unassigned shards, es símplemente lanzar un POST con un body vacío («{}») contra la siguiente url:</p>
+<pre class="" lang="bash"><span style="font-size: 10pt;"><strong>root@elastic-master01:/#</strong>curl -XPOST --cacert /etc/elasticsearch/certs/http_ca.crt \<br />-u elastic 'https://elastics-master01:9200/_cluster/reroute?retry_failed=true'</span></pre>
+<p style="text-align: justify;">Otra llamada que se puede realizar y que puede dar la respuesta del porqué no se han podido asignar los shards es:  /<span><strong>_cluster/allocation/explain:</strong></span></p>
+<pre class="" lang="bash"><span style="font-size: 10pt;"><strong>root@elastic-master01:/#</strong>curl -s --cacert /etc/elasticsearch/certs/http_ca.crt \<br />-u elastic 'https://elastics-master01:9200/_cluster/allocation/explain'</span><span style="font-size: 10pt;"></span></pre>
+</div>
+<p style="text-align: justify;">Si se quiere <strong>consultar en detalle</strong> los <strong>índices</strong>, en la consulta se pide que se listen los campos: salud (health), índice (index), contador de documentos (<span style="font-size: 12pt;">docs.count)</span>, nodo primario (pri) y réplica (rep), el comando es el siguiente.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>curl -XGET --cacert /etc/elasticsearch/certs/http_ca.crt -u \<br />elastic 'https://elastics-master01:9200/_cat/indices?v&amp;s=health:desc,index&amp;h=health,status,index,docs.count,pri,rep'</span></pre>
+<p style="text-align: center;"><img src="indices-elastic-no-hay.png" alt="" width="1010" height="105" /></p>
+<p style="text-align: center;"><em><strong>Figura 17.</strong><span> </span>Consultar información de los índices.</em></p>
+<div class="cuadro-nota-centro-new" style="text-align: justify;">
+<p style="text-align: justify;"><span>La primera vez que se ejecute la consulta de índices no devolverá ninguno ya que los índices se crearán más tarde cuando se instale y configure logstash en el capítulo 3.1.4.</span></p>
+</div>
+<p style="text-align: justify;"><span></span><strong><a href="https://discuss.elastic.co/t/dec-21st-2021-es-tres-recomendaciones-para-tener-un-cluster-elasticsearch-saludable/289328" target="_blank" rel="noopener">Fuente</a></strong></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="311_escenario_y_software_necesario.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

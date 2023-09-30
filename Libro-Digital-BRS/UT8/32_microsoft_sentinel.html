@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2 Microsoft Sentinel | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-123"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="32_microsoft_sentinel.html" class="active no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33_splunk.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.2 Microsoft Sentinel</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id174">
+<div class="iDevice emphasis0">
+<div id="ta174_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;"><strong>Microsoft Sentinel</strong> es <span>un sistema SIEM nativo de nube que proporciona análisis de seguridad inteligentes basados en inteligencia artificial.</span></p>
+<h3 style="text-align: justify;"><span>2. Acceso</span><span></span></h3>
+<p style="text-align: justify;"><span>A partir de una cuenta <strong>edu.gva.es,</strong> se ha obtenido para un periodo de prueba un Office 365 E3 y E5 Trial. </span></p>
+<p style="text-align: center;"><span><img src="tenant-trial.png" alt="" width="629" height="259" /></span></p>
+<p style="text-align: justify;"><span>La <strong>cuenta es de estudiante</strong> dentro del Directorio de la Conselleria d'Educació.</span></p>
+<p style="text-align: center;"><span><img src="azure-students.png" alt="" width="736" height="309" /></span></p>
+<p style="text-align: justify;"><span>El <strong>acceso al plan de Azure</strong>, se realiza desde esta url: </span><span><a href="https://portal.azure.com/">https://portal.azure.com/</a></span><span></span></p>
+<p style="text-align: center;"><span><img src="acceso-cuenta-azure.png" alt="" width="472" height="355" /></span></p>
+<h3>3. Escenario</h3>
+<p>Se han creado dos máquinas virtuales en el área de trabajo, una con Windows Server 2022 y otra con CentOS 7.9.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="datos-orion.png" target="_blank" rel="noopener"><img src="datos-orion.png" alt="" width="1387" height="783" /></a></td>
+<td style="width: 50%; text-align: center;"><a href="datos-perseo.png" target="_blank" rel="noopener"><img src="datos-perseo.png" alt="" width="1401" height="874" /></a></td>
+</tr>
+</tbody>
+</table>
+<h3>4. Área de trabajo</h3>
+<p>En la página inicial, se tienen las<strong> áreas de trabajo</strong><span><strong> de Log Analytics</strong> </span>creadas y que para este caso, se tiene el área '<strong>Ciber-IESCaminas</strong>'. </p>
+<p style="text-align: center;"><img src="area-de-trabajo.png" alt="" width="1191" height="524" /></p>
+<p style="text-align: justify;">Si se accede a la lista de áreas de trabajo, se puede observar la única que existe y que a continuación, se procederá a describir.</p>
+<p style="text-align: center;"><img src="grupo-recursos.png" alt="" width="1357" height="329" /></p>
+<p style="text-align: justify;">Si se pulsa sobre <strong>Ciber-IESCaminas</strong>, se accede al panel de Información General del área de trabajo <span><strong>ciber-iescaminas</strong> (ver figura inferior). Este panel consta de una cabecera con un buscador y botonera, un  menú lateral izquierdo y una parte central.</span></p>
+<p style="text-align: center;"><a href="info-general.png" target="_blank" rel="noopener"><span><img src="info-general.png" alt="" width="1121" height="616" /></span></a></p>
+<p>En el menú lateral izquierdo, se tienen 4 secciones además de un buscador en la parte superior. Las secciones son las siguientes:</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 25%; text-align: center;"><img src="nodo-general.png" alt="" width="242" height="168" /></td>
+<td style="width: 25%; text-align: center;"><img src="nodo-admin-amenzas.png" alt="" width="233" height="255" /></td>
+<td style="width: 25%; text-align: center;"><img src="nodo-admin-contenido.png" alt="" width="228" height="148" /></td>
+<td style="width: 25%; text-align: center;"><img src="nodo-configuracion.png" alt="" width="229" height="190" /></td>
+</tr>
+</tbody>
+</table>
+<h4>1. Sección General</h4>
+<p>En esta sección, se puede acceder a Información general, Registros, Novedades y guías y a un buscador.</p>
+<div class="exe-fx exe-tabs">
+<h2>Información General</h2>
+<p style="text-align: justify;">En esta pantalla, se puede dar un vistazo general de los eventos, alertas, incidentes, etcétera que se han generado en un período de tiempo. En la parte derecha se tienen los incidentes recientes para tener más a mano lo último ocurrido. En la imagen de la derecha, se puede observar que en la parte inferior de la página, se tienen los 'Posibles eventos malintencionados', localizados geográficamente.</p>
+<p style="text-align: center;"><a href="info-general.png" target="_blank" rel="noopener"><img src="info-general.png" alt="" width="1131" height="621" /></a></p>
+<h2>Registros</h2>
+<p style="text-align: justify;"><span>Como analista de operaciones de seguridad, es necesario comprender las tablas, los campos y los datos ingeridos en el área de trabajo. En esta sección, se pueden consultar las tablas de datos más utilizadas en Microsoft Sentinel.</span></p>
+<p style="text-align: center;"><a href="registros.png" target="_blank" rel="noopener"><img src="registros.png" alt="" width="1186" height="583" /></a></p>
+<h2>Novedades y guías</h2>
+<p style="text-align: justify;">En este apartado, se tiene información sobre las novedades del producto, una breve introducción e información sobre la prueba gratuita que para este caso, finaliza el 3 de Abril de 2022.</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><a href="novedades.png" target="_blank" rel="noopener"><img src="novedades.png" alt="" width="572" height="558" /></a></td>
+<td style="width: 50%; text-align: center;"><img src="prueba-gratuita.png" alt="" width="1105" height="334" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Buscar</h2>
+<p>En este apartado, se tiene un buscador donde se podrá realizar cualquier tipo de búsqueda.</p>
+<p style="text-align: center;"><img src="buscar.png" alt="" width="1078" height="490" /></p>
+</div>
+<div role="group" class="azc-listView-group" aria-label="Administración de amenazas" id="_weave_e_6786">
+<div class="azc-listView-groupheader azc-br-muted" id="d17f418e-d8a4-48ee-a39b-ee48c5541682">
+<h4 class="ext-fxc-menu-groupheader"><span style="font-size: 1em;">2. Administración de amenazas</span></h4>
+</div>
+</div>
+<div class="exe-fx exe-tabs">
+<h2>Incidentes</h2>
+<p>En este apartado, se dispone de la información de los incidentes abiertos, los nuevos y activos. En este caso realiza la búsqueda de los mismos en las últimas 24 horas.</p>
+<p style="text-align: center;"><a href="incidentes.png" target="_blank" rel="noopener"><img src="incidentes.png" alt="" width="908" height="617" /></a></p>
+<h2>Libros</h2>
+<p style="text-align: justify;">Se accede a los libros disponibles. Se pueden crear nuevos y <span>se recomienda implementar libros asociados a los datos que se van a ingerir. Los libros permiten una supervisión e investigación más amplias en función de los datos recopilados.</span></p>
+<p style="text-align: center;"><a href="libros.png"><img src="libros.png" alt="" width="506" height="596" /></a></p>
+<h2>Búsqueda</h2>
+<p style="text-align: justify;">En este apartado <span>se obtiene información sobre cómo identificar de forma proactiva comportamientos de amenaza mediante consultas de Microsoft Sentinel. </span></p>
+<p style="text-align: center;"><a href="busqueda.png" target="_blank" rel="noopener"><img src="busqueda.png" alt="" width="1000" height="553" /></a></p>
+<h2>Cuadernos</h2>
+<p style="text-align: justify;">Permite la automatización de la respuesta a amenazas con cuadernos de estrategias. Por ejemplo, se usan cuadernos para <strong>realizar análisis</strong> que no se incluyan de forma preestablecida en Microsoft Sentinel.</p>
+<p style="text-align: center;"><a href="cuadernos.png"><img src="cuadernos.png" alt="" width="793" height="485" /></a></p>
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="d17f418e-d8a4-48ee-a39b-ee48c5541997" aria-describedby="d17f418e-d8a4-48ee-a39b-ee48c5541996"><span class="msportalfx-font-regular" id="_weave_e_8566">Comportamiento de la entidad</span></h2>
+<p style="text-align: justify;">En este apartado, se obtiene información del comportamiento de la entidad en un período de tiempo. En Microsoft Sentinel se identifican actualmente los siguientes tipos de entidades: Cuenta de usuario, Host, Dirección IP, Malware, etcétera.</p>
+<p style="text-align: center;"><a href="comportamineto-entidad.png" target="_blank" rel="noopener"><img src="comportamineto-entidad.png" alt="" width="843" height="409" /></a></p>
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="d17f418e-d8a4-48ee-a39b-ee48c5541997" aria-describedby="d17f418e-d8a4-48ee-a39b-ee48c5541996"><span class="msportalfx-font-regular" id="_weave_e_8566">Inteligencia sobre amenazas</span></h2>
+<p style="text-align: justify;">La inteligencia sobre amenazas es información que describe posibles amenazas o amenazas existentes conocidas a sistemas y usuarios.</p>
+<p style="text-align: center;"><img src="inteligencia-amenazas.png" alt="" width="1260" height="339" /></p>
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="d17f418e-d8a4-48ee-a39b-ee48c5541997" aria-describedby="d17f418e-d8a4-48ee-a39b-ee48c5541996"><span class="msportalfx-font-regular" id="_weave_e_8566">MITRE ATT&amp;CK</span></h2>
+<p style="text-align: justify;"><a href="https://attack.mitre.org/#" data-linktype="external">MITRE ATT&amp;CK</a><span> es un knowledge base al que se puede acceder de forma pública de tácticas y técnicas que los atacantes usan habitualmente, y que se crea y mantiene mediante la observación del mundo real. En este apartado, se pueden ver las detecciones que ya están activas en el área de trabajo, así como las que disponibles para configurarlas, con el fin de que conozca la cobertura de seguridad de la organización, según las tácticas y técnicas del marco MITRE ATT&amp;CK®.</span></p>
+<p style="text-align: center;"><a href="mitre-attck.png" target="_blank" rel="noopener"><img src="mitre-attck.png" alt="" width="1141" height="626" /></a></p>
+</div>
+<h4>3. Administración de contenido</h4>
+<div class="exe-fx exe-tabs">
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="d17f418e-d8a4-48ee-a39b-ee48c5541bb1" aria-describedby="d17f418e-d8a4-48ee-a39b-ee48c5541bb0"><span class="msportalfx-font-regular" id="_weave_e_9814">Centro de contenido</span></h2>
+<p style="text-align: justify;"><span>Proporciona acceso a </span><b>contenido</b><span> y soluciones de serie (integrados) de </span><b>Microsoft Sentinel</b><span>, que incluyen </span><b>contenido</b><span> para satisfacer las necesidades de producto, dominio o sector de un extremo a otro.</span></p>
+<p style="text-align: center;"><a href="contenido.png" target="_blank" rel="noopener"><img src="contenido.png" alt="" width="648" height="550" /></a></p>
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="d17f418e-d8a4-48ee-a39b-ee48c5541bb1" aria-describedby="d17f418e-d8a4-48ee-a39b-ee48c5541bb0"><span class="msportalfx-font-regular" id="_weave_e_9814">Repositorios</span></h2>
+<p>Se pueden configurar repositorios que permiten ayudar a la automatización de la implementación y administración del contenido en Microsoft Sentinel a través de repositorios centrales.</p>
+<p style="text-align: center;"><a href="repositorios.png" target="_blank" rel="noopener"><img src="repositorios.png" alt="" width="811" height="524" /></a></p>
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="d17f418e-d8a4-48ee-a39b-ee48c5541bb1" aria-describedby="d17f418e-d8a4-48ee-a39b-ee48c5541bb0"><span class="msportalfx-font-regular" id="_weave_e_9814">Comunidad</span></h2>
+<p>En este apartado se puede obtener noticias de la comunidad (blogs, foros) así como realizar contribuciones.</p>
+<p style="text-align: center;"><a href="comunidad.png" target="_blank" rel="noopener"><img src="comunidad.png" alt="" width="700" height="487" /></a></p>
+</div>
+<h4>4. Configuración</h4>
+<div class="exe-fx exe-tabs">
+<h2>Conectores de datos</h2>
+<p style="text-align: justify;">Se muestra la lista completa de conectores que proporciona Microsoft Sentinel y su estado en el área de trabajo. Se puede seleccionar el conector al que se desea conectar y, después, hay  que seleccionar Abrir la página del conector. <a href="https://docs.microsoft.com/es-es/azure/sentinel/connect-data-sources" target="_blank" rel="noopener">Fuente</a>.</p>
+<p style="text-align: center;"><a href="conectores-datos.png"><img src="conectores-datos.png" alt="" width="558" height="472" /></a></p>
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="d17f418e-d8a4-48ee-a39b-ee48c5541bb1" aria-describedby="d17f418e-d8a4-48ee-a39b-ee48c5541bb0"><span class="msportalfx-font-regular" id="_weave_e_9814">Análisis</span></h2>
+<p>En este apartado, se pueden realizar operaciones de seguridad e identificar y detener los ciberataques.</p>
+<p style="text-align: center;"><a href="analisis.png" target="_blank" rel="noopener"><img src="analisis.png" alt="" width="789" height="567" /></a></p>
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="d17f418e-d8a4-48ee-a39b-ee48c5541bb1" aria-describedby="d17f418e-d8a4-48ee-a39b-ee48c5541bb0"><span class="msportalfx-font-regular" id="_weave_e_9814">Lista de control</span></h2>
+<p>Permite correlacionar los datos de un origen de datos que se proporcionen con los eventos del entorno de Microsoft Sentinel.</p>
+<p style="text-align: center;"><img src="lista-control.png" alt="" width="1029" height="494" /></p>
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="d17f418e-d8a4-48ee-a39b-ee48c5541bb1" aria-describedby="d17f418e-d8a4-48ee-a39b-ee48c5541bb0"><span class="msportalfx-font-regular" id="_weave_e_9814">Automatización</span></h2>
+<p style="text-align: justify;"><span>Las reglas de automatización son un nuevo concepto de Microsoft Sentinel. Esta característica permite a los usuarios administrar de forma centralizada la automatización del control de incidentes. <strong><a href="https://docs.microsoft.com/es-es/azure/sentinel/automation" target="_blank" rel="noopener">Fuente</a></strong>.</span></p>
+<p style="text-align: center;"><img src="automatizacion.png" alt="" width="998" height="460" /></p>
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="d17f418e-d8a4-48ee-a39b-ee48c5541bb1" aria-describedby="d17f418e-d8a4-48ee-a39b-ee48c5541bb0"><span class="msportalfx-font-regular" id="_weave_e_9814">Configuración</span></h2>
+<p>En este apartado se puede configurar el área de trabajo, revisar los precios del producto así como configurar el análisis de comportamiento de las entidades, permisos del cuaderno de estrategias, etcétera.</p>
+<p style="text-align: center;"><a href="info-conf-areaTrabajo.png" target="_blank" rel="noopener"><img src="info-conf-areaTrabajo.png" alt="" width="792" height="357" /></a></p>
+</div>
+<h3>5. Grupo de recursos</h3>
+<p style="text-align: justify;">Si se pulsa sobre <strong>ciber-sentinel </strong>(ver figura inferior)<strong>, </strong>se accede al panel del grupo de recursos creados en el área de trabajo.</p>
+<p style="text-align: center;"><span><img src="acceso-recurso-ciber.png" alt="" width="1025" height="321" /></span></p>
+<p style="text-align: justify;"><span>Este panel consta de una cabecera con un buscador y botonera, un menú lateral izquierdo y una parte central. </span>En el menú lateral izquierdo, se tienen 6 secciones además de un buscador en la parte superior. Las secciones son las siguientes:</p>
+<ol>
+<li style="text-align: justify;"><strong>Información general:</strong> Registro de actividad, Control de acceso (IAM), Etiquetas, Visualizador de recursos, y Eventos.</li>
+<li style="text-align: justify;"><strong>Configuración:</strong> Implementaciones, Seguridad, Directivas, Propiedades y Bloqueos.</li>
+<li style="text-align: justify;"><strong>Administración de costos:</strong> Análisis de costos, Alertas de costos (versión preliminar), Presupuestos y Recomendaciones del asesor.</li>
+<li style="text-align: justify;"><strong>Supervisión:</strong> Información (versión preliminar), Alertas, Métricas, Configuración de diagnóstico, Registros, Recomendaciones del asesor, y Libros.</li>
+<li style="text-align: justify;"><strong>Automation: </strong>Exportar plantilla.</li>
+<li style="text-align: justify;"><strong>Soporte y solución de problemas:</strong> Nueva solicitud de soporte técnico.</li>
+</ol>
+<p>A continuación, se describen alguna de las opciones que se tienen disponibles.</p>
+<div class="exe-fx exe-tabs">
+<h2>Información general</h2>
+<p style="text-align: justify;">En esta ventana se dispone de la información general donde se puede encontrar desde la ubicación del espacio de trabajo, recursos, etcétera.</p>
+<p style="text-align: center;"><a href="info-general-recursos.png" target="_blank" rel="noopener"><img src="info-general-recursos.png" alt="" width="882" height="470" /></a></p>
+<h2>Registro de actividad</h2>
+<p>En esta ventana se pueden ver los registros que se han ido adquiriendo en el tiempo.</p>
+<p style="text-align: center;"><a href="registro-activida.png"><img src="registro-activida.png" alt="" width="901" height="621" /></a></p>
+<h2 class="fxs-blade-title-titleText msportalfx-tooltip-overflow" id="65808fd2-8a57-4aa2-a0e7-1a7b9226b14e" aria-describedby="65808fd2-8a57-4aa2-a0e7-1a7b9226b14d"><span class="msportalfx-font-regular" id="_weave_e_12766">Visualizador de recursos</span></h2>
+<p style="text-align: justify;">Se pueden observar todos los recursos y su conexión en el área de trabajo. En este caso, se tiene una máquina virtual Windows Server 2022 orion con una interfaza de red con ip pública.</p>
+<p style="text-align: center;"><a href="visualizador-recursos.png" target="_blank" rel="noopener"><img src="visualizador-recursos.png" alt="" width="887" height="480" /></a></p>
+<h2 style="text-align: justify;">Métricas</h2>
+<p style="text-align: justify;">En este caso, se ha seleccionado la métrica de la memoria RAM para las 2 máquinas virtuales.</p>
+<p style="text-align: center;"><a href="metrica-ram-MV.png"><img src="metrica-ram-MV.png" alt="" width="959" height="539" /></a></p>
+</div>
+<h3>6. Referencias</h3>
+<ul>
+<li><a href="https://docs.microsoft.com/es-es/azure/sentinel/quickstart-onboard" target="_blank" rel="noopener">[Instalar Microsoft Sentinel]</a></li>
+<li><a href="https://docs.microsoft.com/es-es/azure/sentinel/connect-windows-security-events?tabs=LAA" target="_blank" rel="noopener">[Conectar Equipos Windows en Sentinel]</a></li>
+<li><a href="https://docs.microsoft.com/es-es/azure/sentinel/connect-syslog" target="_blank" rel="noopener">[Conectar equipo Linux a Sentinel]</a></li>
+<li><a href="https://docs.microsoft.com/es-es/azure/sentinel/">https://docs.microsoft.com/es-es/azure/sentinel/</a></li>
+<li><a href="https://www.microsoft.com/security/blog/uploads/securityprod/2020/07/Azure-Sentinel-whitepaper.pdf">https://www.microsoft.com/security/blog/uploads/securityprod/2020/07/Azure-Sentinel-whitepaper.pdf</a></li>
+<li><a href="https://azure.microsoft.com/es-es/account/">https://azure.microsoft.com/es-es/account/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33_splunk.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

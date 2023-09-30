@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.2 Configuración DMZ - Pfsense | UT9. Fortificación perimetral: DMZ y cortafuegos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-128"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logo-jcrequena.png); background-repeat: no-repeat;"><div id="headerContent">UT9. Fortificación perimetral: DMZ y cortafuegos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT9. Fortificación perimetral: DMZ y cortafuegos.</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_seguridad_perimetral.html" class="no-ch">1. Seguridad perimetral</a></li>
+   <li><a href="2_elementos_de_arquitectura_segura.html" class="no-ch">2. Elementos de arquitectura segura</a></li>
+   <li><a href="3_introduccin_a_los_cortafuegos.html" class="no-ch">3. Introducción a los cortafuegos</a></li>
+   <li class="current-page-parent"><a href="4_introduccin_a_la_dmz.html" class="current-page-parent daddy">4. Introducción a la DMZ</a>
+   <ul>
+      <li><a href="41_instalacin_dmz__pfsense.html" class="no-ch">4.1 Instalación DMZ - Pfsense</a></li>
+      <li id="active"><a href="42_configuracin_dmz__pfsense.html" class="active no-ch">4.2 Configuración DMZ - Pfsense</a></li>
+      <li><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="no-ch">Práctica 1. Implementar un firewall PfSense en la red de la organización</a></li>
+   </ul>
+   </li>
+   <li><a href="5_fortificacin_de_una_dmz.html" class="daddy">5. Fortificación de una DMZ</a>
+   <ul class="other-section">
+      <li><a href="51_fortificacin_de_mikrotik_routeros.html" class="daddy">5.1 Fortificación de MikroTik RouterOS</a>
+      <ul class="other-section">
+         <li><a href="faqs_mikrotik.html" class="no-ch">FAQS Mikrotik</a></li>
+      </ul>
+      </li>
+      <li><a href="tarea_1_fortificacin_de_mikrotik_routeros.html" class="no-ch">Tarea 1. Fortificación de MikroTik RouterOS</a></li>
+      <li><a href="tarea_2_mejoras_a_nivel_de_seguridad_en_una_dmz.html" class="no-ch">Tarea 2. Mejoras a nivel de seguridad en una DMZ</a></li>
+      <li><a href="52_monitorizacin_con_dude.html" class="no-ch">5.2 Monitorización con Dude</a></li>
+      <li><a href="53_honeypot_en_dmz.html" class="no-ch">5.3 HoneyPot en DMZ</a></li>
+   </ul>
+   </li>
+   <li><a href="6_firewall_perimetral.html" class="daddy">6. Firewall perimetral</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_mikrotik__dmz_con_dos_routers.html" class="no-ch">Laboratorio 1. MikroTik - DMZ con dos routers</a></li>
+      <li><a href="61_firewalls_de_prxima_generacin.html" class="daddy">6.1 Firewalls de Próxima Generación</a>
+      <ul class="other-section">
+         <li><a href="prctica_2_firewall_perimieral_con_pfsense.html" class="no-ch">Práctica 2. Firewall perimieral con PfSense</a></li>
+         <li><a href="prctica_3_instalacin_y_configuracin_de_un_ngfw_perimetral.html" class="no-ch">Práctica 3. Instalación y configuración de un NGFW perimetral</a></li>
+      </ul>
+      </li>
+      <li><a href="62_mejoras_en_el_diseo_de_la_red_de_tu_organizacin.html" class="no-ch">6.2 Mejoras en el diseño de la red de tu organización</a></li>
+   </ul>
+   </li>
+   <li><a href="7_contramedidas_ddos.html" class="daddy">7. Contramedidas DDoS</a>
+   <ul class="other-section">
+      <li><a href="laboratorio_1_antiddos_con_fail2ban.html" class="no-ch">Laboratorio 1. Anti-DDoS con fail2ban</a></li>
+      <li><a href="71_deteccin_y_bloqueo_de_ataques_ddos_con_mikrotik.html" class="daddy">7.1 Detección y bloqueo de ataques DDoS con Mikrotik.</a>
+      <ul class="other-section">
+         <li><a href="prctica_4_deteccin_y_bloqueo_de_ataques_dos.html" class="no-ch">Práctica 4. Detección y bloqueo de ataques DoS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="41_instalacin_dmz__pfsense.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.2 Configuración DMZ - Pfsense</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id164">
+<div class="iDevice emphasis0" >
+<div id="ta164_164_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;">En este capítulo se verá cómo crear una <strong>DMZ desde un Firewall Pfsense</strong> que se creó en el <strong>capítulo 4.1.</strong> También, se verá como crear reglas en el Firewall.</p>
+<h3>2. Recursos necesarios y funcionalidades a conseguir</h3>
+<p><strong>Recursos</strong></p>
+<ul>
+<li>Máquina virtual Pfsense creada en el capítulo 4.1.</li>
+<li class="p1">Máquina virtual cliente (Ejemplo: kali Linux) en la red interna dmz y configurado el tcp/ip como automático.</li>
+<li class="p1">Máquina virtual Windows 10 en la red interna it.</li>
+</ul>
+<p><strong>Requisitos</strong></p>
+<p>En este escenario se tendrán 3 zonas: WAN, dmz e it.</p>
+<ul>
+<li><strong>wan:</strong> Conexión con el proveedor de internet.</li>
+<li><strong>dmz:</strong> Zona donde se alojan los servidores/servicios críticos.</li>
+<li><strong>it:</strong> Zona donde a los equipos sólo se les permite el acceso a internet.</li>
+</ul>
+<h3>3. Etapas </h3>
+<p style="text-align: justify;">Durante el laboratorio, se siguen una serie de etapas o pasos para conseguir las funcionalidades que se piden en el apartado 2:</p>
+<ol>
+<li style="text-align: justify;">Configurar las Interfaces de red:
+<ol>
+<li><strong>Interfaz LAN:</strong> Cambiar el nombre a DMZ.</li>
+<li><strong>Interfaz OPT1:</strong> Cambiar el nombre a IT y configurar ip estática a <span><span class="element-required">192.168.100.254/24.</span></span> </li>
+</ol>
+</li>
+<li style="text-align: justify;">Habilitar los servidores dhcp en las interfaces dmz e it.</li>
+<li style="text-align: justify;">Configurar los equipos en la zona it.</li>
+</ol>
+<h3 style="text-align: justify;">4. Configuración de interfaces</h3>
+<p style="text-align: justify;">En primer lugar, hay que realizar la configuración de las interfaces, y para ello, desde el menú <strong>Interfaces</strong>.</p>
+<p style="text-align: center;"><img src="menu-interfaces.png" alt="" width="116" height="199" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Menú interfaces.</em></p>
+<p style="text-align: justify;">Si se pulsa sobre '<strong>LAN</strong>', aparece una página donde se puede realizar la configuración de esta interfaz. Para este caso, se cambia la '<strong>Description</strong>' LAN por <strong>DMZ</strong> y el resto se deja igual.</p>
+<p style="text-align: center;"><img src="interfaz-LAN.png" alt="" width="948" height="661" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Interfaz LAN.</em></p>
+<p style="text-align: justify;">Para continuar, hay que pulsar '<strong>Save</strong>'. Aparece un mensaje en la parte superior (ver figura inferior) donde hay que pulsar en '<strong>Apply Changes</strong>'.</p>
+<p style="text-align: center;"><img src="save-conf-lan.png" alt="" width="955" height="122" /></p>
+<p style="text-align: justify;">Una vez se hayan aplicado los cambios, aparece un mensaje '<strong><span style="color: #339966;">The changes have been applied successfully</span></strong>' indicando que se ha tenido éxito si todo ha ido bien.</p>
+<p style="text-align: justify;">A continuación, hay que acceder de nuevo al menú '<strong>Interfaces'</strong> y seleccionar <strong>OPT1, </strong>que es la interfaz opcional em2 que se creó en el laboratorio 1.  Para este caso, se cambia lo siguiente:</p>
+<ul>
+<li style="text-align: justify;"><strong>Enable: </strong>Hay que seleccionarlo.</li>
+<li style="text-align: justify;"><strong>Description: </strong>Se pone <strong>IT </strong>que es como se llamó a esta tercera red en el laboratorio 1.</li>
+<li style="text-align: justify;"><span><strong>IPv4 Configuration Type:</strong> Se pone Static IPv4.</span></li>
+<li style="text-align: justify;"><span><span class="element-required"><strong>IPv4 Address:</strong> Hay poner una ip estática de la red LAN, para este caso se pone 192.168.100.254 y que será la puerta de enlace de la red 192.168.100.0. En <span class="input-group-addon input-group-inbetween pfIpMask"><strong>/</strong>, hay que poner la máscara que para este caso es 24.</span></span></span></li>
+</ul>
+<p><span><span class="element-required"><span class="input-group-addon input-group-inbetween pfIpMask">Para guardar los cambios hay que pulsar '<strong>Save</strong>'.</span></span></span></p>
+<p style="text-align: center;"><img src="interfaz-em2.png" alt="" width="767" height="811" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Interfaz OPT1.</em></p>
+<p style="text-align: justify;">Para guardar los cambios hay que pulsar '<strong>Save</strong>' y luego en '<strong>Apply Changes</strong>'.</p>
+<p style="text-align: justify;">Si se accede a la <strong>consola del pfSense</strong>, se puede comprobar que ya se tienen las <strong>3 interfaces</strong> con la descripción, ip y máscara que se ha configurado anteriormente.</p>
+<p style="text-align: center;"><img src="menu-pfsense-consala-interfaces.png" alt="" width="643" height="309" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Consola de pfSense.</em></p>
+<p style="text-align: justify;">Si se accede al menú '<strong>Interfaces' </strong>y se selecciona la opción<strong> 'Assignments', </strong>hay una opción interesante que está en la pestaña<strong> VLANs </strong>y que permite el <strong>marcado</strong> de <strong>VLANs.</strong></p>
+<p style="text-align: center;"><strong><img src="interfaces-VLAN.png" alt="" width="957" height="319" /></strong></p>
+<p style="text-align: center;"><strong><em>Figura 5.</em></strong><em> Página de edición de interfaces.</em></p>
+<p style="text-align: justify;">Si se pulsa sobre '<strong>Add</strong>', podría seleccionar en una o en todas las interfaces que se tienen para crear varias subredes utilizando VLANs. Ejemplo: Si se selecciona la red <strong>dmz</strong>, se podría crear una VLAN con id 10 y darle una prioridad y una descripción.</p>
+<p style="text-align: center;"><img src="interfaces-VLAN.png" alt="" width="974" height="436" /></p>
+<p style="text-align: center;"><strong><em>Figura 6.</em></strong><em> Página de edición de VLANs.</em></p>
+<p style="text-align: justify;">Volviendo a la opción<strong> 'Assignments', </strong>también se podría hacer un Bridge con la unión de varias interfaces, ejemplo: Si se desea que la interfaz <strong>DMZ</strong> e <strong>IT</strong> vayan en una misma red.</p>
+<p style="text-align: center;"><img src="interfaces-Bridge.png" alt="" width="748" height="387" /></p>
+<p style="text-align: center;"><strong><em>Figura 7.</em></strong><em> Página de edición de Bridges.</em></p>
+<h3>4. Configuración de los servidores dhcps</h3>
+<p style="text-align: justify;">El siguiente paso es configurar los servidores dhcp y para ello, hay que acceder al menú '<strong>Services</strong>' --&gt; '<strong>DHCP Serve</strong>r'.</p>
+<p style="text-align: center;"><img src="service-dhcp.png" alt="" width="165" height="173" /></p>
+<p style="text-align: center;"><strong><em>Figura 8.</em></strong><em> Menú Services.</em></p>
+<p style="text-align: justify;">En este caso, hay que <strong>habilitar el dhcp</strong> para<strong> it</strong> con los siguientes datos:</p>
+<ul>
+<li style="text-align: justify;"><strong>Enable DHCP server on IT interface:</strong> Habilitar.</li>
+<li style="text-align: justify;"><span class="element-required"><strong>Range</strong>: 192.168.100.100 - 192.168.100.150</span></li>
+<li style="text-align: justify;"><span class="element-required"><span><strong>DNS servers:</strong> 1.1.1.1 y 8.8.8.8</span></span></li>
+<li style="text-align: justify;"><span class="element-required"><span><strong>Gateway</strong>: 192.168.100.254.</span></span></li>
+</ul>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><img src="dhcp-server-it-01.png" width="953" height="730" /></td>
+<td style="width: 50%; text-align: center;"><a href="dhcp-server-it-02.png"><img src="dhcp-server-it-02.png" alt="" width="942" height="777" /></a></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 9.</em></strong><em> Configuración de los servidores DHCP - 1.</em></span></td>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 10.</em></strong><em> Configuración de los servidores DHCP - 2.</em></span></td>
+</tr>
+</tbody>
+</table>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Esta opción de menú tiene muchas más opciones que en este escenario no son necesarias, pero que habría que estudiar dependiendo de lo que se quiera conseguir, ejemplo: En la sección '<strong>Additional Pools</strong>', se tiene la posibilidad de crear un <strong>Pool</strong> si se desea subdividir el rango que se ha definido anteriormente en otros más pequeños, por ejemplo: se puede crear un pool para dar ip's en el rango 192.168.100-192.168-120 y otro para dar ip's en el rango  192.168.121-192.168-150.</p>
+</div>
+<p style="text-align: justify;">Para guardar los cambios, hay que pulsar el botón '<strong>Save</strong>' y si todo ha ido bien, aparece el siguiente mensaje: '<strong><span style="color: #339966;">The changes have been applied successfully</span></strong>'.</p>
+<p style="text-align: justify;">Si ahora se accede a la pestaña de la '<strong>DMZ</strong>', se puede ver que <strong>ya está configurado el servidor dhcp</strong> con el rango establecido, etcétera.</p>
+<p style="text-align: center;"><img src="dhcp-server-dmz.png" alt="" width="956" height="736" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 11.</em></strong><em> Configuración del servidor DHCP DMZ.</em></span></p>
+<p style="text-align: justify;">Por último, si se accede al menú '<strong>Status</strong>'  --&gt; '<strong>DHCP Leases</strong>', se pueden observar los clientes a los que se les ha asignado una ip con alguno de los servidores dhcp disponibles. Para este caso, al equipo kali se le ha asignado una ip del servidor dhcp de la dmz.</p>
+<p style="text-align: center;"><img src="dhcp-leases.png" alt="" width="1165" height="436" /></p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 12.</strong> Página DHCP Leases.</span></em></p>
+<p style="text-align: justify;">Si se accede a la botonera '<strong>Actions</strong>', se tienen dos posibilidades de mapeo de la asignación de la dirección ip: Asignación estática y mapeo con Wake On LAN.</p>
+<table border="0" style="width: 29.4902%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="width: 16.0884%; text-align: center;"><img src="add-static-mapping.png" alt="" width="188" height="126" /></td>
+<td style="width: 13.4035%; text-align: center;"><img src="add-wl-mapping.png" alt="" width="198" height="124" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 13.</strong> Botonera Actions.</span></em></p>
+<p style="text-align: justify;">Como ejemplo, se podría realizar una asignación estática al equipo kali para que siempre le asigne esa dirección. O también, asignarla al <strong>mapeo Wake on LAN</strong> (protocolo que permite encender un equipo de forma remota, en este caso, se envía un Paquete Mágico WOL desde la vista Concesiones de DHCP).</p>
+<p style="text-align: justify;">En la parte superior derecha la <strong>figura 12</strong>, se tiene una botonera para gestionar los servidores dhcp, donde se pueden: parar, reiniciar, etcétera.</p>
+<p style="text-align: center;"><img src="botonera-dhcp-Leases.png" alt="" width="164" height="39" /></p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 14.</strong> Botonera gestión de los servidores dhcp.</span></em></p>
+<p style="text-align: justify;">Hay muchos otros servicios (en el menú  Services) como el de reenvío de DNS (DNS Forwarder), el de SNMP para enviar logs, el Wak on LAN que se ha comentado anteriormente, copias automáticas de backup, etcétera.</p>
+<p style="text-align: center;"><img src="menu-services.png" alt="" width="143" height="496" /></p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 15.</strong> Menú Services.</span></em></p>
+<p style="text-align: justify;">Si se accede a la página principal, en la parte inferior derecha, ya se pueden ver las 3 interfaces que se acaban de configurar listas.</p>
+<p style="text-align: center;"><img src="interfaces-pag-prin.png" alt="" width="569" height="148" /></p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 16.</strong> Interfaces de red.</span></em></p>
+<h3>5. Configuración de la zona IT</h3>
+<p style="text-align: justify;">En este apartado, se añade un equipo <strong>Windows 10 en la zona IT</strong> y se le va a <strong>limitar el acceso a la red DMZ</strong> para que no pueda acceder a los servicios como por ejemplo: ssh y servidor web, dado que los equipos de la <strong>zona IT </strong>sólo se les permite el acceso a internet.</p>
+<p style="text-align: center;"><img src="adaptador-red-W10.png" alt="" width="434" height="65" /> </p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 17.</strong> Adaptador de red de la máquina virtual Windows 10.</span></em></p>
+<p style="text-align: justify;">Una vez iniciado el equipo Windows 10, si se accede al menú '<strong>Status</strong>'  --&gt; '<strong>DHCP Leases</strong>', se puede observa que se le ha asignado una ip con el servidores dhcp de it.</p>
+<p style="text-align: center;"><img src="leases-W10.png" alt="" width="1148" height="142" /></p>
+<p style="text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 18.</strong> Página DHCP Leases.</span></em></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Por otro lado, si se realiza un<strong> ipconfig /all</strong> en el equipo Windows 10, se observa que ha obtenido ip, gateway y servidor dns primario y secundario, etcétera.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="ipconfig-all.png" alt="" width="595" height="441" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 19.</strong> Información tcp/ip del equipo Windows 10.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si se intenta acceder a internet, se observa que no se tiene acceso.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="no-acceso-ainternet.png" alt="" width="855" height="359" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 20.</strong> Error al acceder a internet.</em></span></p>
+<p style="text-align: justify;">Si se hace un ping al firewall, se observa también que no se tiene acceso ya que no se tienen reglas para permitirlo.</p>
+<p style="text-align: center;"><img src="ping-firewall.png" alt="" width="409" height="186" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 21.</strong> Ping al firewall.</em></span></p>
+<p style="text-align: justify;">Si se accede al menú '<strong>Firewall</strong>' --&gt; '<strong>Rules</strong>' pestaña '<strong>IT</strong>', se puede observar el mensaje '<strong><span style="color: #ff9900;">No rules are currently defined for this interface</span></strong>' - '<strong><span style="color: #ff9900;">All incoming connections on this interface will be blocked until pass rules are added. Click the button to add a new rule</span></strong>', donde se indica que se tienen todas las comunicaciones cortadas/bloqueadas.</p>
+<p style="text-align: center;"><img src="firewall-rules.png" alt="" width="948" height="305" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 22.</strong> Menú reglas del firewall.</em></span></p>
+<p style="text-align: justify;"><strong><span style="font-size: 12pt;">Crear Regla y alias para los puertos</span></strong></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Lo que hay que realizar es <strong>crear una nueva regla</strong>, pero antes, hay que crear alias para los puertos ya que para navegar por internet se necesita el 80 y el 443 y para no tener que crear 2 reglas, se crea un alias con estos 2 puertos.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para ello, hay que acceder al menú '<strong>Firewall</strong>' --&gt; '<strong>Aliases</strong>' pestaña '<strong>Ports' </strong>y pulsar el botón <strong>'Add'. </strong>En la nueva página que aparece, se introducen los datos según se puede ver en la figura siguiente. Por último, para guardar los cambios, hay que pulsar el botón '<strong>Save</strong>'.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="alias-puertos.png" alt="" width="951" height="521" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 23.</strong> Creación de alias para los puertos 80 y 443.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Una vez guardado el alias, hay que pulsar en '<strong>Apply Changes'</strong>.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><img src="apply-changes-alias.png" alt="" width="737" height="101" /></strong></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 24. </em></strong><em>Aplicar los cambios.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si todo ha ido bien, aparecen los mensajes: '<strong><span style="color: #339966;">The changes have been applied successfully. The firewall rules are now reloading in the background. <a href="https://192.168.1.1/status_filter_reload.php" style="color: #339966;">Monitor</a> the filter reload progress</span></strong>'.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Una vez ya se tiene el alias creado, hay que acceder al menú '<strong>Firewall</strong>' --&gt; '<strong>Rules</strong>' pestaña '<strong>IT</strong>' y pulsar el botón de creación de una regla de permisividad <img src="boton-add-regla-permitir.png" alt="" width="54" height="21" /> y a continuación añadir lo siguiente:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><span class="element-required"><strong>Action</strong>: Pass (de paso).</span></span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><span class="element-required"><strong>Interface:</strong> IT.</span></span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><span class="element-required"><strong>Source:</strong> any (de cualquier origen).</span></span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><span class="element-required"><strong>Destination:</strong> any (destino cualquier sitio).</span></span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><span class="element-required"><span><strong>Destination Port Range:</strong> From web To web (aquí es donde se añade el nombre del alias creado anteriormente).</span></span></span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><span class="element-required"><span><strong>Description</strong>: Navegación web de equipos de la zona IT.</span></span></span></li>
+</ul>
+<table border="0" style="height: 779px; width: 100%;">
+<tbody>
+<tr style="height: 759px;">
+<td style="width: 50%; text-align: center; height: 759px;"><img src="firewall-rules-01.png" alt="" width="725" height="509" /></td>
+<td style="width: 50%; text-align: center; height: 759px;"><img src="firewall-rules-02.png" alt="" width="722" height="753" /></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px; text-align: center;" colspan="2">
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 25. </em></strong><em>Configuración de la regla.</em></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para guardar la regla, hay que pulsar el botón '<strong>Save</strong>' y luego '<strong>Apply Changes</strong>'. Si todo ha ido bien, aparecen los mensajes: '<strong><span style="color: #339966;">The changes have been applied successfully. The firewall rules are now reloading in the background. <a href="https://192.168.1.1/status_filter_reload.php" style="color: #339966;">Monitor</a> the filter reload progress</span></strong>', y ya aparece la regla creada.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="regla-creada.png" alt="" width="1152" height="249" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 26. </em></strong><em>Regla creada.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Por último, hay que añadir una segunda <strong>regla para el puerto UDP 53 DNS</strong> para poder tener resolución de nombres.</span></p>
+<table border="0" style="height: 777px; width: 100%;">
+<tbody>
+<tr style="height: 759px;">
+<td style="width: 50%; text-align: center; height: 759px;"><img src="regla-dns-01.png" alt="" width="729" height="514" /></td>
+<td style="width: 50%; text-align: center; height: 759px;"><img src="regla-dns-02.png" alt="" width="720" height="753" /></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 50%; height: 18px; text-align: center;" colspan="2"><span style="font-size: 12pt;"><strong><em>Figura 27. </em></strong><em>Configuración de la regla DNS.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para guardar la regla, hay que pulsar el botón '<strong>Save</strong>' y luego '<strong>Apply Changes</strong>'. Si todo ha ido bien, aparecen los mensajes: '<strong><span style="color: #339966;">The changes have been applied successfully. The firewall rules are now reloading in the background. <a href="https://192.168.1.1/status_filter_reload.php" style="color: #339966;">Monitor</a> the filter reload progress</span></strong>', y ya aparece la regla creada.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="regla-dns-creada.png" alt="" width="953" height="241" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 28. </em></strong><em>Regla DNS creada.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Ahora, si se accede al navegador del equipo Windows 10, ya se tiene acceso a internet, pero si se intenta realizar un ping, no funcionará ya que no se ha creado ninguna regla para permitir los paquetes ICMP.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><img src="si-internet.png" alt="" width="881" height="553" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 29. </em></strong><em>Acceso a internet desde el equipo Windows 10</em><em>.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"></span>Una buena práctica, sería limitar en las dos reglas que se han creado que el tráfico origen provenga de la red IT, para ello, en la botonera '<strong>Actions</strong>' de la regla (hay que realizarlo en las 2 reglas que se tienen), hay que pulsar en el <strong>botón de edición</strong> (lápiz).</p>
+<p style="text-align: center;"><img src="botonera-Actions.png" alt="" width="123" height="63" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 30. </em></strong><em>Botonera de las reglas.</em></span></p>
+<p style="text-align: justify;">Una vez se está en modo edición, hay que indicar que la fuente u origen sea <span class="element-required">de la <strong>red IT</strong>. A continuación hay que pulsar en '<strong>Save</strong>' y luego en<strong> 'Apply Changes'</strong>.</span></p>
+<p style="text-align: center;"><span class="element-required"><img src="source-regla.png" alt="" width="1124" height="161" /></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 31. </em></strong><em>Añadir la red IT como fuente u origen.</em></span></p>
+<p style="text-align: justify;">Una vez se ha establecido la fuente red IT en las dos reglas, sólo se permitirá el tráfico que provenga de la red IT.</p>
+<h3>6. Crear reglas de bloqueo</h3>
+<p style="text-align: justify;">Si desde el <strong>equipo Windows 10</strong> que está en la <strong>red IT</strong> se intenta <strong>acceder a la red dmz, </strong>por ejemplo, al servidor web alojado en el equipo 192.168.1.100 (kali linux) que pertenece a la red dmz, se puede ver que se accede sin problemas.</p>
+<p style="text-align: center;"><img src="acceso-serv-web.png" alt="" width="848" height="579" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 32. </em></strong><em>Acceso red dmz desde equipo en red IT.</em></span></p>
+<p>La idea es crear una regla para impedir que se pueda acceder a los servicios de la red dmz ya que en esta red, es donde se encuentran los servidores y equipos críticos que se desean tener bajo protección. Para ello, hay que acceder al menú '<strong>Firewall</strong>' --&gt; '<strong>Rules</strong>' pestaña <strong>IT</strong> y pulsar sobre el botón de crear una regla de denegación <img src="boton-add-regla-denegacion.png" alt="" width="51" height="26" />.</p>
+<p style="text-align: center;"><img src="reglasit-03.png" alt="" width="1159" height="255" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 33. </em></strong><em>Añadir r</em><em>egla en IT.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Una vez se accede a la página de creación de la regla hay que configurar lo siguiente:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><span style="font-size: 12pt;"><label class="col-sm-2 control-label"> <span class="element-required"><strong>Action</strong>: Block (Bloquear).</span></label></span></span></li>
+<li style="text-align: justify;"><strong><strong><label class="col-sm-2 control-label"><span class="element-required">Interface: </span></label></strong></strong><label class="col-sm-2 control-label"><span class="element-required">IT.</span></label></li>
+<li style="text-align: justify;"><strong>Protocol</strong>: Any (hay que bloquear todo el tráfico).</li>
+<li style="text-align: justify;"><span class="element-required"><strong>Source</strong>: IT net (origen de la zona IT).</span></li>
+<li style="text-align: justify;"><span class="element-required"><strong>Destination</strong>: DMZ net (destino la zona DMZ).</span></li>
+<li style="text-align: justify;"><span class="element-required"><span><strong>Description</strong>: Bloqueo de todo el tráfico que vaya de la red IT a la red DMZ.</span></span></li>
+</ul>
+<table border="0" style="width: 100%; height: 578px;">
+<tbody>
+<tr style="height: 555px;">
+<td style="width: 50%; text-align: center; height: 555px;"><img src="rule-denegacion-01.png" alt="" width="729" height="511" /></td>
+<td style="width: 50%; text-align: center; height: 555px;"><img src="regla-it-b.png" alt="" width="723" height="704" /></td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 100%; text-align: center; height: 23px;" colspan="2"><span style="font-size: 12pt;"><strong><em>Figura 34. </em></strong><em>Crear r</em><em>egla IT.</em></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para guardar la regla, hay que pulsar el botón '<strong>Save</strong>' y luego '<strong>Apply Changes</strong>'. Si todo ha ido bien, aparecen los mensajes: '<strong><span style="color: #339966;">The changes have been applied successfully. The firewall rules are now reloading in the background. <a href="https://192.168.1.1/status_filter_reload.php" style="color: #339966;">Monitor</a> the filter reload progress</span></strong>', y ya aparece la regla creada. Hay que moverla a la primera posición para que prevalezca la denegación de la regla sobre la permisividad de las otras 2 que se hicieron anteriormente.</span><span style="font-size: 12pt;"></span></p>
+<p><img src="nueva-regla-it.png" alt="" width="1162" height="462" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 35. </em></strong><em>R</em><em>eglas creadas.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"></span>Ahora, si se accede desde el <strong>equipo Windows 10 de la red IT</strong> a un <strong>servicio de la red DMZ</strong>, por ejemplo, al servidor web (ver figura inferior) que está corriendo en el equipo Kali Linux que pertenece a la red DMZ, se puede observar que no se puede acceder debido a la regla que se ha creado anteriormente (Figura 34).</p>
+<p style="text-align: center;"><img src="acceso-serv-web-error.png" alt="" width="849" height="578" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><em>Figura 36. </em></strong><em>Error al acceder al servidor web de la DMZ</em><em>.</em></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"></span></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Por defecto, si no se crean reglas de permisividad, todo el tráfico está bloqueado entre las redes.</p>
+</div>
+<h3>7. Redirigir del exterior las peticiones a los servidores ftp y http</h3>
+<p style="text-align: justify;">Para <strong>redirigir puertos en PFSense</strong> se puede realizar con <strong>UPnP y NAT-PMP</strong>, pero dado que UPnP es un protocolo que permite abrir puertos en el firewall de forma automática cuando lo solicita un cliente, esto no sería muy seguro por lo que no lo utilizaríamos.</p>
+<p style="text-align: justify;">La solución es abrir puertos en la NAT (Port forwarding), de esta manera, para acceder desde el exterior a determinados servicios como ftp, https, ssh, etcétera, hay que abrir diferentes puertos en la NAT para permitir iniciar la conexión.</p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Si se abren puertos en la NAT, pero se tiene el <strong>CG-NAT</strong> del operador, esto no funcionará.</p>
+</div>
+<p style="text-align: justify;"><strong>El procedimiento es:</strong> Para abrir la NAT, lo primero que hay que hacer es ir a la sección de «Firewall / NAT», y en la pestaña de «Port forward» crear una nueva regla con lo siguiente:</p>
+<ul>
+<li style="text-align: justify;"><strong>Interface:</strong> WAN</li>
+<li style="text-align: justify;"><strong>Address Family:</strong> IPv4</li>
+<li style="text-align: justify;"><strong>Protocol:</strong> Hay que elegir el que se necesite, ejemplo UDP si se tiene una VPN con Wireguard, TCP para el servidor FTP, etcétera.<br />Source: vacío</li>
+<li style="text-align: justify;"><strong>Destination:</strong> WAN Address</li>
+<li style="text-align: justify;"><strong>Destination Port Range:</strong> Hay que poner un ranfo o el puerto en cuestión, ejemplo: Puerto 51400.</li>
+<li style="text-align: justify;"><strong>Redirect target IP:</strong> type Single host, Address la dirección IP privada a la que quieres abrir el puerto.</li>
+<li style="text-align: justify;"><strong>Redirect target port:</strong> debe ser el mismo puerto que en «Destination Port Range». Esta función, permite que de cara a la WAN se tenga abierto el 51400, pero de cara interno se pueda modificar al vuelo y usar el 51500, por ejemplo.</li>
+</ul>
+<p>Hay que <strong>verificar que la NAT</strong> está realizada correctamente, en «<strong>Outbound</strong>» se puede verificar.</p>
+<p style="text-align: justify;">Por último, hay que comprobar que en «<strong>Firewall / Rules</strong>» y en la pestaña WAN está la regla que se acaba de crear en la NAT, es muy importante el orden de esta regla, si, por ejemplo, se tiene un «denegar todo» arriba después de las reglas de permiso, esta nueva regla se colocará abajo del todo, y se debe reordenar.</p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><strong><span style="color: #ff0000;">Recordamos</span> que las reglas se analizan en serie</strong>, desde<strong> arriba hacia abajo</strong>, si ponemos una regla muy general arriba, y abajo las más específicas, estas últimas nunca se van a satisfacer, porque anteriormente se ha cumplido una regla más general.</p>
+</div>
+<h3>8. Conclusiones</h3>
+<p style="text-align: justify;">En este capítulo se ha conseguido aislar los servidores en una red dmz de los otros equipos de la organización, de esta manera, sólo los equipos deseados serán los que por medio de reglas, puedan acceder de manera selectiva a los servicios necesarios.</p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="41_instalacin_dmz__pfsense.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="prctica_1_implementar_un_firewall_pfsense_en_la_red_de_la_organizacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

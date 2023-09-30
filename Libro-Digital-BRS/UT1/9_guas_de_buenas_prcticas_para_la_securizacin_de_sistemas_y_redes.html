@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9. Guías de buenas prácticas para la securización de sistemas y redes | UT1. Introducción al bastionado </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-56"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">UT1. Introducción al bastionado</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD1. Introducción al bastionado: Diseño del plan de seguridad</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_diseo_de_planes_de_securizacin.html" class="daddy">2. Diseño de Planes de Securización</a>
+   <ul class="other-section">
+      <li><a href="21_sistemas_de_gestin_de_seguridad_de_la_informacin.html" class="no-ch">2.1 Sistemas de Gestión de Seguridad de la información</a></li>
+      <li><a href="22_diseo_y_elaboracin_de_planes_de_seguridad.html" class="no-ch">2.2 Diseño y elaboración de planes de seguridad</a></li>
+      <li><a href="23_resumen.html" class="no-ch">2.3 Resumen</a></li>
+   </ul>
+   </li>
+   <li><a href="3_anlisis_de_riesgos.html" class="daddy">3. Análisis de riesgos</a>
+   <ul class="other-section">
+      <li><a href="31_incibe.html" class="daddy">3.1 INCIBE</a>
+      <ul class="other-section">
+         <li><a href="tarea_1_conoce_tus_riesgos.html" class="no-ch">Tarea 1. Conoce tus riesgos</a></li>
+      </ul>
+      </li>
+      <li><a href="32_metodologas_para_el_anlisis_de_riesgos.html" class="no-ch">3.2 Metodologías para el análisis de riesgos</a></li>
+      <li><a href="33_confidencialidad_integridad_y_disponibilidad.html" class="no-ch">3.3 Confidencialidad, Integridad y Disponibilidad</a></li>
+   </ul>
+   </li>
+   <li><a href="4_economa_circular_e_industria_40.html" class="daddy">4. Economía circular e Industria 4.0</a>
+   <ul class="other-section">
+      <li><a href="41_la_ec_aplicada_a_las_tic.html" class="no-ch">4.1 La EC aplicada a las TIC</a></li>
+      <li><a href="tarea_2_economa_circular_e_industria_40.html" class="no-ch">Tarea 2. Economía circular e Industria 4.0.</a></li>
+   </ul>
+   </li>
+   <li><a href="5_defensa_en_profundidad_en_entornos_industriales.html" class="daddy">5. Defensa en profundidad en entornos industriales</a>
+   <ul class="other-section">
+      <li><a href="tarea_3_seguridad_en_profundidad_de_en_entornos_industriales.html" class="no-ch">Tarea 3. Seguridad en profundidad de en entornos industriales</a></li>
+   </ul>
+   </li>
+   <li><a href="6_superficie_de_ataque_en_una_infraestructura_tecnolgica.html" class="no-ch">6. Superficie de ataque en una infraestructura tecnológica</a></li>
+   <li><a href="7_plan_de_medidas_tcnicas_de_seguridad.html" class="daddy">7. Plan de medidas técnicas de seguridad</a>
+   <ul class="other-section">
+      <li><a href="71_clasificacin_de_medidas_de_seguridad.html" class="daddy">7.1. Clasificación de medidas de seguridad</a>
+      <ul class="other-section">
+         <li><a href="711_seguridad_fsica.html" class="no-ch">7.1.1 Seguridad física</a></li>
+         <li><a href="712_seguridad_lgica.html" class="no-ch">7.1.2 Seguridad lógica</a></li>
+         <li><a href="713_seguridad_activa.html" class="no-ch">7.1.3 Seguridad activa</a></li>
+         <li><a href="714_seguridad_pasiva.html" class="no-ch">7.1.4 Seguridad pasiva</a></li>
+      </ul>
+      </li>
+      <li><a href="72_medidas_tcnicas_de_seguridad.html" class="no-ch">7.2 Medidas Técnicas de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="8_polticas_de_securizacin_ms_habituales.html" class="no-ch">8. Políticas de securización más habituales</a></li>
+   <li id="active"><a href="9_guas_de_buenas_prcticas_para_la_securizacin_de_sistemas_y_redes.html" class="active no-ch">9. Guías de buenas prácticas para la securización de sistemas y redes</a></li>
+   <li><a href="10_estndares_de_securizacin_de_sistemas_y_redes.html" class="no-ch">10. Estándares de securización de sistemas y redes</a></li>
+   <li><a href="11_caracterizacin_de_procedimientos_instrucciones_y_recomendaciones.html" class="no-ch">11. Caracterización de procedimientos, instrucciones y recomendaciones</a></li>
+   <li><a href="12_niveles_escalados_y_protocolos_de_atencin_a_incidencias.html" class="daddy">12. Niveles, escalados y protocolos de atención a incidencias</a>
+   <ul class="other-section">
+      <li><a href="121_respuesta_a_los_incidentes_de_seguridad.html" class="no-ch">12.1 Respuesta a los incidentes de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="13_soluciones_de_centros_de_operacin_de_red_y_centros_de_seguridad_de_red_nocs.html" class="daddy">13. Soluciones de Centros de Operación de Red, y Centros de Seguridad de Red: NOCs</a>
+   <ul class="other-section">
+      <li><a href="tarea_4_el_centro_de_operaciones_de_seguridad_moderno_soc.html" class="no-ch">Tarea 4. El centro de operaciones de seguridad moderno (SOC)</a></li>
+   </ul>
+   </li>
+   <li><a href="caso_prctico_prcticas_correctas_en_los_planes_de_securizacin_y_bastionado.html" class="no-ch">Caso práctico. Prácticas correctas en los planes de securización y bastionado</a></li>
+   <li><a href="14_referencias.html" class="no-ch">14. Referencias</a></li>
+   <li><a href="15_glosario.html" class="no-ch">15. Glosario</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="8_polticas_de_securizacin_ms_habituales.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="10_estndares_de_securizacin_de_sistemas_y_redes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">9. Guías de buenas prácticas para la securización de sistemas y redes</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id94">
+<div class="iDevice emphasis0" >
+<div id="ta94_118_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">A lo largo de ese curso se va a profundizar en las mejores prácticas para dotar de seguridad a nuestros sistemas, desde este<span> </span><strong>módulo de bastionado</strong><span> </span>se hace una recopilación de los estándares para implementar medidas de seguridad adecuadas a los sistemas y a las redes. </p>
+<p style="text-align: justify;">A continuación, se realiza una recopilación o<span> </span><strong>decálogo básico</strong><span> </span>de seguridad:</p>
+<ol>
+<li style="text-align: justify;"><strong>Instaurar la “Cultura de Ciberseguridad”</strong>, la formación y concienciación de los empleados es uno de los pilares fundamentales para que la cultura de la ciberseguridad se implante en cualquier organización.</li>
+<li style="text-align: justify;"><strong>Prestar atención</strong>, por eso es importante la concienciación,<span> </span><strong>un usuario entrenado no abrirá ningún enlace ni descargará ningún fichero adjunto procedente de un correo electrónico</strong><span> </span>que presente cualquier indicio o patrón fuera de lo habitual, los ejercicios y<span> </span><strong>campañas de phishing</strong><span> </span>son un buen punto de partida.</li>
+<li style="text-align: justify;"><strong>Utilizar software de seguridad</strong>, herramientas antivirus y antimalware, cortafuegos, segregación de redes, herramientas de borrado seguro, detección de intrusiones, etc.</li>
+<li style="text-align: justify;"><strong>Limitar la superficie de exposición a las amenazas</strong>, no solo hay que implementar medidas de seguridad que protejan el acceso a la información, sino que hay que determinar los servicios que son estrictamente necesarios.</li>
+<li style="text-align: justify;"><strong>Cifrar la información sensible</strong>, si disponemos de una buena política de cifrado nuestra información estará mejor protegida del robo o manipulación si es interceptada por terceros.</li>
+<li style="text-align: justify;"><strong>Gestión de contraseñas seguras y de calidad</strong>, rotación de contraseñas, eliminación de contraseñas por defecto, implementación del doble factor de autenticación cuando se considere necesario.</li>
+<li style="text-align: justify;"><strong>Borrado seguro de la información</strong><span> </span>o destrucción de soportes de manera adecuada, controlada y certificada cuando sea posible.</li>
+<li style="text-align: justify;"><strong>Gestión de copias de seguridad</strong><span> </span>periódicas, establecimiento de policitas adecuadas en función de la sensibilidad de los datos y los riesgos asociados, teniendo en cuenta la repercusión para la organización en<span> </span><strong>caso de perdida</strong><span> </span>por infección de código malicioso tipo ransomware, averías del hardware de almacenamiento, borrado de información involuntaria por parte del usuario, robo, etc<strong>. Estudiar la externalización de las copias</strong>.</li>
+<li style="text-align: justify;"><strong>Gestión de actualizaciones y aplicación de partes de seguridad</strong><span> </span>de aplicaciones y sistemas operativos, esta buena práctica es la mejor manera de evitar dar facilidades, dejar posibles vulnerabilidades al descubierto y que una potencial amenaza la pueda explotar.</li>
+<li style="text-align: justify;"><strong>Revisa regularmente la configuración de seguridad aplicada</strong>, los permisos de los usuarios, para acceder a los datos y a las aplicaciones, revisar las opciones de seguridad de nuestra infraestructura TIC.</li>
+</ol>
+<h4>Guías abiertas a necesidades</h4>
+<ul>
+<li><a href="https://www.incibe.es/protege-tu-empresa/guias" target="_blank" rel="noopener">Guías de ciberseguridad del INCIBE.</a></li>
+<li><a href="https://www.ccn-cert.cni.es/pdf/guias/1297-indice-series-ccn-stic/file.html" target="_blank" rel="noopener">Guías STIC del CCN.</a></li>
+<li><a href=" https://www.enisa.europa.eu/tools" target="_blank" rel="noopener">Guías de la ENISA.</a></li>
+<li><a href="https://ecs-org.eu/publications" target="_blank" rel="noopener">Guías de ECSO.</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="8_polticas_de_securizacin_ms_habituales.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="10_estndares_de_securizacin_de_sistemas_y_redes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

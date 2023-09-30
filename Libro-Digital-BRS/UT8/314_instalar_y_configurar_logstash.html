@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.4 Instalar y configurar Logstash | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-113"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li id="active"><a href="314_instalar_y_configurar_logstash.html" class="active daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul>
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3141_output_genrico_logstash.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.1.4 Instalar y configurar Logstash</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id157">
+<div class="iDevice emphasis0">
+<div id="ta157_85" class="block iDevice_content">
+<h3 style="text-align: justify;">1. Introducción</h3>
+<p style="text-align: justify;">En este apartado se describe cómo configurar la autenticación básica de<span> </span><strong>Logstash Elasticsearch</strong>. Si se tiene asegurado el<span> </span><em><strong>clúster de Elasticsearch</strong></em><span> </span>con autenticación/autorización, para que <strong>Logstash</strong> pueda publicar los eventos en el clúster de Elasticsearch, hay que proporcionar credenciales de usuario válidas que estén autorizadas para publicar eventos en índices específicos.</p>
+<p><strong>Logstash</strong> proporciona algunos complementos para controlar el flujo de transmisión de datos. Este control de flujo es principalmente para:</p>
+<ul>
+<li>Reducir la cantidad de datos y eliminar el contenido de datos innecesario.</li>
+<li>Controlar la velocidad de las fuentes de datos y reducir la frecuencia de envío de datos al objetivo.</li>
+</ul>
+<h3 style="text-align: justify;">2. Instalación</h3>
+<p style="text-align: justify;"><span><strong>Logstash</strong> se utiliza para procesar los registros enviados por los <strong>beats</strong>. Para proceder a su instalación, </span><span>el comando es el siguiente:</span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>apt install logstash</span><br /></span></pre>
+<p style="text-align: center;"><img src="install-logstash.png" alt="" width="892" height="411" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Instalación de Logstash.</em></p>
+<h3>3. Configuración</h3>
+<p style="text-align: justify;">Una vez realizada la instalación, se proceda a configurar <strong>Logstash</strong>. La canalización (pipeline) de <strong>procesamiento de datos de Logstash</strong> tiene<strong> tres secciones</strong>:</p>
+<ul>
+<li style="text-align: justify;"><strong>INPUT</strong>: La sección de entrada se usa para ingerir datos de diferentes puntos finales en Logstash.</li>
+<li style="text-align: justify;"><strong>FILTERS</strong>: Procesan y transforman los datos recibidos.</li>
+<li style="text-align: justify;"><strong>OUTPUT</strong>: Almacena los datos procesados ​​en un destino específico, que puede ser Elasticsearch.</li>
+</ul>
+<p style="text-align: center;"><a href="logstash-processing-pipeline.png"><img src="logstash-processing-pipeline.png" alt="" width="550" height="229" /></a></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Procesamiento de Logstash.</em></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Las configuraciones de las canalizaciones de <strong>ENTRADA, FILTROS y SALIDA</strong> hay que realizarlas de acuerdo con el propio caso de uso individual, es decir, de acuerdo a las necesidades y equipos/aplicaciones que se deseen monitorizar en la organización.</p>
+<p style="text-align: justify;">Puedes consultar los<span style="color: #000000;"><strong> <a href="https://www.elastic.co/guide/en/logstash/7.0/config-examples.html" target="_blank" rel="noopener" style="color: #000000;">siguientes ejemplos de configuración de Logstash</a></strong></span> y ajustarlos a la configuración según las necesidades de tu infraestructura.</p>
+<p>Puedes leer más sobre <strong>Logstash Pipeline</strong> <span style="color: #000000;"><span style="color: #008000;"><strong><a href="https://www.elastic.co/guide/en/logstash/7.0/pipeline.html" target="_blank" rel="noopener" style="color: #008000;">aquí</a></strong></span>.</span></p>
+</div>
+<p style="text-align: justify;"><span>Cualquier <strong>configuración de Logstash</strong> debe contener al menos un plugin</span><i><span> </span></i><span>de entrada y un plugin</span><i><span> </span></i><span>de salida, los filtros son opcionales. Además, </span>se pueden tener archivos de configuración separados para <strong>INPUT</strong>, <strong>FILTERS</strong> y <strong>OUTPUT, </strong>aunque también se puede tener un único archivo de configuración para todas las secciones. Para <strong>este</strong> <strong>escenario</strong>, se usan<strong> archivos de configuración separados</strong>.</p>
+<p style="text-align: justify;">Un elemento fundamental en el proceso es la <strong>creación del pipeline</strong> que permitirá establecer la conexión con los 3 plugins, es decir, input, filter y output. El pipeline se define en el fichero <strong>pipelines.yml</strong> que se encuentra en <strong>/etc/logstash</strong>. Como se observa en la figura inferior, se creará un pipeline cuyo id es main y cuyos ficheros son los que encuentre en el directorio <strong>/etc/logstash/conf.d </strong>que es<strong> donde se crearán los fiheros de input, filter y output.</strong></p>
+<p style="text-align: center;"><img src="pipelines-yml.png" alt="" width="627" height="135" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Configuración del pipeline main.</em></p>
+<p style="text-align: justify;"><a href="https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html" target="_blank" rel="noopener">Fuente</a></p>
+<h4 style="text-align: justify;">3.1 Configurar el complemento de entrada de Logstash</h4>
+<p style="text-align: justify;"><span>En este escenario, se utilizará <strong>filebeat</strong> (se verá en el capítulo 3.1.5) para recuperar los registros de los ficheros de log. Para usar Logstash como salida para realizar un procesamiento adicional en los datos recopilados por filebeat, primero se debe configurar Logstash para recibir eventos de filebeat </span><span>y para ello, </span>hay que crear un archivo de configuración para definir cómo se incorporarán los datos en Logstash. Por ejemplo, para configurar Logstash para<strong> recibir datos de Beats</strong> en el puerto TCP 5044, hay que crear un archivo de configuración de entrada, por ejemplo, <strong>/etc/logstash/conf.d/01-beats-input.conf.</strong></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/logstash/conf.d/01-beats-input.conf</span></pre>
+<p style="text-align: justify;"><span>añadiendo las siguientes líneas:</span></p>
+<pre><span style="font-size: 12pt;">input {
+  beats {
+    port =&gt; 5044
+  }
+}</span></pre>
+<p style="text-align: center;"><img src="01-beats-input.png" alt="" width="571" height="113" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Configuración del fichero input.</em></p>
+<h4>3.2 Configurar filtros de Logstash</h4>
+<p style="text-align: justify;">Ahora que se ha definido un complemento de entrada de Logstash como Beats, hay que proceder a configurar un complemento de filtro para <strong>procesar los eventos recibidos</strong> de beats. Para este caso, se utiliza el complemento de filtro <a href="https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html" target="_blank" rel="noopener">grok</a>. <strong>Grok</strong><i><span> </span></i><span>usa patrones de expresiones regulares para hacer coincidir campos y delimitadores. </span><span style="font-size: 1em;">Puedes leer sobre otros complementos </span><a href="https://www.elastic.co/guide/en/logstash/current/filter-plugins.html" target="_blank" rel="noopener" style="font-size: 1em;">aquí</a><span style="font-size: 1em;">.</span></p>
+<p style="text-align: justify;">Con fines de demostración, se va a configurar beats para recopilar eventos de autenticación SSH. Por lo tanto, se va a crear un filtro para procesar este tipo de eventos como se muestra a continuación.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/logstash/conf.d/ssh-auth-filter.conf</span></pre>
+<p style="text-align: justify;">El <strong>patrón grok</strong> utilizado en este ejemplo coincide con las líneas de registro de autenticación ssh para usuarios existentes y los no existentes.</p>
+<pre><span style="font-size: 10pt;"><strong>#Log para conexiones con usuarios existentes en el sistema</strong><br />Mar 17 11:43:43 elastics-master01 sshd[1072]: Accepted password for administrador from 192.168.0.14 port 38008 ssh2<br />Mar 17 12:28:50 elastics-master01 sshd[2401]: Failed password for administrador from 192.168.0.14 port 39448 ssh2<br /><strong>#Log para conexiones con usuarios no existentes en el sistema</strong><br />Mar 19 13:41:22 elastics-master01 sshd[8746]: Failed password for invalid user naruto from 192.168.0.10 port 42570 ssh2</span></pre>
+<p style="text-align: justify;">Dado que el <strong>log</strong> genera dos líneas diferentes en el caso de fallo y dependiendo si el usuario existe en el sistema o no, se realizan en el filtro 2 reglas, una para los usuarios existentes (Regla 1) y otra para los no existentes (Regla 2). </p>
+<pre><span style="font-size: 10pt;"> </span><strong><span style="font-size: 10pt;">filter {</span></strong><br /><span style="font-size: 10pt;"><strong>  # Regla 1.</strong> Usuarios válidos o existentes en el sistema <br /> <strong> grok {</strong></span><br /><span style="font-size: 10pt;">    match =&gt; { "message" =&gt; "%{SYSLOGTIMESTAMP:timestamp}\s+%{IPORHOST:dst_host}\s+%{WORD:syslog_program}\[\d+\]:\s+(?&lt;status&gt;\w+\s+password)\s+for\s+%{USER:auth_user}\s+from\s+%{SYSLOGHOST:src_host}.*" }</span><br /><span style="font-size: 10pt;">    add_field =&gt; { "activity" =&gt; "SSH Logins" }</span><br /><span style="font-size: 10pt;">    add_tag =&gt; "linux_auth"</span><br /><span style="font-size: 10pt;">    }</span><br /><span style="font-size: 10pt;"><strong>  # Regla 2.</strong> Si en la regla 1 no hay coincidencias, se aplica la regla 2 (usuarios no válidos)<br />  if "_grokparsefailure" in [tags] {<br />    <strong>grok {</strong><br />      # Se elimina/limpia (remove_tag) para que se pueda establecer de nuevo en caso de no haber coincidencias en este match.<br />      remove_tag =&gt; [ "_grokparsefailure" ]<br />      match =&gt; { "message" =&gt; "%{SYSLOGTIMESTAMP:timestamp}\s+%{IPORHOST:dst_host}\s+%{WORD:syslog_program}\[\d+\]:\s+(?&lt;status&gt;\w+\s+password)\s+for\s+invalid\s+user\s+%{USER:auth_user}\s+from\s+%{SYSLOGHOST:src_host}.*" }<br />      add_tag =&gt; [ "ssh_brute_force_attack", "filter_sshd","correlation" ]<br />      add_field =&gt; { "EventDesc" =&gt; "5710 SSHD Attempt to login using a non-existent user" }<br />      add_field =&gt; { "event_id" =&gt; "5710" }<br />    }<br />    # Si en la regla 2 no hay coincidencias, se <strong>descartan todos los eventos (drop)<br /></strong>    # Si no se hace esto, aparecerían los eventos del tipo:<br />     # pam_unix(sshd:auth): check pass; user unknown<br />     # pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.0.10<br />     # etcétera.<br />    if "_grokparsefailure" in [tags] { drop {} }<br />  }<br />}</span></pre>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Kibana 8.1 incluye <strong>Grok Debugger</strong> al que se puede acceder en Herramientas de desarrollo &gt; Depurador de Grok. para poder generar los patrones de grok correctos. También se pueden consultar los patrones comunes de logstash grok<span style="color: #993366;"><strong> <a href="https://github.com/hpcugent/logstash-patterns/blob/master/files/grok-patterns" target="_blank" rel="noopener" style="color: #993366;">aquí</a></strong></span></p>
+</div>
+<p style="text-align: center;"><img src="ilter-ssh.png" alt="" width="905" height="364" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Fichero de filtros.</em></p>
+<h4 style="text-align: justify;">3.3 Configurar la salida de Logstash</h4>
+<p style="text-align: justify;">Existen diferentes <strong>complementos de salida</strong> que permiten a Logstash enviar datos de eventos a destinos particulares. Para este escenario, <strong>Logstash</strong> enviará <span>los logs recogidos por el «input» configurado anteriormente por el <strong>puerto 5044</strong></span> a <strong>Elasticsearch</strong>.</p>
+<p style="text-align: justify;">Para ello, hay que crear el archivo de configuración de <strong>salida de Logstash</strong> para establecer el envío de <strong>datos a Elasticsearch</strong> ejecutándose en un host local (servidor). Como ejemplo se creará el archivo con nombre <strong>20<span style="font-size: 12pt;">-elasticsearch-output.conf.</span></strong></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;">Si Elasticsearch está escuchando en una interfaz sin loopback, hay que reemplazar localhost, hosts =&gt; [“localhost:9200″] con una IP de interfaz, por ejemplo; <em>hosts</em> =&gt; [“192.168.0.254:9200″].</p>
+<p style="text-align: justify;">El índice <strong>predeterminado</strong> para escribir eventos es <strong>logstash-%{+YYYY.MM.dd}</strong>.</p>
+</div>
+<p><strong>Uso de Secrets Keystore </strong></p>
+<p style="text-align: justify;">Dado que hay que guardar valores sensibles en el fichero <strong>20<span style="font-size: 12pt;">-elasticsearch-output.conf</span></strong>, como el nombre de usuario y contraseña del usuario de elastic, en lugar de confiar en los permisos del sistema de archivos para proteger estos valores, se utilizará el <strong>almacén de claves de Logstash</strong> para almacenar de forma segura los valores secretos para su uso en los ajustes de configuración.</p>
+<p style="text-align: justify;">La sintaxis para <strong>referenciar claves</strong> es idéntica a la de las variables de entorno: <strong>${KEY}</strong>, donde KEY es el nombre de la clave. Ejemplo, si en el almacén de claves se tiene una clave llamada <strong>ELS_PWD</strong> con el valor <strong>contraseña-elasticsearch, e</strong>n el archivo de configuración, se utilizaría <strong><span style="font-size: 12pt;"> password =&gt; "${ELS_PWD}".</span></strong><span class="pl-c1"><span style="font-size: 12pt;"></span></span></p>
+<p style="text-align: justify;">A continuación, se crea el almacén <strong><span style="font-size: 12pt;">logstash</span>.keystore</strong> mediante el siguiente comando, donde a la pregunta que se formula, hay que contestar con 'y',</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>/usr/share/logstash/bin/logstash-keystore --path.settings /etc/logstash create<br /></span></pre>
+<p><span style="font-size: 12pt;">donde,</span></p>
+<ul>
+<li><span style="font-size: 12pt;"><strong>--path.settings:</strong> Es la ruta donde se quiere guardar la keystore.</span></li>
+</ul>
+<p style="text-align: center;"><img src="create-keystore.png" alt="" width="1139" height="177" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong> Creación del almacén de claves para Logstash.</em></p>
+<p>A continuación, hay que agregar la clave con el nombre y contraseña del usuario. En primer lugar se crea la clave con el nombre del usuario. El comando cuando solicite el nombre de la clave hay que poner <strong>elastic</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>/usr/share/logstash/bin/logstash-keystore --path.settings /etc/logstash add USER</span></pre>
+<p><span>donde, </span><strong>--path.settings:</strong><span> Es la ruta donde está el almacén.</span></p>
+<p style="text-align: center;"><span><img src="add-key-user.png" alt="" width="1107" height="144" /></span></p>
+<p style="text-align: center;"><em><strong>Figura 7.</strong> Creación de la clave USER en el almacén de claves de Logstash.</em></p>
+<p style="text-align: justify;"><span>A continuación, se añade la clave con la contraseña del usuario. El comando cuando solicite el nombre de la clave hay que poner la <strong>contraseña</strong> de <strong>elastic </strong>(se modificó en el apartado donde se configuró elasticsearch).</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>/usr/share/logstash/bin/logstash-keystore --path.settings /etc/logstash add ELS_PWD</span></pre>
+<p><span>donde, </span><strong>--path.settings:</strong><span> Es la ruta donde está el almacén.</span></p>
+<p style="text-align: center;"><span><img src="add-key-PASS-logstash.png" alt="" width="897" height="177" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 8.</strong> Creación de la clave ELS_PWD en el almacén de claves de Logstash.</em></span></p>
+<p><strong>Gestión de claves del almacén</strong></p>
+<p>Para imprimir la lista de claves, el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>/usr/share/logstash/bin/logstash-keystore --path.settings /etc/logstash list</span></pre>
+<p style="text-align: center;"><img src="list-keys.png" alt="" width="1115" height="143" /></p>
+<p style="text-align: center;"><em><strong>Figura 9.</strong> Listar las claves del almacén de claves de Logstash.</em></p>
+<p>Si se quiere eliminar una clave, por ejemplo<span> </span><strong>ELS_PWD</strong>, el comando es el siguiente:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>/usr/share/logstash/bin/logstash-keystore --path.settings /etc/logstash remove ELS_PWD</span><strong></strong></pre>
+<p><strong>Referencias</strong></p>
+<ul>
+<li><a href="https://github.com/jcrequena/Ciberseguridad/blob/main/BRS/ELK/logstash/keystore.sh" target="_blank" rel="noopener">Script GitHub - JC Requena</a></li>
+<li><strong><a href="https://www.elastic.co/guide/en/logstash/current/keystore.html" target="_blank" rel="noopener">Fuente</a></strong></li>
+</ul>
+<p style="text-align: justify;"><strong>Crear el fichero</strong> <strong>20<span style="font-size: 12pt;">-elasticsearch-output.conf</span></strong></p>
+<p style="text-align: justify;">Una vez se han creado las claves en el almacén, el siguiente paso es construir el fichero <strong>20<span style="font-size: 12pt;">-elasticsearch-output.conf. </span></strong>Como ejemplo, se desean adquirir los <span><span style="font-size: 12pt;">eventos de <strong>autenticación SSH </strong>y para ello<strong>, </strong></span></span><span style="font-size: 1em;">se creará un </span><span style="font-size: 1em;">índice al que se nombrará como <span style="font-size: 12pt;"><strong>"ssh_auth-%{+YYYY.MM.dd}</strong>", donde <strong>ssh_auth </strong>es el prefijo del índice y puede ser cualquier nombre y<strong>-%{+YYYY.MM.dd}, </strong>es un guión para separar el prefijo de la fecha que pondrá el sistema.</span></span></p>
+<p style="text-align: justify;"><span style="font-size: 1em;"><span style="font-size: 12pt;">A continuación, hay que crear un fichero en modo edición y como se ha comentado anteriormente, el fichero se llamará <strong>20-elasticsearch-output.conf</strong>.</span></span></p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/logstash/conf.d/20-elasticsearch-output.conf</span></pre>
+<p style="text-align: justify;">A continuación, se añaden las siguientes línea<span>s:</span></p>
+<pre><span style="font-size: 12pt;">output {<br />  elasticsearch {<br />    hosts =&gt; "elastics-master01:9200"<br />    manage_template =&gt; false<br />    index =&gt; "ssh_auth-%{+YYYY.MM.dd}"<br />    ssl =&gt; true<br />    user =&gt; "${USER}"<br />    password =&gt; "${ELS_PWD}"<br />    cacert =&gt; '/etc/logstash/certs/http_ca.crt'<br />  }<br />}</span></pre>
+<p style="text-align: center;"><img src="logstash-output-elasticsearch.png" alt="" width="578" height="227" /></p>
+<p style="text-align: center;"><em><strong>Figura 10.</strong> Fichero de salida de Logstash.</em></p>
+<p>donde,</p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>cacert =&gt; '/etc/logstash/certs/http_ca.crt'.</strong> </span>El certificado http de elasticsearch hay que copiarlo al directorio de configuración de logstash. Para este caso, se ha creado el directorio <strong>certs</strong> en /etc/logstash/, y se ha copiado el fichero <strong>http_ca.crt </strong>allí, es decir,<strong>cp /etc/elasticsearch/certs/http_ca.crt /etc/logstash/certs/</strong>. Además, hay que cambiarle el grupo y establecer los permisos, chgrp logstash /etc/logstash/certs/<strong>http_ca.crt </strong>y luego hacer <strong>chmod 660</strong> /etc/logstash/certs/<strong>http_ca.crt.</strong></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>password =&gt;</strong>. Se utiliza la clave «${ELS_PWD}» del almacén de claves. </span></li>
+<li style="text-align: justify;"><span style="font-size: 12pt;"><strong>user =&gt;</strong>. Se utiliza la clave «${USER}» del almacén de claves. </span></li>
+</ul>
+<p style="text-align: justify;">Con esto, se creará un índice una vez que se inicie el servicio logstash y que se llamará <span style="font-size: 12pt;"><strong>ssh_auth-2022.03.17</strong>, ya que esta operación se ha realizado el 17/03/2022.</span></p>
+<p style="text-align: center;"><img src="indice-ssh.1.png" alt="" width="989" height="110" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 11.</strong> Consulta de índices.</em></span></p>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Dado que el índice se nombra con una parte dinámica, es decir, la fecha (index =&gt; "ssh_auth-<strong>%{+YYYY.MM.dd}</strong>"), cada día se creará de menara automática un índice ssh_auth, es decir, el 17 de marzo se creará el índice <strong>ssh_auth-2022.03.17, </strong>el 20 de marzo el <strong>ssh_auth-2022.03.18, </strong>etcétera. </span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si no se quiere crear un índice cada día, el nombrado del mismo en el fichero output no debe contener una parte dinámica de fecha, es decir, se nombraría así: index =&gt; "ssh_auth".</span><span style="font-size: 12pt;"></span></p>
+</div>
+<p style="text-align: justify;"><strong>En resumen,</strong> fileb<span>eat envía eventos a Logstash. Después de que Logstash use el complemento de entrada de beats para recibir los eventos, usa el complemento de salida de Elasticsearch para enviarlo a Elasticsearch. Este complemento utiliza una API para crear índices de manera eficiente. Logstash escucha el puerto 5044 para recibir transmisiones de filebeat y las indexa en Elasticsearch. Como se ha visto en la configuración de filter, Logstash además de recopilar, enriquece los datos de conversión. </span></p>
+<h4>3.4 Verificar la configuración de Logstash</h4>
+<p style="text-align: justify;">Una vez terminado con las configuraciones, hay que ejecutar el siguiente comando para <strong>verificar</strong> la <strong>configuración de</strong> <strong>Logstash</strong> antes de poder iniciarla.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>/usr/share/logstash/bin/logstash --path.settings /etc/logstash/ --config.test_and_exit -f /etc/logstash/conf.d/<br /></span></pre>
+<p style="text-align: center;"><img src="verificar-logstah.png" alt="" width="1309" height="325" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 12.</strong> Verificar configuración de Logstash.</em></span></p>
+<p style="text-align: justify;">Si todo ha ido bien, al final de la ejecución del comando debe aparecer el siguiente texto:</p>
+<pre><span style="font-size: 12pt;">Config Validation Result: <strong>OK. Exiting Logstash</strong></span></pre>
+<h4>3.5 Iniciar el servicio Logstash</h4>
+<p style="text-align: justify;">Si la verificación ha sido correcta, ya se puede habilitar e iniciar el<span> </span><strong>servicio Logstash</strong>.</p>
+<pre><span><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>systemctl enable --now logstash</span><br /></span></pre>
+<p style="text-align: center;"><img src="enable-init-logstah.png" alt="" width="939" height="75" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 13. </strong>Iniciar y habilitar el servicio.</em></span></p>
+<h4><span style="text-decoration: underline;"><span style="color: #000000;"><strong>Opcional para pruebas de ficheros de configuración expecíficos</strong></span></span></h4>
+<p>Para <strong>ejecutar</strong> <strong>Logstash</strong> y cargar un archivo de configuración específico para la depuración, se puede ejecutar el siguiente comando, donde <span><span style="font-size: 12pt;"><strong>config-file.conf </strong>es el fichero de configuración a verificar.</span></span></p>
+<pre><span><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>sudo -u logstash /usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/<strong>config-file.conf</strong></span></span></pre>
+<p style="text-align: justify;">Por último, se comprueba el estado del servicio:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>systemctl status logstash</span></pre>
+<p style="text-align: center;"><img src="logstash-Status-OK.png" alt="" width="1613" height="769" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 14.</strong> Estado del servicio Logstash.</em></span></p>
+<p style="text-align: justify;">Hay que comprobar que al final ponga <strong>Starting server on port: 5044.</strong><strong></strong></p>
+<p style="text-align: justify;">También se puede consultar el archivo de configuración de logstash en busca de errores, el archivo es: <strong>/var/log/logstash/logstash-plain.log.</strong></p>
+<p style="text-align: center;"><img src="log-logstash-plain.png" alt="" width="1323" height="453" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 15.</strong> Listar el log del servicio Logstash.</em></span></p>
+<p>Una terminado con la configuración, ya se puede proceder a instalar y configurar los cargadores de datos de <strong>Filebeat</strong> (apartado 2.1.4).</p>
+<h3>4. Establecer tiempo de parada</h3>
+<p style="text-align: justify;">Por último, hay que ajustar el tiempo máximo de parada del servicio y para ello, hay que editar el fichero de configuración del servicio y cambiar el valor de <strong>TimeoutStopSec</strong> de infinity a <strong>30 segundos</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/systemd/system/multi-user.target.wants/logstash.service</span></pre>
+<p style="text-align: center;"><img src="logstash-service-Timeout-30.png" alt="" width="701" height="435" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 16.</strong> Configurar el Unit del servicio Logstash.</em></span></p>
+<p>A continuación, hay que recargar la configuración del administrador de systemd con el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>systemctl daemon-reload</span></pre>
+<p>Si se comprueba de nuevo el timeout, se puede ver que ahora ya tiene establecido los 3 minutos.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:~#</strong>systemctl show logstash | grep ^Timeout</span></pre>
+<p style="text-align: center;"><img src="timeout-logstash-grep.png" alt="" width="551" height="113" /></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><em><strong>Figura 17.</strong> Comprobar el Timeout de los parámetros del servicio Logstash.</em></span></p>
+<h3>5. Referencias</h3>
+<ul>
+<li><a href="https://kifarunix.com/configure-logstash-elasticsearch-basic-authentication/">https://kifarunix.com/configure-logstash-elasticsearch-basic-authentication/</a></li>
+<li><a href="https://www.elastic.co/guide/en/logstash/current/configuration-file-structure.html">https://www.elastic.co/guide/en/logstash/current/configuration-file-structure.html</a></li>
+<li><a href="https://programmerclick.com/article/42461895908/">[Filtros]</a></li>
+<li><a href="https://gist.github.com/linuxmalaysia/978e7fe76a2084f49932a3072caf5d64" target="_blank" rel="noopener">[Reglas]</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="3141_output_genrico_logstash.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

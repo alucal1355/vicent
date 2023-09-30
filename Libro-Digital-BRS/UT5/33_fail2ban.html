@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3 Fail2Ban | UT5. Fortificación de equipos: Configuración de los sistemas informáticos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-62"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT5. Fortificación de equipos: Configuración de los sistemas informáticos</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="2_hardening.html" class="daddy">2. Hardening</a>
+   <ul class="other-section">
+      <li><a href="21_server_hardening.html" class="no-ch">2.1 Server Hardening</a></li>
+      <li><a href="22_recomendaciones_generales_de_seguridad_en_servidores.html" class="no-ch">2.2 Recomendaciones generales de seguridad en servidores</a></li>
+      <li><a href="23_defensa_en_profundidad.html" class="no-ch">2.3 Defensa en profundidad</a></li>
+      <li><a href="24_hardening_windows.html" class="daddy">2.4 Hardening Windows</a>
+      <ul class="other-section">
+         <li><a href="241_windows_exploit_suggester.html" class="daddy">2.4.1 Windows Exploit Suggester</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_windows__realizar_una_auditora_en_el_servidor_windows.html" class="no-ch">Proyecto Server Hardening Windows - Realizar una auditoría en el servidor Windows</a></li>
+         </ul>
+         </li>
+         <li><a href="242_reduccin_del_nmero_de_servicios.html" class="daddy">2.4.2 Reducción del número de servicios</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_1_process_hacker.html" class="no-ch">Laboratorio 1. Process Hacker</a></li>
+            <li><a href="laboratorio_2_uso_del_firewall_de_windows__configuracin_de_red.html" class="no-ch">Laboratorio 2. Uso del firewall de Windows - Configuración de red</a></li>
+            <li><a href="proyecto_server_hardening_windows__seguridad_de_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Windows - Seguridad de red y firewall</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="25_hardening_linux__lynis.html" class="daddy">2.5 Hardening Linux - Lynis</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_auditora_de_sistemas_con_lynis.html" class="no-ch">Proyecto Server Hardening Linux. Auditoría de sistemas con Lynis</a></li>
+         <li><a href="241_contraseas.html" class="no-ch">2.4.1 Contraseñas</a></li>
+         <li><a href="242_configuracin_de_red.html" class="no-ch">2.4.2 Configuración de red</a></li>
+         <li><a href="243_cortafuegos_basados_en_host__configuracin_del_firewall_ufw.html" class="no-ch">2.4.3 Cortafuegos basados en host - Configuración del firewall ufw</a></li>
+         <li><a href="laboratorio_3_uso_del_firewall_de_linux__iptables.html" class="no-ch">Laboratorio 3. Uso del firewall de Linux - Iptables</a></li>
+         <li><a href="proyecto_server_hardening_linux_contraseas_red_y_firewall.html" class="no-ch">Proyecto Server Hardening Linux. Contraseñas, red y firewall</a></li>
+      </ul>
+      </li>
+      <li><a href="26_hardening_apache.html" class="daddy">2.6 Hardening Apache</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_linux_apache.html" class="no-ch">Proyecto Server Hardening Linux. Apache</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_securizacin_de_los_sistemas_de_administracin_remota.html" class="current-page-parent daddy">3. Securización de los sistemas de administración remota</a>
+   <ul>
+      <li><a href="31_secureshell.html" class="daddy">3.1 SecureShell</a>
+      <ul class="other-section">
+         <li><a href="311_aplicaciones_de_ssh.html" class="no-ch">3.1.1 Aplicaciones de SSH</a></li>
+         <li><a href="312_instalacin_del_servidor_ssh.html" class="no-ch">3.1.2 Instalación del servidor SSH</a></li>
+         <li><a href="313_secure_shell_para_administracin_remota_mediante_certificado.html" class="daddy">3.1.3 Secure Shell para administración remota mediante certificado</a>
+         <ul class="other-section">
+            <li><a href="tarea_1_ssh__acceso_remoto_desde_windows_10.html" class="no-ch">Tarea 1. SSH - Acceso remoto desde Windows 10</a></li>
+         </ul>
+         </li>
+         <li><a href="314_anlisis_de_archivos_de_auditora.html" class="daddy">3.1.4 Análisis de archivos de auditoría</a>
+         <ul class="other-section">
+            <li><a href="laboratorio_4_instalacin_de_graylog.html" class="no-ch">Laboratorio 4. Instalación de Graylog</a></li>
+         </ul>
+         </li>
+         <li><a href="315_fortificacin_de_ssh.html" class="no-ch">3.1.5 Fortificación de SSH</a></li>
+         <li><a href="proyecto_server_hardening_linux_34_caso_prctico_fortificacin_ssh.html" class="no-ch">Proyecto Server Hardening Linux. 3.4 Caso práctico fortificación ssh</a></li>
+         <li><a href="316_sshguard.html" class="daddy">3.1.6 SSHGuard</a>
+         <ul class="other-section">
+            <li><a href="proyecto_server_hardening_linux_sshguard.html" class="no-ch">Proyecto Server Hardening Linux. SSHGuard</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="32__rdpguard.html" class="daddy">3.2  RdpGuard</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows_rdpguard.html" class="no-ch">Proyecto Server Hardening Windows. RdpGuard</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="33_fail2ban.html" class="active daddy">3.3 Fail2Ban</a>
+      <ul>
+         <li><a href="proyecto_server_hardening_linux__fail2ban.html" class="no-ch">Proyecto Server Hardening Linux - Fail2ban</a></li>
+      </ul>
+      </li>
+      <li><a href="34_fwsnort.html" class="no-ch">3.4 Fwsnort</a></li>
+      <li><a href="35_grsecurity.html" class="no-ch">3.5 Grsecurity</a></li>
+   </ul>
+   </li>
+   <li><a href="4_sistemas_de_prevencin_y_proteccin_frente_a_virus_e_intrusiones.html" class="daddy">4. Sistemas de prevención y protección frente a virus e intrusiones</a>
+   <ul class="other-section">
+      <li><a href="41_antivirus.html" class="daddy">4.1. Antivirus</a>
+      <ul class="other-section">
+         <li><a href="411_virustotal.html" class="no-ch">4.1.1 VirusTotal</a></li>
+      </ul>
+      </li>
+      <li><a href="42_antivirus_endpoint_detection__response_edr.html" class="daddy">4.2. Antivirus Endpoint Detection &amp; Response (EDR)</a>
+      <ul class="other-section">
+         <li><a href="421_ejemplo_de_una_solucin_antivirus_en_la_nube.html" class="daddy">4.2.1 Ejemplo de una solución antivirus en la nube</a>
+         <ul class="other-section">
+            <li><a href="4211_registro_y_creacin_del_espacio_de_trabajo.html" class="no-ch">4.2.1.1 Registro y creación del espacio de trabajo</a></li>
+            <li><a href="4212_panel_de_informacin_configuracin_primeros_pasos.html" class="no-ch">4.2.1.2 Panel de Información. Configuración. Primeros pasos</a></li>
+            <li><a href="4213_usuarios.html" class="no-ch">4.2.1.3 Usuarios</a></li>
+            <li><a href="4214_dispositivos.html" class="no-ch">4.2.1.4 Dispositivos</a></li>
+            <li><a href="4215_administrador_de_seguridad.html" class="no-ch">4.2.1.5 Administrador de Seguridad</a></li>
+            <li><a href="4216_vulnerabilidades_parches_cifrado_y_certificados.html" class="no-ch">4.2.1.6 Vulnerabilidades, parches, cifrado y certificados</a></li>
+            <li><a href="4217_nuevas_funcionalidades.html" class="no-ch">4.2.1.7 Nuevas funcionalidades</a></li>
+            <li><a href="proyecto_server_hardening_windows_kaspersky.html" class="no-ch">Proyecto Server Hardening Windows. Kaspersky</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="43_host_ids.html" class="daddy">4.3. Host IDS</a>
+      <ul class="other-section">
+         <li><a href="proyecto_server_hardening_windows__ids_wazuh.html" class="no-ch">Proyecto Server Hardening Windows - IDS wazuh</a></li>
+      </ul>
+      </li>
+      <li><a href="44_honeypot.html" class="no-ch">4.4. Honeypot</a></li>
+   </ul>
+   </li>
+   <li><a href="5_configuracin_de_actualizaciones_y_parches_automticos.html" class="daddy">5. Configuración de actualizaciones y parches automáticos</a>
+   <ul class="other-section">
+      <li><a href="51_unattendedupgrades.html" class="no-ch">5.1 unattended-upgrades</a></li>
+      <li><a href="52_wsus.html" class="daddy">5.2 WSUS</a>
+      <ul class="other-section">
+         <li><a href="faqserroreswsus.html" class="no-ch">FAQS-errores-WSUS</a></li>
+         <li><a href="proyecto_server_hardening_windows_wsus.html" class="no-ch">Proyecto Server Hardening Windows. WSUS</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="6_sistemas_de_copias_de_seguridad.html" class="daddy">6. Sistemas de copias de seguridad</a>
+   <ul class="other-section">
+      <li><a href="61_herramientas.html" class="no-ch">6.1 Herramientas</a></li>
+      <li><a href="62_copias_a_disco_duro.html" class="no-ch">6.2 Copias a disco duro</a></li>
+      <li><a href="63_copias_a_unidad_en_drive.html" class="no-ch">6.3 Copias a unidad en Drive</a></li>
+      <li><a href="64_gestin_de_backups_en_linux.html" class="no-ch">6.4 Gestión de backups en Linux</a></li>
+      <li><a href="proyecto_server_hardening_en_linux_y_windows__copias_de_seguridad.html" class="no-ch">Proyecto Server Hardening en Linux y Windows - Copias de Seguridad</a></li>
+   </ul>
+   </li>
+   <li><a href="7_soluciones_dlp.html" class="daddy">7. Soluciones DLP</a>
+   <ul class="other-section">
+      <li><a href="71_plataformas_dlp_en_el_mercado.html" class="no-ch">7.1 Plataformas DLP en el mercado</a></li>
+   </ul>
+   </li>
+   <li><a href="8_referencias.html" class="no-ch">8. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_windows_rdpguard.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="proyecto_server_hardening_linux__fail2ban.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">3.3 Fail2Ban</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id109">
+<div class="iDevice emphasis0">
+<div id="ta109_85" class="block iDevice_content">
+<h3>1. Introducción</h3>
+<p style="text-align: justify;"><span>En este capítulo, se describe cómo instalar y configurar una herramienta para equipos con sistema operativo Linux para detectar y bloquear ataques de fuerza bruta.</span></p>
+<p style="text-align: justify;"><span><strong>Fail2ban</strong> es una aplicación de Linux que permite evitar accesos no autorizados al servidor. Funciona bloqueando, o baneando, las IP que realicen varios intentos de acceso incorrectos al servidor<strong>.</strong></span></p>
+<p><span><strong>Fail2ban</strong> sin ser estrictamente una aplicación IPS, realiza muchas de las funciones que realiza un sistema de prevención de intrusos, al menos en lo que a intentos de conexión por fuerza bruta se refiere.</span></p>
+<p style="text-align: justify;"><strong>Fail2ban</strong> se aplica a muchos servicios que requieren de autenticación para acceder y deniega o banea aquellos intentos de acceso por fuerza bruta mirando en los logs de aplicaciones como Apache, sshd, qmail, vsftpd, postfix, etcétera. Cuando <strong>fail2ban</strong> detecta un ataque de intrusión por fuerza bruta escaneando los logs de estos servicios, crea una regla de firewall que impide la conexión desde la IP o redes IP desde donde se origina el ataque.</p>
+<p>Está escrito en el lenguaje Python. Es software libre se distribuye bajo licencia GPL. Características principales:</p>
+<ul>
+<li>Arquitectura cliente/servidor.</li>
+<li>Multihilo.</li>
+<li>Altamente configurable.</li>
+<li>Soporte de Gamin/Pyinotify para detectar modificaciones en tiempo real de los logs.</li>
+<li>Parseo de archivos y búsqueda de patrones.</li>
+<li>Ejecución de comandos ante un ataque.</li>
+<li>Usa netfilter/iptables y también TCP wrappers.</li>
+<li>Soporta rotación de ficheros.</li>
+<li>Soporta muchos servicios como ssh, wb, ftp, etcétera.</li>
+</ul>
+<p>Más información en la <a href="https://www.fail2ban.org/wiki/index.php/Main_Page" target="_blank" rel="noopener">página del proyecto</a>.</p>
+<h3><span>2. Escenario</span></h3>
+<ul>
+<li><span>Equipo Ubuntu Server 20.04 conectado en una red privada 192.168.191.96 - Equipo Objetivo.</span></li>
+<li><span>Equipo Linux Mint 19 conectado en una red privada 192.168.191.75 - Equipo Atacante.</span></li>
+<li><span>Se configurará la herramienta Fail2ban para los casos sobre SSH y FTP en un equipo con la distribución Ubuntu Server.</span></li>
+</ul>
+<h3><span>3. Instalación</span></h3>
+<p>En primer lugar hay que descargar e instalar <strong>fail2ban</strong> en el equipo servidor Ubuntu Sever.</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo <span>apt install fail2ban -y</span></span></pre>
+<p style="text-align: center;"><em><strong><img src="install-fail2ban.1.png" alt="" width="665" height="249" /></strong></em></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong><span> </span>Instalación de fail2ban.</em></p>
+<p>Una vez finaliza la instalación, hay que comprobar su estado. Como se puede observar en la figura 2, el resultado del comando es que se dispone de 1 celda asociada a sshd, es decir, lo que se ha congiurado</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>sudo <span>fail2ban-client status</span></span></pre>
+<p style="text-align: center;"><img src="status-fail2ban.png" alt="" width="481" height="94" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Estado de fail2ban.</em></p>
+<p>Para obtener un detalle más descriptivo del estado, se puede utilizar el siguiente comando:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>systemctl status f<span>ail2ban.service</span></span></pre>
+<p style="text-align: center;"><img src="estado-fail2ban-detall.png" alt="" width="754" height="279" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Estado detallado de fail2ban.</em></p>
+<p>Para finalizar con la consulta del estado de <strong>fail2ban</strong>, se puede listar el fichero de log:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:~$ </strong>cat /var/log/f<span>ail2ban.log</span></span></pre>
+<p style="text-align: center;"><img src="log-fail2ban.png" alt="" width="800" height="323" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Listar el fichero de log de fail2ban.</em></p>
+<h3>4. Configuración de baneo SSH</h3>
+<p>Para comenzar con la configuración, hay <span>que situarse en el directorio <strong>/etc/fail2ban</strong>.</span></p>
+<p style="text-align: center;"><img src="ls-la-fail2ban.png" alt="" width="537" height="254" /></p>
+<p style="text-align: center;"><em><strong>Figura 5.</strong> Situarse en /etc/fail2ban.</em></p>
+<p>A continuación, hay que crear el fichero <span><strong>jail.local</strong>.</span><span> </span></p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:/etc/fail2ban$</strong> sudo nano <span>jail.local</span></span></pre>
+<p><span>En el archivo creado, hay que escribir la siguiente sección:</span></p>
+<pre><span style="font-size: 16px;">[sshd]<br />bantime = 10m<br />maxretry = 5<br />findtime = 5m<br />ignoreip = 192.168.191.96</span></pre>
+<p style="text-align: center;"><img src="jail.local.png" alt="" width="468" height="120" /></p>
+<p style="text-align: center;"><em><strong>Figura 6.</strong> Añadir sección al fichero jail.local.</em></p>
+<p>donde,</p>
+<ul>
+<li style="text-align: justify;"><strong>bantime</strong><span> </span>es el tiempo que un host será bloqueado del servidor en caso de baneo. En este caso 10 minutos.</li>
+<li style="text-align: justify;"><strong>maxretry</strong><span> </span>es el número de intentos fallidos realizados por una IP para que sea baneada. En este caso 5 intentos.</li>
+<li style="text-align: justify;"><strong>findtime</strong><span> </span>es el tiempo en el que deben ocurrir los intentos especificados en maxretry para que la cuenta sea baneada. En este caso 5 minutos.</li>
+<li><strong>ignoreip </strong>es la dirección que no se quiere bloquear. En este caso la IP de nuestro equipo.</li>
+</ul>
+<p><strong>NOTA:</strong> No hace falta configurar el parámetro<span> </span><strong>enabled</strong><span> </span>porque ya viene configurado por defecto en otro archivo.</p>
+<p style="text-align: center;"><img src="jail-d-defaults.png" alt="" width="565" height="61" /></p>
+<p style="text-align: center;"><em><strong>Figura 7.</strong> Parámetro enabled.</em></p>
+<p>Para consolidar los cambios en el fichero de configuración, hay que reiniciar el servicio:</p>
+<pre><span style="font-size: 12pt;"><strong>administrador@orion:/etc/fail2ban$</strong> sudo fail2ban-client reload</span></pre>
+<p style="text-align: center;"><img src="reload-fail2ban.png" alt="" width="518" height="64" /></p>
+<p style="text-align: center;"><em><strong>Figura 8.</strong> Reiniciar fail2ban.</em></p>
+<h3>5. Comprobar el funcionamiento</h3>
+<p style="text-align: justify;"><span>A continuación, se procede a comprobar el correcto funcionamiento de fail2ban. Para ello, desde un cliente dentro de la misma subred hay que establecer una conexión por SSH al servidor e introducir 5 credenciales incorrectas (lo configurado en <strong>maxretry)</strong>. </span><span>En la siguiente figura, se lista la ip del equipo cliente (atacante) que se utilizará para conectarse por ssh al servidor.</span></p>
+<p style="text-align: center;"><span><img src="ip-cliente-mint.png" alt="" width="853" height="311" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 9.</strong> Dirección ip del cliente Linux Mint.</em></span></p>
+<pre><span style="font-size: 12pt;"><strong>jc@jc-Latitude-E6430:~$ </strong>ssh administrador@192.168.191.96<br />administrador@192.168.191.96's password: <br />Permission denied, please try again.<br />administrador@192.168.191.96's password: <br />Permission denied, please try again.<br /><strong>.......</strong></span></pre>
+<p><span>Una vez realizados los intentos fallidos de conexión por SSH se comprueban listando el log:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> tail -5 /var/log/tail2ban.log</span></pre>
+<p style="text-align: center;"><img src="ip-baneada.png" alt="" width="802" height="182" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 10.</strong> Consulta del log (últimas 5 líneas) de fail2ban.</em></span></p>
+<p style="text-align: justify;"><span>Como se puede observar, aparece la IP que ha intentado conectarse y al final la ha baneado por realizar demasiados intentos fallidos, en concreto, los 5 configurados en maxretry.</span></p>
+<p style="text-align: justify;"><span>También se puede consultar el estado de la celda <strong>sshd</strong> con el siguiente comando:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> tail2ban-client status sshd</span></pre>
+<p style="text-align: center;"><span><img src="fail2ban-status-sshd.png" alt="" width="449" height="193" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 11.</strong> Estado de la celda(jail) sshd.</em></span></p>
+<p style="text-align: justify;"><span>Como se puede observar en la figura anterior, se ha bloqueado uan dirección IP en la celda sshd.</span></p>
+<h3><span>6. Eliminar dirección baneada</span></h3>
+<p><span>Para eliminar una dirección baneada hay que utilizar el siguiente comando:</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> <span>fail2ban</span>-client unban 192.168.192.75</span></pre>
+<p style="text-align: center;"><span><img src="unban-ip-client.png" alt="" width="520" height="74" /><br /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 12.</strong> Eliminar dirección ip baneada.</em></span></p>
+<p style="text-align: justify;">Si el comando devuelve 1, es que ha desbloqueado la dirección. Otra forma de comprobar que la acción ha resultado exitosa es consultando el fichero de log<span>.</span></p>
+<p style="text-align: center;"><span><img src="unban-log.png" alt="" width="800" height="168" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 13.</strong> Comprobar en el log que se ha eliminado el bloqueo.</em></span></p>
+<p style="text-align: justify;"><span>Para finalizar, con el siguiente comando se comprueba la configuración del cortafuegos y ahí se observa que no hay ninguna regla que limite la conexión.</span></p>
+<p style="text-align: center;"><span><img src="iptables-l.png" alt="" width="688" height="304" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 14.</strong> Consulta de iptables.</em></span><span></span></p>
+<h3 style="text-align: justify;"><span>7. Instalación FTP</span></h3>
+<p style="text-align: justify;"><span>En primer lugar, hay que comprobar que no se tenga instalado FTP mediante el comando netstat (hay que instalar previamente el paquete net-tools).</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> netstat -lt</span></pre>
+<p style="text-align: center;"><img src="netstat-lt.png" alt="" width="660" height="157" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 15.</strong> Consulta de los servicios de red a la escucha.</em></span></p>
+<p>Como se puede observar en la figura anterior, no se tiene el servicio ftp, por lo que hay que instalarlo mediante el siguiente comando.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> apt install proftpd -y</span></pre>
+<p style="text-align: center;"><img src="install-proftp.png" alt="" width="798" height="429" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 16.</strong> Instalación del paquete proftpd.</em></span></p>
+<p style="text-align: justify;">Si se ejecuta de nuevo el comando netstat -lt, se puede observar que ahora sí se tiene el servicio ftp a la escucha.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> netstat -lt</span></pre>
+<p style="text-align: center;"><img src="netstat-ltn-ftp.png" alt="" width="652" height="162" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 17.</strong> Servicio ftp a la escucha en el puerto 21.</em></span></p>
+<h4>7.1 Configuración de baneo FTP</h4>
+<p>Al igual que hicimos con SSH, accedemos al fichero jail.local:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> nano jail.local</span></pre>
+<p>Se escriben las mismas líneas de código que para el caso de SSH, pero esta vez añadiendo la propiedad<span> </span><strong>enabled</strong>:</p>
+<p style="text-align: center;"><img src="jail-local-seccion-ftp.png" alt="" width="490" height="211" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 18.</strong> Nueva sección para ftp.</em></span></p>
+<p>Para aplicar la configuración es necesario realizar un reinicio del servicio:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> fail2ban-client reload</span></pre>
+<p style="text-align: center;"> <img src="reload-fail2ban.1.png" alt="" width="397" height="65" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 19.</strong> Reiniciar fail2ban.</em></span></p>
+<p>Si se consulta el estado de fail2ban, se puede observar que ya se tienen los dos servicios:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> fail2ban-client status</span></pre>
+<p style="text-align: center;"><img src="status-ssh-ftp.png" alt="" width="407" height="96" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 19.</strong> Comprobar el estado de fail2ban.</em></span></p>
+<p style="text-align: justify;"><span>También, se puede consultar el fichero de log para comprobar que se tienen las 2 celdas de los dos servicios: sshfd y proftpd.</span></p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> tail -5 /var/log/fail2ban.log</span></pre>
+<p style="text-align: center;"><span><img src="tail-5-log-ssh-ftp.png" alt="" width="802" height="159" /></span></p>
+<p style="text-align: center;"><span><em><strong>Figura 20.</strong> Comprobar el fichero de log.</em></span></p>
+<h4>7.2 Comprobación FTP</h4>
+<p>Después de realizar <strong>5 intentos erróneos</strong>, se comprueba que se rechazan rechacen las conexiones del cliente.</p>
+<p style="text-align: center;"><img src="ver-conn-ftp-iptables.png" alt="" width="798" height="443" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 21.</strong> Comprobar iptables.</em></span></p>
+<p>Otra comprobación sería mirar el fichero de log. Como se puede observar en la imagen inferior, aparece baneada la celda <strong>proftpd</strong>.</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> tail -5 /var/log/fail2ban.log</span></pre>
+<p style="text-align: center;"><img src="baneo-ftp.png" alt="" width="799" height="196" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 22.</strong> Comprobar el fichero de log.</em></span></p>
+<p style="text-align: justify;">Otra opción es listando el status de la celda <strong>proftpd</strong>:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> fail2ban-client status proftpd</span></pre>
+<p style="text-align: center;"><img src="status-proftp.png" alt="" width="493" height="192" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 23.</strong> Comprobar el estado de fail2ban de la celda proftpd.</em></span></p>
+<h4>7.3 Eliminar un ban </h4>
+<p>El proceso es exactamente el mismo que antes, hay que ejecutar el comando siguiente para desbloquear la dirección IP:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> fail2ban-client unban 192.168.191.75</span></pre>
+<p style="text-align: center;"> <img src="unban-ftp.png" alt="" width="519" height="68" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 24.</strong> Desbloquear la IP baneada para ftp.</em></span></p>
+<p>Por último, se comprueba el log para ver que se ha hecho efectivo el desbloqueo:</p>
+<pre><span style="font-size: 12pt;"><strong>root@orion:/etc/fail2ban#</strong> tail -5 /var/log/fail2ban.log</span></pre>
+<p style="text-align: center;"><img src="unban-log-ftp.png" alt="" width="800" height="168" /></p>
+<p style="text-align: center;"><span><em><strong>Figura 25.</strong> Comprobar el fichero de log.</em></span></p>
+<h3 style="text-align: justify;"><span>8. Referencias</span></h3>
+<ul>
+<li><a href="https://www.systutorials.com/docs/linux/man/5-jail.conf/" target="_blank" rel="noopener">Man de jail.conf</a></li>
+<li><a href="https://www.fail2ban.org/wiki/index.php/HOWTO_fail2ban_spanish" target="_blank" rel="noopener">HOWTO fail2ban spanish</a></li>
+<li><a href="https://youtu.be/Z2iGCHzE_YE" target="_blank" rel="noopener"><span class="instancename">Ubuntu Server 18.04 - Fail2ban - Inspección FTP</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="proyecto_server_hardening_windows_rdpguard.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="proyecto_server_hardening_linux__fail2ban.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

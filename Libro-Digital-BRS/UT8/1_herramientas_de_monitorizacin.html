@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1. Herramientas de monitorización | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-126"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li id="active"><a href="1_herramientas_de_monitorizacin.html" class="active daddy">1. Herramientas de monitorización</a>
+   <ul>
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul class="other-section">
+      <li><a href="31_elastic_stack_open_source.html" class="daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul class="other-section">
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="objetivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11_monitorizacin_en_windows_con_sysmon.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">1. Herramientas de monitorización</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id166">
+<div class="iDevice emphasis0" >
+<div id="ta166_166_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Monitorización</h3>
+<p style="text-align: justify;">En una empresa que cuente con <strong>sistemas informáticos</strong>, es bastante probable que sufra ataques informáticos. Estos ataques, suelen utilizar los recursos software o hardware de que disponen los equipos de la propia empresa, haciendo esto que sea posible detectar un ataque si se observan dichos recursos.</p>
+<p style="text-align: justify;">Además de dichos ataques, las empresas suelen tener <strong><em>servicios que requieran de una alta disponibilidad</em></strong> y por tanto, si dejasen de funcionar, supondría un problema grave para dichas empresas.</p>
+<p></p>
+<p style="text-align: center;"><img src="monitorizacion.jpg" alt="" width="333" height="333" /></p>
+<p style="text-align: center;"><a href="https://www.freepik.es/vector-gratis/plantilla-isometrica-colorida-infografia-monitorizacion_5083830.htm#page=1&amp;query=monitorizaci%C3%B3n&amp;position=3" target="_blank" class="author" rel="noopener"><em><span style="font-size: 10pt;">pikisuperstar</span></em></a>.<span><em><span style="font-size: 10pt;"> </span></em></span><span class="title"><em><span style="font-size: 10pt;">Monitorización</span></em></span><span><em><span style="font-size: 10pt;"> </span></em></span><span class="license"><em><span style="font-size: 10pt;"><span class="sep">(</span><span class="custom-license">Freepik</span><span class="sep">)<br /><br /></span></span></em></span></p>
+<h4>1.1. ¿Cómo se puede hacer frente a esto?</h4>
+<p style="text-align: justify;">Todo sería más fácil si existiera una herramienta que permitiese controlar por ejemplo la RAM utilizada por un equipo, el procesador o simplemente un servicio corriendo en un puerto determinado. Aquí entra en juego la <strong>monitorización</strong>, una herramienta muy útil tanto para llevar un control del uso de los equipos por parte de los empleados y también para poder detectar posibles ataques que estén teniendo lugar.</p>
+<h4>1.2. Entonces ¿qué es la monitorización y para qué sirve exactamente?</h4>
+<p style="text-align: justify;">La <strong>monitorización</strong> consiste en llevar un control de los recursos hardware y software de un sistema informático para poder controlar el uso que se le da a los diferentes equipos, permitiendo establecer el grado de salud y la capacidad del sistema.</p>
+<p style="text-align: justify;">Esto por<strong> ejemplo</strong>, informar de un uso del procesador y/o de la RAM fuera de lo habitual en un equipo concreto, lo que puede ser indicativo de que se está ejecutando un proceso o varios procesos maliciosos. A partir de ahí podríamos comprobar que el usuario del equipo no esté ejecutando un programa que no utilice normalmente y genere ese uso excesivo de recursos.</p>
+<p style="text-align: justify;">En cuanto al <strong>software</strong>, podría ser interesante conocer el estado de los servicios o los puertos de los equipos. Si un servicio deja de funcionar, se podría generar una alerta de avise. Esto por ejemplo puede ser útil si se habla de disponibilidad. En el caso de un servicio que se tenga que tener corriendo de forma constante, por ejemplo una conexión a una base de datos que es crítica para que una aplicación funcione correctamente, si servicio dejase de funcionar se generaría una alerta y se podría subsanar la caída lo antes posible.</p>
+<div class="cuadro-nota-centro-new">
+<p><span>Muchos de los sistemas de grandes corporaciones utilizan <strong>PRTG</strong> para <strong>monitorizar sus equipos y redes</strong>, este es un sistema muy interesante en su versión de pago (30 días de prueba gratuita) que se puede descargar de:</span></p>
+<ul>
+<li><span style="color: #339966;"><strong><a target="_blank" class="c-link" data-stringify-link="https://www.es.paessler.com/ethernet_monitor" delay="150" data-sk="tooltip_parent" href="https://www.es.paessler.com/ethernet_monitor" rel="noopener noreferrer" style="color: #339966;">https://www.es.paessler.com/ethernet_monitor</a></strong></span></li>
+</ul>
+</div>
+<h3>2. ¿Cómo funciona la monitorización?</h3>
+<p style="text-align: justify;">El concepto de <strong>monitorización</strong> va fuertemente ligado al <a href="https://es.wikipedia.org/wiki/Protocolo_simple_de_administraci%C3%B3n_de_red" target="_blank" rel="noopener"><strong>protocolo SNMP</strong> </a>(Protocolo Simple de Administración de Red). Este es el principal protocolo utilizado a la hora de llevar a cabo la monitorización y permite el intercambio de información entre los diferentes componentes de una red.</p>
+<p>Para recibir la información de <strong>SNMP</strong> se necesita de la cadena de comunidad para que sea confiable la comunicación entre agente y gestor, el envío de la cadena, la confirmación de envío y recepción de datos que han ido variando a lo largo del tiempo.</p>
+<p>SNMP dispone de varias versiones, estas son: SNMPv1, SNMPv2 y SNMPv3.</p>
+<ul>
+<li style="text-align: justify;"><strong>SNMPv1. </strong>En esta versión no había confirmación de recepción de información por parte del gestor y además la cadena de caracteres identificativa de la comunidad SNMP, va en claro, lo que supone una vulnerabilidad. Además solo podía enviarse un mensaje a la vez.</li>
+<li style="text-align: justify;"><strong>SNMPv2.</strong> Aquí ya se gestiona el cifrado de la cadena de comunidad además de que se confirma la recepción de la información y se pueden enviar varios mensajes en una sola solicitud.</li>
+<li style="text-align: justify;"><strong>SNMPv3.</strong> En lugar de enviar la cadena cifrada de la comunidad, ya hay autenticación con usuario y contraseña a la hora de enviar las solicitudes. Además también cifra los paquetes enviados.</li>
+</ul>
+<p>Dentro de la <strong>monitorización mediante SNMP</strong>, se distinguen dos funcionalidades: <strong>polling</strong> y <strong>traps</strong>. Habitualmente se combinan ambas funcionalidades a la hora de configurar la monitorización de un sistema.</p>
+<ul>
+<li style="text-align: justify;"><strong>Polling.</strong> En este caso, se lanza un chequeo a una dirección IP concreta, pero es necesaria la comunidad SNMP para que funcione. La comunidad SNMP consiste de una cadena alfanumérica que se utiliza para autorizar la operación, lo que añade un plus de seguridad. Se recibe un listado con información difícilmente interpretable, que identifica cada dato con un id, conocido como OID. Esta información puede ser traducida a un lenguaje más legible para el ser humano.</li>
+<li style="text-align: justify;"><strong>SNMP traps.</strong> Son mensajes asíncronos que se envían al dispositivo central desde los demás y que sólo se envían cuando algo sucede o ha de ser reportado. La información se puede lanzar reportando solo el identificador OID o bien mandando también el mensaje correspondiente referenciado en el MIB del fabricante correspondiente.</li>
+</ul>
+<h3 class="core-section-container__main-title article-content__title">3. Importancia de la monitorización de Infraestructura de TI</h3>
+<p style="text-align: justify;">Cuando se tienen situaciones como: <span>servicios que se han detenido de manera inesperada en un servidor, reinicios en un servidor de manera repentina, discos duros que se llenan de manera exponencial, un tablespace o log que está creciendo, etcétera. Todas estas situaciones entre muchas otras, se pueden ver actualmente en cualquier infraestructura de TI.</span></p>
+<p style="text-align: justify;"><span>Tener los sistemas de nuestra infraestructura monitorizados, se convierte en productividad, ya que no se dependerá que personal de manera manual realice tareas de monitorización, sino que la herramienta será la encargada de proveer todo eso y alertar a tiempo ante situaciones que se presenten. </span></p>
+<h3>4. Soluciones de monitorización</h3>
+<p style="text-align: justify;"><strong><a href="https://www.nagios.org/" target="_blank" rel="noopener">Nagios</a>.</strong> Sistema de monitorización de código abierto que permite controlar equipos y servicios específicos, alertando cuando detecte un comportamiento no deseado. Permite monitorizar servicios red, recursos hardware y además permite la monitorización remota.</p>
+<p style="text-align: justify;"><strong><a href="https://www.centreon.com/es/" target="_blank" rel="noopener">Centreon</a>. </strong>Sistema de monitorización <span>de aplicaciones, redes y sistemas, basa en conceptos de</span> <strong><a href="https://www.nagios.org/" target="_blank" rel="noopener">Nagios</a></strong> que incorpora una interfaz web <span>más «amigable» para así ser más accesible para una amplia gama de usuarios y administradores de IT y que permite presentar los datos de forma más visual.</span></p>
+<p style="text-align: justify;"><strong><a href="https://www.zabbix.com/" target="_blank" rel="noopener">Zabbix</a>.</strong> Sistema de monitorización de software libre que permite monitorizar equipos, servidores o hardware de la red. Verifica la disponibilidad de servicios (web, correo, etc.) Permite monitorizar mediante el uso de SNMP, ICMP, SSH o Telnet.</p>
+<p style="text-align: justify;"><strong><a href="https://www.cacti.net/" target="_blank" rel="noopener">Cacti</a>. </strong>Software (de código abierto) de monitorización de redes a través del protocolo SNMP. Utiliza gráficos y recopilación de datos. Permite tener información de switches, routers, servidores, tráfico de interfaces, cargas, cpu, temperaturas, etc...<span></span></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="objetivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="11_monitorizacin_en_windows_con_sysmon.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

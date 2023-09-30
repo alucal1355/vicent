@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Laboratorio 2. Filtro Apache y conexiones ssh | UT8. Fortificación de la red corporativa: IDS-IPS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Juan Carlos Requena" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-124"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header"  style="background-image: url(logoJCRequena.png); background-repeat: no-repeat;"><div id="headerContent">UT8. Fortificación de la red corporativa: IDS-IPS</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT8. Fortificación de la red corporativa: IDS-IPS</a></li>
+   <li><a href="objetivos.html" class="no-ch">Objetivos</a></li>
+   <li><a href="1_herramientas_de_monitorizacin.html" class="daddy">1. Herramientas de monitorización</a>
+   <ul class="other-section">
+      <li><a href="11_monitorizacin_en_windows_con_sysmon.html" class="no-ch">1.1 Monitorización en Windows con Sysmon</a></li>
+      <li><a href="12_monitorizacin_con_centreon.html" class="daddy">1.2 Monitorización con Centreon</a>
+      <ul class="other-section">
+         <li><a href="prctica_1_monitorizacin_de_la_red_corporativa_con_centreon.html" class="no-ch">Práctica 1. Monitorización de la red corporativa con Centreon</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="2_sistemas_de_prevencin_y_proteccin_frente_a_intrusiones.html" class="daddy">2. Sistemas de prevención y protección frente a intrusiones</a>
+   <ul class="other-section">
+      <li><a href="21_sistema_de_deteccin_y_prevencin_de_intrusos_idsips.html" class="no-ch">2.1 Sistema de detección y prevención de intrusos (IDS/IPS)</a></li>
+      <li><a href="22_hidsnids.html" class="daddy">2.2 HIDS/NIDS</a>
+      <ul class="other-section">
+         <li><a href="221_nids_suricata.html" class="no-ch">2.2.1 NIDS Suricata</a></li>
+         <li><a href="221_nids_snort.html" class="no-ch">2.2.1 NIDS Snort</a></li>
+         <li><a href="laboratorio_1_suricata_en_pfsense.html" class="daddy">Laboratorio 1. Suricata en PFsense</a>
+         <ul class="other-section">
+            <li><a href="hids_wazuh.html" class="no-ch">HIDS Wazuh</a></li>
+            <li><a href="graylog.html" class="no-ch">GrayLog</a></li>
+         </ul>
+         </li>
+      </ul>
+      </li>
+      <li><a href="prctica_2_fortificar_la_red_corporativa_con_suricata.html" class="no-ch">Práctica 2. Fortificar la red corporativa con Suricata</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="3_siems_gestores_de_eventos_e_informacin_de_seguridad.html" class="current-page-parent daddy">3. SIEMs (Gestores de Eventos e Información de Seguridad)</a>
+   <ul>
+      <li class="current-page-parent"><a href="31_elastic_stack_open_source.html" class="current-page-parent daddy">3.1 Elastic Stack (Open Source)</a>
+      <ul>
+         <li><a href="311_escenario_y_software_necesario.html" class="no-ch">3.1.1 Escenario y software necesario</a></li>
+         <li><a href="312_instalacin_y_configuracin_de_elasticsearch.html" class="no-ch">3.1.2 Instalación y configuración de Elasticsearch</a></li>
+         <li><a href="313_instalacin_y_configuracin_de_kibana_dashboard.html" class="no-ch">3.1.3 Instalación y configuración de Kibana Dashboard</a></li>
+         <li><a href="314_instalar_y_configurar_logstash.html" class="daddy">3.1.4 Instalar y configurar Logstash</a>
+         <ul class="other-section">
+            <li><a href="3141_output_genrico_logstash.html" class="no-ch">3.1.4.1 Output genérico Logstash</a></li>
+         </ul>
+         </li>
+         <li><a href="315_instalar_y_configurar_filebeat.html" class="no-ch">3.1.5 Instalar y configurar Filebeat</a></li>
+         <li id="active"><a href="laboratorio_2_filtro_apache_y_conexiones_ssh.html" class="active no-ch">Laboratorio 2. Filtro Apache y conexiones ssh</a></li>
+         <li><a href="316_panel_kibana.html" class="daddy">3.1.6 Panel Kibana</a>
+         <ul class="other-section">
+            <li><a href="3161_primeros_pasos_con_kibana.html" class="no-ch">3.1.6.1 Primeros pasos con Kibana</a></li>
+            <li><a href="3162__visualizaciones.html" class="no-ch">3.1.6.2  Visualizaciones</a></li>
+            <li><a href="3163__machine_learning.html" class="no-ch">3.1.6.3  Machine Learning</a></li>
+            <li><a href="3164_siem.html" class="no-ch">3.1.6.4 SIEM</a></li>
+            <li><a href="3165_suricata_en_kibana.html" class="no-ch">3.1.6.5 Suricata en Kibana</a></li>
+         </ul>
+         </li>
+         <li><a href="317_integracin_de_sistemas_y_aplicaciones_en__elastic_stack.html" class="no-ch">3.1.7 Integración de sistemas y aplicaciones en  Elastic Stack</a></li>
+         <li><a href="318_problemas_y_soluciones.html" class="no-ch">3.1.8 Problemas y soluciones</a></li>
+         <li><a href="laboratorio_3_deteccin_de_ataques_dos_con_elastic_stack_y_suricata.html" class="no-ch">Laboratorio 3. Detección de Ataques DoS con Elastic Stack y Suricata</a></li>
+         <li><a href="proyecto_despliegue_de_un_siem_en_la_red_corporativa.html" class="no-ch">Proyecto. Despliegue de un SIEM en la red corporativa</a></li>
+      </ul>
+      </li>
+      <li><a href="32_microsoft_sentinel.html" class="no-ch">3.2 Microsoft Sentinel</a></li>
+      <li><a href="33_splunk.html" class="no-ch">3.3 Splunk</a></li>
+   </ul>
+   </li>
+   <li><a href="4_prevencin_de_fugas_de_informacin_dlp_data_loss_prevention.html" class="daddy">4. Prevención de fugas de información (DLP, Data Loss Prevention)</a>
+   <ul class="other-section">
+      <li><a href="41_implementacin_del_mydlp_en_un_sistema.html" class="no-ch">4.1 Implementación del MyDLP en un sistema</a></li>
+   </ul>
+   </li>
+   <li><a href="5_seguridad_del_correo_electrnico.html" class="no-ch">5. Seguridad del correo electrónico</a></li>
+   <li><a href="6_referencias.html" class="no-ch">6. Referencias</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="315_instalar_y_configurar_filebeat.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="316_panel_kibana.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Laboratorio 2. Filtro Apache y conexiones ssh</h1></div>
+<div class="iDevice_wrapper textIdevice" id="id164">
+<div class="iDevice emphasis0" >
+<div id="ta164_164_2" class="block iDevice_content">
+<div class="exe-text"><h3>1. Introducción</h3>
+<p style="text-align: justify;">En este laboratorio, se creará un índice para <strong>monitorizar los accesos al servidor web</strong> de la organización sobre <strong>apache2</strong> y las <strong>autenticaciones ssh </strong>fallidas.</p>
+<h4 style="text-align: justify;">Recursos necesarios</h4>
+<ul>
+<li style="text-align: justify;">Máquina virtual con ubuntu server 20.04.4 con;
+<ul>
+<li style="text-align: justify;">Elastick Stack instalado y configurado (elasticsearch, kibana, filebeat y logstash).</li>
+<li style="text-align: justify;">Servidor apache2 instalado.</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><img src="web-jcrequena-html.png" alt="" width="924" height="469" /></p>
+<h3>2. Configuraciones en filebeat</h3>
+<h4>2.1 Habilitación del módulo apache y system</h4>
+<p>En primer lugar, hay que parar los servicios de filebeat y logstash.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>systemctl stop filebeat logstash</span></pre>
+<p>A continuación, hay que habilitar el módulo apache y el de sistema (si ya está habilitado no hay que hacerlo)</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>filebeat modules enable apache system<br /></span></pre>
+<p style="text-align: center;"><img src="enabled-modules.png" alt="" width="513" height="88" /></p>
+<p style="text-align: center;"><em><strong>Figura 1.</strong> Habilitar el módulo apache y system.</em></p>
+<p style="text-align: justify;">Como se puede observar en la figura 1, el comando devuelve que el módulo apache ha sido habilitado y el de system que ya estaba habilitado.</p>
+<p style="text-align: justify;">Una vez habilitados los módulos, hay que configurar los mismos para la recogida de eventos de:</p>
+<ol>
+<li style="text-align: justify;"><strong>Acceso al servidor web (apache access).</strong></li>
+<li style="text-align: justify;"><strong>Autenticación por ssh.</strong><strong></strong></li>
+</ol>
+<p>Para el <strong>primer caso</strong>, hay que editar el fichero del módulo <strong>apache.yml</strong> ubicado en <span style="font-size: 12pt;"><strong>/etc/filebeat/modules.d</strong> </span>y modificarlo según la figura inferior, donde se habilita la recogida de los eventos del fichero access.log y se deshabilita los eventos de error ya que para este ejemplo no se desea obtener los mismos.</p>
+<pre><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/filebeat/modules.d/apache.yml </span></pre>
+<p style="text-align: center;"><img src="apache-yml-filebeat.png" alt="" width="795" height="289" /></p>
+<p style="text-align: center;"><em><strong>Figura 2.</strong> Habilitar el fichero de log para access del módulo apache.</em></p>
+<p>Otra forma de añadir la líneas del <strong>var.paths</strong> es utilizando el siguiente comando:</p>
+<pre class="programlisting prettyprint lang-sh prettyprinted"><span class="pun"><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>filebeat -e -M "apache2.access.var.paths=[/var/log/apache2/access.log]"</span></span></pre>
+<p style="text-align: justify;">Para el <strong>segundo caso</strong>, hay que editar el fichero del módulo <strong>system.yml</strong> ubicado en <span style="font-size: 12pt;"><strong>/etc/filebeat/modules.d</strong> </span>y modificarlo según la figura inferior, donde se habilita la recogida de los eventos de autenticación en el sistema del fichero auth.log y se deshabilita los eventos de syslog ya que para este ejemplo no se desea obtener los mismos.</p>
+<p style="text-align: justify;">Para obtener los eventos de autenticación por ssh, habrá que añadir un filtro para recuperar los mismos y descartar el resto, esto se verá en el apartado 3.</p>
+<p style="text-align: center;"><img src="system-yml-auth.png" alt="" width="724" height="344" /></p>
+<p style="text-align: center;"><em><strong>Figura 3.</strong> Habilitar el fichero de log para auth del módulo system.</em></p>
+<h3>3. Configuraciones en logstash</h3>
+<h4>3.1 Crear el fichero de input </h4>
+<p style="text-align: justify;">El siguiente paso es crear el fichero de entrada para logstash de los eventos que se adquieran de filebeats, para ello, se crea el fichero <strong>01-beats-input.conf</strong> en modo edición (el nombrado del fichero puede ser cualquiera):</p>
+<pre class="programlisting prettyprint lang-sh prettyprinted"><span class="pun"><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/logstash/conf.d/01-betas-input.conf</span></span></pre>
+<p style="text-align: center;"><img src="01-beats-input.1.png" alt="" width="368" height="136" /></p>
+<p style="text-align: center;"><em><strong>Figura 4.</strong> Fichero de input en logstash.</em></p>
+<p style="text-align: justify;">Con este fichero, <strong>se indica a logstash</strong> que se van a <strong>recuperar</strong> los<strong> eventos de filebeats</strong>.</p>
+<h4>3.2 Crear el fichero de output </h4>
+<p style="text-align: justify;">El siguiente paso es crear el <strong>fichero de salida para elasticsearch</strong> de los eventos que se adquieran de filebeats por medio del input definido, para ello, se crea el fichero <strong><span class="pun"><span style="font-size: 12pt;">20-output.conf </span></span></strong>en modo edición (el nombrado del fichero puede ser cualquiera):</p>
+<pre class="programlisting prettyprint lang-sh prettyprinted"><span class="pun"><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/logstash/conf.d/20-output.conf</span></span></pre>
+<p style="text-align: center;"><img src="20-output-apache-ssh.png" alt="" width="615" height="225" /></p>
+<p style="text-align: center;"><strong><em>Figura 3. </em></strong><em>Fichero de salida.</em></p>
+<p style="text-align: justify;">donde,</p>
+<ul>
+<li style="text-align: justify;"><strong>index =&gt; "%{[@metadata][beat]}-%{[@metadata][version]}-%{+YYYY.MM.dd}".</strong> Es el índice que se creará donde el prefijo y sufijo se generan de manera automática con el beat usado y su versión y la fecha actual, por lo que el índice que se generará suponiendo que se realiza el 21 de marzo de 2022 es: <strong>filebeat-8.1.0-2022.03.21</strong>: 
+<ul>
+<li style="text-align: justify;"><strong>[@metadata][beat]: </strong>filebeat<strong>.</strong></li>
+<li style="text-align: justify;"><strong>[@metadata][version]: </strong>8.1.0.</li>
+<li style="text-align: justify;"><strong>%{+YYYY.MM.dd}: </strong>2022.03.21.</li>
+</ul>
+</li>
+</ul>
+<h4>3.3 Crear el fichero de filtro </h4>
+<p style="text-align: justify;">El siguiente paso es <strong>crear un fichero de filtro </strong>para filtras los <strong>eventos de acceso al servidor web </strong>y los de<strong> errores de autenticación ssh</strong>. Para ello, se crea el <strong>fichero 10-filter.conf</strong> en modo edición (el nombrado del fichero puede ser cualquiera).</p>
+<p style="text-align: justify;">El contenido del fichero trata de que aquellos eventos que procedan del <strong>event module system</strong> y en concreto del fileset <strong>auth</strong>, se filtran mediante grok para recoger los que se cumplan ya sea por la Regla 1 o 2. Si los eventos no son del módulo system y auth, se comprueba la 3ª regla para cmprobar si el evento es uno de acceso al servidor web (apache). Si no se cumple ninguna regla, el evento es descartado (drop).</p>
+<pre class="programlisting prettyprint lang-sh prettyprinted"><span class="pun"><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>nano /etc/logstash/conf.d/10-filter.conf</span></span></pre>
+<pre><span style="font-size: 10pt;">filter {</span><br /><span style="font-size: 10pt;"><strong>  # Modulo system</strong> </span><br /><span style="font-size: 10pt;">  if [event][module] == "system" {</span><br /><span style="font-size: 10pt;">    # <strong>Del módulo system nos quedamos con el fileset de autenticación</strong> <br />    if [fileset][name] == "auth" {</span><br /><span style="font-size: 10pt;"><strong>        # Regla 1. Usuarios válidos o existentes en el sistema</strong><br />        grok {</span><br /><span style="font-size: 10pt;">           match =&gt; { "message" =&gt; "%{SYSLOGTIMESTAMP:timestamp}\s+%{IPORHOST:dst_host}\s+%{WORD:syslog_program}\[\d+\]:\s+(?&lt;status&gt;\w+\s+password)\s+for\s+%{USER:auth_user}\s+from\s+%{SYSLOGHOST:src_host}.*" }</span><br /><span style="font-size: 10pt;">           add_field =&gt; { "activity" =&gt; "SSH Logins" }</span><br /><span style="font-size: 10pt;">           add_tag =&gt; "linux_auth"</span><br /><span style="font-size: 10pt;">        }</span><br /><span style="font-size: 10pt;">        if "_grokparsefailure" in [tags] {</span><br /><span style="font-size: 10pt;">          # <strong>Regla 2. Si en la regla 1 no hay coincidencias, se aplica la regla 2 (usuarios no válidos)</strong><br />          grok {</span><br /><span style="font-size: 10pt;">             remove_tag =&gt; [ "_grokparsefailure" ]</span><br /><span style="font-size: 10pt;">             match =&gt; { "message" =&gt; "%{SYSLOGTIMESTAMP:timestamp}\s+%{IPORHOST:dst_host}\s+%{WORD:syslog_program}\[\d+\]:\s+(?&lt;status&gt;\w+\s+password)\s+for\s+invalid\s+user\s+%{USER:auth_user}\s+from\s+%{SYSLOGHOST:src_host}.*" }</span><br /><span style="font-size: 10pt;">             add_tag =&gt; [ "ssh_brute_force_attack", "filter_sshd","correlation" ]</span><br /><span style="font-size: 10pt;">             add_field =&gt; { "EventDesc" =&gt; "5710 SSHD Attempt to login using a non-existent user" }</span><br /><span style="font-size: 10pt;">             add_field =&gt; { "event_id" =&gt; "5710" }</span><br /><span style="font-size: 10pt;">          }</span><br /><span style="font-size: 10pt;">          # El propósito de drop es eliminar todo el contenido que llega al mismo. <strong></strong><br />          if "_grokparsefailure" in [tags] { drop {} }</span><br /><span style="font-size: 10pt;">        }</span><br /><span style="font-size: 10pt;">     } </span><br /><span style="font-size: 10pt;">    else if [fileset][name] == "syslog" { drop {} }</span><br /><span style="font-size: 10pt;">  }</span><br /><strong><span style="font-size: 10pt;">  # Modulo apache - Configura los filtros de datos y fechas</span></strong><br /><span style="font-size: 10pt;">  else if [event][module] == "apache" {</span><br /><span style="font-size: 10pt;">     # Regla 3. Sel evento es del módulo apache, se aplica la regla, donde el patrón %{COMBINEDAPACHELOG} incorpora<br />     # muchos identificadores. <br />     grok {</span><br /><span style="font-size: 10pt;">       match =&gt; { "message" =&gt; "%{COMBINEDAPACHELOG}" }</span><br /><span style="font-size: 10pt;">       add_tag =&gt; "apache2-server"</span><br /><span style="font-size: 10pt;">       add_field =&gt; { "logtype" =&gt; "apache-access-Web-JCRequena" }</span><br /><span style="font-size: 10pt;">     }</span><br /><span style="font-size: 10pt;">     if "_grokparsefailure" in [tags] { drop {} }</span><br /><span style="font-size: 10pt;">     date {</span><br /><span style="font-size: 10pt;">       match =&gt; [ "timestamp" , "dd/MMM/yyyy:HH:mm:ss Z" ]</span><br /><span style="font-size: 10pt;">     }</span><br /><span style="font-size: 10pt;">  }</span><br /><span style="font-size: 10pt;">  else {  drop {} }</span><br /><span style="font-size: 10pt;">}</span></pre>
+<ul></ul>
+<div class="cuadro-nota-centro-new">
+<p style="text-align: justify;"><span style="font-size: 12pt;">El patrón <strong>%{COMBINEDAPACHELOG}</strong> se define como:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-size: 12pt; color: #000000;">COMBINEDAPACHELOG %{IPORHOST:clientip} %{USER:ident} %{USER:auth} \[%{HTTPDATE:timestamp}\] "(?:%{WORD:verb} %{NOTSPACE:request} (?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:response} (?:%{NUMBER:bytes}|-) %{QS:referrer} %{QS:agent}</span></li>
+</ul>
+<p></p>
+</div>
+<p style="text-align: justify;"><strong><a href="https://www.elastic.co/guide/en/beats/filebeat/current/exported-fields-log.html" target="_blank" rel="noopener">Fuente</a></strong></p>
+<h3>3. Puesta en marcha de filebeat y  logstash</h3>
+<p style="text-align: justify;">Llegado a este punto, ya se puede poner en marcha filebeat y reiniciar logstash para consolidar los cambios realizados.</p>
+<pre class="programlisting prettyprint lang-sh prettyprinted"><span class="pun"><span style="font-size: 12pt;"><strong>root@elastic-master01:/#</strong>systemctl start filebeat logstash<br /></span></span></pre>
+<p style="text-align: justify;">Una vez se compruebe que el <strong>estado de filebeat y logstash </strong>sea el correcto, se ejecuta el siguiente comando para consultar los índices. Como se puede observar en la figura inferior, ya se tiene disponible el índice de apache.</p>
+<p style="text-align: center;"><img src="indices.png" alt="" width="1130" height="251" /></p>
+<p style="text-align: center;"><strong><em>Figura 4.</em></strong><em> Consulta de índices.</em></p>
+<p style="text-align: justify;">Otra forma de consultar el índice es desde Kibana accediendo al menú <strong>Management</strong> --&gt; <strong>Stack Management</strong> --&gt; <strong>Index Management</strong>.</p>
+<p style="text-align: center;"><img src="index-mangement-ssh-apache.png" alt="" width="1282" height="605" /></p>
+<p style="text-align: center;"><em><strong>Figura 5. </strong>Consulta de índices en Kibana.</em><strong></strong></p>
+<p><strong><a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-module-apache.html" target="_blank" rel="noopener">Fuente</a></strong></p>
+<p>A continuación hay que crear el <strong>Dataview</strong> del índice para poder visualizar los datos de registro adquiridos. Ejemplo: Si se accede a un directorio privado en el servidor web y se introducen las credenciales incorrectas (ver Figura 6), se puede ver ese registro en el Dataview (ver Figura 7).</p>
+<table style="height: 330px; width: 100%;" border="0">
+<tbody>
+<tr style="height: 305px;">
+<td style="width: 50%; text-align: center; height: 305px;"><a href="acceso-DirePrivado.png"><img src="acceso-DirePrivado.png" alt="" width="1117" height="424" /></a></td>
+<td style="width: 50%; text-align: center; height: 305px;"><a href="acceso-servWeb.png"><img src="acceso-servWeb.png" alt="" width="1292" height="630" /></a></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 50%; text-align: center; height: 25px;"><em><span style="font-size: 12pt;"><strong>Figura 6.</strong> Acceso a un directorio privado del servidor web.</span></em></td>
+<td style="width: 50%; height: 25px; text-align: center;"><em><span style="font-size: 12pt;"><strong>Figura 7.</strong> Acceso al registro en el Dataview.</span></em></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">En estos momentos, se tiene 1 índice recuperando datos de filebeat ya que se tiene el ficheros de output en /etc/logstash/conf.d del índice <strong>filebeat-8.1.0-2022.03.21</strong>. El resto de índices que aparecen en la Figura 4 son de ejemplo con datos históricos de eventos del servicio apache, de sistema, etcétera.<span style="font-size: 12pt;"></span></p>
+<p style="text-align: justify;"><span>En el siguiente vídeo, se describe el laboratorio y algunas herramientas de Elastic Stack<em><span style="font-size: 12pt;"><strong></strong></span></em>.</span><span></span></p>
+<p style="text-align: center;"><iframe width="560" height="314" src="https://www.youtube.com/embed/qikBQDQSK_A" allowfullscreen="allowfullscreen"></iframe></p>
+<p style="text-align: center;"><em><strong>Vídeo 1.</strong> Descripción del laboratorio y herramientas de Elastic Stack<span style="font-size: 12pt;"><strong>.</strong></span></em></p></div>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="315_instalar_y_configurar_filebeat.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="316_panel_kibana.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>
